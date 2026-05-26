@@ -19,3 +19,6 @@ server/.env
 # logs
 *.log
 npm-debug.log*
+
+# 운영 메모 — 시크릿(DB 비번/터널 자격증명) 포함, 절대 커밋 금지
+배포.txt

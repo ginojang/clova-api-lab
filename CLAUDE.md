@@ -203,6 +203,44 @@ API 구현 우선순위:
 - 실제 키는 `server/.env` 에만 둔다. 프론트에 노출 금지.
 - 프론트에서 CLOVA API를 직접 호출하지 않는다 (항상 프록시 경유).
 - 요청/응답 원문(Raw JSON) 표시는 **개발 중에만.** 프로덕션에서는 로그 마스킹 필요.
+- **이 저장소는 public이다.** DB 비밀번호·API Key·터널 자격증명 등 어떤 시크릿도 커밋하지 않는다. 실제 운영 값은 hellcat의 `~/apps/clova-api-lab/.env` 와 로컬 `배포.txt`(gitignore됨)에만 둔다.
+
+## 배포 / 운영 환경
+
+> 자세한 원본은 로컬 `배포.txt`(저장소에 커밋하지 않음). 여기에는 시크릿을 적지 않는다.
+
+자매 프로젝트(elda-agent / GanpanAI)와 **동일한 2-호스트 토폴로지**를 따른다.
+
+```
+사용자 → AmazonFront(EC2, nginx)
+            ├─ 정적 SPA (dist/ rsync 배포)
+            └─ /api/* 리버스 프록시 → 127.0.0.1:<port>
+                                        ↑ autossh 역방향 터널
+                              hellcat(LAN 192.168.0.28) 의 프록시 데몬
+                                        ↓ LAN 직결
+                              spitfire(192.168.0.2:5432) PostgreSQL
+```
+
+### 호스트 역할
+
+- **AmazonFront (EC2, Amazon Linux 2023, t2.micro·916Mi RAM)**: nginx 정적 SPA + 리버스 프록시 **전용**. 백엔드 데몬 안 띄움.
+  - **빌드 금지** — RAM 916Mi라 Vite 빌드 OOM 위험. **항상 로컬에서 `npm run build` 후 `rsync` 로 `dist/` 전송.**
+- **hellcat (Rocky Linux 9.6, Node v20)**: 실제 프록시(Express) 데몬 호스트. `~/apps/clova-api-lab/` 슬롯에 배치.
+  - 기존 슬롯: punker-api(3000), corpus-api(3100), elda/*(3200·9100~9400), elda-agent(4000). clova-api-lab은 **별도 포트(TBD)** 를 받아 같은 패턴으로 들어간다.
+  - **autossh 역방향 터널**(`-R <port>:localhost:<port> AmazonFront`)로 EC2 `127.0.0.1:<port>` 에 listen.
+  - systemd 유닛 2개 쌍: app unit + tunnel unit (elda-agent의 `*-api.service` / `*-api-tunnel.service` 패턴 그대로).
+- **spitfire (PostgreSQL 16)**: `192.168.0.2:5432`, LAN 직결. clova-api-lab **전용 DB**를 두고 요청/응답 로그를 영속화한다. 접속 자격증명은 hellcat의 `~/apps/clova-api-lab/.env` 에만 둔다(저장소 금지).
+
+### 배포 흐름 (요지)
+
+```
+로컬:  npm run build           # dist/ 생성 (EC2에서 빌드하지 않음)
+로컬:  rsync -avz --delete dist/  AmazonFront:/var/www/<path>/
+hellcat: 코드 갱신 → sudo systemctl restart clova-api-lab{,-tunnel}  (NOPASSWD 허용 범위)
+헬스:  curl -sS http://127.0.0.1:<port>/health
+```
+
+> HTTPS는 미설정. 도메인 확보 후 Let's Encrypt + certbot.
 
 ## 성공 기준
 
