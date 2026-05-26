@@ -107,11 +107,12 @@ clova-api-lab/
 `.env.example` 기준:
 
 ```
-VITE_API_BASE=http://localhost:3105
+VITE_API_BASE=http://localhost:3600
 
 CLOVA_API_KEY=
 CLOVA_APIGW_API_KEY=
 CLOVA_BASE_URL=https://clovastudio.stream.ntruss.com
+PORT=3600
 ```
 
 - `VITE_API_BASE`: 프론트가 호출할 로컬 프록시 주소.
@@ -226,8 +227,8 @@ API 구현 우선순위:
 - **AmazonFront (EC2, Amazon Linux 2023, t2.micro·916Mi RAM)**: nginx 정적 SPA + 리버스 프록시 **전용**. 백엔드 데몬 안 띄움.
   - **빌드 금지** — RAM 916Mi라 Vite 빌드 OOM 위험. **항상 로컬에서 `npm run build` 후 `rsync` 로 `dist/` 전송.**
 - **hellcat (Rocky Linux 9.6, Node v20)**: 실제 프록시(Express) 데몬 호스트. `~/apps/clova-api-lab/` 슬롯에 배치.
-  - 기존 슬롯: punker-api(3000), corpus-api(3100), elda/*(3200·9100~9400), elda-agent(4000). clova-api-lab은 **별도 포트(TBD)** 를 받아 같은 패턴으로 들어간다.
-  - **autossh 역방향 터널**(`-R <port>:localhost:<port> AmazonFront`)로 EC2 `127.0.0.1:<port>` 에 listen.
+  - 기존 슬롯: punker-api(3000), corpus-api(3100), elda/*(3200·9100~9400), elda-agent(4000). clova-api-lab은 **포트 3600** 으로 같은 패턴으로 들어간다.
+  - **autossh 역방향 터널**(`-R 3600:localhost:3600 AmazonFront`)로 EC2 `127.0.0.1:3600` 에 listen.
   - systemd 유닛 2개 쌍: app unit + tunnel unit (elda-agent의 `*-api.service` / `*-api-tunnel.service` 패턴 그대로).
 - **spitfire (PostgreSQL 16)**: `192.168.0.2:5432`, LAN 직결. clova-api-lab **전용 DB**를 두고 요청/응답 로그를 영속화한다. 접속 자격증명은 hellcat의 `~/apps/clova-api-lab/.env` 에만 둔다(저장소 금지).
 
@@ -237,7 +238,7 @@ API 구현 우선순위:
 로컬:  npm run build           # dist/ 생성 (EC2에서 빌드하지 않음)
 로컬:  rsync -avz --delete dist/  AmazonFront:/var/www/<path>/
 hellcat: 코드 갱신 → sudo systemctl restart clova-api-lab{,-tunnel}  (NOPASSWD 허용 범위)
-헬스:  curl -sS http://127.0.0.1:<port>/health
+헬스:  curl -sS http://127.0.0.1:3600/health
 ```
 
 > HTTPS는 미설정. 도메인 확보 후 Let's Encrypt + certbot.
