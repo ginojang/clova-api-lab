@@ -1,0 +1,217 @@
+# CLAUDE.md
+
+이 파일은 이 저장소에서 작업하는 Claude Code(및 기타 에이전트)를 위한 지침이다.
+
+## 프로젝트 개요
+
+**clova-api-lab** — CLOVA Studio API(HyperCLOVA X 기반)를 전부 데모 테스트할 수 있는 프론트 콘솔.
+
+실서비스가 아니라 **API 검증/실험용 콘솔**이다. 핵심 흐름:
+
+```
+API Key 입력 → 모델 선택 → 파라미터 조정 → 호출 → 응답 확인
+→ 스트리밍 확인 → 로그 저장 → Qwen/Ollama/OpenAI와 비교
+```
+
+> 현재 상태: 기획 완료, 코드 미작성. 유일한 원본 문서는 `시작문서.md`이며, 이 CLAUDE.md는 그 문서를 정리한 것이다. 구현 세부가 문서와 충돌하면 `시작문서.md`를 우선 확인할 것.
+
+## 아키텍처 (가장 중요)
+
+프론트에서 CLOVA API를 **직접 호출하지 않는다.** 반드시 중간 백엔드 프록시를 경유한다.
+
+```
+React Front  →  Local Proxy API (Node/Express)  →  CLOVA Studio API
+```
+
+프록시를 두는 이유:
+- **API Key 노출 방지** (프론트 번들에 키가 들어가면 안 됨)
+- CORS 회피
+- 요청/응답 로그 저장
+- 모델별 어댑터 통일
+- 추후 OpenAI/Ollama/Qwen/Claude 비교
+
+### Provider Adapter 구조
+
+처음부터 CLOVA 전용이 아니라 **AI Provider Lab** 구조로 만든다. 내부는 어댑터 패턴:
+
+```
+ProviderAdapter
+  ├─ clovaLegacyAdapter    (X-NCP-* 헤더 방식)
+  ├─ clovaOpenAIAdapter    (OpenAI 호환 API)
+  ├─ openaiAdapter
+  ├─ ollamaAdapter
+  └─ qwenLocalAdapter
+```
+
+```ts
+export type AiProvider = 'clova' | 'clova-openai' | 'openai' | 'ollama';
+
+export type UnifiedChatRequest = {
+  provider: AiProvider;
+  model: string;
+  messages: { role: 'system' | 'user' | 'assistant'; content: string }[];
+  temperature?: number;
+  topP?: number;
+  maxTokens?: number;
+  stream?: boolean;
+};
+```
+
+## 기술 스택
+
+- **Front**: Vite + React + TypeScript + Tailwind CSS
+- **Proxy 서버**: Node + Express + TypeScript
+
+## 디렉토리 구조 (계획)
+
+```
+clova-api-lab/
+  package.json
+  vite.config.ts
+  .env.example
+  src/
+    main.tsx
+    App.tsx
+    components/
+      Layout.tsx
+      ApiKeyPanel.tsx
+      ModelSelector.tsx
+      ChatTester.tsx
+      CompletionTester.tsx
+      EmbeddingTester.tsx
+      SkillTester.tsx
+      RequestViewer.tsx
+      ResponseViewer.tsx
+      LogPanel.tsx
+    api/
+      clovaClient.ts
+      proxyClient.ts
+    types/
+      clova.ts
+      apiLog.ts
+    store/
+      useClovaStore.ts
+  server/
+    index.ts
+    routes/
+      clova.ts
+      health.ts
+    services/
+      clovaService.ts
+    types/
+      clova.ts
+```
+
+## 환경 변수
+
+`.env.example` 기준:
+
+```
+VITE_API_BASE=http://localhost:3105
+
+CLOVA_API_KEY=
+CLOVA_APIGW_API_KEY=
+CLOVA_BASE_URL=https://clovastudio.stream.ntruss.com
+```
+
+- `VITE_API_BASE`: 프론트가 호출할 로컬 프록시 주소.
+- `CLOVA_*`: **server/.env 에서만 사용.** 프론트 번들에 절대 포함하지 않는다.
+
+## 백엔드 프록시 API 설계
+
+### `GET /health`
+```json
+{ "ok": true, "service": "clova-api-lab", "time": "2026-05-23T00:00:00.000Z" }
+```
+
+### `POST /api/clova/chat`
+Request:
+```json
+{
+  "model": "HCX-003",
+  "messages": [
+    { "role": "system", "content": "너는 테스트용 AI다." },
+    { "role": "user", "content": "안녕?" }
+  ],
+  "temperature": 0.7,
+  "topP": 0.8,
+  "maxTokens": 512,
+  "stream": false
+}
+```
+Response:
+```json
+{
+  "ok": true,
+  "provider": "clova",
+  "model": "HCX-003",
+  "content": "...",
+  "raw": {},
+  "latencyMs": 1234
+}
+```
+
+### `POST /api/clova/chat/stream`
+SSE 방식으로 프론트에 전달:
+```
+event: token
+data: {"text":"안"}
+
+event: done
+data: {"ok":true}
+```
+
+## CLOVA 호출 어댑터 (legacy)
+
+`server/services/clovaService.ts` 의 핵심. CLOVA Studio 기존 API는 다음 헤더를 사용한다:
+
+- `X-NCP-CLOVASTUDIO-API-KEY` ← `CLOVA_API_KEY`
+- `X-NCP-APIGW-API-KEY` ← `CLOVA_APIGW_API_KEY`
+
+엔드포인트 형태:
+```
+${CLOVA_BASE_URL}/testapp/v1/chat-completions/${model}
+```
+
+> CLOVA Studio는 OpenAI 호환 API도 제공한다(키/엔드포인트/모델명만 교체). `clova-openai` 어댑터로 별도 지원한다.
+
+## 화면 구성 (MVP)
+
+- **좌측 패널**: API Key 상태 / Endpoint Mode / Model / Temperature / TopP / Max Tokens / Streaming ON·OFF / System Prompt
+- **중앙 패널**: Chat 입력창 / 메시지 목록 / 실행 버튼 / 스트리밍 출력 영역
+- **우측 패널**: Raw Request JSON / Raw Response JSON / Latency / Token usage / Error log / Copy 버튼
+
+## 구현 순서 (Phase / Step)
+
+API 구현 우선순위:
+- **Phase 1**: Health Check, Chat Completions, Streaming Chat, OpenAI Compatible Chat
+- **Phase 2**: Embedding, 요약/분류 프롬프트 템플릿, JSON Output Test
+- **Phase 3**: Skill Trainer, Router, RAG, 모델 비교 모드
+
+작업 순서:
+1. Vite + React + TS 프로젝트 생성, Tailwind 적용, 기본 Layout
+2. Express 프록시 서버 + `/health` + `.env` 로딩
+3. `/api/clova/chat` 구현 + Raw Request/Response 표시
+4. Chat UI (System Prompt / User Message / Assistant Response)
+5. Streaming (SSE 출력, 중간 token 표시)
+6. 로그 패널 (latency / status / model / request / response / error)
+7. OpenAI 호환 모드 추가, provider adapter 구조로 정리
+
+## 보안 / 주의사항 (반드시 준수)
+
+- **API Key를 localStorage에 저장하지 않는다.** 테스트 입력 시 session memory만 사용.
+- 실제 키는 `server/.env` 에만 둔다. 프론트에 노출 금지.
+- 프론트에서 CLOVA API를 직접 호출하지 않는다 (항상 프록시 경유).
+- 요청/응답 원문(Raw JSON) 표시는 **개발 중에만.** 프로덕션에서는 로그 마스킹 필요.
+
+## 성공 기준
+
+- 로컬에서 `npm run dev` 실행 → 프론트 접속 가능
+- 서버 env 또는 입력 키로 CLOVA Chat Completion 호출 성공
+- Streaming 출력 성공
+- Raw JSON / 에러 메시지 확인 가능
+- 요청 로그 누적 가능
+
+## 테스트 프롬프트 기본 세트
+
+일반 한국어 대화 / 존댓말·반말 변환 / 문서 요약 / 감정 분류 / 의도 분류 / JSON 출력 강제 / 코드 생성 / 한국어 문화 문맥 질문 / 긴 문맥 유지 / Qwen·Ollama 비교용 동일 프롬프트.

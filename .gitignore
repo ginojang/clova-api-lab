@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+*.local
+*.tsbuildinfo
+
+# env (절대 커밋 금지 — API Key 노출 방지)
+.env
+.env.*
+!.env.example
+server/.env
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# logs
+*.log
+npm-debug.log*
