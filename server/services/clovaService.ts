@@ -1,4 +1,4 @@
-import type { ChatRequest, ClovaAuthMode } from '../types/clova.ts';
+import type { ChatRequest, ClovaAuthMode, TokenUsage } from '../types/clova.ts';
 
 type ClovaCallResult = {
   ok: boolean;
@@ -6,6 +6,8 @@ type ClovaCallResult = {
   content: string;
   raw: unknown;
   latencyMs: number;
+  usage?: TokenUsage;
+  finishReason?: string;
   error?: string;
 };
 
@@ -48,6 +50,24 @@ function extractContent(json: unknown): string {
   );
 }
 
+function extractUsage(json: unknown): TokenUsage | undefined {
+  if (!json || typeof json !== 'object') return undefined;
+  const j = json as Record<string, any>;
+  const u = j.result?.usage ?? j.usage; // CLOVA: result.usage / OpenAI: usage
+  if (!u) return undefined;
+  return {
+    promptTokens: u.promptTokens ?? u.prompt_tokens,
+    completionTokens: u.completionTokens ?? u.completion_tokens,
+    totalTokens: u.totalTokens ?? u.total_tokens,
+  };
+}
+
+function extractFinishReason(json: unknown): string | undefined {
+  if (!json || typeof json !== 'object') return undefined;
+  const j = json as Record<string, any>;
+  return j.result?.finishReason ?? j.choices?.[0]?.finish_reason;
+}
+
 export async function callClovaChat(req: ChatRequest): Promise<ClovaCallResult> {
   const startedAt = Date.now();
   const { url, headers } = buildEndpoint(req.model);
@@ -81,6 +101,8 @@ export async function callClovaChat(req: ChatRequest): Promise<ClovaCallResult> 
       content: response.ok ? extractContent(raw) : '',
       raw,
       latencyMs: Date.now() - startedAt,
+      usage: extractUsage(raw),
+      finishReason: extractFinishReason(raw),
       error: response.ok ? undefined : `CLOVA ${response.status}`,
     };
   } catch (err) {

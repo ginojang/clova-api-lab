@@ -1,10 +1,9 @@
 import Layout from './components/Layout';
-import ParamPanel from './components/ParamPanel';
-import ChatPanel from './components/ChatPanel';
-import RawPanel from './components/RawPanel';
+import ChatView from './components/ChatView';
+import BenchView from './components/BenchView';
+import { useClovaStore } from './store/useClovaStore';
 
 export default function App() {
-  return (
-    <Layout left={<ParamPanel />} center={<ChatPanel />} right={<RawPanel />} />
-  );
+  const mode = useClovaStore((s) => s.mode);
+  return <Layout>{mode === 'chat' ? <ChatView /> : <BenchView />}</Layout>;
 }

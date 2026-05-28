@@ -3,6 +3,8 @@ import type { ChatRequest, ChatResponse } from '../types/clova';
 import { postChat } from '../api/proxyClient';
 
 type ClovaState = {
+  mode: 'chat' | 'bench';
+
   // 파라미터
   model: string;
   systemPrompt: string;
@@ -21,6 +23,8 @@ type ClovaState = {
 };
 
 export const useClovaStore = create<ClovaState>((set, get) => ({
+  mode: 'chat',
+
   model: 'HCX-005',
   systemPrompt: '너는 테스트용 AI다.',
   userInput: '안녕?',

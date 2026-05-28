@@ -15,6 +15,12 @@ export type ChatRequest = {
   stream?: boolean;
 };
 
+export type TokenUsage = {
+  promptTokens?: number;
+  completionTokens?: number;
+  totalTokens?: number;
+};
+
 // 프록시 → 프론트 응답 (통일 포맷)
 export type ChatResponse = {
   ok: boolean;
@@ -23,6 +29,8 @@ export type ChatResponse = {
   content: string;
   raw: unknown; // CLOVA 원문 (개발 중 Raw 표시용)
   latencyMs: number;
+  usage?: TokenUsage;
+  finishReason?: string; // stop | length | ...
   error?: string;
 };
 

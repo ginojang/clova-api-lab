@@ -14,6 +14,12 @@ export type ChatRequest = {
   stream?: boolean;
 };
 
+export type TokenUsage = {
+  promptTokens?: number;
+  completionTokens?: number;
+  totalTokens?: number;
+};
+
 export type ChatResponse = {
   ok: boolean;
   provider: 'clova' | 'clova-openai';
@@ -21,5 +27,7 @@ export type ChatResponse = {
   content: string;
   raw: unknown;
   latencyMs: number;
+  usage?: TokenUsage;
+  finishReason?: string;
   error?: string;
 };

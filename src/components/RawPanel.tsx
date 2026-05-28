@@ -31,7 +31,7 @@ export default function RawPanel() {
         Raw / Log
       </h2>
 
-      <div className="mb-3 flex items-center gap-2 text-sm">
+      <div className="mb-2 flex items-center gap-2 text-sm">
         <span className="text-slate-500">Latency</span>
         <span className="font-mono text-slate-200">
           {lastResponse ? `${lastResponse.latencyMs} ms` : '—'}
@@ -48,6 +48,30 @@ export default function RawPanel() {
           </span>
         )}
       </div>
+
+      {lastResponse?.usage && (
+        <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400">
+          <span>
+            prompt <span className="font-mono text-slate-200">{lastResponse.usage.promptTokens ?? '—'}</span>
+          </span>
+          <span>
+            completion <span className="font-mono text-slate-200">{lastResponse.usage.completionTokens ?? '—'}</span>
+          </span>
+          <span>
+            total <span className="font-mono text-slate-200">{lastResponse.usage.totalTokens ?? '—'}</span>
+          </span>
+          {lastResponse.finishReason && (
+            <span>
+              finish{' '}
+              <span
+                className={`font-mono ${lastResponse.finishReason === 'length' ? 'text-amber-400' : 'text-slate-200'}`}
+              >
+                {lastResponse.finishReason}
+              </span>
+            </span>
+          )}
+        </div>
+      )}
 
       <JsonBlock title="Raw Request" value={lastRequest} />
       <JsonBlock title="Raw Response" value={lastResponse?.raw} />

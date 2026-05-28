@@ -25,6 +25,8 @@ clovaRouter.post('/chat', async (req, res) => {
     content: result.content,
     raw: result.raw,
     latencyMs: result.latencyMs,
+    usage: result.usage,
+    finishReason: result.finishReason,
     error: result.error,
   };
 

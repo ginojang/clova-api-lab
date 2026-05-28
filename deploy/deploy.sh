@@ -33,6 +33,7 @@ rsync -avz -e "$HRSYNC" deploy/clova-api-lab.service deploy/clova-api-lab-tunnel
 $HSSH "test -f ~/$SLOT/.env || cp ~/$SLOT/hellcat.env.example ~/$SLOT/.env; chmod 600 ~/$SLOT/.env"
 
 echo "== [4/4] hellcat 서비스 재시작 (부트스트랩 완료된 경우) =="
-$HSSH 'sudo -n systemctl restart clova-api-lab clova-api-lab-tunnel 2>/dev/null && echo "restarted" || echo "** units 미설치 — bootstrap-systemd.sh 를 1회 실행하세요 **"'
+# sudoers 는 유닛별 단일 명령만 NOPASSWD 허용 → 한 줄에 묶지 말고 각각 호출.
+$HSSH 'sudo -n systemctl restart clova-api-lab 2>/dev/null && echo "app restarted" || echo "** clova-api-lab units 미설치 — bootstrap-systemd.sh 를 1회 실행하세요 **"'
 
 echo "== done =="
