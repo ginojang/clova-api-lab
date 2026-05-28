@@ -1,0 +1,21 @@
+[Unit]
+Description=CLOVA API Lab Reverse SSH Tunnel to AmazonFront (-R 3600)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gino
+Environment=AUTOSSH_GATETIME=0
+Environment=AUTOSSH_POLL=30
+ExecStart=/usr/bin/autossh -M 0 -N \
+  -o ServerAliveInterval=10 \
+  -o ServerAliveCountMax=2 \
+  -o TCPKeepAlive=yes \
+  -o ExitOnForwardFailure=yes \
+  -R 3600:localhost:3600 AmazonFront
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

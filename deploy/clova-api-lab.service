@@ -1,0 +1,22 @@
+[Unit]
+Description=CLOVA API Lab proxy (Express on hellcat ~/apps/clova-api-lab)
+After=network.target
+
+[Service]
+Type=simple
+User=gino
+Group=gino
+WorkingDirectory=/home/gino/apps/clova-api-lab
+
+EnvironmentFile=/home/gino/apps/clova-api-lab/.env
+
+ExecStart=/usr/bin/node /home/gino/apps/clova-api-lab/index.js
+
+Restart=always
+RestartSec=3
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
