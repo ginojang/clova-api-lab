@@ -23,7 +23,7 @@ function JsonBlock({ title, value }: { title: string; value: unknown }) {
 }
 
 export default function RawPanel() {
-  const { lastRequest, lastResponse } = useClovaStore();
+  const { lastRequest, lastResponse, ttftMs } = useClovaStore();
 
   return (
     <div>
@@ -31,11 +31,19 @@ export default function RawPanel() {
         Raw / Log
       </h2>
 
-      <div className="mb-2 flex items-center gap-2 text-sm">
-        <span className="text-slate-500">Latency</span>
-        <span className="font-mono text-slate-200">
-          {lastResponse ? `${lastResponse.latencyMs} ms` : '—'}
+      <div className="mb-2 flex items-center gap-3 text-sm">
+        <span>
+          <span className="text-slate-500">Latency </span>
+          <span className="font-mono text-slate-200">
+            {lastResponse ? `${lastResponse.latencyMs}ms` : '—'}
+          </span>
         </span>
+        {ttftMs != null && (
+          <span>
+            <span className="text-slate-500">TTFT </span>
+            <span className="font-mono text-emerald-300">{ttftMs}ms</span>
+          </span>
+        )}
         {lastResponse && (
           <span
             className={`ml-auto rounded px-1.5 py-0.5 text-[10px] ${

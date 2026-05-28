@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { ChatRequest, ChatResponse } from '../types/clova';
-import { postChat } from '../api/proxyClient';
+import { postChat, postChatStream } from '../api/proxyClient';
 
 type ClovaState = {
   mode: 'chat' | 'bench';
@@ -12,11 +12,14 @@ type ClovaState = {
   temperature: number;
   topP: number;
   maxTokens: number;
+  stream: boolean;
 
   // 실행 결과
   loading: boolean;
   lastRequest: ChatRequest | null;
   lastResponse: ChatResponse | null;
+  streamingText: string; // 스트리밍 중 누적 텍스트(라이브 표시)
+  ttftMs: number | null; // time-to-first-token
 
   set: <K extends keyof ClovaState>(key: K, value: ClovaState[K]) => void;
   run: () => Promise<void>;
@@ -31,10 +34,13 @@ export const useClovaStore = create<ClovaState>((set, get) => ({
   temperature: 0.7,
   topP: 0.8,
   maxTokens: 512,
+  stream: true,
 
   loading: false,
   lastRequest: null,
   lastResponse: null,
+  streamingText: '',
+  ttftMs: null,
 
   set: (key, value) => set({ [key]: value } as Partial<ClovaState>),
 
@@ -53,10 +59,62 @@ export const useClovaStore = create<ClovaState>((set, get) => ({
       temperature: s.temperature,
       topP: s.topP,
       maxTokens: s.maxTokens,
-      stream: false,
+      stream: s.stream,
     };
 
-    set({ loading: true, lastRequest: request, lastResponse: null });
+    set({
+      loading: true,
+      lastRequest: request,
+      lastResponse: null,
+      streamingText: '',
+      ttftMs: null,
+    });
+
+    if (s.stream) {
+      const start = performance.now();
+      let acc = '';
+      let ttft: number | null = null;
+      await postChatStream(request, {
+        onToken: (text) => {
+          if (ttft === null) {
+            ttft = Math.round(performance.now() - start);
+            set({ ttftMs: ttft });
+          }
+          acc += text;
+          set({ streamingText: acc });
+        },
+        onDone: (meta) => {
+          set({
+            lastResponse: {
+              ok: true,
+              provider: 'clova',
+              model: s.model,
+              content: acc,
+              raw: { streamed: true, finishReason: meta.finishReason, usage: meta.usage },
+              latencyMs: meta.latencyMs ?? Math.round(performance.now() - start),
+              usage: meta.usage,
+              finishReason: meta.finishReason,
+            },
+          });
+        },
+        onError: (msg) => {
+          set({
+            lastResponse: {
+              ok: false,
+              provider: 'clova',
+              model: s.model,
+              content: acc,
+              raw: null,
+              latencyMs: Math.round(performance.now() - start),
+              error: msg,
+            },
+          });
+        },
+      });
+      set({ loading: false });
+      return;
+    }
+
     try {
       const lastResponse = await postChat(request);
       set({ lastResponse });

@@ -13,7 +13,7 @@ const inputCls =
   'w-full rounded border border-slate-700 bg-slate-900 px-2 py-1 text-sm text-slate-100 focus:border-slate-500 focus:outline-none';
 
 export default function ParamPanel() {
-  const { model, systemPrompt, temperature, topP, maxTokens, set } = useClovaStore();
+  const { model, systemPrompt, temperature, topP, maxTokens, stream, set } = useClovaStore();
 
   return (
     <div>
@@ -61,6 +61,15 @@ export default function ParamPanel() {
           onChange={(e) => set('maxTokens', Number(e.target.value))}
         />
       </Field>
+
+      <label className="mb-3 flex cursor-pointer items-center gap-2 text-sm text-slate-300">
+        <input
+          type="checkbox"
+          checked={stream}
+          onChange={(e) => set('stream', e.target.checked)}
+        />
+        Streaming (SSE)
+      </label>
 
       <Field label="System Prompt">
         <textarea
