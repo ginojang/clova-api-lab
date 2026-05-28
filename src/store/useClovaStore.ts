@@ -21,7 +21,7 @@ type ClovaState = {
 };
 
 export const useClovaStore = create<ClovaState>((set, get) => ({
-  model: 'HCX-003',
+  model: 'HCX-005',
   systemPrompt: '너는 테스트용 AI다.',
   userInput: '안녕?',
   temperature: 0.7,
