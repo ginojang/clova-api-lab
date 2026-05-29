@@ -11,6 +11,11 @@ import type { BenchRunRow, BenchRunDetail } from '../types/bench';
 
 const num = (x: string | number | null | undefined): number => (x == null ? 0 : Number(x));
 
+// 각 불릿(-, *) 항목 뒤에 빈 줄을 넣어 항목 사이를 한 줄 띄운다(loose list 렌더).
+function spaceBullets(md: string): string {
+  return md.replace(/^([ \t]*[-*] .+)$/gm, '$1\n');
+}
+
 function Stat({ label, value, tone }: { label: string; value: string; tone?: string }) {
   return (
     <div className="rounded border border-slate-800 bg-slate-900/50 px-3 py-2">
@@ -211,8 +216,8 @@ export default function BenchPanel() {
                           <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">평가 상세</div>
                           <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
                             {ev ? (
-                              <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-0.5">
-                                <ReactMarkdown>{ev.evaluation}</ReactMarkdown>
+                              <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-1">
+                                <ReactMarkdown>{spaceBullets(ev.evaluation)}</ReactMarkdown>
                               </div>
                             ) : (
                               <span className="text-slate-500">
