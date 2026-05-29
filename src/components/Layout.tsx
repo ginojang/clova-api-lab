@@ -7,8 +7,10 @@ function Tab({ id, label }: { id: Mode; label: string }) {
   return (
     <button
       onClick={() => set('mode', id)}
-      className={`rounded px-3 py-1 text-sm font-medium transition-colors ${
-        active ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200'
+      className={`rounded-lg border px-3.5 py-1.5 text-sm font-semibold transition-all duration-150 ${
+        active
+          ? 'border-emerald-400 bg-emerald-600 text-white shadow-lg shadow-emerald-900/50 ring-1 ring-emerald-400/60 -translate-y-0.5'
+          : 'border-slate-700 bg-slate-800/70 text-slate-300 hover:-translate-y-0.5 hover:border-slate-500 hover:bg-slate-700 hover:text-white hover:shadow-md hover:shadow-black/30'
       }`}
     >
       {label}
@@ -25,7 +27,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
           AI Provider Lab
         </span>
-        <nav className="ml-4 flex gap-1">
+        <nav className="ml-4 flex gap-2">
           <Tab id="bench" label="Bench" />
           <Tab id="llm" label="LLM-분석" />
           <Tab id="vision" label="Vision-분석" />
