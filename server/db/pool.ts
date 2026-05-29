@@ -26,12 +26,17 @@ export async function initDb(): Promise<boolean> {
   try {
     const mysql = await import('mysql2/promise');
 
-    // 1) DB 없이 접속해 데이터베이스 생성(idempotent)
-    const admin = await mysql.createConnection(baseCfg());
-    await admin.query(
-      `CREATE DATABASE IF NOT EXISTS \`${DB_NAME()}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`,
-    );
-    await admin.end();
+    // 1) DB 생성 시도(idempotent). 전역 CREATE 권한이 없으면(=관리자가 clova_lab을
+    //    미리 만들고 해당 DB만 GRANT한 경우) 실패해도 무시하고 2)에서 직접 접속한다.
+    try {
+      const admin = await mysql.createConnection(baseCfg());
+      await admin.query(
+        `CREATE DATABASE IF NOT EXISTS \`${DB_NAME()}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`,
+      );
+      await admin.end();
+    } catch (e) {
+      console.warn('[db] CREATE DATABASE 생략(권한 없음 추정):', e instanceof Error ? e.message : e);
+    }
 
     // 2) 풀 생성 + 테이블 마이그레이션
     pool = mysql.createPool({
