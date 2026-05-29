@@ -30,6 +30,8 @@ export type BenchResultRow = {
   label: string;
   category: string;
   round: number;
+  system_prompt: string | null;
+  user_prompt: string | null;
   ok: number;
   latency_ms: number;
   prompt_tokens: number | null;

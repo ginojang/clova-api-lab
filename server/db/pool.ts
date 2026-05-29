@@ -56,6 +56,14 @@ export async function initDb(): Promise<boolean> {
   }
 }
 
+async function addColumnIfMissing(p: Pool, table: string, colDef: string): Promise<void> {
+  try {
+    await p.query(`ALTER TABLE \`${table}\` ADD COLUMN ${colDef}`);
+  } catch (e) {
+    if ((e as { code?: string })?.code !== 'ER_DUP_FIELDNAME') throw e;
+  }
+}
+
 async function migrate(p: Pool): Promise<void> {
   await p.query(`CREATE TABLE IF NOT EXISTS bench_run (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -87,6 +95,8 @@ async function migrate(p: Pool): Promise<void> {
     label VARCHAR(128),
     category VARCHAR(64),
     round INT,
+    system_prompt TEXT NULL,
+    user_prompt MEDIUMTEXT NULL,
     ok TINYINT(1),
     latency_ms INT,
     prompt_tokens INT,
@@ -100,6 +110,10 @@ async function migrate(p: Pool): Promise<void> {
     error VARCHAR(255),
     INDEX idx_result_run (run_id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`);
+
+  // 기존 테이블 보강(이미 있으면 ER_DUP_FIELDNAME 무시)
+  await addColumnIfMissing(p, 'bench_result', 'system_prompt TEXT NULL');
+  await addColumnIfMissing(p, 'bench_result', 'user_prompt MEDIUMTEXT NULL');
 
   await p.query(`CREATE TABLE IF NOT EXISTS bench_evaluation (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,

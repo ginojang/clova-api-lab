@@ -40,9 +40,14 @@ export default function BenchPanel() {
 
   const refreshRuns = useCallback(async () => setRuns(await listBenchRuns()), []);
 
+  // 최초 진입: 목록을 불러오고 가장 최근 배치를 자동 선택(실행 안 눌러도 보이게).
   useEffect(() => {
-    void refreshRuns();
-  }, [refreshRuns]);
+    void (async () => {
+      const rs = await listBenchRuns();
+      setRuns(rs);
+      setRunId((prev) => prev ?? rs[0]?.id ?? null);
+    })();
+  }, []);
 
   // runId 가 정해지면 detail 폴링(완료되면 정지)
   useEffect(() => {
@@ -187,6 +192,16 @@ export default function BenchPanel() {
                   {expanded === key && (
                     <tr className="bg-slate-900/80">
                       <td colSpan={6} className="px-3 py-2">
+                        <div className="mb-2">
+                          <div className="mb-1 text-[10px] uppercase tracking-wide text-sky-500">질문</div>
+                          {row.system_prompt && (
+                            <div className="mb-1 whitespace-pre-wrap text-slate-400">
+                              <span className="text-slate-600">[system] </span>
+                              {row.system_prompt}
+                            </div>
+                          )}
+                          <div className="whitespace-pre-wrap text-slate-300">{row.user_prompt ?? '(이전 배치 — 질문 미저장)'}</div>
+                        </div>
                         <div className="mb-2">
                           <div className="mb-1 text-[10px] uppercase tracking-wide text-slate-500">모델 출력</div>
                           <div className="whitespace-pre-wrap text-slate-300">{row.content || '(빈 응답)'}</div>

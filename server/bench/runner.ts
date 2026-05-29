@@ -100,15 +100,18 @@ async function executeRun(runId: number, cfg: BenchConfig): Promise<void> {
 
       const [ins] = await pool.query<ResultSetHeader>(
         `INSERT INTO bench_result
-          (run_id, prompt_id, label, category, round, ok, latency_ms, prompt_tokens, completion_tokens,
-           tokens_per_sec, finish_reason, truncated, check_kind, check_pass, content, error)
-         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+          (run_id, prompt_id, label, category, round, system_prompt, user_prompt, ok, latency_ms,
+           prompt_tokens, completion_tokens, tokens_per_sec, finish_reason, truncated, check_kind,
+           check_pass, content, error)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
         [
           runId,
           p.id,
           p.label,
           p.category,
           round,
+          p.system ?? null,
+          p.user,
           out.ok ? 1 : 0,
           out.latencyMs,
           out.usage?.promptTokens ?? null,
