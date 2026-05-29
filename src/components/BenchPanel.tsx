@@ -11,9 +11,12 @@ import type { BenchRunRow, BenchRunDetail } from '../types/bench';
 
 const num = (x: string | number | null | undefined): number => (x == null ? 0 : Number(x));
 
-// 각 불릿(-, *) 항목 뒤에 빈 줄을 넣어 항목 사이를 한 줄 띄운다(loose list 렌더).
-function spaceBullets(md: string): string {
-  return md.replace(/^([ \t]*[-*] .+)$/gm, '$1\n');
+// 마크다운 가독성 정리: 헤딩(#...)·단독 굵은 줄(**라벨**) 앞뒤로 빈 줄, 불릿 뒤 한 줄.
+function spaceMarkdown(md: string): string {
+  return md
+    .replace(/^(#{1,6} .+)$/gm, '\n$1\n') // ## 종합 등 헤딩 위아래 띄움
+    .replace(/^(\*\*[^*\n]+\*\*:?)\s*$/gm, '\n$1\n') // 구버전 평가의 **강점** 단독 줄도 헤딩처럼
+    .replace(/^([ \t]*[-*] .+)$/gm, '$1\n'); // 불릿 항목 뒤 한 줄
 }
 
 function Stat({ label, value, tone }: { label: string; value: string; tone?: string }) {
@@ -217,7 +220,7 @@ export default function BenchPanel() {
                           <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
                             {ev ? (
                               <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-1">
-                                <ReactMarkdown>{spaceBullets(ev.evaluation)}</ReactMarkdown>
+                                <ReactMarkdown>{spaceMarkdown(ev.evaluation)}</ReactMarkdown>
                               </div>
                             ) : (
                               <span className="text-slate-500">
