@@ -2,8 +2,10 @@ import { create } from 'zustand';
 import type { ChatRequest, ChatResponse } from '../types/clova';
 import { postChat, postChatStream } from '../api/proxyClient';
 
+export type Mode = 'bench' | 'llm' | 'vision' | 'fsm' | 'chat';
+
 type ClovaState = {
-  mode: 'chat' | 'bench';
+  mode: Mode;
 
   // 파라미터
   model: string;

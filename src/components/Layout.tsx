@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import { useClovaStore } from '../store/useClovaStore';
+import { useClovaStore, type Mode } from '../store/useClovaStore';
 
-function Tab({ id, label }: { id: 'chat' | 'bench'; label: string }) {
+function Tab({ id, label }: { id: Mode; label: string }) {
   const { mode, set } = useClovaStore();
   const active = mode === id;
   return (
@@ -27,6 +27,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         </span>
         <nav className="ml-4 flex gap-1">
           <Tab id="bench" label="Bench" />
+          <Tab id="llm" label="LLM-분석" />
+          <Tab id="vision" label="Vision-분석" />
+          <Tab id="fsm" label="FSM-분석" />
           <Tab id="chat" label="Chat" />
         </nav>
       </header>
