@@ -143,32 +143,8 @@ async function executeRun(runId: number, cfg: BenchConfig): Promise<void> {
     }
   }
 
-  // 집계
-  const okStats = stats.filter((s) => s.ok);
-  const latencies = okStats.map((s) => s.latencyMs).sort((a, b) => a - b);
-  const tpsVals = okStats.map((s) => s.tps).filter((x): x is number => x != null);
-  const checked = stats.filter((s) => s.checkPass !== null);
-  const passCount = checked.filter((s) => s.checkPass).length;
-
-  await pool.query(
-    `UPDATE bench_run SET total_calls=?, errors=?, truncated=?, latency_p50=?, latency_p95=?,
-       avg_tok_s=?, total_completion_tokens=?, pass_count=?, checked_count=?, pass_rate=? WHERE id=?`,
-    [
-      stats.length,
-      stats.length - okStats.length,
-      stats.filter((s) => s.truncated).length,
-      percentile(latencies, 50),
-      percentile(latencies, 95),
-      tpsVals.length ? Math.round((tpsVals.reduce((a, b) => a + b, 0) / tpsVals.length) * 10) / 10 : 0,
-      okStats.reduce((a, s) => a + (s.completion ?? 0), 0),
-      passCount,
-      checked.length,
-      checked.length ? passCount / checked.length : 0,
-      runId,
-    ],
-  );
-
-  // 항목별 Claude 평가 (동시 3개)
+  // 항목별 Claude 평가(동시 3개) — PASS/FAIL 판정은 이 평가에서 나온다(휴리스틱 아님).
+  const verdictByPrompt = new Map<string, 'PASS' | 'FAIL' | null>();
   const targets = [...judgeTargets.values()];
   await mapLimit(targets, 3, async (t) => {
     const evaluation = await judgeOutput({
@@ -178,12 +154,44 @@ async function executeRun(runId: number, cfg: BenchConfig): Promise<void> {
       output: t.content,
       finishReason: t.finishReason,
     });
+    const verdict = parseVerdict(evaluation);
+    verdictByPrompt.set(t.promptId, verdict);
     await pool.query(
-      `INSERT INTO bench_evaluation (run_id, result_id, prompt_id, category, judge, judge_model, evaluation, created_at)
-       VALUES (?,?,?,?,?,?,?,NOW())`,
-      [runId, t.resultId, t.promptId, t.category, 'claude-cli', process.env.CLAUDE_JUDGE_MODEL ?? '', evaluation],
+      `INSERT INTO bench_evaluation (run_id, result_id, prompt_id, category, judge, judge_model, verdict, evaluation, created_at)
+       VALUES (?,?,?,?,?,?,?,?,NOW())`,
+      [runId, t.resultId, t.promptId, t.category, 'claude-cli', process.env.CLAUDE_JUDGE_MODEL ?? '', verdict, evaluation],
     );
   });
 
-  await pool.query(`UPDATE bench_run SET status='done' WHERE id=?`, [runId]);
+  // 집계 — 지연/처리량은 호출 통계에서, 통과율은 Claude 판정에서.
+  const okStats = stats.filter((s) => s.ok);
+  const latencies = okStats.map((s) => s.latencyMs).sort((a, b) => a - b);
+  const tpsVals = okStats.map((s) => s.tps).filter((x): x is number => x != null);
+  const verdicts = [...verdictByPrompt.values()];
+  const checkedCount = verdicts.filter((v) => v === 'PASS' || v === 'FAIL').length;
+  const passCount = verdicts.filter((v) => v === 'PASS').length;
+
+  await pool.query(
+    `UPDATE bench_run SET total_calls=?, errors=?, truncated=?, latency_p50=?, latency_p95=?,
+       avg_tok_s=?, total_completion_tokens=?, pass_count=?, checked_count=?, pass_rate=?, status='done' WHERE id=?`,
+    [
+      stats.length,
+      stats.length - okStats.length,
+      stats.filter((s) => s.truncated).length,
+      percentile(latencies, 50),
+      percentile(latencies, 95),
+      tpsVals.length ? Math.round((tpsVals.reduce((a, b) => a + b, 0) / tpsVals.length) * 10) / 10 : 0,
+      okStats.reduce((a, s) => a + (s.completion ?? 0), 0),
+      passCount,
+      checkedCount,
+      checkedCount ? passCount / checkedCount : 0,
+      runId,
+    ],
+  );
+}
+
+// Claude 평가 첫 줄의 "판정: PASS|FAIL" 추출.
+function parseVerdict(text: string): 'PASS' | 'FAIL' | null {
+  const m = text.match(/판정\s*[:：]\s*(PASS|FAIL)/i);
+  return m ? (m[1].toUpperCase() as 'PASS' | 'FAIL') : null;
 }

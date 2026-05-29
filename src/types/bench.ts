@@ -53,6 +53,7 @@ export type BenchEvalRow = {
   category: string;
   judge: string;
   judge_model: string;
+  verdict: 'PASS' | 'FAIL' | null;
   evaluation: string;
   created_at: string;
 };

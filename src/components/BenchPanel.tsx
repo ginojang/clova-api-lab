@@ -1,5 +1,5 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { type Components } from 'react-markdown';
 import { useClovaStore } from '../store/useClovaStore';
 import {
   startBenchRun,
@@ -28,14 +28,21 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: str
   );
 }
 
-function CheckBadge({ pass }: { pass: number | null }) {
-  if (pass === null) return <span className="text-slate-600">—</span>;
-  return pass ? (
-    <span className="rounded bg-emerald-900/60 px-1.5 py-0.5 text-[10px] text-emerald-300">PASS</span>
-  ) : (
-    <span className="rounded bg-red-900/60 px-1.5 py-0.5 text-[10px] text-red-300">FAIL</span>
-  );
+// 판정은 Claude 상세 평가의 'PASS/FAIL'을 따른다(휴리스틱·API성공 아님).
+function VerdictBadge({ verdict, pending }: { verdict: 'PASS' | 'FAIL' | null | undefined; pending: boolean }) {
+  if (verdict === 'PASS')
+    return <span className="rounded bg-emerald-900/60 px-1.5 py-0.5 text-[10px] text-emerald-300">PASS</span>;
+  if (verdict === 'FAIL')
+    return <span className="rounded bg-red-900/60 px-1.5 py-0.5 text-[10px] text-red-300">FAIL</span>;
+  return <span className="text-[10px] text-slate-500">{pending ? '평가중…' : '—'}</span>;
 }
+
+// 평가 마크다운 헤딩을 작게·간격 있게(## 가 너무 크지 않도록).
+const mdComponents: Components = {
+  h1: ({ node: _n, ...p }) => <div className="mt-3 mb-1 text-xs font-bold text-slate-100" {...p} />,
+  h2: ({ node: _n, ...p }) => <div className="mt-3 mb-1 text-xs font-bold text-slate-100" {...p} />,
+  h3: ({ node: _n, ...p }) => <div className="mt-2 mb-1 text-xs font-semibold text-slate-200" {...p} />,
+};
 
 export default function BenchPanel() {
   const { model, temperature, topP } = useClovaStore();
@@ -185,7 +192,11 @@ export default function BenchPanel() {
                       {num(r?.repeats) > 1 && <span className="text-slate-600"> #{row.round}</span>}
                     </td>
                     <td className="px-2 py-1.5">
-                      {row.ok ? <CheckBadge pass={row.check_pass} /> : <span className="text-red-400">{row.error}</span>}
+                      {row.ok ? (
+                        <VerdictBadge verdict={ev?.verdict} pending={r?.status === 'running'} />
+                      ) : (
+                        <span className="text-red-400">{row.error}</span>
+                      )}
                     </td>
                     <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.latency_ms}</td>
                     <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.tokens_per_sec ?? '—'}</td>
@@ -219,8 +230,8 @@ export default function BenchPanel() {
                           <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">평가 상세</div>
                           <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
                             {ev ? (
-                              <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-1">
-                                <ReactMarkdown>{spaceMarkdown(ev.evaluation)}</ReactMarkdown>
+                              <div className="prose prose-invert prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-1">
+                                <ReactMarkdown components={mdComponents}>{spaceMarkdown(ev.evaluation)}</ReactMarkdown>
                               </div>
                             ) : (
                               <span className="text-slate-500">

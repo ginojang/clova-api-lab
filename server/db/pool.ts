@@ -123,8 +123,10 @@ async function migrate(p: Pool): Promise<void> {
     category VARCHAR(64),
     judge VARCHAR(32),
     judge_model VARCHAR(64),
+    verdict VARCHAR(8) NULL,
     evaluation MEDIUMTEXT,
     created_at DATETIME NOT NULL,
     INDEX idx_eval_run (run_id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`);
+  await addColumnIfMissing(p, 'bench_evaluation', 'verdict VARCHAR(8) NULL');
 }
