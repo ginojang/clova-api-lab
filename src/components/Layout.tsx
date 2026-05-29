@@ -26,8 +26,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           AI Provider Lab
         </span>
         <nav className="ml-4 flex gap-1">
-          <Tab id="chat" label="Chat" />
           <Tab id="bench" label="Bench" />
+          <Tab id="chat" label="Chat" />
         </nav>
       </header>
       <div className="min-h-0 flex-1">{children}</div>
