@@ -1,30 +1,13 @@
-import type { ResultSetHeader } from 'mysql2';
+import type { ResultSetHeader, RowDataPacket } from 'mysql2';
 import { getPool } from '../db/pool.ts';
 import { callClovaChat } from '../services/clovaService.ts';
-import { BENCH_SUITE } from './suite.ts';
-import { evaluateCheck } from './checks.ts';
+import { BENCH_SUITE, type BenchPrompt } from './suite.ts';
 import { judgeOutput } from './judge.ts';
 
-export type BenchConfig = {
-  model: string;
-  temperature: number;
-  topP: number;
-  repeats: number;
-};
-
-type RoundStat = {
-  ok: boolean;
-  latencyMs: number;
-  tps: number | null;
-  completion: number | null;
-  truncated: boolean;
-  checkPass: boolean | null;
-};
-
-function percentile(sorted: number[], p: number): number {
-  if (!sorted.length) return 0;
-  const idx = Math.min(sorted.length - 1, Math.ceil((p / 100) * sorted.length) - 1);
-  return sorted[Math.max(0, idx)];
+// 진행 중인 모델(메모리). 재시작 시 초기화.
+const runningModels = new Set<string>();
+export function isModelRunning(model: string): boolean {
+  return runningModels.has(model);
 }
 
 async function mapLimit<T>(items: T[], limit: number, fn: (item: T) => Promise<void>): Promise<void> {
@@ -38,163 +21,111 @@ async function mapLimit<T>(items: T[], limit: number, fn: (item: T) => Promise<v
   await Promise.all(workers);
 }
 
-// bench_run 행을 만들고 백그라운드로 실행. runId 즉시 반환.
-export async function startRun(cfg: BenchConfig): Promise<number> {
-  const pool = getPool();
-  if (!pool) throw new Error('DB unavailable');
-
-  const [ins] = await pool.query<ResultSetHeader>(
-    `INSERT INTO bench_run (created_at, provider, model, temperature, top_p, repeats, prompt_count, status)
-     VALUES (NOW(), 'clova', ?, ?, ?, ?, ?, 'running')`,
-    [cfg.model, cfg.temperature, cfg.topP, cfg.repeats, BENCH_SUITE.length],
-  );
-  const runId = ins.insertId;
-
-  void executeRun(runId, cfg).catch(async (e) => {
-    try {
-      await pool.query(`UPDATE bench_run SET status='error', note=? WHERE id=?`, [
-        String(e?.message ?? e).slice(0, 2000),
-        runId,
-      ]);
-    } catch {
-      /* ignore */
-    }
-  });
-
-  return runId;
-}
-
-async function executeRun(runId: number, cfg: BenchConfig): Promise<void> {
-  const pool = getPool();
-  if (!pool) return;
-
-  const rounds = Math.max(1, cfg.repeats);
-  const stats: RoundStat[] = [];
-  // 프롬프트별 round=1 결과(평가 대상)
-  const judgeTargets = new Map<
-    string,
-    { promptId: string; resultId: number; content: string; finishReason?: string; label: string; system?: string; user: string; category: string }
-  >();
-
-  for (let round = 1; round <= rounds; round++) {
-    for (const p of BENCH_SUITE) {
-      const out = await callClovaChat({
-        model: cfg.model,
-        messages: [
-          ...(p.system ? [{ role: 'system' as const, content: p.system }] : []),
-          { role: 'user' as const, content: p.user },
-        ],
-        temperature: cfg.temperature,
-        topP: cfg.topP,
-        maxTokens: p.maxTokens ?? 256,
-        stream: false,
-      });
-
-      const completion = out.usage?.completionTokens ?? null;
-      const tps =
-        out.ok && completion && out.latencyMs > 0
-          ? Math.round((completion / out.latencyMs) * 1000 * 10) / 10
-          : null;
-      const truncated = out.finishReason === 'length';
-      const checkPass = out.ok ? evaluateCheck(out.content, out.finishReason, p.check) : null;
-
-      const [ins] = await pool.query<ResultSetHeader>(
-        `INSERT INTO bench_result
-          (run_id, prompt_id, label, category, round, system_prompt, user_prompt, ok, latency_ms,
-           prompt_tokens, completion_tokens, tokens_per_sec, finish_reason, truncated, check_kind,
-           check_pass, content, error)
-         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-        [
-          runId,
-          p.id,
-          p.label,
-          p.category,
-          round,
-          p.system ?? null,
-          p.user,
-          out.ok ? 1 : 0,
-          out.latencyMs,
-          out.usage?.promptTokens ?? null,
-          completion,
-          tps,
-          out.finishReason ?? null,
-          truncated ? 1 : 0,
-          p.check.kind,
-          checkPass === null ? null : checkPass ? 1 : 0,
-          out.content ?? '',
-          out.error ?? null,
-        ],
-      );
-
-      stats.push({ ok: out.ok, latencyMs: out.latencyMs, tps, completion, truncated, checkPass });
-
-      if (round === 1) {
-        judgeTargets.set(p.id, {
-          promptId: p.id,
-          resultId: ins.insertId,
-          content: out.content ?? '',
-          finishReason: out.finishReason,
-          label: p.label,
-          system: p.system,
-          user: p.user,
-          category: p.category,
-        });
-      }
-    }
-  }
-
-  // 항목별 Claude 평가(동시 3개) — PASS/FAIL 판정은 이 평가에서 나온다(휴리스틱 아님).
-  const verdictByPrompt = new Map<string, 'PASS' | 'FAIL' | null>();
-  const targets = [...judgeTargets.values()];
-  await mapLimit(targets, 3, async (t) => {
-    const evaluation = await judgeOutput({
-      label: t.label,
-      system: t.system,
-      user: t.user,
-      output: t.content,
-      finishReason: t.finishReason,
-    });
-    const verdict = parseVerdict(evaluation);
-    verdictByPrompt.set(t.promptId, verdict);
-    await pool.query(
-      `INSERT INTO bench_evaluation (run_id, result_id, prompt_id, category, judge, judge_model, verdict, evaluation, created_at)
-       VALUES (?,?,?,?,?,?,?,?,NOW())`,
-      [runId, t.resultId, t.promptId, t.category, 'claude-cli', process.env.CLAUDE_JUDGE_MODEL ?? '', verdict, evaluation],
-    );
-  });
-
-  // 집계 — 지연/처리량은 호출 통계에서, 통과율은 Claude 판정에서.
-  const okStats = stats.filter((s) => s.ok);
-  const latencies = okStats.map((s) => s.latencyMs).sort((a, b) => a - b);
-  const tpsVals = okStats.map((s) => s.tps).filter((x): x is number => x != null);
-  const verdicts = [...verdictByPrompt.values()];
-  const checkedCount = verdicts.filter((v) => v === 'PASS' || v === 'FAIL').length;
-  const passCount = verdicts.filter((v) => v === 'PASS').length;
-
-  await pool.query(
-    `UPDATE bench_run SET total_calls=?, errors=?, truncated=?, latency_p50=?, latency_p95=?,
-       avg_tok_s=?, total_completion_tokens=?, pass_count=?, checked_count=?, pass_rate=?, status='done' WHERE id=?`,
-    [
-      stats.length,
-      stats.length - okStats.length,
-      stats.filter((s) => s.truncated).length,
-      percentile(latencies, 50),
-      percentile(latencies, 95),
-      tpsVals.length ? Math.round((tpsVals.reduce((a, b) => a + b, 0) / tpsVals.length) * 10) / 10 : 0,
-      okStats.reduce((a, s) => a + (s.completion ?? 0), 0),
-      passCount,
-      checkedCount,
-      checkedCount ? passCount / checkedCount : 0,
-      runId,
-    ],
-  );
-}
-
-// Claude 평가의 최종 판정 추출. 모델이 중간에 자기정정하므로 '최종판정'을 우선,
-// 없으면 일반 '판정' 중 **마지막** 매치를 쓴다(첫 줄의 성급한 판정에 속지 않게).
+// Claude 평가의 최종 판정 추출(자기정정 대비 — '최종판정' 우선, 없으면 마지막 '판정').
 function parseVerdict(text: string): 'PASS' | 'FAIL' | null {
   const fin = [...text.matchAll(/최종\s*판정\s*[:：]\s*(PASS|FAIL)/gi)];
   if (fin.length) return fin[fin.length - 1][1].toUpperCase() as 'PASS' | 'FAIL';
   const any = [...text.matchAll(/판정\s*[:：]\s*(PASS|FAIL)/gi)];
   return any.length ? (any[any.length - 1][1].toUpperCase() as 'PASS' | 'FAIL') : null;
+}
+
+// 모델의 미평가(verdict NULL 또는 셀 없음) 프롬프트만 계산해 upsert. 비동기 백그라운드.
+export async function startMissing(model: string): Promise<{ pending: number; running: boolean }> {
+  const pool = getPool();
+  if (!pool) throw new Error('DB unavailable');
+
+  const [rows] = await pool.query<RowDataPacket[]>(
+    `SELECT prompt_id FROM bench_cell WHERE model=? AND verdict IS NOT NULL`,
+    [model],
+  );
+  const done = new Set(rows.map((r) => r.prompt_id as string));
+  const missing = BENCH_SUITE.filter((p) => !done.has(p.id));
+
+  if (!missing.length || runningModels.has(model)) {
+    return { pending: missing.length, running: runningModels.has(model) };
+  }
+
+  runningModels.add(model);
+  void (async () => {
+    try {
+      await mapLimit(missing, 3, (p) => computeCell(model, p));
+    } finally {
+      runningModels.delete(model);
+    }
+  })();
+
+  return { pending: missing.length, running: true };
+}
+
+async function computeCell(model: string, p: BenchPrompt): Promise<void> {
+  const pool = getPool();
+  if (!pool) return;
+
+  const out = await callClovaChat({
+    model,
+    messages: [
+      ...(p.system ? [{ role: 'system' as const, content: p.system }] : []),
+      { role: 'user' as const, content: p.user },
+    ],
+    temperature: 0.5,
+    topP: 0.8,
+    maxTokens: p.maxTokens ?? 1024,
+    stream: false,
+  });
+
+  const completion = out.usage?.completionTokens ?? null;
+  const tps =
+    out.ok && completion && out.latencyMs > 0
+      ? Math.round((completion / out.latencyMs) * 1000 * 10) / 10
+      : null;
+
+  let evaluation: string | null = null;
+  let verdict: 'PASS' | 'FAIL' | null = null;
+  if (out.ok) {
+    evaluation = await judgeOutput({
+      label: p.label,
+      system: p.system,
+      user: p.user,
+      output: out.content,
+      finishReason: out.finishReason,
+    });
+    verdict = parseVerdict(evaluation);
+  }
+
+  await pool.query<ResultSetHeader>(
+    `INSERT INTO bench_cell
+      (model, prompt_id, label, category, system_prompt, user_prompt, ok, latency_ms, prompt_tokens,
+       completion_tokens, tokens_per_sec, finish_reason, truncated, verdict, judge, judge_model,
+       evaluation, content, error, created_at, updated_at)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())
+     ON DUPLICATE KEY UPDATE
+       label=VALUES(label), category=VALUES(category), system_prompt=VALUES(system_prompt),
+       user_prompt=VALUES(user_prompt), ok=VALUES(ok), latency_ms=VALUES(latency_ms),
+       prompt_tokens=VALUES(prompt_tokens), completion_tokens=VALUES(completion_tokens),
+       tokens_per_sec=VALUES(tokens_per_sec), finish_reason=VALUES(finish_reason),
+       truncated=VALUES(truncated), verdict=VALUES(verdict), judge=VALUES(judge),
+       judge_model=VALUES(judge_model), evaluation=VALUES(evaluation), content=VALUES(content),
+       error=VALUES(error), updated_at=NOW()`,
+    [
+      model,
+      p.id,
+      p.label,
+      p.category,
+      p.system ?? null,
+      p.user,
+      out.ok ? 1 : 0,
+      out.latencyMs,
+      out.usage?.promptTokens ?? null,
+      completion,
+      tps,
+      out.finishReason ?? null,
+      out.finishReason === 'length' ? 1 : 0,
+      verdict,
+      'claude-cli',
+      process.env.CLAUDE_JUDGE_MODEL ?? '',
+      evaluation,
+      out.content ?? '',
+      out.error ?? null,
+    ],
+  );
 }

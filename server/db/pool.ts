@@ -56,45 +56,14 @@ export async function initDb(): Promise<boolean> {
   }
 }
 
-async function addColumnIfMissing(p: Pool, table: string, colDef: string): Promise<void> {
-  try {
-    await p.query(`ALTER TABLE \`${table}\` ADD COLUMN ${colDef}`);
-  } catch (e) {
-    if ((e as { code?: string })?.code !== 'ER_DUP_FIELDNAME') throw e;
-  }
-}
-
+// (모델 × 프롬프트) 셀 캐시. 한 번 평가된 셀은 재호출하지 않고 미평가만 채운다.
 async function migrate(p: Pool): Promise<void> {
-  await p.query(`CREATE TABLE IF NOT EXISTS bench_run (
+  await p.query(`CREATE TABLE IF NOT EXISTS bench_cell (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    created_at DATETIME NOT NULL,
-    provider VARCHAR(32),
-    model VARCHAR(64),
-    temperature DECIMAL(3,2),
-    top_p DECIMAL(3,2),
-    repeats INT,
-    prompt_count INT,
-    total_calls INT,
-    errors INT,
-    truncated INT,
-    latency_p50 INT,
-    latency_p95 INT,
-    avg_tok_s DECIMAL(7,1),
-    total_completion_tokens INT,
-    pass_count INT,
-    checked_count INT,
-    pass_rate DECIMAL(5,4),
-    status VARCHAR(16) NOT NULL DEFAULT 'running',
-    note TEXT
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`);
-
-  await p.query(`CREATE TABLE IF NOT EXISTS bench_result (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    run_id BIGINT NOT NULL,
-    prompt_id VARCHAR(64),
+    model VARCHAR(64) NOT NULL,
+    prompt_id VARCHAR(64) NOT NULL,
     label VARCHAR(128),
     category VARCHAR(64),
-    round INT,
     system_prompt TEXT NULL,
     user_prompt MEDIUMTEXT NULL,
     ok TINYINT(1),
@@ -104,29 +73,14 @@ async function migrate(p: Pool): Promise<void> {
     tokens_per_sec DECIMAL(7,1),
     finish_reason VARCHAR(32),
     truncated TINYINT(1),
-    check_kind VARCHAR(32),
-    check_pass TINYINT(1) NULL,
-    content MEDIUMTEXT,
-    error VARCHAR(255),
-    INDEX idx_result_run (run_id)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`);
-
-  // 기존 테이블 보강(이미 있으면 ER_DUP_FIELDNAME 무시)
-  await addColumnIfMissing(p, 'bench_result', 'system_prompt TEXT NULL');
-  await addColumnIfMissing(p, 'bench_result', 'user_prompt MEDIUMTEXT NULL');
-
-  await p.query(`CREATE TABLE IF NOT EXISTS bench_evaluation (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    run_id BIGINT NOT NULL,
-    result_id BIGINT,
-    prompt_id VARCHAR(64),
-    category VARCHAR(64),
+    verdict VARCHAR(8) NULL,
     judge VARCHAR(32),
     judge_model VARCHAR(64),
-    verdict VARCHAR(8) NULL,
     evaluation MEDIUMTEXT,
-    created_at DATETIME NOT NULL,
-    INDEX idx_eval_run (run_id)
+    content MEDIUMTEXT,
+    error VARCHAR(255),
+    created_at DATETIME,
+    updated_at DATETIME,
+    UNIQUE KEY uq_model_prompt (model, prompt_id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`);
-  await addColumnIfMissing(p, 'bench_evaluation', 'verdict VARCHAR(8) NULL');
 }

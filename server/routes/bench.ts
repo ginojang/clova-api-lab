@@ -1,67 +1,78 @@
 import { Router } from 'express';
 import type { RowDataPacket } from 'mysql2';
 import { getPool } from '../db/pool.ts';
-import { startRun } from '../bench/runner.ts';
+import { startMissing, isModelRunning } from '../bench/runner.ts';
+import { BENCH_SUITE } from '../bench/suite.ts';
 
 export const benchRouter = Router();
 
-// POST /api/bench/run — 서버측 배치 실행 시작(비동기). { runId } 반환.
+// 프롬프트 세트 메타(프론트가 미평가 항목까지 행으로 표시).
+benchRouter.get('/suite', (_req, res) => {
+  res.json({
+    ok: true,
+    prompts: BENCH_SUITE.map((p) => ({
+      id: p.id,
+      label: p.label,
+      category: p.category,
+      system: p.system ?? null,
+      user: p.user,
+    })),
+  });
+});
+
+// POST /run {model} — 미평가 셀만 채운다(이미 평가된 건 재호출 안 함).
 benchRouter.post('/run', async (req, res) => {
   if (!getPool()) {
-    res.status(503).json({ ok: false, error: 'DB 비활성 — 벤치 영속화 불가' });
+    res.status(503).json({ ok: false, error: 'DB 비활성' });
     return;
   }
-  const { model, temperature, topP, repeats } = req.body ?? {};
+  const model = String(req.body?.model ?? '').trim();
   if (!model) {
     res.status(400).json({ ok: false, error: 'model 은 필수입니다.' });
     return;
   }
   try {
-    const runId = await startRun({
-      model: String(model),
-      temperature: Number(temperature ?? 0.5),
-      topP: Number(topP ?? 0.8),
-      repeats: Math.max(1, Number(repeats ?? 1)),
-    });
-    res.json({ ok: true, runId });
+    const { pending, running } = await startMissing(model);
+    res.json({ ok: true, model, pending, running });
   } catch (e) {
     res.status(500).json({ ok: false, error: e instanceof Error ? e.message : String(e) });
   }
 });
 
-// GET /api/bench/runs — 최근 배치 목록
-benchRouter.get('/runs', async (_req, res) => {
+// GET /cells?model=X — 해당 모델의 셀(평가 결과). running 플래그 포함.
+benchRouter.get('/cells', async (req, res) => {
   const pool = getPool();
   if (!pool) {
     res.status(503).json({ ok: false, error: 'DB 비활성' });
     return;
   }
-  const [runs] = await pool.query<RowDataPacket[]>(
-    `SELECT * FROM bench_run ORDER BY id DESC LIMIT 50`,
+  const model = String(req.query.model ?? '').trim();
+  if (!model) {
+    res.status(400).json({ ok: false, error: 'model 쿼리 필수' });
+    return;
+  }
+  const [cells] = await pool.query<RowDataPacket[]>(
+    `SELECT * FROM bench_cell WHERE model=? ORDER BY id`,
+    [model],
   );
-  res.json({ ok: true, runs });
+  res.json({
+    ok: true,
+    model,
+    total: BENCH_SUITE.length,
+    running: isModelRunning(model),
+    cells,
+  });
 });
 
-// GET /api/bench/runs/:id — 배치 1건 + 결과 + Claude 평가
-benchRouter.get('/runs/:id', async (req, res) => {
+// GET /models — 셀이 있는 모델 목록.
+benchRouter.get('/models', async (_req, res) => {
   const pool = getPool();
   if (!pool) {
     res.status(503).json({ ok: false, error: 'DB 비활성' });
     return;
   }
-  const id = Number(req.params.id);
-  const [runs] = await pool.query<RowDataPacket[]>(`SELECT * FROM bench_run WHERE id=?`, [id]);
-  if (!runs.length) {
-    res.status(404).json({ ok: false, error: 'run not found' });
-    return;
-  }
-  const [results] = await pool.query<RowDataPacket[]>(
-    `SELECT * FROM bench_result WHERE run_id=? ORDER BY id`,
-    [id],
+  const [rows] = await pool.query<RowDataPacket[]>(
+    `SELECT model, COUNT(*) AS n FROM bench_cell GROUP BY model ORDER BY MAX(updated_at) DESC`,
   );
-  const [evaluations] = await pool.query<RowDataPacket[]>(
-    `SELECT * FROM bench_evaluation WHERE run_id=? ORDER BY id`,
-    [id],
-  );
-  res.json({ ok: true, run: runs[0], results, evaluations });
+  res.json({ ok: true, models: rows });
 });

@@ -1,5 +1,5 @@
 import type { ChatRequest, ChatResponse, TokenUsage } from '../types/clova';
-import type { BenchRunRow, BenchRunDetail } from '../types/bench';
+import type { BenchCell, SuitePrompt, ModelStat } from '../types/bench';
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3600';
 
@@ -89,33 +89,38 @@ export async function postChatStream(req: ChatRequest, cb: StreamCallbacks): Pro
   }
 }
 
-// ── Bench (서버측 배치 + DB) ──────────────────────────────
-export type BenchRunConfig = {
-  model: string;
-  temperature: number;
-  topP: number;
-  repeats: number;
-};
-
-export async function startBenchRun(cfg: BenchRunConfig): Promise<{ ok: boolean; runId?: number; error?: string }> {
+// ── Bench (모델×프롬프트 셀 캐시) ──────────────────────────
+// 미평가 셀만 채운다(이미 평가된 건 재호출하지 않음).
+export async function startBenchRun(
+  model: string,
+): Promise<{ ok: boolean; pending?: number; running?: boolean; error?: string }> {
   const res = await fetch(`${API_BASE}/api/bench/run`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(cfg),
+    body: JSON.stringify({ model }),
   });
   return res.json();
 }
 
-export async function listBenchRuns(): Promise<BenchRunRow[]> {
-  const res = await fetch(`${API_BASE}/api/bench/runs`);
-  if (!res.ok) return [];
+export async function getBenchCells(
+  model: string,
+): Promise<{ cells: BenchCell[]; running: boolean; total: number }> {
+  const res = await fetch(`${API_BASE}/api/bench/cells?model=${encodeURIComponent(model)}`);
+  if (!res.ok) return { cells: [], running: false, total: 0 };
   const d = await res.json();
-  return d.runs ?? [];
+  return { cells: d.cells ?? [], running: !!d.running, total: d.total ?? 0 };
 }
 
-export async function getBenchRun(id: number): Promise<BenchRunDetail | null> {
-  const res = await fetch(`${API_BASE}/api/bench/runs/${id}`);
-  if (!res.ok) return null;
+export async function listBenchModels(): Promise<ModelStat[]> {
+  const res = await fetch(`${API_BASE}/api/bench/models`);
+  if (!res.ok) return [];
   const d = await res.json();
-  return d.ok ? { run: d.run, results: d.results, evaluations: d.evaluations } : null;
+  return d.models ?? [];
+}
+
+export async function getBenchSuite(): Promise<SuitePrompt[]> {
+  const res = await fetch(`${API_BASE}/api/bench/suite`);
+  if (!res.ok) return [];
+  const d = await res.json();
+  return d.prompts ?? [];
 }

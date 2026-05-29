@@ -1,23 +1,10 @@
-import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import { useClovaStore } from '../store/useClovaStore';
-import {
-  startBenchRun,
-  listBenchRuns,
-  getBenchRun,
-  type BenchRunConfig,
-} from '../api/proxyClient';
-import type { BenchRunRow, BenchRunDetail } from '../types/bench';
+import { startBenchRun, getBenchCells, listBenchModels, getBenchSuite } from '../api/proxyClient';
+import type { BenchCell, SuitePrompt, ModelStat } from '../types/bench';
 
 const num = (x: string | number | null | undefined): number => (x == null ? 0 : Number(x));
-
-// 마크다운 가독성 정리: 헤딩(#...)·단독 굵은 줄(**라벨**) 앞뒤로 빈 줄, 불릿 뒤 한 줄.
-function spaceMarkdown(md: string): string {
-  return md
-    .replace(/^(#{1,6} .+)$/gm, '\n$1\n') // ## 종합 등 헤딩 위아래 띄움
-    .replace(/^(\*\*[^*\n]+\*\*:?)\s*$/gm, '\n$1\n') // 구버전 평가의 **강점** 단독 줄도 헤딩처럼
-    .replace(/^([ \t]*[-*] .+)$/gm, '$1\n'); // 불릿 항목 뒤 한 줄
-}
 
 function Stat({ label, value, tone }: { label: string; value: string; tone?: string }) {
   return (
@@ -28,83 +15,90 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: str
   );
 }
 
-// 판정은 Claude 상세 평가의 'PASS/FAIL'을 따른다(휴리스틱·API성공 아님).
-function VerdictBadge({ verdict, pending }: { verdict: 'PASS' | 'FAIL' | null | undefined; pending: boolean }) {
-  if (verdict === 'PASS')
+// 판정은 Claude 상세 평가의 PASS/FAIL을 따른다.
+function VerdictBadge({ cell, pending }: { cell?: BenchCell; pending: boolean }) {
+  if (!cell) return <span className="text-[10px] text-slate-500">{pending ? '평가중…' : '미평가'}</span>;
+  if (!cell.ok) return <span className="text-[10px] text-red-400">{cell.error ?? 'ERROR'}</span>;
+  if (cell.verdict === 'PASS')
     return <span className="rounded bg-emerald-900/60 px-1.5 py-0.5 text-[10px] text-emerald-300">PASS</span>;
-  if (verdict === 'FAIL')
+  if (cell.verdict === 'FAIL')
     return <span className="rounded bg-red-900/60 px-1.5 py-0.5 text-[10px] text-red-300">FAIL</span>;
-  return <span className="text-[10px] text-slate-500">{pending ? '평가중…' : '—'}</span>;
+  return <span className="text-[10px] text-slate-500">—</span>;
 }
 
-// 평가 마크다운 헤딩을 작게·간격 있게(## 가 너무 크지 않도록).
 const mdComponents: Components = {
   h1: ({ node: _n, ...p }) => <div className="mt-3 mb-1 text-xs font-bold text-slate-100" {...p} />,
   h2: ({ node: _n, ...p }) => <div className="mt-3 mb-1 text-xs font-bold text-slate-100" {...p} />,
   h3: ({ node: _n, ...p }) => <div className="mt-2 mb-1 text-xs font-semibold text-slate-200" {...p} />,
 };
 
+function spaceMarkdown(md: string): string {
+  return md
+    .replace(/^(#{1,6} .+)$/gm, '\n$1\n')
+    .replace(/^(\*\*[^*\n]+\*\*:?)\s*$/gm, '\n$1\n')
+    .replace(/^([ \t]*[-*] .+)$/gm, '$1\n');
+}
+
+function percentile(sorted: number[], p: number): number {
+  if (!sorted.length) return 0;
+  const idx = Math.min(sorted.length - 1, Math.ceil((p / 100) * sorted.length) - 1);
+  return sorted[Math.max(0, idx)];
+}
+
 export default function BenchPanel() {
-  const { model, temperature, topP } = useClovaStore();
-  const [repeats, setRepeats] = useState(1);
-  const [runs, setRuns] = useState<BenchRunRow[]>([]);
-  const [runId, setRunId] = useState<number | null>(null);
-  const [detail, setDetail] = useState<BenchRunDetail | null>(null);
+  const { model, set } = useClovaStore();
+  const [suite, setSuite] = useState<SuitePrompt[]>([]);
+  const [cells, setCells] = useState<BenchCell[]>([]);
+  const [running, setRunning] = useState(false);
+  const [models, setModels] = useState<ModelStat[]>([]);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const refreshRuns = useCallback(async () => setRuns(await listBenchRuns()), []);
-
-  // 최초 진입: 목록을 불러오고 가장 최근 배치를 자동 선택(실행 안 눌러도 보이게).
   useEffect(() => {
-    void (async () => {
-      const rs = await listBenchRuns();
-      setRuns(rs);
-      setRunId((prev) => prev ?? rs[0]?.id ?? null);
-    })();
+    void getBenchSuite().then(setSuite);
   }, []);
 
-  // runId 가 정해지면 detail 폴링(완료되면 정지)
   useEffect(() => {
-    if (runId == null) return;
-    let stop = false;
-    const tick = async () => {
-      const d = await getBenchRun(runId);
-      if (stop) return;
-      setDetail(d);
-      if (d && (d.run.status === 'done' || d.run.status === 'error')) {
-        if (pollRef.current) clearInterval(pollRef.current);
-        pollRef.current = null;
-        void refreshRuns();
-      }
-    };
-    void tick();
-    pollRef.current = setInterval(tick, 2000);
-    return () => {
-      stop = true;
-      if (pollRef.current) clearInterval(pollRef.current);
-      pollRef.current = null;
-    };
-  }, [runId, refreshRuns]);
+    void listBenchModels().then(setModels);
+  }, [running]);
 
-  const running = detail?.run.status === 'running' || (runId != null && !detail);
+  const load = useCallback(async () => {
+    const { cells, running } = await getBenchCells(model);
+    setCells(cells);
+    setRunning(running);
+  }, [model]);
+
+  // 모델 변경 시 셀 로드(재호출 아님 — DB 조회만).
+  useEffect(() => {
+    void load();
+  }, [load]);
+
+  // 진행 중이면 폴링.
+  useEffect(() => {
+    if (!running) return;
+    const t = setInterval(load, 2500);
+    return () => clearInterval(t);
+  }, [running, load]);
 
   const run = async () => {
     setError(null);
-    setExpanded(null);
-    const cfg: BenchRunConfig = { model, temperature, topP, repeats };
-    const res = await startBenchRun(cfg);
-    if (!res.ok || !res.runId) {
-      setError(res.error ?? '실행 실패');
+    const r = await startBenchRun(model);
+    if (!r.ok) {
+      setError(r.error ?? '실행 실패');
       return;
     }
-    setDetail(null);
-    setRunId(res.runId);
+    setRunning(true);
+    void load();
   };
 
-  const r = detail?.run;
-  const evalByPrompt = new Map((detail?.evaluations ?? []).map((e) => [e.prompt_id, e]));
+  const cellBy = new Map(cells.map((c) => [c.prompt_id, c]));
+  const evaluated = cells.filter((c) => c.verdict === 'PASS' || c.verdict === 'FAIL');
+  const passCount = cells.filter((c) => c.verdict === 'PASS').length;
+  const lat = cells.filter((c) => c.ok).map((c) => num(c.latency_ms)).sort((a, b) => a - b);
+  const tps = cells.filter((c) => c.ok && c.tokens_per_sec != null).map((c) => num(c.tokens_per_sec));
+  const missingCount = suite.length - cells.filter((c) => c.verdict != null).length;
+
+  const modelOptions = Array.from(new Set([model, ...models.map((m) => m.model)]));
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3 p-4">
@@ -114,55 +108,46 @@ export default function BenchPanel() {
           disabled={running}
           className="rounded bg-emerald-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-emerald-500 disabled:opacity-50"
         >
-          {running ? '실행 중…' : '벤치 실행'}
+          {running ? '실행 중…' : `미평가 ${missingCount}개 실행`}
         </button>
+
         <label className="flex items-center gap-1 text-xs text-slate-400">
-          반복
-          <input
-            type="number"
-            min={1}
-            max={20}
-            value={repeats}
-            onChange={(e) => setRepeats(Math.max(1, Number(e.target.value)))}
-            className="w-14 rounded border border-slate-700 bg-slate-900 px-1 py-0.5 text-slate-100"
-          />
+          모델
+          <select
+            value={model}
+            onChange={(e) => set('model', e.target.value)}
+            className="rounded border border-slate-700 bg-slate-900 px-2 py-1 font-mono text-slate-200"
+          >
+            {modelOptions.map((m) => (
+              <option key={m} value={m}>
+                {m}
+              </option>
+            ))}
+          </select>
         </label>
         <span className="text-xs text-slate-500">
-          모델 <span className="font-mono text-slate-300">{model}</span>
+          (왼쪽 Model 입력칸에서 새 모델 추가 가능 — 미평가 항목만 채워진다)
         </span>
-
-        <select
-          value={runId ?? ''}
-          onChange={(e) => setRunId(e.target.value ? Number(e.target.value) : null)}
-          className="ml-auto max-w-[280px] rounded border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-300"
-        >
-          <option value="">과거 배치 불러오기…</option>
-          {runs.map((x) => (
-            <option key={x.id} value={x.id}>
-              #{x.id} {x.model} · {Math.round(num(x.pass_rate) * 100)}% · {x.status} ·{' '}
-              {String(x.created_at).replace('T', ' ').slice(5, 16)}
-            </option>
-          ))}
-        </select>
       </div>
 
       {error && <div className="text-sm text-red-400">에러: {error}</div>}
-      {running && <div className="text-xs text-emerald-400">배치 실행 중 — 결과/Claude 평가가 점진적으로 채워진다…</div>}
+      {running && <div className="text-xs text-emerald-400">미평가 항목 평가 중 — 점진적으로 채워진다…</div>}
 
-      {r && (
-        <div className="grid grid-cols-3 gap-2 lg:grid-cols-6">
-          <Stat label="상태" value={r.status} tone={r.status === 'done' ? 'text-emerald-300' : r.status === 'error' ? 'text-red-300' : 'text-amber-300'} />
-          <Stat
-            label="통과율"
-            value={`${Math.round(num(r.pass_rate) * 100)}% (${num(r.pass_count)}/${num(r.checked_count)})`}
-            tone={num(r.pass_rate) === 1 ? 'text-emerald-300' : 'text-amber-300'}
-          />
-          <Stat label="지연 p50" value={`${num(r.latency_p50)}ms`} />
-          <Stat label="지연 p95" value={`${num(r.latency_p95)}ms`} />
-          <Stat label="평균 tok/s" value={`${num(r.avg_tok_s)}`} />
-          <Stat label="에러/잘림" value={`${num(r.errors)}/${num(r.truncated)}`} tone={num(r.errors) ? 'text-red-300' : 'text-slate-100'} />
-        </div>
-      )}
+      <div className="grid grid-cols-3 gap-2 lg:grid-cols-6">
+        <Stat label="평가됨" value={`${evaluated.length}/${suite.length}`} />
+        <Stat
+          label="통과율"
+          value={evaluated.length ? `${Math.round((passCount / evaluated.length) * 100)}% (${passCount}/${evaluated.length})` : '—'}
+          tone={evaluated.length && passCount === evaluated.length ? 'text-emerald-300' : 'text-amber-300'}
+        />
+        <Stat label="지연 p50" value={lat.length ? `${percentile(lat, 50)}ms` : '—'} />
+        <Stat label="지연 p95" value={lat.length ? `${percentile(lat, 95)}ms` : '—'} />
+        <Stat
+          label="평균 tok/s"
+          value={tps.length ? `${Math.round((tps.reduce((a, b) => a + b, 0) / tps.length) * 10) / 10}` : '—'}
+        />
+        <Stat label="미평가" value={`${missingCount}`} tone={missingCount ? 'text-amber-300' : 'text-slate-100'} />
+      </div>
 
       <div className="min-h-0 flex-1 overflow-auto rounded border border-slate-800">
         <table className="w-full text-left text-xs">
@@ -177,9 +162,9 @@ export default function BenchPanel() {
             </tr>
           </thead>
           <tbody>
-            {(detail?.results ?? []).map((row) => {
-              const key = `${row.id}`;
-              const ev = evalByPrompt.get(row.prompt_id);
+            {suite.map((p) => {
+              const c = cellBy.get(p.id);
+              const key = p.id;
               return (
                 <Fragment key={key}>
                   <tr
@@ -187,25 +172,20 @@ export default function BenchPanel() {
                     className="cursor-pointer border-t border-slate-800/70 hover:bg-slate-900/50"
                   >
                     <td className="px-2 py-1.5">
-                      <span className="text-slate-500">{row.category}</span>{' '}
-                      <span className="text-slate-200">{row.label}</span>
-                      {num(r?.repeats) > 1 && <span className="text-slate-600"> #{row.round}</span>}
+                      <span className="text-slate-500">{p.category}</span>{' '}
+                      <span className="text-slate-200">{p.label}</span>
                     </td>
                     <td className="px-2 py-1.5">
-                      {row.ok ? (
-                        <VerdictBadge verdict={ev?.verdict} pending={r?.status === 'running'} />
-                      ) : (
-                        <span className="text-red-400">{row.error}</span>
-                      )}
+                      <VerdictBadge cell={c} pending={running} />
                     </td>
-                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.latency_ms}</td>
-                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.tokens_per_sec ?? '—'}</td>
+                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{c?.latency_ms ?? '—'}</td>
+                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{c?.tokens_per_sec ?? '—'}</td>
                     <td className="px-2 py-1.5 text-right font-mono text-slate-400">
-                      {row.prompt_tokens ?? '—'}/{row.completion_tokens ?? '—'}
+                      {c ? `${c.prompt_tokens ?? '—'}/${c.completion_tokens ?? '—'}` : '—'}
                     </td>
                     <td className="px-2 py-1.5">
-                      <span className={row.truncated ? 'text-amber-400' : 'text-slate-400'}>
-                        {row.finish_reason ?? '—'}
+                      <span className={c?.finish_reason === 'length' ? 'text-amber-400' : 'text-slate-400'}>
+                        {c?.finish_reason ?? '—'}
                       </span>
                     </td>
                   </tr>
@@ -214,42 +194,48 @@ export default function BenchPanel() {
                       <td colSpan={6} className="px-3 py-2">
                         <div className="mb-2">
                           <div className="mb-1 text-[10px] uppercase tracking-wide text-sky-500">질문</div>
-                          {row.system_prompt && (
+                          {p.system && (
                             <div className="mb-1 whitespace-pre-wrap text-slate-400">
                               <span className="text-slate-600">[system] </span>
-                              {row.system_prompt}
+                              {p.system}
                             </div>
                           )}
-                          <div className="whitespace-pre-wrap text-slate-300">{row.user_prompt ?? '(이전 배치 — 질문 미저장)'}</div>
+                          <div className="whitespace-pre-wrap text-slate-300">{p.user}</div>
                         </div>
-                        <div className="mb-2">
-                          <div className="mb-1 text-[10px] uppercase tracking-wide text-slate-500">모델 출력</div>
-                          <div className="whitespace-pre-wrap text-slate-300">{row.content || '(빈 응답)'}</div>
-                        </div>
-                        <div>
-                          <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">평가 상세</div>
-                          <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
-                            {ev ? (
-                              <div className="prose prose-invert prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-1">
-                                <ReactMarkdown components={mdComponents}>{spaceMarkdown(ev.evaluation)}</ReactMarkdown>
+                        {c ? (
+                          <>
+                            <div className="mb-2">
+                              <div className="mb-1 text-[10px] uppercase tracking-wide text-slate-500">모델 출력</div>
+                              <div className="whitespace-pre-wrap text-slate-300">{c.content || '(빈 응답)'}</div>
+                            </div>
+                            <div>
+                              <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">평가 상세</div>
+                              <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
+                                {c.evaluation ? (
+                                  <div className="prose prose-invert prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-1">
+                                    <ReactMarkdown components={mdComponents}>
+                                      {spaceMarkdown(c.evaluation)}
+                                    </ReactMarkdown>
+                                  </div>
+                                ) : (
+                                  <span className="text-slate-500">{c.ok ? '(평가 없음)' : `에러: ${c.error}`}</span>
+                                )}
                               </div>
-                            ) : (
-                              <span className="text-slate-500">
-                                {row.round === 1 ? '(평가 생성 중…)' : '(평가는 라운드1만)'}
-                              </span>
-                            )}
-                          </div>
-                        </div>
+                            </div>
+                          </>
+                        ) : (
+                          <div className="text-slate-500">아직 평가 안 됨 — "미평가 N개 실행"으로 채운다.</div>
+                        )}
                       </td>
                     </tr>
                   )}
                 </Fragment>
               );
             })}
-            {!detail?.results?.length && (
+            {!suite.length && (
               <tr>
                 <td colSpan={6} className="px-3 py-6 text-center text-slate-600">
-                  "벤치 실행"으로 서버측 배치를 돌리면 결과·Claude 평가가 DB에 저장되고 여기에 표시된다. 과거 배치도 위 드롭다운에서 불러온다.
+                  로딩 중…
                 </td>
               </tr>
             )}

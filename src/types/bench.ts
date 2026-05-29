@@ -1,65 +1,36 @@
-// MySQL(clova_lab) row 형태. DECIMAL/TINYINT 은 드라이버에서 문자열/숫자로 올 수 있어 UI에서 coerce.
+// (모델 × 프롬프트) 셀. DECIMAL/TINYINT 은 드라이버에서 문자열/숫자로 올 수 있어 UI에서 coerce.
 
-export type BenchRunRow = {
+export type BenchCell = {
   id: number;
-  created_at: string;
-  provider: string;
   model: string;
-  temperature: string | number;
-  top_p: string | number;
-  repeats: number;
-  prompt_count: number;
-  total_calls: number | null;
-  errors: number | null;
-  truncated: number | null;
-  latency_p50: number | null;
-  latency_p95: number | null;
-  avg_tok_s: string | number | null;
-  total_completion_tokens: number | null;
-  pass_count: number | null;
-  checked_count: number | null;
-  pass_rate: string | number | null;
-  status: 'running' | 'done' | 'error';
-  note: string | null;
-};
-
-export type BenchResultRow = {
-  id: number;
-  run_id: number;
   prompt_id: string;
   label: string;
   category: string;
-  round: number;
   system_prompt: string | null;
   user_prompt: string | null;
   ok: number;
-  latency_ms: number;
+  latency_ms: number | null;
   prompt_tokens: number | null;
   completion_tokens: number | null;
   tokens_per_sec: string | number | null;
   finish_reason: string | null;
-  truncated: number;
-  check_kind: string;
-  check_pass: number | null;
-  content: string;
-  error: string | null;
-};
-
-export type BenchEvalRow = {
-  id: number;
-  run_id: number;
-  result_id: number;
-  prompt_id: string;
-  category: string;
-  judge: string;
-  judge_model: string;
+  truncated: number | null;
   verdict: 'PASS' | 'FAIL' | null;
-  evaluation: string;
-  created_at: string;
+  judge: string | null;
+  judge_model: string | null;
+  evaluation: string | null;
+  content: string | null;
+  error: string | null;
+  created_at: string | null;
+  updated_at: string | null;
 };
 
-export type BenchRunDetail = {
-  run: BenchRunRow;
-  results: BenchResultRow[];
-  evaluations: BenchEvalRow[];
+export type SuitePrompt = {
+  id: string;
+  label: string;
+  category: string;
+  system: string | null;
+  user: string;
 };
+
+export type ModelStat = { model: string; n: number };
