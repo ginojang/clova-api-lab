@@ -190,8 +190,11 @@ async function executeRun(runId: number, cfg: BenchConfig): Promise<void> {
   );
 }
 
-// Claude 평가 첫 줄의 "판정: PASS|FAIL" 추출.
+// Claude 평가의 최종 판정 추출. 모델이 중간에 자기정정하므로 '최종판정'을 우선,
+// 없으면 일반 '판정' 중 **마지막** 매치를 쓴다(첫 줄의 성급한 판정에 속지 않게).
 function parseVerdict(text: string): 'PASS' | 'FAIL' | null {
-  const m = text.match(/판정\s*[:：]\s*(PASS|FAIL)/i);
-  return m ? (m[1].toUpperCase() as 'PASS' | 'FAIL') : null;
+  const fin = [...text.matchAll(/최종\s*판정\s*[:：]\s*(PASS|FAIL)/gi)];
+  if (fin.length) return fin[fin.length - 1][1].toUpperCase() as 'PASS' | 'FAIL';
+  const any = [...text.matchAll(/판정\s*[:：]\s*(PASS|FAIL)/gi)];
+  return any.length ? (any[any.length - 1][1].toUpperCase() as 'PASS' | 'FAIL') : null;
 }
