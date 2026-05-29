@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { useClovaStore } from '../store/useClovaStore';
 import {
   startBenchRun,
@@ -208,8 +209,16 @@ export default function BenchPanel() {
                         </div>
                         <div>
                           <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">Claude 평가</div>
-                          <div className="whitespace-pre-wrap rounded border border-slate-800 bg-slate-950/60 p-2 text-slate-300">
-                            {ev ? ev.evaluation : row.round === 1 ? '(평가 생성 중…)' : '(평가는 라운드1만)'}
+                          <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
+                            {ev ? (
+                              <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-0.5">
+                                <ReactMarkdown>{ev.evaluation}</ReactMarkdown>
+                              </div>
+                            ) : (
+                              <span className="text-slate-500">
+                                {row.round === 1 ? '(평가 생성 중…)' : '(평가는 라운드1만)'}
+                              </span>
+                            )}
                           </div>
                         </div>
                       </td>
