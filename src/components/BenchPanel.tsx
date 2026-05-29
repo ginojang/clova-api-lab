@@ -208,7 +208,7 @@ export default function BenchPanel() {
                           <div className="whitespace-pre-wrap text-slate-300">{row.content || '(빈 응답)'}</div>
                         </div>
                         <div>
-                          <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">Claude 평가</div>
+                          <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">평가 상세</div>
                           <div className="rounded border border-slate-800 bg-slate-950/60 p-3">
                             {ev ? (
                               <div className="prose prose-invert prose-sm max-w-none prose-headings:mt-2 prose-headings:mb-1 prose-p:my-1 prose-ul:my-1 prose-li:my-0.5">
