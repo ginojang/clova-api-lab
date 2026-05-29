@@ -1,7 +1,14 @@
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { useClovaStore } from '../store/useClovaStore';
-import { runBench, aggregate, type BenchRow } from '../bench/runner';
-import { BENCH_SUITE } from '../bench/suite';
+import {
+  startBenchRun,
+  listBenchRuns,
+  getBenchRun,
+  type BenchRunConfig,
+} from '../api/proxyClient';
+import type { BenchRunRow, BenchRunDetail } from '../types/bench';
+
+const num = (x: string | number | null | undefined): number => (x == null ? 0 : Number(x));
 
 function Stat({ label, value, tone }: { label: string; value: string; tone?: string }) {
   return (
@@ -12,7 +19,7 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: str
   );
 }
 
-function CheckBadge({ pass }: { pass: boolean | null }) {
+function CheckBadge({ pass }: { pass: number | null }) {
   if (pass === null) return <span className="text-slate-600">—</span>;
   return pass ? (
     <span className="rounded bg-emerald-900/60 px-1.5 py-0.5 text-[10px] text-emerald-300">PASS</span>
@@ -24,46 +31,69 @@ function CheckBadge({ pass }: { pass: boolean | null }) {
 export default function BenchPanel() {
   const { model, temperature, topP } = useClovaStore();
   const [repeats, setRepeats] = useState(1);
-  const [running, setRunning] = useState(false);
-  const [progress, setProgress] = useState({ done: 0, total: 0 });
-  const [rows, setRows] = useState<BenchRow[]>([]);
+  const [runs, setRuns] = useState<BenchRunRow[]>([]);
+  const [runId, setRunId] = useState<number | null>(null);
+  const [detail, setDetail] = useState<BenchRunDetail | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const agg = useMemo(() => (rows.length ? aggregate(rows) : null), [rows]);
+  const refreshRuns = useCallback(async () => setRuns(await listBenchRuns()), []);
+
+  useEffect(() => {
+    void refreshRuns();
+  }, [refreshRuns]);
+
+  // runId 가 정해지면 detail 폴링(완료되면 정지)
+  useEffect(() => {
+    if (runId == null) return;
+    let stop = false;
+    const tick = async () => {
+      const d = await getBenchRun(runId);
+      if (stop) return;
+      setDetail(d);
+      if (d && (d.run.status === 'done' || d.run.status === 'error')) {
+        if (pollRef.current) clearInterval(pollRef.current);
+        pollRef.current = null;
+        void refreshRuns();
+      }
+    };
+    void tick();
+    pollRef.current = setInterval(tick, 2000);
+    return () => {
+      stop = true;
+      if (pollRef.current) clearInterval(pollRef.current);
+      pollRef.current = null;
+    };
+  }, [runId, refreshRuns]);
+
+  const running = detail?.run.status === 'running' || (runId != null && !detail);
 
   const run = async () => {
-    setRunning(true);
-    setRows([]);
+    setError(null);
     setExpanded(null);
-    const total = Math.max(1, repeats) * BENCH_SUITE.length;
-    setProgress({ done: 0, total });
-    const collected: BenchRow[] = [];
-    try {
-      await runBench({
-        model,
-        temperature,
-        topP,
-        repeats,
-        onProgress: (done, total, row) => {
-          collected.push(row);
-          setRows([...collected]);
-          setProgress({ done, total });
-        },
-      });
-    } finally {
-      setRunning(false);
+    const cfg: BenchRunConfig = { model, temperature, topP, repeats };
+    const res = await startBenchRun(cfg);
+    if (!res.ok || !res.runId) {
+      setError(res.error ?? '실행 실패');
+      return;
     }
+    setDetail(null);
+    setRunId(res.runId);
   };
+
+  const r = detail?.run;
+  const evalByPrompt = new Map((detail?.evaluations ?? []).map((e) => [e.prompt_id, e]));
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3 p-4">
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <button
           onClick={run}
           disabled={running}
           className="rounded bg-emerald-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-emerald-500 disabled:opacity-50"
         >
-          {running ? `실행 중… ${progress.done}/${progress.total}` : '벤치 실행'}
+          {running ? '실행 중…' : '벤치 실행'}
         </button>
         <label className="flex items-center gap-1 text-xs text-slate-400">
           반복
@@ -77,26 +107,39 @@ export default function BenchPanel() {
           />
         </label>
         <span className="text-xs text-slate-500">
-          모델 <span className="font-mono text-slate-300">{model}</span> · {BENCH_SUITE.length}개 프롬프트
+          모델 <span className="font-mono text-slate-300">{model}</span>
         </span>
+
+        <select
+          value={runId ?? ''}
+          onChange={(e) => setRunId(e.target.value ? Number(e.target.value) : null)}
+          className="ml-auto max-w-[280px] rounded border border-slate-700 bg-slate-900 px-2 py-1 text-xs text-slate-300"
+        >
+          <option value="">과거 배치 불러오기…</option>
+          {runs.map((x) => (
+            <option key={x.id} value={x.id}>
+              #{x.id} {x.model} · {Math.round(num(x.pass_rate) * 100)}% · {x.status} ·{' '}
+              {String(x.created_at).replace('T', ' ').slice(5, 16)}
+            </option>
+          ))}
+        </select>
       </div>
 
-      {agg && (
+      {error && <div className="text-sm text-red-400">에러: {error}</div>}
+      {running && <div className="text-xs text-emerald-400">배치 실행 중 — 결과/Claude 평가가 점진적으로 채워진다…</div>}
+
+      {r && (
         <div className="grid grid-cols-3 gap-2 lg:grid-cols-6">
-          <Stat label="호출" value={`${agg.totalCalls}`} />
+          <Stat label="상태" value={r.status} tone={r.status === 'done' ? 'text-emerald-300' : r.status === 'error' ? 'text-red-300' : 'text-amber-300'} />
           <Stat
             label="통과율"
-            value={`${Math.round(agg.passRate * 100)}% (${agg.passCount}/${agg.checkedCount})`}
-            tone={agg.passRate === 1 ? 'text-emerald-300' : 'text-amber-300'}
+            value={`${Math.round(num(r.pass_rate) * 100)}% (${num(r.pass_count)}/${num(r.checked_count)})`}
+            tone={num(r.pass_rate) === 1 ? 'text-emerald-300' : 'text-amber-300'}
           />
-          <Stat label="지연 p50" value={`${agg.latencyP50}ms`} />
-          <Stat label="지연 p95" value={`${agg.latencyP95}ms`} />
-          <Stat label="평균 tok/s" value={`${agg.avgTokensPerSec}`} />
-          <Stat
-            label="에러/잘림"
-            value={`${agg.errors}/${agg.truncatedCount}`}
-            tone={agg.errors ? 'text-red-300' : 'text-slate-100'}
-          />
+          <Stat label="지연 p50" value={`${num(r.latency_p50)}ms`} />
+          <Stat label="지연 p95" value={`${num(r.latency_p95)}ms`} />
+          <Stat label="평균 tok/s" value={`${num(r.avg_tok_s)}`} />
+          <Stat label="에러/잘림" value={`${num(r.errors)}/${num(r.truncated)}`} tone={num(r.errors) ? 'text-red-300' : 'text-slate-100'} />
         </div>
       )}
 
@@ -113,8 +156,9 @@ export default function BenchPanel() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((r, i) => {
-              const key = `${r.id}-${r.round}-${i}`;
+            {(detail?.results ?? []).map((row) => {
+              const key = `${row.id}`;
+              const ev = evalByPrompt.get(row.prompt_id);
               return (
                 <Fragment key={key}>
                   <tr
@@ -122,38 +166,47 @@ export default function BenchPanel() {
                     className="cursor-pointer border-t border-slate-800/70 hover:bg-slate-900/50"
                   >
                     <td className="px-2 py-1.5">
-                      <span className="text-slate-500">{r.category}</span>{' '}
-                      <span className="text-slate-200">{r.label}</span>
-                      {repeats > 1 && <span className="text-slate-600"> #{r.round}</span>}
+                      <span className="text-slate-500">{row.category}</span>{' '}
+                      <span className="text-slate-200">{row.label}</span>
+                      {num(r?.repeats) > 1 && <span className="text-slate-600"> #{row.round}</span>}
                     </td>
                     <td className="px-2 py-1.5">
-                      {r.ok ? <CheckBadge pass={r.checkPass} /> : <span className="text-red-400">{r.error}</span>}
+                      {row.ok ? <CheckBadge pass={row.check_pass} /> : <span className="text-red-400">{row.error}</span>}
                     </td>
-                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{r.latencyMs}</td>
-                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{r.tokensPerSec ?? '—'}</td>
+                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.latency_ms}</td>
+                    <td className="px-2 py-1.5 text-right font-mono text-slate-300">{row.tokens_per_sec ?? '—'}</td>
                     <td className="px-2 py-1.5 text-right font-mono text-slate-400">
-                      {r.promptTokens ?? '—'}/{r.completionTokens ?? '—'}
+                      {row.prompt_tokens ?? '—'}/{row.completion_tokens ?? '—'}
                     </td>
                     <td className="px-2 py-1.5">
-                      <span className={r.truncated ? 'text-amber-400' : 'text-slate-400'}>
-                        {r.finishReason ?? '—'}
+                      <span className={row.truncated ? 'text-amber-400' : 'text-slate-400'}>
+                        {row.finish_reason ?? '—'}
                       </span>
                     </td>
                   </tr>
                   {expanded === key && (
                     <tr className="bg-slate-900/80">
-                      <td colSpan={6} className="px-3 py-2 whitespace-pre-wrap text-slate-300">
-                        {r.content || '(빈 응답)'}
+                      <td colSpan={6} className="px-3 py-2">
+                        <div className="mb-2">
+                          <div className="mb-1 text-[10px] uppercase tracking-wide text-slate-500">모델 출력</div>
+                          <div className="whitespace-pre-wrap text-slate-300">{row.content || '(빈 응답)'}</div>
+                        </div>
+                        <div>
+                          <div className="mb-1 text-[10px] uppercase tracking-wide text-emerald-500">Claude 평가</div>
+                          <div className="whitespace-pre-wrap rounded border border-slate-800 bg-slate-950/60 p-2 text-slate-300">
+                            {ev ? ev.evaluation : row.round === 1 ? '(평가 생성 중…)' : '(평가는 라운드1만)'}
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   )}
                 </Fragment>
               );
             })}
-            {!rows.length && (
+            {!detail?.results?.length && (
               <tr>
                 <td colSpan={6} className="px-3 py-6 text-center text-slate-600">
-                  "벤치 실행"을 누르면 프롬프트 세트를 돌려 지연·토큰·판정을 측정한다.
+                  "벤치 실행"으로 서버측 배치를 돌리면 결과·Claude 평가가 DB에 저장되고 여기에 표시된다. 과거 배치도 위 드롭다운에서 불러온다.
                 </td>
               </tr>
             )}

@@ -1,4 +1,5 @@
 import type { ChatRequest, ChatResponse, TokenUsage } from '../types/clova';
+import type { BenchRunRow, BenchRunDetail } from '../types/bench';
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3600';
 
@@ -86,4 +87,35 @@ export async function postChatStream(req: ChatRequest, cb: StreamCallbacks): Pro
       }
     }
   }
+}
+
+// ── Bench (서버측 배치 + DB) ──────────────────────────────
+export type BenchRunConfig = {
+  model: string;
+  temperature: number;
+  topP: number;
+  repeats: number;
+};
+
+export async function startBenchRun(cfg: BenchRunConfig): Promise<{ ok: boolean; runId?: number; error?: string }> {
+  const res = await fetch(`${API_BASE}/api/bench/run`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cfg),
+  });
+  return res.json();
+}
+
+export async function listBenchRuns(): Promise<BenchRunRow[]> {
+  const res = await fetch(`${API_BASE}/api/bench/runs`);
+  if (!res.ok) return [];
+  const d = await res.json();
+  return d.runs ?? [];
+}
+
+export async function getBenchRun(id: number): Promise<BenchRunDetail | null> {
+  const res = await fetch(`${API_BASE}/api/bench/runs/${id}`);
+  if (!res.ok) return null;
+  const d = await res.json();
+  return d.ok ? { run: d.run, results: d.results, evaluations: d.evaluations } : null;
 }

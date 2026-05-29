@@ -32,6 +32,10 @@ rsync -avz -e "$HRSYNC" deploy/clova-api-lab.service deploy/clova-api-lab-tunnel
 # .env 는 키를 담으므로 있으면 보존, 없으면 example 로 생성
 $HSSH "test -f ~/$SLOT/.env || cp ~/$SLOT/hellcat.env.example ~/$SLOT/.env; chmod 600 ~/$SLOT/.env"
 
+# 의존성 설치(mysql2 등). 번들에 없는 external 만 node_modules 로.
+echo "-- npm install (mysql2) --"
+$HSSH "cd ~/$SLOT && npm install --omit=dev --no-audit --no-fund 2>&1 | tail -3"
+
 echo "== [4/4] hellcat 서비스 재시작 (부트스트랩 완료된 경우) =="
 # sudoers 는 유닛별 단일 명령만 NOPASSWD 허용 → 한 줄에 묶지 말고 각각 호출.
 $HSSH 'sudo -n systemctl restart clova-api-lab 2>/dev/null && echo "app restarted" || echo "** clova-api-lab units 미설치 — bootstrap-systemd.sh 를 1회 실행하세요 **"'

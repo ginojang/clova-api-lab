@@ -1,12 +1,12 @@
-// 진단/벤치용 프롬프트 세트. CLAUDE.md 테스트 세트 기반 + 자동 판정 기준.
-// 판정은 단순/결정적 휴리스틱이다(완전한 eval 아님 — 명백한 깨짐만 잡는다).
+// 진단/벤치용 프롬프트 세트(서버측 단일 출처). CLAUDE.md 테스트 세트 기반 + 자동 판정.
+// 판정은 단순/결정적 휴리스틱(명백한 깨짐만). 심층 평가는 judge(claude)가 따로 한다.
 
 export type CheckSpec =
-  | { kind: 'nonempty' } // 응답이 비어있지 않은가
-  | { kind: 'json' } // 코드펜스 제거 후 JSON 파싱되는가
-  | { kind: 'includesAny'; values: string[] } // 기대 라벨/토큰 포함
-  | { kind: 'equalsOneOf'; values: string[] } // 정규화 후 라벨과 정확히 일치(강제 단일 라벨 지시 준수 검증)
-  | { kind: 'notTruncated' }; // finishReason !== 'length'
+  | { kind: 'nonempty' }
+  | { kind: 'json' }
+  | { kind: 'includesAny'; values: string[] }
+  | { kind: 'equalsOneOf'; values: string[] }
+  | { kind: 'notTruncated' };
 
 export type BenchPrompt = {
   id: string;
