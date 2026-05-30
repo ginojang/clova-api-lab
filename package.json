@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "server": "tsx watch server/index.ts",
     "dev:all": "concurrently -n front,server -c cyan,magenta \"npm:dev\" \"npm:server\"",
-    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=server-dist/index.js --external:mysql2 --external:mysql2/promise --banner:js=\"import{createRequire as _cr}from'module';const require=_cr(import.meta.url);\""
+    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=server-dist/index.js --external:mysql2 --external:mysql2/promise --external:undici --banner:js=\"import{createRequire as _cr}from'module';const require=_cr(import.meta.url);\""
   },
   "dependencies": {
     "cors": "^2.8.6",
@@ -20,6 +20,7 @@
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
+    "undici": "^6.26.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
