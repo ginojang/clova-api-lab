@@ -23,3 +23,6 @@ npm-debug.log*
 
 # 운영 메모 — 시크릿(DB 비번/터널 자격증명) 포함, 절대 커밋 금지
 배포.txt
+
+# 외부 참조 심볼릭 — hellcat 공유 큐레이션 폴더(GanpanAI·TEI-lab 원본)
+reference

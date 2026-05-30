@@ -7,7 +7,7 @@
 **clova-api-lab** — 원래 CLOVA Studio API 데모 콘솔로 출발했으나, 현재는 **거인 AI API + 우리 자체 AI(ELDA) 통합 테스트·벤치·분석 허브**로 확장됐다. 세 가지 역할:
 
 1. **거인 API 매트릭스 테스트**: CLOVA Studio, OpenAI, Anthropic Claude, Google Gemini, DeepSeek, GLM, Qwen, Ollama 로컬 등을 **동일 벤치(모델×프롬프트 셀 캐시)**로 비교. 응답 품질·지연·토큰·지시준수.
-2. **자체 ELDA 테스트**: GanpanAI **MY-LLM Architecture(Intenter→Reasoner→Decoder, [GanpanAI/MY-LLM Architecture v2.2.md](../GanpanAI/MY-LLM%20Architecture%20v2.2.md))**의 헤드리스 추론 서비스(`ai-apistack`/`elda-orchestrator`)를 외부 클라이언트로 호출해 거인들과 동일 잣대로 평가.
+2. **자체 ELDA 테스트**: GanpanAI **MY-LLM Architecture(Intenter→Reasoner→Decoder, [GanpanAI/MY-LLM Architecture v2.3.md](../GanpanAI/MY-LLM%20Architecture%20v2.2.md))**의 헤드리스 추론 서비스(`ai-apistack`/`elda-orchestrator`)를 외부 클라이언트로 호출해 거인들과 동일 잣대로 평가.
 3. **모델 포렌식 + 멀티모달 R&D**: 가중치/토크나이저 출처 분석(`analysis/`)과 자체 멀티모달 구축 설계(`multimodal/`)의 허브.
 
 핵심 흐름:
@@ -86,6 +86,28 @@ export type UnifiedChatRequest = {
 | ④ 멀티모달 R&D | 자체 멀티모달 = 지각 프론트엔드 설계·PoC | [`multimodal/`](multimodal/) — 시작 설계서(MY-LLM 정합). 진입점 A(이미지 임베딩→RAG)→B(공간지각)→C(VQA) | hanaki RTX 5060 Ti(16GB), `~/mmenv`(cu128 torch) 예정 |
 
 > 프론트 탭 구성: **Bench / LLM-분석 / Vision-분석 / FSM-분석 / Chat** (`src/components/Layout.tsx`).
+
+### ELDA / TEI 인프라 표면 (eldaAdapter·멀티모달 RAG 구현 시 도착지)
+
+저장소엔 코드 없지만 `eldaAdapter`·`embed.asset_vector`·자체 RAG가 호출할 외부 인프라 좌표(원본: `reference/` 큐레이션, 정본 `GanpanAI/MY-LLM Architecture v2.3.md` + `TEI-lab/CLAUDE.md`):
+
+| 호스트 / 서비스 | IP·포트 | 역할 | 상태 |
+|---|---|---|---|
+| `ai-main` | `:5173` | 데모 채팅 SPA (1급 클라이언트 중 하나) | 운영 |
+| **`elda-orchestrator`** | `:3200` | **ELDA 헤드리스 추론 게이트웨이** — `eldaAdapter`의 1차 진입점. `X-Api-Key`(scope `inference`) + `key_id:conversation_id` 복합 세션 | 운영 |
+| `core_intenter` | `:9100` | intent 분류 (현재 외부 LLM 위임 → 향후 bf109 Intenter) | 스텁/위임 |
+| `core_resoner` | `:9200` | Entity RAG (bge-m3 임베딩 + pgvector + rerank) | 부분 구현 |
+| `core_decoder` | `:9300` | Decoder LLM 생성 | 운영(LLM 위임) |
+| `memory-stack` | `:9400` | RAG / corpus 파이프라인 / 메모리 | 운영 |
+| **TEI-lab gateway (p38)** | **`192.168.0.18:8000`** | **embed + rerank 게이트웨이(BAAI/bge-m3 + bge-reranker-v2-m3, 1024-dim, Infinity, 2-GPU fan-out)**. `/api/embed`(Ollama 호환) · `/rerank` · `/health` · `/stats` · `/models` | **라이브** (workers 2/2) |
+| TEI-lab Intenter (bf109) | `192.168.0.10` (1×RTX 3060) | 향후 Qwen2.5-0.5B FFT vLLM 서빙(`/intent` capability) | **idle** (QwenFineTuner SFT 가중치 대기) |
+| memoryDB (spitfire) | `192.168.0.2:5432` PostgreSQL | `struct` 엔티티 + `embed.*` 벡터(1024-dim, pgvector) | 운영 |
+
+**연동 계약 (불변식)**:
+- 임베딩 차원 = **1024**(bge-m3). 같은 게이트웨이 거치니 재색인 불필요(교차 코사인 0.99999 검증).
+- 리랭커 계약: `POST /rerank {query, texts} → [{index, score}]`(score desc). 실패·타임아웃 시 소비처는 **passthrough**(기존 dense 순서) — best-effort 불변식.
+- 호스트 분리: **p38=embed/rerank, bf109=intenter**(`host-role-split`, `per-gpu-isolation-principle`). 한 호스트에 모델 섞지 않음.
+- 멀티모달 R&D의 진입점 A(이미지 임베딩→RAG, `embed.asset_vector`)는 동일 게이트웨이를 비전 인코더 임베딩 적재용으로 재사용 검토 대상.
 
 ## 기술 스택
 
