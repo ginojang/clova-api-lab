@@ -4,10 +4,12 @@ import { postChat, postChatStream } from '../api/proxyClient';
 
 export type Workspace = 'elda' | 'clova';
 export type Mode = 'bench' | 'llm' | 'vision' | 'fsm' | 'chat';
+export type EldaMode = 'status' | 'embed' | 'rerank' | 'bench';
 
 type ClovaState = {
   workspace: Workspace;
   mode: Mode;
+  eldaMode: EldaMode;
 
   // 파라미터
   model: string;
@@ -32,6 +34,7 @@ type ClovaState = {
 export const useClovaStore = create<ClovaState>((set, get) => ({
   workspace: 'clova',
   mode: 'bench',
+  eldaMode: 'status',
 
   model: 'HCX-005',
   systemPrompt: '너는 테스트용 AI다.',
