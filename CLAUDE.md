@@ -2,18 +2,24 @@
 
 이 파일은 이 저장소에서 작업하는 Claude Code(및 기타 에이전트)를 위한 지침이다.
 
-## 프로젝트 개요
+## 프로젝트 개요 (확장됨, 2026-05-29)
 
-**clova-api-lab** — CLOVA Studio API(HyperCLOVA X 기반)를 전부 데모 테스트할 수 있는 프론트 콘솔.
+**clova-api-lab** — 원래 CLOVA Studio API 데모 콘솔로 출발했으나, 현재는 **거인 AI API + 우리 자체 AI(ELDA) 통합 테스트·벤치·분석 허브**로 확장됐다. 세 가지 역할:
 
-실서비스가 아니라 **API 검증/실험용 콘솔**이다. 핵심 흐름:
+1. **거인 API 매트릭스 테스트**: CLOVA Studio, OpenAI, Anthropic Claude, Google Gemini, DeepSeek, GLM, Qwen, Ollama 로컬 등을 **동일 벤치(모델×프롬프트 셀 캐시)**로 비교. 응답 품질·지연·토큰·지시준수.
+2. **자체 ELDA 테스트**: GanpanAI **MY-LLM Architecture(Intenter→Reasoner→Decoder, [GanpanAI/MY-LLM Architecture v2.2.md](../GanpanAI/MY-LLM%20Architecture%20v2.2.md))**의 헤드리스 추론 서비스(`ai-apistack`/`elda-orchestrator`)를 외부 클라이언트로 호출해 거인들과 동일 잣대로 평가.
+3. **모델 포렌식 + 멀티모달 R&D**: 가중치/토크나이저 출처 분석(`analysis/`)과 자체 멀티모달 구축 설계(`multimodal/`)의 허브.
 
+핵심 흐름:
 ```
-API Key 입력 → 모델 선택 → 파라미터 조정 → 호출 → 응답 확인
-→ 스트리밍 확인 → 로그 저장 → Qwen/Ollama/OpenAI와 비교
+[API Key·세션] → [Provider/모델 선택] → [파라미터·프롬프트] → [호출 — 거인 또는 ELDA]
+                                                  → [Bench 매트릭스 적재·Claude 평가] → [포렌식·분석 보고서]
 ```
 
-> 현재 상태: 기획 완료, 코드 미작성. 유일한 원본 문서는 `시작문서.md`이며, 이 CLAUDE.md는 그 문서를 정리한 것이다. 구현 세부가 문서와 충돌하면 `시작문서.md`를 우선 확인할 것.
+> 원본 문서: `시작문서.md` (초기 CLOVA 단독 시점 기획). 구현·범위는 본 CLAUDE.md가 우선. 관련 디렉토리:
+> - [`analysis/`](analysis/) — 모델 출처 포렌식(LLM·Vision·Audio 가중치 비교) + 재현 스크립트
+> - [`multimodal/`](multimodal/) — 자체 멀티모달(지각 프론트엔드) 시작 설계서
+> - 외부: `GanpanAI/` (hellcat 공유) — MY-LLM·Image Pipeline·Intent 등 ELDA 아키텍처 원본
 
 ## 아키텍처 (가장 중요)
 
@@ -32,23 +38,34 @@ React Front  →  Local Proxy API (Node/Express)  →  CLOVA Studio API
 
 ### Provider Adapter 구조
 
-처음부터 CLOVA 전용이 아니라 **AI Provider Lab** 구조로 만든다. 내부는 어댑터 패턴:
+거인 API + 자체 ELDA를 **동일 인터페이스**로 호출하는 어댑터 패턴:
 
 ```
 ProviderAdapter
-  ├─ clovaLegacyAdapter    (X-NCP-* 헤더 방식)
-  ├─ clovaOpenAIAdapter    (OpenAI 호환 API)
-  ├─ openaiAdapter
-  ├─ ollamaAdapter
-  └─ qwenLocalAdapter
+  ├─ clovaLegacyAdapter      (X-NCP-* 헤더, 구버전)
+  ├─ clovaBearerAdapter      (Bearer v3 — 현행, HCX-005 등)
+  ├─ clovaOpenAIAdapter      (CLOVA OpenAI 호환 엔드포인트)
+  ├─ openaiAdapter           (OpenAI Chat Completions / Responses)
+  ├─ anthropicAdapter        (Claude Messages API)
+  ├─ geminiAdapter           (Google Gemini)
+  ├─ deepseekAdapter         (DeepSeek Chat — OpenAI 호환)
+  ├─ glmAdapter              (智谱 GLM)
+  ├─ qwenCloudAdapter        (DashScope/통의천문 API)
+  ├─ ollamaAdapter           (로컬 — qwen2.5/qwen3/phi4/bge-m3 등)
+  └─ eldaAdapter             (우리 자체 — ai-apistack/orchestrator 헤드리스 추론)
 ```
 
 ```ts
-export type AiProvider = 'clova' | 'clova-openai' | 'openai' | 'ollama';
+export type AiProvider =
+  | 'clova' | 'clova-openai'
+  | 'openai' | 'anthropic' | 'gemini'
+  | 'deepseek' | 'glm' | 'qwen'
+  | 'ollama'
+  | 'elda';
 
 export type UnifiedChatRequest = {
   provider: AiProvider;
-  model: string;
+  model: string;                         // ELDA는 모델 대신 파이프라인 식별자
   messages: { role: 'system' | 'user' | 'assistant'; content: string }[];
   temperature?: number;
   topP?: number;
@@ -56,6 +73,19 @@ export type UnifiedChatRequest = {
   stream?: boolean;
 };
 ```
+
+> 인증·rate-limit·세션 격리는 각 어댑터가 흡수. ELDA는 [GanpanAI MY-LLM Architecture §4 API-first](../GanpanAI/MY-LLM%20Architecture%20v2.2.md)에 따라 `X-Api-Key`(scope `inference`) + `key_id:conversation_id` 복합 세션키로 호출한다.
+
+### 확장 역할 — 기존 코드/툴 매핑
+
+| 역할 | 무엇을 하나 | 이 저장소의 실체 | 외부 의존 |
+|---|---|---|---|
+| ① 거인 API 매트릭스 테스트 | 같은 프롬프트를 N개 provider×model에 돌려 응답/지연/토큰/지시준수 비교 | **Bench 콘솔** (`server/bench/`, `src/components/BenchPanel.tsx`) — `bench_cell(model, prompt_id)` 셀 캐시 + Claude 평가 | MySQL `clova_lab`(spitfire), hellcat claude CLI |
+| ② ELDA 자체 테스트 | GanpanAI 파이프라인을 외부 클라이언트로 호출(거인들과 동일 잣대) | `eldaAdapter` 신설 후 같은 Bench가 그대로 적용됨. 모델 필드 = 파이프라인 식별자 | `ai-apistack`/`elda-orchestrator` 게이트웨이 |
+| ③ 모델 출처 포렌식 | 가중치 코사인·토크나이저 지문·출력 비교로 모델 계보 추적 | [`analysis/`](analysis/) — LLM·Vision·Audio 보고서 + 재현 스크립트. 프론트 탭(LLM/Vision/FSM-분석)에서 렌더 | hanaki(`~/tokenv` venv), HF 모델 캐시, ollama 후보 모델 |
+| ④ 멀티모달 R&D | 자체 멀티모달 = 지각 프론트엔드 설계·PoC | [`multimodal/`](multimodal/) — 시작 설계서(MY-LLM 정합). 진입점 A(이미지 임베딩→RAG)→B(공간지각)→C(VQA) | hanaki RTX 5060 Ti(16GB), `~/mmenv`(cu128 torch) 예정 |
+
+> 프론트 탭 구성: **Bench / LLM-분석 / Vision-분석 / FSM-분석 / Chat** (`src/components/Layout.tsx`).
 
 ## 기술 스택
 
