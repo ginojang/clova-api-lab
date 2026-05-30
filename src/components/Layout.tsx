@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useClovaStore, type Mode } from '../store/useClovaStore';
+import Sidebar from './Sidebar';
 
 function Tab({ id, label }: { id: Mode; label: string }) {
   const { mode, set } = useClovaStore();
@@ -18,24 +19,44 @@ function Tab({ id, label }: { id: Mode; label: string }) {
   );
 }
 
-// 앱 셸: 헤더(타이틀 + 탭) + 본문. 본문은 모드별 View가 채운다.
-export default function Layout({ children }: { children: ReactNode }) {
+function ClovaHeader() {
   return (
-    <div className="flex h-full flex-col bg-slate-950 text-slate-100">
-      <header className="flex items-center gap-3 border-b border-slate-800 px-4 py-3">
-        <span className="text-lg font-semibold tracking-tight">clova-api-lab</span>
-        <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
-          AI Provider Lab
-        </span>
-        <nav className="ml-4 flex gap-2">
-          <Tab id="bench" label="Bench" />
-          <Tab id="llm" label="LLM-분석" />
-          <Tab id="vision" label="Vision-분석" />
-          <Tab id="fsm" label="FSM-분석" />
-          <Tab id="chat" label="Chat" />
-        </nav>
-      </header>
-      <div className="min-h-0 flex-1">{children}</div>
+    <header className="flex items-center gap-3 border-b border-slate-800 px-4 py-3">
+      <span className="text-lg font-semibold tracking-tight text-emerald-300">Clova</span>
+      <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
+        거인 API + 분석
+      </span>
+      <nav className="ml-4 flex gap-2">
+        <Tab id="bench" label="Bench" />
+        <Tab id="llm" label="LLM-분석" />
+        <Tab id="vision" label="Vision-분석" />
+        <Tab id="fsm" label="FSM-분석" />
+        <Tab id="chat" label="Chat" />
+      </nav>
+    </header>
+  );
+}
+
+function EldaHeader() {
+  return (
+    <header className="flex items-center gap-3 border-b border-slate-800 px-4 py-3">
+      <span className="text-lg font-semibold tracking-tight text-violet-300">ELDA</span>
+      <span className="rounded bg-violet-950/60 px-2 py-0.5 text-xs text-violet-300/80">
+        자체 추론 파이프라인
+      </span>
+    </header>
+  );
+}
+
+export default function Layout({ children }: { children: ReactNode }) {
+  const workspace = useClovaStore((s) => s.workspace);
+  return (
+    <div className="flex h-full bg-slate-950 text-slate-100">
+      <Sidebar />
+      <div className="flex min-w-0 flex-1 flex-col">
+        {workspace === 'clova' ? <ClovaHeader /> : <EldaHeader />}
+        <div className="min-h-0 flex-1">{children}</div>
+      </div>
     </div>
   );
 }

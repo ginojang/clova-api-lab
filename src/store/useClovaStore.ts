@@ -2,9 +2,11 @@ import { create } from 'zustand';
 import type { ChatRequest, ChatResponse } from '../types/clova';
 import { postChat, postChatStream } from '../api/proxyClient';
 
+export type Workspace = 'elda' | 'clova';
 export type Mode = 'bench' | 'llm' | 'vision' | 'fsm' | 'chat';
 
 type ClovaState = {
+  workspace: Workspace;
   mode: Mode;
 
   // 파라미터
@@ -28,6 +30,7 @@ type ClovaState = {
 };
 
 export const useClovaStore = create<ClovaState>((set, get) => ({
+  workspace: 'clova',
   mode: 'bench',
 
   model: 'HCX-005',

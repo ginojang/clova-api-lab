@@ -2,13 +2,16 @@ import Layout from './components/Layout';
 import ChatView from './components/ChatView';
 import BenchView from './components/BenchView';
 import AnalysisView from './components/AnalysisView';
+import EldaView from './components/EldaView';
 import { useClovaStore } from './store/useClovaStore';
 
 export default function App() {
-  const mode = useClovaStore((s) => s.mode);
+  const { workspace, mode } = useClovaStore();
   return (
     <Layout>
-      {mode === 'bench' ? (
+      {workspace === 'elda' ? (
+        <EldaView />
+      ) : mode === 'bench' ? (
         <BenchView />
       ) : mode === 'llm' ? (
         <AnalysisView report="llm" />
