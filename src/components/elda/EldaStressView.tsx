@@ -19,7 +19,9 @@ type Snap = {
   hist: { rps: number[]; p50: number[]; p95: number[]; p99: number[] };
 };
 
-const API = '/giant/clova/api/tei-stress';
+// 프록시 베이스는 proxyClient 와 동일 규약(VITE_API_BASE). 배포 sub-path 하드코딩 금지.
+const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3600';
+const API = `${API_BASE}/api/tei-stress`;
 
 function Spark({ data, color }: { data: number[]; color: string }) {
   const w = 220, h = 36;

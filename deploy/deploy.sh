@@ -2,7 +2,8 @@
 # clova-api-lab 배포 오케스트레이션 (로컬에서 실행).
 #   1) 프론트/서버 로컬 빌드  2) EC2(nginx+SPA)  3) hellcat(프록시 데몬)
 # EC2 에서는 절대 빌드하지 않는다 (916Mi RAM, OOM 위험).
-# 라이브: https://elda-ai.org/giant/clova/  (agent.elda-ai.org 도 동일 server block)
+# 라이브: https://elda-ai.org/giant/  (agent.elda-ai.org 도 동일 server block)
+#         구 /giant/clova/ 는 nginx 에서 301 → /giant/
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -11,18 +12,20 @@ HELLCAT=gino@192.168.0.28
 HKEY="$HOME/.ssh/rs5_key"
 HSSH="ssh -i $HKEY -o StrictHostKeyChecking=accept-new $HELLCAT"
 HRSYNC="ssh -i $HKEY"
-WEBROOT=/var/www/giant/clova
+WEBROOT=/var/www/giant
 SLOT="apps/clova-api-lab"  # hellcat ~/apps/clova-api-lab
 
 echo "== [1/4] 로컬 빌드 =="
-VITE_API_BASE=/giant/clova npm run build
+VITE_API_BASE=/giant npm run build
 npm run build:server
 
 echo "== [2/4] EC2 SPA + nginx =="
 ssh "$EC2" "sudo mkdir -p $WEBROOT && sudo chown -R ec2-user:ec2-user /var/www/giant"
+# --delete: 구 sub-path 잔재(/var/www/giant/clova/)까지 정리한다.
 rsync -avz --delete dist/ "$EC2:$WEBROOT/"
-scp deploy/nginx/giant-clova.conf "$EC2:/tmp/giant-clova.conf"
-ssh "$EC2" 'sudo install -m644 -o root -g root /tmp/giant-clova.conf /etc/nginx/default.d/giant-clova.conf && rm -f /tmp/giant-clova.conf && sudo nginx -t && sudo systemctl reload nginx && echo "nginx reloaded"'
+scp deploy/nginx/giant.conf "$EC2:/tmp/giant.conf"
+# 구 giant-clova.conf 를 먼저 치운다 — 남으면 location 중복으로 nginx -t 실패.
+ssh "$EC2" 'sudo rm -f /etc/nginx/default.d/giant-clova.conf && sudo install -m644 -o root -g root /tmp/giant.conf /etc/nginx/default.d/giant.conf && rm -f /tmp/giant.conf && sudo nginx -t && sudo systemctl reload nginx && echo "nginx reloaded"'
 
 echo "== [3/4] hellcat 파일 배치 =="
 $HSSH "mkdir -p ~/$SLOT"
