@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "description": "CLOVA Studio API 데모 테스트 콘솔 (AI Provider Lab)",
+  "description": "LLM 비교-분석-정리 — 거인 API + 자체 ELDA 통합 벤치·분석 콘솔 (구 clova-api-lab)",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

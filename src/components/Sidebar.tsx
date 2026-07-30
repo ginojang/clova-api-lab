@@ -72,7 +72,14 @@ function Badge({ id, label }: { id: Workspace; label: string }) {
 export default function Sidebar() {
   return (
     <aside className="flex h-full w-[124px] shrink-0 flex-col gap-3 border-r border-slate-800 bg-slate-950/80 p-3">
-      <div className="px-1 pt-1 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+      {/* 앱 브랜드 — 프런트 노출 명칭 (구 clova-api-lab) */}
+      <div className="border-b border-slate-800 px-1 pb-3 pt-1">
+        <div className="text-[15px] font-bold leading-none tracking-tight text-slate-100">LLM</div>
+        <div className="mt-1 text-[11px] font-semibold leading-tight text-slate-400">
+          비교-분석-정리
+        </div>
+      </div>
+      <div className="px-1 text-[10px] font-bold uppercase tracking-widest text-slate-500">
         WorkArea
       </div>
       <Badge id="elda" label="ELDA" />

@@ -6,6 +6,8 @@
 
 **clova-api-lab** — 원래 CLOVA Studio API 데모 콘솔로 출발했으나, 현재는 **거인 AI API + 우리 자체 AI(ELDA) 통합 테스트·벤치·분석 허브**로 확장됐다. 세 가지 역할:
 
+> **명칭 (2026-07-30)**: 프런트 웹의 노출 명칭은 **`LLM 비교-분석-정리`** 다(브라우저 title + 좌측 사이드바 브랜드). `clova-api-lab` 은 **저장소·hellcat 슬롯·systemd 유닛·npm `name` 의 식별자로만** 유지한다 — 이 둘을 섞지 말 것.
+
 1. **거인 API 매트릭스 테스트**: CLOVA Studio, OpenAI, Anthropic Claude, Google Gemini, DeepSeek, GLM, Qwen, Ollama 로컬 등을 **동일 벤치(모델×프롬프트 셀 캐시)**로 비교. 응답 품질·지연·토큰·지시준수.
 2. **자체 ELDA 테스트**: GanpanAI **MY-LLM Architecture(Intenter→Reasoner→Decoder, [GanpanAI/MY-LLM Architecture v2.3.md](../GanpanAI/MY-LLM%20Architecture%20v2.2.md))**의 헤드리스 추론 서비스(`ai-apistack`/`elda-orchestrator`)를 외부 클라이언트로 호출해 거인들과 동일 잣대로 평가.
 3. **모델 포렌식 + 멀티모달 R&D**: 가중치/토크나이저 출처 분석(`analysis/`)과 자체 멀티모달 구축 설계(`multimodal/`)의 허브.
