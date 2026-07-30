@@ -267,8 +267,8 @@ API 구현 우선순위:
 자매 프로젝트(elda-agent / GanpanAI)와 **동일한 2-호스트 토폴로지**를 따른다.
 
 ```
-사용자 → https://elda-ai.org/giant/  → EldaFront(EC2, nginx)
-            ├─ 정적 SPA (dist/ rsync 배포)   /var/www/giant/
+사용자 → https://elda-ai.org/giants/  → EldaFront(EC2, nginx)
+            ├─ 정적 SPA (dist/ rsync 배포)   /var/www/giants/
             └─ /api/* 리버스 프록시 → 127.0.0.1:<port>
                                         ↑ autossh 역방향 터널
                               hellcat(LAN 192.168.0.28) 의 프록시 데몬
@@ -291,15 +291,16 @@ API 구현 우선순위:
 ```
 로컬:  ./deploy/deploy.sh       # 4단계 전체 (아래를 순서대로 수행)
 로컬:  npm run build            # dist/ 생성 (EC2에서 빌드하지 않음)
-로컬:  rsync -avz --delete dist/  EldaFront:/var/www/giant/
+로컬:  rsync -avz --delete dist/  EldaFront:/var/www/giants/
 hellcat: 코드 갱신 → sudo systemctl restart clova-api-lab{,-tunnel}  (NOPASSWD 허용 범위)
 헬스:  curl -sS http://127.0.0.1:3600/health        # hellcat 로컬
-공개:  curl -s https://elda-ai.org/giant/api/bench/suite
+공개:  curl -s https://elda-ai.org/giants/api/bench/suite
 ```
 
 ### 공개 URL / TLS (2026-07-30 갱신)
 
-- 라이브: **`https://elda-ai.org/giant/`** (`agent.elda-ai.org` 도 동일 server block). **2026-07-30 에 `/giant/clova/` → `/giant/` 로 한 단계 올렸고, 구 경로는 nginx `return 301 /giant/` 로 남겨뒀다.** nginx 설치 파일도 `default.d/giant-clova.conf` → `default.d/giant.conf` 로 교체(구 파일은 `deploy.sh` 가 `rm` — 남으면 location 중복으로 `nginx -t` 실패). Let's Encrypt 인증서 적용됨 — `certbot` 이 nginx.conf default block 을 직접 수정해 관리한다.
+- 라이브: **`https://elda-ai.org/giants/`** (`agent.elda-ai.org` 도 동일 server block). Let's Encrypt 인증서 적용됨 — `certbot` 이 nginx.conf default block 을 직접 수정해 관리한다.
+- **공개 경로 이력**: `/giant/clova/` → `/giant/` → **`/giants/`** (둘 다 2026-07-30). 구 경로 2개는 nginx `return 301 /giants/` 로 남겨뒀다. 경로를 또 바꿀 때 손볼 곳은 **`deploy.sh` 의 `SEG` 변수 + `LEGACY_CONFS`/`LEGACY_WEBROOTS` 목록, `vite.config.ts` 의 `base`, `deploy/nginx/<SEG>.conf`** 뿐이다 — 프런트 코드에 경로를 하드코딩하지 말 것(API 경로는 `VITE_API_BASE` 로만). 구 nginx conf 파일은 반드시 제거해야 한다(`deploy.sh` 가 처리) — 남으면 location 중복으로 `nginx -t` 가 실패해 **같은 EC2 의 다른 사이트까지 reload 가 막힌다.**
 - **EC2 공용 DNS(`ec2-43-201-28-94...`)로는 접근 불가(404).** `conf.d/api.elda-ai.org.conf` 가 `include conf.d/*.conf`(nginx.conf 내 위치상) 로 먼저 로드돼 **443 default_server 를 선점**하며, 그 블록은 `default.d/*.conf` 를 include 하지 않고 `location = / { return 404 }` 다. 따라서 Host 가 `elda-ai.org` 계열이어야 SPA 에 도달한다.
 - 같은 EC2의 이웃 진입점: `api.elda-ai.org` = ELDA 외부 API(`/embed/`→9000, `/rerank/`→9001, `/intent/`→9002, 모두 hellcat 역방향 터널). `/admin/`(elda-agent, 4000) 은 default block 소유.
 
