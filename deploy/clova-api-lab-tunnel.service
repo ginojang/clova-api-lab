@@ -1,5 +1,5 @@
 [Unit]
-Description=CLOVA API Lab Reverse SSH Tunnel to AmazonFront (-R 3600)
+Description=CLOVA API Lab Reverse SSH Tunnel to EldaFront (-R 3600)
 After=network-online.target
 Wants=network-online.target
 
@@ -13,7 +13,7 @@ ExecStart=/usr/bin/autossh -M 0 -N \
   -o ServerAliveCountMax=2 \
   -o TCPKeepAlive=yes \
   -o ExitOnForwardFailure=yes \
-  -R 3600:localhost:3600 AmazonFront
+  -R 3600:localhost:3600 EldaFront
 Restart=always
 RestartSec=5
 

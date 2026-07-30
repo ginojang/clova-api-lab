@@ -2,10 +2,11 @@
 # clova-api-lab 배포 오케스트레이션 (로컬에서 실행).
 #   1) 프론트/서버 로컬 빌드  2) EC2(nginx+SPA)  3) hellcat(프록시 데몬)
 # EC2 에서는 절대 빌드하지 않는다 (916Mi RAM, OOM 위험).
+# 라이브: https://elda-ai.org/giant/clova/  (agent.elda-ai.org 도 동일 server block)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-EC2=AmazonFront
+EC2=EldaFront   # ~/.ssh/config alias (구 AmazonFront — 2026-06 리네임)
 HELLCAT=gino@192.168.0.28
 HKEY="$HOME/.ssh/rs5_key"
 HSSH="ssh -i $HKEY -o StrictHostKeyChecking=accept-new $HELLCAT"

@@ -265,8 +265,8 @@ API 구현 우선순위:
 자매 프로젝트(elda-agent / GanpanAI)와 **동일한 2-호스트 토폴로지**를 따른다.
 
 ```
-사용자 → AmazonFront(EC2, nginx)
-            ├─ 정적 SPA (dist/ rsync 배포)
+사용자 → https://elda-ai.org/giant/clova/  → EldaFront(EC2, nginx)
+            ├─ 정적 SPA (dist/ rsync 배포)   /var/www/giant/clova/
             └─ /api/* 리버스 프록시 → 127.0.0.1:<port>
                                         ↑ autossh 역방향 터널
                               hellcat(LAN 192.168.0.28) 의 프록시 데몬
@@ -276,24 +276,30 @@ API 구현 우선순위:
 
 ### 호스트 역할
 
-- **AmazonFront (EC2, Amazon Linux 2023, t2.micro·916Mi RAM)**: nginx 정적 SPA + 리버스 프록시 **전용**. 백엔드 데몬 안 띄움.
+- **EldaFront (EC2, Amazon Linux 2023, t2.micro·916Mi RAM)** — `~/.ssh/config` alias. **구 `AmazonFront` 에서 2026-06 리네임됨**(동일 인스턴스; hellcat 쪽 alias 도 `EldaFront`). 키 파일명·자격증명은 로컬 `배포.txt` 참고(저장소 금지). nginx 정적 SPA + 리버스 프록시 **전용**. 백엔드 데몬 안 띄움.
   - **빌드 금지** — RAM 916Mi라 Vite 빌드 OOM 위험. **항상 로컬에서 `npm run build` 후 `rsync` 로 `dist/` 전송.**
 - **hellcat (Rocky Linux 9.6, Node v20)**: 실제 프록시(Express) 데몬 호스트. `~/apps/clova-api-lab/` 슬롯에 배치.
   - 기존 슬롯: punker-api(3000), corpus-api(3100), elda/*(3200·9100~9400), elda-agent(4000). clova-api-lab은 **포트 3600** 으로 같은 패턴으로 들어간다.
-  - **autossh 역방향 터널**(`-R 3600:localhost:3600 AmazonFront`)로 EC2 `127.0.0.1:3600` 에 listen.
+  - **autossh 역방향 터널**(`-R 3600:localhost:3600 EldaFront`)로 EC2 `127.0.0.1:3600` 에 listen.
   - systemd 유닛 2개 쌍: app unit + tunnel unit (elda-agent의 `*-api.service` / `*-api-tunnel.service` 패턴 그대로).
 - **spitfire (PostgreSQL 16)**: `192.168.0.2:5432`, LAN 직결. clova-api-lab **전용 DB**를 두고 요청/응답 로그를 영속화한다. 접속 자격증명은 hellcat의 `~/apps/clova-api-lab/.env` 에만 둔다(저장소 금지).
 
 ### 배포 흐름 (요지)
 
 ```
-로컬:  npm run build           # dist/ 생성 (EC2에서 빌드하지 않음)
-로컬:  rsync -avz --delete dist/  AmazonFront:/var/www/<path>/
+로컬:  ./deploy/deploy.sh       # 4단계 전체 (아래를 순서대로 수행)
+로컬:  npm run build            # dist/ 생성 (EC2에서 빌드하지 않음)
+로컬:  rsync -avz --delete dist/  EldaFront:/var/www/giant/clova/
 hellcat: 코드 갱신 → sudo systemctl restart clova-api-lab{,-tunnel}  (NOPASSWD 허용 범위)
-헬스:  curl -sS http://127.0.0.1:3600/health
+헬스:  curl -sS http://127.0.0.1:3600/health        # hellcat 로컬
+공개:  curl -s https://elda-ai.org/giant/clova/api/bench/suite
 ```
 
-> HTTPS는 미설정. 도메인 확보 후 Let's Encrypt + certbot.
+### 공개 URL / TLS (2026-06 갱신)
+
+- 라이브: **`https://elda-ai.org/giant/clova/`** (`agent.elda-ai.org` 도 동일 server block). Let's Encrypt 인증서 적용됨 — `certbot` 이 nginx.conf default block 을 직접 수정해 관리한다.
+- **EC2 공용 DNS(`ec2-43-201-28-94...`)로는 접근 불가(404).** `conf.d/api.elda-ai.org.conf` 가 `include conf.d/*.conf`(nginx.conf 내 위치상) 로 먼저 로드돼 **443 default_server 를 선점**하며, 그 블록은 `default.d/*.conf` 를 include 하지 않고 `location = / { return 404 }` 다. 따라서 Host 가 `elda-ai.org` 계열이어야 SPA 에 도달한다.
+- 같은 EC2의 이웃 진입점: `api.elda-ai.org` = ELDA 외부 API(`/embed/`→9000, `/rerank/`→9001, `/intent/`→9002, 모두 hellcat 역방향 터널). `/admin/`(elda-agent, 4000) 은 default block 소유.
 
 ## 성공 기준
 
