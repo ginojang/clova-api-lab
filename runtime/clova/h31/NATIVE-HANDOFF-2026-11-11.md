@@ -2,6 +2,8 @@
 
 대상은 코딩고래 소유 Elda CLI ② native loop다. 이번 확인은 설치 소스 읽기·기존 H31 증거 재검토·메모리 내 모의 호출뿐이다. 설치 CLI 수정, 운영 명령, 실제 모델 호출은0회다. H31 재측정이나 Graph/Pi 개선을 요청하는 목록이 아니다.
 
+**인계 후 상태:** 코딩고래 `34103b6559`는 CLI `29252c0`에서 아래 세 재현 항목을 수정·시험했다고 보고했다. 풀스택 `1711b4121e`는 이후 CLI `afb612f` 배포를 보고했다. 따라서 아래 표는 수정 전 재현 근거로 보존하며 중복 수정을 요청하지 않는다. 이 랩의 독립 재측정 결과로 표시하지 않는다.
+
 ## 이미 확인된 사항
 
 - **숫자 text42는 이미 시험했다.** [최종 malformed 원문](../results/h31-malformed-schema-final-2026-11-11.json)의 `harness=elda, case=numeric_text`는 원시42 유지, `wrong_type/text`, `retryable:true`, `sideEffect:not_started`, 승인0회·파일0개다. 이어진 모델 요청도 이 진단을 받았다. 수정 전·중간·최종 비교에서 동일했다. 이는 모의 CLOVA 응답을 실제 설치 native loop에 통과시킨 시험이며, 실제 HCX가 숫자42를 생성했다는 뜻은 아니다.
@@ -29,7 +31,7 @@ node runtime/clova/h31/malformed.mjs --output .local/new-native-argument-check.j
 
 추가 수신 `381c4a52dc`와 [Elda-Spec b888f05 키트 기록](https://github.com/ginojang/Elda-Spec/blob/b888f05a36d4310ffbbccb6bb81f9d68013f44f7/harness/kit/README.md)을 읽었다. 새 kit0.808/harness0.809는 CLI4696537 + Ops9731339에 FAIL2/WARN1을 기록했다. H57 notify의 origin.kind=human을 사람 입력처럼 취급하는 경로는 당시 설치 `events.py:327`에서도 확인했다. H61 feed_read/resource 누락은 Ops의 인프라 몫이었다. 이 랩은 새 키트를 직접 실행하지 않았으며, 앞선 kit0.805의 FAIL0/WARN0과 섞어 적합성을 주장하지 않는다.
 
-이후 `c2810a7ec6`에서 인프라가 Ops `cf7138e`의 H61 수정과 mars 키트 FAIL1/WARN0을 보고했다. 최신 `7bf84d06a5`에서는 풀스택이 CLI `b50f9ee`의 H57 수정, kit0.808 적합·경고0,8개 호스트 배포 완료를 보고했다. H57/H61 중복 수정 요청은 종료하고, 본문42901·40080·빈 properties의 세 항목은 코딩고래 판단을 기다린다. 배포·재측정은 담당 팀 보고이지 이 랩의 직접 실행 결과가 아니다.
+이후 `c2810a7ec6`에서 인프라가 Ops `cf7138e`의 H61 수정과 mars 키트 FAIL1/WARN0을 보고했다. `7bf84d06a5`에서는 풀스택이 CLI `b50f9ee`의 H57 수정, kit0.808 적합·경고0,8개 호스트 배포 완료를 보고했다. 이어 위 세 재현 항목도 코딩고래에게 수정 보고를 받았다. 배포·재측정은 담당 팀 보고이지 이 랩의 직접 실행 결과가 아니다.
 
 이번 읽기 시 설치 CLI HEAD는 `469653789ca820f8919bb43477e14fefe37eb281`이었다. 다음 해시는 최종 malformed 결과의 native 소스와 같다. 저장소 HEAD만으로 실험 당시 모든 설치 파일이 같았다고 추정하지 않고 파일별로 대조했다.
 

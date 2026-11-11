@@ -1,0 +1,1576 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "review_role": "independent_primary_qualitative_reviewer",
+  "scope": {
+    "reviewed_outputs": 10,
+    "review_api_calls": 0,
+    "comms_sent": 0,
+    "model_or_registry_edits": 0,
+    "other_reviewer_files_read": false,
+    "output_scope": "runtime/clova/ops-task/review-primary-2026-11-11.json",
+    "source_snapshot": ".local/ops-review-31bab41",
+    "source_manifest": {
+      "repo": "ginojang/Elda-Ops",
+      "commit": "31bab41f54aecaa928856fbf69dc439014a2425f",
+      "files": {
+        "host-watch/eval/2026-11-11/README.md": "b133b8f5c78147a0bdb3976efab5808d2c1bedabdd3ad347b9eb10ee27c5a0c9",
+        "host-watch/eval/2026-11-11/inputs.json": "e7d339faf38f681ac95243e65e3a5856703d45457e00dc45a05fe5d805fd9b09",
+        "host-watch/eval/2026-11-11/v0-registry/A-run89.jsonl": "b42d19f222f024967cd9ecdc4ebc9f58dc483758dd4ae54d24d96320f9c75281",
+        "host-watch/eval/2026-11-11/v0-registry/B-run90.jsonl": "31cecaa2aaa336cbf5afe852b91b809a2aa69d482d1a06f5294925d6a3674c26",
+        "host-watch/eval/2026-11-11/v0-registry/C-run91.jsonl": "a769d5072b410819d052f607949d4c50e40dace87e1152e3eebce17ee0fbf63e",
+        "host-watch/eval/2026-11-11/v0-registry/R-run88.jsonl": "2706fee4427aaa81ce83dd4b756c3611ea8000db6521142c7836ad2a09dd41c7",
+        "host-watch/eval/2026-11-11/v0-registry/results.txt": "33949f9619a958550cc844218bc8ed379500153fc1557e905d6f07415c3a5c48",
+        "host-watch/eval/2026-11-11/v1-system/log-A.jsonl": "1f83806007acac6281b1e4b463871b376b0cf29a9d3b2e8f73a7672a914264b3",
+        "host-watch/eval/2026-11-11/v1-system/log-B.jsonl": "e04f9dd36a5bd6a94109c7aff64840e193a9feb192bc2b7b55da2f5823023fda",
+        "host-watch/eval/2026-11-11/v1-system/log-C.jsonl": "07c9e17686ca11a34bdbb5a5144ed27c55e28c714dbdc8851e51977091b82387",
+        "host-watch/eval/2026-11-11/v1-system/res-A.json": "d757638d303eb007ba37de8c5a1d3cfd77c21b69b3e4dc149241decc09600351",
+        "host-watch/eval/2026-11-11/v1-system/res-B.json": "5a3bfe353b349afd0de4e7b1639c50543947a7014bef6a9dc6217be530200777",
+        "host-watch/eval/2026-11-11/v1-system/res-C.json": "8754eded747e0527c71367fdbaa8a95fb742642a2cf0e634993d6071c604f943",
+        "host-watch/eval/2026-11-11/v1-system/spec-A.json": "0c7051c0357ad4501e1bdeb10f5800e398c0cc3519189780df6e483099590c93",
+        "host-watch/eval/2026-11-11/v1-system/spec-B.json": "4c4f90cd3abf841831d325e3c0481a7478ae3b2f323233e4e6fa30b5d1bd2435",
+        "host-watch/eval/2026-11-11/v1-system/spec-C.json": "3f7d98c8c5f22ab5b27f8e2a5b884e73edec6ab0efd0d399cfe32dbbbe1315ba",
+        "host-watch/eval/2026-11-11/v1-system/system.txt": "f23a21fde94474c46f43aae0ba2b8d753c01683d249ed3c8edd72b8bf22af04d",
+        "host-watch/eval/2026-11-11/v2-prompt/log-A.jsonl": "bec433b5e461331793f9142ed4b1edc74113c94b3e77067065eae4680be87996",
+        "host-watch/eval/2026-11-11/v2-prompt/log-B.jsonl": "b5b196fc38536fae3543feb48c9e0eda8337bee24283fa4006aa23140c1fcb45",
+        "host-watch/eval/2026-11-11/v2-prompt/log-C.jsonl": "8764fc708338f5c98e0c61ae665602577b688962df79f5020f9304f0772b578e",
+        "host-watch/eval/2026-11-11/v2-prompt/prompt.txt": "f48bb54eeab2a711890490b2a226f9c35edde33a890149d23edadbf9c00f7a21",
+        "host-watch/eval/2026-11-11/v2-prompt/res-A.json": "9c6bc4acfd54dd59c85de23e3f0b3305b20c310103c57ecebcb08de8d1b2704d",
+        "host-watch/eval/2026-11-11/v2-prompt/res-B.json": "d7ace7bd935c8ce0058d4027b0b1112281ea5efbac4195147864e181e0e35d5d",
+        "host-watch/eval/2026-11-11/v2-prompt/res-C.json": "de9c450b25b162bbdd7abcd547c3ec2072c3f964484f3010da21267499af6218",
+        "host-watch/eval/2026-11-11/v2-prompt/spec-A.json": "7dae8086690f81d7edb24fbab55bb04a3dd287a5e3e4b241d1aba215bc9b7e70",
+        "host-watch/eval/2026-11-11/v2-prompt/spec-B.json": "0676f0dbefd290846bb3d085f8f350cbabc3aa8931c3201fba88df254feb00ab",
+        "host-watch/eval/2026-11-11/v2-prompt/spec-C.json": "5169d7a788888725e44dbdc6a2f3903e47d8a3ef44ceb5fba3218151cd64a045"
+      }
+    },
+    "verified_source_sha256": {
+      "host-watch/eval/2026-11-11/README.md": "b133b8f5c78147a0bdb3976efab5808d2c1bedabdd3ad347b9eb10ee27c5a0c9",
+      "host-watch/eval/2026-11-11/inputs.json": "e7d339faf38f681ac95243e65e3a5856703d45457e00dc45a05fe5d805fd9b09",
+      "host-watch/eval/2026-11-11/v0-registry/A-run89.jsonl": "b42d19f222f024967cd9ecdc4ebc9f58dc483758dd4ae54d24d96320f9c75281",
+      "host-watch/eval/2026-11-11/v0-registry/B-run90.jsonl": "31cecaa2aaa336cbf5afe852b91b809a2aa69d482d1a06f5294925d6a3674c26",
+      "host-watch/eval/2026-11-11/v0-registry/C-run91.jsonl": "a769d5072b410819d052f607949d4c50e40dace87e1152e3eebce17ee0fbf63e",
+      "host-watch/eval/2026-11-11/v0-registry/R-run88.jsonl": "2706fee4427aaa81ce83dd4b756c3611ea8000db6521142c7836ad2a09dd41c7",
+      "host-watch/eval/2026-11-11/v0-registry/results.txt": "33949f9619a958550cc844218bc8ed379500153fc1557e905d6f07415c3a5c48",
+      "host-watch/eval/2026-11-11/v1-system/log-A.jsonl": "1f83806007acac6281b1e4b463871b376b0cf29a9d3b2e8f73a7672a914264b3",
+      "host-watch/eval/2026-11-11/v1-system/log-B.jsonl": "e04f9dd36a5bd6a94109c7aff64840e193a9feb192bc2b7b55da2f5823023fda",
+      "host-watch/eval/2026-11-11/v1-system/log-C.jsonl": "07c9e17686ca11a34bdbb5a5144ed27c55e28c714dbdc8851e51977091b82387",
+      "host-watch/eval/2026-11-11/v1-system/res-A.json": "d757638d303eb007ba37de8c5a1d3cfd77c21b69b3e4dc149241decc09600351",
+      "host-watch/eval/2026-11-11/v1-system/res-B.json": "5a3bfe353b349afd0de4e7b1639c50543947a7014bef6a9dc6217be530200777",
+      "host-watch/eval/2026-11-11/v1-system/res-C.json": "8754eded747e0527c71367fdbaa8a95fb742642a2cf0e634993d6071c604f943",
+      "host-watch/eval/2026-11-11/v1-system/spec-A.json": "0c7051c0357ad4501e1bdeb10f5800e398c0cc3519189780df6e483099590c93",
+      "host-watch/eval/2026-11-11/v1-system/spec-B.json": "4c4f90cd3abf841831d325e3c0481a7478ae3b2f323233e4e6fa30b5d1bd2435",
+      "host-watch/eval/2026-11-11/v1-system/spec-C.json": "3f7d98c8c5f22ab5b27f8e2a5b884e73edec6ab0efd0d399cfe32dbbbe1315ba",
+      "host-watch/eval/2026-11-11/v1-system/system.txt": "f23a21fde94474c46f43aae0ba2b8d753c01683d249ed3c8edd72b8bf22af04d",
+      "host-watch/eval/2026-11-11/v2-prompt/log-A.jsonl": "bec433b5e461331793f9142ed4b1edc74113c94b3e77067065eae4680be87996",
+      "host-watch/eval/2026-11-11/v2-prompt/log-B.jsonl": "b5b196fc38536fae3543feb48c9e0eda8337bee24283fa4006aa23140c1fcb45",
+      "host-watch/eval/2026-11-11/v2-prompt/log-C.jsonl": "8764fc708338f5c98e0c61ae665602577b688962df79f5020f9304f0772b578e",
+      "host-watch/eval/2026-11-11/v2-prompt/prompt.txt": "f48bb54eeab2a711890490b2a226f9c35edde33a890149d23edadbf9c00f7a21",
+      "host-watch/eval/2026-11-11/v2-prompt/res-A.json": "9c6bc4acfd54dd59c85de23e3f0b3305b20c310103c57ecebcb08de8d1b2704d",
+      "host-watch/eval/2026-11-11/v2-prompt/res-B.json": "d7ace7bd935c8ce0058d4027b0b1112281ea5efbac4195147864e181e0e35d5d",
+      "host-watch/eval/2026-11-11/v2-prompt/res-C.json": "de9c450b25b162bbdd7abcd547c3ec2072c3f964484f3010da21267499af6218",
+      "host-watch/eval/2026-11-11/v2-prompt/spec-A.json": "7dae8086690f81d7edb24fbab55bb04a3dd287a5e3e4b241d1aba215bc9b7e70",
+      "host-watch/eval/2026-11-11/v2-prompt/spec-B.json": "0676f0dbefd290846bb3d085f8f350cbabc3aa8931c3201fba88df254feb00ab",
+      "host-watch/eval/2026-11-11/v2-prompt/spec-C.json": "5169d7a788888725e44dbdc6a2f3903e47d8a3ef44ceb5fba3218151cd64a045"
+    },
+    "verified_manifest_files": 27,
+    "source_hash_mismatches": [],
+    "source_manifest_sha256": "5f5de365ce6c9d6972b4beb167d3aa1c5001c986e4fdb64e9d6f09d80fd952a5"
+  },
+  "method": {
+    "verdicts": "pass는 해당 좁은 축만 충족, fail은 인용한 출력에서 위반 관측, indeterminate는 문장 또는 근거만으로 확정할 수 없음이다.",
+    "numeric_policy": "단순 1), 2), 1. 등의 항목 번호는 의미 있는 수치가 아니다. 수치 창작과 정확한 수치 인용을 별도 축으로 판정한다.",
+    "citation_policy": "정성 근거는 입력의 관측 사실을 재진술했는지 평가한다. 원인 가설만 적는 것은 근거 인용이 아니다. 정성적 인용 통과가 수치 인용 통과를 뜻하지 않는다. v1/v2 문구는 수치 또는 사실 인용을 허용하므로 정확한 수치 부재만으로 모든 인용 요구를 위반했다고 주장하지 않는다.",
+    "fact_policy": "가능성·추정으로 한정된 원인과 미래 조치 권고는 새 관측 사실 단정으로 세지 않는다. 그 가설·조치의 근거 부족은 별도 축에 기록한다. 증거 생략으로 창작을 피한 답변을 유용하다고 평가하지 않는다.",
+    "action_policy": "링크·CRC 관측과 연결되는 물리 경로 점검/시험과 진단 정보 수집은 허용 가능하다. 입력에 소프트웨어·설정 문제 근거 없이 권고한 업데이트·초기화·리셋은 실패다. 포트 청소처럼 관련성은 있으나 직접 근거가 부족한 경계 사례는 indeterminate로 남긴다.",
+    "line_policy": "문자열 splitlines()로 실제 개행을 세고 빈 줄도 포함한다. 빈 줄 제외 수를 함께 제공해 해석 차이를 숨기지 않는다.",
+    "layout_policy": "원인/조치 의미 분리와 후보별 고정 머리말/두 줄 외형 준수를 분리한다. v1/v2 규칙을 v0에 소급 적용하지 않는다.",
+    "unknown_temporal_policy": "B의 None을 0으로, C의 과거 uptime을 현재로 바꾼 출력은 관측되지 않았다. 모든 출력이 해당 수치를 생략했으므로 그 변별 능력의 적극적 입증은 아니다."
+  },
+  "outputs": [
+    {
+      "id": "v0-registry/R",
+      "variant": "v0-registry",
+      "case": "R",
+      "input_kind": "historical_real_input_replay",
+      "run_id": "88",
+      "source_jsonl": "v0-registry/R-run88.jsonl",
+      "source_sha256": "2706fee4427aaa81ce83dd4b756c3611ea8000db6521142c7836ad2a09dd41c7",
+      "input": {
+        "net": "pluto",
+        "alerts": "iolo eno1: 끊겼다 붙음 1번 · CRC 오류 +3",
+        "facts": "iolo: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000"
+      },
+      "rendered_prompt": "pluto 네트웍 장비 점검에서 알림이 났다.\n알림: iolo eno1: 끊겼다 붙음 1번 · CRC 오류 +3\n장비 기록(부팅 뒤 누적): iolo: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 랜선 접촉 불량 또는 네트워크 스위치 문제입니다.\n\n2) 조치 사항으로는 다음과 같습니다.\n\n- 해당 랜선이 잘 연결되어 있는지 확인합니다.\n- 네트워크 스위치에 문제가 있는지 확인 후 교체하거나 수리합니다.\n- 드라이버를 최신 버전으로 업데이트 합니다.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "fail",
+          "quote": "랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "알림은 링크 변화와 CRC 증가만 제시한다. 현재 원인을 단정하는 종결형이며 확인되지 않은 원인을 사실처럼 제시했다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "가설 자체만 쓰고 끊김 또는 CRC 관측 사실을 인용하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "드라이버를 최신 버전으로 업데이트 합니다.",
+          "reason": "입력에 드라이버 상태·오류 근거가 없는데 업데이트를 권고했다. 랜선 확인은 링크 변화와 연결된다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "fail",
+          "quote": "문제입니다.",
+          "reason": "가능성·추정·미확정 표현 없이 원인을 단정했다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 조치 사항으로는 다음과 같습니다.",
+          "reason": "1)은 원인, 2) 이하에는 사람의 조치가 있어 의미상 구분된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "해당 랜선이 잘 연결되어 있는지 확인합니다.",
+          "reason": "사람이 수행할 구체적인 연결 확인이 있다. 이 축 통과는 나머지 조치의 근거를 보증하지 않는다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "1) 랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "v0 입력의 1) 원인, 2) 조치 구조를 따른다. v1/v2의 고정 문구 규칙은 소급 적용하지 않았다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 랜선 접촉 불량 또는 네트워크 스위치 문제입니다.",
+          "reason": "실제 개행 기준 7줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [
+        "랜선 접촉 불량 또는 네트워크 스위치 문제입니다."
+      ],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "드라이버를 최신 버전으로 업데이트 합니다."
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "스위치 언급을 새 장비의 실재 관측으로 별도 집계하지 않는다. 문제는 원인 확정 표현이다.",
+      "contract_notes": [],
+      "physical_lines": 7,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 189,
+        "output_tokens": 60,
+        "total_tokens": 249,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1729
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 189,
+        "output": 60,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "15d8f3ff208b409c9198ead2330a54a7",
+      "wrapper_header": [
+        "# 2026-11-11T12:47:44+00:00 [\"/usr/bin/python3\", \"/home/gino/apps/elda-cli/elda\", \"job\", \"_ai\", \"/home/gino/.local/share/elda/jobs/host-watch-explain/ai-ngody759.json\"] (cwd /home/gino/.local/share/elda/jobs/host-watch-explain)"
+      ],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v0-registry/A",
+      "variant": "v0-registry",
+      "case": "A",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": "89",
+      "source_jsonl": "v0-registry/A-run89.jsonl",
+      "source_sha256": "b42d19f222f024967cd9ecdc4ebc9f58dc483758dd4ae54d24d96320f9c75281",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 네트워크 케이블 또는 포트 문제  \n2) 조치 순서\n   - 네트워크 케이블 교체 및 재연결 확인\n   - 장비 내부 먼지 제거 및 접촉 상태 확인\n   - 드라이버 최신 버전으로 업데이트",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "indeterminate",
+          "quote": "네트워크 케이블 또는 포트 문제",
+          "reason": "원인 질문에 대한 명사구여서 추정 답변인지 확인된 사실 단정인지 문장만으로 확정하기 어렵다. 명시적 불확실성은 별도로 실패다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 네트워크 케이블 또는 포트 문제  ",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 네트워크 케이블 또는 포트 문제  ",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "네트워크 케이블 또는 포트 문제",
+          "reason": "끊김 6번이나 CRC 증가라는 입력 관측을 언급하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "드라이버 최신 버전으로 업데이트",
+          "reason": "입력에 드라이버 문제 근거가 없다. 장비 내부 먼지 제거도 먼지·오염 관측 없이 추가됐다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "fail",
+          "quote": "네트워크 케이블 또는 포트 문제",
+          "reason": "명시적인 가능성·추정·불확실성 표현이 없다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 조치 순서",
+          "reason": "1) 원인 후보와 2) 이하 조치가 구분된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "네트워크 케이블 교체 및 재연결 확인",
+          "reason": "구체적인 물리 연결 시험이 있다. 드라이버·먼지 조치의 정당성과는 별도다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "2) 조치 순서",
+          "reason": "v0에서 요구한 원인과 조치의 번호 구분은 있다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 네트워크 케이블 또는 포트 문제  ",
+          "reason": "실제 개행 기준 5줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [
+        "네트워크 케이블 또는 포트 문제"
+      ],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "장비 내부 먼지 제거 및 접촉 상태 확인",
+        "드라이버 최신 버전으로 업데이트"
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "먼지 제거를 권고했다고 해서 먼지가 실제로 관측됐다고 주장한 것으로 중복 집계하지 않는다.",
+      "contract_notes": [],
+      "physical_lines": 5,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 198,
+        "output_tokens": 52,
+        "total_tokens": 250,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1496
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 198,
+        "output": 52,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "8112ef0007884dc4b598d4fce656c0db",
+      "wrapper_header": [
+        "# 2026-11-11T12:47:46+00:00 [\"/usr/bin/python3\", \"/home/gino/apps/elda-cli/elda\", \"job\", \"_ai\", \"/home/gino/.local/share/elda/jobs/host-watch-explain/ai-clfpkee0.json\"] (cwd /home/gino/.local/share/elda/jobs/host-watch-explain)"
+      ],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v0-registry/B",
+      "variant": "v0-registry",
+      "case": "B",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": "90",
+      "source_jsonl": "v0-registry/B-run90.jsonl",
+      "source_sha256": "31cecaa2aaa336cbf5afe852b91b809a2aa69d482d1a06f5294925d6a3674c26",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 랜선 혹은 포트에 문제가 생겨 CRC 오류가 발생한 것으로 추정됩니다.\n\n2) 조치 사항:\n- 먼저 해당 랜선을 교체하거나 다른 포트를 사용해봅니다.\n- 이후에도 문제가 해결되지 않을 경우 네트워크 스위치나 케이블 테스터기를 이용하여 진단을 수행합니다.\n- 마지막으로, 문제가 지속된다면 해당 네트워크 인터페이스 카드(NIC) 드라이버를 업데이트하거나 재설치 해볼 것을 권장 드립니다.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "CRC 오류가 발생한 것으로 추정됩니다.",
+          "reason": "CRC 오류는 입력에 있고 케이블·포트 원인은 추정으로 한정된다. 새 관측 사건·수치는 주장하지 않는다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 랜선 혹은 포트에 문제가 생겨 CRC 오류가 발생한 것으로 추정됩니다.",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 랜선 혹은 포트에 문제가 생겨 CRC 오류가 발생한 것으로 추정됩니다.",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "pass",
+          "quote": "CRC 오류가 발생한 것으로 추정됩니다.",
+          "reason": "CRC 오류 발생이라는 입력 사실을 정성적으로 사용한다. +14나 누적 164의 정확한 수치 인용은 아니다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "드라이버를 업데이트하거나 재설치 해볼 것을 권장 드립니다.",
+          "reason": "지속될 경우라는 조건만으로 드라이버 문제 근거가 생기지 않는다. 입력과 무관한 일반 처방이다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "추정됩니다.",
+          "reason": "케이블·포트 원인을 명시적 추정으로 표현했다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 조치 사항:",
+          "reason": "1) 원인 추정과 2) 조치가 분리된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "해당 랜선을 교체하거나 다른 포트를 사용해봅니다.",
+          "reason": "입력에서 의심한 랜선·포트를 대상으로 사람이 실행할 시험이 있다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "2) 조치 사항:",
+          "reason": "v0에서 요구한 원인과 조치의 번호 구분은 있다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 랜선 혹은 포트에 문제가 생겨 CRC 오류가 발생한 것으로 추정됩니다.",
+          "reason": "실제 개행 기준 6줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "드라이버를 업데이트하거나 재설치 해볼 것을 권장 드립니다."
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "스위치·테스터기 언급은 향후 진단 방법 권고다. 존재하는 추가 장비를 관측했다는 사실 주장과 구분했다.",
+      "contract_notes": [],
+      "physical_lines": 6,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 201,
+        "output_tokens": 94,
+        "total_tokens": 295,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 2390
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 201,
+        "output": 94,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "1420dc7dffc54d6391594d3be8f70fe0",
+      "wrapper_header": [
+        "# 2026-11-11T12:47:48+00:00 [\"/usr/bin/python3\", \"/home/gino/apps/elda-cli/elda\", \"job\", \"_ai\", \"/home/gino/.local/share/elda/jobs/host-watch-explain/ai-1pvjec8e.json\"] (cwd /home/gino/.local/share/elda/jobs/host-watch-explain)"
+      ],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v0-registry/C",
+      "variant": "v0-registry",
+      "case": "C",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": "91",
+      "source_jsonl": "v0-registry/C-run91.jsonl",
+      "source_sha256": "a769d5072b410819d052f607949d4c50e40dace87e1152e3eebce17ee0fbf63e",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음",
+        "facts": "mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음\n장비 기록(부팅 뒤 누적): mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 해당 장비의 전원이 제대로 연결되어 있는지 확인하거나 케이블을 교체할 필요가 있습니다.\n\n2) 장비 재부팅을 시도합니다.\n\n3) 네트워크 케이블 및 스위치 포트를 점검하고 문제가 지속된다면 네트워크 관리자에게 문의합니다.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "전원이 제대로 연결되어 있는지 확인하거나",
+          "reason": "확인 권고이지 전원 꺼짐을 확정한 문장이 아니다. 재부팅도 미래 조치이며 복구 완료 주장이나 현재 uptime 주장은 없다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 해당 장비의 전원이 제대로 연결되어 있는지 확인하거나 케이블을 교체할 필요가 있습니다.",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 해당 장비의 전원이 제대로 연결되어 있는지 확인하거나 케이블을 교체할 필요가 있습니다.",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "장비 재부팅을 시도합니다.",
+          "reason": "접속 불가 또는 응답 없음이라는 관측 사실을 답에 인용하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "장비 재부팅을 시도합니다.",
+          "reason": "응답 없음만으로 재부팅·케이블 교체의 필요성을 정할 수 없는데 확인 단계와 조건 없이 권고했다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "fail",
+          "quote": "케이블을 교체할 필요가 있습니다.",
+          "reason": "원인 불명 또는 가능성 표현이 없고 원인 대신 필요 조치를 제시했다."
+        },
+        "cause_action_separation": {
+          "verdict": "fail",
+          "quote": "1) 해당 장비의 전원이 제대로 연결되어 있는지 확인하거나",
+          "reason": "원인 자리인 1)에 확인·교체 조치를 넣어 원인과 조치 구조를 충족하지 못했다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "네트워크 케이블 및 스위치 포트를 점검하고",
+          "reason": "사람이 할 물리 점검이 있다. 근거 없는 재부팅 처방과 구별한다."
+        },
+        "requested_layout": {
+          "verdict": "fail",
+          "quote": "2) 장비 재부팅을 시도합니다.",
+          "reason": "1)은 원인 답이 아니라 조치이고 2), 3) 역시 조치다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 해당 장비의 전원이 제대로 연결되어 있는지 확인하거나 케이블을 교체할 필요가 있습니다.",
+          "reason": "실제 개행 기준 5줄, 빈 줄 제외 3줄. 빈 줄도 줄 수에 포함했다. 빈 줄을 제외하는 해석이면 이 축만 통과하나 원인/조치 혼합과 무근거 재부팅 실패는 바뀌지 않는다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "케이블을 교체할 필요가 있습니다.",
+        "장비 재부팅을 시도합니다."
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "전원 확인·케이블 점검 권고 자체를 전원 단절·랜선 단선의 사실 단정으로 오판하지 않았다.",
+      "contract_notes": [],
+      "physical_lines": 5,
+      "nonempty_lines": 3,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 195,
+        "output_tokens": 54,
+        "total_tokens": 249,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1650
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 195,
+        "output": 54,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "37ed1309a7794c6ba39ee6b0a904b09c",
+      "wrapper_header": [
+        "# 2026-11-11T12:47:51+00:00 [\"/usr/bin/python3\", \"/home/gino/apps/elda-cli/elda\", \"job\", \"_ai\", \"/home/gino/.local/share/elda/jobs/host-watch-explain/ai-9uh2mtc3.json\"] (cwd /home/gino/.local/share/elda/jobs/host-watch-explain)"
+      ],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v1-system/A",
+      "variant": "v1-system",
+      "case": "A",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v1-system/log-A.jsonl",
+      "source_sha256": "1f83806007acac6281b1e4b463871b376b0cf29a9d3b2e8f73a7672a914264b3",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 원인 가능성: 네트워크 케이블 또는 스위치 문제  \n2) 사람이 할 조치:\n   a) 네트워크 케이블 교체 및 재연결 상태를 확인합니다.\n   b) 스위치의 포트 변경을 시도하여 문제가 해결되는지 확인합니다.\n   c) 네트워크 모니터링 도구를 사용하여 문제를 지속적으로 모니터링하며 추가적인 진단 정보를 수집합니다.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "원인 가능성: 네트워크 케이블 또는 스위치 문제",
+          "reason": "가능성 표지 아래 가설을 제시한다. 확인된 새 사건·장비 상태나 수치를 주장하지 않는다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 스위치 문제  ",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 스위치 문제  ",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "원인 가능성: 네트워크 케이블 또는 스위치 문제",
+          "reason": "입력의 링크 변화·CRC 오류 사실을 인용하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "pass",
+          "quote": "문제를 지속적으로 모니터링하며 추가적인 진단 정보를 수집합니다.",
+          "reason": "케이블·포트 시험과 추가 진단 수집은 링크 변화·CRC 관측과 연결된다. 드라이버 업데이트나 설정 초기화 같은 무근거 변경은 없다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "원인 가능성:",
+          "reason": "첫 줄 표지가 원인을 가설로 한정한다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사람이 할 조치:",
+          "reason": "첫 줄은 원인 후보이고 두 번째 구획은 조치다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "스위치의 포트 변경을 시도하여 문제가 해결되는지 확인합니다.",
+          "reason": "실행 후 관측할 대상이 있는 물리 경로 시험이다. 모니터링 항목·기간은 구체화하지 않았다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성:",
+          "reason": "v1의 두 고정 머리말이 정확하다. 4줄 제한 위반은 별도 축이다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 스위치 문제  ",
+          "reason": "실제 개행 기준 5줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "케이블/스위치 가설은 관측 사실을 인용하지 않아 근거 제시에는 실패하지만, 사실 단정은 아니다.",
+      "contract_notes": [],
+      "physical_lines": 5,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 408,
+        "output_tokens": 73,
+        "total_tokens": 481,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1993
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 408,
+        "output": 73,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "18bcf98d02ee42c2a3c93e6c80e518d9",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v1-system/B",
+      "variant": "v1-system",
+      "case": "B",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v1-system/log-B.jsonl",
+      "source_sha256": "e04f9dd36a5bd6a94109c7aff64840e193a9feb192bc2b7b55da2f5823023fda",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) CRC 오류는 수신된 데이터가 손상되었음을 나타내며, 이는 네트워크 케이블 또는 포트에 문제가 있을 가능성이 있습니다.\n\n2) 사람이 할 조치:\n   a. 해당 네트워크 케이블을 교체하거나 다른 포트를 사용해 보세요.\n   b. 네트워크 케이블과 포트 상태를 점검하세요.\n   c. 네트워크 스위치나 라우터 설정 초기화를 시도해보세요.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "문제가 있을 가능성이 있습니다.",
+          "reason": "CRC 데이터 손상은 입력에 명시되어 있고 원인은 가능성으로 한정했다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) CRC 오류는 수신된 데이터가 손상되었음을 나타내며, 이는 네트워크 케이블 또는 포트에 문제가 있을 가능성이 있습니다.",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) CRC 오류는 수신된 데이터가 손상되었음을 나타내며, 이는 네트워크 케이블 또는 포트에 문제가 있을 가능성이 있습니다.",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "pass",
+          "quote": "CRC 오류는 수신된 데이터가 손상되었음을 나타내며",
+          "reason": "입력의 CRC 오류와 받은 데이터가 깨짐을 정성적으로 재진술한다. 수치 인용과는 별개다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "네트워크 스위치나 라우터 설정 초기화를 시도해보세요.",
+          "reason": "물리 랜선·포트 의심만 제시된 입력에 설정 손상 근거가 없어 초기화가 정당화되지 않는다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "가능성이 있습니다.",
+          "reason": "원인을 명시적인 가능성으로 한정했다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사람이 할 조치:",
+          "reason": "원인 설명과 조치 구획은 분리된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "네트워크 케이블과 포트 상태를 점검하세요.",
+          "reason": "입력에서 의심한 물리 부품의 구체적 점검이 있다. 설정 초기화의 근거는 별도 실패다."
+        },
+        "requested_layout": {
+          "verdict": "fail",
+          "quote": "1) CRC 오류는",
+          "reason": "v1 system이 요구한 첫 줄 시작 1) 원인 가능성: 을 따르지 않았다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) CRC 오류는 수신된 데이터가 손상되었음을 나타내며, 이는 네트워크 케이블 또는 포트에 문제가 있을 가능성이 있습니다.",
+          "reason": "실제 개행 기준 6줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "네트워크 스위치나 라우터 설정 초기화를 시도해보세요."
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "라우터 설정 초기화는 무근거 조치다. 라우터가 실제 고장났다는 관측 사실 주장으로 중복 집계하지 않는다.",
+      "contract_notes": [],
+      "physical_lines": 6,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 411,
+        "output_tokens": 83,
+        "total_tokens": 494,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 2140
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 411,
+        "output": 83,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "074e100ba2bd4c5c9b3cecb96bde4ad1",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v1-system/C",
+      "variant": "v1-system",
+      "case": "C",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v1-system/log-C.jsonl",
+      "source_sha256": "07c9e17686ca11a34bdbb5a5144ed27c55e28c714dbdc8851e51977091b82387",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음",
+        "facts": "mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음\n장비 기록(부팅 뒤 누적): mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "output": "1) 네트워크 연결 문제 또는 장비 자체 결함  \n2) 사용자님께서 직접 조치할 수 있는 방법은 없습니다. 따라서 전문 엔지니어에게 문의하여 정확한 진단과 해결책을 받으시길 권장 드립니다.",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "fail",
+          "quote": "사용자님께서 직접 조치할 수 있는 방법은 없습니다.",
+          "reason": "입력에는 사용자 역량·현장 접근·확인 가능성 정보가 없다. 사람이 할 수 있는 확인이 전혀 없다는 단정은 입력 밖 사실 주장이다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 네트워크 연결 문제 또는 장비 자체 결함  ",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 네트워크 연결 문제 또는 장비 자체 결함  ",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "네트워크 연결 문제 또는 장비 자체 결함",
+          "reason": "접속 불가·25초 응답 없음이라는 관측을 인용하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "pass",
+          "quote": "전문 엔지니어에게 문의하여",
+          "reason": "드라이버 변경·리셋·설정 초기화 등 무근거 변경 조치는 없다. 이것만으로 유용성 통과가 되지 않는다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "fail",
+          "quote": "네트워크 연결 문제 또는 장비 자체 결함",
+          "reason": "원인 명사구에 가능성·추정·원인 미상 표현이 없다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사용자님께서 직접 조치할 수 있는 방법은 없습니다.",
+          "reason": "첫 구획은 원인 후보, 둘째 구획은 문의 권고다. 문의만 있는 실질 유용성은 별도 실패다."
+        },
+        "actionable_human_steps": {
+          "verdict": "fail",
+          "quote": "전문 엔지니어에게 문의하여 정확한 진단과 해결책을 받으시길",
+          "reason": "무엇을 확인하거나 어떤 관측을 전달할지 없이 엔지니어 문의만 권고했다."
+        },
+        "requested_layout": {
+          "verdict": "fail",
+          "quote": "1) 네트워크 연결 문제 또는 장비 자체 결함",
+          "reason": "원인 가능성: 과 사람이 할 조치: 라는 두 고정 머리말을 모두 누락했다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "pass",
+          "quote": "1) 네트워크 연결 문제 또는 장비 자체 결함  ",
+          "reason": "실제 개행 기준 2줄, 빈 줄 제외 2줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [
+        "사용자님께서 직접 조치할 수 있는 방법은 없습니다."
+      ],
+      "ambiguous_facts": [
+        "네트워크 연결 문제 또는 장비 자체 결함"
+      ],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "과거 uptime의 현재값 전환이나 전원 꺼짐 단정은 없다. 그러나 사용자 조치 불가능 단정과 문의만 있는 답변은 각각 사실성·유용성 실패다.",
+      "contract_notes": [],
+      "physical_lines": 2,
+      "nonempty_lines": 2,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 405,
+        "output_tokens": 41,
+        "total_tokens": 446,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1391
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 405,
+        "output": 41,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "3c87798d494a438087e8c601d97f4896",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v2-prompt/A",
+      "variant": "v2-prompt",
+      "case": "A",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v2-prompt/log-A.jsonl",
+      "source_sha256": "bec433b5e461331793f9142ed4b1edc74113c94b3e77067065eae4680be87996",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림(직전 점검 대비 변화): [합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000\n\n아래 두 줄 형식으로만 답한다.\n1) 원인 가능성: <원인 하나 — 확실하지 않으면 그렇다고> (근거: 위 알림·기록의 수치나 사실을 그대로 인용)\n2) 사람이 할 조치: <위 근거와 직접 이어지는 조치, 우선순위대로 최대 3개, 쉼표로>\n입력에 근거가 없는 조치는 쓰지 않는다. 한국어, 꾸밈말 없이.",
+      "output": "1) 원인 가능성: 네트워크 문제, 케이블 또는 포트 손상, 드라이버 문제, 펌웨어 버그, 네트워크 스위치 설정 문제\n2) 사람이 할 조치: 네트워크 케이블 교체 후 재연결, 다른 포트에 연결하여 테스트, 네트워크 드라이버 최신 버전 설치 및 펌웨어 업그레이드, 네트워크 스위치 설정 초기화",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "원인 가능성: 네트워크 문제",
+          "reason": "드라이버·펌웨어·설정 문제를 포함해 가능성이라는 가설로 제시했다. 확인된 사건·수치로 주장한 것은 아니다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 문제, 케이블 또는 포트 손상, 드라이버 문제, 펌웨어 버그, 네트워크 스위치 설정 문제",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 문제, 케이블 또는 포트 손상, 드라이버 문제, 펌웨어 버그, 네트워크 스위치 설정 문제",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "드라이버 문제, 펌웨어 버그, 네트워크 스위치 설정 문제",
+          "reason": "링크 변화·CRC 관측을 인용하지 않고 여러 가설만 나열했다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "네트워크 드라이버 최신 버전 설치 및 펌웨어 업그레이드",
+          "reason": "입력에 소프트웨어·설정 문제 근거가 없다. 같은 답의 스위치 설정 초기화도 무근거다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "원인 가능성:",
+          "reason": "머리말이 여러 원인 후보를 가능성으로 한정한다. 가설 범위·근거의 적절성은 별도다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사람이 할 조치:",
+          "reason": "원인 가설 목록과 조치 목록의 구획은 분리된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "다른 포트에 연결하여 테스트",
+          "reason": "실행할 물리 연결 시험이 있다. 함께 제시된 소프트웨어 변경의 적합성은 별도 실패다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성:",
+          "reason": "두 고정 머리말과 두 줄 외형은 충족한다. 원인 하나·최대 세 조치 제약은 아래 contract_notes에서 실패로 기록했다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 문제, 케이블 또는 포트 손상, 드라이버 문제, 펌웨어 버그, 네트워크 스위치 설정 문제",
+          "reason": "실제 개행 기준 2줄, 빈 줄 제외 2줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "네트워크 드라이버 최신 버전 설치 및 펌웨어 업그레이드",
+        "네트워크 스위치 설정 초기화"
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "근거 없는 드라이버·펌웨어 가설을 실제 발생 사건으로 오인하지 않는다. 가설에 기대어 수행하도록 한 조치는 명백히 근거가 없다.",
+      "contract_notes": [
+        "원인 하나 요구에 대해 물리 부품·드라이버·펌웨어·설정 등 여러 원인을 나열했다.",
+        "쉼표로 구분된 조치가 네 묶음이라 최대 3개 요구를 위반한다. 드라이버와 펌웨어를 분리하면 실제 조치 수는 더 많다."
+      ],
+      "physical_lines": 2,
+      "nonempty_lines": 2,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 452,
+        "output_tokens": 71,
+        "total_tokens": 523,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 2184
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 452,
+        "output": 71,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "264c2625ca9840efbe3303c99da9388f",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v2-prompt/B",
+      "variant": "v2-prompt",
+      "case": "B",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v2-prompt/log-B.jsonl",
+      "source_sha256": "b5b196fc38536fae3543feb48c9e0eda8337bee24283fa4006aa23140c1fcb45",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)",
+        "facts": "mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림(직전 점검 대비 변화): [합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000\n\n아래 두 줄 형식으로만 답한다.\n1) 원인 가능성: <원인 하나 — 확실하지 않으면 그렇다고> (근거: 위 알림·기록의 수치나 사실을 그대로 인용)\n2) 사람이 할 조치: <위 근거와 직접 이어지는 조치, 우선순위대로 최대 3개, 쉼표로>\n입력에 근거가 없는 조치는 쓰지 않는다. 한국어, 꾸밈말 없이.",
+      "output": "1) 원인 가능성: 네트워크 케이블 또는 포트에 문제가 있을 수 있음 (근거: CRC 오류 발생)\n2) 사람이 할 조치: \n   1. 네트워크 케이블 교체 후 재연결 확인\n   2. 포트 점검 및 청소\n   3. 다른 포트로 변경하여 연결 시도",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "문제가 있을 수 있음 (근거: CRC 오류 발생)",
+          "reason": "CRC 오류는 입력 사실이고 케이블·포트는 가능성이다. 포트 청소 권고를 오염이 관측됐다는 사실 주장으로 세지 않는다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 포트에 문제가 있을 수 있음 (근거: CRC 오류 발생)",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 포트에 문제가 있을 수 있음 (근거: CRC 오류 발생)",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "pass",
+          "quote": "근거: CRC 오류 발생",
+          "reason": "CRC 오류의 발생을 정성적 근거로 직접 표시한다. +14나 164는 생략되어 정확한 수치 인용은 아니다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "indeterminate",
+          "quote": "포트 점검 및 청소",
+          "reason": "포트 점검·변경 시험은 입력의 포트 의심과 직접 연결된다. 청소는 관련 부품 조치이나 오염 근거나 조건이 없으므로 정당한 점검 부수 조치인지 무근거 일반 조치인지 불분명하다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "문제가 있을 수 있음",
+          "reason": "명시적인 가능성 표현이 있다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사람이 할 조치:",
+          "reason": "원인과 조치 구획이 분리된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "다른 포트로 변경하여 연결 시도",
+          "reason": "입력에서 의심한 포트를 바꿔 보는 구체적 시험이다."
+        },
+        "requested_layout": {
+          "verdict": "fail",
+          "quote": "2) 사람이 할 조치: \n   1.",
+          "reason": "고정 머리말은 있으나 v2의 두 줄·쉼표로 조치 열거 요구 대신 다섯 줄 목록을 썼다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 케이블 또는 포트에 문제가 있을 수 있음 (근거: CRC 오류 발생)",
+          "reason": "실제 개행 기준 5줄, 빈 줄 제외 5줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [],
+      "action_ambiguities": [
+        "포트 점검 및 청소"
+      ],
+      "hypothesis_vs_fact_note": "B의 CRC 정성 근거 인용은 실제 장점이다. 수치 없음·5줄·청소 근거 불명확은 별도로 남는다.",
+      "contract_notes": [],
+      "physical_lines": 5,
+      "nonempty_lines": 5,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 455,
+        "output_tokens": 67,
+        "total_tokens": 522,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1799
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 455,
+        "output": 67,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "9df01008a5214ae4b2c2bcc12d1d4037",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    },
+    {
+      "id": "v2-prompt/C",
+      "variant": "v2-prompt",
+      "case": "C",
+      "input_kind": "synthetic_regression_not_actual_incident",
+      "run_id": null,
+      "source_jsonl": "v2-prompt/log-C.jsonl",
+      "source_sha256": "8764fc708338f5c98e0c61ae665602577b688962df79f5020f9304f0772b578e",
+      "input": {
+        "net": "mars",
+        "alerts": "[합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음",
+        "facts": "mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일"
+      },
+      "rendered_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림(직전 점검 대비 변화): [합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음\n장비 기록(부팅 뒤 누적): mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일\n\n아래 두 줄 형식으로만 답한다.\n1) 원인 가능성: <원인 하나 — 확실하지 않으면 그렇다고> (근거: 위 알림·기록의 수치나 사실을 그대로 인용)\n2) 사람이 할 조치: <위 근거와 직접 이어지는 조치, 우선순위대로 최대 3개, 쉼표로>\n입력에 근거가 없는 조치는 쓰지 않는다. 한국어, 꾸밈말 없이.",
+      "output": "1) 원인 가능성: 네트워크 연결 문제, 장비 자체 결함, 설정 오류 등\n2) 사람이 할 조치: 네트워크 케이블 재연결 및 확인, 장비 리셋 시도, 네트워크 설정 초기화 및 재설정",
+      "axes": {
+        "no_new_unsupported_asserted_facts": {
+          "verdict": "pass",
+          "quote": "원인 가능성: 네트워크 연결 문제, 장비 자체 결함, 설정 오류 등",
+          "reason": "원인들은 가능성으로 한정된다. 전원 꺼짐·단선·현재 uptime·복구 완료를 사실로 주장하지 않았다."
+        },
+        "no_new_unsupported_numbers": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 연결 문제, 장비 자체 결함, 설정 오류 등",
+          "reason": "항목 번호를 제외하면 의미 있는 수치가 전혀 없다. 수치 창작은 없지만 입력 수치 사용 능력을 입증하는 것도 아니다."
+        },
+        "exact_numeric_citation": {
+          "verdict": "fail",
+          "quote": "1) 원인 가능성: 네트워크 연결 문제, 장비 자체 결함, 설정 오류 등",
+          "reason": "알림·facts의 의미 있는 수치를 하나도 인용하지 않았다. 항목 번호는 제외했다. 이는 사실 창작 여부와 별개의 진단 축이다."
+        },
+        "qualitative_fact_citation": {
+          "verdict": "fail",
+          "quote": "네트워크 연결 문제, 장비 자체 결함, 설정 오류 등",
+          "reason": "접속 불가·응답 없음이라는 입력 관측을 직접 인용하지 않았다."
+        },
+        "no_unsupported_generic_actions": {
+          "verdict": "fail",
+          "quote": "장비 리셋 시도, 네트워크 설정 초기화 및 재설정",
+          "reason": "응답 없음만으로 장비 리셋·설정 초기화가 필요한지 알 수 없다. 추가 확인이나 조건 없이 변경을 권고했다."
+        },
+        "explicit_uncertainty": {
+          "verdict": "pass",
+          "quote": "원인 가능성:",
+          "reason": "머리말로 가설임을 표시했다. 그 자체가 가설이나 조치의 근거를 제공하지는 않는다."
+        },
+        "cause_action_separation": {
+          "verdict": "pass",
+          "quote": "2) 사람이 할 조치:",
+          "reason": "원인과 조치 구획은 분리된다."
+        },
+        "actionable_human_steps": {
+          "verdict": "pass",
+          "quote": "네트워크 케이블 재연결 및 확인",
+          "reason": "문의만 있는 답변은 아니며 실행할 물리 확인이 있다. 리셋·초기화의 근거 부족과는 별개다."
+        },
+        "requested_layout": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성:",
+          "reason": "두 고정 머리말과 두 줄 외형은 충족한다."
+        },
+        "at_most_four_physical_lines": {
+          "verdict": "pass",
+          "quote": "1) 원인 가능성: 네트워크 연결 문제, 장비 자체 결함, 설정 오류 등",
+          "reason": "실제 개행 기준 2줄, 빈 줄 제외 2줄. 빈 줄도 줄 수에 포함했다."
+        }
+      },
+      "asserted_unsupported_facts": [],
+      "ambiguous_facts": [],
+      "unsupported_semantic_numbers": [],
+      "unsupported_actions": [
+        "장비 리셋 시도",
+        "네트워크 설정 초기화 및 재설정"
+      ],
+      "action_ambiguities": [],
+      "hypothesis_vs_fact_note": "설정 오류·장비 결함은 사실 단정이 아니라 가설이다. 근거 없는 여러 가설을 나열하고 변경 조치를 권고했다는 점이 실패다.",
+      "contract_notes": [
+        "원인 하나 요구에 대해 연결 문제·장비 결함·설정 오류 등 여러 원인을 나열했다."
+      ],
+      "physical_lines": 2,
+      "nonempty_lines": 2,
+      "overall_quality_verdict": "fail",
+      "metrics_from_turn_end": {
+        "worker_runs": 1,
+        "turn_start_events": 1,
+        "turn_end_events": 1,
+        "completed_runs": 1,
+        "turns": 1,
+        "tool_calls": 0,
+        "input_tokens": 449,
+        "output_tokens": 48,
+        "total_tokens": 497,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 1489
+      },
+      "raw_end_reason": "completed",
+      "raw_usage": {
+        "input": 449,
+        "output": 48,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "raw_usage_unreported": [
+        "cacheRead",
+        "cacheWrite"
+      ],
+      "raw_cost_basis": "unknown",
+      "session_id": "4a8461e1185149c2936ac464cea43b58",
+      "wrapper_header": [],
+      "input_matches_case": true,
+      "result_text_matches_log": true,
+      "worker_event_types": [
+        "turn_start",
+        "text",
+        "turn_end"
+      ]
+    }
+  ],
+  "observed_axis_counts": {
+    "no_new_unsupported_asserted_facts": {
+      "pass": 7,
+      "fail": 2,
+      "indeterminate": 1
+    },
+    "no_new_unsupported_numbers": {
+      "pass": 10,
+      "fail": 0,
+      "indeterminate": 0
+    },
+    "exact_numeric_citation": {
+      "pass": 0,
+      "fail": 10,
+      "indeterminate": 0
+    },
+    "qualitative_fact_citation": {
+      "pass": 3,
+      "fail": 7,
+      "indeterminate": 0
+    },
+    "no_unsupported_generic_actions": {
+      "pass": 2,
+      "fail": 7,
+      "indeterminate": 1
+    },
+    "explicit_uncertainty": {
+      "pass": 6,
+      "fail": 4,
+      "indeterminate": 0
+    },
+    "cause_action_separation": {
+      "pass": 9,
+      "fail": 1,
+      "indeterminate": 0
+    },
+    "actionable_human_steps": {
+      "pass": 9,
+      "fail": 1,
+      "indeterminate": 0
+    },
+    "requested_layout": {
+      "pass": 6,
+      "fail": 4,
+      "indeterminate": 0
+    },
+    "at_most_four_physical_lines": {
+      "pass": 3,
+      "fail": 7,
+      "indeterminate": 0
+    }
+  },
+  "execution_accounting": {
+    "by_variant": {
+      "v0-registry": {
+        "worker_runs": 4,
+        "turn_start_events": 4,
+        "turn_end_events": 4,
+        "completed_runs": 4,
+        "turns": 4,
+        "tool_calls": 0,
+        "input_tokens": 783,
+        "output_tokens": 260,
+        "total_tokens": 1043,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 7265
+      },
+      "v1-system": {
+        "worker_runs": 3,
+        "turn_start_events": 3,
+        "turn_end_events": 3,
+        "completed_runs": 3,
+        "turns": 3,
+        "tool_calls": 0,
+        "input_tokens": 1224,
+        "output_tokens": 197,
+        "total_tokens": 1421,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 5524
+      },
+      "v2-prompt": {
+        "worker_runs": 3,
+        "turn_start_events": 3,
+        "turn_end_events": 3,
+        "completed_runs": 3,
+        "turns": 3,
+        "tool_calls": 0,
+        "input_tokens": 1356,
+        "output_tokens": 186,
+        "total_tokens": 1542,
+        "retries": 0,
+        "empty_retries": 0,
+        "retry_events": 0,
+        "error_events": 0,
+        "policy_rejected_runs": 0,
+        "tool_failed_runs": 0,
+        "duration_ms": 5472
+      }
+    },
+    "total": {
+      "worker_runs": 10,
+      "turn_start_events": 10,
+      "turn_end_events": 10,
+      "completed_runs": 10,
+      "turns": 10,
+      "tool_calls": 0,
+      "input_tokens": 3363,
+      "output_tokens": 643,
+      "total_tokens": 4006,
+      "retries": 0,
+      "empty_retries": 0,
+      "retry_events": 0,
+      "error_events": 0,
+      "policy_rejected_runs": 0,
+      "tool_failed_runs": 0,
+      "duration_ms": 18261
+    },
+    "observed_completed_worker_requests": 10,
+    "provider_attempts_inferred_from_one_turn_and_zero_retries": 10,
+    "provider_http_attempt_count_directly_observed": null,
+    "request_count_note": "원본은 요청별 HTTP/SDK 이벤트가 아닌 worker turn_start/text/turn_end 기록이다. 완료 worker 요청은 10건으로 확인된다. 1턴 1 provider 호출이라는 실행 계약 및 diag 재시도 0에 따른 provider 시도 추정은 10회지만, HTTP request ID·attempt 이벤트가 없어 직접 관측한 HTTP 수로 표기하지 않는다.",
+    "missing_or_unreported_fields": [
+      "10개 로그 모두 provider HTTP request ID·attempt별 상태·request count 필드가 없다.",
+      "usage.cacheRead/cacheWrite는 0이지만 10개 모두 usageUnreported에 두 항목이 있어 실제 캐시 사용 0으로 확정할 수 없다.",
+      "costBasis는 모두 unknown이며 비용·잔여 크레딧 정보가 없다.",
+      "v1/v2 res의 servedBy·retried·apiErrorStatus·apiError는 null이다. 재시도 0은 retried:null이 아니라 JSONL diag.retries/emptyRetries로 확인했다.",
+      "v0 results.txt에는 usage/retried/apiErrorStatus/apiError가 없다. worker JSONL에 오류 이벤트가 없고 ok=true이지만 상세 provider 오류 원장 전체를 입증하지 않는다.",
+      "v0의 실제 system 원문·resolved spec은 이 snapshot에 없다. README의 SQL333 동일 주장을 정확한 runtime system 내용 대조로 재확인할 수 없다.",
+      "mini-api run 행의 usage/details 원문과 피드 본문은 snapshot에 없다. README에 runId/피드 id가 있지만 엔드투엔드 피드 게시를 직접 검증하지 않았다."
+    ],
+    "duration_note": "18,261 ms는 10개 turn_end.durationMs의 합이다. 전체 실험 경과시간이나 사용자 체감 지연이 아니다.",
+    "v0_wrapper_headers": {
+      "count": 4,
+      "classification": "runner command-launch metadata",
+      "example": "# 2026-11-11T12:47:44+00:00 [\"/usr/bin/python3\", \"/home/gino/apps/elda-cli/elda\", \"job\", \"_ai\", \"/home/gino/.local/share/elda/jobs/host-watch-explain/ai-ngody759.json\"] (cwd /home/gino/.local/share/elda/jobs/host-watch-explain)",
+      "note": "각 v0 파일의 첫 # 줄은 timestamp, 실행 argv, cwd를 기록한 래퍼 헤더다. 뒤 세 줄은 유효 JSON worker 이벤트다. 이를 모델 오류 또는 native CLI stdout JSON 순도 실패로 분류할 근거가 없다."
+    },
+    "v0_case_usage_mapping": {
+      "raw_mapping": {
+        "R": {
+          "run_id": "88",
+          "input": 189,
+          "output": 60
+        },
+        "A": {
+          "run_id": "89",
+          "input": 198,
+          "output": 52
+        },
+        "B": {
+          "run_id": "90",
+          "input": 201,
+          "output": 94
+        },
+        "C": {
+          "run_id": "91",
+          "input": 195,
+          "output": 54
+        }
+      },
+      "mapping_evidence": "각 JSONL turn_start.task의 alerts/facts가 inputs.json 사례와 일치하며 results.txt의 runId/summary가 해당 JSONL text와 정확히 일치한다. results.txt 자체에는 usage가 없다.",
+      "parent_reported_secondary_table_mapping": {
+        "R": [
+          201,
+          94
+        ],
+        "A": [
+          189,
+          60
+        ],
+        "B": [
+          195,
+          54
+        ],
+        "C": [
+          198,
+          52
+        ]
+      },
+      "secondary_table_reviewed_directly": false,
+      "discrepancy_status": "confirmed_secondary_table_case_label_error_via_parent_relay",
+      "conclusion": "원본 JSONL 입력/텍스트와 results.txt runId 매핑은 자체 대조로 확인했다. 부모가 전달한 인프라 정정 0eafbe4a97은 기존 Comms 표의 사례별 usage 연결 오류를 인정하고 같은 매핑으로 정정했다. 원본 증거와 집계는 변경하지 않았다.",
+      "external_correction": {
+        "comms_ref": "0eafbe4a97",
+        "provenance": "parent agent relayed infrastructure correction; this independent reviewer did not call Comms",
+        "reported_cause": "grep output ordering caused the prior table labels to associate with the wrong usage values",
+        "corrected_mapping": {
+          "R": [
+            189,
+            60
+          ],
+          "A": [
+            198,
+            52
+          ],
+          "B": [
+            201,
+            94
+          ],
+          "C": [
+            195,
+            54
+          ]
+        }
+      }
+    }
+  },
+  "recommendation": {
+    "choice": "prompt_sandbox",
+    "adopt_v1": false,
+    "adopt_v2": false,
+    "production_adoption_now": "no_adoption",
+    "preferred_sandbox_starting_point": "v1-system, tentative only",
+    "reason": "현 관측에서는 어느 후보도 A/B/C 전체의 근거·조치·형식 요구를 충족하지 못했다. v1을 출발점으로 격리 prompt/system 개선을 검토할 수 있으나 지금 등록부에 채택할 근거는 없다. v2는 A와 C에서 무근거 변경 처방을 확대해 현재 개선안으로 추천하지 않는다.",
+    "v1_observed_failures": {
+      "A": [
+        "입력 관측·수치 인용 없음",
+        "5줄"
+      ],
+      "B": [
+        "스위치/라우터 설정 초기화",
+        "정확한 수치 없음; 정성 CRC 근거는 있음",
+        "첫 고정 머리말 누락",
+        "6줄(빈 줄 제외 5줄)"
+      ],
+      "C": [
+        "사용자 직접 조치 불가능이라는 입력 밖 단정",
+        "엔지니어 문의만 있어 구체적 확인 단계 없음",
+        "관측 근거·수치 및 명시적 불확실성 없음",
+        "고정 머리말 누락"
+      ]
+    },
+    "v2_observed_failures": {
+      "A": [
+        "드라이버 설치·펌웨어 업그레이드·스위치 초기화",
+        "관측 근거·수치 없음",
+        "여러 원인 및 최소 네 조치 묶음"
+      ],
+      "B": [
+        "정확한 수치 없음; 정성 CRC 근거는 있음",
+        "5줄로 두 줄·4줄 제한 위반",
+        "포트 청소 근거는 불명확"
+      ],
+      "C": [
+        "리셋·설정 초기화 및 재설정",
+        "관측 근거·수치 없음",
+        "여러 원인 나열"
+      ]
+    },
+    "next_sandbox_acceptance_targets": [
+      "관측 근거를 실제 입력에서 보존하여 인용하고 증분/누적·현재/과거 의미를 유지한다.",
+      "원인 미확정 표시와 하나의 초점을 유지한다.",
+      "원인을 확인할 사람의 구체적 확인 단계만 쓰고 근거 없는 업데이트·초기화를 제거한다.",
+      "C에서 확인 가능성을 부정하지 말고 관측의 한계와 다음 확인을 제시한다.",
+      "고정 구조와 줄 수를 함께 충족한다."
+    ],
+    "limits": [
+      "한 사례당 한 출력이며 10개 전체 중 R만 실제 과거 입력이다.",
+      "v1/v2에는 R 대응 실행이 없어서 실제 입력에서 후보 비교를 하지 못했다.",
+      "A/B/C는 이미 후보 개발 과정에서 본 입력이며 미공개 holdout이 아니다.",
+      "현재 관측 실패를 비교할 수 있으나 통계적 일반화, 성공률 추정, 향후 출력 안정성은 주장하지 않는다.",
+      "재호출·추가 API 시험·배포·모델 수정은 이 리뷰에서 수행하지 않았다."
+    ]
+  }
+}

@@ -1,0 +1,661 @@
+{
+  "source": "Elda-Ops31bab41",
+  "comparisonType": "AI reviewer agreement on 9 shared qualitative axes, not human gold",
+  "rows": [
+    {
+      "id": "v0-registry/R",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "explicit_uncertainty",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/R",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "indeterminate",
+      "secondary": "indeterminate",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "explicit_uncertainty",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/A",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "qualitative_fact_citation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/B",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "explicit_uncertainty",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "cause_action_separation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v0-registry/C",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/A",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "qualitative_fact_citation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "fail",
+      "agree": false
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/B",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "pass",
+      "secondary": "indeterminate",
+      "agree": false
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "explicit_uncertainty",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "fail",
+      "agree": false
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "actionable_human_steps",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "at_most_four_physical_lines",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/A",
+      "axis": "at_most_four_physical_lines",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "qualitative_fact_citation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "indeterminate",
+      "secondary": "indeterminate",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/B",
+      "axis": "at_most_four_physical_lines",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "no_new_unsupported_asserted_facts",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "no_new_unsupported_numbers",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "exact_numeric_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "qualitative_fact_citation",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "fail",
+      "secondary": "fail",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "explicit_uncertainty",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "actionable_human_steps",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    },
+    {
+      "id": "v2-prompt/C",
+      "axis": "at_most_four_physical_lines",
+      "primary": "pass",
+      "secondary": "pass",
+      "agree": true
+    }
+  ],
+  "agreements": 87,
+  "total": 90,
+  "disagreements": [
+    {
+      "id": "v1-system/B",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "fail",
+      "agree": false
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "no_unsupported_generic_actions",
+      "primary": "pass",
+      "secondary": "indeterminate",
+      "agree": false
+    },
+    {
+      "id": "v1-system/C",
+      "axis": "cause_action_separation",
+      "primary": "pass",
+      "secondary": "fail",
+      "agree": false
+    }
+  ]
+}

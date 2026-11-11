@@ -1,0 +1,26 @@
+{
+  "sourceRepo": "ginojang/Elda-Ops",
+  "sourceCommit": "31bab41f54aecaa928856fbf69dc439014a2425f",
+  "actualModelCalls": 0,
+  "systemSha256": "afc21c3f0681f2afba74b920d74cf5357f725a329ef61d25611be1390080de08",
+  "cases": [
+    {
+      "id": "A",
+      "sourceSha256": "0c7051c0357ad4501e1bdeb10f5800e398c0cc3519189780df6e483099590c93",
+      "specSha256": "66033d09fa819bb60ee6f8313a29cc10a3bc810fe9f9aa5990eacf9d7310b979",
+      "invariantPromptAndModel": true
+    },
+    {
+      "id": "B",
+      "sourceSha256": "4c4f90cd3abf841831d325e3c0481a7478ae3b2f323233e4e6fa30b5d1bd2435",
+      "specSha256": "1902bdac67abc5c2dc8cb5fef60e1f45056d67eab360ae9cb2cf9eca0bea122e",
+      "invariantPromptAndModel": true
+    },
+    {
+      "id": "C",
+      "sourceSha256": "3f7d98c8c5f22ab5b27f8e2a5b884e73edec6ab0efd0d399cfe32dbbbe1315ba",
+      "specSha256": "d80c5d36a4597762db837d64c3b2ef579b932031960d19e9a3244c365d37f8f3",
+      "invariantPromptAndModel": true
+    }
+  ]
+}
