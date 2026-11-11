@@ -1,0 +1,13 @@
+
+> clova-api-lab@0.0.1 build
+> tsc -b && vite build
+
+vite v6.4.2 building for production...
+transforming...
+✓ 303 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.42 kB │ gzip:   0.31 kB
+dist/assets/index-BzVO3XmK.css   57.35 kB │ gzip:   9.45 kB
+dist/assets/index-Dfss-YI2.js   431.58 kB │ gzip: 136.09 kB
+✓ built in 4.16s

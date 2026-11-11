@@ -1,0 +1,18 @@
+
+> clova-api-lab@0.0.1 test:harness-web
+> node --test server/harness/*.test.ts
+
+✔ web session ownership, capacity, overlap, events and cleanup (1459.732591ms)
+✔ HTTP route auth, live adapter tool results, file content and interrupt (local API fixture) (1177.933736ms)
+✔ mode 2 HTTP approval guards file effects, supports denial, and interrupts a pending decision (1008.150249ms)
+✔ read-only polling does not renew the idle session lifetime (654.710001ms)
+✔ additional providers report configuration separately from verification and reject mode 3 or unlisted models (11.558848ms)
+✔ mode 2 additional provider HTTP routing uses the selected credential and preserves approval, denial and cancellation (2805.313142ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7719.858731

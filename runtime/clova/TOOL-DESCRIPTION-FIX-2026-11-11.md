@@ -51,4 +51,4 @@ npm run check:clova-runtime
 | 수정 후 `provider.ts` | `e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649` |
 | `test/tool-description.test.ts` | `e635927cc7ac0e5acb12d6c8f1ed209691d260852c95c652962757352c4ac709` |
 
-Git 커밋 ID가 아닌 로컬 파일 해시다. 구현은 현재 미커밋 상태다.
+표의 값은 Git 커밋 ID가 아닌 파일 해시다. 이 보정은 이후 **`5a363c34de0790d375f950f9e651dfc02beb57c2`**에 포함돼 `origin/main`으로 push됐다.

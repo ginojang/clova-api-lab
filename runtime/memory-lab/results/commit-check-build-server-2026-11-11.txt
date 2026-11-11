@@ -1,0 +1,20 @@
+
+> clova-api-lab@0.0.1 build:server
+> esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=server-dist/index.js --external:mysql2 --external:mysql2/promise --external:undici --banner:js="import{createRequire as _cr}from'module';const require=_cr(import.meta.url);" && npm run build:clova-runtime
+
+
+  server-dist/index.js  1.2mb ⚠️
+
+⚡ Done in 50ms
+
+> clova-api-lab@0.0.1 build:clova-runtime
+> esbuild runtime/clova/live.ts runtime/clova/harness.ts runtime/clova/mcp.ts runtime/clova/http.ts runtime/clova/langgraph.ts --bundle --platform=node --format=esm --target=node20 --outdir=server-dist/clova --out-extension:.js=.mjs && node -e "require('fs').cpSync('runtime/clova/fixtures','server-dist/clova/fixtures',{recursive:true})"
+
+
+  server-dist/clova/langgraph.mjs   2.4mb ⚠️
+  server-dist/clova/http.mjs       45.5kb
+  server-dist/clova/harness.mjs    40.1kb
+  server-dist/clova/mcp.mjs        34.6kb
+  server-dist/clova/live.mjs       11.2kb
+
+⚡ Done in 434ms

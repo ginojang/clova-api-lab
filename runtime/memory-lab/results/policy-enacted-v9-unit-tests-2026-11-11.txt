@@ -1,0 +1,16 @@
+✔ new contract inserts a five-field plan before the unchanged four generated reply strings (10.876095ms)
+✔ building enacted contracts cannot mutate v8, caller configuration or another schema (2.629922ms)
+✔ decoder preserves raw model parts and plan strings while using the exact v8 rendering order (2.543597ms)
+✔ strict top-level and support-plan contracts reject missing, extra and non-string fields (6.231424ms)
+✔ existing operator metadata and composed-part validation remain enforced (2.208562ms)
+✔ valid plans cannot repair wrong identity, false tool claims or abstract visible help (0.533597ms)
+✔ fresh operator personas, special names and capabilities work without scenario fixtures (1.048546ms)
+✔ questions without a proposed action allow an empty plan and empty next step, not an empty reply (0.74054ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 180.913775

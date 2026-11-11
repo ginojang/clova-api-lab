@@ -1,0 +1,4 @@
+# Preserve captured test output and model transcripts byte-for-byte as evidence.
+# Keep whitespace checks enabled for source code and other documentation.
+runtime/memory-lab/results/*.txt whitespace=-blank-at-eol,-blank-at-eof
+runtime/memory-lab/results/*-transcript.md whitespace=-blank-at-eol,-blank-at-eof

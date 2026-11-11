@@ -1,0 +1,8 @@
+{
+  "name": "elda-memory-lab-pi",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node cli.mjs", "test": "node --test smoke.test.mjs" },
+  "engines": { "node": ">=24" },
+  "description": "Memory experiment using node:sqlite and the existing pinned harness-lab Pi 1.5.1 installation"
+}

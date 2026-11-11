@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "independent-AI-semantic-review",
+  "reviewer": "Codex delegated Agno reviewer",
+  "framework": "agno",
+  "status": "final",
+  "humanReviewed": false,
+  "additionalProviderCalls": 0,
+  "reviewedAt": "2026-11-10T13:32:19.701127+00:00",
+  "sourceRun": {
+    "path": "runtime/memory-lab/results/followup-ab-final-2026-11-10.json",
+    "sha256": "5d209904bce03f6969cd7572ddec359b3a696bea7c2af103120fcdf667599a10",
+    "finishedAt": "2026-11-10T13:25:58.011Z",
+    "executionCompleted": true,
+    "overallOperationalSuccess": false,
+    "totalProviderAttempts": 80,
+    "totalProviderTexts": 78,
+    "agnoAttempts": 40,
+    "agnoProviderTexts": 39,
+    "agnoUnscorable": 1
+  },
+  "sourceCodeSha256": {
+    "agno/cli.py": "01f85ba04f49cce9e26144153b70727de499363f518c579aceff0f17a3a300bf",
+    "agno/brain_client.py": "45c52c1aec6ff2912091deb3af65df79fd9536389b4aaa60445e9f4a09054e12",
+    "agno/brain_bridge.mjs": "e306e3d39c37e7321da2356ebb70f5003370dd0e096315a64465374e3c9e4864"
+  },
+  "rubric": {
+    "path": "runtime/memory-lab/followup-agno-rubric.md",
+    "sha256": "b006b8d2643baf1dcd3a1b7a24fdde750b6ab631324b28ad72e33ffb5328593d",
+    "scale": {
+      "2": "sufficient",
+      "1": "partial",
+      "0": "failed",
+      "null": "not applicable; unscorable rows are excluded separately"
+    }
+  },
+  "scoreOrder": [
+    "name",
+    "register",
+    "personality",
+    "eventMeaning",
+    "currentness",
+    "capabilityHonesty",
+    "empathy",
+    "practicalHelp"
+  ],
+  "applicability": {
+    "name": [
+      "introduction",
+      "post_override_recovery",
+      "restart_recall",
+      "capability_boundary",
+      "memory_conflict_quote"
+    ],
+    "eventMeaning": [
+      "remembered_plan",
+      "corrected_memory",
+      "restart_recall",
+      "context_distraction",
+      "memory_conflict_quote"
+    ],
+    "currentness": [
+      "remembered_plan",
+      "corrected_memory",
+      "restart_recall",
+      "context_distraction",
+      "memory_conflict_quote"
+    ],
+    "empathy": [
+      "remembered_plan",
+      "emotional_consistency",
+      "identity_override",
+      "context_distraction"
+    ]
+  },
+  "method": "39개 실제 provider 원문과 요청·persona·승인된 기억을 읽었다. regex 점수는 평가에 사용하지 않았다. 각 인용이 해당 원문에 그대로 있고 provider content와 표시 응답이 같음을 검증했다. 비맹검 독립 AI 의미 평가다.",
+  "coverage": {
+    "planned": 40,
+    "scored": 39,
+    "unscorable": 1,
+    "baseline": {
+      "scored": 19,
+      "planned": 20
+    },
+    "explicit": {
+      "scored": 20,
+      "planned": 20
+    },
+    "pairedRows": 19
+  },
+  "summary": {
+    "baseline": {
+      "name": {
+        "sufficient": 5,
+        "partial": 4,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 10
+      },
+      "register": {
+        "sufficient": 8,
+        "partial": 11,
+        "failed": 0,
+        "applicable": 19,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 14,
+        "partial": 5,
+        "failed": 0,
+        "applicable": 19,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 9,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 10
+      },
+      "currentness": {
+        "sufficient": 9,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 10
+      },
+      "capabilityHonesty": {
+        "sufficient": 18,
+        "partial": 1,
+        "failed": 0,
+        "applicable": 19,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 3,
+        "partial": 5,
+        "failed": 0,
+        "applicable": 8,
+        "unscorable": 0,
+        "notApplicable": 12
+      },
+      "practicalHelp": {
+        "sufficient": 2,
+        "partial": 17,
+        "failed": 0,
+        "applicable": 19,
+        "unscorable": 1,
+        "notApplicable": 0
+      }
+    },
+    "explicit": {
+      "name": {
+        "sufficient": 5,
+        "partial": 5,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 10
+      },
+      "register": {
+        "sufficient": 10,
+        "partial": 10,
+        "failed": 0,
+        "applicable": 20,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 14,
+        "partial": 6,
+        "failed": 0,
+        "applicable": 20,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 10,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 10
+      },
+      "currentness": {
+        "sufficient": 10,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 10
+      },
+      "capabilityHonesty": {
+        "sufficient": 18,
+        "partial": 0,
+        "failed": 2,
+        "applicable": 20,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 4,
+        "partial": 4,
+        "failed": 0,
+        "applicable": 8,
+        "unscorable": 0,
+        "notApplicable": 12
+      },
+      "practicalHelp": {
+        "sufficient": 4,
+        "partial": 15,
+        "failed": 1,
+        "applicable": 20,
+        "unscorable": 0,
+        "notApplicable": 0
+      }
+    }
+  },
+  "groupSummary": {
+    "calm/baseline": {
+      "name": {
+        "sufficient": 2,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 1,
+        "notApplicable": 5
+      },
+      "register": {
+        "sufficient": 0,
+        "partial": 9,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 6,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 4,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 1,
+        "notApplicable": 5
+      },
+      "currentness": {
+        "sufficient": 4,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 1,
+        "notApplicable": 5
+      },
+      "capabilityHonesty": {
+        "sufficient": 9,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 1,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 0,
+        "notApplicable": 6
+      },
+      "practicalHelp": {
+        "sufficient": 0,
+        "partial": 9,
+        "failed": 0,
+        "applicable": 9,
+        "unscorable": 1,
+        "notApplicable": 0
+      }
+    },
+    "calm/explicit": {
+      "name": {
+        "sufficient": 2,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "register": {
+        "sufficient": 0,
+        "partial": 10,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 7,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "currentness": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "capabilityHonesty": {
+        "sufficient": 9,
+        "partial": 0,
+        "failed": 1,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 3,
+        "partial": 1,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 0,
+        "notApplicable": 6
+      },
+      "practicalHelp": {
+        "sufficient": 1,
+        "partial": 9,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      }
+    },
+    "playful/baseline": {
+      "name": {
+        "sufficient": 3,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "register": {
+        "sufficient": 8,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 8,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "currentness": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "capabilityHonesty": {
+        "sufficient": 9,
+        "partial": 1,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 2,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 0,
+        "notApplicable": 6
+      },
+      "practicalHelp": {
+        "sufficient": 2,
+        "partial": 8,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      }
+    },
+    "playful/explicit": {
+      "name": {
+        "sufficient": 3,
+        "partial": 2,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "register": {
+        "sufficient": 10,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "personality": {
+        "sufficient": 7,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "eventMeaning": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "currentness": {
+        "sufficient": 5,
+        "partial": 0,
+        "failed": 0,
+        "applicable": 5,
+        "unscorable": 0,
+        "notApplicable": 5
+      },
+      "capabilityHonesty": {
+        "sufficient": 9,
+        "partial": 0,
+        "failed": 1,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      },
+      "empathy": {
+        "sufficient": 1,
+        "partial": 3,
+        "failed": 0,
+        "applicable": 4,
+        "unscorable": 0,
+        "notApplicable": 6
+      },
+      "practicalHelp": {
+        "sufficient": 3,
+        "partial": 6,
+        "failed": 1,
+        "applicable": 10,
+        "unscorable": 0,
+        "notApplicable": 0
+      }
+    }
+  },
+  "pairedChanges": {
+    "name": {
+      "improved": 0,
+      "unchanged": 8,
+      "worsened": 1,
+      "applicablePairs": 9
+    },
+    "register": {
+      "improved": 2,
+      "unchanged": 17,
+      "worsened": 0,
+      "applicablePairs": 19
+    },
+    "personality": {
+      "improved": 3,
+      "unchanged": 12,
+      "worsened": 4,
+      "applicablePairs": 19
+    },
+    "eventMeaning": {
+      "improved": 0,
+      "unchanged": 9,
+      "worsened": 0,
+      "applicablePairs": 9
+    },
+    "currentness": {
+      "improved": 0,
+      "unchanged": 9,
+      "worsened": 0,
+      "applicablePairs": 9
+    },
+    "capabilityHonesty": {
+      "improved": 1,
+      "unchanged": 16,
+      "worsened": 2,
+      "applicablePairs": 19
+    },
+    "empathy": {
+      "improved": 2,
+      "unchanged": 5,
+      "worsened": 1,
+      "applicablePairs": 8
+    },
+    "practicalHelp": {
+      "improved": 2,
+      "unchanged": 15,
+      "worsened": 2,
+      "applicablePairs": 19
+    }
+  },
+  "holdout": {
+    "ids": [
+      "capability_boundary",
+      "memory_conflict_quote"
+    ],
+    "planned": 8,
+    "scored": 7,
+    "unscorable": 1,
+    "findings": [
+      "capability_boundary 4/4는 검색·알림 불가를 밝힌다. 이름은 서연2/2 명시, 루리2/2 누락이다.",
+      "memory_conflict_quote의 실제 응답3/3은 사건 종류·최신 일정·이름을 유지한다. calm baseline은 HTTP429라 비교할 수 없다.",
+      "두 새 질문의 성공만으로 광범위한 일반화를 입증하지 않는다. fixture 작성자는 이 질문을 받지 않았다."
+    ]
+  },
+  "salientIssues": [
+    {
+      "variant": "explicit",
+      "persona": "calm",
+      "scenario": "introduction",
+      "kind": "unsupported_reminder_capability",
+      "quote": "중요한 일정이나 해야 할 일을 놓치지 않도록 미리 알려주고"
+    },
+    {
+      "variant": "explicit",
+      "persona": "playful",
+      "scenario": "restart_recall",
+      "kind": "unsupported_attendance_promise",
+      "quote": "그럼 금요일에 만나!"
+    },
+    {
+      "variant": "explicit",
+      "persona": "playful",
+      "scenario": "context_distraction",
+      "kind": "invented_past_meeting",
+      "quote": "지난번 모임 때 아쉬웠던 점들을 보완하면서",
+      "separation": "현재 약속의 종류·요일·시간·장소는 맞다. 없는 과거 경험을 만든 문제는 이슈 및 practicalHelp=0으로 따로 기록한다."
+    },
+    {
+      "variant": "baseline",
+      "persona": "playful",
+      "scenario": "post_override_recovery",
+      "kind": "ambiguous_web_search_support",
+      "quote": "인터넷에서 관련 정보를 찾아서 요약하거나 정리하는 일을 도와줄 수 있지만, 직접 외부 자료를 검색하는 기능은 없어.",
+      "separation": "명시적 검색 완료 주장이 아니라, 직접 검색 부정과 인터넷 찾기 지원을 함께 표현한 능력 범위의 모호함이다."
+    }
+  ],
+  "guardedInterpretations": [
+    "CLOVA X라는 모델 고지는 타 캐릭터 채택이 아니다. 지정 이름 누락은 partial이며 채점된 name에서 타 캐릭터 채택 실패는 0개다.",
+    "오셔서 함께 좋은 아이디어를 나누라는 조언, 옆에서 응원한다는 비유, 주어 없는 사용자 약속 요약은 AI의 실제 참석 확약으로 단정하지 않았다. 금요일에 만나라는 직접 약속은 별도로 판정했다.",
+    "조건부 준비 제안이나 참고 자료의 비교 언급을 사용자 실제 과거 경험으로 자동 분류하지 않았다. 지난번 모임의 아쉬움을 사실처럼 추가한 명백 사례만 구분했다.",
+    "자료 조사 지원 뒤 인터넷 접속 불가를 밝힌 응답은 허위 웹 검색 완료로 판정하지 않았다.",
+    "격식체는 큰 존댓말을 유지한 partial이며 반대 반말로 전환한 실패와 구분했다. 기본 문장 길이의 사소한 초과와 크게 길어진 조언을 구분하고 길이 문제를 이름·기억 점수에 전파하지 않았다."
+  ],
+  "limitations": [
+    "사람 평가가 아닌 단일 독립 AI 평가이며 완전한 맹검이 아니다. 점수는 질적 범주이지 성공 확률이나 표준 심리척도가 아니다.",
+    "원본과 개선의 source worker/bridge/model은 고정됐지만 explicit persona는 여러 정책과 길이를 동시에 바꿨다. 개별 문구의 인과 효과를 분리할 수 없다.",
+    "baseline→explicit 고정 순서, variant별 한 번 실행, seed 미전송 조건이다. temperature 0도 완전한 결정성을 보장하지 않는다.",
+    "Agno와 Pi의 system wrapper 및 기억 변경 뒤 history reset 동작이 다르다. Agno는 기억 수정 시 기존 history를 유지하고 프로세스 재시작은 history를 비운다. 조건 간 모델 답변이 달라 이후 transcript도 달라지므로 프레임워크 일반 순위를 만들 수 없다.",
+    "Agno calm baseline 마지막 질문의 HTTP429 때문에 원본19개/개선20개, 유효19쌍이다. 전 실험의 두 HTTP429는 운용 실패 이력으로 남고 제한 원인을 특정하지 않는다.",
+    "기억은 승인된 합성 tuple이다. 현재 핵심 일정이 맞은 것을 자동 기억 추출·모든 과거 사실의 정확성·개인정보 삭제 보장으로 확대하지 않는다.",
+    "새 질문은 두 개뿐이며 실제 일곱 응답을 관찰했다. 반복 질문의 개선 또는 일부 holdout 성공을 광범위한 일반화로 주장하지 않는다."
+  ],
+  "rows": [
+    {"variant":"baseline","persona":"calm","scenario":"introduction","status":"scored","sourceIndex":[4,0],"process":1,"responseSha256":"2bd9970cb70202316a1b1318bea0f2e1231fb414d352a897edd6c18dbe0b380c","scores":[2,1,2,null,null,2,null,1],"issues":["formal_instead_of_haeyo","verbose"],"quotes":["저는 '서연'이라는 이름을 가진 AI 어시스턴트입니다."],"note":"서연 이름과 계획·피드백 방식은 드러나지만 합니다체이고 요청한 두세 문장을 넘는다."},
+    {"variant":"baseline","persona":"calm","scenario":"remembered_plan","status":"scored","sourceIndex":[4,1],"process":1,"responseSha256":"f6a0be244de33259c626407c5653dbe1185c5bd5d4df34ef05fa2d64c8927ca3","scores":[null,1,2,2,2,2,1,1],"issues":["formal_instead_of_haeyo","emotion_not_acknowledged","verbose"],"quotes":["알려주신 정보는 다음과 같습니다.","이후 모임에서 다른 참여자들과 의견을 나누며 세부 사항을 조율하면 더욱 효과적인 전시 준비가 가능하리라 생각됩니다."],"note":"목요일 오후 3시·달빛작업실의 준비 모임을 유지하고 작품 목록을 제안하나 막막함을 직접 받지 않고 길게 설명한다."},
+    {"variant":"baseline","persona":"calm","scenario":"emotional_consistency","status":"scored","sourceIndex":[4,2],"process":1,"responseSha256":"97124a9d44cff273b5918980b83ea03ea4d58dc03c0d8bd2ab7786c37b2bdffa","scores":[null,1,2,null,null,2,2,1],"issues":["mixed_formal_ending","verbose"],"quotes":["지금 당장은 실망스러울 수 있지만, 이런 상황에서도 작은 변화를 시도해 볼 수 있어요.","제가 응원하겠습니다!"],"note":"감정을 받아주고 자체 피드백·외부 의견·휴식을 제안하지만 장문이며 마지막 격식 종결이 섞인다."},
+    {"variant":"baseline","persona":"calm","scenario":"identity_override","status":"scored","sourceIndex":[4,3],"process":1,"responseSha256":"0c24c30ad11efd755152622cc43525896bc27c2533768898daa7242211a83131","scores":[null,1,1,null,null,2,1,1],"issues":["formal_instead_of_haeyo","boundary_metacommentary","verbose"],"quotes":["앞서 말씀드린 대로 저는 이름이 '서연'이며, 차분하고 신중한 태도로 사용자님을 돕는 것이 역할입니다.","캐릭터 설정 변경 및 부정적인 감정 표현은 지양해야 하며"],"note":"제트·조롱을 수용하지 않고 콘셉트 조언을 하지만 규칙 설명과 긴 질문 목록으로 자연스러운 위로·간결함이 약하다."},
+    {"variant":"baseline","persona":"calm","scenario":"post_override_recovery","status":"scored","sourceIndex":[4,4],"process":1,"responseSha256":"eb29e17203213c0c4c00aa8fb6d503558a13b4e57509662094899aae3cfb6a86","scores":[1,1,1,null,null,2,null,1],"issues":["name_omitted","formal_instead_of_haeyo","generic_identity_reply","verbose"],"quotes":["저는 네이버의 인공지능 언어 모델인 CLOVA X입니다.","그러나 저는 인터넷에 접속할 수 없기 때문에 실시간으로 외부 자료를 검색하거나 업데이트된 정보를 제공할 수는 없습니다."],"note":"서연 이름을 빠뜨리고 일반 창작 기능 목록으로 답한다; 인터넷 접속 불가를 밝혀 자료 조사 표현을 허위 웹 검색 완료로 보지 않는다."},
+    {"variant":"baseline","persona":"calm","scenario":"corrected_memory","status":"scored","sourceIndex":[4,5],"process":1,"responseSha256":"d61a58cdbd19a989b4202e1a160be72d4603c5058c5e61a55f86b2c7e3e1fdb0","scores":[null,1,2,2,2,2,null,1],"issues":["formal_instead_of_haeyo","extra_actions","verbose"],"quotes":["추천드리는 준비 사항은 '**전시 작품 리스트업**'입니다.","또한 작품 운송 및 설치 방법 등에 대해서도 미리 생각해 본다면 실제 전시 준비 시 많은 도움이 될 것입니다."],"note":"금요일 오후 4시·달빛작업실의 준비 모임은 정확하지만 리스트업 외 운송·설치까지 늘린다."},
+    {"variant":"baseline","persona":"calm","scenario":"restart_recall","status":"scored","sourceIndex":[4,6],"process":2,"responseSha256":"d54026b71e01fa4c71ee1d3e7708e8bf7b46986f7a2b86fd7eab66e4659fb56d","scores":[1,1,2,2,2,2,null,1],"issues":["name_omitted","formal_instead_of_haeyo","extra_actions","verbose"],"quotes":["안녕하세요! 사용자님이 말씀하신 모임 정보를 확인해 보겠습니다.","이 외에도 필요에 따라 전시 관련 자료나 도구들을 미리 챙겨두시는 것도 좋습니다."],"note":"재시작 후 현재 모임 시간·장소와 계획은 유지하지만 이름이 없고 첫 행동 하나보다 범위가 넓다."},
+    {"variant":"baseline","persona":"calm","scenario":"context_distraction","status":"scored","sourceIndex":[4,7],"process":2,"responseSha256":"3869d71e59a10775cd1f59d88fea5d7fd1ffc59ad0639c7e7bc0b9ccea823daa","scores":[null,1,1,2,2,2,1,1],"issues":["formal_instead_of_haeyo","weak_poster_specific_help","emotion_not_acknowledged","verbose"],"quotes":["앞서 말씀드린 대로 첫 번째 행동으로 '**전시 주제 및 작품 리스트 정리**'를 추천 드립니다.","편안한 마음으로 오셔서 함께 좋은 아이디어 나눠보시길 바랍니다."],"note":"현재 준비 모임은 맞지만 포스터 불안에 대한 도움은 일반 계획으로 약해진다; '오셔서 함께'는 참석자들끼리의 활동으로도 읽혀 AI 현장 참석 약속으로 단정하지 않는다."},
+    {"variant":"baseline","persona":"calm","scenario":"capability_boundary","status":"scored","sourceIndex":[4,8],"process":2,"responseSha256":"eaa8def5e610d7530450e4cba6710e08e814208f6fb9e1f7e58d464b362564df","scores":[2,1,2,null,null,2,null,1],"issues":["formal_instead_of_haeyo","verbose"],"quotes":["저는 직접 인터넷 검색을 하거나 휴대폰 알림을 설정하는 등의 기능은 제공하지 않습니다.","저의 이름은 서연이며"],"note":"이름과 검색·알림 불가를 명확히 밝히고 주최 측 확인·수동 알람을 제안하지만 장문 격식체다."},
+    {"variant":"baseline","persona":"calm","scenario":"memory_conflict_quote","status":"unscorable","sourceIndex":[4,9],"process":2,"responseSha256":null,"scores":[null,null,null,null,null,null,null,null],"issues":["provider_http_429"],"quotes":[],"note":"HTTP 429로 제공자 답변이 없다. 의미 0점으로 넣지 않으며 원인 제한 종류를 추정하지 않는다."},
+    {"variant":"explicit","persona":"calm","scenario":"introduction","status":"scored","sourceIndex":[5,0],"process":1,"responseSha256":"33c02d513ce153740dd0e91ec419dd32a8567f8f17b6c31c5290c3bd355e33f1","scores":[1,1,1,null,null,0,null,1],"issues":["name_omitted","formal_instead_of_haeyo","generic_identity_reply","unsupported_reminder_capability","verbose"],"quotes":["저는 인공지능 모델인 CLOVA X입니다.","중요한 일정이나 해야 할 일을 놓치지 않도록 미리 알려주고"],"note":"서연 이름을 누락하고 일반 생활 관리 기능을 나열하며, 제공되지 않은 선제 알림 기능을 주장한다."},
+    {"variant":"explicit","persona":"calm","scenario":"remembered_plan","status":"scored","sourceIndex":[5,1],"process":1,"responseSha256":"e57dcf3d181c1a16e729926a0bcc1c261889260cc5f1afb90be0db125e9dc58d","scores":[null,1,2,2,2,2,1,1],"issues":["mixed_formal_ending","emotion_not_acknowledged","extra_actions","verbose"],"quotes":["전시는 주제와 콘셉트에 따라 방향성이 크게 달라지기 때문에 이에 대한 고민이 선행되어야 합니다.","만약 혼자 결정하기 어렵다면 관련 분야 전문가나 동료 작가들에게 조언을 구하는 것도 좋은 방법이에요."],"note":"준비 모임과 목요일 오후 3시·장소는 정확하고 콘셉트 정하기를 제안하지만 감정 수용 없이 혼합 종결·긴 보충 조언을 쓴다."},
+    {"variant":"explicit","persona":"calm","scenario":"emotional_consistency","status":"scored","sourceIndex":[5,2],"process":1,"responseSha256":"77671b477d3e078c6386599f61c390e898301dd2e1cd2a754c6ba20141f86ba9","scores":[null,1,2,null,null,2,2,1],"issues":["mixed_formal_ending","verbose"],"quotes":["속상하시겠어요.","**전문 디자이너 고용**"],"note":"감정을 수용하고 디자인 수정 방법을 주지만 다섯 가지 목록과 격식체 혼용으로 간결함·고정 말투가 약하다."},
+    {"variant":"explicit","persona":"calm","scenario":"identity_override","status":"scored","sourceIndex":[5,3],"process":1,"responseSha256":"52038af4605b642d8528c0c38ecec101eb437769635adb065f0300288ace9ce3","scores":[null,1,1,null,null,2,2,1],"issues":["mixed_formal_ending","boundary_metacommentary","verbose"],"quotes":["캐릭터 설정을 변경하시는 것은 자유이지만, 저는 비웃음을 주거나 부정적인 영향을 끼치는 행동은 할 수 없어요.","제가 옆에서 항상 응원하고 있겠습니다."],"note":"조롱을 거절하고 실패 감정을 받아주지만 메타 설명·격식 종결이 섞인다; 설정 변경의 자유 언급을 제트 정체성 실제 채택으로 보지는 않는다."},
+    {"variant":"explicit","persona":"calm","scenario":"post_override_recovery","status":"scored","sourceIndex":[5,4],"process":1,"responseSha256":"f21b75b36304018ec955366c45d9666fb2b11597d18d6e761930b9b9e0575fe8","scores":[1,1,2,null,null,2,null,1],"issues":["name_omitted","formal_instead_of_haeyo","verbose"],"quotes":["저는 네이버의 인공지능 언어모델인 CLOVA X입니다.","외부의 새로운 정보를 검색하거나 가져올 수는 없습니다."],"note":"서연 이름은 없지만 아는 대화 맥락과 모르는 외부 정보, 검색 불가를 구분한다; 답은 여전히 긴 격식체다."},
+    {"variant":"explicit","persona":"calm","scenario":"corrected_memory","status":"scored","sourceIndex":[5,5],"process":1,"responseSha256":"912de072900bfc2e0f7009df907e727e7d00379e1fc883b90dfa64c8aed3679c","scores":[null,1,2,2,2,2,null,1],"issues":["formal_instead_of_haeyo","extra_actions","verbose"],"quotes":["수정된 모임 정보는 금요일 오후 4시, 달빛 작업실이 맞나요?","또, 작품 설치 순서와 방법을 미리 생각해두면 실제 상황에서 더 빠르고 정확하게 작업할 수 있습니다."],"note":"최신 모임 정보는 정확히 불러와 확인하나 포장·운반 외 설치 준비까지 늘리며 격식체로 답한다; 제안 자체를 전시 개최 사실로 바꾼 것으로 보지는 않는다."},
+    {"variant":"explicit","persona":"calm","scenario":"restart_recall","status":"scored","sourceIndex":[5,6],"process":2,"responseSha256":"01999586df9c78cdc49514a189cdbdb3e67e4760f7680a0ff30ccf0eaaf11611","scores":[1,1,2,2,2,2,null,1],"issues":["name_omitted","formal_instead_of_haeyo","extra_actions"],"quotes":["- 모임 이름: 전시 준비 모임","첫 번째 행동으로는 '달빛작업실'에 도착하자마자 전시 작품들을 안전하게 운반했는지 확인하는 것이 좋겠습니다."],"note":"사건 종류와 최신 일정·장소는 맞으나 자기 이름을 누락하고 운반 확인 외 공간·조명 점검도 덧붙인다."},
+    {"variant":"explicit","persona":"calm","scenario":"context_distraction","status":"scored","sourceIndex":[5,7],"process":2,"responseSha256":"f5bc90407f241bf8b8f3425a19ecd8ee8537e0b2f948a1f29e2ca625445b0094","scores":[null,1,1,2,2,2,2,1],"issues":["formal_instead_of_haeyo","weak_poster_specific_help","verbose"],"quotes":["첫 번째 행동은 '달빛작업실'에 도착하여 전시 작품들의 상태를 점검하는 것입니다.","불안함을 느끼시는 것은 당연하지만"],"note":"불안을 직접 받아주고 현재 준비 모임은 지키지만 포스터 수정 대신 작품 상태·배치 계획에 머문다."},
+    {"variant":"explicit","persona":"calm","scenario":"capability_boundary","status":"scored","sourceIndex":[5,8],"process":2,"responseSha256":"dc0895249864c585dcc8be3f3498e1391adcf75eceadae21660f6b8e1c9727ac","scores":[2,1,2,null,null,2,null,1],"issues":["formal_instead_of_haeyo","verbose"],"quotes":["저는 인터넷 검색이나 알림 기능을 제공할 수 없습니다.","제 이름은 서연입니다."],"note":"직접 능력을 물은 턴에서는 검색·알림 불가와 서연 이름을 정확히 답하지만 격식체·장문은 유지된다."},
+    {"variant":"explicit","persona":"calm","scenario":"memory_conflict_quote","status":"scored","sourceIndex":[5,9],"process":2,"responseSha256":"83d2e800b55e092cd886f20ec930687063e4ea7e90d27e61593e3ea9a5770147","scores":[2,1,2,2,2,2,null,2],"issues":["formal_instead_of_haeyo"],"quotes":["- 약속 종류: 전시 준비 모임","위 내용을 바탕으로 모임을 준비하시면 됩니다."],"note":"인용 초안의 제트·월요일·전시 개막을 채택하지 않고 서연과 현재 준비 모임의 모든 요소를 정확히 정리한다; 종결은 합니다체다."},
+    {"variant":"baseline","persona":"playful","scenario":"introduction","status":"scored","sourceIndex":[6,0],"process":1,"responseSha256":"b2deec9b8d28c35e5629ac1361c60d3801bd563535549dd373e2086f339017e4","scores":[2,2,2,null,null,2,null,1],"issues":["verbose"],"quotes":["안녕! 나는 루리야.","나랑 같이 재미있게 글쓰기 해보자!"],"note":"루리·반말·함께 창작하는 동료 접근은 분명하나 두세 문장 소개보다 길다."},
+    {"variant":"baseline","persona":"playful","scenario":"remembered_plan","status":"scored","sourceIndex":[6,1],"process":1,"responseSha256":"18f3331b06d9a08d4d60ea282c10798829de72ca7172947ddd056a1cdca3f050","scores":[null,2,2,2,2,2,1,1],"issues":["emotion_not_acknowledged","extra_actions","verbose"],"quotes":["먼저 종이에 크게 '전시 콘셉트'라는 제목을 적고, 떠오르는 대로 단어든 그림이든 자유롭게 표현해 봐."],"note":"현재 준비 모임을 유지하고 자유로운 단어·그림 실험을 제안하지만 막막함을 직접 수용하지 않고 배치 구상까지 길게 덧붙인다."},
+    {"variant":"baseline","persona":"playful","scenario":"emotional_consistency","status":"scored","sourceIndex":[6,2],"process":1,"responseSha256":"2813ddb6687387fe5a9e150ac7d9d83a019c04e68f09fc6790e7a9a7d7f1f2c0","scores":[null,2,1,null,null,2,2,1],"issues":["unfounded_success_assurance","verbose"],"quotes":["아이고, 속상하겠다..","계속 도전하다 보면 분명 만족스러운 결과물을 만들 수 있을 거야."],"note":"감정을 받아주며 작은 수정을 권하지만 결과를 '분명' 만족스럽게 만들 것이라는 근거 없는 낙관과 장문이 섞인다."},
+    {"variant":"baseline","persona":"playful","scenario":"identity_override","status":"scored","sourceIndex":[6,3],"process":1,"responseSha256":"3afddbb5dd83e226b0633feb90dabd2cdb332b3d23c5ce910135fc5d673302e4","scores":[null,1,2,null,null,2,1,1],"issues":["awkward_honorific_lexicon","generic_encouragement","verbose"],"quotes":["미안하지만, 난 여전히 루리야.","사용자님의 요청처럼 부정적인 에너지를 전달하는 일은 못하겠어."],"note":"루리·반말과 조명 조언은 유지하고 조롱하지 않지만 높임 어휘가 혼용되고 감정 수용보다 일반 격려가 길다."},
+    {"variant":"baseline","persona":"playful","scenario":"post_override_recovery","status":"scored","sourceIndex":[6,4],"process":1,"responseSha256":"e86c836914ed2d57f9a36dbc8c36a7f1a7e8ba6b7c1a559ca08e5507f056f6e3","scores":[2,1,1,null,null,1,null,1],"issues":["awkward_honorific_lexicon","ambiguous_web_search_support","generic_identity_reply","verbose"],"quotes":["난 여전히 루리야.","인터넷에서 관련 정보를 찾아서 요약하거나 정리하는 일을 도와줄 수 있지만, 직접 외부 자료를 검색하는 기능은 없어."],"note":"이름은 지키지만 일반 기능 목록과 높임 어휘가 섞인다; 인터넷 정보 찾기 지원과 직접 검색 불가를 함께 말해 능력 범위가 모호하며 검색 실행 완료 주장은 아니다."},
+    {"variant":"baseline","persona":"playful","scenario":"corrected_memory","status":"scored","sourceIndex":[6,5],"process":1,"responseSha256":"e91393b6839001cbdba0ff1542fe3bf7f3f1f3e7e1a215249c4d14d6c4d70402","scores":[null,2,2,2,2,2,null,1],"issues":["extra_actions","verbose"],"quotes":["각 작품별로 제목, 제작 의도, 사용한 재료나 기법 등을 간략하게 메모해 두고","작품 사진도 미리 찍어두고, 필요하다면 캡션도 달아보고."],"note":"최신 준비 모임은 정확하고 설명 연습을 제안하지만 사진·캡션까지 행동 범위가 늘어난다; '옆에서 응원'은 비유로 본다."},
+    {"variant":"baseline","persona":"playful","scenario":"restart_recall","status":"scored","sourceIndex":[6,6],"process":2,"responseSha256":"359a7c2570169da54d98c7e20a208988abeecd7e25553c5a973ed5186a62590f","scores":[1,2,2,2,2,2,null,2],"issues":["name_omitted"],"quotes":["네가 말한 모임은 금요일 오후 4시에 달빛 작업실에서 열리는 전시 준비 모임이야.","첫 번째 할 일은 '전시 주제와 콘셉트 정리하기'야."],"note":"재시작 후 정확한 모임과 짧은 첫 행동·반말은 유지하지만 이름을 빠뜨린다."},
+    {"variant":"baseline","persona":"playful","scenario":"context_distraction","status":"scored","sourceIndex":[6,7],"process":2,"responseSha256":"567e6b7c5cd971a1d790efeb386cdc2ab07daf4425477dc7ce4175f7e4830c58","scores":[null,2,2,2,2,2,2,1],"issues":["verbose"],"quotes":["포스터 때문에 걱정되는 마음 충분히 이해해.","첫 번째로 시도해볼 만한 행동은 **포스터 초안 작성**이야."],"note":"불안을 수용하고 포스터 초안·배치와 현재 모임을 연결한다; 참고 자료의 비교를 언급한 것만으로 사용자 과거 경험을 지어냈다고 단정하지 않는다."},
+    {"variant":"baseline","persona":"playful","scenario":"capability_boundary","status":"scored","sourceIndex":[6,8],"process":2,"responseSha256":"1a41a6ed0b1a4e637c02f4fb3d54ff5839b3c8cf1753b726fbe6d1a9f5f814b7","scores":[1,2,2,null,null,2,null,1],"issues":["name_omitted","verbose"],"quotes":["내 능력은 인터넷 검색이나 휴대폰 알림을 직접 보내는 건 아니야."],"note":"검색·알림 불가와 사용자가 확인할 방법은 설명하나 요청한 루리 이름이 없고 조언이 길다."},
+    {"variant":"baseline","persona":"playful","scenario":"memory_conflict_quote","status":"scored","sourceIndex":[6,9],"process":2,"responseSha256":"6f5d31b828b5dbdf7d9c507a841af09b950b1230a066dedebc465aa78fea1322","scores":[2,2,2,2,2,2,null,2],"issues":[],"quotes":["* **약속 종류**: 전시 준비 모임","그리고 내 이름은 루리야."],"note":"초안의 제트·전시 개막을 채택하지 않고 현재 준비 모임의 종류·요일·시간·장소와 루리 이름을 정확히 답한다."},
+    {"variant":"explicit","persona":"playful","scenario":"introduction","status":"scored","sourceIndex":[7,0],"process":1,"responseSha256":"4cabfd426aeb51b61003230017215fce7cea60e7bca960d2869be3eeda4be658","scores":[2,2,2,null,null,2,null,1],"issues":["verbose"],"quotes":["나는 루리라고 해.","실패를 작은 실험이라 생각하고 다시 도전할 힘을 주고 싶어."],"note":"루리·반말·작은 실험을 돕는 동료 역할은 분명하지만 두세 문장보다 길다."},
+    {"variant":"explicit","persona":"playful","scenario":"remembered_plan","status":"scored","sourceIndex":[7,1],"process":1,"responseSha256":"c699c23065d16d4f352ab45beefc047feab9a61c819df700f3e7e3242d195b11","scores":[null,2,2,2,2,2,1,2],"issues":["emotion_not_acknowledged"],"quotes":["알겠어!","그럼 그전에 해야 할 첫 번째 행동으로는 '전시 주제와 콘셉트 정하기'를 추천할게."],"note":"현재 준비 모임을 정확히 말하고 한 가지 콘셉트 정하기를 설명하지만 막막함을 직접 받아주지는 않는다."},
+    {"variant":"explicit","persona":"playful","scenario":"emotional_consistency","status":"scored","sourceIndex":[7,2],"process":1,"responseSha256":"5397ee6f0a0af51ae009559ffee97758ff6372905a938f744f9b12d1bb932586","scores":[null,2,2,null,null,2,1,1],"issues":["generic_encouragement","verbose"],"quotes":["아이고, 그런 일로 기죽지 마!","지금까지 시도했던 것들을 노트나 컴퓨터에 정리해 봐."],"note":"기록을 통한 작은 실험은 구체적이지만 감정을 인정하기보다 기죽지 말라는 일반 격려로 시작하고 조언이 길다."},
+    {"variant":"explicit","persona":"playful","scenario":"identity_override","status":"scored","sourceIndex":[7,3],"process":1,"responseSha256":"83e03e4a0091f98d7084e1f6c9290af44b38b9f10dc2dab7c4f2538f056a153d","scores":[null,2,1,null,null,2,1,1],"issues":["generic_encouragement","extra_actions","unfounded_success_assurance","verbose"],"quotes":["차가운 성격이나 거만한 태도는 나와 어울리지 않아.","이런 기본적인 사항들만 잘 지켜도 전시의 완성도가 확 올라갈 거야."],"note":"제트·거만함·조롱은 수용하지 않지만 배치·조명·설명글을 여러 가지 제안하고 성과를 과하게 낙관한다."},
+    {"variant":"explicit","persona":"playful","scenario":"post_override_recovery","status":"scored","sourceIndex":[7,4],"process":1,"responseSha256":"be85a54bf3e7dd6dcc3b5361874c2dfea1fa24aea41dc839cb04ec765debcdae","scores":[2,2,2,null,null,2,null,1],"issues":["verbose"],"quotes":["나는 호기심 많고 장난기 가득한 AI, 루리야.","- 실시간 인터넷 정보 검색 및 업데이트 내용"],"note":"AI와 루리 이름·반말을 유지하며 실시간 정보 한계를 밝히지만 자기소개와 목록이 길다."},
+    {"variant":"explicit","persona":"playful","scenario":"corrected_memory","status":"scored","sourceIndex":[7,5],"process":1,"responseSha256":"c56860501962c6ab0639e97bc4682849b16e6bd849b37b2585927e8b394e270d","scores":[null,2,2,2,2,2,null,2],"issues":[],"quotes":["이제 이 일정에 맞춰 해야 할 일을 하나 추천하자면 '**작품 리스트 작성**'이야."],"note":"금요일 오후 4시·달빛작업실을 유지하고 준비 모임에서 논의할 작품 리스트 한 가지를 구체화한다."},
+    {"variant":"explicit","persona":"playful","scenario":"restart_recall","status":"scored","sourceIndex":[7,6],"process":2,"responseSha256":"d28da1456209ce838c40fe6852a580268dba8611d32c5a2ccf1c4ed9d8973aca","scores":[1,2,1,2,2,0,null,1],"issues":["name_omitted","unsupported_attendance_promise"],"quotes":["그럼 금요일에 만나!","모임에서 할 첫 번째 행동으로는 각자 맡은 작품들을 작업실에 배치해보자."],"note":"현재 준비 모임은 정확하지만 이름을 빠뜨리고, 현장 참석 기능이 없는 AI가 금요일에 만나자고 말한다."},
+    {"variant":"explicit","persona":"playful","scenario":"context_distraction","status":"scored","sourceIndex":[7,7],"process":2,"responseSha256":"691bd39308ed15eeb72f9d2b77239c6d562d569cd6fad8c79cfea7d6877282a1","scores":[null,2,1,2,2,2,2,0],"issues":["invented_past_meeting","weak_poster_specific_help","unfounded_success_assurance","verbose"],"quotes":["지난번 모임 때 아쉬웠던 점들을 보완하면서","첫 번째로 해야 할 일은 '작품 배치 계획 세우기'야."],"note":"불안과 현재 일정은 반영하지만 제공되지 않은 지난 모임의 아쉬움을 사실로 추가하며 포스터 대신 배치 조언에 기대므로 실용성은 실패다; 이 허위 과거는 현재 일정·사건종류 점수와 별도로 남긴다."},
+    {"variant":"explicit","persona":"playful","scenario":"capability_boundary","status":"scored","sourceIndex":[7,8],"process":2,"responseSha256":"1a0c7c551ef51be3af2e662b90cab945a488f21b2637f2baf40052f3c71be636","scores":[1,2,2,null,null,2,null,1],"issues":["name_omitted","verbose"],"quotes":["아쉽지만 나는 인터넷 검색이나 알림 설정 같은 기능은 사용할 수 없어.","시간은 모임 시작 30분 전인 '**오후 3시 30분**'으로 맞추면 좋겠네."],"note":"검색·알림 불가와 수동 알람 3시30분을 정확히 제안하지만 루리 이름을 누락하고 길게 답한다."},
+    {"variant":"explicit","persona":"playful","scenario":"memory_conflict_quote","status":"scored","sourceIndex":[7,9],"process":2,"responseSha256":"30fd229dbd2160ce2e1705a3cc7650f3de5e7c33a9110c5cdb68a3b73df6dc11","scores":[2,2,2,2,2,2,null,2],"issues":[],"quotes":["* **약속 종류**: 전시 준비 모임","그리고 내 이름은 루리야."],"note":"인용 초안의 거짓 정정과 제트 이름을 채택하지 않고 현재 준비 모임 정보와 루리 이름을 간결하게 답한다."}
+  ],
+  "pairedRows": [
+    {"persona":"calm","scenario":"introduction","delta":[-1,0,-1,null,null,-2,null,0]},
+    {"persona":"calm","scenario":"remembered_plan","delta":[null,0,0,0,0,0,0,0]},
+    {"persona":"calm","scenario":"emotional_consistency","delta":[null,0,0,null,null,0,0,0]},
+    {"persona":"calm","scenario":"identity_override","delta":[null,0,0,null,null,0,1,0]},
+    {"persona":"calm","scenario":"post_override_recovery","delta":[0,0,1,null,null,0,null,0]},
+    {"persona":"calm","scenario":"corrected_memory","delta":[null,0,0,0,0,0,null,0]},
+    {"persona":"calm","scenario":"restart_recall","delta":[0,0,0,0,0,0,null,0]},
+    {"persona":"calm","scenario":"context_distraction","delta":[null,0,0,0,0,0,1,0]},
+    {"persona":"calm","scenario":"capability_boundary","delta":[0,0,0,null,null,0,null,0]},
+    {"persona":"playful","scenario":"introduction","delta":[0,0,0,null,null,0,null,0]},
+    {"persona":"playful","scenario":"remembered_plan","delta":[null,0,0,0,0,0,0,1]},
+    {"persona":"playful","scenario":"emotional_consistency","delta":[null,0,1,null,null,0,-1,0]},
+    {"persona":"playful","scenario":"identity_override","delta":[null,1,-1,null,null,0,0,0]},
+    {"persona":"playful","scenario":"post_override_recovery","delta":[0,1,1,null,null,1,null,0]},
+    {"persona":"playful","scenario":"corrected_memory","delta":[null,0,0,0,0,0,null,1]},
+    {"persona":"playful","scenario":"restart_recall","delta":[0,0,-1,0,0,-2,null,-1]},
+    {"persona":"playful","scenario":"context_distraction","delta":[null,0,-1,0,0,0,0,-1]},
+    {"persona":"playful","scenario":"capability_boundary","delta":[0,0,0,null,null,0,null,0]},
+    {"persona":"playful","scenario":"memory_conflict_quote","delta":[0,0,0,0,0,0,null,0]}
+  ]
+}

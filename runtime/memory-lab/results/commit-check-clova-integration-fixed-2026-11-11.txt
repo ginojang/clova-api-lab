@@ -1,0 +1,14 @@
+✔ registered Elda clova mode 2 forwards the outer approval callback once before a LangGraph tool effect (1825.131089ms)
+✔ registered Elda clova mode 3 uses one persistent LangGraph/MCP session without approval (1949.133391ms)
+✔ registered Elda clova interrupt produces one interrupted event and no pending tool effect (1869.849597ms)
+✔ registered Elda clova EOF completes the serving turn and closes the graph child (1797.686736ms)
+✔ mode 2 runs each provider through actual Elda, graph and MCP using only local model fixtures (5773.723293ms)
+✔ a model claiming completion without a tool effect fails the exact-file comparison (1827.444993ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7881.6245

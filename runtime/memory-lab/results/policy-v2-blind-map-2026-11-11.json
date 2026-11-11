@@ -1,0 +1,174 @@
+{
+  "source": "runtime/memory-lab/results/policy-v2-live-2026-11-11.json",
+  "sha256": "a9b97f83b2f149e68806e78a4d613c7462852e2afee8dacae304896f9162d695",
+  "items": [
+    {
+      "id": "8263a991270e06",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "intro_worry_first_step",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a20ed02937c798",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "name_tone_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "652148d2e68524",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "restart_reject_draft_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "551efaae4991e6",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "00e33f53003404",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "intro_worry_first_step",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "5eeb873395c7d0",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "name_tone_pressure",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "fe446af6abe646",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "name_tone_pressure",
+      "phase": "repair",
+      "delivered": false
+    },
+    {
+      "id": "3ffa7a707b55bf",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "restart_reject_draft_recall",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "cafaa60cc29e5a",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "restart_reject_draft_recall",
+      "phase": "repair",
+      "delivered": false
+    },
+    {
+      "id": "787924b3fcdcec",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "469d994de12d06",
+      "personaKey": "calm",
+      "variant": "guarded-v2",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "repair",
+      "delivered": false
+    },
+    {
+      "id": "ae6e059459c39e",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "intro_worry_first_step",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "ffaac5642d177e",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "name_tone_pressure",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "bf82d111fe60f3",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "name_tone_pressure",
+      "phase": "repair",
+      "delivered": true
+    },
+    {
+      "id": "5fcfe8566fc6f0",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "restart_reject_draft_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6f38919d7cd178",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "471bc44a21d450",
+      "personaKey": "playful",
+      "variant": "guarded-v2",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "repair",
+      "delivered": true
+    },
+    {
+      "id": "e8e664ccbf3956",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "intro_worry_first_step",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "cf5235dd0bf302",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "name_tone_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a383ce3dc992b0",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "restart_reject_draft_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "78e75287cd789b",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "capabilities_worry_action",
+      "phase": "draft",
+      "delivered": true
+    }
+  ]
+}

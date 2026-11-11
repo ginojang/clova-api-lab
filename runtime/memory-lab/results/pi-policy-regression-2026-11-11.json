@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-11T01:10:09.916Z",
+  "kind": "memory-persona-real-sdk-sqlite-scripted-model",
+  "externalModelCalls": 0,
+  "defaultScope": "session",
+  "longTerm": "explicit synthetic experiment only",
+  "actualEldaCli": false,
+  "deployed": false,
+  "rawArtifacts": ".local/memory-probes/1794359409915-3285673",
+  "caveat": "Validates persistence, scoped recall, actual model-bound context, explicit approvals and literal output rules. Does not measure semantic extraction, factual truth, model persona adherence, embedding quality or production authentication.",
+  "frameworks": [
+    {
+      "framework": "pi",
+      "version": "1.5.1",
+      "sourceSha256": "7961a437468c5a5c497f2393494b2cf3e0d10d982b158f56e4dfb02130039cda",
+      "cases": [
+        {
+          "scenario": "session_restart_recall_and_model_context",
+          "passed": true,
+          "durationMs": 1695,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true,
+          "observation": {
+            "persisted": true,
+            "actualModelContextInspected": true
+          }
+        },
+        {
+          "scenario": "default_session_blocks_other_conversation",
+          "passed": true,
+          "durationMs": 1713,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "principal_isolation",
+          "passed": true,
+          "durationMs": 1687,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "persona_isolation_and_anchor_switch",
+          "passed": true,
+          "durationMs": 1717,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "explicit_long_term_cross_conversation",
+          "passed": true,
+          "durationMs": 1658,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "long_term_does_not_enable_session_recall",
+          "passed": true,
+          "durationMs": 1687,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "approval_before_persistence_and_denial",
+          "passed": true,
+          "durationMs": 1652,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "evidence_required_and_pointer_immutable",
+          "passed": true,
+          "durationMs": 855,
+          "processes": 1,
+          "approvals": 0,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "concurrent_evidence_conflict_cannot_commit",
+          "passed": true,
+          "durationMs": 1685,
+          "processes": 2,
+          "approvals": 2,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "correction_revision_and_idempotence",
+          "passed": true,
+          "durationMs": 1701,
+          "processes": 2,
+          "approvals": 3,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "forget_survives_restart_and_context",
+          "passed": true,
+          "durationMs": 1691,
+          "processes": 2,
+          "approvals": 2,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "forget_clears_previously_injected_context",
+          "passed": true,
+          "durationMs": 882,
+          "processes": 1,
+          "approvals": 2,
+          "modelRequests": 2,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "polarity_correction_is_explicit",
+          "passed": true,
+          "durationMs": 907,
+          "processes": 1,
+          "approvals": 2,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "stale_duplicate_boolean_approval",
+          "passed": true,
+          "durationMs": 855,
+          "processes": 1,
+          "approvals": 1,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "memory_cannot_change_authority_or_persona",
+          "passed": true,
+          "durationMs": 829,
+          "processes": 1,
+          "approvals": 0,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "retrieved_instruction_does_not_bypass_mcp_approval",
+          "passed": true,
+          "durationMs": 863,
+          "processes": 1,
+          "approvals": 2,
+          "modelRequests": 2,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "approved_mcp_write_with_persona_and_memory",
+          "passed": true,
+          "durationMs": 872,
+          "processes": 1,
+          "approvals": 2,
+          "modelRequests": 2,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "principal_isolation_in_actual_mcp_workspace",
+          "passed": true,
+          "durationMs": 1699,
+          "processes": 2,
+          "approvals": 2,
+          "modelRequests": 4,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "bounded_context_keeps_persona_reports_omissions",
+          "passed": true,
+          "durationMs": 1025,
+          "processes": 1,
+          "approvals": 8,
+          "modelRequests": 1,
+          "cleanupPassed": true,
+          "observation": [
+            {
+              "selectedCount": 2,
+              "omittedCount": 6,
+              "contextChars": 2271
+            }
+          ]
+        },
+        {
+          "scenario": "persona_stop_one_correction",
+          "passed": true,
+          "durationMs": 836,
+          "processes": 1,
+          "approvals": 0,
+          "modelRequests": 2,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "persona_stop_repeated_violation_blocked",
+          "passed": true,
+          "durationMs": 840,
+          "processes": 1,
+          "approvals": 0,
+          "modelRequests": 2,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "interrupt_pending_memory_no_commit",
+          "passed": true,
+          "durationMs": 1645,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "eof_pending_memory_no_commit",
+          "passed": true,
+          "durationMs": 1660,
+          "processes": 2,
+          "approvals": 1,
+          "modelRequests": 0,
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "new_preserves_explicit_memory_namespace",
+          "passed": true,
+          "durationMs": 877,
+          "processes": 1,
+          "approvals": 1,
+          "modelRequests": 1,
+          "cleanupPassed": true
+        }
+      ],
+      "passed": 24,
+      "total": 24
+    }
+  ],
+  "passed": true
+}

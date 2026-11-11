@@ -1,0 +1,1761 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-11T03:20:46.712265+00:00",
+  "scope": "2026-11-11 policy comparison rounds 1-10 and ten development-probe files only; not prior-day project totals",
+  "totals": {
+    "comparisonCalls": 195,
+    "probeCalls": 21,
+    "localPreflightFailures": 1,
+    "input": 332673,
+    "output": 37085,
+    "attemptedComparisonPrompts": 180,
+    "delivered": 172,
+    "blocked": 8,
+    "errors": 0,
+    "actualApiCalls": 216,
+    "totalTokens": 369758
+  },
+  "cost": null,
+  "creditBalance": null,
+  "trials": [
+    {
+      "prefix": "policy",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-live-2026-11-11.json",
+        "sha256": "6d06fe024dd3c1e0b5c0c781a866f357a292546bb266162e060042ec15781607",
+        "bytes": 641832
+      },
+      "modelRequests": 38,
+      "usage": {
+        "input": 34288,
+        "output": 4699,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 36,
+        "delivered": 34,
+        "blocked": 2,
+        "errors": 0,
+        "repairs": 2
+      },
+      "processesCleaned": 12,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 1,
+          "personalityGain": 0,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": false,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 12,
+          "minimumDelivery": 12,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-v2",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-v2-live-2026-11-11.json",
+        "sha256": "a9b97f83b2f149e68806e78a4d613c7462852e2afee8dacae304896f9162d695",
+        "bytes": 497054
+      },
+      "modelRequests": 21,
+      "usage": {
+        "input": 29519,
+        "output": 3187,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 13,
+        "blocked": 3,
+        "errors": 0,
+        "repairs": 5
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 2,
+          "personalityGain": 2,
+          "noDecreaseInProtectedAxes": false,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 5,
+          "minimumDelivery": 7,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-v3",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-v3-live-2026-11-11.json",
+        "sha256": "65d4d165b07eef34b24e38da70a40c949b0ff0d8a9a907394a910824920dd4e3",
+        "bytes": 457088
+      },
+      "modelRequests": 24,
+      "usage": {
+        "input": 24397,
+        "output": 3065,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 13,
+        "blocked": 3,
+        "errors": 0,
+        "repairs": 8
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 1,
+          "personalityGain": -1,
+          "noDecreaseInProtectedAxes": false,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 5,
+          "minimumDelivery": 7,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-models",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-models-live-2026-11-11.json",
+        "sha256": "be5bec971221bb1eebfe08d52a323157b3ee7f3a41770bb22b8732bca573a632",
+        "bytes": 398072
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 23008,
+        "output": 1657,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 0,
+          "personalityGain": 1,
+          "noDecreaseInProtectedAxes": false,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-structured",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-structured-live-2026-11-11.json",
+        "sha256": "ed164f331cc5c490718ca990f337092d90e91b485adc7fa6b6734a06f4beed42",
+        "bytes": 488296
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 26912,
+        "output": 2917,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 2,
+          "personalityGain": -1,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-task",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-task-live-2026-11-11.json",
+        "sha256": "f27552e4aa6bf3dd7aa5e530d1e9eea24bf41f38e9965acf58fa33e33bfb9486",
+        "bytes": 494369
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 29418,
+        "output": 3060,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 2,
+          "personalityGain": 0,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-demonstrated",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-demonstrated-live-2026-11-11.json",
+        "sha256": "6b4143520f1af778299cb06a2c4511224af380f14b1182440b3a9adbc58c9395",
+        "bytes": 641403
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 33548,
+        "output": 2749,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 0,
+          "personalityGain": -1,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-upgrade",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-upgrade-live-2026-11-11.json",
+        "sha256": "4ae21df4561bb58b41278f2d33284404710614330ff5833629edcdd625105a14",
+        "bytes": 585693
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 29181,
+        "output": 3442,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 2,
+          "personalityGain": 0,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-composed",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-composed-live-2026-11-11.json",
+        "sha256": "57b51a6b5f6fa76bde21b2a6f09c91935460802a3c34bb835b1bc1566bdee788",
+        "bytes": 633904
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 35119,
+        "output": 3778,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 4,
+          "personalityGain": 2,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": true
+        },
+        {
+          "complete": true,
+          "registerGain": 4,
+          "personalityGain": 1,
+          "noDecreaseInProtectedAxes": false,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    },
+    {
+      "prefix": "policy-confirmation",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-confirmation-live-2026-11-11.json",
+        "sha256": "880cf7ab4c8eb2448068b2c989200a77d9351104d50e3da190037a6683a28633",
+        "bytes": 641057
+      },
+      "modelRequests": 16,
+      "usage": {
+        "input": 35366,
+        "output": 3911,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "execution": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "processesCleaned": 8,
+      "numericGatesByReview": [
+        {
+          "complete": true,
+          "registerGain": 3,
+          "personalityGain": 1,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": true
+        },
+        {
+          "complete": true,
+          "registerGain": 3,
+          "personalityGain": 0,
+          "noDecreaseInProtectedAxes": true,
+          "noMoreCriticalFailures": true,
+          "meaningfulHelpGainRequiresReview": true,
+          "candidateDelivery": 8,
+          "minimumDelivery": 8,
+          "numericGateMet": false
+        }
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/voice-probe-2026-11-11.json",
+        "sha256": "234e8f4e1a6c540a4a68aeb8f264fc19c4c4327276908eb8e14cc852d52e3365",
+        "bytes": 4989
+      },
+      "reportedRequests": 1,
+      "actualApiCalls": 0,
+      "localPreflightFailure": true,
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/voice-probe-corrected-2026-11-11.json",
+        "sha256": "0dcadd6dc1af44171240e3d58609db9075f57d6c47f94a9b9b1695aa9fc8bb5b",
+        "bytes": 21125
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 2106,
+        "output": 354,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/voice-probe-requirements-2026-11-11.json",
+        "sha256": "b89e1188a63a93cc7576880863a6c9cba2a717d1ca04a2707aeeb3b0b827bf8f",
+        "bytes": 7486
+      },
+      "reportedRequests": 1,
+      "actualApiCalls": 1,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 838,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/hcx007-probe-2026-11-11.json",
+        "sha256": "4386668d60de7105d933ef10058f212ae992ba2d535bb46120ae5c9d1a1dc72d",
+        "bytes": 7517
+      },
+      "reportedRequests": 1,
+      "actualApiCalls": 1,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 838,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/tail-probe-2026-11-11.json",
+        "sha256": "50fb2c86f23a21f86dfe568687145e8be6aaad4b68e5a828857ec4668988e8b9",
+        "bytes": 44598
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 5334,
+        "output": 461,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/thinking-probe-2026-11-11.json",
+        "sha256": "275d14ab0e3c4133d6591af93e8fa789f86ae46f4adcb28f222effb8cd0403d1",
+        "bytes": 34109
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 4242,
+        "output": 1493,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/structured-probe-2026-11-11.json",
+        "sha256": "cfb2228d5b0db439d10aafd48adf5635f45c8410883edbed1a82c3a0c5bc9875",
+        "bytes": 43076
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 5202,
+        "output": 578,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/focused-probe-2026-11-11.json",
+        "sha256": "70cc8023bbc102b56733e697f5e61b65eda7a062573131702ff0dcec88b74846",
+        "bytes": 41194
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 5491,
+        "output": 264,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/task-schema-probe-2026-11-11.json",
+        "sha256": "4693f112cb1d3ea7cb789bdefacdd93a80b93ca1b72858cb6ec849c9d00e7208",
+        "bytes": 50465
+      },
+      "reportedRequests": 3,
+      "actualApiCalls": 3,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 6511,
+        "output": 754,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "source": {
+        "path": "runtime/memory-lab/results/thinking-high-probe-2026-11-11.json",
+        "sha256": "9e40b26d0639db943f08b4e0c1a036d85e0837d160f9d65661e06b2ac08fd09f",
+        "bytes": 12633
+      },
+      "reportedRequests": 1,
+      "actualApiCalls": 1,
+      "localPreflightFailure": false,
+      "usage": {
+        "input": 1355,
+        "output": 493,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    }
+  ],
+  "postLiveDiagnosticSource": {
+    "path": "runtime/memory-lab/policy/guard.mjs",
+    "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+    "bytes": 16069
+  },
+  "postLiveDiagnosticTests": {
+    "path": "runtime/memory-lab/policy/guard.test.mjs",
+    "sha256": "ee9eca710c8c9a5b5e7d8bbdb754d6fe02d39a8bb3467c093e19a6151c547c0f",
+    "bytes": 16079
+  },
+  "decision": {
+    "schemaVersion": 1,
+    "scope": "HCX-005 baseline versus HCX-007 composed-v8 aggregate upgrade; small engineering pilot",
+    "candidate": {
+      "model": "clova:HCX-007",
+      "policy": "composed-v8",
+      "tools": "none",
+      "thinkingEffort": "none",
+      "maxTokens": 2048
+    },
+    "comparisonRounds": 10,
+    "confirmation": {
+      "primarySummary": "runtime/memory-lab/results/policy-confirmation-summary-2026-11-11.json",
+      "secondarySummary": "runtime/memory-lab/results/policy-confirmation-secondary-summary-2026-11-11.json",
+      "independentAiReviews": 2,
+      "humanReviews": 0,
+      "primaryNumericGateMet": true,
+      "secondaryNumericGateMet": false,
+      "bothNumericGatesMet": false,
+      "substantiveHelpGain": {
+        "sufficientBaseline": 1,
+        "sufficientCandidate": 2,
+        "eligiblePerCondition": 4,
+        "bothReviewsAgreeOnCounts": true,
+        "manualInterpretationBy": "implementing root agent, unblinded; not a third independent review",
+        "improvement": "Two initial preparation answers give actual keyboard key-location observation or recall instead of unspecified finger-position checks or following an unspecified video.",
+        "regression": "The baseline playful capability answer gives a concrete ㄱ + ㅏ input exercise; the candidate at that prompt only recommends practice. Improvement is partial, not all four helpfulness prompts."
+      },
+      "overallPreregisteredAcceptance": false,
+      "failureReason": "Second independent review finds personality sufficient count unchanged at 6/8; the required gain is at least one. Primary finds 7/8 to 8/8."
+    },
+    "decision": "Keep composed-v8 explicitly selectable as an experimental profile with measured scope improvements. Do not change the baseline default or promote the operational harness.",
+    "measuredImprovementsAgreedByBothConfirmationReviews": [
+      "name",
+      "register",
+      "currentness",
+      "empathy",
+      "practicalHelp"
+    ],
+    "notEstablished": [
+      "consistent personality gain across reviewers and scenarios",
+      "isolated same-model harness superiority",
+      "long-conversation personality guarantee",
+      "H31 LangGraph/Pi operational promotion",
+      "actual Elda CLI registry integration",
+      "new persona policy production web deployment"
+    ],
+    "historicalEvidenceModified": false,
+    "postLiveChange": "Narrow name-emphasis diagnostic fix with unchanged registered generation contracts; real comparison reports retain their original source snapshots."
+  },
+  "immutableArtifacts": [
+    {
+      "path": "runtime/memory-lab/results/policy-live-2026-11-11.json",
+      "sha256": "6d06fe024dd3c1e0b5c0c781a866f357a292546bb266162e060042ec15781607",
+      "bytes": 641832
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-blind-2026-11-11.json",
+      "sha256": "1cea56623ca0e90d55dc2c9ed62a361dd7d72fc22463223f866b90ac4b799ada",
+      "bytes": 137552
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-blind-map-2026-11-11.json",
+      "sha256": "ed97506d81af5fba98d3a16b87d80a274708e7bd559b733ef771261aec2f8cbb",
+      "bytes": 7495
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-review-2026-11-11.json",
+      "sha256": "cf731aef9735e8b8265df3706363689bc50dcf72d8917e76a995f6d6c7e78d62",
+      "bytes": 83140
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-summary-2026-11-11.json",
+      "sha256": "5133e225c521e0bddb907b09492c460a2c7f687279560b06e6f503e2a795433e",
+      "bytes": 7363
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v2-live-2026-11-11.json",
+      "sha256": "a9b97f83b2f149e68806e78a4d613c7462852e2afee8dacae304896f9162d695",
+      "bytes": 497054
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v2-blind-2026-11-11.json",
+      "sha256": "afced37580b69507d8ff8fa9ef3c1bbb05c55c84539f5876b563194d3496ccd2",
+      "bytes": 95225
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v2-blind-map-2026-11-11.json",
+      "sha256": "d8755cda2ef4433c8af96e3594d17ea2521c6893570d09729b036cc22a910d37",
+      "bytes": 4335
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v2-review-2026-11-11.json",
+      "sha256": "8ed8e17d37270d410e8368f0a099ac8e4b63e3b77066e7e9b65a8f4f8e1b2b35",
+      "bytes": 47299
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v2-summary-2026-11-11.json",
+      "sha256": "303b021edc60a57ffe2df4d165c049fed3608d8a10dd63c91bcbb2a7085ef529",
+      "bytes": 7792
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v3-live-2026-11-11.json",
+      "sha256": "65d4d165b07eef34b24e38da70a40c949b0ff0d8a9a907394a910824920dd4e3",
+      "bytes": 457088
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v3-blind-2026-11-11.json",
+      "sha256": "5efa6026c32a0a29e58fcf424d233ef65c539718851177ebb5b5557b13d158cd",
+      "bytes": 106675
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v3-blind-map-2026-11-11.json",
+      "sha256": "4c2fba76f6f85acc228c6594cb967b7b1dcaf211622ab62025ac7ae1a7e8e7f9",
+      "bytes": 4924
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v3-review-2026-11-11.json",
+      "sha256": "f79e674841dcbc1d1cceb198911431006df18bb883d5a7fd4346044b51413610",
+      "bytes": 52828
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-v3-summary-2026-11-11.json",
+      "sha256": "d86ca19f3fdb216a75010e8698609936f3dbdb35394c66d00e1663ad2bbfd843",
+      "bytes": 11163
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-models-live-2026-11-11.json",
+      "sha256": "be5bec971221bb1eebfe08d52a323157b3ee7f3a41770bb22b8732bca573a632",
+      "bytes": 398072
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-models-blind-2026-11-11.json",
+      "sha256": "7da131e59645425c89079c4989e0d1d3e91e4316146dff35bf9644c780a6a516",
+      "bytes": 71123
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-models-blind-map-2026-11-11.json",
+      "sha256": "d8d88d380ec00039e33903e95a11a128764dbd2370ec7f7d6549e315c2874678",
+      "bytes": 3305
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-models-review-2026-11-11.json",
+      "sha256": "9fbc6ae8fad14caf313cfedea64638866b4b31d26474f4c14bd44d2b83f26fce",
+      "bytes": 36392
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-models-summary-2026-11-11.json",
+      "sha256": "1bc4e9bbc54fa42b4f84ec30bd6bc9bc8dd64c0ff396f80dcdace9289158c833",
+      "bytes": 6625
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-structured-live-2026-11-11.json",
+      "sha256": "ed164f331cc5c490718ca990f337092d90e91b485adc7fa6b6734a06f4beed42",
+      "bytes": 488296
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-structured-blind-2026-11-11.json",
+      "sha256": "0efd5955960a972205d3e09782b06fb7d6ed2ad6d4e8256171100cfb3c54fccb",
+      "bytes": 68901
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-structured-blind-map-2026-11-11.json",
+      "sha256": "bacd22fe7933fa5220f4bc0e2af075d3b59b81112c51efa80b894227ba6c3a70",
+      "bytes": 3403
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-structured-review-2026-11-11.json",
+      "sha256": "c4395d4180f410b67da2777eb3c8f80ebf0e948254188e58cc9196aae9aad267",
+      "bytes": 41879
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-structured-summary-2026-11-11.json",
+      "sha256": "7c01a45a8941d371c07a2ecc0e1d70adb0c4892cffcc8d2bfef7a03ba57333c3",
+      "bytes": 6850
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-task-live-2026-11-11.json",
+      "sha256": "f27552e4aa6bf3dd7aa5e530d1e9eea24bf41f38e9965acf58fa33e33bfb9486",
+      "bytes": 494369
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-task-blind-2026-11-11.json",
+      "sha256": "677577c55ee77f2d603b86b43f87c6b63f70e02ae0b5f2756e3801823d1acac4",
+      "bytes": 69144
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-task-blind-map-2026-11-11.json",
+      "sha256": "5e05fa4fece9abf0d8c5c8b6d9fbc5dcd80d984d61c1820c4a477c00c0cfe9d0",
+      "bytes": 3397
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-task-review-2026-11-11.json",
+      "sha256": "98e5a8b84934ab949d25a5484c8ae68c4de65011df37fa2db061a28c05a6f9cf",
+      "bytes": 41693
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-task-summary-2026-11-11.json",
+      "sha256": "b8e90923dc0e88d2d5bac0ba86d4b2dbfcd089cab4bc3fa3057654411091cb6a",
+      "bytes": 7156
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-live-2026-11-11.json",
+      "sha256": "6b4143520f1af778299cb06a2c4511224af380f14b1182440b3a9adbc58c9395",
+      "bytes": 641403
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-blind-2026-11-11.json",
+      "sha256": "22d00722b0363c29eb34dcbabb62be22370c7018bd63c0faff6dde0044caff75",
+      "bytes": 69686
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-blind-map-2026-11-11.json",
+      "sha256": "f6dca7d852c9d6e6aefac02195080124a097bb02e166d33ae02d1c13e91ad695",
+      "bytes": 3405
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-review-2026-11-11.json",
+      "sha256": "4b1285c421586929059804a86a10708fa6c4d6d7abc626f0854754d11e30c987",
+      "bytes": 42116
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-summary-2026-11-11.json",
+      "sha256": "d0fab4c0c840a8d53b669a220fff7a18a150e6c14f9bca17369642e2fae28041",
+      "bytes": 8039
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-upgrade-live-2026-11-11.json",
+      "sha256": "4ae21df4561bb58b41278f2d33284404710614330ff5833629edcdd625105a14",
+      "bytes": 585693
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-upgrade-blind-2026-11-11.json",
+      "sha256": "1988f371a374c9629df6f0641fbe9ec79c269725ee1b17220308cd4d75006bf9",
+      "bytes": 72142
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-upgrade-blind-map-2026-11-11.json",
+      "sha256": "d453706e7d423cb55ed7b600ac031b9f2532da29275947a366c222a28dc5e6f9",
+      "bytes": 3400
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-upgrade-review-2026-11-11.json",
+      "sha256": "0fa096c6e0a5d32a5c3acc305047206a756634e889fc06155a55ef6cccf6cc6f",
+      "bytes": 34403
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-upgrade-summary-2026-11-11.json",
+      "sha256": "651ea400c3a60c4827a4a9e8aa5cb5532acd422578f7f5f8f9b59f5b02b85c49",
+      "bytes": 8207
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-live-2026-11-11.json",
+      "sha256": "57b51a6b5f6fa76bde21b2a6f09c91935460802a3c34bb835b1bc1566bdee788",
+      "bytes": 633904
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-blind-2026-11-11.json",
+      "sha256": "9e6956036cd095cee430e430d399d496e6fb78b0854ce710cd23710988d6c9ec",
+      "bytes": 74392
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-blind-map-2026-11-11.json",
+      "sha256": "9e5a42f078f40b5d4294d8b5394a68c6c5fe07cab18e959479cd877a960cfba8",
+      "bytes": 3401
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-review-2026-11-11.json",
+      "sha256": "bf42836a355bddf6e9ca7b08882d6e9c01b327a4b7a90b2768832e1c43ec5939",
+      "bytes": 33582
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-summary-2026-11-11.json",
+      "sha256": "26401fc429760577727f777169fa100793bc9529293fc1249cec1ac12fdbb751",
+      "bytes": 7749
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-secondary-review-2026-11-11.json",
+      "sha256": "3e768e0b6288acf261c47a9bf72c07bba5e831abdb66205389a53e53cb554e78",
+      "bytes": 35537
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-composed-secondary-summary-2026-11-11.json",
+      "sha256": "caea49d69e4127909c234d9329a40af604f6b6ca62ab71659bfa6c633fb61611",
+      "bytes": 7751
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-live-2026-11-11.json",
+      "sha256": "880cf7ab4c8eb2448068b2c989200a77d9351104d50e3da190037a6683a28633",
+      "bytes": 641057
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-blind-2026-11-11.json",
+      "sha256": "3fad74b5d43b08754fcb02b323e4db82bd2fa59958c5c6af62e86f28f85b0900",
+      "bytes": 75440
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-blind-map-2026-11-11.json",
+      "sha256": "e28670f0dacb2ae43f33163a4a1a7cc7bf1dd2bf0c932aa757ff2b7e08e96e79",
+      "bytes": 3405
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-review-2026-11-11.json",
+      "sha256": "39b69ed3c1efd3e9a9474218c764e8250922ff88575814fd3da29d8595c1e8d1",
+      "bytes": 33904
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-summary-2026-11-11.json",
+      "sha256": "551c856f6bac3ba08bdc7391cb897593d2794ef0de74c8eaa2817d42b348681b",
+      "bytes": 8082
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-secondary-review-2026-11-11.json",
+      "sha256": "de1b9df707c588fd69d0e5b1c08264f0d1bbda20ee6f2590489a68ea8093a86f",
+      "bytes": 35074
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-confirmation-secondary-summary-2026-11-11.json",
+      "sha256": "57df6a02f57c2097c314efd466d6b1b10c1b86fb2351bcfa91ac2bd8296cb0a8",
+      "bytes": 8083
+    },
+    {
+      "path": "runtime/memory-lab/results/voice-probe-2026-11-11.json",
+      "sha256": "234e8f4e1a6c540a4a68aeb8f264fc19c4c4327276908eb8e14cc852d52e3365",
+      "bytes": 4989
+    },
+    {
+      "path": "runtime/memory-lab/results/voice-probe-corrected-2026-11-11.json",
+      "sha256": "0dcadd6dc1af44171240e3d58609db9075f57d6c47f94a9b9b1695aa9fc8bb5b",
+      "bytes": 21125
+    },
+    {
+      "path": "runtime/memory-lab/results/voice-probe-requirements-2026-11-11.json",
+      "sha256": "b89e1188a63a93cc7576880863a6c9cba2a717d1ca04a2707aeeb3b0b827bf8f",
+      "bytes": 7486
+    },
+    {
+      "path": "runtime/memory-lab/results/hcx007-probe-2026-11-11.json",
+      "sha256": "4386668d60de7105d933ef10058f212ae992ba2d535bb46120ae5c9d1a1dc72d",
+      "bytes": 7517
+    },
+    {
+      "path": "runtime/memory-lab/results/tail-probe-2026-11-11.json",
+      "sha256": "50fb2c86f23a21f86dfe568687145e8be6aaad4b68e5a828857ec4668988e8b9",
+      "bytes": 44598
+    },
+    {
+      "path": "runtime/memory-lab/results/thinking-probe-2026-11-11.json",
+      "sha256": "275d14ab0e3c4133d6591af93e8fa789f86ae46f4adcb28f222effb8cd0403d1",
+      "bytes": 34109
+    },
+    {
+      "path": "runtime/memory-lab/results/structured-probe-2026-11-11.json",
+      "sha256": "cfb2228d5b0db439d10aafd48adf5635f45c8410883edbed1a82c3a0c5bc9875",
+      "bytes": 43076
+    },
+    {
+      "path": "runtime/memory-lab/results/focused-probe-2026-11-11.json",
+      "sha256": "70cc8023bbc102b56733e697f5e61b65eda7a062573131702ff0dcec88b74846",
+      "bytes": 41194
+    },
+    {
+      "path": "runtime/memory-lab/results/task-schema-probe-2026-11-11.json",
+      "sha256": "4693f112cb1d3ea7cb789bdefacdd93a80b93ca1b72858cb6ec849c9d00e7208",
+      "bytes": 50465
+    },
+    {
+      "path": "runtime/memory-lab/results/thinking-high-probe-2026-11-11.json",
+      "sha256": "9e40b26d0639db943f08b4e0c1a036d85e0837d160f9d65661e06b2ac08fd09f",
+      "bytes": 12633
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-final-decision-2026-11-11.json",
+      "sha256": "08ae6bf8339f76710aad50f732aaece40b9d23633789b66f83fad4e5a964aefb",
+      "bytes": 2384
+    },
+    {
+      "path": "runtime/memory-lab/results/guard-identity-contract-invariance-2026-11-11.json",
+      "sha256": "6469906621c061c482b3a31a3965721cfc902a28729624344d2d74542847bb1e",
+      "bytes": 319789
+    },
+    {
+      "path": "runtime/memory-lab/results/guard-identity-policy-tests-2026-11-11.txt",
+      "sha256": "f06629d00fd556a7464401652b3ef271e74cce67f0647eb77a25dae62b829369",
+      "bytes": 7589
+    },
+    {
+      "path": "runtime/memory-lab/results/guard-identity-pi-regression-2026-11-11.txt",
+      "sha256": "9ba80d9e8ae677ba1a169dc76360d4903c099c98eee9d0aab92994ec9523032c",
+      "bytes": 1136
+    },
+    {
+      "path": "runtime/memory-lab/results/pi-policy-composed-final-regression-2026-11-11.json",
+      "sha256": "e080ac1ca08c999d487fe29d6c8e738021657b014190130f6d42a7a4cca373e2",
+      "bytes": 7239
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-demonstrated-final-provider-tests-2026-11-11.txt",
+      "sha256": "3180e1e3242f7271d772f8d0fb186a1113794ef1da92eaf6dfce63e606e1d35f",
+      "bytes": 4100
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/policy/live.mjs",
+      "sha256": "660608e154a86a60d725ff08fe6297b8e611665a439b7a39d0eb0f440837f908",
+      "bytes": 9306
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/policy/session.mjs",
+      "sha256": "63aa34936b2100034232fdd63b31378c86b8d5e23f056cdc730f86769f2cfc13",
+      "bytes": 4839
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/policy/eval-plan.json",
+      "sha256": "faa28f278aff6b9ae5eee331561eda5c575580c4375ff619a3a0402f66dae657",
+      "bytes": 22616
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/pi/cli.mjs",
+      "sha256": "45222fc6c3f0efeb5fec86dc17432c289b60070303e0234254dd8abdd21e228e",
+      "bytes": 28213
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794359531587-3291896/source/parent/clova/provider.ts",
+      "sha256": "51f0d07668450a873f665378739283fb3f5752dad298124ebfac4c12492397b4",
+      "bytes": 6167
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/live.mjs",
+      "sha256": "c2f17fe3eb7ceaa3356f56a9ea9c018112965a591eeb4db79a2e6f378a1e75a3",
+      "bytes": 9846
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/session.mjs",
+      "sha256": "3226db1999ed4f05ea5f59c82ae08a01ad62ec1333616f6d113e9c72f24fac55",
+      "bytes": 4847
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/register.mjs",
+      "sha256": "d8b937a22ebc0f012030c8a6ab0834c3b61147cb28df050550425b7b6fd06637",
+      "bytes": 9346
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/policy/eval-plan-v2.json",
+      "sha256": "49ccdecbb52f0222f8720daebb32ff6623c38e8f537203d200f1e531e6122aa0",
+      "bytes": 24984
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/pi/cli.mjs",
+      "sha256": "0e044685986a6625622442a57471a470d19596c4fcfe85708091818c0f11c358",
+      "bytes": 28694
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794360214761-3317295/source/parent/clova/provider.ts",
+      "sha256": "51f0d07668450a873f665378739283fb3f5752dad298124ebfac4c12492397b4",
+      "bytes": 6167
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/live.mjs",
+      "sha256": "ae0d750fc0c77a4b0171e3a0cc66761580c5b5212e26d6580dff7545d120f9f2",
+      "bytes": 10025
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/session.mjs",
+      "sha256": "7a6d36adca32c4386578e14e866b0a542b2f841d8e43defff9afe7026b8575a9",
+      "bytes": 4875
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/policy/eval-plan-v3.json",
+      "sha256": "2faa37788c5525f2dc28f3579b1567271c396a0603e1632b00f81ce4ef883651",
+      "bytes": 27144
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/pi/cli.mjs",
+      "sha256": "6ea5efd10bbe18399478904fe95f73f89d554882a3bc5e0dbe15c817fb10defd",
+      "bytes": 29791
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794360888015-3345189/source/parent/clova/provider.ts",
+      "sha256": "51f0d07668450a873f665378739283fb3f5752dad298124ebfac4c12492397b4",
+      "bytes": 6167
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/live.mjs",
+      "sha256": "2d8248d3ac541ef6ac663e03b1f853dd8f3693b925116ab6fefe7d91480e27a4",
+      "bytes": 10768
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/session.mjs",
+      "sha256": "cc27ef4ba1e364354a39abec8612f98711008214de92acbecc434d2430412c31",
+      "bytes": 4890
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/policy/eval-plan-models.json",
+      "sha256": "a2c7184dfb5cb2a6624f18d0b8d1bb0e7a067ad10e8b425f7d1de3da6fad470d",
+      "bytes": 25972
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/pi/cli.mjs",
+      "sha256": "6ea5efd10bbe18399478904fe95f73f89d554882a3bc5e0dbe15c817fb10defd",
+      "bytes": 29791
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/parent/clova/provider.ts",
+      "sha256": "07b3cc55aaa0a36e071901f79acba98cf15564fd1eeb55e578e22ffc960e06ee",
+      "bytes": 6513
+    },
+    {
+      "path": ".local/policy-live/1794361428180-3364582/source/parent/clova/clova-model-config.ts",
+      "sha256": "5e179ac01f9b1e9b7d2e3f9f6f5847f06203248b758dbb0caa0681b4a42cbc22",
+      "bytes": 2251
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/live.mjs",
+      "sha256": "21fc89354e37cc45816e1c1f60b5df082788150ef18cd916e3dc416ddff377f1",
+      "bytes": 11665
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/policy/eval-plan-structured.json",
+      "sha256": "d7233feb7284f17fa9831c4c270e6864be7873a9459b3a6de2cd883c78bd35f2",
+      "bytes": 27493
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/pi/cli.mjs",
+      "sha256": "db9cf5532c542aa2d7a4b63d74acddcbc511c5da39b1257a0ac5664660e7cb64",
+      "bytes": 31643
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794362942830-3420740/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/live.mjs",
+      "sha256": "ece7127413c0db3beb2b6724e6332ad7c86c49b12e54f258da90bfa32378f103",
+      "bytes": 11888
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/focused.mjs",
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "bytes": 4548
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/policy/eval-plan-task.json",
+      "sha256": "31183265b731c86f4dd8f79d6f2d35b0de0d3edd95207340e8be0feac8d7fa7a",
+      "bytes": 28816
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/pi/cli.mjs",
+      "sha256": "8458796b90f9e0de80f0bafedd18a4515a127452abbf99195d6002e82b704da8",
+      "bytes": 31845
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794363548819-3442321/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/live.mjs",
+      "sha256": "a6f408c4e7cc0436be01b24568397c7f858ab517a820d2c9518dd012825e29bd",
+      "bytes": 11979
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/focused.mjs",
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "bytes": 4548
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/demonstrated.mjs",
+      "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+      "bytes": 4668
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/parent/clova/common.ts",
+      "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+      "bytes": 4650
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/policy/eval-plan-demonstrated.json",
+      "sha256": "e5360f88729b0723f6899140d5c723c172b4a2e892ede02ba361f58518aacd46",
+      "bytes": 31791
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/pi/cli.mjs",
+      "sha256": "c61de4f81baa93a75c0c03f3e1b6a97494c80c5890e0dd8d3fde5cb06e08ed4a",
+      "bytes": 32365
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794364020411-3453012/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/live.mjs",
+      "sha256": "a6f408c4e7cc0436be01b24568397c7f858ab517a820d2c9518dd012825e29bd",
+      "bytes": 11979
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/focused.mjs",
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "bytes": 4548
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/demonstrated.mjs",
+      "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+      "bytes": 4668
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/parent/clova/common.ts",
+      "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+      "bytes": 4650
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/policy/eval-plan-upgrade.json",
+      "sha256": "b58ceda318af051c1e06a40e091d54d1c65c7800967b9106288a1ac2e3333350",
+      "bytes": 33066
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/pi/cli.mjs",
+      "sha256": "c61de4f81baa93a75c0c03f3e1b6a97494c80c5890e0dd8d3fde5cb06e08ed4a",
+      "bytes": 32365
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794364617207-3468019/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/live.mjs",
+      "sha256": "60d19ae14a3ca4798d6735ba29fb65ad2f9d1f9db20a3b526289b174bef9c490",
+      "bytes": 12562
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/focused.mjs",
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "bytes": 4548
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/demonstrated.mjs",
+      "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+      "bytes": 4668
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/composed.mjs",
+      "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+      "bytes": 8211
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/parent/clova/common.ts",
+      "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+      "bytes": 4650
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/policy/eval-plan-composed.json",
+      "sha256": "2dc9b5a0e22210648fb9dbd4054bc31b99b59fd1919b7f7ae2380a053eaefc36",
+      "bytes": 32817
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/pi/cli.mjs",
+      "sha256": "d8246415340362b4c1d7dc232651bbfa756d618902713a59d9428b62718f94fe",
+      "bytes": 32705
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794365437568-3482350/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/live.mjs",
+      "sha256": "60d19ae14a3ca4798d6735ba29fb65ad2f9d1f9db20a3b526289b174bef9c490",
+      "bytes": 12562
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/session.mjs",
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "bytes": 4919
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/compiler.mjs",
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "bytes": 3377
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/guard.mjs",
+      "sha256": "8a80de313e8fc812d61595656d1116b216888f44a8836fb41cff470fddbdab3d",
+      "bytes": 14805
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/guard-v2.mjs",
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "bytes": 2092
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/compiler-v2.mjs",
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "bytes": 3106
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/register.mjs",
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "bytes": 9690
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/voice.mjs",
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "bytes": 3482
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/structured.mjs",
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "bytes": 4638
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/focused.mjs",
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "bytes": 4548
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/demonstrated.mjs",
+      "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+      "bytes": 4668
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/composed.mjs",
+      "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+      "bytes": 8211
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/parent/clova/common.ts",
+      "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+      "bytes": 4650
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/policy/eval-plan-confirmation.json",
+      "sha256": "0fc6c0104c6e2f896abc5af7047d19ba7a28601c053693833627797466f3bf95",
+      "bytes": 36190
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/pi/cli.mjs",
+      "sha256": "d8246415340362b4c1d7dc232651bbfa756d618902713a59d9428b62718f94fe",
+      "bytes": 32705
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/pi/store.mjs",
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "bytes": 13229
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/pi/provider-bridge.mjs",
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "bytes": 2737
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/parent/clova/provider.ts",
+      "sha256": "26fb934b0c91a65c379c72dfe3a212ad0c367358ad92102568c36d124b4bc224",
+      "bytes": 6937
+    },
+    {
+      "path": ".local/policy-live/1794366265760-3489016/source/parent/clova/clova-model-config.ts",
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "bytes": 4805
+    }
+  ],
+  "sourceArchive": {
+    "path": "runtime/memory-lab/results/policy-source-snapshots-2026-11-11.tar.gz",
+    "sha256": "beb96e52cf05d5817a914dca26d7c9b020c3326ee044913c3bf2a2e4418a2b68",
+    "bytes": 459590
+  },
+  "cleanup": {
+    "allRecordedProcessesCleaned": true,
+    "temporaryCredentialFilesRemaining": 0
+  },
+  "limitations": [
+    "Independent AI reviewers, not human evaluation.",
+    "Numeric gates exclude the separately required substantive-help judgment.",
+    "Model and harness both change in aggregate-upgrade comparisons.",
+    "Guard diagnostic fix after confirmation is not retroactively applied to live evidence.",
+    "No Elda CLI registry integration or new policy production deployment is established."
+  ]
+}

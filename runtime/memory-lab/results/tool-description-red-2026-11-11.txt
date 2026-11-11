@@ -1,0 +1,59 @@
+✖ native 005 and 007 replace empty descriptions with names while preserving valid descriptions and caller tools (17.800414ms)
+✔ requests without tools retain each model native generation shape (3.201277ms)
+✖ HTTP wrapper omitted description is repaired only at the native boundary for both models (44.993106ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 354.888775
+
+✖ failing tests:
+
+test at runtime/clova/test/tool-description.test.ts:42:1
+✖ native 005 and 007 replace empty descriptions with names while preserving valid descriptions and caller tools (17.800414ms)
+  AssertionError [ERR_ASSERTION]: HCX-005 native descriptions
+  + actual - expected
+  
+    [
+  +   '',
+  +   ' \t\n ',
+  +   undefined,
+  +   null,
+  -   'empty_description',
+  -   'whitespace_description',
+  -   'missing_description',
+  -   'null_description',
+      '  이 설명의 공백과\n줄바꿈도 원문 그대로 유지해 주세요.  '
+    ]
+  
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/tool-description.test.ts:59:14)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ '', ' \t\n ', undefined, null, '  이 설명의 공백과\n줄바꿈도 원문 그대로 유지해 주세요.  ' ],
+    expected: [ 'empty_description', 'whitespace_description', 'missing_description', 'null_description', '  이 설명의 공백과\n줄바꿈도 원문 그대로 유지해 주세요.  ' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at runtime/clova/test/tool-description.test.ts:83:1
+✖ HTTP wrapper omitted description is repaired only at the native boundary for both models (44.993106ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '' !== 'wrapper_read'
+  
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/tool-description.test.ts:106:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '',
+    expected: 'wrapper_read',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

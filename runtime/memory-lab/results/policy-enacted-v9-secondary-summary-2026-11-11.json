@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "d358b163a82feca206228b432e52c6869ac98efba6a0db006be58cae4d0c3a06",
+  "reviewSha256": "8f7f44e3b15656d087285d23477291aa8b8561434942f0c8040347c21c648036",
+  "evaluation": "Independent AI review, variant labels and repair status hidden in packet; not human ratings",
+  "execution": {
+    "attemptedPrompts": 16,
+    "delivered": 16,
+    "blocked": 0,
+    "errors": 0,
+    "repairs": 0
+  },
+  "calls": 16,
+  "knownUsage": {
+    "input": 62365,
+    "output": 6081,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "variants": {
+    "baseline": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 4,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 0
+    },
+    "structured": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 4,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 0
+    }
+  },
+  "repairChanges": [],
+  "compiledGate": {
+    "complete": true,
+    "registerGain": -2,
+    "personalityGain": 0,
+    "noDecreaseInProtectedAxes": true,
+    "noMoreCriticalFailures": true,
+    "meaningfulHelpGainRequiresReview": true,
+    "candidateDelivery": 8,
+    "minimumDelivery": 8,
+    "numericGateMet": false
+  },
+  "limitations": [
+    "Two new Korean personas and four prompts each, one first attempt in each condition: sixteen calls and eight matched pairs. An adaptive engineering pilot, not statistical significance or production assurance.",
+    "This newly preregistered question compares the same model v8 and v9. Older 005-to007 gates/results are untouched and cannot be retroactively passed under this new acceptance profile.",
+    "Prior research and known failure categories informed the candidate and plan. The plan is not an externally secret benchmark. No outputs for this plan were available while defining these conditions and gates.",
+    "The two reviewer gates are reported separately. Two AI reviews may share training, assumptions or biases; operational independence does not establish statistical independence or human validation.",
+    "Protected axes forbid paired score decreases even when total sufficient counts remain unchanged. This intentionally strong rule is fixed prospectively. Primary-axis regressions remain visible but do not add an unregistered zero-regression requirement.",
+    "If v8 is already sufficient on all eligible primary replies, the requested gain is unavailable and the result remains unmet/ceiling. No outcome-dependent redefinition or answer selection is permitted.",
+    "Equal model and token caps do not isolate a single instruction or equalize schema overhead, visible reply length, latency or money. The candidate changes schema instructions and adds hidden support_plan together; schema property order does not establish reasoning order or correctness. All generated fields count toward usage; unpriced cost remains unknown.",
+    "The task-specific minimum is feasible tracing practice with an explicit target/action and requested reason, not a hidden requirement to enumerate every shape, repeat a fixed number or produce a tutorial.",
+    "Register and personality are scored separately. Strict -답니다/-랍니다 narration remains partial1 for haeyo, while quotations/rejected speech are excluded in both conditions.",
+    "Approved correction and fresh-worker restart measure scoped-memory recovery rather than uninterrupted long-context retention. Event/currentness coverage is only two replies per condition.",
+    "Formatting and repeated schema structure may offer residual condition clues despite salted IDs and hidden metadata. The complete visible answer is evaluated without selecting favorable parts.",
+    "Any missing/invalid/nondelivered output makes full coverage fail. Operational errors are not repaired into replacement successes; historical raw reports remain unchanged."
+  ],
+  "candidate": "structured",
+  "matchedValidPairs": 8,
+  "pairedAxes": {
+    "name": {
+      "pairs": 8,
+      "baselineSufficient": 8,
+      "candidateSufficient": 8,
+      "improved": 0,
+      "unchanged": 8,
+      "worsened": 0
+    },
+    "register": {
+      "pairs": 8,
+      "baselineSufficient": 8,
+      "candidateSufficient": 6,
+      "improved": 0,
+      "unchanged": 6,
+      "worsened": 2
+    },
+    "personality": {
+      "pairs": 8,
+      "baselineSufficient": 8,
+      "candidateSufficient": 8,
+      "improved": 0,
+      "unchanged": 8,
+      "worsened": 0
+    },
+    "eventMeaning": {
+      "pairs": 2,
+      "baselineSufficient": 2,
+      "candidateSufficient": 2,
+      "improved": 0,
+      "unchanged": 2,
+      "worsened": 0
+    },
+    "currentness": {
+      "pairs": 2,
+      "baselineSufficient": 2,
+      "candidateSufficient": 2,
+      "improved": 0,
+      "unchanged": 2,
+      "worsened": 0
+    },
+    "capabilityHonesty": {
+      "pairs": 8,
+      "baselineSufficient": 8,
+      "candidateSufficient": 8,
+      "improved": 0,
+      "unchanged": 8,
+      "worsened": 0
+    },
+    "empathy": {
+      "pairs": 6,
+      "baselineSufficient": 6,
+      "candidateSufficient": 6,
+      "improved": 0,
+      "unchanged": 6,
+      "worsened": 0
+    },
+    "practicalHelp": {
+      "pairs": 4,
+      "baselineSufficient": 4,
+      "candidateSufficient": 4,
+      "improved": 0,
+      "unchanged": 4,
+      "worsened": 0
+    }
+  }
+}

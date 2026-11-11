@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-11T04:15:29.820021+00:00",
+  "scope": "One prospective same-HCX-007 composed-v8 versus enacted-v9 trial; historical 216-call ledger remains unchanged.",
+  "source": {
+    "path": "runtime/memory-lab/results/policy-enacted-v9-live-2026-11-11.json",
+    "sha256": "d358b163a82feca206228b432e52c6869ac98efba6a0db006be58cae4d0c3a06",
+    "bytes": 908877
+  },
+  "plan": {
+    "path": "runtime/memory-lab/policy/eval-plan-enacted.json",
+    "sha256": "25605bf1d383530305a603cdca1292ded95126f87126dbf60780acc6e038e073",
+    "bytes": 29667
+  },
+  "acceptanceTool": {
+    "path": "runtime/memory-lab/policy/acceptance-v9.mjs",
+    "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+    "bytes": 14823
+  },
+  "acceptance": {
+    "path": "runtime/memory-lab/results/policy-enacted-v9-acceptance-2026-11-11.json",
+    "sha256": "7b8981d0e4c489a26181cd65e3396cef2b675a22211bf1eff847be34ecd33382",
+    "bytes": 7344
+  },
+  "overallPass": false,
+  "summary": {
+    "attemptedPrompts": 16,
+    "delivered": 16,
+    "blocked": 0,
+    "errors": 0,
+    "repairs": 0
+  },
+  "externalCalls": 16,
+  "knownUsage": {
+    "input": 62365,
+    "output": 6081,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "variants": {
+    "baseline": {
+      "profile": {
+        "model": "clova:HCX-007",
+        "policy": "composed-v8"
+      },
+      "externalCalls": 8,
+      "usage": {
+        "input": 27698,
+        "output": 2588,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "meanResponseLatencyMs": 5753.875,
+      "minResponseLatencyMs": 4932,
+      "maxResponseLatencyMs": 6477
+    },
+    "structured": {
+      "profile": {
+        "model": "clova:HCX-007",
+        "policy": "enacted-v9"
+      },
+      "externalCalls": 8,
+      "usage": {
+        "input": 34667,
+        "output": 3493,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "meanResponseLatencyMs": 7671.5,
+      "minResponseLatencyMs": 6390,
+      "maxResponseLatencyMs": 9010
+    }
+  },
+  "cost": null,
+  "creditBalance": null,
+  "historicalLedger": {
+    "path": "runtime/memory-lab/results/policy-evidence-ledger-2026-11-11.json",
+    "sha256": "7f26bcaf144e5f1042d3b9fa4effc0c796aeaff8c533fe2776e82a6a85245f76",
+    "bytes": 64269
+  },
+  "historicalImmutableArtifactsVerified": 70,
+  "cumulativeInThisPolicyAndProbeScope": {
+    "externalCalls": 232,
+    "knownInputTokens": 395038,
+    "knownOutputTokens": 43166,
+    "knownTotalTokens": 438204
+  },
+  "immutableArtifacts": [
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-acceptance-2026-11-11.json",
+      "sha256": "7b8981d0e4c489a26181cd65e3396cef2b675a22211bf1eff847be34ecd33382",
+      "bytes": 7344
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-acceptance-tests-2026-11-11.txt",
+      "sha256": "62dbf85ece60ff9176da5249673df8b386606bad1693b7da37a29d7c05552eae",
+      "bytes": 1216
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-all-tests-2026-11-11.txt",
+      "sha256": "bd19f1553e08426cd00c5a7d24347ba2c41614416fb6fb36afe4a12a76f4d3d2",
+      "bytes": 8640
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-blind-2026-11-11.json",
+      "sha256": "d408f0a1b96864edfd33842cae98c11308f910bf3f6c23611bcc22ef732a94db",
+      "bytes": 74184
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-blind-map-2026-11-11.json",
+      "sha256": "b2cd6d1c7b216624051d8dd996a3da265858807e67b05b8c58b70f24adf1bfd0",
+      "bytes": 3403
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-live-2026-11-11.json",
+      "sha256": "d358b163a82feca206228b432e52c6869ac98efba6a0db006be58cae4d0c3a06",
+      "bytes": 908877
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-primary-review-2026-11-11.json",
+      "sha256": "bcd659348252032a33e54bb7b796919aa610a9da49a81b7e67fc37df60181972",
+      "bytes": 34249
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-primary-summary-2026-11-11.json",
+      "sha256": "1fd0420f84469198f9ab8092f129277ca6f9e37032c81cf2d6175ae663cbddd2",
+      "bytes": 7736
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-secondary-review-2026-11-11.json",
+      "sha256": "8f7f44e3b15656d087285d23477291aa8b8561434942f0c8040347c21c648036",
+      "bytes": 34982
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-secondary-summary-2026-11-11.json",
+      "sha256": "cc60f938e05648912177d8c684b14ae100dfb77085d739a2b4b98bf88461adfb",
+      "bytes": 7736
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-source-snapshots-2026-11-11.tar.gz",
+      "sha256": "9f8d07c6c5fd6020d69091a774ceef51f1c43c0c0b545ff7c76993b115c5dcf1",
+      "bytes": 63478
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-unit-tests-2026-11-11.txt",
+      "sha256": "93487dbd750eb21694a13e1201d52b5560161f3a2e10bebeea36f71e650cab78",
+      "bytes": 944
+    }
+  ],
+  "sourceSnapshots": {
+    "policy/live.mjs": {
+      "sha256": "3e77c228fc9c0fa140a57f9f42401f17e9b463c9309f34ae34d930536b7a7c4d",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/live.mjs"
+    },
+    "policy/session.mjs": {
+      "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/session.mjs"
+    },
+    "policy/compiler.mjs": {
+      "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/compiler.mjs"
+    },
+    "policy/guard.mjs": {
+      "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/guard.mjs"
+    },
+    "policy/guard-v2.mjs": {
+      "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/guard-v2.mjs"
+    },
+    "policy/compiler-v2.mjs": {
+      "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/compiler-v2.mjs"
+    },
+    "policy/register.mjs": {
+      "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/register.mjs"
+    },
+    "policy/voice.mjs": {
+      "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/voice.mjs"
+    },
+    "policy/structured.mjs": {
+      "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/structured.mjs"
+    },
+    "policy/focused.mjs": {
+      "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/focused.mjs"
+    },
+    "policy/demonstrated.mjs": {
+      "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/demonstrated.mjs"
+    },
+    "policy/composed.mjs": {
+      "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/composed.mjs"
+    },
+    "policy/enacted.mjs": {
+      "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/enacted.mjs"
+    },
+    "policy/acceptance-v9.mjs": {
+      "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/acceptance-v9.mjs"
+    },
+    "policy/blind-packet.mjs": {
+      "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/blind-packet.mjs"
+    },
+    "policy/summarize.mjs": {
+      "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/summarize.mjs"
+    },
+    "../clova/common.ts": {
+      "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+      "path": ".local/policy-live/1794370064021-3543842/source/parent/clova/common.ts"
+    },
+    "policy/eval-plan-enacted.json": {
+      "sha256": "25605bf1d383530305a603cdca1292ded95126f87126dbf60780acc6e038e073",
+      "path": ".local/policy-live/1794370064021-3543842/source/policy/eval-plan-enacted.json"
+    },
+    "pi/cli.mjs": {
+      "sha256": "7ff2db44ea4f05e0939b71e4ad6783133d064eb06315cdadc0ec111f7937f997",
+      "path": ".local/policy-live/1794370064021-3543842/source/pi/cli.mjs"
+    },
+    "pi/store.mjs": {
+      "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+      "path": ".local/policy-live/1794370064021-3543842/source/pi/store.mjs"
+    },
+    "pi/provider-bridge.mjs": {
+      "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+      "path": ".local/policy-live/1794370064021-3543842/source/pi/provider-bridge.mjs"
+    },
+    "../clova/provider.ts": {
+      "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+      "path": ".local/policy-live/1794370064021-3543842/source/parent/clova/provider.ts"
+    },
+    "../clova/clova-model-config.ts": {
+      "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+      "path": ".local/policy-live/1794370064021-3543842/source/parent/clova/clova-model-config.ts"
+    }
+  },
+  "sourceArchive": {
+    "archive": "runtime/memory-lab/results/policy-enacted-v9-source-snapshots-2026-11-11.tar.gz",
+    "sha256": "9f8d07c6c5fd6020d69091a774ceef51f1c43c0c0b545ff7c76993b115c5dcf1",
+    "bytes": 63478,
+    "members": [
+      {
+        "source": "policy/live.mjs",
+        "member": "source/policy/live.mjs",
+        "sha256": "3e77c228fc9c0fa140a57f9f42401f17e9b463c9309f34ae34d930536b7a7c4d",
+        "bytes": 12813
+      },
+      {
+        "source": "policy/session.mjs",
+        "member": "source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "source": "policy/compiler.mjs",
+        "member": "source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "source": "policy/guard.mjs",
+        "member": "source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "source": "policy/guard-v2.mjs",
+        "member": "source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "source": "policy/compiler-v2.mjs",
+        "member": "source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "source": "policy/register.mjs",
+        "member": "source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "source": "policy/voice.mjs",
+        "member": "source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "source": "policy/structured.mjs",
+        "member": "source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "source": "policy/focused.mjs",
+        "member": "source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "source": "policy/demonstrated.mjs",
+        "member": "source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "source": "policy/composed.mjs",
+        "member": "source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "source": "policy/enacted.mjs",
+        "member": "source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "source": "policy/acceptance-v9.mjs",
+        "member": "source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "source": "policy/blind-packet.mjs",
+        "member": "source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "source": "policy/summarize.mjs",
+        "member": "source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "source": "../clova/common.ts",
+        "member": "source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "source": "policy/eval-plan-enacted.json",
+        "member": "source/policy/eval-plan-enacted.json",
+        "sha256": "25605bf1d383530305a603cdca1292ded95126f87126dbf60780acc6e038e073",
+        "bytes": 29667
+      },
+      {
+        "source": "pi/cli.mjs",
+        "member": "source/pi/cli.mjs",
+        "sha256": "7ff2db44ea4f05e0939b71e4ad6783133d064eb06315cdadc0ec111f7937f997",
+        "bytes": 32913
+      },
+      {
+        "source": "pi/store.mjs",
+        "member": "source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "source": "pi/provider-bridge.mjs",
+        "member": "source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "source": "../clova/provider.ts",
+        "member": "source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "source": "../clova/clova-model-config.ts",
+        "member": "source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      }
+    ]
+  },
+  "cleanup": {
+    "processes": [
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "artifactDir": ".local/policy-live/1794370064021-3543842/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      }
+    ],
+    "remainingPrivateHelperKeyFiles": 0
+  },
+  "limitations": [
+    "Two independent AI reviews are not human ratings, population estimates, or proof of statistical significance.",
+    "One call per prompt; two personas and one practice topic; temperature zero does not guarantee identical reruns.",
+    "Candidate changes both schema instructions and support_plan; no isolated attribution to one field.",
+    "Costs and remaining credits were not queried; token and latency overhead do not establish a monetary amount.",
+    "No new Elda-CLI registration or operational deployment; policies remain explicitly selected experiments."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "experiment": "HCX-005 persona evaluation",
+  "liveRuns": [
+    {
+      "report": "runtime/memory-lab/results/live-2026-11-10.json",
+      "tools": "artifacts",
+      "requests": 23,
+      "completedModelTextResponses": 22,
+      "terminatedOnUnexpectedToolCall": true,
+      "usage": {
+        "input": 21823,
+        "output": 3234,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "report": "runtime/memory-lab/results/live-no-tools-2026-11-10.json",
+      "tools": "none",
+      "requests": 32,
+      "completedModelTextResponses": 32,
+      "usage": {
+        "input": 33563,
+        "output": 4729,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    }
+  ],
+  "totalExternalModelCalls": 55,
+  "totalUsage": {
+    "input": 55386,
+    "output": 7963,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "cost": null,
+  "creditConsumptionVerified": false,
+  "credentialsCopiedToLogs": false,
+  "temporaryCredentialFilesRemaining": 0,
+  "finalRunSourceHashesVerified": true,
+  "automaticPersonaCorrection": false,
+  "semanticReview": "live-review.json; independent AI, not human rating",
+  "regressions": {
+    "pi": "pi-live-final-regression.json",
+    "agno": "agno-live-final-regression.json"
+  }
+}

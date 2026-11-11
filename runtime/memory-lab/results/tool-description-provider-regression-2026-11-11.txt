@@ -1,0 +1,42 @@
+✔ Anthropic text blocks, function history, tool result errors and system blocks translate without losing IDs (7.373915ms)
+✔ Anthropic output and SSE preserve tool IDs, JSON arguments, actual usage and all finish reasons (1.426173ms)
+✔ HTTP Anthropic route accepts beta query and either gateway credential header, then shares native Brain (117.410431ms)
+✔ Anthropic SSE sends a waiting ping, then a complete ordered buffered response (28.092537ms)
+✔ Unsupported Anthropic capabilities and invalid bodies fail before native requests without echoing values (70.382758ms)
+✔ Native HTTP errors keep status in JSON and become terminal Anthropic SSE error events without retries (29.675296ms)
+✔ Closing an Anthropic stream aborts native generation and reports cancellation once (26.320157ms)
+✔ Anthropic max_tokens reaches native generation and streamed deadlines remain explicit errors (69.714441ms)
+✔ HCX-005 preserves the existing default and explicit request settings (4.776213ms)
+✔ HCX-007 uses the completion budget field and explicitly disables thinking (0.79103ms)
+✔ other native names keep previous request shape rather than silently adopting 007 options (0.458722ms)
+✔ the existing lab token policy is the same for both models (4.657063ms)
+✔ tool calls retain the existing minimum token budget while 007 thinking stays off (1.04316ms)
+✔ malformed native model identifiers and arguments fail explicitly (0.695696ms)
+✔ the pure helper does not mutate or reuse caller-owned generation objects (0.628089ms)
+✔ 007 accepts each explicit effort while preserving temperature and the lab budget (0.884549ms)
+✔ an explicit thinking option is rejected on other models, including explicit none (1.276222ms)
+✔ invalid effort values do not silently become none or service defaults (1.218044ms)
+✔ thinking and function calling cannot be combined; none still allows tools (0.644362ms)
+✔ native structured output uses the explicit schema with default or explicit none (0.662521ms)
+✔ structured output cannot be used by other models or alongside thinking or tools (0.944193ms)
+✔ invalid response format and non-object schema are rejected before transport (0.775036ms)
+✔ schema is deeply copied without guessing validation-keyword support (0.51285ms)
+✔ omitting structured output preserves both existing plain wire contracts (0.310238ms)
+✔ HTTP wrapper authenticates health and models with a token distinct from the native key (101.967534ms)
+✔ OpenAI tool history and native CLOVA function calls preserve IDs, schemas, usage and finish reason (47.163795ms)
+✔ Invalid inputs, streaming, model or credential injection and unsupported sampling fail before native HTTP (59.701826ms)
+✔ Chunked requests also enforce the 1 MiB limit without reaching CLOVA (16.342393ms)
+✔ Native statuses survive without retries or sensitive error bodies; malformed responses become 502 (53.489173ms)
+✔ Wrapper deadline cancels native HTTP and returns 504 once (113.360505ms)
+✔ Disconnecting the HTTP client aborts the native request without a retry (12.548507ms)
+✔ Standalone wrapper binds loopback and prints only address and port to stderr (278.392057ms)
+✔ HCX-007 wrapper forwards native generation fields and removes thinkingContent (16.21556ms)
+✔ 005 keeps its wire contract; 007 selects native token/thinking fields and never replays thinkingContent (71.262418ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1041.54537

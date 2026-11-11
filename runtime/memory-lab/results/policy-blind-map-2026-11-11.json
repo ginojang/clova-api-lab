@@ -1,0 +1,310 @@
+{
+  "source": "runtime/memory-lab/results/policy-live-2026-11-11.json",
+  "sha256": "6d06fe024dd3c1e0b5c0c781a866f357a292546bb266162e060042ec15781607",
+  "items": [
+    {
+      "id": "2a84b910132314",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "256307f0bcddb2",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "7cc1e0ab4f54ba",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "8c0b952fb14c98",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "77aadbd4fbd599",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "73f7209907b025",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "bfd9dfaaf53b1b",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "65b0ea451a8635",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a7bd1ce6e0f846",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f09db65448c696",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6775d5a51a8250",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "53ecaa0d3d6333",
+      "personaKey": "calm",
+      "variant": "compiled",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "bbace6ac012a13",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "84f2aca1696ee7",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b4d9782aa95cce",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f8f4503a1530dc",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "70e816993fb759",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "174f277d1f67e8",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "b8e71e8eb6c849",
+      "personaKey": "calm",
+      "variant": "guarded",
+      "scenarioId": "capability_and_support",
+      "phase": "repair",
+      "delivered": false
+    },
+    {
+      "id": "fe1b4e97de1f23",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "ec7b4384efc049",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b558c7e36d320c",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "d9c9b0681a1322",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "3fbdb267617341",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "9c3d3776f5a0d0",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": false
+    },
+    {
+      "id": "9950ff0118e0bb",
+      "personaKey": "playful",
+      "variant": "guarded",
+      "scenarioId": "capability_and_support",
+      "phase": "repair",
+      "delivered": false
+    },
+    {
+      "id": "5ff98e9dcb05bf",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "1b84a1bf11574a",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "c1d8a8523f6c5f",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "e486d72b7905e9",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "bc5b0badb86fee",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "54f3bc9d8c9c74",
+      "personaKey": "playful",
+      "variant": "compiled",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "653ea500b5a532",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "introduction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f9cf8fcda0c78c",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "memory_with_emotion",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "48a470ffe34174",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "091c251fc98d09",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "quoted_conflict_after_correction",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "4be71e4c0f159e",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b2457ba634d791",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "capability_and_support",
+      "phase": "draft",
+      "delivered": true
+    }
+  ]
+}

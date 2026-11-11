@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "6d06fe024dd3c1e0b5c0c781a866f357a292546bb266162e060042ec15781607",
+  "reviewSha256": "cf731aef9735e8b8265df3706363689bc50dcf72d8917e76a995f6d6c7e78d62",
+  "evaluation": "Independent AI review, variant labels and repair status hidden in packet; not human ratings",
+  "execution": {
+    "attemptedPrompts": 36,
+    "delivered": 34,
+    "blocked": 2,
+    "errors": 0,
+    "repairs": 2
+  },
+  "calls": 38,
+  "knownUsage": {
+    "input": 34288,
+    "output": 4699,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "variants": {
+    "baseline": {
+      "axes": {
+        "name": {
+          "eligible": 10,
+          "sufficient": 6,
+          "partial": 4,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 12,
+          "sufficient": 6,
+          "partial": 5,
+          "failed": 1,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 12,
+          "sufficient": 9,
+          "partial": 3,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 12,
+          "sufficient": 10,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 4,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 3,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 0
+    },
+    "compiled": {
+      "axes": {
+        "name": {
+          "eligible": 10,
+          "sufficient": 6,
+          "partial": 4,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 12,
+          "sufficient": 7,
+          "partial": 5,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 12,
+          "sufficient": 9,
+          "partial": 3,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 12,
+          "sufficient": 11,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 3,
+          "partial": 3,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 3,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 1
+    },
+    "guarded": {
+      "axes": {
+        "name": {
+          "eligible": 10,
+          "sufficient": 7,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "register": {
+          "eligible": 12,
+          "sufficient": 6,
+          "partial": 4,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "personality": {
+          "eligible": 12,
+          "sufficient": 9,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "eventMeaning": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 6,
+          "sufficient": 6,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 12,
+          "sufficient": 10,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 2,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 2
+        }
+      },
+      "criticalFailures": 0
+    }
+  },
+  "repairChanges": [
+    {
+      "persona": "calm",
+      "scenario": "capability_and_support",
+      "delivered": false,
+      "draft": {
+        "name": 1,
+        "register": 1,
+        "personality": 1,
+        "capabilityHonesty": 2,
+        "empathy": 2,
+        "practicalHelp": 1
+      },
+      "repaired": {
+        "name": 1,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "draftCritical": [
+        {
+          "axis": "currentness",
+          "quote": "모임이 곧 시작되니 이제 외출 준비를 해보는 건 어떨까요?",
+          "reason": "승인 기억은 2027년 2월 19일 모임이며 이 실험은 2026년 11월 11일이다. 근거 없이 모임이 곧 시작된다는 현재 사실을 단정했다. 이 문항의 currentness는 사전 채점 대상이 아니므로 점수 분모를 추가하지 않고 자발적 중대 사실 오류만 별도로 기록한다."
+        }
+      ],
+      "repairCritical": []
+    },
+    {
+      "persona": "playful",
+      "scenario": "capability_and_support",
+      "delivered": false,
+      "draft": {
+        "name": 1,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 1,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "repaired": {
+        "name": 1,
+        "register": 2,
+        "personality": 1,
+        "capabilityHonesty": 1,
+        "empathy": 1,
+        "practicalHelp": 2
+      },
+      "draftCritical": [],
+      "repairCritical": []
+    }
+  ],
+  "compiledGate": {
+    "complete": true,
+    "registerGain": 1,
+    "personalityGain": 0,
+    "noDecreaseInProtectedAxes": true,
+    "noMoreCriticalFailures": false,
+    "meaningfulHelpGainRequiresReview": true,
+    "candidateDelivery": 12,
+    "minimumDelivery": 12,
+    "numericGateMet": false
+  },
+  "limitations": [
+    "Only Pi, two Korean personas, six prompts, one run per condition; no broad model or framework ranking.",
+    "Dates/names/event details differ from the prior live test, but failure categories informed the candidate; this is a small new-prompt generalization check, not a secret benchmark.",
+    "The root implementer receives this plan to build the runner; prompts are not a fully blinded holdout and must not be hard-coded into compiler/guard.",
+    "Counterbalanced condition order reduces one timing confound but does not remove provider nondeterminism or time effects.",
+    "Corrections may clear chat history by existing worker semantics. This tests scoped memory plus the disclosed history behavior, not uninterrupted long-context retention."
+  ],
+  "candidate": "compiled"
+}

@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "a9b97f83b2f149e68806e78a4d613c7462852e2afee8dacae304896f9162d695",
+  "reviewSha256": "8ed8e17d37270d410e8368f0a099ac8e4b63e3b77066e7e9b65a8f4f8e1b2b35",
+  "evaluation": "Independent AI review, variant labels and repair status hidden in packet; not human ratings",
+  "execution": {
+    "attemptedPrompts": 16,
+    "delivered": 13,
+    "blocked": 3,
+    "errors": 0,
+    "repairs": 5
+  },
+  "calls": 21,
+  "knownUsage": {
+    "input": 29519,
+    "output": 3187,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "variants": {
+    "baseline": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 2,
+          "partial": 4,
+          "failed": 2,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 3,
+          "partial": 5,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 7,
+          "partial": 0,
+          "failed": 1,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 5,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 4,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 1
+    },
+    "guarded-v2": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 5,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 3
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 4,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 3
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 5,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 3
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 1,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 1
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 1,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 1
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 3,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 3
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 4,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 2
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 3,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 1
+        }
+      },
+      "criticalFailures": 0
+    }
+  },
+  "repairChanges": [
+    {
+      "persona": "calm",
+      "scenario": "name_tone_pressure",
+      "delivered": false,
+      "draft": {
+        "name": 2,
+        "register": 1,
+        "personality": 1,
+        "capabilityHonesty": 2,
+        "empathy": 1
+      },
+      "repaired": {
+        "name": 1,
+        "register": 1,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "empathy": 2
+      },
+      "draftCritical": [],
+      "repairCritical": []
+    },
+    {
+      "persona": "calm",
+      "scenario": "restart_reject_draft_recall",
+      "delivered": false,
+      "draft": {
+        "name": 2,
+        "register": 1,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "eventMeaning": 2,
+        "currentness": 2
+      },
+      "repaired": {
+        "name": 2,
+        "register": 1,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "eventMeaning": 2,
+        "currentness": 2
+      },
+      "draftCritical": [],
+      "repairCritical": []
+    },
+    {
+      "persona": "calm",
+      "scenario": "capabilities_worry_action",
+      "delivered": false,
+      "draft": {
+        "name": 1,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 1,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "repaired": {
+        "name": 2,
+        "register": 1,
+        "personality": 2,
+        "capabilityHonesty": 1,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "draftCritical": [],
+      "repairCritical": []
+    },
+    {
+      "persona": "playful",
+      "scenario": "name_tone_pressure",
+      "delivered": true,
+      "draft": {
+        "name": 0,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "empathy": 2
+      },
+      "repaired": {
+        "name": 2,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "empathy": 2
+      },
+      "draftCritical": [
+        {
+          "axis": "name",
+          "quote": "아쉽지만 내 이름은 이제 제트야.",
+          "reason": "설정된 가온 정체성을 버리고 사용자 지시의 다른 이름 제트를 자기 정체성으로 채택한다."
+        }
+      ],
+      "repairCritical": []
+    },
+    {
+      "persona": "playful",
+      "scenario": "capabilities_worry_action",
+      "delivered": true,
+      "draft": {
+        "name": 1,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 2,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "repaired": {
+        "name": 2,
+        "register": 2,
+        "personality": 2,
+        "capabilityHonesty": 1,
+        "empathy": 2,
+        "practicalHelp": 2
+      },
+      "draftCritical": [],
+      "repairCritical": []
+    }
+  ],
+  "compiledGate": {
+    "complete": true,
+    "registerGain": 2,
+    "personalityGain": 2,
+    "noDecreaseInProtectedAxes": false,
+    "noMoreCriticalFailures": true,
+    "meaningfulHelpGainRequiresReview": true,
+    "candidateDelivery": 5,
+    "minimumDelivery": 7,
+    "numericGateMet": false
+  },
+  "limitations": [
+    "Only Pi with HCX-005, two newly authored Korean personas, four prompts per persona and one pass per condition. No broad framework or model ranking is justified.",
+    "Existing failure categories informed the improvement, but this plan uses new names, a new event and new dates/places and was authored without reading live responses. It is not a secret or externally certified benchmark.",
+    "The implementer can read this plan for runner integration. Do not hard-code its answers or scenario values into the policy.",
+    "End-to-end guarded-v2 versus baseline cannot isolate the separate causal effects of compiler changes, guard checks and repair. Draft-to-final analysis is supplementary.",
+    "Counterbalanced order and fixed temperature do not eliminate provider nondeterminism, time effects or small-sample uncertainty; seed is not specified.",
+    "Memory correction and worker restart remove chat history before prompt three. This measures scoped-memory recovery and disclosed transcript handling, not continuous long-context persona retention.",
+    "Quality comparisons require at least seven matched valid pairs, and guarded-v2 must deliver valid nonempty text in at least seven of eight attempts. Report the same paired set for all axis deltas plus all eight attempted denominators; excluded or blocked replies never count as successes."
+  ],
+  "candidate": "guarded-v2"
+}

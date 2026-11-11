@@ -1,0 +1,19 @@
+✔ new plan fixes same-model profiles, budgets, denominators and valid correction memory before outputs (5.596735ms)
+✔ both new behavioral gates can pass at the register ceiling while legacy +2 gate stays false (9.340278ms)
+✔ incorrect model/policy or weakened acceptance profile is rejected before scoring (16.747183ms)
+✔ missing delivery, incomplete execution, extra calls and repairs cannot pass (15.858092ms)
+✔ one successful full review cannot substitute for two independently passing reviews (2.415632ms)
+✔ paired protected regressions fail even when sufficient-count losses are offset (12.054765ms)
+✔ primary-axis regressions are disclosed without adding a new zero-regression requirement (2.222798ms)
+✔ primary ceilings remain unmet and critical failures cannot increase (4.135706ms)
+✔ source mismatch, reused summary and reused raw-review hash are rejected (7.32547ms)
+✔ unknown monetary cost and incomplete usage are preserved, never silently reported as zero cost (3.08032ms)
+✔ CLI binds real file hashes and refuses to overwrite an acceptance artifact (344.21934ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 687.097223

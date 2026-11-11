@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scope": "HCX-005 baseline versus HCX-007 composed-v8 aggregate upgrade; small engineering pilot",
+  "candidate": {"model": "clova:HCX-007", "policy": "composed-v8", "tools": "none", "thinkingEffort": "none", "maxTokens": 2048},
+  "comparisonRounds": 10,
+  "confirmation": {
+    "primarySummary": "runtime/memory-lab/results/policy-confirmation-summary-2026-11-11.json",
+    "secondarySummary": "runtime/memory-lab/results/policy-confirmation-secondary-summary-2026-11-11.json",
+    "independentAiReviews": 2,
+    "humanReviews": 0,
+    "primaryNumericGateMet": true,
+    "secondaryNumericGateMet": false,
+    "bothNumericGatesMet": false,
+    "substantiveHelpGain": {
+      "sufficientBaseline": 1,
+      "sufficientCandidate": 2,
+      "eligiblePerCondition": 4,
+      "bothReviewsAgreeOnCounts": true,
+      "manualInterpretationBy": "implementing root agent, unblinded; not a third independent review",
+      "improvement": "Two initial preparation answers give actual keyboard key-location observation or recall instead of unspecified finger-position checks or following an unspecified video.",
+      "regression": "The baseline playful capability answer gives a concrete ㄱ + ㅏ input exercise; the candidate at that prompt only recommends practice. Improvement is partial, not all four helpfulness prompts."
+    },
+    "overallPreregisteredAcceptance": false,
+    "failureReason": "Second independent review finds personality sufficient count unchanged at 6/8; the required gain is at least one. Primary finds 7/8 to 8/8."
+  },
+  "decision": "Keep composed-v8 explicitly selectable as an experimental profile with measured scope improvements. Do not change the baseline default or promote the operational harness.",
+  "measuredImprovementsAgreedByBothConfirmationReviews": ["name", "register", "currentness", "empathy", "practicalHelp"],
+  "notEstablished": ["consistent personality gain across reviewers and scenarios", "isolated same-model harness superiority", "long-conversation personality guarantee", "H31 LangGraph/Pi operational promotion", "actual Elda CLI registry integration", "new persona policy production web deployment"],
+  "historicalEvidenceModified": false,
+  "postLiveChange": "Narrow name-emphasis diagnostic fix with unchanged registered generation contracts; real comparison reports retain their original source snapshots."
+}

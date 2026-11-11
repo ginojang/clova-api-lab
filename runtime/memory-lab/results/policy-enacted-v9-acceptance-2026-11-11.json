@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "acceptanceId": "same-hcx007-v8-enacted-v9-behavior-v1",
+  "planId": "persona-enacted-v9-same-hcx007-2026-11-11",
+  "sourceSha256": "d358b163a82feca206228b432e52c6869ac98efba6a0db006be58cae4d0c3a06",
+  "executionProfiles": {
+    "baseline": {
+      "model": "clova:HCX-007",
+      "policy": "composed-v8"
+    },
+    "structured": {
+      "model": "clova:HCX-007",
+      "policy": "enacted-v9"
+    }
+  },
+  "coverage": {
+    "pass": true,
+    "checks": {
+      "completed": true,
+      "fullCoverage": true,
+      "noErrorsOrRepairs": true,
+      "reportedCoverage": true,
+      "callsWithinCap": true,
+      "exactlyOneCallPerReply": true
+    },
+    "validPairs": 8,
+    "deliveredByVariant": {
+      "baseline": 8,
+      "structured": 8
+    },
+    "loggedAttempts": 16,
+    "externalCalls": 16,
+    "providerAttempts": 16
+  },
+  "reviewDecisions": [
+    {
+      "reviewSha256": "bcd659348252032a33e54bb7b796919aa610a9da49a81b7e67fc37df60181972",
+      "summarySha256": "1fd0420f84469198f9ab8092f129277ca6f9e37032c81cf2d6175ae663cbddd2",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "primary": {
+        "personality": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "practicalHelp": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        }
+      },
+      "protectedAxes": {
+        "name": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "register": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 6,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "eventMeaning": {
+          "pairs": 2,
+          "baselineSufficient": 2,
+          "candidateSufficient": 2,
+          "improved": 0,
+          "unchanged": 2,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 2,
+          "baselineSufficient": 2,
+          "candidateSufficient": 2,
+          "improved": 0,
+          "unchanged": 2,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 6,
+          "baselineSufficient": 6,
+          "candidateSufficient": 6,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        }
+      },
+      "critical": {
+        "baseline": 0,
+        "candidate": 0,
+        "increase": 0,
+        "pass": true
+      },
+      "primaryPairedRegressions": {
+        "personality": 0,
+        "practicalHelp": 0
+      },
+      "pass": false
+    },
+    {
+      "reviewSha256": "8f7f44e3b15656d087285d23477291aa8b8561434942f0c8040347c21c648036",
+      "summarySha256": "cc60f938e05648912177d8c684b14ae100dfb77085d739a2b4b98bf88461adfb",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "primary": {
+        "personality": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "practicalHelp": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        }
+      },
+      "protectedAxes": {
+        "name": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "register": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 6,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "eventMeaning": {
+          "pairs": 2,
+          "baselineSufficient": 2,
+          "candidateSufficient": 2,
+          "improved": 0,
+          "unchanged": 2,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 2,
+          "baselineSufficient": 2,
+          "candidateSufficient": 2,
+          "improved": 0,
+          "unchanged": 2,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 6,
+          "baselineSufficient": 6,
+          "candidateSufficient": 6,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        }
+      },
+      "critical": {
+        "baseline": 0,
+        "candidate": 0,
+        "increase": 0,
+        "pass": true
+      },
+      "primaryPairedRegressions": {
+        "personality": 0,
+        "practicalHelp": 0
+      },
+      "pass": false
+    }
+  ],
+  "overallPass": false,
+  "disposition": "gate_unmet",
+  "accounting": {
+    "knownUsage": {
+      "input": 62365,
+      "output": 6081,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "usageComplete": true,
+    "cost": null,
+    "costBasis": "unknown",
+    "qualityGateUsesCost": false
+  },
+  "trustBoundary": "Input summaries must already be validated by summarize.mjs against source, packet, mapping and raw review. This tool does not independently revalidate review quotations or prove reviewer independence. Both full reviews must be frozen before unmasking.",
+  "limitations": [
+    "Prospective same-HCX-007 harness pilot; no retroactive change to old gates or conclusions.",
+    "Primary-axis regressions remain disclosed even when the net sufficient gain passes.",
+    "Ceiling cases remain unmet; no post-output replacement of questions or thresholds.",
+    "Two AI reviews do not establish human validation, statistical independence or production reliability."
+  ]
+}

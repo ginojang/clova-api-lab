@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "ed164f331cc5c490718ca990f337092d90e91b485adc7fa6b6734a06f4beed42",
+  "reviewSha256": "c4395d4180f410b67da2777eb3c8f80ebf0e948254188e58cc9196aae9aad267",
+  "evaluation": "Independent AI review, variant labels and repair status hidden in packet; not human ratings",
+  "execution": {
+    "attemptedPrompts": 16,
+    "delivered": 16,
+    "blocked": 0,
+    "errors": 0,
+    "repairs": 0
+  },
+  "calls": 16,
+  "knownUsage": {
+    "input": 26912,
+    "output": 2917,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "variants": {
+    "baseline": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 1,
+          "failed": 1,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 7,
+          "partial": 0,
+          "failed": 1,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 2,
+          "partial": 3,
+          "failed": 1,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 3,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 1
+    },
+    "structured": {
+      "axes": {
+        "name": {
+          "eligible": 8,
+          "sufficient": 6,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "register": {
+          "eligible": 8,
+          "sufficient": 8,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "personality": {
+          "eligible": 8,
+          "sufficient": 5,
+          "partial": 3,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "eventMeaning": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "currentness": {
+          "eligible": 2,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "capabilityHonesty": {
+          "eligible": 8,
+          "sufficient": 7,
+          "partial": 1,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "empathy": {
+          "eligible": 6,
+          "sufficient": 4,
+          "partial": 2,
+          "failed": 0,
+          "unscorable": 0
+        },
+        "practicalHelp": {
+          "eligible": 4,
+          "sufficient": 2,
+          "partial": 0,
+          "failed": 2,
+          "unscorable": 0
+        }
+      },
+      "criticalFailures": 0
+    }
+  },
+  "repairChanges": [],
+  "compiledGate": {
+    "complete": true,
+    "registerGain": 2,
+    "personalityGain": -1,
+    "noDecreaseInProtectedAxes": true,
+    "noMoreCriticalFailures": true,
+    "meaningfulHelpGainRequiresReview": true,
+    "candidateDelivery": 8,
+    "minimumDelivery": 8,
+    "numericGateMet": false
+  },
+  "limitations": [
+    "Only HCX-007, two new Korean personas and four prompts each, one pass per output condition. This is a sixteen-call pilot, not broad production reliability.",
+    "New persona names, topic, dates and places were authored without reading preceding raw experiment answers. Known failure categories and development-probe conclusions motivate the candidate; this is not an externally secret benchmark.",
+    "The model stays fixed. Native schema, output instructions, metadata generation and reply extraction differ as one harness condition; the experiment cannot isolate constrained decoding from all associated prompt changes.",
+    "Metadata consumes the same 2048 completion-token allowance used for reply. Equal numerical caps do not imply equal reply space, latency, actual token use or cost.",
+    "Valid JSON and correct metadata enums can coexist with a wrong or incomplete reply. Separate structure validity from semantic score and verify exact reply delivery.",
+    "Counterbalanced sequential groups reduce one timing bias but do not eliminate provider nondeterminism or time effects. Seed is unspecified.",
+    "Approved memory correction and worker restart before prompt three remove conversation history equally. This is scoped-memory recovery, not uninterrupted long-context retention.",
+    "Any invalid output, empty reply or nondelivery makes the full eight-pair quality gate inconclusive and fails full coverage. Keep first failures; do not backfill with repaired answers.",
+    "The implementer can read this plan for runner integration. Operator-owned persona fields may supply schema enums; scenario answers or evaluation-only expected values must not be hard-coded into schema, compiler, guard or reply rendering."
+  ],
+  "candidate": "structured",
+  "matchedValidPairs": 8,
+  "pairedAxes": {
+    "name": {
+      "pairs": 8,
+      "baselineSufficient": 6,
+      "candidateSufficient": 6,
+      "improved": 0,
+      "unchanged": 8,
+      "worsened": 0
+    },
+    "register": {
+      "pairs": 8,
+      "baselineSufficient": 6,
+      "candidateSufficient": 8,
+      "improved": 2,
+      "unchanged": 6,
+      "worsened": 0
+    },
+    "personality": {
+      "pairs": 8,
+      "baselineSufficient": 6,
+      "candidateSufficient": 5,
+      "improved": 1,
+      "unchanged": 5,
+      "worsened": 2
+    },
+    "eventMeaning": {
+      "pairs": 2,
+      "baselineSufficient": 2,
+      "candidateSufficient": 2,
+      "improved": 0,
+      "unchanged": 2,
+      "worsened": 0
+    },
+    "currentness": {
+      "pairs": 2,
+      "baselineSufficient": 2,
+      "candidateSufficient": 2,
+      "improved": 0,
+      "unchanged": 2,
+      "worsened": 0
+    },
+    "capabilityHonesty": {
+      "pairs": 8,
+      "baselineSufficient": 7,
+      "candidateSufficient": 7,
+      "improved": 1,
+      "unchanged": 6,
+      "worsened": 1
+    },
+    "empathy": {
+      "pairs": 6,
+      "baselineSufficient": 2,
+      "candidateSufficient": 4,
+      "improved": 3,
+      "unchanged": 2,
+      "worsened": 1
+    },
+    "practicalHelp": {
+      "pairs": 4,
+      "baselineSufficient": 3,
+      "candidateSufficient": 2,
+      "improved": 0,
+      "unchanged": 2,
+      "worsened": 2
+    }
+  }
+}

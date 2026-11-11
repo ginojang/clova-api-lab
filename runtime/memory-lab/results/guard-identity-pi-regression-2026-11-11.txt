@@ -1,0 +1,17 @@
+✔ approval keeps DB unchanged; restart/isolation/correction/idempotence/forget use actual SQLite (4784.705763ms)
+✔ explicit long_term crosses conversations with origin evidence; default session does not (2364.079581ms)
+✔ actual Pi model context contains retrieved data while MCP still requires explicit approval (839.680588ms)
+✔ literal persona Stop check allows clean output, corrects once and blocks repetition (2464.137072ms)
+✔ live Brain adapter via loopback: system, memory, tool history, token limit, native usage and correction tool removal (993.805505ms)
+✔ live Brain length termination retains raw diagnostic content and usage without emitting accepted final text (903.953054ms)
+✔ tools none removes actual SDK/provider tools while delivering the persona response in one request (925.332533ms)
+✔ live Brain request abort leaves no late effects and marks unavailable usage (897.190881ms)
+✔ Brain translation replays Pi system sections/tool deltas and preserves provider reasoning (2.438045ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14437.629725

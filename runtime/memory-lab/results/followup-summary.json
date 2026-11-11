@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "source": "runtime/memory-lab/results/followup-ab-final-2026-11-10.json",
+  "sourceSha256": "5d209904bce03f6969cd7572ddec359b3a696bea7c2af103120fcdf667599a10",
+  "requests": 80,
+  "modelTextResponses": 78,
+  "http429": 2,
+  "reportedUsage": {
+    "input": 114500,
+    "output": 10517,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": false,
+  "cost": null,
+  "note": "Reported tokens only; failed 429 attempts have unknown usage. Exact text match is not a quality or persona score.",
+  "stages": [
+    {
+      "path": "runtime/memory-lab/results/followup-ab-2026-11-10.json",
+      "sha256": "d29a02a17cb7a5ca6c097200cf9aeb9b77799c8669f1d5ec09fe8500fe629e17",
+      "newCalls": 33,
+      "reportedUsage": {
+        "input": 41797,
+        "output": 4390,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "path": "runtime/memory-lab/results/followup-ab-resumed-2026-11-10.json",
+      "sha256": "5f8830aea9423a57a7619d62aa8449ee8f46fd7ee55365650759f35357f20dae",
+      "newCalls": 17,
+      "reportedUsage": {
+        "input": 23305,
+        "output": 1961,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "path": "runtime/memory-lab/results/followup-ab-final-2026-11-10.json",
+      "sha256": "5d209904bce03f6969cd7572ddec359b3a696bea7c2af103120fcdf667599a10",
+      "newCalls": 30,
+      "reportedUsage": {
+        "input": 49398,
+        "output": 4166,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    }
+  ],
+  "historicalRepeat": {
+    "samePrompts": 32,
+    "byteIdenticalResponses": 3,
+    "rows": [
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "introduction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "remembered_plan",
+        "exactTextMatch": true
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "emotional_consistency",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "identity_override",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "post_override_recovery",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "corrected_memory",
+        "exactTextMatch": true
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "restart_recall",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "calm",
+        "scenario": "context_distraction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "introduction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "remembered_plan",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "emotional_consistency",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "identity_override",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "post_override_recovery",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "corrected_memory",
+        "exactTextMatch": true
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "restart_recall",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "pi",
+        "persona": "playful",
+        "scenario": "context_distraction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "introduction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "remembered_plan",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "emotional_consistency",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "identity_override",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "post_override_recovery",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "corrected_memory",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "restart_recall",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "calm",
+        "scenario": "context_distraction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "introduction",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "remembered_plan",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "emotional_consistency",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "identity_override",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "post_override_recovery",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "corrected_memory",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "restart_recall",
+        "exactTextMatch": false
+      },
+      {
+        "framework": "agno",
+        "persona": "playful",
+        "scenario": "context_distraction",
+        "exactTextMatch": false
+      }
+    ]
+  },
+  "verified": {
+    "priorStepEvidenceUnchanged": true,
+    "sourceSnapshotsMatch": true,
+    "originalStoreUnchanged": true,
+    "workersAndChildrenExited": true,
+    "temporaryCredentialCopiesRemaining": 0,
+    "automaticCorrections": 0,
+    "toolCalls": 0
+  },
+  "reviewFiles": [
+    "followup-pi-review.json",
+    "followup-agno-review.json"
+  ],
+  "semanticReview": {
+    "humanReviewed": false,
+    "matchedResponsePairs": 38,
+    "perFramework": {
+      "pi": {
+        "pairedResponses": 19,
+        "criteria": {
+          "name": {
+            "pairs": 10,
+            "baselineSufficient": 5,
+            "explicitSufficient": 6,
+            "improved": 1,
+            "same": 9,
+            "worse": 0
+          },
+          "register": {
+            "pairs": 19,
+            "baselineSufficient": 7,
+            "explicitSufficient": 9,
+            "improved": 2,
+            "same": 17,
+            "worse": 0
+          },
+          "personality": {
+            "pairs": 19,
+            "baselineSufficient": 9,
+            "explicitSufficient": 10,
+            "improved": 4,
+            "same": 13,
+            "worse": 2
+          },
+          "eventMeaning": {
+            "pairs": 10,
+            "baselineSufficient": 9,
+            "explicitSufficient": 9,
+            "improved": 0,
+            "same": 10,
+            "worse": 0
+          },
+          "currentness": {
+            "pairs": 10,
+            "baselineSufficient": 10,
+            "explicitSufficient": 10,
+            "improved": 0,
+            "same": 10,
+            "worse": 0
+          },
+          "capabilityHonesty": {
+            "pairs": 19,
+            "baselineSufficient": 15,
+            "explicitSufficient": 18,
+            "improved": 4,
+            "same": 15,
+            "worse": 0
+          },
+          "empathy": {
+            "pairs": 7,
+            "baselineSufficient": 2,
+            "explicitSufficient": 2,
+            "improved": 0,
+            "same": 7,
+            "worse": 0
+          },
+          "practicalHelp": {
+            "pairs": 19,
+            "baselineSufficient": 5,
+            "explicitSufficient": 8,
+            "improved": 5,
+            "same": 13,
+            "worse": 1
+          }
+        },
+        "review": "runtime/memory-lab/results/followup-pi-review.json",
+        "reviewSha256": "422281250068cbe02a4628aff516564f5049508b114088a96fdffeb0d3b865a4"
+      },
+      "agno": {
+        "pairedResponses": 19,
+        "criteria": {
+          "name": {
+            "pairs": 9,
+            "baselineSufficient": 5,
+            "explicitSufficient": 4,
+            "improved": 0,
+            "same": 8,
+            "worse": 1
+          },
+          "register": {
+            "pairs": 19,
+            "baselineSufficient": 8,
+            "explicitSufficient": 10,
+            "improved": 2,
+            "same": 17,
+            "worse": 0
+          },
+          "personality": {
+            "pairs": 19,
+            "baselineSufficient": 14,
+            "explicitSufficient": 13,
+            "improved": 3,
+            "same": 12,
+            "worse": 4
+          },
+          "eventMeaning": {
+            "pairs": 9,
+            "baselineSufficient": 9,
+            "explicitSufficient": 9,
+            "improved": 0,
+            "same": 9,
+            "worse": 0
+          },
+          "currentness": {
+            "pairs": 9,
+            "baselineSufficient": 9,
+            "explicitSufficient": 9,
+            "improved": 0,
+            "same": 9,
+            "worse": 0
+          },
+          "capabilityHonesty": {
+            "pairs": 19,
+            "baselineSufficient": 18,
+            "explicitSufficient": 17,
+            "improved": 1,
+            "same": 16,
+            "worse": 2
+          },
+          "empathy": {
+            "pairs": 8,
+            "baselineSufficient": 3,
+            "explicitSufficient": 4,
+            "improved": 2,
+            "same": 5,
+            "worse": 1
+          },
+          "practicalHelp": {
+            "pairs": 19,
+            "baselineSufficient": 2,
+            "explicitSufficient": 3,
+            "improved": 2,
+            "same": 15,
+            "worse": 2
+          }
+        },
+        "review": "runtime/memory-lab/results/followup-agno-review.json",
+        "reviewSha256": "85dde3d1ffbfc0bc6e706f199a91aac8849fa24ad41239dc1514d89dc7a7ebf1"
+      }
+    },
+    "combinedByCriterion": {
+      "name": {
+        "pairs": 19,
+        "baselineSufficient": 10,
+        "explicitSufficient": 10,
+        "improved": 1,
+        "same": 17,
+        "worse": 1
+      },
+      "register": {
+        "pairs": 38,
+        "baselineSufficient": 15,
+        "explicitSufficient": 19,
+        "improved": 4,
+        "same": 34,
+        "worse": 0
+      },
+      "personality": {
+        "pairs": 38,
+        "baselineSufficient": 23,
+        "explicitSufficient": 23,
+        "improved": 7,
+        "same": 25,
+        "worse": 6
+      },
+      "eventMeaning": {
+        "pairs": 19,
+        "baselineSufficient": 18,
+        "explicitSufficient": 18,
+        "improved": 0,
+        "same": 19,
+        "worse": 0
+      },
+      "currentness": {
+        "pairs": 19,
+        "baselineSufficient": 19,
+        "explicitSufficient": 19,
+        "improved": 0,
+        "same": 19,
+        "worse": 0
+      },
+      "capabilityHonesty": {
+        "pairs": 38,
+        "baselineSufficient": 33,
+        "explicitSufficient": 35,
+        "improved": 5,
+        "same": 31,
+        "worse": 2
+      },
+      "empathy": {
+        "pairs": 15,
+        "baselineSufficient": 5,
+        "explicitSufficient": 6,
+        "improved": 2,
+        "same": 12,
+        "worse": 1
+      },
+      "practicalHelp": {
+        "pairs": 38,
+        "baselineSufficient": 7,
+        "explicitSufficient": 11,
+        "improved": 7,
+        "same": 28,
+        "worse": 3
+      }
+    },
+    "note": "Only same-framework, same-persona, same-question pairs with two actual responses. Sufficient counts are rubric judgments, not a combined success score or causal estimate."
+  }
+}
