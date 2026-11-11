@@ -1,0 +1,305 @@
+{
+  "format": "comms-peek-pinned-handler-test-v1",
+  "date": "2026-11-11",
+  "passed": true,
+  "source": {
+    "path": "/home/gino/WorkArea/clova-api-lab/.local/comms-mcp-source-f296148.mjs",
+    "repository": "ginojang/Elda-AI-Agent",
+    "commit": "f296148cac6475941c90e86c066eebac5329b8ac",
+    "repositoryPath": "comms-hub/elda-comms-mcp.mjs",
+    "sha256": "85521ab6a90e52c7a09e998124bc9902b86265eab62e32fffb02a6a702316617",
+    "pinnedSha256Matched": true,
+    "toolsDeclarationSha256": "996848b962a5f0927489556ac78a86c9e0a3e3db86d63b628eff01342be135f5",
+    "sourceStartLine": 61,
+    "sourceEndLine": 152
+  },
+  "test": {
+    "path": "/home/gino/WorkArea/clova-api-lab/runtime/clova/ops-task/inbox-digest/read-ack/peek-handler-test.mjs",
+    "sha256": "8147fb23200d725f51dfdcbbaa968e3da603d0720ccfaf8b994ec438e7be9ba0"
+  },
+  "sandbox": {
+    "evaluatedOnly": "const TOOLS = [ ... ]; declaration plus test-owned TOOLS value return",
+    "sourceModuleImported": false,
+    "sourceHandleExecuted": false,
+    "sourceRenderExecuted": false,
+    "sourceReadlineExecuted": false,
+    "sourceLoadConfigExecuted": false,
+    "externalImportOrAccessTokensRejected": true,
+    "injectedHelpers": [
+      "hub",
+      "render",
+      "when",
+      "list",
+      "ADDR"
+    ],
+    "renderer": "test-owned pure synthetic render sentinel; production formatting not tested",
+    "dynamicCodeGeneration": false,
+    "wasmCodeGeneration": false,
+    "declarationTimeoutMilliseconds": 1000,
+    "handlerTimeoutMilliseconds": 1000,
+    "processRequireFetchBufferReadlineUnavailable": true
+  },
+  "errorBoundary": {
+    "originalWrapperStaticallyMatched": true,
+    "originalWrapperExecuted": false,
+    "actualHandlerThrowTested": true,
+    "envelopeExecution": "test-owned mirror only",
+    "exactMatchedSourceFragments": [
+      "const tool = TOOLS.find((t) => t.name === params?.name);",
+      "const text = await tool.run(params.arguments ?? {});",
+      "return send({ id, result: { content: [{ type: 'text', text }] } });",
+      "return send({ id, result: { content: [{ type: 'text', text: String(e?.message ?? e) }], isError: true } });",
+      "if (!tool) return send({ id, error: { code: -32602, message: `알 수 없는 도구: ${params?.name}` } });"
+    ]
+  },
+  "tools": [
+    "comms_inbox",
+    "comms_read",
+    "comms_peek",
+    "comms_send",
+    "comms_reply",
+    "comms_thread",
+    "comms_threads",
+    "comms_mark_read"
+  ],
+  "schemas": {
+    "comms_read": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "comms_peek": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "comms_mark_read": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "ids"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "peek_get_only_and_encoded_requested_id",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/request%20%2F%3F%20%ED%95%9C%EA%B8%80"
+        }
+      ],
+      "syntheticReadIdsAfter": [],
+      "renderCalls": 1
+    },
+    {
+      "id": "read_default_get_then_post_returned_canonical_id",
+      "passed": true,
+      "requestedId": "f900000001",
+      "returnedId": "f900000009",
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        },
+        {
+          "method": "POST",
+          "route": "/read",
+          "body": {
+            "ids": [
+              "f900000009"
+            ]
+          }
+        }
+      ],
+      "syntheticReadIdsAfter": [
+        "f900000009"
+      ]
+    },
+    {
+      "id": "read_legacy_keepUnread_parameter_does_not_protect_in_f296148",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        },
+        {
+          "method": "POST",
+          "route": "/read",
+          "body": {
+            "ids": [
+              "f900000009"
+            ]
+          }
+        }
+      ],
+      "interpretation": "Unknown extra keepUnread is ignored by this handler. Use the separate comms_peek tool."
+    },
+    {
+      "id": "peek_get_failure_throws_before_any_mark_or_render",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        }
+      ],
+      "handlerThrows": true,
+      "syntheticReadIdsAfter": [],
+      "renderCalls": 0
+    },
+    {
+      "id": "peek_get_failure_isError_in_test_owned_matching_envelope",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        }
+      ],
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "SYNTHETIC_GET_FAILURE"
+            }
+          ],
+          "isError": true
+        }
+      },
+      "scope": "Original handler throw + test-owned envelope; original MCP dispatch was not executed."
+    },
+    {
+      "id": "read_get_failure_does_not_post",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        }
+      ],
+      "handlerThrows": true
+    },
+    {
+      "id": "read_post_failure_is_swallowed_by_existing_handler",
+      "passed": true,
+      "calls": [
+        {
+          "method": "GET",
+          "route": "/messages/f900000001"
+        },
+        {
+          "method": "POST",
+          "route": "/read",
+          "body": {
+            "ids": [
+              "f900000009"
+            ]
+          }
+        }
+      ],
+      "handlerReturnsBodyDespiteAckFailure": true,
+      "syntheticReadIdsAfter": []
+    },
+    {
+      "id": "mark_read_explicit_post_exact_ids_no_get",
+      "passed": true,
+      "requestedIds": [
+        "f900000001",
+        "f900000002",
+        "f900000001"
+      ],
+      "calls": [
+        {
+          "method": "POST",
+          "route": "/read",
+          "body": {
+            "ids": [
+              "f900000001",
+              "f900000002",
+              "f900000001"
+            ]
+          }
+        }
+      ],
+      "syntheticReadIdsAfter": [
+        "f900000001",
+        "f900000002",
+        "f900000001"
+      ],
+      "duplicatesPreserved": true
+    },
+    {
+      "id": "mark_read_post_failure_propagates_as_error",
+      "passed": true,
+      "calls": [
+        {
+          "method": "POST",
+          "route": "/read",
+          "body": {
+            "ids": [
+              "f900000001",
+              "f900000002"
+            ]
+          }
+        }
+      ],
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "SYNTHETIC_POST_FAILURE"
+            }
+          ],
+          "isError": true
+        }
+      },
+      "syntheticReadIdsAfter": []
+    }
+  ],
+  "installedSnapshot": {
+    "path": "/home/gino/.local/share/elda-comms/elda-comms-mcp.mjs",
+    "sha256": "85521ab6a90e52c7a09e998124bc9902b86265eab62e32fffb02a6a702316617",
+    "readOnly": true,
+    "evaluated": false,
+    "sameBytesAsPinnedSource": true,
+    "peekDeclared": true,
+    "keepUnreadPresent": false,
+    "interpretation": "Installation may have changed. This read-only snapshot is not assumed to be an old version."
+  },
+  "actualExternalApiCalls": 0,
+  "actualProductionMcpCalls": 0,
+  "actualModelCalls": 0,
+  "actualReadMarksChanged": 0,
+  "scope": "Pinned tool-handler control flow with a synthetic hub. No production API/MCP/config/key or inbox state access.",
+  "limitations": [
+    "No server-side GET /messages or POST /read implementation was executed.",
+    "No real MCP stdio session, credentials, deployment state, summary workflow, or model behavior was tested.",
+    "isError envelope behavior is a test-owned mirror statically matched to the original dispatcher, not real dispatcher execution.",
+    "Installed source currently matches the new commit when sameBytesAsPinnedSource is true; no old-version negative compatibility run is claimed."
+  ]
+}

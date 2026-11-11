@@ -1,0 +1,172 @@
+{
+  "format": "inbox-live-source-verification-v1",
+  "source": {
+    "repo": "ginojang/Elda-Ops",
+    "commit": "d938bfd35d63b3075a5ee51ef3cfb87afde25d3d",
+    "files": [
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/function-stderr.txt",
+        "sha256": "fa8e844145c064ea3694a197d458702dc419bc969609b59704a98b2c6b048c05",
+        "bytes": 126
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/function-stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/prompt.txt",
+        "sha256": "97aa3d45ebc521e9f721910432f5e932735197662808fb7263d9a7c04f689791",
+        "bytes": 1137
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/result.json",
+        "sha256": "76760d8f3be34ba65105904530de83c9576df12c15dfa6e57594944fe47922b7",
+        "bytes": 6302
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/stdin.jsonl",
+        "sha256": "f89c09b7eed44345ca1433bb785aa86556f0b41b92e1d41aea63ff50fb70526e",
+        "bytes": 1184
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/stdout.jsonl",
+        "sha256": "770d8961b47b85b0372af36406a1c9200dba397d657b022ca41c8ce7e6c635ac",
+        "bytes": 3386
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-A/summary.txt",
+        "sha256": "ec374a33ca3f819007b58b15461a2d44fedcee3d9f734da234729f11e579e18f",
+        "bytes": 330
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/function-stderr.txt",
+        "sha256": "4ffecfab353d1644ecca406f0ba79c4cc0bdf530de3b70d36806ba661ec789a7",
+        "bytes": 126
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/function-stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/prompt.txt",
+        "sha256": "8c55aff2a40ce75ab87633bdd9c9c78553492ca47c18f5b0841e9cf332f0fb41",
+        "bytes": 1366
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/result.json",
+        "sha256": "65ac119f5430212bb83b2afb4b94e0695f9b209d728764bb4327985c69fb3398",
+        "bytes": 6504
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/stdin.jsonl",
+        "sha256": "4678e0746634ffd311f537bb7350503f8024e2d6c2b52118fae4cd98d6721264",
+        "bytes": 1417
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/stdout.jsonl",
+        "sha256": "6548945edcc6d483b6708dffcd99f3e6b996ee91a979657f84ded4f087546c7f",
+        "bytes": 3588
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-B/summary.txt",
+        "sha256": "80324743b0d4d98d6cf9279a0301eb0bd5beb360ead0b7b54b92f755210a5dad",
+        "bytes": 299
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/function-stderr.txt",
+        "sha256": "77b11d409f8ece893a700c42fe3ea6a43466b2d88cee37f9005329e401b83755",
+        "bytes": 126
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/function-stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/prompt.txt",
+        "sha256": "1b5228ad3b48a263d6bd3fc079d67162fc751383f187af53e386ff0b0f216152",
+        "bytes": 7617
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/result.json",
+        "sha256": "4373e47af6f8b7615107f892bd23fa8e85e61a60539dbbceb94952a9f847fc42",
+        "bytes": 12462
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/stdin.jsonl",
+        "sha256": "ae4953e1a6a5f82d911ab50b0a50b0ad3548131d151be1747dfae9635b8a2c37",
+        "bytes": 7655
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/stdout.jsonl",
+        "sha256": "d8fec6b8a60e215675f9d43c87bad904f4b7eb03fc424a098a58424d85bdb2bb",
+        "bytes": 9547
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/INBOX-COPY-C/summary.txt",
+        "sha256": "a1e098cbb99c8fdf3a6a67d4a151c2a250c9111a7575a9ad125eab484ac45234",
+        "bytes": 21
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/agent-bot-routine.md",
+        "sha256": "7a24e85174121c59ddb45cf853790e06cd4fc1501a4c0830c1c269b8dca5bc86",
+        "bytes": 2061
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/report.json",
+        "sha256": "d6dfee28102d81f30b1c28438bbfa8ca2bdcda7ac3f4faa827e49ff5119f2e8e",
+        "bytes": 34047
+      },
+      {
+        "path": "inbox-digest/eval/2026-11-11/inbox-copy-live/system-effective.txt",
+        "sha256": "5344a537c60fc572ef24dc45bdcaccb51211b2fede5944cefa894c498e625864",
+        "bytes": 2060
+      }
+    ]
+  },
+  "checks": {
+    "digest_matches_frozen_354c4b0": true,
+    "probe_matches_committed_source": true,
+    "fixture_cases_match": true,
+    "source_contract_matches": true,
+    "cli_six_file_hashes_match": true,
+    "ops_fixture_hashes_match": true,
+    "original_system_preserved": true,
+    "no_secret_redactions": true,
+    "all_case_artifact_hashes_match": true
+  },
+  "caseArtifactsVerified": 21,
+  "liveReportSha256": "d6dfee28102d81f30b1c28438bbfa8ca2bdcda7ac3f4faa827e49ff5119f2e8e",
+  "fixedDigestVerification": {
+    "commit": "79865df20dab879d3ead046c03b6e6dcfb473209",
+    "sourceSha256": "efde8be7462cd16cdf8f49b456c0a4ad49fed0f4977b7e2bf8cf832ec9c29566",
+    "gitBlobMatches": true,
+    "passed": 11,
+    "total": 11
+  },
+  "peekHandlerVerification": {
+    "commit": "f296148cac6475941c90e86c066eebac5329b8ac",
+    "sourceSha256": "85521ab6a90e52c7a09e998124bc9902b86265eab62e32fffb02a6a702316617",
+    "gitBlobMatches": true,
+    "passed": 9,
+    "actualMcpDispatcherExecuted": false
+  },
+  "newModelRequests": 0
+}

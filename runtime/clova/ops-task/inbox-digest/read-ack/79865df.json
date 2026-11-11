@@ -1,0 +1,844 @@
+{
+  "format": "inbox-read-ack-offline-regression-v1",
+  "source_commit": "79865df20dab879d3ead046c03b6e6dcfb473209",
+  "source_path": "/home/gino/WorkArea/clova-api-lab/.local/inbox-digest-source-79865df.py",
+  "source_sha256": "efde8be7462cd16cdf8f49b456c0a4ad49fed0f4977b7e2bf8cf832ec9c29566",
+  "runner_sha256": "e3dd3e2191f538385afbadc3428b50b0e8d69566209ff7e7c525e41099de9a52",
+  "fixture_execution_completed": true,
+  "contract_passed": true,
+  "passed_cases": 11,
+  "total_cases": 11,
+  "scope": "Original main/summarize; subprocess responses and read state simulated. Not a deployed Task or actual MCP test.",
+  "real_child_processes": 0,
+  "real_model_requests": 0,
+  "real_mcp_requests": 0,
+  "real_unread_state_touched": false,
+  "results": [
+    {
+      "scenario": "new_mcp_model_failure",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "unread_preserved": true,
+        "no_ack_attempts": true,
+        "failed_ids_in_stdout": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 1 · error synthetic model error\n",
+      "stderr": "(요약 bot-routine: endReason error · usage {'input': 12, 'output': 0, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 1 · error synthetic model error\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "model_timeout",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "unread_preserved": true,
+        "no_ack_attempts": true,
+        "failed_ids_in_stdout": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · Command '['/usr/bin/python3', '/home/gino/apps/elda-cli/elda', 'ops', '--events']' timed out after 240 seconds\n",
+      "stderr": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · Command '['/usr/bin/python3', '/home/gino/apps/elda-cli/elda', 'ops', '--events']' timed out after 240 seconds\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "empty_success",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "unread_preserved": true,
+        "no_ack_attempts": true,
+        "failed_ids_in_stdout": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: 두뇌 답이 비었다\n",
+      "stderr": "(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: 두뇌 답이 비었다\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "first_success_second_failure",
+      "members": [
+        "bot-hostwatch",
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "failed_member_unread": true,
+        "failed_member_not_acked": true,
+        "first_summary_preserved": true,
+        "failed_ids_in_stdout": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 1 · error synthetic model error\n  · 장비점검 안 읽은 채 남김: a100000001\n\n## 장비점검 — 안 읽은 1통\n[합성 요약 bot-hostwatch] 요청은 아직 미완료입니다.\n",
+      "stderr": "(요약 bot-hostwatch: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n(요약 bot-routine: endReason error · usage {'input': 12, 'output': 0, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 1 · error synthetic model error\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-hostwatch",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "id": "a100000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-hostwatch"
+        },
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        }
+      ],
+      "initial_unread": {
+        "bot-hostwatch": [
+          "a100000001"
+        ],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-hostwatch": [
+          "a100000001"
+        ],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "old_mcp_ignores_keep_unread",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": true,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "unsupported_capability_failed_closed": true,
+        "stopped_before_body_read": true,
+        "stopped_before_model": true,
+        "unread_preserved": true,
+        "no_ack_attempts": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 오류(1): {'code': -32602, 'message': '알 수 없는 도구: comms_peek'}\n",
+      "stderr": "받은편지함 요약 실패: comms MCP 오류(1): {'code': -32602, 'message': '알 수 없는 도구: comms_peek'}\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "unknownToolRejectedBeforeRead": true
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "mark_read_error",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "summary_preserved": true,
+        "pending_ids_in_stdout": true,
+        "unread_preserved_in_preapply_error_fixture": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n  · 정기업무 읽음 처리 미확정(오류 — 다음 실행 목록으로 확인): b200000001\n\n## 정기업무 — 안 읽은 1통\n[합성 요약 bot-routine] 요청은 아직 미완료입니다.\n",
+      "stderr": "(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-routine",
+          "arguments": {
+            "ids": [
+              "b200000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": true,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "normal_success_two_members",
+      "members": [
+        "bot-hostwatch",
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "success_exit": true,
+        "all_summaries_visible": true,
+        "both_acked": true,
+        "each_ack_after_own_success": true,
+        "all_target_summaries_before_every_ack": true,
+        "body_reads_keep_unread": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 장비점검 1 · 정기업무 1\n\n## 장비점검 — 안 읽은 1통\n[합성 요약 bot-hostwatch] 요청은 아직 미완료입니다.\n\n## 정기업무 — 안 읽은 1통\n[합성 요약 bot-routine] 요청은 아직 미완료입니다.\n",
+      "stderr": "(요약 bot-hostwatch: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-hostwatch",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "id": "a100000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-hostwatch"
+        },
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "ids": [
+              "a100000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-routine",
+          "arguments": {
+            "ids": [
+              "b200000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        }
+      ],
+      "initial_unread": {
+        "bot-hostwatch": [
+          "a100000001"
+        ],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-hostwatch": [],
+        "bot-routine": []
+      },
+      "simulated_read_effects": [
+        {
+          "member": "bot-hostwatch",
+          "id": "a100000001",
+          "via": "comms_mark_read"
+        },
+        {
+          "member": "bot-routine",
+          "id": "b200000001",
+          "via": "comms_mark_read"
+        }
+      ],
+      "all_target_summaries_before_every_ack": true,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "empty_inboxes",
+      "members": [
+        "bot-hostwatch",
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "success_exit": true,
+        "empty_output": true,
+        "no_body_model_or_ack": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 장비점검 0 · 정기업무 0 (새 글 없음)\n",
+      "stderr": "",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-hostwatch",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        }
+      ],
+      "initial_unread": {
+        "bot-hostwatch": [],
+        "bot-routine": []
+      },
+      "remaining_unread": {
+        "bot-hostwatch": [],
+        "bot-routine": []
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "second_member_mark_error",
+      "members": [
+        "bot-hostwatch",
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "both_summaries_preserved": true,
+        "both_ids_reported": true,
+        "first_ack_applied_second_preapply_error": true,
+        "no_false_unread_claim_for_acked_member": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n  · 장비점검 읽음 처리 됨: a100000001\n  · 정기업무 읽음 처리 미확정(오류 — 다음 실행 목록으로 확인): b200000001\n\n## 장비점검 — 안 읽은 1통\n[합성 요약 bot-hostwatch] 요청은 아직 미완료입니다.\n\n## 정기업무 — 안 읽은 1통\n[합성 요약 bot-routine] 요청은 아직 미완료입니다.\n",
+      "stderr": "(요약 bot-hostwatch: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-hostwatch",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "id": "a100000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-hostwatch"
+        },
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "ids": [
+              "a100000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-routine",
+          "arguments": {
+            "ids": [
+              "b200000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        }
+      ],
+      "initial_unread": {
+        "bot-hostwatch": [
+          "a100000001"
+        ],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-hostwatch": [],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [
+        {
+          "member": "bot-hostwatch",
+          "id": "a100000001",
+          "via": "comms_mark_read"
+        }
+      ],
+      "all_target_summaries_before_every_ack": true,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "nonzero_cli_with_ok_text",
+      "members": [
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "unread_preserved": true,
+        "no_ack_attempts": true,
+        "failed_ids_in_stdout": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 9 · completed \n",
+      "stderr": "(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: 정기업무 요약 실패(b200000001) — 아무것도 읽음 표시 안 함(다음 실행에서 다시) · 요약 실패: rc 9 · completed \n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        }
+      ],
+      "initial_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "simulated_read_effects": [],
+      "all_target_summaries_before_every_ack": null,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "error before state mutation; an error after server mutation may be ambiguous",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "scenario": "second_member_mark_postapply_error",
+      "members": [
+        "bot-hostwatch",
+        "bot-routine"
+      ],
+      "old_mcp_fixture": false,
+      "checks": {
+        "fixture_execution_completed": true,
+        "failure_exit": true,
+        "both_summaries_preserved": true,
+        "both_ids_reported": true,
+        "fixture_applied_both_read_marks": true,
+        "failed_member_ack_status_unknown_or_failed": true,
+        "no_false_definite_unread_claim_for_failed_member": true
+      },
+      "contract_passed": true,
+      "fixture_execution_completed": true,
+      "fixture_error": null,
+      "exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n  · 장비점검 읽음 처리 됨: a100000001\n  · 정기업무 읽음 처리 미확정(오류 — 다음 실행 목록으로 확인): b200000001\n\n## 장비점검 — 안 읽은 1통\n[합성 요약 bot-hostwatch] 요청은 아직 미완료입니다.\n\n## 정기업무 — 안 읽은 1통\n[합성 요약 bot-routine] 요청은 아직 미완료입니다.\n",
+      "stderr": "(요약 bot-hostwatch: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n(요약 bot-routine: endReason completed · usage {'input': 12, 'output': 8, 'cacheRead': 0, 'cacheWrite': 0} · retries 0)\n받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic acknowledgement unavailable\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "member": "bot-hostwatch",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "id": "a100000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-hostwatch"
+        },
+        {
+          "operation": "comms_inbox",
+          "member": "bot-routine",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_peek",
+          "member": "bot-routine",
+          "arguments": {
+            "id": "b200000001"
+          },
+          "bodyFetched": true,
+          "simulatedReadMarkApplied": false
+        },
+        {
+          "operation": "model_prompt",
+          "member": "bot-routine"
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-hostwatch",
+          "arguments": {
+            "ids": [
+              "a100000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        },
+        {
+          "operation": "comms_mark_read",
+          "member": "bot-routine",
+          "arguments": {
+            "ids": [
+              "b200000001"
+            ]
+          },
+          "ownSummarySucceededBeforeAck": true,
+          "allMemberSummariesSucceededBeforeAck": true
+        }
+      ],
+      "initial_unread": {
+        "bot-hostwatch": [
+          "a100000001"
+        ],
+        "bot-routine": [
+          "b200000001"
+        ]
+      },
+      "remaining_unread": {
+        "bot-hostwatch": [],
+        "bot-routine": []
+      },
+      "simulated_read_effects": [
+        {
+          "member": "bot-hostwatch",
+          "id": "a100000001",
+          "via": "comms_mark_read"
+        },
+        {
+          "member": "bot-routine",
+          "id": "b200000001",
+          "via": "comms_mark_read_before_failed_response"
+        }
+      ],
+      "all_target_summaries_before_every_ack": true,
+      "all_target_order_required_in_normal_success_case": true,
+      "mark_error_fixture_scope": "state applied before error response; caller cannot know final state",
+      "real_child_processes": 0,
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    }
+  ]
+}
