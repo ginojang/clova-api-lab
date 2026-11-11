@@ -1,0 +1,10 @@
+✔ first batch denial prevents later approval and effects; allowed batch preserves both effects (3152.089886ms)
+✔ reported per-turn token cap blocks the next model request, preserving the completed tool effect (1563.209859ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4975.0114

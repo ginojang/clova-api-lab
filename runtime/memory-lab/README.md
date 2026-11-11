@@ -1,5 +1,7 @@
 # 기억·페르소나 하네스 실험
 
+H31 후속: [Elda CLI·LangGraph·Pi 실제 비교](../clova/h31/RESULT-2026-11-11.md)를 완료했다. Pi의 명시적 비교 프로필과 거절 후 배치 중단을 추가했으며, 기존 persona 기본 정책을 운영 승격하지 않았다.
+
 Pi Agent + 자체 SQLite 계층, Agno Agent + native MemoryManager/UserMemory/SqliteDb를 같은 계약으로 검사한다. 공통 구조 검사는 모델만 scripted 응답이며 SDK·DB·MCP·파일 효과·프로세스 재시작은 실제다.
 
 2026-11-11 후속 개선: [전체 연구·실제 API 비교 결과](../../PERSONA-POLICY-IMPROVEMENT-2026-11-11.md), [독립 Pi 정책 CLI 사용법](policy/README.md). HCX-005/007과 여러 정책을 비교하며, 기존 아래의 11월 10일 실행 기록을 덮어쓰지 않았다.

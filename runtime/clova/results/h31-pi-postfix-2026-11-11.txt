@@ -1,0 +1,25 @@
+✔ approval keeps DB unchanged; restart/isolation/correction/idempotence/forget use actual SQLite (6238.500436ms)
+✔ explicit long_term crosses conversations with origin evidence; default session does not (3290.121347ms)
+✔ actual Pi model context contains retrieved data while MCP still requires explicit approval (1149.000654ms)
+✔ literal persona Stop check allows clean output, corrects once and blocks repetition (2475.650644ms)
+✔ live Brain adapter via loopback: system, memory, tool history, token limit, native usage and correction tool removal (1014.429896ms)
+✔ live Brain length termination retains raw diagnostic content and usage without emitting accepted final text (904.604386ms)
+✔ tools none removes actual SDK/provider tools while delivering the persona response in one request (914.509526ms)
+✔ live Brain request abort leaves no late effects and marks unavailable usage (903.87761ms)
+✔ Brain translation replays Pi system sections/tool deltas and preserves provider reasoning (1.511242ms)
+✔ H40 first denial blocks tail approvals and effects while preserving two result pairs (1694.555781ms)
+✔ H40 mixed batch keeps completed first effect and stops after second denial (817.819141ms)
+✔ comparison profile uses exact system/raw tool names/text results and allows both approved calls without persona repair (986.299752ms)
+✔ comparison known-usage token limit prevents another model request (835.384766ms)
+✔ comparison profile rejects incompatible policy, invalid budget and outside workspace before creating DB (1460.247568ms)
+✔ denial after validation failure records independent policyRejected and toolFailed axes (823.513364ms)
+✔ H40 recovered tool failure preserves error flags while reporting normally completed loop (864.020217ms)
+✔ normal model stop does not mark empty or invalid structured output as a completed run (1673.828545ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 26319.371048

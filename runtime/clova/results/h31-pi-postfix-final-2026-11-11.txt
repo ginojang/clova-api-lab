@@ -1,0 +1,26 @@
+✔ approval keeps DB unchanged; restart/isolation/correction/idempotence/forget use actual SQLite (4873.184841ms)
+✔ explicit long_term crosses conversations with origin evidence; default session does not (2422.784076ms)
+✔ actual Pi model context contains retrieved data while MCP still requires explicit approval (881.686473ms)
+✔ literal persona Stop check allows clean output, corrects once and blocks repetition (2515.81743ms)
+✔ live Brain adapter via loopback: system, memory, tool history, token limit, native usage and correction tool removal (1033.781092ms)
+✔ live Brain length termination retains raw diagnostic content and usage without emitting accepted final text (907.232102ms)
+✔ tools none removes actual SDK/provider tools while delivering the persona response in one request (912.937295ms)
+✔ live Brain request abort leaves no late effects and marks unavailable usage (908.998665ms)
+✔ Brain translation replays Pi system sections/tool deltas and preserves provider reasoning (2.427963ms)
+✔ H40 first denial blocks tail approvals and effects while preserving two result pairs (1665.68856ms)
+✔ H40 mixed batch keeps completed first effect and stops after second denial (843.030545ms)
+✔ comparison profile uses exact system/raw tool names/text results and allows both approved calls without persona repair (972.444784ms)
+✔ comparison known-usage token limit prevents another model request (829.193145ms)
+✔ comparison profile rejects incompatible policy, invalid budget and outside workspace before creating DB (1475.474311ms)
+✔ denial after validation failure records independent policyRejected and toolFailed axes (824.990474ms)
+✔ H40 recovered tool failure preserves error flags while reporting normally completed loop (830.470848ms)
+✔ normal model stop does not mark empty or invalid structured output as a completed run (1653.943823ms)
+✔ existing successful voiced correction keeps runCompleted true after an empty initial draft (823.329584ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 24657.297038

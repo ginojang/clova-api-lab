@@ -13,6 +13,38 @@ const usage={input:11,output:5,cacheRead:0,cacheWrite:0};
 const answer=(content='done')=>({message:{role:'assistant',content},finishReason:'stop',usage});
 const call=(name:string,args:object={},id='call1')=>({message:{role:'assistant',content:'',toolCalls:[{id,type:'function',function:{name:`clova__${name}`,arguments:args}}]},finishReason:'tool_calls',usage});
 
+test('first batch denial prevents later approval and effects; allowed batch preserves both effects',async()=>{
+  const batch={...call('artifact_write',{path:'a.txt',text:'a'},'a'),message:{role:'assistant',content:'',toolCalls:[
+    ...call('artifact_write',{path:'a.txt',text:'a'},'a').message.toolCalls,
+    ...call('artifact_write',{path:'b.txt',text:'b'},'b').message.toolCalls]}};
+  for(const allow of [false,true]){
+    const s=await session({approve:'ask',script:[batch,answer()]});
+    try{
+      s.send({op:'prompt',text:'write both'});
+      const a=await s.wait('approval');s.send({op:'approve',approvalId:a.data.approvalId,allow});
+      if(allow){const b=await s.wait('approval',s.events.indexOf(a)+1);s.send({op:'approve',approvalId:b.data.approvalId,allow:true});}
+      await s.wait('idle');
+      assert.equal(s.events.filter(e=>e.t==='approval').length,allow?2:1);
+      for(const name of ['a.txt','b.txt'])assert.equal(existsSync(join(s.workspace,name)),allow);
+      const end=s.events.find(e=>e.t==='turn_end')!.data;
+      assert.equal(end.ok,allow);assert.equal(end.policyRejected,!allow);assert.equal(end.toolFailed,false);
+      assert.equal(end.endReason,allow?'completed':'denied');
+      assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+      if(!allow)assert.ok(s.events.filter(e=>e.t==='tool_result').every(e=>e.data.sideEffect==='not_started'));
+    }finally{await s.cleanup();}
+  }
+});
+
+test('reported per-turn token cap blocks the next model request, preserving the completed tool effect',async()=>{
+  const s=await session({config:{tokenLimit:10},script:[call('artifact_write',{path:'cap.txt',text:'kept'}),answer()]});
+  try{
+    const events=await s.turn();const end=events.find(e=>e.t==='turn_end')!.data;
+    assert.equal(readFileSync(join(s.workspace,'cap.txt'),'utf8'),'kept');
+    assert.equal(end.endReason,'token_limit');assert.equal(end.ok,false);assert.equal(end.turns,1);
+    assert.equal(end.toolCalls,1);assert.equal(end.costBasis,'unknown');
+  }finally{await s.cleanup();}
+});
+
 async function session(options:{script?:object[];config?:object;approve?:string;env?:NodeJS.ProcessEnv;model?:string}={}) {
   const root=mkdtempSync(join(tmpdir(),'clova-langgraph-test-')),workspace=join(root,'workspace'),records=join(root,'records');mkdirSync(workspace);
   const fixture=join(root,'brain.json'),config=join(root,'config.json');

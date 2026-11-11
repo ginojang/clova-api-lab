@@ -1,0 +1,112 @@
+{
+  "scope": "H31 first and prospective second run, excludes all earlier persona/provider cycles",
+  "externalModelCalls": 79,
+  "knownUsage": {
+    "input": 12395,
+    "output": 2542
+  },
+  "usageUnreportedCalls": 4,
+  "costBasis": "unknown",
+  "baselinePromoted": false,
+  "artifacts": [
+    {
+      "path": "runtime/clova/results/h31-confirm-live-2026-11-11.json",
+      "bytes": 517887,
+      "sha256": "3828b20c9cfeb299954c4076b6b4a4a5ad7893b31efeede12692b87b65ca3137"
+    },
+    {
+      "path": "runtime/clova/results/h31-confirm-preflight-2026-11-11.json",
+      "bytes": 499615,
+      "sha256": "f6f5710167ff7ab6d80c5c21671cfe952f0701e689c96f1acd5f85996b45f8d2"
+    },
+    {
+      "path": "runtime/clova/results/h31-confirm-source-snapshot-2026-11-11.tar.gz",
+      "bytes": 81391,
+      "sha256": "4dcbc4120e411e34658f5e86e1c1b5666872d5ed019c5411d60d07eba1677ae5"
+    },
+    {
+      "path": "runtime/clova/results/h31-graph-boundaries-2026-11-11.txt",
+      "bytes": 343,
+      "sha256": "2b177694de88ae0dc5bdb6f5517bea52bcd2308cfa204cccadfa04c7fd762149"
+    },
+    {
+      "path": "runtime/clova/results/h31-live-2026-11-11.json",
+      "bytes": 432891,
+      "sha256": "685831dcf2d01e0f333128a885c1388dd13e02a1b46e3e36adf46ba3ebd844af"
+    },
+    {
+      "path": "runtime/clova/results/h31-pi-smoke-2026-11-11.txt",
+      "bytes": 1683,
+      "sha256": "3042f7f8e5263c0ea344bfec8f61f0555e20b51b6a071af079d6a80f51ad3e1b"
+    },
+    {
+      "path": "runtime/clova/results/h31-pi-targeted-2026-11-11.txt",
+      "bytes": 768,
+      "sha256": "8570c5a7ad0f04ec50d4f26bdf7ccd7770797ccccc0e24df85824561811ecf27"
+    },
+    {
+      "path": "runtime/clova/results/h31-preflight-r1-2026-11-11.json",
+      "bytes": 364095,
+      "sha256": "5ec34792fd1e125daed66b06ba65baa4024d7777a18d650ca4c7e1b97ab7131e"
+    },
+    {
+      "path": "runtime/clova/results/h31-preflight-r2-2026-11-11.json",
+      "bytes": 494592,
+      "sha256": "8959b960920df6e5b8bdce2900bcfe0166bd5094e32138152fa1e3c7c7fcb2e7"
+    },
+    {
+      "path": "runtime/clova/results/h31-preflight-r3-2026-11-11.json",
+      "bytes": 497724,
+      "sha256": "a6e6e840082895402698c2ee3ae6944cb852503ec312292eeed7c3f23dd18ca8"
+    },
+    {
+      "path": "runtime/clova/results/h31-regression-2026-11-11.txt",
+      "bytes": 8975,
+      "sha256": "166a7db84137642876568dc2219c72d8c2bc30953bcdc972b04e82189d0e871b"
+    },
+    {
+      "path": "runtime/clova/results/h31-source-snapshot-2026-11-11.tar.gz",
+      "bytes": 80198,
+      "sha256": "a3460617f5c7488a7a2aa01d09d8a9620dd0214cb229f4df9f91f3cec832c3bb"
+    },
+    {
+      "path": "runtime/clova/results/h31-typecheck-2026-11-11.txt",
+      "bytes": 81,
+      "sha256": "9d80677d50b0501e446445e5450f6786f825e9b39e9ac4e447748a83c8fdc413"
+    },
+    {
+      "path": "runtime/clova/results/h31-verdict-tests-2026-11-11.txt",
+      "bytes": 991,
+      "sha256": "76ffeddcda0d6cb6e92ffa55227233727a28a7cb3e33303b1caba6fe15f76cfc"
+    },
+    {
+      "path": "runtime/clova/results/h31-persona-regression-2026-11-11.txt",
+      "bytes": 15733,
+      "sha256": "07a5e826521e59f5a37dbb2f39d95997f0102248f8b6767b2e568a6e3111d45a"
+    },
+    {
+      "path": "runtime/clova/results/h31-pi-postfix-2026-11-11.txt",
+      "bytes": 2005,
+      "sha256": "8eb0232546d489b8881618c4f10825d28b0e1f54aa2b86ec3cac7c6ed154bd49"
+    },
+    {
+      "path": "runtime/clova/results/h31-pi-postfix-final-2026-11-11.txt",
+      "bytes": 2113,
+      "sha256": "a243243ac8f3ea011c377cfde847001cb6f43913257199411d459cd142bed660"
+    }
+  ],
+  "postExperimentPatch": {
+    "actualApiCalls": 0,
+    "measuredPiSha256": "f0e5eaf0926e3ba9c9353350205c5e3553fef4bf8ad843dd79098a33d7cca5ae",
+    "currentPiSha256": "86bd7c05b447e00540774ff4bf901b7e382472409b4b3f234f2574ff3b99d937",
+    "testLog": "runtime/clova/results/h31-pi-postfix-final-2026-11-11.txt",
+    "testPass": 18,
+    "semantics": "runCompleted only; ok/tool_error/toolFailed and response suppression unchanged"
+  },
+  "nativeVersionDeltaBetweenRounds": {
+    "providers/__init__.py": {
+      "first": "0649b1c59465b38e43ebf21cf398a4521a67a2c3faf7cfa2ee1fc937c234e448",
+      "second": "fa58618e5453b03e02f768c5f9f606f0cdff944659ccb7e6ea0d9c94b9962f20"
+    }
+  }
+}

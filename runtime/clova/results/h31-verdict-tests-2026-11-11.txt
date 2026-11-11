@@ -1,0 +1,16 @@
+✔ prospective lifecycle allows repeated final reads but rejects missing read, extra mutations and wrong order (4.697367ms)
+✔ all model calls need matching result IDs and effects; artifact claims cannot mask changed bytes (1.716019ms)
+✔ recovery requires executed failed read then exact write and successful read; extra final reads permitted (0.554337ms)
+✔ denial permits preapproval failed request but rejects any postapproval request or ambiguous timing (1.221747ms)
+✔ denial requires one real approval and no effects; rate failure without approval is not denial coverage (1.004678ms)
+✔ mock H56 needs multi-call response; live separate writes retain unobserved H56 (0.704148ms)
+✔ correct artifact alone cannot hide missing read or unmatched tool result (2.591ms)
+✔ mock H56 requires actual multi-call batch; live unobserved batch remains visible (0.48638ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 169.791618

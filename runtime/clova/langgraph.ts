@@ -13,6 +13,7 @@ import {Fault, clean, usageZero, type Message, type Tool, type Usage} from './co
 type Hook = {command:string[];onFailure?:'continue'|'block';timeoutMs?:number};
 export type GraphConfig = {
   model?:string;system?:string;approve?:'ask'|'never'|'auto';maxTurns?:number;timeoutMs?:number;
+  rawToolNames?:boolean;includeMcpInstructions?:boolean;plainToolResults?:boolean;tokenLimit?:number;
   maxBudgetUsd?:number;prices?:Usage;toolCallLimits?:Record<string,number>;
   servers?:{name:string;command:string[];env?:Record<string,string>;allowedTools?:string[]}[];
   hooks?:Record<string,Hook>;
@@ -27,7 +28,7 @@ const State = Annotation.Root({
 type Pending = {resolve:(decision:{allow:boolean;reason?:string})=>void;callId:string};
 type Turn = {
   controller:AbortController;usage:Usage;turns:number;toolCalls:number;retried:boolean;
-  stopActive:boolean;executed:Map<string,number>;messages:Message[];
+  policyRejected:boolean;toolFailed:boolean;stopActive:boolean;executed:Map<string,number>;messages:Message[];
 };
 
 /** Shared mode-2/mode-3 engine. LangGraph schedules every model/tool transition. */
@@ -62,6 +63,7 @@ export class ClovaGraphHarness {
     this.brain=new Brain(this.model);
     this.maxTurns=Number(process.env.CLOVA_MAX_TURNS??this.config.maxTurns??12);
     this.timeoutMs=this.config.timeoutMs??300000;
+    if(this.config.tokenLimit!==undefined&&(!Number.isInteger(this.config.tokenLimit)||this.config.tokenLimit<1))throw new Fault('configuration','invalid token limit');
     const approve=options.approve??this.config.approve??'never';
     if(!['ask','never','auto'].includes(approve))throw new Fault('configuration','approve must be ask, never or auto');
     this.approvalMode=approve==='ask'?'ask':'never';
@@ -88,7 +90,7 @@ export class ClovaGraphHarness {
     const turn=this.current!;
     for(const key of Object.keys(turn.usage) as (keyof Usage)[]){turn.usage[key]+=usage[key];this.cost+=usage[key]*(this.config.prices?.[key]??0)/1000000;}
   }
-  private checkBudget() {if(this.config.maxBudgetUsd!==undefined&&this.cost>=this.config.maxBudgetUsd)throw new Fault('budget_exceeded','session cost cap reached');}
+  private checkBudget(checkTokens=true) {if(checkTokens&&this.config.tokenLimit!==undefined&&this.current!.usage.input+this.current!.usage.output>=this.config.tokenLimit)throw new Fault('token_limit','turn token limit reached');if(this.config.maxBudgetUsd!==undefined&&this.cost>=this.config.maxBudgetUsd)throw new Fault('budget_exceeded','session cost cap reached');}
 
   async initialize() {
     const defaultCommand=[process.execPath,join(dirname(fileURLToPath(import.meta.url)),import.meta.url.endsWith('.mjs')?'mcp.mjs':'mcp.ts'),'mcp','--workspace','{workspace}'];
@@ -103,12 +105,12 @@ export class ClovaGraphHarness {
           if(server.allowedTools&&!server.allowedTools.includes(tool.name))continue;
           // Paid model recursion is outside this engine's tool contract.
           if(tool.name==='clova_chat')continue;
-          const name=`${server.name}__${tool.name}`;
+          const name=this.config.rawToolNames?tool.name:`${server.name}__${tool.name}`;
           if(this.available.has(name))throw new Fault('configuration','duplicate MCP tool name');
           this.available.set(name,{client,original:tool.name});this.tools.push({...tool,name});
         }
       }
-      this.system={role:'system',content:(this.config.system??'Complete the user task using the available tools. Never claim a failed tool succeeded.')+'\n'+instructions.join('\n')};
+      this.system={role:'system',content:(this.config.system??'Complete the user task using the available tools. Never claim a failed tool succeeded.')+(this.config.includeMcpInstructions===false?'':'\n'+instructions.join('\n'))};
       this.history=[this.system];
       this.emit('ready',{sessionId:this.sessionId,model:this.model,approve:this.approvalMode,harness:'langgraph',framework:'@langchain/langgraph',tools:this.tools.map(tool=>tool.name)});
     } catch(error) {await Promise.all(this.clients.map(client=>client.close()));throw error;}
@@ -126,7 +128,7 @@ export class ClovaGraphHarness {
       throw error;
     }
     turn.turns++;this.account(answer.usage);turn.controller.signal.throwIfAborted();
-    this.checkBudget();
+    this.checkBudget(false);
     if(answer.finishReason==='length')throw new Fault('truncated','CLOVA output was truncated');
     const messages=[...state.messages,answer.message];turn.messages=messages;
     if(answer.message.toolCalls?.length){this.text(answer.message.content);return {messages,route:'tools'};}
@@ -170,8 +172,17 @@ export class ClovaGraphHarness {
           for(const content of result.content??[])if(content.type==='text'){try {if(JSON.parse(content.text).failed)ok=false;} catch {}}
         } catch(error){this.poisoned=true;throw error;}
       }
-      this.emit('tool_result',{tool:call.function.name,callId:call.id,ok,output});
-      messages.push({role:'tool',toolCallId:call.id,content:JSON.stringify(output)});turn.messages=messages;
+      if(!ok&&!denied)turn.toolFailed=true;
+      this.emit('tool_result',{tool:call.function.name,callId:call.id,ok,output,sideEffect:denied?'not_started':'completed'});
+      messages.push({role:'tool',toolCallId:call.id,content:this.config.plainToolResults&&output&&typeof output==='object'&&Array.isArray((output as any).content)?(output as any).content.filter((c:any)=>c.type==='text').map((c:any)=>c.text).join(''):JSON.stringify(output)});turn.messages=messages;
+      if(denied){
+        turn.policyRejected=true;
+        for(const tail of calls.slice(calls.indexOf(call)+1)){
+          this.emit('tool_result',{tool:tail.function.name,callId:tail.id,ok:false,output:'denied: earlier call was rejected',sideEffect:'not_started'});
+          messages.push({role:'tool',toolCallId:tail.id,content:'denied: earlier call was rejected'});
+        }
+        throw new Fault('denied','tool execution was denied');
+      }
       const post=await this.hook(ok?'PostToolUse':'PostToolUseFailure',{tool_name:call.function.name,tool_input:input,tool_use_id:call.id,tool_response:output},turn.controller.signal);
       if(post.continue===false)throw new Fault('denied','tool result blocked by policy');
       if(post.hookSpecificOutput?.additionalContext)messages.push({role:'user',content:String(post.hookSpecificOutput.additionalContext)});
@@ -211,13 +222,13 @@ export class ClovaGraphHarness {
   }
 
   private async runTurn(prompt:string) {
-    const turn:Turn={controller:new AbortController(),usage:usageZero(),turns:0,toolCalls:0,retried:false,stopActive:false,executed:new Map(),messages:[...structuredClone(this.history),{role:'user',content:prompt}]};
+    const turn:Turn={controller:new AbortController(),usage:usageZero(),turns:0,toolCalls:0,retried:false,policyRejected:false,toolFailed:false,stopActive:false,executed:new Map(),messages:[...structuredClone(this.history),{role:'user',content:prompt}]};
     this.current=turn;let timedOut=false;
     const timer=setTimeout(()=>{timedOut=true;turn.controller.abort();},this.timeoutMs),started=Date.now();
     let summaryReason='error';
     const finish=(ok:boolean,endReason:string,status?:number)=>{
       summaryReason=endReason;
-      this.emit('turn_end',{ok,endReason,turns:turn.turns,toolCalls:turn.toolCalls,usage:turn.usage,durationMs:Date.now()-started,model:this.model,sessionId:this.sessionId,messages:turn.messages.length,harness:'langgraph',...(status?{apiErrorStatus:status}:{})});
+      this.emit('turn_end',{ok,endReason,runCompleted:endReason==='completed',policyRejected:turn.policyRejected,toolFailed:turn.toolFailed,costBasis:this.config.prices?'list':'unknown',turns:turn.turns,toolCalls:turn.toolCalls,usage:turn.usage,durationMs:Date.now()-started,model:this.model,sessionId:this.sessionId,messages:turn.messages.length,harness:'langgraph',...(status?{apiErrorStatus:status}:{})});
     };
     this.emit('turn_start',{sessionId:this.sessionId,harness:'langgraph'});
     try {
@@ -232,7 +243,7 @@ export class ClovaGraphHarness {
     } catch(error) {
       if(turn.toolCalls>0)this.poisoned=true;
       if(turn.controller.signal.aborted){summaryReason='interrupted';this.emit('error',{code:'interrupted',message:timedOut?'budget_exceeded: turn time limit reached':'turn interrupted'});}
-      else{const fault=error instanceof Fault?error:new Fault('error','graph turn failed');this.emit('error',{code:fault.code,message:fault.message});finish(false,'error',fault.status);}
+      else{const fault=error instanceof Fault?error:new Fault('error','graph turn failed');this.emit('error',{code:fault.code,message:fault.message});finish(false,['denied','token_limit'].includes(fault.code)?fault.code:'error',fault.status);}
     } finally {
       clearTimeout(timer);this.current=undefined;
       if(this.records)appendFileSync(join(this.records,'summaries.ndjson'),JSON.stringify(clean({sessionId:this.sessionId,model:this.model,at:new Date().toISOString(),ok:summaryReason==='completed',endReason:summaryReason,turns:turn.turns,toolCalls:turn.toolCalls,usage:turn.usage,costUsd:this.cost,durationMs:Date.now()-started,harness:'langgraph'}))+'\n',{mode:0o600});

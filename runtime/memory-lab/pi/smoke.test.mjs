@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { createInterface } from 'node:readline';
 import { mkdirSync, mkdtempSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -24,7 +24,7 @@ async function start(dir, config = {}) {
   writeFileSync(scriptPath, JSON.stringify(config.script ?? [answer('안내하겠습니다.')]));
   const store = resolve(dir, 'memory.sqlite');
   const modelArgs = config.model ? ['--model', config.model] : ['--script', scriptPath];
-  const child = spawn(process.execPath, [resolve(folder, 'cli.mjs'), '--store', store, '--principal', config.principal ?? 'alice', '--conversation', config.conversation ?? 'c1', '--persona', personaPath, ...modelArgs, '--scope', config.scope ?? 'session', ...(config.contextChars ? ['--context-chars', String(config.contextChars)] : []), ...(config.maxTokens ? ['--max-tokens', String(config.maxTokens)] : []), ...(config.tools ? ['--tools', config.tools] : []), ...(config.maxTurns ? ['--max-turns', String(config.maxTurns)] : [])], { cwd: folder, stdio: 'pipe', env: { ...process.env, ...config.env } });
+  const child = spawn(process.execPath, [resolve(folder, 'cli.mjs'), '--store', store, '--principal', config.principal ?? 'alice', '--conversation', config.conversation ?? 'c1', '--persona', personaPath, ...modelArgs, '--scope', config.scope ?? 'session', ...(config.contextChars ? ['--context-chars', String(config.contextChars)] : []), ...(config.maxTokens ? ['--max-tokens', String(config.maxTokens)] : []), ...(config.tools ? ['--tools', config.tools] : []), ...(config.maxTurns ? ['--max-turns', String(config.maxTurns)] : []), ...(config.comparisonProfile ? ['--comparison-profile', config.comparisonProfile] : []), ...(config.policy ? ['--policy',config.policy] : [])], { cwd: folder, stdio: 'pipe', env: { ...process.env, ...config.env } });
   const events = []; const listeners = new Set(); let stderr = '';
   child.stderr.on('data', chunk => { stderr += chunk; });
   const closed = new Promise(resolveClose => child.once('close', resolveClose));
@@ -227,7 +227,7 @@ test('live Brain length termination retains raw diagnostic content and usage wit
   const raw = events.find(event => event.t === 'model_response').data;
   assert.equal(raw.content, 'partial diagnostic answer'); assert.equal(raw.finishReason, 'length');
   const end = events.find(event => event.t === 'turn_end').data;
-  assert.equal(end.endReason, 'truncated'); assert.equal(end.finishReason, 'length'); assert.equal(end.usage.input, 17); assert.equal(end.usage.output, 3);
+  assert.equal(end.runCompleted, false); assert.equal(end.endReason, 'truncated'); assert.equal(end.finishReason, 'length'); assert.equal(end.usage.input, 17); assert.equal(end.usage.output, 3);
   assert.equal(events.some(event => event.t === 'text'), false); assert.deepEqual(mock.errors, []);
 });
 
@@ -265,7 +265,7 @@ test('live Brain request abort leaves no late effects and marks unavailable usag
   const mark = worker.events.length; worker.send({ op: 'prompt', text: 'Wait for model.' });
   await arrival; worker.send({ op: 'interrupt' }); await worker.wait(event => event.t === 'idle', mark);
   const events = worker.events.slice(mark); const end = events.find(event => event.t === 'turn_end').data;
-  assert.equal(end.endReason, 'interrupted'); assert.equal(end.providerCallAttempts, 1); assert.equal(end.modelResponses, 0); assert.equal(end.usageComplete, false);
+  assert.equal(end.runCompleted, false); assert.equal(end.endReason, 'interrupted'); assert.equal(end.providerCallAttempts, 1); assert.equal(end.modelResponses, 0); assert.equal(end.usageComplete, false);
   assert.equal(events.some(event => event.t === 'approval'), false); assert.equal(events.some(event => event.t === 'text'), false); assert.deepEqual(mock.errors, []);
 });
 
@@ -281,4 +281,147 @@ test('Brain translation replays Pi system sections/tool deltas and preserves pro
   assert.equal(request.messages.filter(message => message.role === 'system').length, 1);
   assert.equal(request.messages.find(message => message.role === 'tool').toolCallId, 'id1');
   assert.deepEqual(request.messages.find(message => message.role === 'assistant').providerReasoning, { reasoningContent: 'opaque provider field' });
+});
+
+function comparisonProfile(dir, overrides = {}) {
+  const path = resolve(dir, 'comparison.json');
+  writeFileSync(path, JSON.stringify({system: 'Use only the supplied artifact tools.\nPreserve exact text.', workspace: resolve(dir, 'comparison-workspace'), tokenLimit: 20000, ...overrides}));
+  return path;
+}
+function pairAnswer(rawNames = false) {
+  return {message: {role: 'assistant', content: '', toolCalls: ['first', 'second'].map(id => ({id, type: 'function', function: {name: `${rawNames ? '' : 'clova__'}artifact_write`, arguments: {path: `${id}.txt`, text: `${id} content`}}}))}, finishReason: 'tool_calls', usage: {input: 11, output: 5}};
+}
+
+test('H40 first denial blocks tail approvals and effects while preserving two result pairs', async t => {
+  for (const comparison of [false, true]) {
+    const dir = sandbox();
+    const worker = await start(dir, {script: [pairAnswer(comparison), answer('must not reach model again')], ...(comparison ? {comparisonProfile: comparisonProfile(dir)} : {})}); t.after(worker.close);
+    const mark = worker.events.length; worker.send({op: 'prompt', text: 'Write both files.'});
+    const approval = await worker.wait(e => e.t === 'approval', mark);
+    worker.send({op: 'approve', approvalId: approval.data.approvalId, allow: false});
+    await worker.wait(e => e.t === 'idle', mark);
+    const events = worker.events.slice(mark), end = events.find(e => e.t === 'turn_end').data;
+    assert.equal(events.filter(e => e.t === 'approval').length, 1);
+    assert.equal(events.filter(e => e.t === 'model_context').length, 1);
+    assert.deepEqual(events.filter(e => e.t === 'tool_result').map(e => [e.data.callId, e.data.sideEffect, e.data.ok]), [['first','not_started',false], ['second','not_started',false]]);
+    assert.equal(end.ok, false); assert.equal(end.endReason, 'denied'); assert.equal(end.policyRejected, true); assert.equal(end.runCompleted, false); assert.equal(end.toolFailed, false); assert.equal(end.toolCalls, 0);
+    assert.equal(Object.hasOwn(end, 'taskSucceeded'), false);
+    for (const file of ['first.txt','second.txt']) assert.equal(existsSync(resolve(worker.ready.workspace,file)), false);
+    await worker.close();
+  }
+});
+
+test('H40 mixed batch keeps completed first effect and stops after second denial', async t => {
+  const dir = sandbox(); const worker = await start(dir, {script: [pairAnswer(), answer('must not reach model again')]}); t.after(worker.close);
+  const mark = worker.events.length; worker.send({op: 'prompt',text: 'Write both files.'});
+  const first = await worker.wait(e => e.t === 'approval' && e.data.callId === 'first', mark);
+  worker.send({op:'approve',approvalId:first.data.approvalId,allow:true});
+  const second = await worker.wait(e => e.t === 'approval' && e.data.callId === 'second', mark);
+  worker.send({op:'approve',approvalId:second.data.approvalId,allow:false});
+  await worker.wait(e => e.t === 'idle', mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.endReason,'denied');assert.equal(end.toolCalls,1);assert.equal(end.toolFailed,false);
+  assert.equal(events.filter(e=>e.t==='model_context').length,1);
+  assert.deepEqual(events.filter(e=>e.t==='tool_result').map(e=>[e.data.callId,e.data.sideEffect]),[['first','completed'],['second','not_started']]);
+  assert.equal(readFileSync(resolve(worker.ready.workspace,'first.txt'),'utf8'),'first content');
+  assert.equal(existsSync(resolve(worker.ready.workspace,'second.txt')),false);
+});
+
+test('comparison profile uses exact system/raw tool names/text results and allows both approved calls without persona repair', async t => {
+  const dir=sandbox(),profile=comparisonProfile(dir),system=JSON.parse(readFileSync(profile,'utf8')).system;
+  const mock=await localClova(t, (_body,response,number)=>clovaResponse(response,number===1?pairAnswer(true):answer('TEST_BOUNDARY_VIOLATION')));
+  const worker=await start(dir,{model:'clova:HCX-005',maxTokens:2048,maxTurns:6,comparisonProfile:profile,env:{CLOVA_API_KEY_FILE:fakeCredential(dir),CLOVA_BASE_URL:mock.url}});t.after(worker.close);
+  await worker.command({op:'observe',turnId:'e1',text:'Synthetic hidden memory.'});
+  await worker.mutate({op:'remember',memory:memory('MUST_NOT_ENTER_COMPARISON_WIRE')});
+  const mark=worker.events.length;worker.send({op:'prompt',text:'Write both files.'});
+  for (const id of ['first','second']) {
+    const approval=await worker.wait(e=>e.t==='approval'&&e.data.callId===id,mark);
+    worker.send({op:'approve',approvalId:approval.data.approvalId,allow:true});
+  }
+  await worker.wait(e=>e.t==='idle',mark);
+  assert.deepEqual(mock.errors,[]);assert.equal(mock.requests.length,2);
+  assert.deepEqual(mock.requests[0].messages,[{role:'system',content:system},{role:'user',content:'Write both files.'}]);
+  assert.deepEqual(mock.requests[0].tools.map(t=>t.function.name).sort(),['artifact_list','artifact_read','artifact_undo','artifact_write']);
+  assert.equal(mock.requests[0].maxTokens,2048);assert.equal(mock.requests[0].temperature,0);
+  const events=worker.events.slice(mark),results=events.filter(e=>e.t==='tool_result');
+  assert.deepEqual(results.map(e=>e.data.sideEffect),['completed','completed']);
+  for (const result of results) {
+    const tool=mock.requests[1].messages.find(m=>m.role==='tool'&&m.toolCallId===result.data.callId);
+    assert.equal(tool.content,result.data.output.content.filter(c=>c.type==='text').map(c=>c.text).join(''));
+  }
+  const end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.ok,true);assert.equal(end.toolCalls,2);assert.equal(end.runCompleted,true);assert.equal(end.policyRejected,false);assert.equal(end.toolFailed,false);assert.equal(end.correctionAttempts,0);
+  assert.equal(events.find(e=>e.t==='text').data.text,'TEST_BOUNDARY_VIOLATION');
+  assert.equal(JSON.stringify(mock.requests).includes('MUST_NOT_ENTER_COMPARISON_WIRE'),false);
+  for (const id of ['first','second']) assert.equal(readFileSync(resolve(worker.ready.workspace,`${id}.txt`),'utf8'),`${id} content`);
+});
+
+test('comparison known-usage token limit prevents another model request', async t => {
+  const dir=sandbox(),profile=comparisonProfile(dir,{tokenLimit:16});
+  const worker=await start(dir,{script:[pairAnswer(true),answer('must not reach second request')],comparisonProfile:profile});t.after(worker.close);
+  const mark=worker.events.length;worker.send({op:'prompt',text:'Write both files.'});
+  for (const id of ['first','second']) {const a=await worker.wait(e=>e.t==='approval'&&e.data.callId===id,mark);worker.send({op:'approve',approvalId:a.data.approvalId,allow:true});}
+  await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(events.filter(e=>e.t==='model_context').length,1);assert.equal(end.runCompleted,false);assert.equal(end.endReason,'token_limit');assert.equal(end.turns,1);assert.equal(end.toolCalls,2);
+});
+
+test('comparison profile rejects incompatible policy, invalid budget and outside workspace before creating DB', () => {
+  for (const overrides of [{tokenLimit:0},{tokenLimit:null},{workspace:'/outside-comparison-workspace'},{unexpected:true}]) {
+    const dir=sandbox(),profile=comparisonProfile(dir,overrides),persona=resolve(dir,'persona.json'),script=resolve(dir,'script.json'),store=resolve(dir,'invalid.sqlite');
+    writeFileSync(persona,JSON.stringify(basePersona));writeFileSync(script,JSON.stringify([answer('unused')]));
+    const result=spawnSync(process.execPath,[resolve(folder,'cli.mjs'),'--store',store,'--principal','alice','--conversation','c1','--persona',persona,'--script',script,'--comparison-profile',profile],{encoding:'utf8'});
+    assert.equal(result.status,1);assert.equal(existsSync(store),false);assert.ok(result.stdout.includes('"t":"error"'));assert.ok(!result.stdout.includes('"t":"ready"'));
+  }
+  const dir=sandbox(),profile=comparisonProfile(dir),persona=resolve(dir,'persona.json'),script=resolve(dir,'script.json'),store=resolve(dir,'invalid.sqlite');
+  writeFileSync(persona,JSON.stringify(basePersona));writeFileSync(script,JSON.stringify([answer('unused')]));
+  const result=spawnSync(process.execPath,[resolve(folder,'cli.mjs'),'--store',store,'--principal','alice','--conversation','c1','--persona',persona,'--script',script,'--comparison-profile',profile,'--policy','guarded'],{encoding:'utf8'});
+  assert.equal(result.status,1);assert.equal(existsSync(store),false);assert.ok(result.stdout.includes('Comparison requires baseline'));
+});
+
+test('denial after validation failure records independent policyRejected and toolFailed axes', async t => {
+  const dir=sandbox(),batch=pairAnswer(); delete batch.message.toolCalls[0].function.arguments.path;
+  const worker=await start(dir,{script:[batch,answer('unused')]});t.after(worker.close);
+  const mark=worker.events.length;worker.send({op:'prompt',text:'Run both calls.'});
+  const approval=await worker.wait(e=>e.t==='approval',mark);
+  assert.equal(approval.data.callId,'second');worker.send({op:'approve',approvalId:approval.data.approvalId,allow:false});
+  await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.endReason,'denied');assert.equal(end.policyRejected,true);assert.equal(end.toolFailed,true);assert.equal(end.toolCalls,0);assert.equal(end.runCompleted,false);
+  assert.equal(events.filter(e=>e.t==='model_context').length,1);
+});
+
+test('H40 recovered tool failure preserves error flags while reporting normally completed loop', async t => {
+  const dir=sandbox(),profile=comparisonProfile(dir);
+  const call=(id,name,args)=>({message:{role:'assistant',content:'',toolCalls:[{id,type:'function',function:{name,arguments:args}}]},finishReason:'tool_calls',usage:{input:11,output:5}});
+  const script=[call('missing','artifact_read',{path:'recovered.txt'}),call('write','artifact_write',{path:'recovered.txt',text:'RECOVERED'}),call('read','artifact_read',{path:'recovered.txt'}),answer('Recovered and verified the file.')];
+  const worker=await start(dir,{script,comparisonProfile:profile,maxTurns:6});t.after(worker.close);
+  const mark=worker.events.length;worker.send({op:'prompt',text:'Read the file, create it if missing, and verify it.'});
+  for (const id of ['missing','write','read']) {
+    const a=await worker.wait(e=>e.t==='approval'&&e.data.callId===id,mark);
+    worker.send({op:'approve',approvalId:a.data.approvalId,allow:true});
+  }
+  await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.deepEqual(events.filter(e=>e.t==='tool_result').map(e=>[e.data.callId,e.data.ok]),[['missing',false],['write',true],['read',true]]);
+  assert.equal(readFileSync(resolve(worker.ready.workspace,'recovered.txt'),'utf8'),'RECOVERED');
+  assert.equal(end.runCompleted,true);assert.equal(end.ok,false);assert.equal(end.endReason,'tool_error');assert.equal(end.toolFailed,true);assert.equal(end.policyRejected,false);assert.equal(end.turns,4);assert.equal(end.toolCalls,3);
+  assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+  assert.equal(events.some(e=>e.t==='text'),false,'existing failed-turn text suppression stays unchanged');
+});
+
+test('normal model stop does not mark empty or invalid structured output as a completed run', async t => {
+  for (const config of [{script:[answer('')]},{script:[answer('not valid structured JSON')],policy:'structured-v5',tools:'none'}]) {
+    const worker=await start(sandbox(),config);t.after(worker.close);
+    const events=await worker.command({op:'prompt',text:'Answer.'}),end=events.find(e=>e.t==='turn_end').data;
+    assert.equal(end.ok,false);assert.equal(end.runCompleted,false);assert.equal(end.toolFailed,false);assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+    assert.equal(events.some(e=>e.t==='text'),false);
+    await worker.close();
+  }
+});
+
+test('existing successful voiced correction keeps runCompleted true after an empty initial draft', async t => {
+  const worker=await start(sandbox(),{script:[answer(''),answer('엘다입니다. 차분하게 안내하겠습니다.')],policy:'voiced-v3',tools:'none'});t.after(worker.close);
+  const events=await worker.command({op:'prompt',text:'짧게 안내해 주세요.'}),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.ok,true);assert.equal(end.runCompleted,true);assert.equal(end.correctionAttempts,1);assert.equal(end.toolFailed,false);
 });

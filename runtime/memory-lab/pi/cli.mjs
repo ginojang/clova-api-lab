@@ -40,7 +40,7 @@ function localPath(path, label) {
   return inside(root, rel);
 }
 function configure() {
-  const names = ['--store', '--principal', '--conversation', '--persona', '--scope', '--script', '--model', '--tools', '--max-tokens', '--context-chars', '--max-turns', '--timeout-ms', '--policy', '--min-call-interval-ms'];
+  const names = ['--store', '--principal', '--conversation', '--persona', '--scope', '--script', '--model', '--tools', '--max-tokens', '--context-chars', '--max-turns', '--timeout-ms', '--policy', '--min-call-interval-ms', '--comparison-profile'];
   const options = new Map();
   const args = process.argv.slice(2);
   for (let i = 0; i < args.length; i += 2) {
@@ -66,6 +66,15 @@ function configure() {
   const policy = options.get('--policy') ?? 'baseline';
   const minCallIntervalMs = Number(options.get('--min-call-interval-ms') ?? 0);
   if (!['baseline', 'compiled', 'guarded', 'compiled-v2', 'guarded-v2', 'voiced-v3', 'structured-v5', 'structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9', 'slim-v10', 'anchored-v11'].includes(policy) || !Number.isInteger(minCallIntervalMs) || minCallIntervalMs < 0 || minCallIntervalMs > 60000) throw new LabError('configuration', 'Invalid policy or call interval');
+  let comparison;
+  if (options.has('--comparison-profile')) {
+    comparison = object(JSON.parse(readFileSync(localPath(options.get('--comparison-profile'), 'comparison-profile'), 'utf8')));
+    keys(comparison, ['system', 'workspace', 'tokenLimit'], ['system', 'workspace']);
+    bounded(comparison.system, 'comparison system', 100000);
+    comparison.workspace = localPath(comparison.workspace, 'comparison workspace');
+    if (comparison.tokenLimit === undefined) comparison.tokenLimit = 400000;
+    if (policy !== 'baseline' || !Number.isInteger(comparison.tokenLimit) || comparison.tokenLimit < 1) throw new LabError('configuration', 'Comparison requires baseline and a positive integer tokenLimit');
+  }
   const capabilities = runtimeCapabilities(toolMode);
   const voiced = policy === 'voiced-v3';
   const composed = ['composed-v8', 'enacted-v9', 'slim-v10', 'anchored-v11'].includes(policy);
@@ -82,8 +91,8 @@ function configure() {
   if (!Number.isInteger(maxTokens) || maxTokens < 1 || maxTokens > 2048 || (modelName.startsWith('clova:') && toolMode === 'artifacts' && maxTokens < 1024)) throw new LabError('configuration', 'max-tokens must be 1..2048; CLOVA with artifact tools requires at least 1024');
   const { persona, personaHash } = loadPersona(personaPath);
   // Validate the immutable anchor before creating databases, directories or MCP processes.
-  if (policy === 'baseline') buildContext(persona, personaHash, [], contextBudget);
-  else compile(persona, personaHash, [], contextBudget, capabilities);
+  if (!comparison && policy === 'baseline') buildContext(persona, personaHash, [], contextBudget);
+  else if (!comparison) compile(persona, personaHash, [], contextBudget, capabilities);
   const script = scriptPath ? JSON.parse(readFileSync(scriptPath, 'utf8')) : undefined;
   if (scriptPath && (!Array.isArray(script) || !script.length)) throw new LabError('configuration', 'script must be a nonempty Answer array');
   for (const answer of script ?? []) {
@@ -93,9 +102,9 @@ function configure() {
     if (answer.delayMs !== undefined && (!Number.isInteger(answer.delayMs) || answer.delayMs < 0)) throw new LabError('configuration', 'Invalid script delay');
     for (const value of Object.values(answer.usage ?? {})) if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) throw new LabError('configuration', 'Invalid synthetic usage');
   }
-  const workspace = resolve(dirname(storePath), 'workspaces', digest(JSON.stringify([principal, persona.id, scope, conversation])).slice(0, 20));
+  const workspace = comparison?.workspace ?? resolve(dirname(storePath), 'workspaces', digest(JSON.stringify([principal, persona.id, scope, conversation])).slice(0, 20));
   localPath(workspace, 'workspace');
-  return { policy, decode, composed, demonstrated, contract, structured, voiced, guarded, compile, inspectPolicy, repairPrompt, minCallIntervalMs, capabilities, storePath, personaPath, persona, personaHash, principal, conversation, scope, script, modelName, toolMode, providerTransport: transportForModel(modelName), maxTokens, contextBudget, maxTurns, timeoutMs, workspace };
+  return { comparison, policy, decode, composed, demonstrated, contract, structured, voiced, guarded, compile, inspectPolicy, repairPrompt, minCallIntervalMs, capabilities, storePath, personaPath, persona, personaHash, principal, conversation, scope, script, modelName, toolMode, providerTransport: transportForModel(modelName), maxTokens, contextBudget, maxTurns, timeoutMs, workspace };
 }
 function piMessage(answer, modelName = 'scripted') {
   const usage = { ...usageZero(), ...answer.usage };
@@ -187,16 +196,19 @@ async function main() {
     const init = await mcp.initialize();
     if (init.tools.length !== 4 || init.tools.some(tool => !allowed.includes(tool.name))) throw new LabError('configuration', 'MCP tool list differs from the four artifact tools');
     const tools = (config.toolMode === 'none' ? [] : init.tools).map(def => ({
-      name: `clova__${def.name}`, label: def.name, description: def.description, parameters: def.inputSchema,
+      name: config.comparison ? def.name : `clova__${def.name}`, label: def.name, description: def.description, parameters: def.inputSchema,
       async execute(callId, input, signal) {
         signal?.throwIfAborted();
         const state = active;
         if (!state || state.kind !== 'prompt' || state.cancelled || closing || poisoned) throw new LabError('interrupted', 'Tool cannot execute outside an active approved prompt');
-        state.toolCalls++; state.inFlight++;
+        if (state.policyRejected) throw new LabError('denied', 'Earlier tool approval was denied');
+        state.toolCalls++; state.inFlight++; state.effects.set(callId, 'unknown');
         try {
           const output = await mcp.request('tools/call', { name: def.name, arguments: input }, signal);
           signal?.throwIfAborted();
-          return { content: [{ type: 'text', text: JSON.stringify(output) }], details: { output }, isError: output.isError === true };
+          state.effects.set(callId, 'completed');
+          const content = config.comparison ? (output.content ?? []).filter(item => item.type === 'text').map(item => item.text ?? '').join('') : JSON.stringify(output);
+          return { content: [{ type: 'text', text: content }], details: { output }, isError: output.isError === true };
         } catch (error) {
           poisoned = true;
           state.failure ??= new LabError(signal?.aborted ? 'interrupted' : 'mcp_error', 'MCP effect is uncertain; restart worker before another prompt');
@@ -206,9 +218,9 @@ async function main() {
     }));
     const model = { id: config.modelName, name: config.modelName, api: 'openai-completions', provider: config.script ? 'memory-lab' : 'elda-brain', baseUrl: 'http://127.0.0.1', reasoning: false, input: ['text'], cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, contextWindow: 128000, maxTokens: config.maxTokens };
     async function prompt(text) {
-      const memories = store.recall();
-      const assembled = config.policy === 'baseline' ? buildContext(config.persona, config.personaHash, memories, config.contextBudget) : config.compile(config.persona, config.personaHash, memories, config.contextBudget, config.capabilities);
-      const state = { kind: 'prompt', cancelled: false, correctionModelCalls: 0, turns: 0, toolCalls: 0, inFlight: 0, providerCallAttempts: 0, externalModelCalls: 0, modelResponses: 0, usageComplete: true, finishReason: undefined, usage: usageZero(), failure: undefined, finalText: '', phase: 'initial', started: Date.now() };
+      const memories = config.comparison ? [] : store.recall();
+      const assembled = config.comparison ? {text: config.comparison.system, selectedCount: 0, omittedCount: 0, contextChars: [...config.comparison.system].length, contextBudget: null, unit: 'explicit comparison system', selectedItems: []} : config.policy === 'baseline' ? buildContext(config.persona, config.personaHash, memories, config.contextBudget) : config.compile(config.persona, config.personaHash, memories, config.contextBudget, config.capabilities);
+      const state = { kind: 'prompt', cancelled: false, loopCompleted: false, policyRejected: false, toolFailed: false, effects: new Map(), correctionModelCalls: 0, turns: 0, toolCalls: 0, inFlight: 0, providerCallAttempts: 0, externalModelCalls: 0, modelResponses: 0, usageComplete: true, finishReason: undefined, usage: usageZero(), failure: undefined, finalText: '', phase: 'initial', started: Date.now() };
       active = state;
       emit('turn_start', { ...namespace, personaHash: config.personaHash, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport });
       agent = new Agent({
@@ -219,6 +231,7 @@ async function main() {
           void (async () => {
             try {
               options.signal?.throwIfAborted();
+              if (config.comparison && state.usage.input + state.usage.output >= config.comparison.tokenLimit) throw new LabError('token_limit', 'Per-turn token limit reached');
               if (state.turns >= config.maxTurns) throw new LabError('max_turns', 'Maximum model requests reached');
               let answer;
               if (config.script) {
@@ -234,7 +247,7 @@ async function main() {
               state.turns++;
               if (state.phase !== 'initial') state.correctionModelCalls++;
               const requestIndex = ++modelRequestIndex;
-              emit('model_context', { providerMessages: structuredClone(request.messages), demonstrationCount: request.demonstrationCount ?? 0, demonstrationChars: request.demonstrationChars ?? 0, policy: config.policy, responseFormat: config.structured ? config.contract(config.persona, config.capabilities, text) : null, actualSystemChars: [...request.systemPrompt].length, contextAccounting: state.phase === 'voice' ? 'selection statistics describe initial compiled context; writer system is separate and selected memories are quoted in its user input' : 'initial compiled system and memory; conversation excluded from character budget', callStartedAt: new Date(lastModelStarted).toISOString(), messages: structuredClone(context.messages), systemPrompt: request.systemPrompt, toolNames: request.tools.map(tool => tool.name), personaHash: config.personaHash, selectedCount: assembled.selectedCount, omittedCount: assembled.omittedCount, contextChars: assembled.contextChars, contextBudget: assembled.contextBudget, unit: assembled.unit, phase: state.phase, synthetic: Boolean(config.script), model: config.modelName, requestIndex, providerTransport: config.providerTransport });
+              emit('model_context', { providerMessages: structuredClone(request.messages), demonstrationCount: request.demonstrationCount ?? 0, demonstrationChars: request.demonstrationChars ?? 0, policy: config.policy, responseFormat: config.structured ? config.contract(config.persona, config.capabilities, text) : null, actualSystemChars: [...request.systemPrompt].length, contextAccounting: config.comparison ? 'explicit comparison system; retrieved memories and persona policies bypassed' : state.phase === 'voice' ? 'selection statistics describe initial compiled context; writer system is separate and selected memories are quoted in its user input' : 'initial compiled system and memory; conversation excluded from character budget', callStartedAt: new Date(lastModelStarted).toISOString(), messages: structuredClone(context.messages), systemPrompt: request.systemPrompt, toolNames: request.tools.map(tool => tool.name), personaHash: config.personaHash, selectedCount: assembled.selectedCount, omittedCount: assembled.omittedCount, contextChars: assembled.contextChars, contextBudget: assembled.contextBudget, unit: assembled.unit, phase: state.phase, synthetic: Boolean(config.script), model: config.modelName, requestIndex, providerTransport: config.providerTransport });
               if (config.script) {
                 if (answer.delayMs) await delay(answer.delayMs, undefined, { signal: options.signal });
               } else {
@@ -269,27 +282,34 @@ async function main() {
           return stream;
         },
         async beforeToolCall({ toolCall, args }, signal) {
+          if (state.policyRejected) return {block: true, reason: 'denied: earlier approval in this turn was denied', terminate: true};
           const allow = await approve(toolCall.name, args, signal, { tool: toolCall.name, callId: toolCall.id });
           if (signal?.aborted || state.cancelled || closing) return { block: true, reason: 'Operation interrupted', terminate: true };
-          if (!allow) state.failure ??= new LabError('denied', 'Tool execution was denied');
-          return allow ? undefined : { block: true, reason: 'denied: explicit user approval was not granted' };
+          if (!allow) { state.policyRejected = true; state.failure = new LabError('denied', 'Tool execution was denied'); }
+          return allow ? undefined : { block: true, reason: 'denied: explicit user approval was not granted', terminate: true };
         },
         finishTurn({ message, toolResults }, signal) {
-          if (signal?.aborted) return { action: 'end' };
+          if (signal?.aborted || state.policyRejected) return { action: 'end' };
           if (state.turns >= config.maxTurns && toolResults.length && !['error', 'aborted'].includes(message.stopReason)) { state.failure ??= new LabError('max_turns', 'Maximum model requests reached'); return { action: 'end' }; }
         },
       });
       agent.subscribe(event => {
         if (event.type === 'tool_execution_start') emit('tool_call', { tool: event.toolName, callId: event.toolCallId, input: event.args });
         if (event.type === 'tool_execution_end') {
-          if (event.isError) state.failure ??= new LabError('tool_error', 'A tool failed or was denied');
-          emit('tool_result', { tool: event.toolName, callId: event.toolCallId, ok: !event.isError, output: event.result.details?.output ?? event.result });
+          if (event.isError && !state.policyRejected && !state.cancelled) { state.toolFailed = true; state.failure ??= new LabError('tool_error', 'A tool failed or was denied'); }
+          emit('tool_result', { tool: event.toolName, callId: event.toolCallId, ok: !event.isError, sideEffect: state.effects.get(event.toolCallId) ?? 'not_started', output: event.result.details?.output ?? event.result });
         }
         if (event.type === 'message_end' && event.message.role === 'assistant' && !['error', 'aborted'].includes(event.message.stopReason)) state.finalText = textContent(event.message.content);
       });
       const timer = setTimeout(() => { state.failure ??= new LabError('timeout', 'Prompt deadline exceeded'); interrupt(); }, config.timeoutMs);
       try {
         await agent.prompt(text);
+        // A recovered tool failure remains an error axis, but does not erase
+        // a later normal model stop. Limits/aborts leave another terminal shape.
+        const terminal = agent.state.messages.at(-1);
+        state.loopCompleted = !state.cancelled && !state.policyRejected && !agent.state.errorMessage
+          && terminal?.role === 'assistant' && terminal.stopReason === 'stop'
+          && Boolean(textContent(terminal.content).trim());
         if (!state.failure && config.structured) {
           let decoded;
           try { decoded = config.decode(state.finalText, config.persona, config.capabilities); }
@@ -300,7 +320,7 @@ async function main() {
           if (last < 0) throw new LabError('agent_error', 'Missing structured assistant response');
           agent.state.messages = agent.state.messages.map((message, index) => index === last ? { ...message, content: [{ type: 'text', text: decoded.text }] } : message);
         }
-        const phrases = config.persona.outputRules?.forbiddenPhrases ?? [];
+        const phrases = config.comparison ? [] : config.persona.outputRules?.forbiddenPhrases ?? [];
         const violates = value => phrases.some(phrase => value.includes(phrase));
         const inspect = value => config.inspectPolicy({ text: value, prompt: text, persona: config.persona, memories: assembled.selectedItems ?? memories, capabilities: config.capabilities });
         let inspection;
@@ -347,7 +367,7 @@ async function main() {
         clearTimeout(timer);
         if (mcpClosing) await mcpClosing;
         if (state.failure) errorEvent(state.failure);
-        emit('turn_end', { policy: config.policy, ok: !state.failure, endReason: state.failure?.code ?? 'completed', finishReason: state.finishReason ?? null, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport, turns: state.turns, providerCallAttempts: state.providerCallAttempts, externalModelCalls: state.externalModelCalls, modelResponses: state.modelResponses, toolCalls: state.toolCalls, usage: state.usage, usageComplete: state.usageComplete, costStatus: 'not_calculated', durationMs: Date.now() - state.started, rewritingStrategy: config.composed ? 'model parts joined with two newlines; no semantic repair' : config.structured ? 'parse-only; no semantic repair' : config.voiced ? 'fresh-context-always' : 'same-history-if-violation', correctionAttempts: state.phase !== 'initial' ? 1 : 0, correctionModelCalls: state.correctionModelCalls });
+        emit('turn_end', { policy: config.policy, comparison: Boolean(config.comparison), runCompleted: !state.failure || (state.loopCompleted && state.failure.code === 'tool_error'), policyRejected: state.policyRejected, toolFailed: state.toolFailed, costBasis: 'unknown', ok: !state.failure, endReason: state.failure?.code ?? 'completed', finishReason: state.finishReason ?? null, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport, turns: state.turns, providerCallAttempts: state.providerCallAttempts, externalModelCalls: state.externalModelCalls, modelResponses: state.modelResponses, toolCalls: state.toolCalls, usage: state.usage, usageComplete: state.usageComplete, costStatus: 'not_calculated', durationMs: Date.now() - state.started, rewritingStrategy: config.comparison ? 'none: explicit comparison profile' : config.composed ? 'model parts joined with two newlines; no semantic repair' : config.structured ? 'parse-only; no semantic repair' : config.voiced ? 'fresh-context-always' : 'same-history-if-violation', correctionAttempts: state.phase !== 'initial' ? 1 : 0, correctionModelCalls: state.correctionModelCalls });
         active = undefined; agent = undefined; idle();
       }
     }
@@ -387,7 +407,7 @@ async function main() {
         throw new LabError('invalid_input', 'Unknown operation');
       } catch (error) { errorEvent(error instanceof SyntaxError ? new LabError('invalid_input', 'Expected JSON object') : error); idle(); }
     });
-    emit('ready', { policy: config.policy, minCallIntervalMs: config.minCallIntervalMs, capabilities: config.capabilities, framework: 'pi-agent-core+node:sqlite', version, ...namespace, personaHash: config.personaHash, personaRevision: config.persona.revision, model: config.modelName, syntheticOnly: Boolean(config.script), providerTransport: config.providerTransport, toolMode: config.toolMode, maxTokens: config.maxTokens, workspace: config.workspace, store: config.storePath, mcpPid: mcp.proc.pid, contextBudget: config.contextBudget });
+    emit('ready', { policy: config.policy, comparison: Boolean(config.comparison), comparisonSystemHash: config.comparison ? digest(config.comparison.system) : undefined, tokenLimit: config.comparison?.tokenLimit, minCallIntervalMs: config.minCallIntervalMs, capabilities: config.capabilities, framework: 'pi-agent-core+node:sqlite', version, ...namespace, personaHash: config.personaHash, personaRevision: config.persona.revision, model: config.modelName, syntheticOnly: Boolean(config.script), providerTransport: config.providerTransport, toolMode: config.toolMode, maxTokens: config.maxTokens, workspace: config.workspace, store: config.storePath, mcpPid: mcp.proc.pid, contextBudget: config.contextBudget });
     await new Promise(resolveClosed => input.once('close', () => { closing = true; interrupt(); resolveClosed(); }));
     await task;
     process.removeListener('SIGTERM', shutdown); process.removeListener('SIGINT', shutdown);

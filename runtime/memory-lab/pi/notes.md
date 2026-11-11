@@ -101,3 +101,17 @@ root의 공통 runner 결과는 상위 보고서에 통합한다. 이 문서의 
 ## 제한
 
 기억 persistence는 재시작을 견디지만 진행 중인 Agent/승인 대기는 메모리 상태이며 재시작 복구하지 않는다. EOF/interrupt는 대기 중인 변경을 거절하고 MCP를 종료한다. 이미 완료된 파일 효과는 취소로 rollback되지 않는다. MCP 전송 중 오류·취소는 효과가 불확실하므로 poisoned/requiresRestart로 차단한다. 실제 Brain 경로도 비스트리밍 text-only 입력/도구 결과로 제한한다. 모델의 의미 이해·성격 준수·사실 정확도는 이 adapter smoke로 평가하지 않았다. EldaCore/DBA의 실제 API, 사용자 인증, production DB, CLI provider 등록, 기존 웹 UI, 배포는 구현 범위 밖이다.
+
+## H31 비교 프로필과 H40 배치 거절 — 2026-11-11
+
+명시적 `--comparison-profile /프로젝트/내부/profile.json`은 페르소나 평가와 구분하는 비교 전용 모드다. JSON은 `{"system":"공통 지시문","workspace":"/프로젝트/내부/workspace","tokenLimit":20000}` 형식이며 `system`과 `workspace`가 필수다. `tokenLimit` 생략 시400000, 명시 시양의 정수여야 한다. baseline 정책에서만 허용한다. 기존 `--store`, `--principal`, `--conversation`, `--persona`와 모델/대본 인자는 계속 필요하다.
+
+이 모드에서는 입력 system을 그대로 사용하며 MCP 안내·페르소나·검색 기억을 덧붙이지 않는다. 저장소와 persona는 CLI 식별용으로 유지하지만 모델 입력에 넣지 않고, persona의 금지 문구 교정도 실행하지 않는다. 도구 이름은 `artifact_*` 원형이며 모델에 돌려주는 MCP 결과는 text 조각을 빈 구분자로 연결한다. 기존 기본 모드의 `clova__artifact_*` 및 MCP envelope 직렬화는 유지한다. `--max-turns 6 --max-tokens 2048`로 공통 한도를 명시할 수 있다. 비교 프로필 경로와 작업장은 이 저장소 내부여야 한다.
+
+한 턴의 **보고된 입력+출력 토큰**이 tokenLimit 이상이면 다음 모델 요청을 막는다. 다음 요청의 입력 비용을 미리 추정하거나 단일 응답의 초과를 취소하는 기능은 아니다. 모델 응답에 따라 한 번의 초과는 가능하므로 실제 usage와 runner 요청 상한도 함께 기록해야 한다. 비교 조건 일치와 전체 H42 적합 판정은 별개다.
+
+H40 수정은 기본·비교 모드 모두에 적용된다. 첫 거절은 턴의 policyRejected를 보존한다. 그 뒤 beforeToolCall은 승인을 묻지 않고 차단하고 execute도 거절 상태를 검사한다. finishTurn은 모델 재호출을 끝내며 SDK가 남은 호출에 대해 만든 차단 결과는 원래 callId와 짝을 유지한다. 단순히 terminate:true만 추가하는 것으로는 SDK의 순차 배치가 중단되지 않으므로 두 경계를 둔다. tool_result.sideEffect는 실제 호출 전 not_started, MCP 응답 확인 시 completed, 요청 후 효과 불확실 시 unknown이다.
+
+turn_end의 runCompleted/policyRejected/toolFailed를 구분하며 판정기 없는 taskSucceeded는 생략한다. costBasis는 unknown이다. 이 변경은 승인 대기 시간 분리·상태 heartbeat·H1–H56 전체 적합성 선언이 아니다.
+
+검증: `node --test runtime/memory-lab/pi/smoke.test.mjs`. 첫 거절 뒤 나머지 승인·효과0, 첫 허용 뒤 둘째 거절, 둘 다 허용, 두 번째 native 요청의 tool 결과 텍스트, 정확한 system·raw 도구 이름, 기억·literal repair 제외, 토큰 상한 및 잘못된 프로필의 DB 생성 전 거절을 확인한다. mock/대본만 사용하며 실제 API 호출은 없다.

@@ -1,0 +1,14 @@
+✔ H40 first denial blocks tail approvals and effects while preserving two result pairs (1669.498408ms)
+✔ H40 mixed batch keeps completed first effect and stops after second denial (841.482223ms)
+✔ comparison profile uses exact system/raw tool names/text results and allows both approved calls without persona repair (961.478835ms)
+✔ comparison known-usage token limit prevents another model request (828.577017ms)
+✔ comparison profile rejects incompatible policy, invalid budget and outside workspace before creating DB (1463.981246ms)
+✔ denial after validation failure records independent policyRejected and toolFailed axes (811.660223ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6820.818817
