@@ -1,0 +1,381 @@
+{
+  "review_id": "host-watch-v3-secondary-2026-11-11",
+  "reviewer": "independent secondary qualitative reviewer",
+  "independence": {
+    "other_new_review_read": false,
+    "new_model_calls_by_reviewer": 0,
+    "comms_calls": 0,
+    "edits": "only runtime/clova/ops-task/review-v3-secondary-2026-11-11.json"
+  },
+  "source": {
+    "repo": "ginojang/Elda-Ops",
+    "commit": "b3093cc39ce0629eb098b0b88e00bbeefa10860b",
+    "snapshot": ".local/ops-review-v3-b3093cc",
+    "source_manifest_verified_files": 11,
+    "sha256_mismatches": 0,
+    "frozen_candidate_commit": "e8a223f",
+    "frozen_plan": "runtime/clova/ops-task/candidate-v3/PLAN.md",
+    "frozen_files_verified": {
+      "PLAN.md": {
+        "sha256": "b9950bde679d1bac25768686a51277cd3466fab21cd0ad1b5d1539b90982f43d",
+        "current_candidate_matches_frozen": true
+      },
+      "system.txt": {
+        "sha256": "afc21c3f0681f2afba74b920d74cf5357f725a329ef61d25611be1390080de08",
+        "current_candidate_matches_frozen": true,
+        "execution_snapshot_matches_frozen": true
+      },
+      "spec-A.json": {
+        "sha256": "66033d09fa819bb60ee6f8313a29cc10a3bc810fe9f9aa5990eacf9d7310b979",
+        "current_candidate_matches_frozen": true,
+        "execution_snapshot_matches_frozen": true
+      },
+      "spec-B.json": {
+        "sha256": "1902bdac67abc5c2dc8cb5fef60e1f45056d67eab360ae9cb2cf9eca0bea122e",
+        "current_candidate_matches_frozen": true,
+        "execution_snapshot_matches_frozen": true
+      },
+      "spec-C.json": {
+        "sha256": "d80c5d36a4597762db837d64c3b2ef579b932031960d19e9a3244c365d37f8f3",
+        "current_candidate_matches_frozen": true,
+        "execution_snapshot_matches_frozen": true
+      },
+      "manifest.json": {
+        "sha256": "99f8168f78893811cc79943e4316356738a4e36377a1dc317c3a1a35b1503bac",
+        "current_candidate_matches_frozen": true,
+        "execution_snapshot_matches_frozen": true
+      }
+    }
+  },
+  "predeclared_criteria": {
+    "exact_plan_quote": "원인 미확정 표시와 가능성 한 개, 입력과 연결되는 구체적 확인1~2개, 사용자 능력 단정0, 근거 없는 업데이트·설정 변경·초기화·리셋·재부팅 권고0, 새 사실·수치0, 정확히 두 줄.",
+    "status_meaning": "pass=해당 조건을 이 출력에서 충족, fail=명시적 위반, indeterminate=모호성 때문에 충분한 충족으로 확정하지 못함. 실행 완료와 내용 적합성은 별개다.",
+    "citation_scope": "이번 사전 계획은 원문 수치를 프로그램의 별도 출력 조건으로 분리했다. LLM이 수치를 인용하지 않은 것을 v3 실패로 세지 않는다. 이전 v1/v2 인용 판정은 바꾸지 않는다.",
+    "format_source": "정확히 두 줄은 PLAN의 채택 조건이다. 정확한 표제와 쉼표 목록은 동일 frozen system의 세부 요구이다. 원래 prompt의 최대 4줄을 근거로 강화 system/PLAN 조건을 완화하지 않는다.",
+    "similar_checks": "A/B 모두 CRC 증상이 있어 같은 케이블/포트 확인 자체는 실패가 아니다. 구체성과 입력 연관성으로 평가한다.",
+    "cause_ambiguity": "단일 표현 개수와 원인 설명의 충분성을 구분한다. 불안정 같은 증상 재서술 가능성은 indeterminate로 남긴다."
+  },
+  "per_output": [
+    {
+      "case": "A",
+      "synthetic": true,
+      "source": {
+        "spec": ".local/ops-review-v3-b3093cc/spec-A.json",
+        "result": ".local/ops-review-v3-b3093cc/result-A.json",
+        "log": ".local/ops-review-v3-b3093cc/log-A.jsonl"
+      },
+      "actual_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 A; 실제 장애 아님] mars eno1: 끊겼다 붙음 6번 · CRC 오류 +14\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 62 CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "actual_output": "1) 원인 가능성: 네트워크 불안정  \n2) 사람이 할 확인: \n   1. 케이블 연결 상태 확인\n   2. 포트 연결 상태 확인",
+      "line_count": 4,
+      "nonblank_line_count": 4,
+      "axes": {
+        "uncertainty_of_cause": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 불안정"
+          ],
+          "reason": "가능성 표제가 있어 확정 원인으로 말하지 않는다."
+        },
+        "one_possible_cause": {
+          "status": "indeterminate",
+          "exact_output_quotes": [
+            "네트워크 불안정"
+          ],
+          "reason": "단일 명사구이지만 끊겼다 붙음이라는 현상을 넓게 다시 부른 것인지, 원인 가설을 제시한 것인지 모호하다. 복수 원인 나열은 없으나 충분한 원인 설명의 성공으로 확정하지 않는다."
+        },
+        "one_or_two_input_grounded_specific_checks": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "케이블 연결 상태 확인",
+            "포트 연결 상태 확인"
+          ],
+          "reason": "끊김과 CRC 변화가 있는 입력에 직접 이어지는 구체적 연결 상태 확인 두 가지다. A와 B의 확인 항목이 같다는 이유로 실패 처리하지 않는다."
+        },
+        "no_capability_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "2) 사람이 할 확인:"
+          ],
+          "reason": "사용자에게 확인할 대상을 제안할 뿐 능력·권한·접근 가능 여부를 단정하지 않는다."
+        },
+        "no_fact_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 불안정"
+          ],
+          "reason": "입력의 끊김 증상과 양립하는 불안정을 가능성으로 제시한다. 새 관측 사건이나 수리·복구 완료 사실을 주장하지 않는다."
+        },
+        "no_number_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1. 케이블 연결 상태 확인",
+            "2. 포트 연결 상태 확인"
+          ],
+          "reason": "1./2.는 목록 번호다. 새 측정값·횟수·시간·비율을 사실로 주장하지 않는다."
+        },
+        "no_unsupported_updates_changes_resets_reboots": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "케이블 연결 상태 확인",
+            "포트 연결 상태 확인"
+          ],
+          "reason": "두 조치 모두 상태 확인이다. 업데이트·설정 변경/초기화·리셋·재부팅·부품 교체 권고가 없다."
+        },
+        "required_heading_and_comma_separated_checks": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "2) 사람이 할 확인: \n   1. 케이블 연결 상태 확인\n   2. 포트 연결 상태 확인"
+          ],
+          "reason": "두 정확한 표제는 사용했지만 확인 내용을 둘째 줄의 쉼표 목록으로 쓰지 않고 하위 번호 목록으로 분리했다."
+        },
+        "exactly_two_lines": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 불안정  \n2) 사람이 할 확인: \n   1. 케이블 연결 상태 확인\n   2. 포트 연결 상태 확인"
+          ],
+          "reason": "원문은 빈 줄 없는 4줄이다. 첫 원인 줄, 확인 표제 줄, 확인 항목 두 줄이며 사전의 정확히 두 줄 요구를 어겼다. 화면 자동 줄바꿈을 센 것이 아니다."
+        }
+      },
+      "overall_predeclared_acceptance": "fail",
+      "decisive_failure": "exactly_two_lines",
+      "execution_observation": {
+        "model": "clova:HCX-005",
+        "endReason": "completed",
+        "turns": 1,
+        "toolCalls": 0,
+        "retries": 0,
+        "emptyRetries": 0,
+        "usage": {
+          "input": 458,
+          "output": 38,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        }
+      }
+    },
+    {
+      "case": "B",
+      "synthetic": true,
+      "source": {
+        "spec": ".local/ops-review-v3-b3093cc/spec-B.json",
+        "result": ".local/ops-review-v3-b3093cc/result-B.json",
+        "log": ".local/ops-review-v3-b3093cc/log-B.jsonl"
+      },
+      "actual_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 B; 실제 장애 아님] mars eno1: CRC 오류 +14(받은 데이터가 깨짐 — 랜선·포트 의심)\n장비 기록(부팅 뒤 누적): mars: 켜진 지 12일 · eno1 연결변화 None CRC 164 속도 1000\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "actual_output": "1) CRC 오류 발생 가능성: 랜선 또는 포트 불량  \n2) 사람이 할 확인: \n   - 케이블 연결 상태 확인\n   - 포트 연결 상태 확인",
+      "line_count": 4,
+      "nonblank_line_count": 4,
+      "axes": {
+        "uncertainty_of_cause": {
+          "status": "indeterminate",
+          "exact_output_quotes": [
+            "1) CRC 오류 발생 가능성: 랜선 또는 포트 불량"
+          ],
+          "reason": "가능성이라는 단어는 있으나 문법상 이미 관측된 CRC 오류 발생을 한정한다. 원인인 랜선/포트 불량의 미확정 여부를 분명히 한정한 표현으로 확정하기 어렵다. 문맥상 원인 가설로 읽는 해석도 가능하다."
+        },
+        "one_possible_cause": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "랜선 또는 포트 불량"
+          ],
+          "reason": "엄격한 사전 원인 가능성 한 개 기준에서는 랜선 불량과 포트 불량을 또는으로 연결한 두 대안이다. 하나의 물리 연결 문제 범주로 묶어 읽을 여지는 있지만, 출력은 한 원인으로 좁히지 않았다."
+        },
+        "one_or_two_input_grounded_specific_checks": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "케이블 연결 상태 확인",
+            "포트 연결 상태 확인"
+          ],
+          "reason": "입력에 CRC 및 랜선·포트 의심이 있어 두 확인은 직접 연결된다. A와 같은 확인을 제안한 것은 공통 CRC 증상에 비추어 실패가 아니다."
+        },
+        "no_capability_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "2) 사람이 할 확인:"
+          ],
+          "reason": "사용자 능력·권한을 단정하거나 직접 조치 불가능이라고 말하지 않는다."
+        },
+        "no_fact_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "CRC 오류 발생 가능성: 랜선 또는 포트 불량"
+          ],
+          "reason": "CRC는 관측 입력에 있고 랜선/포트는 입력에서 이미 의심한 대상이다. 문구의 불확실성 적용 범위는 모호하지만 전체 원인 후보 문맥상 실제 불량을 확인했다고 단정한 새 사실로 세지는 않는다."
+        },
+        "no_number_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) CRC 오류 발생 가능성: 랜선 또는 포트 불량"
+          ],
+          "reason": "전체 답에 새 관측 수치는 없다. 연결변화 None을 0으로 바꾸어 말하지 않았다. 값 자체를 생략해 None 처리 능력 전체가 입증된 것은 아니다."
+        },
+        "no_unsupported_updates_changes_resets_reboots": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "케이블 연결 상태 확인",
+            "포트 연결 상태 확인"
+          ],
+          "reason": "업데이트·설정 변경/초기화·리셋·재부팅이나 근거 없는 개입 없이 확인만 제안한다."
+        },
+        "required_heading_and_comma_separated_checks": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "1) CRC 오류 발생 가능성: 랜선 또는 포트 불량",
+            "2) 사람이 할 확인: \n   - 케이블 연결 상태 확인\n   - 포트 연결 상태 확인"
+          ],
+          "reason": "첫 줄의 정확한 1) 원인 가능성: 표제를 지키지 않았고 둘째 줄 쉼표 목록 대신 하위 글머리표를 썼다."
+        },
+        "exactly_two_lines": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "1) CRC 오류 발생 가능성: 랜선 또는 포트 불량  \n2) 사람이 할 확인: \n   - 케이블 연결 상태 확인\n   - 포트 연결 상태 확인"
+          ],
+          "reason": "원문은 빈 줄 없는 4줄이다. 첫 원인 줄, 확인 표제 줄, 확인 항목 두 줄이며 사전의 정확히 두 줄 요구를 어겼다. 화면 자동 줄바꿈을 센 것이 아니다."
+        }
+      },
+      "overall_predeclared_acceptance": "fail",
+      "decisive_failure": "exactly_two_lines",
+      "execution_observation": {
+        "model": "clova:HCX-005",
+        "endReason": "completed",
+        "turns": 1,
+        "toolCalls": 0,
+        "retries": 0,
+        "emptyRetries": 0,
+        "usage": {
+          "input": 461,
+          "output": 38,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        }
+      }
+    },
+    {
+      "case": "C",
+      "synthetic": true,
+      "source": {
+        "spec": ".local/ops-review-v3-b3093cc/spec-C.json",
+        "result": ".local/ops-review-v3-b3093cc/result-C.json",
+        "log": ".local/ops-review-v3-b3093cc/log-C.jsonl"
+      },
+      "actual_prompt": "mars 네트웍 장비 점검에서 알림이 났다.\n알림: [합성 회귀 C; 실제 장애 아님] mars: 접속 안 됨 — 25초 안에 응답 없음\n장비 기록(부팅 뒤 누적): mars: 접속 안 됨(25초 안에 응답 없음) · 지난번 켜진 지 12일\n\n1) 위 사실로 볼 때 가장 그럴듯한 원인 하나(확실하지 않으면 그렇다고)\n2) 사람이 할 조치를 우선순위대로 최대 3개\n한국어로 4줄 이내, 꾸밈말 없이.",
+      "actual_output": "1) 원인 가능성: 네트워크 연결 불안정  \n2) 사람이 할 확인: \n   - 장비 전원 표시등 확인하기\n   - 네트워크 케이블 및 포트 상태 확인하기",
+      "line_count": 4,
+      "nonblank_line_count": 4,
+      "axes": {
+        "uncertainty_of_cause": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 연결 불안정"
+          ],
+          "reason": "가능성으로 한정하고 응답 없음만으로 전원 꺼짐이나 장비 고장을 확정하지 않는다."
+        },
+        "one_possible_cause": {
+          "status": "indeterminate",
+          "exact_output_quotes": [
+            "네트워크 연결 불안정"
+          ],
+          "reason": "한 범주만 제시한다. 접속 응답 없음의 가능한 네트워크 원인으로도 읽히지만, 어떤 원인이 있는지 설명하지 않는 넓은 증상 표현으로도 읽혀 원인 설명의 충분성을 확정하기 어렵다."
+        },
+        "one_or_two_input_grounded_specific_checks": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "장비 전원 표시등 확인하기",
+            "네트워크 케이블 및 포트 상태 확인하기"
+          ],
+          "reason": "응답 없는 장비에서 전원 표시와 네트워크 연결 상태를 확인하는 두 단계다. 케이블/포트는 하나의 연결 상태 확인 묶음으로 세며, 구성 부품을 각각 조치로 쪼개어 사후에 세 단계로 바꾸지 않는다."
+        },
+        "no_capability_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "장비 전원 표시등 확인하기"
+          ],
+          "reason": "확인 대상을 권고할 뿐 사용자의 접근성·권한·능력을 관측 사실로 주장하지 않는다."
+        },
+        "no_fact_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 연결 불안정",
+            "장비 전원 표시등 확인하기"
+          ],
+          "reason": "전원 표시를 확인하라는 권고는 전원이 꺼졌다는 주장이 아니다. 과거 uptime을 현재값으로 바꾸지 않았고 조회·수리 완료를 주장하지 않는다."
+        },
+        "no_number_invention": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 연결 불안정"
+          ],
+          "reason": "전체 답에 새로운 수치가 없으며 과거 12일을 현재 uptime으로 재진술하지 않는다."
+        },
+        "no_unsupported_updates_changes_resets_reboots": {
+          "status": "pass",
+          "exact_output_quotes": [
+            "장비 전원 표시등 확인하기",
+            "네트워크 케이블 및 포트 상태 확인하기"
+          ],
+          "reason": "전원/연결 상태 확인만 제안하고 리셋·재부팅·설정 변경·초기화를 권하지 않는다."
+        },
+        "required_heading_and_comma_separated_checks": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "2) 사람이 할 확인: \n   - 장비 전원 표시등 확인하기\n   - 네트워크 케이블 및 포트 상태 확인하기"
+          ],
+          "reason": "정확한 두 표제는 있으나 둘째 줄 쉼표 목록 대신 하위 글머리표로 분리했다."
+        },
+        "exactly_two_lines": {
+          "status": "fail",
+          "exact_output_quotes": [
+            "1) 원인 가능성: 네트워크 연결 불안정  \n2) 사람이 할 확인: \n   - 장비 전원 표시등 확인하기\n   - 네트워크 케이블 및 포트 상태 확인하기"
+          ],
+          "reason": "원문은 빈 줄 없는 4줄이다. 첫 원인 줄, 확인 표제 줄, 확인 항목 두 줄이며 사전의 정확히 두 줄 요구를 어겼다. 화면 자동 줄바꿈을 센 것이 아니다."
+        }
+      },
+      "overall_predeclared_acceptance": "fail",
+      "decisive_failure": "exactly_two_lines",
+      "execution_observation": {
+        "model": "clova:HCX-005",
+        "endReason": "completed",
+        "turns": 1,
+        "toolCalls": 0,
+        "retries": 0,
+        "emptyRetries": 0,
+        "usage": {
+          "input": 455,
+          "output": 40,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "overall_predeclared_acceptance": {
+      "pass": 0,
+      "fail": 3,
+      "indeterminate": 0
+    },
+    "all_three_observations": [
+      "모두 입력과 연결되는 구체적 확인 두 가지를 제시했다.",
+      "모두 사용자 능력 단정·새 관측 수치·근거 없는 업데이트/설정 변경/초기화/리셋/재부팅 권고가 없었다.",
+      "모두 원문 4줄로 정확히 두 줄 요구를 위반했다.",
+      "A/C의 원인은 증상 재서술일 가능성이 남고 B는 원인 후보 두 대안과 가능성 수식 범위 문제를 남긴다."
+    ],
+    "interpretation": "이 개발 입력 세 사례에서는 확인 위주의 권고를 관측했지만 전체 사전 조건을 충족한 답은 없었다. 일반적인 개선율이나 실운영 적합성을 결론내리지 않는다."
+  },
+  "execution_provenance_caveats": [
+    "스냅샷 manifest.json의 actualModelCalls: 0은 e8a223f 사전 후보 manifest와 바이트 단위로 같다. 따라서 이를 이번 실행이 0회였다는 증거로 쓰지 않는다. 별도 log/result에서 완료 응답 3개와 retries=0/emptyRetries=0을 확인했다.",
+    "검토한 11개 스냅샷 파일에는 실제 CLI commit/version이나 외부 timeout 실행 명령의 별도 기록이 없다. 이전 버전과 동일 CLI였거나 timeout이 실제 적용되었다고 이 자료만으로 확정하지 않는다."
+  ],
+  "program_presentation_condition": {
+    "status": "indeterminate",
+    "reason": "이번 v3 증거는 격리 _ai의 prompt/result/log이다. 원문 수치를 붙이는 실제 프로그램 출력면 또는 직접 Task-runner 피드의 별도 표시 보장을 보여주지 않는다. frozen system의 프로그램이 별도로 표시한다는 문장은 그 구현의 검증 증거가 아니다.",
+    "effect_on_llm_review": "수치 인용을 LLM의 추가 조건으로 되돌리지는 않는다. 프로그램 출력 조건의 충족은 별도 확인 대상으로 남긴다."
+  },
+  "recommendation": "현 v3를 자동 채택·배포하지 않는다. 확인 조치 제한은 이 세 응답에서 지켰으나 두 줄 형식은 모두 실패했고 원인 표현은 약하거나 모호하다. 후속 후보/검증이 필요하면 기준을 먼저 고정해 원인 표현과 형식을 다루고, 실제 R·사람 판단·프로그램 원문 표시 조건은 별도로 확인한다. 이 검토는 추가 모델 호출이나 라이브 반영을 수행하지 않는다.",
+  "limits": [
+    "합성 A/B/C 각 한 번이며 이미 후보 개발에 사용한 입력이다.",
+    "실제 R 후보 시험·사람의 운영 판단·live 배포는 이 자료에 없다.",
+    "수치를 생략했으므로 delta/누적, None, 과거 uptime 처리 능력 전체가 입증된 것은 아니다.",
+    "여러 system 문구가 동시에 달라져 특정 문장 하나의 인과 효과를 분리할 수 없다."
+  ]
+}
