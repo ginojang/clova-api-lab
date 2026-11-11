@@ -3,7 +3,7 @@ import type { ChatRequest, ChatResponse } from '../types/clova';
 import { postChat, postChatStream } from '../api/proxyClient';
 
 export type Workspace = 'elda' | 'clova';
-export type Mode = 'bench' | 'llm' | 'vision' | 'fsm' | 'chat';
+export type Mode = 'bench' | 'llm' | 'vision' | 'fsm' | 'chat' | 'harness';
 
 type ClovaState = {
   workspace: Workspace;
@@ -31,7 +31,7 @@ type ClovaState = {
 
 export const useClovaStore = create<ClovaState>((set, get) => ({
   workspace: 'clova',
-  mode: 'bench',
+  mode: new URLSearchParams(window.location.search).get('view') === 'harness' ? 'harness' : 'bench',
 
   model: 'HCX-005',
   systemPrompt: '너는 테스트용 AI다.',

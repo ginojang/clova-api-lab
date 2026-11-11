@@ -1,0 +1,4 @@
+[
+  {"message":{"role":"assistant","content":"","toolCalls":[{"id":"call_fixture","type":"function","function":{"name":"clova__artifact_list","arguments":{}}}]},"finishReason":"tool_calls","usage":{"input":10,"output":5,"cacheRead":0,"cacheWrite":0}},
+  {"message":{"role":"assistant","content":"작업장 확인을 완료했습니다."},"finishReason":"stop","usage":{"input":15,"output":8,"cacheRead":0,"cacheWrite":0}}
+]

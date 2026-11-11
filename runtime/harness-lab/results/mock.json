@@ -1,0 +1,992 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-10T08:06:19.635Z",
+  "kind": "scripted-model-real-framework-real-mcp",
+  "externalModelCalls": 0,
+  "actualEldaCli": false,
+  "deployed": false,
+  "limits": {
+    "maxModelRequests": 4,
+    "timeoutMs": 12000
+  },
+  "fixture": "clova-harness-file-v2",
+  "toolNames": [
+    "artifact_list",
+    "artifact_read",
+    "artifact_write",
+    "artifact_undo"
+  ],
+  "caveat": "Synthetic model answers test control flow and actual file effects, not model quality or production readiness. Single-run latency includes framework startup and approval-driver polling; not a performance ranking.",
+  "rawArtifacts": ".local/harness-probes/1794297979634-1601044",
+  "frameworks": [
+    {
+      "framework": "langgraph",
+      "version": "1.7.3",
+      "sourceSha256": {
+        "runtime/clova/langgraph.ts": "b3fd4c2f6b3b56ab2d0db985a70d20702410c1da17f22bfd718620181abb1779"
+      },
+      "cases": [
+        {
+          "scenario": "create_edit_undo_read",
+          "passed": true,
+          "durationMs": 1693,
+          "startupMs": 1120,
+          "approvals": 4,
+          "toolResults": 4,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 7,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "denial_no_effect",
+          "passed": true,
+          "durationMs": 1548,
+          "startupMs": 1099,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "stale_duplicate_approval",
+          "passed": true,
+          "durationMs": 1595,
+          "startupMs": 1128,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "two_calls_individual_approval",
+          "passed": true,
+          "durationMs": 1676,
+          "startupMs": 1107,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": {
+            "firstApprovedFileExistsWhileSecondPending": true,
+            "firstToolResultBeforeSecondApprovalEvent": true
+          }
+        },
+        {
+          "scenario": "interrupt_pending_approval",
+          "passed": true,
+          "durationMs": 1540,
+          "startupMs": 1111,
+          "approvals": 1,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": null,
+          "turnOutcomes": [],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "eof_pending_approval",
+          "passed": true,
+          "durationMs": 1584,
+          "startupMs": 1140,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "tool_path_error_no_escape",
+          "passed": true,
+          "durationMs": 1539,
+          "startupMs": 1108,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "model_round_limit",
+          "passed": true,
+          "durationMs": 1542,
+          "startupMs": 1079,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "max_turns"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "new_resets_conversation",
+          "passed": true,
+          "durationMs": 1564,
+          "startupMs": 1072,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 4,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "malformed_input_recovers",
+          "passed": true,
+          "durationMs": 1549,
+          "startupMs": 1092,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "busy_prompt_rejected",
+          "passed": true,
+          "durationMs": 1522,
+          "startupMs": 1080,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "false_completion_detected_by_file_oracle",
+          "passed": true,
+          "durationMs": 1530,
+          "startupMs": 1095,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": "The shared file oracle rejects this task; a framework normal stop alone is not proof of task success."
+        }
+      ],
+      "notRun": [
+        {
+          "scenario": "interrupt_delayed_model_no_late_effect",
+          "reason": "Existing Brain scripted responses do not implement delayMs; existing runtime HTTP cancellation regression is separate."
+        }
+      ],
+      "passed": 12,
+      "total": 12
+    },
+    {
+      "framework": "vercel",
+      "version": "7.0.166",
+      "sourceSha256": {
+        "runtime/harness-lab/vercel/worker.ts": "1e0646032e5b52d44e310cbab3a4c41aca5e3d18eb8e480ff832d1fbdaf5e79c"
+      },
+      "cases": [
+        {
+          "scenario": "create_edit_undo_read",
+          "passed": true,
+          "durationMs": 1139,
+          "startupMs": 558,
+          "approvals": 4,
+          "toolResults": 4,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 7,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "denial_no_effect",
+          "passed": true,
+          "durationMs": 979,
+          "startupMs": 532,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "denied"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "stale_duplicate_approval",
+          "passed": true,
+          "durationMs": 1034,
+          "startupMs": 569,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "two_calls_individual_approval",
+          "passed": true,
+          "durationMs": 1108,
+          "startupMs": 541,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": {
+            "firstApprovedFileExistsWhileSecondPending": false,
+            "firstToolResultBeforeSecondApprovalEvent": false
+          }
+        },
+        {
+          "scenario": "interrupt_pending_approval",
+          "passed": true,
+          "durationMs": 979,
+          "startupMs": 552,
+          "approvals": 1,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "eof_pending_approval",
+          "passed": true,
+          "durationMs": 979,
+          "startupMs": 554,
+          "approvals": 1,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "tool_path_error_no_escape",
+          "passed": true,
+          "durationMs": 990,
+          "startupMs": 554,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "tool_error"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "model_round_limit",
+          "passed": true,
+          "durationMs": 1004,
+          "startupMs": 542,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "max_turns"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "new_resets_conversation",
+          "passed": true,
+          "durationMs": 1018,
+          "startupMs": 564,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 4,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "malformed_input_recovers",
+          "passed": true,
+          "durationMs": 993,
+          "startupMs": 568,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "busy_prompt_rejected",
+          "passed": true,
+          "durationMs": 1005,
+          "startupMs": 559,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "false_completion_detected_by_file_oracle",
+          "passed": true,
+          "durationMs": 1006,
+          "startupMs": 575,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": "The shared file oracle rejects this task; a framework normal stop alone is not proof of task success."
+        },
+        {
+          "scenario": "interrupt_delayed_model_no_late_effect",
+          "passed": true,
+          "durationMs": 1615,
+          "startupMs": 537,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        }
+      ],
+      "notRun": [],
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "framework": "pydantic",
+      "version": "2.66.0",
+      "sourceSha256": {
+        "runtime/harness-lab/pydantic/cli.py": "0e45d32529cbd0bdef55ee93270a1158475efbb0665143987144b63623af613e"
+      },
+      "cases": [
+        {
+          "scenario": "create_edit_undo_read",
+          "passed": true,
+          "durationMs": 1773,
+          "startupMs": 1360,
+          "approvals": 4,
+          "toolResults": 4,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 7,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "denial_no_effect",
+          "passed": true,
+          "durationMs": 1570,
+          "startupMs": 1332,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "stale_duplicate_approval",
+          "passed": true,
+          "durationMs": 1606,
+          "startupMs": 1325,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "two_calls_individual_approval",
+          "passed": true,
+          "durationMs": 1686,
+          "startupMs": 1317,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": {
+            "firstApprovedFileExistsWhileSecondPending": false,
+            "firstToolResultBeforeSecondApprovalEvent": false
+          }
+        },
+        {
+          "scenario": "interrupt_pending_approval",
+          "passed": true,
+          "durationMs": 1624,
+          "startupMs": 1374,
+          "approvals": 1,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": null,
+          "turnOutcomes": [],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "eof_pending_approval",
+          "passed": true,
+          "durationMs": 1587,
+          "startupMs": 1324,
+          "approvals": 1,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": null,
+          "turnOutcomes": [],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "tool_path_error_no_escape",
+          "passed": true,
+          "durationMs": 1628,
+          "startupMs": 1364,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "tool_error"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "model_round_limit",
+          "passed": true,
+          "durationMs": 1639,
+          "startupMs": 1373,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "max_turns"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "new_resets_conversation",
+          "passed": true,
+          "durationMs": 1590,
+          "startupMs": 1323,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 4,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            },
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "malformed_input_recovers",
+          "passed": true,
+          "durationMs": 1615,
+          "startupMs": 1367,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "busy_prompt_rejected",
+          "passed": true,
+          "durationMs": 1600,
+          "startupMs": 1345,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "false_completion_detected_by_file_oracle",
+          "passed": true,
+          "durationMs": 1579,
+          "startupMs": 1355,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "stop"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": "The shared file oracle rejects this task; a framework normal stop alone is not proof of task success."
+        },
+        {
+          "scenario": "interrupt_delayed_model_no_late_effect",
+          "passed": true,
+          "durationMs": 2278,
+          "startupMs": 1341,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": null,
+          "turnOutcomes": [],
+          "cleanupPassed": true
+        }
+      ],
+      "notRun": [],
+      "passed": 13,
+      "total": 13
+    },
+    {
+      "framework": "pi",
+      "version": "1.5.1",
+      "sourceSha256": {
+        "runtime/harness-lab/pi/cli.mjs": "29adeaaab954b0b892c1896faf8e3da13ec805fd4689fd432cf74a6c1e4ab998"
+      },
+      "cases": [
+        {
+          "scenario": "create_edit_undo_read",
+          "passed": true,
+          "durationMs": 924,
+          "startupMs": 424,
+          "approvals": 4,
+          "toolResults": 4,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 7,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "denial_no_effect",
+          "passed": true,
+          "durationMs": 813,
+          "startupMs": 439,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "stale_duplicate_approval",
+          "passed": true,
+          "durationMs": 828,
+          "startupMs": 436,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "two_calls_individual_approval",
+          "passed": true,
+          "durationMs": 923,
+          "startupMs": 441,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": {
+            "firstApprovedFileExistsWhileSecondPending": true,
+            "firstToolResultBeforeSecondApprovalEvent": true
+          }
+        },
+        {
+          "scenario": "interrupt_pending_approval",
+          "passed": true,
+          "durationMs": 815,
+          "startupMs": 445,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "eof_pending_approval",
+          "passed": true,
+          "durationMs": 829,
+          "startupMs": 459,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "tool_path_error_no_escape",
+          "passed": true,
+          "durationMs": 824,
+          "startupMs": 447,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 1,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "model_round_limit",
+          "passed": true,
+          "durationMs": 815,
+          "startupMs": 438,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "max_turns"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "new_resets_conversation",
+          "passed": true,
+          "durationMs": 846,
+          "startupMs": 443,
+          "approvals": 2,
+          "toolResults": 2,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 4,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            },
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "malformed_input_recovers",
+          "passed": true,
+          "durationMs": 814,
+          "startupMs": 451,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "busy_prompt_rejected",
+          "passed": true,
+          "durationMs": 826,
+          "startupMs": 439,
+          "approvals": 1,
+          "toolResults": 1,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 2,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true
+        },
+        {
+          "scenario": "false_completion_detected_by_file_oracle",
+          "passed": true,
+          "durationMs": 801,
+          "startupMs": 439,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": true,
+              "endReason": "completed"
+            }
+          ],
+          "cleanupPassed": true,
+          "observation": "The shared file oracle rejects this task; a framework normal stop alone is not proof of task success."
+        },
+        {
+          "scenario": "interrupt_delayed_model_no_late_effect",
+          "passed": true,
+          "durationMs": 1520,
+          "startupMs": 449,
+          "approvals": 0,
+          "toolResults": 0,
+          "failedToolResults": 0,
+          "modelRequestsReportedByTurnEnd": 1,
+          "turnOutcomes": [
+            {
+              "ok": false,
+              "endReason": "interrupted"
+            }
+          ],
+          "cleanupPassed": true
+        }
+      ],
+      "notRun": [],
+      "passed": 13,
+      "total": 13
+    }
+  ],
+  "passed": true
+}

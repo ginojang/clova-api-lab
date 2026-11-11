@@ -1,0 +1,14 @@
+diff --git a/elda b/elda
+--- a/elda
++++ b/elda
+@@ -136,6 +136,10 @@ AGENTS = {
+     # 우리 루프(11-03) — 모델 연결 + MCP 도구, 도구 실행은 우리가. 모델 = ELDA_MODEL(ollama:… · openai:… · scripted:…)
+     "vector": {"kind": "giant", "emoji": "✒️", "module": "adapters.loop", "cls": "LoopAdapter",
+                "profile": "vector", "hint": "600x300mm 빨간 바탕에 흰 글자 '엘다' 간판, out/sign.pdf"},
++    # External LangGraph engine; install integration/elda_clova.py as adapters/clova.py.
++    "clova": {"kind": "giant", "emoji": "☁️", "module": "adapters.clova", "cls": "ClovaAdapter",
++              "gate": "engine", "events_approve": "ask", "quota": False,
++              "hint": "작업장 파일을 만들고 내용을 확인해 줘"},
+     # Codex — A(진짜 터미널, 반드시 자동 YOLO)는 된다. B(이벤트) 어댑터는 아직 없다.
+     "codex": {"kind": "giant", "emoji": "🤖", "module": "adapters.codex", "cls": "CodexAdapter",
+               "tty": "codex", "gate": "none", "quota": False,

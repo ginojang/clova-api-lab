@@ -1,0 +1,10 @@
+{
+  "app":"clova","spec":"1.1",
+  "command":["node","mcp.ts","mcp","--workspace","{workspace}"],
+  "lean":["--lean"],"note":true,
+  "setup":[{"tool":"artifact_write","args":{"path":"sample.txt","text":"hello"}}],
+  "probe":{"tool":"artifact_read","args":{"path":"sample.txt"}},
+  "failing":[{"tool":"artifact_write","args":{"path":"sample.txt","text":7},"expect":"error:invalid_argument"},{"tool":"batch","args":{"steps":[{"tool":"api_version"},{"tool":"missing"}]}}],
+  "paths":[{"tool":"artifact_write","args":{"path":"{escape:txt}","text":"no"}},{"tool":"artifact_read","args":{"path":"{escape:txt}"}}],
+  "scenarios":[{"name":"write → named read","steps":[{"tool":"batch","args":{"steps":[{"tool":"artifact_write","args":{"path":"named.txt","text":"content"},"as":"saved"},{"tool":"artifact_read","args":{"path":"$saved.id"}}]},"has":["completed","results"]}]}]
+}

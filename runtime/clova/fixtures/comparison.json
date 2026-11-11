@@ -1,0 +1,32 @@
+{
+  "id": "clova-harness-file-v2",
+  "model": "HCX-005",
+  "temperature": 0,
+  "maxTokens": 2048,
+  "systemPrompt": "파일 작업은 주어진 도구로 수행하세요. 요청한 내용만 정확히 저장하세요. 도구 결과를 보고 완료를 판단하세요. 성공한 수정이나 되돌리기를 반복하지 마세요.",
+  "maxTurnsPerPrompt": 4,
+  "timeoutMsPerPrompt": 120000,
+  "tools": ["artifact_list", "artifact_read", "artifact_write", "artifact_undo"],
+  "file": "comparison.txt",
+  "steps": [
+    {
+      "id": "create",
+      "prompt": "artifact_write를 정확히 한 번 호출하세요. 인자 path는 \"comparison.txt\", 인자 text는 JSON 문자열 \"CLOVA 비교 시험 — 처음 내용\"입니다. 따옴표는 JSON 표기이며 파일 내용에 넣지 마세요. 마침표·줄바꿈·다른 글자를 추가하지 마세요. 저장 후 짧게 완료를 알려 주세요.",
+      "expectedText": "CLOVA 비교 시험 — 처음 내용",
+      "requiredTool": "artifact_write"
+    },
+    {
+      "id": "edit",
+      "prompt": "artifact_write를 정확히 한 번 호출하세요. 인자 path는 \"comparison.txt\", 인자 text는 JSON 문자열 \"CLOVA 비교 시험 — 수정 내용\"입니다. 따옴표는 JSON 표기이며 파일 내용에 넣지 마세요. 마침표·줄바꿈·다른 글자를 추가하지 마세요. 저장 후 짧게 완료를 알려 주세요.",
+      "expectedText": "CLOVA 비교 시험 — 수정 내용",
+      "requiredTool": "artifact_write"
+    },
+    {
+      "id": "undo",
+      "prompt": "방금 comparison.txt에 한 수정을 artifact_undo 도구로 정확히 한 번 되돌리세요. artifact_write로 다시 쓰지 마세요. 이어서 artifact_read로 comparison.txt를 읽어 처음 내용으로 돌아왔는지 확인하고 짧게 알려 주세요.",
+      "expectedText": "CLOVA 비교 시험 — 처음 내용",
+      "requiredTool": "artifact_undo",
+      "alsoRequiredTool": "artifact_read"
+    }
+  ]
+}

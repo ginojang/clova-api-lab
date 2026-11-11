@@ -21,17 +21,18 @@ function Tab({ id, label }: { id: Mode; label: string }) {
 
 function ClovaHeader() {
   return (
-    <header className="flex items-center gap-3 border-b border-slate-800 px-4 py-3">
+    <header className="flex flex-wrap items-center gap-3 border-b border-slate-800 px-4 py-3">
       <span className="text-lg font-semibold tracking-tight text-emerald-300">Clova</span>
       <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
         거인 API + 분석
       </span>
-      <nav className="ml-4 flex gap-2">
+      <nav className="flex flex-wrap gap-2">
         <Tab id="bench" label="Bench" />
         <Tab id="llm" label="LLM-분석" />
         <Tab id="vision" label="Vision-분석" />
         <Tab id="fsm" label="FSM-분석" />
         <Tab id="chat" label="Chat" />
+        <Tab id="harness" label="하네스 테스트" />
       </nav>
     </header>
   );
@@ -39,7 +40,7 @@ function ClovaHeader() {
 
 function EldaHeader() {
   return (
-    <header className="flex items-center gap-3 border-b border-slate-800 px-4 py-3">
+    <header className="flex flex-wrap items-center gap-3 border-b border-slate-800 px-4 py-3">
       <span className="text-lg font-semibold tracking-tight text-violet-300">ELDA · Stress</span>
       <span className="rounded bg-violet-950/60 px-2 py-0.5 text-xs text-violet-300/80">
         TEI 게이트웨이 — p38 192.168.0.18:8000

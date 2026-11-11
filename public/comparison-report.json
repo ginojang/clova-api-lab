@@ -1,0 +1,392 @@
+{
+  "schema": 1,
+  "createdAt": "2026-11-10T06:01:52.829Z",
+  "inference": "live",
+  "task": {
+    "id": "clova-harness-file-v2",
+    "model": "HCX-005",
+    "temperature": 0,
+    "maxTokens": 2048,
+    "systemPrompt": "파일 작업은 주어진 도구로 수행하세요. 요청한 내용만 정확히 저장하세요. 도구 결과를 보고 완료를 판단하세요. 성공한 수정이나 되돌리기를 반복하지 마세요.",
+    "maxTurnsPerPrompt": 4,
+    "timeoutMsPerPrompt": 120000,
+    "tools": [
+      "artifact_list",
+      "artifact_read",
+      "artifact_write",
+      "artifact_undo"
+    ],
+    "file": "comparison.txt",
+    "steps": [
+      {
+        "id": "create",
+        "prompt": "artifact_write를 정확히 한 번 호출하세요. 인자 path는 \"comparison.txt\", 인자 text는 JSON 문자열 \"CLOVA 비교 시험 — 처음 내용\"입니다. 따옴표는 JSON 표기이며 파일 내용에 넣지 마세요. 마침표·줄바꿈·다른 글자를 추가하지 마세요. 저장 후 짧게 완료를 알려 주세요.",
+        "expectedText": "CLOVA 비교 시험 — 처음 내용",
+        "requiredTool": "artifact_write"
+      },
+      {
+        "id": "edit",
+        "prompt": "artifact_write를 정확히 한 번 호출하세요. 인자 path는 \"comparison.txt\", 인자 text는 JSON 문자열 \"CLOVA 비교 시험 — 수정 내용\"입니다. 따옴표는 JSON 표기이며 파일 내용에 넣지 마세요. 마침표·줄바꿈·다른 글자를 추가하지 마세요. 저장 후 짧게 완료를 알려 주세요.",
+        "expectedText": "CLOVA 비교 시험 — 수정 내용",
+        "requiredTool": "artifact_write"
+      },
+      {
+        "id": "undo",
+        "prompt": "방금 comparison.txt에 한 수정을 artifact_undo 도구로 정확히 한 번 되돌리세요. artifact_write로 다시 쓰지 마세요. 이어서 artifact_read로 comparison.txt를 읽어 처음 내용으로 돌아왔는지 확인하고 짧게 알려 주세요.",
+        "expectedText": "CLOVA 비교 시험 — 처음 내용",
+        "requiredTool": "artifact_undo",
+        "alsoRequiredTool": "artifact_read"
+      }
+    ]
+  },
+  "scope": "Native Claude Code print-session versus our LangGraph harness. Elda interactive attach and installed CLI registration are separate integration checks.",
+  "caveats": [
+    "One three-turn file task per harness; this is a functional smoke comparison, not a general quality ranking.",
+    "The base instructions, model, sampling, output cap and MCP tool implementations match. Harness-added prompts and tool-name prefixes differ.",
+    "Claude Code max-turns and LangGraph model-round limits are different native controls; actual request counts are reported.",
+    "Mode 2 approvals are automatically accepted by the test controller for these four isolated file tools.",
+    "Anthropic SSE is buffered from native CLOVA responses; latency is full-turn wall time, not time to first token."
+  ],
+  "results": [
+    {
+      "mode": "1",
+      "harness": "Claude Code",
+      "pass": true,
+      "durationMs": 11734,
+      "usage": {
+        "input": 2083,
+        "output": 187,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "modelCalls": 6,
+      "toolCalls": 4,
+      "approvals": 0,
+      "steps": [
+        {
+          "id": "create",
+          "pass": true,
+          "durationMs": 4218,
+          "artifactMatches": true,
+          "usage": {
+            "input": 387,
+            "output": 56,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "checks": {
+            "nativeSuccess": true,
+            "noToolErrors": true,
+            "toolRoundTrip": true,
+            "exactArtifact": true,
+            "requiredTool": true,
+            "requiredToolOnce": true
+          }
+        },
+        {
+          "id": "edit",
+          "pass": true,
+          "durationMs": 3105,
+          "artifactMatches": true,
+          "usage": {
+            "input": 705,
+            "output": 56,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "checks": {
+            "nativeSuccess": true,
+            "noToolErrors": true,
+            "toolRoundTrip": true,
+            "exactArtifact": true,
+            "requiredTool": true,
+            "requiredToolOnce": true
+          }
+        },
+        {
+          "id": "undo",
+          "pass": true,
+          "durationMs": 4275,
+          "artifactMatches": true,
+          "usage": {
+            "input": 991,
+            "output": 75,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "checks": {
+            "nativeSuccess": true,
+            "noToolErrors": true,
+            "toolRoundTrip": true,
+            "exactArtifact": true,
+            "requiredTool": true,
+            "alsoRequiredTool": true,
+            "requiredToolOnce": true,
+            "undoWithoutRewrite": true
+          }
+        }
+      ],
+      "checks": {
+        "isolatedConfig": true,
+        "singleNativeProcess": true,
+        "clovaKeyAbsentFromChild": true,
+        "onlyArtifactTools": true,
+        "processGroupStopped": true,
+        "validJsonEvents": true,
+        "nativeInit": true,
+        "allPromptsCompleted": true
+      }
+    },
+    {
+      "mode": "2",
+      "harness": "LangGraph",
+      "pass": true,
+      "durationMs": 12212,
+      "usage": {
+        "input": 2335,
+        "output": 157,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "modelCalls": 6,
+      "toolCalls": 4,
+      "toolErrors": 0,
+      "approvals": 4,
+      "steps": [
+        {
+          "id": "create",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 처음 내용",
+          "durationMs": 3276,
+          "modelCalls": 2,
+          "toolCalls": 1,
+          "toolErrors": 0,
+          "usage": {
+            "input": 444,
+            "output": 51,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "edit",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 수정 내용",
+          "durationMs": 3131,
+          "modelCalls": 2,
+          "toolCalls": 1,
+          "toolErrors": 0,
+          "usage": {
+            "input": 784,
+            "output": 51,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "undo",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 처음 내용",
+          "durationMs": 4369,
+          "modelCalls": 2,
+          "toolCalls": 2,
+          "toolErrors": 0,
+          "usage": {
+            "input": 1107,
+            "output": 55,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "cleanExit": true,
+      "sessionPreserved": true
+    },
+    {
+      "mode": "3",
+      "harness": "LangGraph",
+      "pass": true,
+      "durationMs": 12458,
+      "usage": {
+        "input": 2335,
+        "output": 157,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "modelCalls": 6,
+      "toolCalls": 4,
+      "toolErrors": 0,
+      "approvals": 0,
+      "steps": [
+        {
+          "id": "create",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 처음 내용",
+          "durationMs": 3679,
+          "modelCalls": 2,
+          "toolCalls": 1,
+          "toolErrors": 0,
+          "usage": {
+            "input": 444,
+            "output": 51,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "edit",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 수정 내용",
+          "durationMs": 3114,
+          "modelCalls": 2,
+          "toolCalls": 1,
+          "toolErrors": 0,
+          "usage": {
+            "input": 784,
+            "output": 51,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "undo",
+          "pass": true,
+          "artifactMatches": true,
+          "actualText": "CLOVA 비교 시험 — 처음 내용",
+          "durationMs": 4226,
+          "modelCalls": 2,
+          "toolCalls": 2,
+          "toolErrors": 0,
+          "usage": {
+            "input": 1107,
+            "output": 55,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "cleanExit": true,
+      "sessionPreserved": true
+    }
+  ],
+  "pass": true,
+  "previousAttempt": {
+    "taskId": "clova-harness-file-v1",
+    "pass": false,
+    "reason": "Ambiguous punctuation in the task prompt produced a trailing period in all three harnesses. Original failed artifacts retained locally; v2 specifies exact JSON strings."
+  },
+  "integration": {
+    "mode1Attach": {
+      "pass": true,
+      "inference": "live",
+      "createdAt": "2026-11-10T06:03:26.308Z",
+      "model": "HCX-005",
+      "modelCalls": 6,
+      "usage": {
+        "input": 2077,
+        "output": 177,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "checks": {
+        "privateTmux": true,
+        "interactiveNativeDiscovered": true,
+        "apiApprovalViaTty": true,
+        "eldaReady": true,
+        "privateTmuxStopped": true,
+        "noTestProcessesRemain": true,
+        "observerEofLeavesEngineAlive": true
+      }
+    },
+    "eldaModes": {
+      "pass": true,
+      "inference": "live",
+      "model": "HCX-005",
+      "sourceCliCommit": "4f6d90e151bf5025a82f97c7ee73d672214546fa",
+      "installedCliUnchanged": true,
+      "usage": {
+        "input": 4670,
+        "output": 314,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "modes": [
+        {
+          "mode": "2",
+          "pass": true,
+          "usage": {
+            "input": 2335,
+            "output": 157,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "rounds": 6,
+          "toolCalls": 4,
+          "toolErrors": 0,
+          "cleanExit": true,
+          "sessionPreserved": true,
+          "processCleanup": true
+        },
+        {
+          "mode": "3",
+          "pass": true,
+          "usage": {
+            "input": 2335,
+            "output": 157,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "rounds": 6,
+          "toolCalls": 4,
+          "toolErrors": 0,
+          "cleanExit": true,
+          "sessionPreserved": true,
+          "processCleanup": true
+        }
+      ]
+    },
+    "deployedWeb": {
+      "pass": true,
+      "createdAt": "2026-11-10T06:11:54.839Z",
+      "url": "https://elda-ai.org/giants/?view=harness",
+      "results": [
+        {
+          "mode": "3",
+          "pass": true,
+          "usage": {
+            "input": 2335,
+            "output": 157,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "rounds": 6,
+          "toolCalls": 4,
+          "approved": 0
+        },
+        {
+          "mode": "2",
+          "pass": true,
+          "usage": {
+            "input": 2335,
+            "output": 157,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "rounds": 6,
+          "toolCalls": 4,
+          "approved": 4
+        }
+      ],
+      "errors": [],
+      "previousAttempt": {
+        "pass": false,
+        "reason": "The older web system prompt differed from the shared fixture; on edit the model claimed completion without a tool call and the file stayed unchanged. The web now loads the shared system prompt; the failing record is retained locally."
+      }
+    }
+  }
+}

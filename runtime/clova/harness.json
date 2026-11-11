@@ -1,0 +1,16 @@
+{
+  "name": "clova-harness",
+  "spec": "0.7",
+  "command": [
+    "node",
+    "harness.ts",
+    "--events",
+    "--workspace",
+    "{workspace}",
+    "--model",
+    "{brain}"
+  ],
+  "brain": "scripted:fixtures/brain.json",
+  "prompt": "작업장 목록을 확인해 줘",
+  "maxTurnsEnv": "CLOVA_MAX_TURNS"
+}

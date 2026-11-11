@@ -1,3 +1,4 @@
+import HarnessView from './components/harness/HarnessView';
 import Layout from './components/Layout';
 import ChatView from './components/ChatView';
 import BenchView from './components/BenchView';
@@ -11,6 +12,8 @@ export default function App() {
     <Layout>
       {workspace === 'elda' ? (
         <EldaStressView />
+      ) : mode === 'harness' ? (
+        <HarnessView />
       ) : mode === 'bench' ? (
         <BenchView />
       ) : mode === 'llm' ? (

@@ -7,6 +7,8 @@ import { healthRouter } from './routes/health.ts';
 import { clovaRouter } from './routes/clova.ts';
 import { benchRouter } from './routes/bench.ts';
 import { teiStressRouter } from './routes/teiStress.ts';
+import { HarnessLab } from './harness/service.ts';
+import { harnessRouter } from './routes/harness.ts';
 import { initDb } from './db/pool.ts';
 
 // 시크릿은 server/.env 에서만 읽는다(프론트 번들에 절대 포함 금지).
@@ -25,10 +27,19 @@ app.use(healthRouter);
 app.use('/api/clova', clovaRouter);
 app.use('/api/bench', benchRouter);
 app.use('/api/tei-stress', teiStressRouter);
+const harnessLab = new HarnessLab();
+app.use('/api/harness', harnessRouter(harnessLab));
 
 // DB는 선택사항 — 실패해도 프록시는 계속 뜬다(벤치 영속화만 비활성).
 void initDb();
 
-app.listen(PORT, HOST, () => {
+const server = app.listen(PORT, HOST, () => {
   console.log(`[clova-api-lab] proxy listening on http://${HOST}:${PORT}`);
 });
+
+for (const signal of ['SIGTERM', 'SIGINT'] as const) {
+  process.once(signal, () => {
+    server.close();
+    void harnessLab.dispose().finally(() => process.exit(0));
+  });
+}

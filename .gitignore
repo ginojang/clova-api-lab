@@ -26,3 +26,4 @@ npm-debug.log*
 
 # 외부 참조 심볼릭 — hellcat 공유 큐레이션 폴더(GanpanAI·TEI-lab 원본)
 reference
+.reference.prev

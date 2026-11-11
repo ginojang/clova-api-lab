@@ -42,6 +42,7 @@ done
 echo "== [3/4] hellcat 파일 배치 =="
 $HSSH "mkdir -p ~/$SLOT"
 rsync -avz -e "$HRSYNC" server-dist/index.js          "$HELLCAT:~/$SLOT/index.js"
+rsync -avz -e "$HRSYNC" server-dist/clova/ "$HELLCAT:~/$SLOT/runtime/clova/"
 rsync -avz -e "$HRSYNC" deploy/hellcat.package.json    "$HELLCAT:~/$SLOT/package.json"
 rsync -avz -e "$HRSYNC" deploy/clova-api-lab.service deploy/clova-api-lab-tunnel.service \
                         deploy/bootstrap-systemd.sh deploy/hellcat.env.example "$HELLCAT:~/$SLOT/"

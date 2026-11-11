@@ -1,0 +1,25 @@
+[
+  {
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "toolCalls": [
+        {
+          "id": "example-write",
+          "type": "function",
+          "function": {
+            "name": "clova__artifact_write",
+            "arguments": { "path": "example.txt", "text": "Vercel ToolLoopAgent MCP example" }
+          }
+        }
+      ]
+    },
+    "finishReason": "tool_calls",
+    "usage": { "input": 11, "output": 5, "cacheRead": 0, "cacheWrite": 0 }
+  },
+  {
+    "message": { "role": "assistant", "content": "The tool result has been received." },
+    "finishReason": "stop",
+    "usage": { "input": 11, "output": 5, "cacheRead": 0, "cacheWrite": 0 }
+  }
+]

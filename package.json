@@ -10,9 +10,23 @@
     "preview": "vite preview",
     "server": "tsx watch server/index.ts",
     "dev:all": "concurrently -n front,server -c cyan,magenta \"npm:dev\" \"npm:server\"",
-    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=server-dist/index.js --external:mysql2 --external:mysql2/promise --external:undici --banner:js=\"import{createRequire as _cr}from'module';const require=_cr(import.meta.url);\""
+    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=server-dist/index.js --external:mysql2 --external:mysql2/promise --external:undici --banner:js=\"import{createRequire as _cr}from'module';const require=_cr(import.meta.url);\" && npm run build:clova-runtime",
+    "clova:mcp": "node runtime/clova/mcp.ts",
+    "clova:wrapper": "node runtime/clova/http.ts",
+    "clova:harness": "node runtime/clova/harness.ts",
+    "test:clova-runtime": "node --test runtime/clova/test/*.test.ts",
+    "check:clova-runtime": "tsc -p runtime/clova/tsconfig.json",
+    "test:clova-live": "node runtime/clova/live.ts",
+    "build:clova-runtime": "esbuild runtime/clova/live.ts runtime/clova/harness.ts runtime/clova/mcp.ts runtime/clova/http.ts runtime/clova/langgraph.ts --bundle --platform=node --format=esm --target=node20 --outdir=server-dist/clova --out-extension:.js=.mjs && node -e \"require('fs').cpSync('runtime/clova/fixtures','server-dist/clova/fixtures',{recursive:true})\"",
+    "test:harness-web": "node --test server/harness/*.test.ts",
+    "clova:graph": "node runtime/clova/langgraph.ts",
+    "test:clova-compare": "node runtime/clova/compare.ts",
+    "test:mode2-compare": "node runtime/clova/mode2-compare.ts",
+    "configure:mode2": "python3 runtime/clova/integration/configure-provider.py"
   },
   "dependencies": {
+    "@langchain/core": "1.3.6",
+    "@langchain/langgraph": "1.7.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
@@ -21,6 +35,7 @@
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
     "undici": "^6.26.0",
+    "zod": "4.2.1",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
@@ -37,5 +52,9 @@
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5"
+  },
+  "bin": {
+    "clova-mcp": "./runtime/clova/mcp.ts",
+    "clova-harness": "./runtime/clova/harness.ts"
   }
 }

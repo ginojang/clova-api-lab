@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "createdAt": "2026-11-10T06:55:52.667Z",
+  "mode": "2",
+  "integration": "Isolated actual Elda CLI -> LangGraph -> MCP",
+  "liveInferenceRequests": 0,
+  "usageKind": "synthetic",
+  "sharedFixtureSourceModel": "HCX-005",
+  "taskId": "clova-harness-file-v2",
+  "results": [
+    {
+      "provider": "groq",
+      "model": "groq:openai/gpt-oss-120b",
+      "mock": {
+        "status": "mock_passed",
+        "pass": true,
+        "stepsPassed": 3,
+        "stepsTotal": 3,
+        "approvals": 4,
+        "toolCalls": 4,
+        "modelRounds": 7,
+        "checks": {
+          "approvalBeforeFirstWrite": true,
+          "approvalBeforeEffects": true,
+          "oneSession": true,
+          "cleanExit": true,
+          "processCleanup": true,
+          "jsonlOnly": true,
+          "providerCredentialIsolation": true,
+          "mcpCredentialIsolation": true,
+          "providerObserved": true,
+          "mcpObserved": true
+        }
+      },
+      "live": {
+        "status": "not_configured",
+        "pass": false,
+        "inferenceRequests": 0
+      }
+    },
+    {
+      "provider": "openrouter",
+      "model": "openrouter:cohere/north-mini-code:free",
+      "mock": {
+        "status": "mock_passed",
+        "pass": true,
+        "stepsPassed": 3,
+        "stepsTotal": 3,
+        "approvals": 4,
+        "toolCalls": 4,
+        "modelRounds": 7,
+        "checks": {
+          "approvalBeforeFirstWrite": true,
+          "approvalBeforeEffects": true,
+          "oneSession": true,
+          "cleanExit": true,
+          "processCleanup": true,
+          "jsonlOnly": true,
+          "providerCredentialIsolation": true,
+          "mcpCredentialIsolation": true,
+          "providerObserved": true,
+          "mcpObserved": true
+        }
+      },
+      "live": {
+        "status": "not_configured",
+        "pass": false,
+        "inferenceRequests": 0
+      }
+    },
+    {
+      "provider": "zai",
+      "model": "zai:glm-4.7-flash",
+      "mock": {
+        "status": "mock_passed",
+        "pass": true,
+        "stepsPassed": 3,
+        "stepsTotal": 3,
+        "approvals": 4,
+        "toolCalls": 4,
+        "modelRounds": 7,
+        "checks": {
+          "approvalBeforeFirstWrite": true,
+          "approvalBeforeEffects": true,
+          "oneSession": true,
+          "cleanExit": true,
+          "processCleanup": true,
+          "jsonlOnly": true,
+          "providerCredentialIsolation": true,
+          "mcpCredentialIsolation": true,
+          "providerObserved": true,
+          "mcpObserved": true
+        }
+      },
+      "live": {
+        "status": "not_configured",
+        "pass": false,
+        "inferenceRequests": 0
+      }
+    }
+  ]
+}

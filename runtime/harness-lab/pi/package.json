@@ -1,0 +1,10 @@
+{
+  "name": "elda-harness-lab-pi",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node cli.mjs", "smoke": "node smoke.mjs", "smoke:brain": "node mock-live.mjs" },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "1.5.1",
+    "@earendil-works/pi-ai": "1.5.1"
+  }
+}
