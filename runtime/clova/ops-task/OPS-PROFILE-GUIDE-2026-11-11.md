@@ -1,6 +1,6 @@
 # ② 운영 프로필 지침 — 사실·목록은 프로그램이, 해석만 두뇌가
 
-2026-11-11 · 적용 대상: Elda CLI ② native loop를 쓰는 운영 Task(`kind:script` 안에서 호출하는 경로 포함). 다음 Task의 설계·검증 기준이며, 아래 항목이 현행 모든 Task에 구현됐다는 뜻은 아니다. Elda-Spec harness 절 I에 연결할 지침이다.
+2026-11-11 · 적용 대상: Elda CLI ② native loop를 쓰는 운영 Task(`kind:script` 안에서 호출하는 경로 포함). 다음 Task의 설계·검증 기준이며, 아래 항목이 현행 모든 Task에 구현됐다는 뜻은 아니다. Elda-Spec harness 절 I의 근거 지침이다.
 
 **사람이 반드시 봐야 할 사실과 대상 목록은 모델 응답 없이도 보고에 남긴다.** 모델은 이미 보존된 근거에 대한 요약·원인 가능성·확인 제안만 더한다.
 
@@ -19,4 +19,4 @@
 
 근거: [host-watch v3](candidate-v3/RESULT.md)는 근거 없는 조치 권고가 줄었지만 모델의 정확한 두 줄 조건은 0/3이었고, 운영 표시를 프로그램이 조립하도록 결정했다. [inbox-digest](inbox-digest/RESULT-2026-11-11.md)는 CLI 3건 정상 종료와 별개로 B의 요청→완료 진술 변환·C의 보이는 안내 누락을 확인했다. 읽음 처리 수정 `79865df`는 무료 회귀 11/11이지만 의미 오류 검출을 뜻하지 않는다.
 
-규격 연결: [harness 절 I·H40·J1 H46](https://github.com/ginojang/Elda-Spec/blob/d02770aa48ccab51e9917e1b048c0dbe642880b8/harness/SPEC.md). 절 I의 ‘형식 고정은 system 보강으로’라는 표현은 위 원문 결과와 구분해야 한다. **형식은 프로그램이 조립·검사하며, 모델의 원래 형식 준수를 소급 주장하지 않는다.**
+규격 연결: [harness v0.813 절 I·H40·J1 H46](https://github.com/ginojang/Elda-Spec/blob/2254dfd/harness/SPEC.md). 풀스택은 Comms `c111ee0534`에서 이 지침의 `5cf53b4`를 규격 근거로 연결하고, v0.812의 ‘형식 고정은 system 보강으로’라는 표현을 정정했다고 보고했다. **형식은 프로그램이 조립·검사하며, 모델의 원래 형식 준수를 소급 주장하지 않는다.** 규격 변경은 담당자 보고이며 이 랩이 규격 저장소를 수정한 것은 아니다.
