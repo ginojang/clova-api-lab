@@ -1,0 +1,433 @@
+{
+  "format": "isolated-ops-fixture-stdio-v1",
+  "passed": true,
+  "checks": {
+    "fixture_exit_zero": true,
+    "one_reply_per_request_no_notification_reply": true,
+    "initialize_protocol_and_capabilities": true,
+    "five_tools_exact_metadata": true,
+    "resource_templates_exact_metadata": true,
+    "resources_list_empty": true,
+    "ping_ok": true,
+    "all_tool_calls_are_deterministic_errors": true,
+    "resource_read_is_error": true,
+    "stderr_records_name_args_no_execution": true
+  },
+  "source": {
+    "path": "/home/gino/WorkArea/Elda-Ops/mcp/ops_mcp.py",
+    "git_head": "cf7138e369bf48c81aebbc044b05e07914576b6c",
+    "sha256": "32715589f199f77a3d2d1930b09896a89a38f1fcda57816702b952560427e7f3",
+    "version_scope": "local source snapshot; deployed 354c4b0 not inspected"
+  },
+  "metadata_sha256": "3e1978ee97d11ba24ac0565fcb17aa6d7a4c874c5e1715af290922e2b85185a4",
+  "fixture_sha256": "c183b7bdea4a1353d415c9fe1b8617fc9e7ae2aceefea24f55c3091ec0b6eadc",
+  "scope": "local fixture subprocess only; no model, production MCP, API, SSH or inbox calls",
+  "production_task_verified": false,
+  "real_model_requests": 0,
+  "requests": [
+    {
+      "jsonrpc": "2.0",
+      "id": 0,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-06-18"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "tools/list"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "resources/templates/list"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "resources/list"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "ping"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "method": "tools/call",
+      "params": {
+        "name": "feed_sources",
+        "arguments": {}
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "method": "tools/call",
+      "params": {
+        "name": "feed_query",
+        "arguments": {
+          "source": "synthetic",
+          "limit": 1
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "method": "tools/call",
+      "params": {
+        "name": "feed_read",
+        "arguments": {
+          "uri": "elda://feed/synthetic/latest"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "method": "tools/call",
+      "params": {
+        "name": "host_status",
+        "arguments": {
+          "net": "pluto"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 9,
+      "method": "tools/call",
+      "params": {
+        "name": "recent_runs",
+        "arguments": {
+          "task": "host-watch-pluto",
+          "limit": 1
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 10,
+      "method": "resources/read",
+      "params": {
+        "uri": "elda://feed/synthetic/latest"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "jsonrpc": "2.0",
+      "id": 0,
+      "result": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {
+          "tools": {},
+          "resources": {}
+        },
+        "serverInfo": {
+          "name": "isolated-ops-fixture",
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "tools": [
+          {
+            "name": "feed_sources",
+            "description": "두뇌가 볼 수 있는 데이터원 목록(장비 점검·Task 실행 결과 등 — 프로그램이 공용 피드에 올린 것). 무엇을 물어볼 수 있는지 모를 때 먼저 부른다. 읽기만 한다.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "annotations": {
+              "readOnlyHint": true
+            }
+          },
+          {
+            "name": "feed_query",
+            "description": "공용 피드에서 기록을 찾는다(최근 것부터). 예: source=host-watch severity=warn · source=task-runner subject=reference-sync. 읽기만 한다.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "description": "데이터원(feed_sources 의 이름)"
+                },
+                "subject": {
+                  "type": "string",
+                  "description": "대상(호스트 이름·Task id 등)"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "종류(예 elda.host.* — * 가능)"
+                },
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "info",
+                    "warn",
+                    "error"
+                  ]
+                },
+                "since": {
+                  "type": "string",
+                  "description": "몇 시간 안(예 24h, 기본 24h)"
+                },
+                "limit": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 50
+                }
+              },
+              "additionalProperties": false
+            },
+            "annotations": {
+              "readOnlyHint": true
+            }
+          },
+          {
+            "name": "feed_read",
+            "description": "피드 주소 하나를 읽는다. elda://feed/{source}/latest = 그 데이터원의 마지막 한 건 · elda://feed/{source}/{subject} = 그 대상의 최근 기록. 읽기만 한다.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "uri": {
+                  "type": "string",
+                  "description": "예 elda://feed/host-watch/latest · elda://feed/task-runner/reference-sync"
+                }
+              },
+              "required": [
+                "uri"
+              ],
+              "additionalProperties": false
+            },
+            "annotations": {
+              "readOnlyHint": true
+            }
+          },
+          {
+            "name": "host_status",
+            "description": "장비 점검이 마지막으로 읽은 장비 상태를 돌려준다(닿는지·켜진 날·랜선 연결 변화 횟수·CRC 오류·속도). 읽기만 한다.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "net": {
+                  "type": "string",
+                  "enum": [
+                    "pluto",
+                    "mars"
+                  ],
+                  "description": "네트웍 이름"
+                }
+              },
+              "required": [
+                "net"
+              ],
+              "additionalProperties": false
+            },
+            "annotations": {
+              "readOnlyHint": true
+            }
+          },
+          {
+            "name": "recent_runs",
+            "description": "운영 에이전트 Task 의 최근 실행 기록(시각·결과 요약)을 돌려준다. 읽기만 한다.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "task": {
+                  "type": "string",
+                  "enum": [
+                    "host-watch-explain",
+                    "host-watch-mars",
+                    "host-watch-pluto",
+                    "reference-sync",
+                    "vectorcraft-track"
+                  ],
+                  "description": "Task id"
+                },
+                "limit": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10,
+                  "description": "몇 건(기본 3)"
+                }
+              },
+              "required": [
+                "task"
+              ],
+              "additionalProperties": false
+            },
+            "annotations": {
+              "readOnlyHint": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "resourceTemplates": [
+          {
+            "uriTemplate": "elda://feed/{source}/latest",
+            "name": "feed-latest",
+            "mimeType": "text/plain",
+            "description": "그 데이터원의 마지막 기록 한 건"
+          },
+          {
+            "uriTemplate": "elda://feed/{source}/{subject}",
+            "name": "feed-subject",
+            "mimeType": "text/plain",
+            "description": "그 데이터원에서 한 대상(호스트·Task id 등)의 최근 기록(7일 안 10건)"
+          }
+        ]
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "resources": []
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": {}
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "isolated fixture: tool call not executed"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "isolated fixture: tool call not executed"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "isolated fixture: tool call not executed"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "isolated fixture: tool call not executed"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 9,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "isolated fixture: tool call not executed"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 10,
+      "error": {
+        "code": -32002,
+        "message": "isolated fixture: resource read not executed"
+      }
+    }
+  ],
+  "stderr_audit": [
+    {
+      "event": "isolated_fixture_tool_call",
+      "name": "feed_sources",
+      "arguments": {},
+      "executed": false
+    },
+    {
+      "event": "isolated_fixture_tool_call",
+      "name": "feed_query",
+      "arguments": {
+        "source": "synthetic",
+        "limit": 1
+      },
+      "executed": false
+    },
+    {
+      "event": "isolated_fixture_tool_call",
+      "name": "feed_read",
+      "arguments": {
+        "uri": "elda://feed/synthetic/latest"
+      },
+      "executed": false
+    },
+    {
+      "event": "isolated_fixture_tool_call",
+      "name": "host_status",
+      "arguments": {
+        "net": "pluto"
+      },
+      "executed": false
+    },
+    {
+      "event": "isolated_fixture_tool_call",
+      "name": "recent_runs",
+      "arguments": {
+        "task": "host-watch-pluto",
+        "limit": 1
+      },
+      "executed": false
+    },
+    {
+      "event": "isolated_fixture_resource_read",
+      "uri": "elda://feed/synthetic/latest",
+      "executed": false
+    }
+  ],
+  "fixture_exit_code": 0
+}

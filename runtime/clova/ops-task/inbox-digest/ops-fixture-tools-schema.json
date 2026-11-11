@@ -1,0 +1,169 @@
+{
+  "format": "isolated-ops-fixture-schema-v1",
+  "source": {
+    "path": "/home/gino/WorkArea/Elda-Ops/mcp/ops_mcp.py",
+    "git_head": "cf7138e369bf48c81aebbc044b05e07914576b6c",
+    "sha256": "32715589f199f77a3d2d1930b09896a89a38f1fcda57816702b952560427e7f3",
+    "version_scope": "local source snapshot; deployed 354c4b0 not inspected"
+  },
+  "extraction": {
+    "method": "AST data only; literals plus sorted(TASK_HOST); no eval/import/exec/handler/network/subprocess",
+    "metadata_sha256": "3e1978ee97d11ba24ac0565fcb17aa6d7a4c874c5e1715af290922e2b85185a4"
+  },
+  "metadata": {
+    "TOOLS": [
+      {
+        "name": "feed_sources",
+        "description": "두뇌가 볼 수 있는 데이터원 목록(장비 점검·Task 실행 결과 등 — 프로그램이 공용 피드에 올린 것). 무엇을 물어볼 수 있는지 모를 때 먼저 부른다. 읽기만 한다.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "feed_query",
+        "description": "공용 피드에서 기록을 찾는다(최근 것부터). 예: source=host-watch severity=warn · source=task-runner subject=reference-sync. 읽기만 한다.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "데이터원(feed_sources 의 이름)"
+            },
+            "subject": {
+              "type": "string",
+              "description": "대상(호스트 이름·Task id 등)"
+            },
+            "type": {
+              "type": "string",
+              "description": "종류(예 elda.host.* — * 가능)"
+            },
+            "severity": {
+              "type": "string",
+              "enum": [
+                "info",
+                "warn",
+                "error"
+              ]
+            },
+            "since": {
+              "type": "string",
+              "description": "몇 시간 안(예 24h, 기본 24h)"
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          },
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "feed_read",
+        "description": "피드 주소 하나를 읽는다. elda://feed/{source}/latest = 그 데이터원의 마지막 한 건 · elda://feed/{source}/{subject} = 그 대상의 최근 기록. 읽기만 한다.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "uri": {
+              "type": "string",
+              "description": "예 elda://feed/host-watch/latest · elda://feed/task-runner/reference-sync"
+            }
+          },
+          "required": [
+            "uri"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "host_status",
+        "description": "장비 점검이 마지막으로 읽은 장비 상태를 돌려준다(닿는지·켜진 날·랜선 연결 변화 횟수·CRC 오류·속도). 읽기만 한다.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "net": {
+              "type": "string",
+              "enum": [
+                "pluto",
+                "mars"
+              ],
+              "description": "네트웍 이름"
+            }
+          },
+          "required": [
+            "net"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "recent_runs",
+        "description": "운영 에이전트 Task 의 최근 실행 기록(시각·결과 요약)을 돌려준다. 읽기만 한다.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "task": {
+              "type": "string",
+              "enum": [
+                "host-watch-explain",
+                "host-watch-mars",
+                "host-watch-pluto",
+                "reference-sync",
+                "vectorcraft-track"
+              ],
+              "description": "Task id"
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "description": "몇 건(기본 3)"
+            }
+          },
+          "required": [
+            "task"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      }
+    ],
+    "TASK_HOST": {
+      "host-watch-pluto": "hellcat",
+      "host-watch-mars": "mars",
+      "reference-sync": "pluto",
+      "host-watch-explain": "hellcat",
+      "vectorcraft-track": "mars"
+    },
+    "RESOURCE_TEMPLATES": [
+      {
+        "uriTemplate": "elda://feed/{source}/latest",
+        "name": "feed-latest",
+        "mimeType": "text/plain",
+        "description": "그 데이터원의 마지막 기록 한 건"
+      },
+      {
+        "uriTemplate": "elda://feed/{source}/{subject}",
+        "name": "feed-subject",
+        "mimeType": "text/plain",
+        "description": "그 데이터원에서 한 대상(호스트·Task id 등)의 최근 기록(7일 안 10건)"
+      }
+    ]
+  }
+}

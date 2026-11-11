@@ -1,0 +1,110 @@
+{
+  "schema": "inbox-digest-offline-boundary-v1",
+  "created_at": "2026-11-11T13:23:26.698056+00:00",
+  "source_path": "/home/gino/WorkArea/Elda-Ops/inbox-digest/digest.py",
+  "source_sha256": "8104b4acdce2f6aab3eab6a213464d99c83fdcd890ecbdd0b702e52fb0128d6e",
+  "source_scope": "local source only; deployed Task state not verified",
+  "reproduction_completed": true,
+  "digest_behavior_contract": "failed; 2 lookup errors falsely reported as an empty successful inbox",
+  "paid_quality_cases_run": 0,
+  "results": [
+    {
+      "case": "empty_inbox_control",
+      "member": "bot-routine",
+      "main_exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 정기업무 0 (새 글 없음)\n",
+      "stderr": "",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "real_child_process_count": 0,
+      "real_model_request_count": 0,
+      "real_unread_state_touched": false,
+      "simulated_read_marks_after_return": [],
+      "behavior_contract": "pass",
+      "observation": "정상 빈 목록은 모델 호출 없이 새 글 없음, 종료 0",
+      "snapshot_observation_reproduced": true
+    },
+    {
+      "case": "tool_is_error",
+      "member": "bot-routine",
+      "main_exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 정기업무 0 (새 글 없음)\n",
+      "stderr": "",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "real_child_process_count": 0,
+      "real_model_request_count": 0,
+      "real_unread_state_touched": false,
+      "simulated_read_marks_after_return": [],
+      "behavior_contract": "fail",
+      "observation": "조회 실패가 정상 빈 목록으로 오인됨: 새 글 없음, 종료 0",
+      "required_behavior": "조회 실패를 명시하고 비정상 종료로 보고",
+      "snapshot_observation_reproduced": true
+    },
+    {
+      "case": "jsonrpc_error",
+      "member": "bot-routine",
+      "main_exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 정기업무 0 (새 글 없음)\n",
+      "stderr": "",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "real_child_process_count": 0,
+      "real_model_request_count": 0,
+      "real_unread_state_touched": false,
+      "simulated_read_marks_after_return": [],
+      "behavior_contract": "fail",
+      "observation": "조회 실패가 정상 빈 목록으로 오인됨: 새 글 없음, 종료 0",
+      "required_behavior": "조회 실패를 명시하고 비정상 종료로 보고",
+      "snapshot_observation_reproduced": true
+    },
+    {
+      "case": "read_then_model_failure",
+      "member": "bot-routine",
+      "main_exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 요약 실패: api_error synthetic provider failure\n",
+      "stderr": "받은편지함 요약 실패: 요약 실패: api_error synthetic provider failure\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_read",
+          "arguments": {
+            "id": "a000000001"
+          }
+        },
+        {
+          "operation": "model_prompt",
+          "simulated_reads_already_done": [
+            "a000000001"
+          ]
+        }
+      ],
+      "real_child_process_count": 0,
+      "real_model_request_count": 0,
+      "real_unread_state_touched": false,
+      "simulated_read_marks_after_return": [
+        "a000000001"
+      ],
+      "behavior_contract": "failure_window_exposed",
+      "observation": "읽기 완료 후 모델이 실패함. 종료 2는 정상 오류 보고지만 읽음 복구 호출은 없음",
+      "limitation": "읽음은 가짜 MCP의 메모리 목록으로만 모사했다. 실제 Comms 저장소·상태는 확인하거나 변경하지 않았다",
+      "snapshot_observation_reproduced": true
+    }
+  ],
+  "note": "Exit 0 confirms these observations only, not correct application behavior. No credentials/environment values are captured."
+}

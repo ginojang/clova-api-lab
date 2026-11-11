@@ -1,0 +1,17 @@
+{
+  "format": "inbox-summarize-probe-source-contract-v1",
+  "date": "2026-11-11",
+  "digestRevision": "354c4b0",
+  "digestSha256": "21aec59a9da88efbd38ec8b5d8760930b96a5c560b074d3aaa86ffd7ad94a517",
+  "cliGitRevisionVerifiedByParent": "afb612f4b71d7919d235bbcfebad8b4045d4edfe",
+  "cliSha256": {
+    "elda": "9a9ceb10b3fb6c5960c8e8dbc40d1219760f40a615545dc2379f8407ab00ce34",
+    "profiles.py": "c797d67e1908a35f61dccc354533d9a4337f5faf6f5bc350136ccacea6a357fd",
+    "events.py": "5ebd03e3b7c38119db2ba1ba09fa915d1ebc8f0a91ba2574d0feb8c05b40aa09",
+    "adapters/loop.py": "115c702331dd3113c88813e9cea82dc63484ef052f41cd26711b67f5a91b5aa9",
+    "providers/clova.py": "a16f13c7f83091ec42eed69971d69a2df898f8d94a2f7713eb43998ff00860de",
+    "mcp_client.py": "617522d6ad76240541f4ab04b8df4535a6e9cba21ad53982a5d9e89b75db4f42"
+  },
+  "policy": "--live stops before source import or CLI/model launch on any mismatch; a changed version requires a reviewed new trial contract.",
+  "requestBound": "ELDA_MAX_TURNS=1 plus the pinned loop H20 one retry: usual 3, maximum 6 provider invocations for all three cases; not measured HTTP requests."
+}

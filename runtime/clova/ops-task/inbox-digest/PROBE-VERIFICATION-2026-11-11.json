@@ -1,0 +1,105 @@
+{
+  "format": "inbox-summarize-probe-offline-verification-v1",
+  "date": "2026-11-11",
+  "scope": "Original summarize() mock transport and isolated-process cleanup branch; no live CLI/provider or operational inbox execution",
+  "passed": true,
+  "checks": {
+    "offline_three_original_prompts": true,
+    "offline_actual_agent_system_captured": true,
+    "offline_only_fixture_server": true,
+    "offline_no_cli_or_model": true,
+    "prompt_mismatch_stops_before_cli": true,
+    "live_version_guard_stops_before_source_import_and_cli": true,
+    "timeout_mock_cleanup_branch": true,
+    "tested_runner_matches_current": true
+  },
+  "actualCliCalls": 0,
+  "actualModelRequests": 0,
+  "actualCommsCalls": 0,
+  "readMarksChanged": 0,
+  "versions": {
+    "digest": {
+      "path": "/home/gino/WorkArea/clova-api-lab/.local/inbox-digest-source-354c4b0.py",
+      "sha256": "21aec59a9da88efbd38ec8b5d8760930b96a5c560b074d3aaa86ffd7ad94a517"
+    },
+    "cli": "afb612f4b71d7919d235bbcfebad8b4045d4edfe"
+  },
+  "runner": {
+    "path": "runtime/clova/ops-task/inbox-digest/summarize-probe.py",
+    "sha256": "568893b0e311e0e69f57643425c48d9e8b3e30c1295460664f793477b585ad3f"
+  },
+  "sourceContract": {
+    "path": "runtime/clova/ops-task/inbox-digest/PROBE-SOURCES.json",
+    "sha256": "9100d29dc5b9cd27685e3fc8db7a1344337a2d88d1fdd88ef57a2b14d293ed92"
+  },
+  "normalCases": [
+    {
+      "id": "INBOX-COPY-A",
+      "promptSha256": "97aa3d45ebc521e9f721910432f5e932735197662808fb7263d9a7c04f689791",
+      "cliProcessesStarted": 0,
+      "failure": null,
+      "mockSummary": "OFFLINE MOCK: transport/parser sentinel; not a model answer."
+    },
+    {
+      "id": "INBOX-COPY-B",
+      "promptSha256": "8c55aff2a40ce75ab87633bdd9c9c78553492ca47c18f5b0841e9cf332f0fb41",
+      "cliProcessesStarted": 0,
+      "failure": null,
+      "mockSummary": "OFFLINE MOCK: transport/parser sentinel; not a model answer."
+    },
+    {
+      "id": "INBOX-COPY-C",
+      "promptSha256": "1b5228ad3b48a263d6bd3fc079d67162fc751383f187af53e386ff0b0f216152",
+      "cliProcessesStarted": 0,
+      "failure": null,
+      "mockSummary": "OFFLINE MOCK: transport/parser sentinel; not a model answer."
+    }
+  ],
+  "failureStop": {
+    "attemptedCases": 1,
+    "skippedCases": 2,
+    "failure": "INBOX-COPY-A: RuntimeError: original summarize prompt differs from frozen input"
+  },
+  "versionGuard": {
+    "attemptedCases": 0,
+    "skippedCases": 3,
+    "cliProcessesStarted": 0,
+    "failure": "RuntimeError: live source contract changed; stop before CLI/model and review a new contract: digest.py",
+    "expectedExitCode": 1
+  },
+  "timeoutMock": {
+    "synthetic": true,
+    "scope": "timeout branch mocked; no process launched, no CLI/MCP/model invoked",
+    "actualProcesses": 0,
+    "timeouts": [
+      90,
+      3
+    ],
+    "cleanupSignals": [
+      15,
+      9
+    ],
+    "returnedStatus": -15,
+    "timeoutFlag": true
+  },
+  "rawLocalEvidence": [
+    {
+      "path": ".local/inbox-probe-offline-v2-20261111/report.json",
+      "sha256": "4eccec3e8c9e92b800cccc69aa0420445e6d1f93ea45aadb7fb4f91c551e4a79"
+    },
+    {
+      "path": ".local/inbox-probe-mismatch-v2-20261111/report.json",
+      "sha256": "85782161d5825ec2ddf6fe207167e0d71bfd71773e01839acd9f91e7c3a81c40"
+    },
+    {
+      "path": ".local/inbox-probe-version-guard-20261111/report.json",
+      "sha256": "feded999f6a08fab5127aa7ad8a684e4b937f0952cfd30d435cc8738e1990e1e"
+    }
+  ],
+  "limitations": [
+    "Mock summaries and zero usage are not model quality or live usage observations.",
+    "Timeout branch was mocked; this report does not claim a live hung descendant was killed.",
+    "Version-guard test selected --live but stopped before profile/source import and before any child launch.",
+    "Local raw artifacts are not tracked; reproduce ordinary offline execution using PLAN."
+  ]
+}

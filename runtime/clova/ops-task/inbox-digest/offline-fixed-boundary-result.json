@@ -1,0 +1,181 @@
+{
+  "schema": "inbox-digest-fixed-boundary-v1",
+  "source_commit": "354c4b018d19ef0d6a11c64f344f04e0a5c95a1e",
+  "source_path": "/home/gino/WorkArea/clova-api-lab/.local/inbox-digest-source-354c4b0.py",
+  "source_sha256": "21aec59a9da88efbd38ec8b5d8760930b96a5c560b074d3aaa86ffd7ad94a517",
+  "source_copy_matches_git_blob": true,
+  "baseline_report_sha256": "e8b158a85dcbcbc9f53054d35627ed224b90e4145e467f941b985578dd253279",
+  "baseline_report_unchanged": true,
+  "ops_schema_comparison": {
+    "commit": "354c4b018d19ef0d6a11c64f344f04e0a5c95a1e",
+    "committed_source_sha256": "32715589f199f77a3d2d1930b09896a89a38f1fcda57816702b952560427e7f3",
+    "fixture_source_sha256": "32715589f199f77a3d2d1930b09896a89a38f1fcda57816702b952560427e7f3",
+    "same_source_bytes_sha256": true
+  },
+  "five_boundaries_verified": true,
+  "remaining_read_before_failure_window": true,
+  "remaining_usage_unreported_log_gap": true,
+  "scope": "source-copy verification with fake subprocess only; deployment itself not independently checked",
+  "real_model_requests": 0,
+  "real_mcp_requests": 0,
+  "real_unread_state_touched": false,
+  "cases": [
+    {
+      "case": "genuine_empty_inbox",
+      "checks_verified": true,
+      "checks": {
+        "success_exit": true,
+        "explicit_empty_output": true,
+        "inbox_only": true
+      },
+      "observation": "pass: explicit empty inbox remains successful",
+      "main_exit_code": 0,
+      "stdout": "운영 에이전트 받은편지함 — 정기업무 0 (새 글 없음)\n",
+      "stderr": "",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "simulated_read_marks_after_return": [],
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "case": "tool_is_error",
+      "checks_verified": true,
+      "checks": {
+        "failure_exit": true,
+        "no_false_empty_output": true,
+        "expected_error_reported": true,
+        "no_read_or_model_after_failure": true
+      },
+      "observation": "pass: lookup/format failure is reported instead of empty success",
+      "main_exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic lookup failure\n",
+      "stderr": "받은편지함 요약 실패: comms MCP 도구 오류(1): synthetic lookup failure\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "simulated_read_marks_after_return": [],
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "case": "jsonrpc_error",
+      "checks_verified": true,
+      "checks": {
+        "failure_exit": true,
+        "no_false_empty_output": true,
+        "expected_error_reported": true,
+        "no_read_or_model_after_failure": true
+      },
+      "observation": "pass: lookup/format failure is reported instead of empty success",
+      "main_exit_code": 2,
+      "stdout": "받은편지함 요약 실패: comms MCP 오류(1): {'code': -32603, 'message': 'synthetic lookup failure'}\n",
+      "stderr": "받은편지함 요약 실패: comms MCP 오류(1): {'code': -32603, 'message': 'synthetic lookup failure'}\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "simulated_read_marks_after_return": [],
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "case": "malformed_inbox_count",
+      "checks_verified": true,
+      "checks": {
+        "failure_exit": true,
+        "no_false_empty_output": true,
+        "expected_error_reported": true,
+        "no_read_or_model_after_failure": true
+      },
+      "observation": "pass: lookup/format failure is reported instead of empty success",
+      "main_exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 받은편지함 글을 알아보지 못했다: '정기업무 받은편지함(안 읽음 2)\\n합성 메시지 (id a000000001)'\n",
+      "stderr": "받은편지함 요약 실패: 받은편지함 글을 알아보지 못했다: '정기업무 받은편지함(안 읽음 2)\\n합성 메시지 (id a000000001)'\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        }
+      ],
+      "simulated_read_marks_after_return": [],
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    },
+    {
+      "case": "valid_inbox_then_model_failure",
+      "checks_verified": true,
+      "checks": {
+        "failure_exit": true,
+        "no_false_empty_output": true,
+        "valid_header_reaches_model": true,
+        "read_before_model": true,
+        "simulated_read_remains": true,
+        "new_stderr_usage_and_retry_log": true,
+        "usage_unreported_flag_not_retained_in_stderr": true
+      },
+      "observation": "failure window remains: read completes before model failure; fixture state is not restored",
+      "main_exit_code": 2,
+      "stdout": "받은편지함 요약 실패: 요약 실패: api_error synthetic provider failure\n",
+      "stderr": "(요약 bot-routine: endReason api_error · usage {'input': 12, 'output': 0, 'cacheRead': 0, 'cacheWrite': 0} · retries 1)\n받은편지함 요약 실패: 요약 실패: api_error synthetic provider failure\n",
+      "calls": [
+        {
+          "operation": "comms_inbox",
+          "arguments": {}
+        },
+        {
+          "operation": "comms_read",
+          "arguments": {
+            "id": "a000000001"
+          }
+        },
+        {
+          "operation": "model_prompt",
+          "simulated_reads_already_done": [
+            "a000000001"
+          ],
+          "synthetic_turn_end": {
+            "t": "turn_end",
+            "data": {
+              "ok": false,
+              "endReason": "api_error",
+              "usage": {
+                "input": 12,
+                "output": 0,
+                "cacheRead": 0,
+                "cacheWrite": 0
+              },
+              "usageUnreported": [
+                "cacheRead",
+                "cacheWrite"
+              ],
+              "diag": {
+                "retries": 1
+              }
+            }
+          }
+        }
+      ],
+      "simulated_read_marks_after_return": [
+        "a000000001"
+      ],
+      "real_model_requests": 0,
+      "real_mcp_requests": 0,
+      "real_unread_state_touched": false
+    }
+  ],
+  "verification_completed": true
+}
