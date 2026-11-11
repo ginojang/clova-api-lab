@@ -1,0 +1,263 @@
+{
+  "salt": "8b1595e2ee0878b4780233640d4bea472a57035c60b3610d",
+  "source": "runtime/memory-lab/results/policy-slim-v10-confirmation-live-2026-11-11.json",
+  "sha256": "0471215bb9ee79bc0ef62c6ad13999cf8bbe9d6811d7823cff7cb1873438340f",
+  "items": [
+    {
+      "id": "88c5c57625ab23",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "reading_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "02f060d21d33dd",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "reading_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6707a1773d4b59",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "reading_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "5c368a8329e6e0",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "reading_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "5687115dc87755",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "cards_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "df36ffd1bdabe0",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "cards_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "8d8c7d5d7efe49",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "cards_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "cf6faa18cb3ec4",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "cards_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "16e0f9f71abd5f",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "reading_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "29b2b6b5d9ef6e",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "reading_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b78a23000a0e8f",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "reading_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "7d30da75ad346c",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "reading_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6bb203773bec2d",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "cards_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "fe416aa91da10e",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "cards_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "3bf3a7118c1cea",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "cards_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "c3618800a47801",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "cards_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "dc06df5a567b5a",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "reading_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "7de569c27aa087",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "reading_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "d2a320973d0ae3",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "reading_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "9d5428529cd41b",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "reading_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "54ccfdf61e1d7f",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "cards_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "0b672ec6e783f4",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "cards_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6dab61b8ef1379",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "cards_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a3b8a18da8879b",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "cards_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6c06f55220c909",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "reading_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "6aa10074d10bce",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "reading_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "86db3f938ef67b",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "reading_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "547933f284fd49",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "reading_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f775bd715716a9",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "cards_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "bff232b47f21dd",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "cards_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "7658785520be43",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "cards_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "70d77e16e82290",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "cards_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Unexpected or weakened v10 acceptance profile
++ actual - expected
+
+  {
+    deliveredPerVariant: 16,
+    id: 'same-hcx007-v8-slim-v10-quality-or-efficiency-v1',
+    maximumCriticalFailureIncrease: 0,
+    maximumErrors: 0,
+    maximumExternalCalls: 32,
+    maximumRepairs: 0,
++   minimumInputTokenReductionPercent: '***',
+-   minimumInputTokenReductionPercent: 20,
+    minimumMatchedPairs: 16,
++   minimumOutputTokenReductionPercent: '***',
+-   minimumOutputTokenReductionPercent: 20,
+    minimumQualitySufficientGain: 1,
+    plannedCalls: 32,
+    profiles: {
+      baseline: {
+        model: 'clova:HCX-007',
+
+    at evaluateV10 (file:///home/gino/WorkArea/clova-api-lab/runtime/memory-lab/policy/acceptance-v10.mjs:109:10)
+    at file:///home/gino/WorkArea/clova-api-lab/runtime/memory-lab/policy/acceptance-v10.mjs:299:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:437:25)
+    at async node:internal/modules/esm/loader:639:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    id: 'same-hcx007-v8-slim-v10-quality-or-efficiency-v1',
+    profiles: {
+      baseline: { model: 'clova:HCX-007', policy: 'composed-v8' },
+      structured: { model: 'clova:HCX-007', policy: 'slim-v10' }
+    },
+    minimumMatchedPairs: 16,
+    requiredFullReviews: 2,
+    plannedCalls: 32,
+    maximumExternalCalls: 32,
+    deliveredPerVariant: 16,
+    maximumRepairs: 0,
+    maximumErrors: 0,
+    protectedAxes: [
+      'name',
+      'register',
+      'personality',
+      'eventMeaning',
+      'currentness',
+      'capabilityHonesty',
+      'empathy',
+      'practicalHelp'
+    ],
+    protectedMinimumSufficientGain: 0,
+    protectedMaximumPairedWorsened: 0,
+    maximumCriticalFailureIncrease: 0,
+    qualityGainAxes: [ 'register', 'personality', 'practicalHelp' ],
+    minimumQualitySufficientGain: 1,
+    minimumInputTokenReductionPercent: '***',
+    minimumOutputTokenReductionPercent: '***',
+    requireCompleteUsageForEfficiency: true,
+    requireEveryReviewProtected: true,
+    progressRoutes: [ 'quality_gain', 'efficiency_gain' ]
+  },
+  expected: {
+    id: 'same-hcx007-v8-slim-v10-quality-or-efficiency-v1',
+    profiles: {
+      baseline: { model: 'clova:HCX-007', policy: 'composed-v8' },
+      structured: { model: 'clova:HCX-007', policy: 'slim-v10' }
+    },
+    minimumMatchedPairs: 16,
+    requiredFullReviews: 2,
+    plannedCalls: 32,
+    maximumExternalCalls: 32,
+    deliveredPerVariant: 16,
+    maximumRepairs: 0,
+    maximumErrors: 0,
+    protectedAxes: [
+      'name',
+      'register',
+      'personality',
+      'eventMeaning',
+      'currentness',
+      'capabilityHonesty',
+      'empathy',
+      'practicalHelp'
+    ],
+    protectedMinimumSufficientGain: 0,
+    protectedMaximumPairedWorsened: 0,
+    maximumCriticalFailureIncrease: 0,
+    qualityGainAxes: [ 'register', 'personality', 'practicalHelp' ],
+    minimumQualitySufficientGain: 1,
+    minimumInputTokenReductionPercent: 20,
+    minimumOutputTokenReductionPercent: 20,
+    requireCompleteUsageForEfficiency: true,
+    requireEveryReviewProtected: true,
+    progressRoutes: [ 'quality_gain', 'efficiency_gain' ]
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

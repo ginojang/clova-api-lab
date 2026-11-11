@@ -8,6 +8,7 @@ import { inside, clean, secretFile } from '../../clova/common.ts';
 import { PolicySession, projectRoot as root } from './session.mjs';
 import { decodeComposedReply } from './composed.mjs';
 import { decodeEnactedReply } from './enacted.mjs';
+import { decodeSlimReply } from './slim.mjs';
 import { responseContract } from './structured.mjs';
 import { runtimeCapabilities } from './compiler.mjs';
 import { clovaGenerationConfig } from '../../clova/clova-model-config.ts';
@@ -32,16 +33,16 @@ assert.ok(Number.isSafeInteger(callLimit) && callLimit >= 1 && callLimit <= 60);
 assert.ok(['clova:HCX-005', 'clova:HCX-007'].includes(plan.model));
 const profiles = Object.fromEntries(plan.variants.map(variant => [variant, plan.executionProfiles?.[variant] ?? { model: plan.model, policy: variant }]));
 const hasExtraCall = policy => policy.startsWith('guarded') || policy === 'voiced-v3';
-const isComposed = policy => ['composed-v8', 'enacted-v9'].includes(policy);
+const isComposed = policy => ['composed-v8', 'enacted-v9', 'slim-v10'].includes(policy);
 const isStructured = policy => policy.startsWith('structured-') || isComposed(policy);
-const decodeComposition = policy => policy === 'enacted-v9' ? decodeEnactedReply : decodeComposedReply;
+const decodeComposition = policy => policy === 'slim-v10' ? decodeSlimReply : policy === 'enacted-v9' ? decodeEnactedReply : decodeComposedReply;
 for (const profile of Object.values(profiles)) {
   assert.ok(['clova:HCX-005', 'clova:HCX-007'].includes(profile.model));
-  assert.ok(['baseline', 'compiled', 'guarded', 'compiled-v2', 'guarded-v2', 'voiced-v3', 'structured-v5', 'structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9'].includes(profile.policy));
+  assert.ok(['baseline', 'compiled', 'guarded', 'compiled-v2', 'guarded-v2', 'voiced-v3', 'structured-v5', 'structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9', 'slim-v10'].includes(profile.policy));
 }
 assert.ok(plan.budget.draftCalls + Object.values(profiles).filter(p => hasExtraCall(p.policy)).length * plan.personas.length * prompts <= callLimit);
 const report = { schemaVersion: 1, runId: plan.id, startedAt: new Date().toISOString(), model: new Set(Object.values(profiles).map(p => p.model)).size > 1 ? 'per-execution-profile' : plan.model, executionProfiles: profiles, framework: 'pi', synthetic: false, provider: 'NAVER CLOVA Studio official HTTPS', planSha256: hash(planPath), plan, rawArtifacts: relative(root, runDir), sourceSnapshots: {}, callLimit, modelRequests: 0, responses: 0, knownUsage: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, usageComplete: true, cost: null, groups: [], executionCompleted: false };
-for (const name of ['policy/live.mjs', 'policy/session.mjs', 'policy/compiler.mjs', 'policy/guard.mjs', 'policy/guard-v2.mjs', 'policy/compiler-v2.mjs', 'policy/register.mjs', 'policy/voice.mjs', 'policy/structured.mjs', 'policy/focused.mjs', 'policy/demonstrated.mjs', 'policy/composed.mjs', 'policy/enacted.mjs', 'policy/acceptance-v9.mjs', 'policy/blind-packet.mjs', 'policy/summarize.mjs', '../clova/common.ts', relative(resolve(here, '..'), planPath), 'pi/cli.mjs', 'pi/store.mjs', 'pi/provider-bridge.mjs', '../clova/provider.ts', '../clova/clova-model-config.ts']) {
+for (const name of ['policy/live.mjs', 'policy/session.mjs', 'policy/compiler.mjs', 'policy/guard.mjs', 'policy/guard-v2.mjs', 'policy/compiler-v2.mjs', 'policy/register.mjs', 'policy/voice.mjs', 'policy/structured.mjs', 'policy/focused.mjs', 'policy/demonstrated.mjs', 'policy/composed.mjs', 'policy/enacted.mjs', 'policy/slim.mjs', 'policy/acceptance-v9.mjs', ...(plan.evaluationStage === 'confirmation' ? ['policy/acceptance-v10.mjs'] : []), 'policy/blind-packet.mjs', 'policy/summarize.mjs', '../clova/common.ts', relative(resolve(here, '..'), planPath), 'pi/cli.mjs', 'pi/store.mjs', 'pi/provider-bridge.mjs', '../clova/provider.ts', '../clova/clova-model-config.ts']) {
   const source = resolve(here, '..', name), target = join(runDir, 'source', name.replace('../', 'parent/'));
   mkdirSync(dirname(target), { recursive: true }); writeFileSync(target, readFileSync(source));
   report.sourceSnapshots[name] = { sha256: hash(source), path: relative(root, target) };
@@ -64,7 +65,7 @@ try {
     const profile = profiles[variant];
     const dir = join(runDir, persona.key, variant); mkdirSync(dir, { recursive: true });
     const fixture = join(dir, 'persona.json'); writeFileSync(fixture, JSON.stringify(persona.persona, null, 2) + '\n');
-    const group = { responseFormatScope: ['structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9'].includes(profile.policy) ? 'per prompt: exact native schema in apiAttemptLog.context.responseFormat' : 'group nativeGeneration', personaKey: persona.key, variant, model: profile.model, policy: profile.policy, nativeGeneration: clovaGenerationConfig(profile.model, { maxTokens: plan.generation.maxTokens, ...(profile.policy === 'structured-v5' ? { responseFormat: responseContract(persona.persona, runtimeCapabilities('none')) } : {}) }, 0), personaHash: hash(fixture), steps: [], operations: [], processes: [], completed: false };
+    const group = { responseFormatScope: ['structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9', 'slim-v10'].includes(profile.policy) ? 'per prompt: exact native schema in apiAttemptLog.context.responseFormat' : 'group nativeGeneration', personaKey: persona.key, variant, model: profile.model, policy: profile.policy, nativeGeneration: clovaGenerationConfig(profile.model, { maxTokens: plan.generation.maxTokens, ...(profile.policy === 'structured-v5' ? { responseFormat: responseContract(persona.persona, runtimeCapabilities('none')) } : {}) }, 0), personaHash: hash(fixture), steps: [], operations: [], processes: [], completed: false };
     report.groups.push(group); save();
     let session, processIndex = 0;
     const start = async () => {

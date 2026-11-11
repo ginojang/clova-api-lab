@@ -1,0 +1,20 @@
+✔ prospective confirmation fixes two topics, separate corrections, 32 calls and every denominator (5.587717ms)
+✔ exactly 20 percent input AND output reduction passes efficiency only at a quality ceiling (22.354847ms)
+✔ both token reductions are required and the threshold cannot be rounded up (30.207891ms)
+✔ quality gain is an independent route and both routes can pass together (12.334043ms)
+✔ every axis including personality and help forbids offsetting paired regression (49.526981ms)
+✔ one review cannot substitute for two protected reviews, and critical increases fail (13.493631ms)
+✔ incomplete or unreconciled actual usage cannot create efficiency progress (38.192379ms)
+✔ wrong source profile, stage, request model or weakened numeric gate is rejected (39.758657ms)
+✔ raw output, schema and exact visible rendering must really use the reply-only contract (38.666047ms)
+✔ missing delivery, extra calls, repairs, truncation or changed display fail coverage (47.681474ms)
+✔ source hash, duplicate review/summary and missing review cannot be accepted (20.227945ms)
+✔ CLI binds file hashes and writes an exclusive immutable acceptance artifact (352.266946ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 950.937482

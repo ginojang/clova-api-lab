@@ -1,0 +1,15 @@
+✔ restores exactly two twenties and invokes the unchanged gate with original evidence hashes (80.92356ms)
+✔ different original plan bytes or snapshot digests are rejected (228.498175ms)
+✔ nonredacted differences anywhere else in the embedded plan are rejected (258.358173ms)
+✔ only exact markers are recoverable; numeric, missing and malformed threshold values fail (364.185599ms)
+✔ a matching fabricated frozen plan still cannot change the fixed twenty percent profile (44.987721ms)
+✔ untrusted snapshot paths and summaries detached from the original source are rejected (65.502571ms)
+✔ CLI verifies actual snapshot bytes and refuses to overwrite its result (448.509002ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1756.508677

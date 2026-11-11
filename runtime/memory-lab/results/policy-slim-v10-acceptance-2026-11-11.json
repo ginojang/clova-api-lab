@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "acceptanceId": "same-hcx007-v8-slim-v10-quality-or-efficiency-v1",
+  "planId": "persona-slim-v10-two-topics-2026-11-11",
+  "sourceSha256": "0471215bb9ee79bc0ef62c6ad13999cf8bbe9d6811d7823cff7cb1873438340f",
+  "executionProfiles": {
+    "baseline": {
+      "model": "clova:HCX-007",
+      "policy": "composed-v8"
+    },
+    "structured": {
+      "model": "clova:HCX-007",
+      "policy": "slim-v10"
+    }
+  },
+  "coverage": {
+    "pass": true,
+    "checks": {
+      "completed": true,
+      "fullCoverage": true,
+      "noErrorsOrRepairs": true,
+      "reportedCoverage": true,
+      "callsWithinCap": true,
+      "exactlyOneCallPerReply": true
+    },
+    "validPairs": 16,
+    "deliveredByVariant": {
+      "baseline": 16,
+      "structured": 16
+    },
+    "loggedAttempts": 32,
+    "externalCalls": 32,
+    "providerAttempts": 32
+  },
+  "reviewDecisions": [
+    {
+      "reviewSha256": "895d047cb9c70970bad39371905b012e6ed3e9ec7aa1204b211b66629d096d3f",
+      "summarySha256": "b4b30f62879ffe7ad06775cee8ce97161873ee929deae30ca17acf299b405f8f",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "protectedAxes": {
+        "name": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 15,
+          "improved": 0,
+          "unchanged": 16,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "register": {
+          "pairs": 16,
+          "baselineSufficient": 14,
+          "candidateSufficient": 16,
+          "improved": 2,
+          "unchanged": 14,
+          "worsened": 0,
+          "sufficientGain": 2,
+          "pass": true
+        },
+        "personality": {
+          "pairs": 16,
+          "baselineSufficient": 16,
+          "candidateSufficient": 16,
+          "improved": 0,
+          "unchanged": 16,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "eventMeaning": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 16,
+          "baselineSufficient": 13,
+          "candidateSufficient": 16,
+          "improved": 3,
+          "unchanged": 13,
+          "worsened": 0,
+          "sufficientGain": 3,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 12,
+          "baselineSufficient": 12,
+          "candidateSufficient": 12,
+          "improved": 0,
+          "unchanged": 12,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "practicalHelp": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        }
+      },
+      "critical": {
+        "baseline": 1,
+        "candidate": 1,
+        "increase": 0,
+        "pass": true
+      },
+      "protectedPass": true,
+      "qualityGains": {
+        "register": {
+          "sufficientGain": 2,
+          "minimumGain": 1,
+          "ceiling": false,
+          "pass": true
+        },
+        "personality": {
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "practicalHelp": {
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        }
+      },
+      "qualityGain": true
+    },
+    {
+      "reviewSha256": "86abc361e5d653789ac3d4c039f7fd8fdd15b37285316fc1697023f91cf417d4",
+      "summarySha256": "2ad6d2cd95e7af6ab9e5a98fa13a8e68e12fe75edc72d55c0033bf364c8b8395",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "protectedAxes": {
+        "name": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 15,
+          "improved": 0,
+          "unchanged": 16,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "register": {
+          "pairs": 16,
+          "baselineSufficient": 14,
+          "candidateSufficient": 16,
+          "improved": 2,
+          "unchanged": 14,
+          "worsened": 0,
+          "sufficientGain": 2,
+          "pass": true
+        },
+        "personality": {
+          "pairs": 16,
+          "baselineSufficient": 16,
+          "candidateSufficient": 16,
+          "improved": 0,
+          "unchanged": 16,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "eventMeaning": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 16,
+          "baselineSufficient": 13,
+          "candidateSufficient": 15,
+          "improved": 2,
+          "unchanged": 14,
+          "worsened": 0,
+          "sufficientGain": 2,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 12,
+          "baselineSufficient": 12,
+          "candidateSufficient": 11,
+          "improved": 0,
+          "unchanged": 11,
+          "worsened": 1,
+          "sufficientGain": -1,
+          "pass": false
+        },
+        "practicalHelp": {
+          "pairs": 8,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 0,
+          "unchanged": 8,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        }
+      },
+      "critical": {
+        "baseline": 1,
+        "candidate": 1,
+        "increase": 0,
+        "pass": true
+      },
+      "protectedPass": false,
+      "qualityGains": {
+        "register": {
+          "sufficientGain": 2,
+          "minimumGain": 1,
+          "ceiling": false,
+          "pass": true
+        },
+        "personality": {
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "practicalHelp": {
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        }
+      },
+      "qualityGain": false
+    }
+  ],
+  "bothProtected": false,
+  "qualityGain": false,
+  "efficiencyGain": false,
+  "overallPass": false,
+  "disposition": "quality_protection_failed",
+  "accounting": {
+    "actualUsage": {
+      "baseline": {
+        "input": 57978,
+        "output": 4656,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "structured": {
+        "input": 38876,
+        "output": 2754,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    "completeUsage": true,
+    "reconciledUsage": true,
+    "tokenReductions": {
+      "input": {
+        "baseline": 57978,
+        "candidate": 38876,
+        "reductionPercent": 32.94697988892339,
+        "minimumReductionPercent": 20,
+        "pass": true
+      },
+      "output": {
+        "baseline": 4656,
+        "candidate": 2754,
+        "reductionPercent": 40.850515463917525,
+        "minimumReductionPercent": 20,
+        "pass": true
+      }
+    },
+    "efficiencyMeasuredPass": true,
+    "reportedUsage": {
+      "input": 96854,
+      "output": 7410,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "reportedUsageComplete": true,
+    "cost": null,
+    "costBasis": "unknown",
+    "qualityGateUsesCost": false
+  },
+  "trustBoundary": "Summaries must first pass summarize.mjs against source/packet/map/raw-review. This tool does not independently revalidate review quotes or prove independence. Both full reviews must be frozen before unmasking.",
+  "limitations": [
+    "Same-HCX-007 two-topic confirmation, not human validation or statistical significance.",
+    "Efficiency-only progress does not imply improved personality/register/help.",
+    "All eight axes forbid paired regression, including a decline masked by net sufficient gains.",
+    "Compiler/schema change together; token savings do not establish a monetary amount.",
+    "Incomplete or unreconciled usage prevents efficiency acceptance, but does not fabricate zero usage."
+  ],
+  "reportRecovery": {
+    "kind": "two_numeric_threshold_redactions_only",
+    "sourceSha256": "0471215bb9ee79bc0ef62c6ad13999cf8bbe9d6811d7823cff7cb1873438340f",
+    "frozenPlanSha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+    "frozenAcceptanceSha256": "9a23df1322195319aaf990aa66bf73e3ff865d2917be0b9d96d9ff7a475aad20",
+    "sourceAndSummaryBytesUnchanged": true,
+    "originalSummarySha256s": [
+      "b4b30f62879ffe7ad06775cee8ce97161873ee929deae30ca17acf299b405f8f",
+      "2ad6d2cd95e7af6ab9e5a98fa13a8e68e12fe75edc72d55c0033bf364c8b8395"
+    ],
+    "restoredFields": [
+      {
+        "path": "plan.numericAcceptance.minimumInputTokenReductionPercent",
+        "serializedValue": "***",
+        "restoredValue": 20
+      },
+      {
+        "path": "plan.numericAcceptance.minimumOutputTokenReductionPercent",
+        "serializedValue": "***",
+        "restoredValue": 20
+      }
+    ],
+    "frozenSnapshots": {
+      "plan": {
+        "sha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+        "path": ".local/policy-live/1794371610201-3568004/source/policy/eval-plan-slim.json",
+        "bytesVerified": true
+      },
+      "acceptance": {
+        "sha256": "9a23df1322195319aaf990aa66bf73e3ff865d2917be0b9d96d9ff7a475aad20",
+        "path": ".local/policy-live/1794371610201-3568004/source/policy/acceptance-v10.mjs",
+        "bytesVerified": true
+      }
+    },
+    "equalityCheck": "After restoring exactly the two marker values in an in-memory copy, the entire embedded plan deep-equals the original frozen plan.",
+    "gateUnchanged": true,
+    "limitations": "This repairs serialization of nonsecret evaluation constants only. It does not relax redaction, rewrite evidence, change rubric/grades/gates, revalidate every review quote, or prove reviewer independence."
+  }
+}

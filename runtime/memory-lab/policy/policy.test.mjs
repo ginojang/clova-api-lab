@@ -248,3 +248,43 @@ test('enacted invalid plan is preserved as evidence without a fallback answer or
     assert.equal(events.filter(e => e.t === 'text').length, 0);
   } finally { await session.close(); }
 });
+
+test('slim Pi uses only the native reply contract and replays exact visible words without synthetic metadata', async () => {
+  const parts = { identity: ' 저는 단비예요. ', acknowledgement: '', answer: '직접 알림을 보내지는 못해요.', next_step: '적힌 첫 단어를 소리 내어 읽어 봐요. 어디서 멈추는지 알 수 있어요.' };
+  const raw = JSON.stringify({ reply: parts });
+  const expected = Object.values(parts).filter(x => x.length > 0).join('\n\n');
+  const session = await fixture('slim-v10', [raw, raw]);
+  try {
+    const events = await session.command({ op: 'prompt', text: '네 이름을 밝히고 읽기 연습을 도와줘.' });
+    const decoded = events.find(e => e.t === 'structured_reply').data;
+    assert.equal(decoded.rawContent, raw);
+    assert.equal(decoded.text, expected);
+    assert.deepEqual(decoded.metadata, {});
+    assert.equal(decoded.semanticVerified, false);
+    const context = events.find(e => e.t === 'model_context').data;
+    assert.deepEqual(Object.keys(context.responseFormat.schema.properties), ['reply']);
+    assert.deepEqual(context.responseFormat.schema.required, ['reply']);
+    assert.equal(context.demonstrationCount, 0);
+    assert.ok(!context.systemPrompt.includes('메타데이터가 맞아도'));
+    assert.equal(events.find(e => e.t === 'text').data.text, expected);
+    assert.equal(events.find(e => e.t === 'turn_end').data.correctionAttempts, 0);
+    assert.equal(events.filter(e => e.t === 'model_context').length, 1);
+    const next = await session.command({ op: 'prompt', text: '기억한 말투로 이어가 줘.' });
+    const history = JSON.stringify(next.find(e => e.t === 'model_context').data.messages);
+    assert.ok(history.includes(JSON.stringify(expected).slice(1, -1)));
+    assert.ok(!history.includes('"self_name"'));
+    assert.ok(!history.includes('"support_plan"'));
+  } finally { await session.close(); }
+});
+
+test('slim rejects unexpected hidden fields instead of accepting an old protocol or retrying', async () => {
+  const raw = JSON.stringify({ self_name: '단비', reply: { identity: '저는 단비예요.', acknowledgement: '', answer: '', next_step: '' } });
+  const session = await fixture('slim-v10', [raw]);
+  try {
+    const events = await session.command({ op: 'prompt', text: '네 이름을 알려줘.' });
+    assert.equal(events.find(e => e.t === 'turn_end').data.endReason, 'structured_invalid');
+    assert.equal(events.find(e => e.t === 'structured_reply_invalid').data.rawContent, raw);
+    assert.equal(events.filter(e => e.t === 'model_context').length, 1);
+    assert.equal(events.filter(e => e.t === 'text').length, 0);
+  } finally { await session.close(); }
+});

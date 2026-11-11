@@ -6,6 +6,8 @@ Pi Agent + 자체 SQLite 계층, Agno Agent + native MemoryManager/UserMemory/Sq
 
 추가 후보 `enacted-v9`를 같은 HCX-007의 `composed-v8`과 비교한 16회 시험은 모두 전달됐지만, 두 독립 평가 모두 성격·도움 개선을 확인하지 못했고 말투는 두 문항 퇴행했다. **비교 우위 미입증으로 v9를 채택하지 않으며**, 명시적으로 선택 가능한 실험 정책으로 보존한다. 실제 시행과 판단은 [페르소나 후속 보고서](../../PERSONA-CONTINUATION-2026-11-11.md)에 기록한다. CLI 기본 정책은 `baseline`이며 수동 실행 예시의 v8도 추천 승격을 뜻하지 않는다. 새 정책은 독립 Pi CLI 경로에 적용하며 실제 Elda-CLI 등록·Agno 적용·운영 웹 배포의 완료를 뜻하지 않는다.
 
+다음 실험 정책 `slim-v10`은 숨은 자기보고·행동 계획을 제거하고 `reply` 안의 네 표시 문자열만 생성한다. 연구·개발 r1/r2 진단과 새 두 주제의 확인 시험은 [두 번째 사이클 보고서](../../PERSONA-CYCLE2-2026-11-11.md)에 구분한다. `--policy slim-v10`으로 명시적으로 선택할 수 있으며 CLI 기본 정책과 운영 적용 범위는 바꾸지 않았다. 실제 품질·효율 판단은 해당 보고서의 동결된 결과를 따른다.
+
 별도 `live.mjs`는 **실제 HCX-005**의 말투·정체성·기억 활용을 검사한다. 위 구조 검사와 달리 API 크레딧을 사용하며, 도구·자동 페르소나 교정을 제외한 첫 응답을 보존한다. [평가 설계](live-eval-design.md)와 아래 실행 방법을 참고한다.
 
 실행 결과: [실제 모델 분석](../../LIVE-PERSONA-RESULTS-2026-11-10.md) · [32개 응답 원문](results/live-transcript.md) · [독립 AI 의미 평가](results/live-review.md). API 완료 32/32와 페르소나 유지 평가는 구분한다.
@@ -73,6 +75,36 @@ node runtime/memory-lab/policy/acceptance-v9.mjs \
 ```
 
 두 평가 모두 성격·실습 도움의 충분 수가 각각 1개 이상 늘어야 한다. 이름·말투·사건 의미·현재성·기능 정직성·공감은 충분 수 감소와 질문 쌍별 점수 퇴행이 모두 없어야 하며, 중대 실패도 늘면 안 된다. 16응답 전체 전달·8개 유효 쌍·요청당 한 번 생성이 선행 조건이다. 기존 요약 도구의 `compiledGate`가 아닌 **이번 사전 기준의 `acceptance-v9.mjs` 판정**을 사용한다. 이전 실험의 기준과 실패 기록은 수정하지 않는다. 자세한 계약·단일 CLI 실행·판정 한계는 [정책 README](policy/README.md)를 따른다.
+
+## 같은 HCX-007의 v8·slim-v10 확인 시험
+
+slim-v10의 출력은 최상위 `reply` 객체 하나와 그 안의 자기소개·공감·답변·다음 행동 네 모델 생성 문자열이다. 실제 운영자 정체성·연결 capabilities·승인 기억은 입력에서 유지하며, 모델이 이를 숨은 metadata로 다시 선언하지 않는다. decoder는 `metadata:{}`, `semanticVerified:false`를 반환하고 표시 원문만 연결한다. 구조 검사 통과가 사실·말투·성격의 의미 검증은 아니다.
+
+```bash
+python3 runtime/memory-lab/live-from-deployment.py --live --policy-eval \
+  --plan runtime/memory-lab/policy/eval-plan-slim.json \
+  --output runtime/memory-lab/results/policy-slim-new-run.json
+```
+
+새 [확인 계획](policy/eval-plan-slim.json)은 인물 2개·주제 2개·주제별 질문 4개를 조건 2개에 적용하는 **32회 실제 API 비교**다. 대조군은 HCX-007+composed-v8, 후보는 HCX-007+slim-v10이다. 기존 개발 r1·r2의 합계 16호출은 알려진 키보드 사례를 사용한 별도 진단이므로 이 확인 시험의 품질 증거에 섞지 않는다. 양 조건의 모델·온도·출력 상한·thinking·도구·기억 정정·재시작을 맞추고, 재시도·교정 없이 모든 첫 시도를 보존한다. 위 명령은 과금 가능하며 새 output 경로를 사용해야 한다. 웹 배포 명령은 아니다.
+
+실행 원문에서 만든 같은 익명 패킷을 두 평가자가 전체 채점한 뒤 각 리뷰를 고정한다. 조건을 공개하기 전에 리뷰 두 개가 완성되어야 한다. 각각 `summarize.mjs SOURCE PACKET MAP REVIEW SUMMARY`로 원문·인용·분모·해시를 검증하고, 그 다음 별도 판정 도구를 실행한다.
+
+```bash
+# acceptance-v10-report.mjs SOURCE FROZEN_PLAN SUMMARY1 SUMMARY2 OUTPUT
+node runtime/memory-lab/policy/acceptance-v10-report.mjs \
+  runtime/memory-lab/results/policy-slim-new-run.json \
+  runtime/memory-lab/policy/eval-plan-slim.json \
+  runtime/memory-lab/results/policy-slim-new-primary-summary.json \
+  runtime/memory-lab/results/policy-slim-new-secondary-summary.json \
+  runtime/memory-lab/results/policy-slim-new-acceptance.json
+```
+
+현재 보고서에는 일반 민감정보 제거기가 키 이름의 `Token`에 반응해 사전 기준의 두 절감률 숫자 20을 `***`로 저장한 문제가 있다. 직접 `acceptance-v10.mjs` 호출은 이 때문에 profile 검증에 실패한다. [복구 wrapper](policy/acceptance-v10-report.mjs)는 원본 계획·당시 snapshot·판정 코드의 SHA와 나머지 전체 계획의 동일성을 확인하고, **정확히 그 두 비밀이 아닌 숫자만 메모리 안에서 복원해 동결된 `evaluateV10`을 그대로 호출**한다. 원문·리뷰·요약·기준은 바꾸지 않으며 source/summary의 원래 해시와 복구 출처를 결과에 남긴다. 해당 실행의 snapshot 파일이 필요하며, 세부 복구 조건은 [정책 README](policy/README.md)에 있다.
+
+사전 기준은 두 독립 리뷰 모두에서 모든 8축의 충분 응답 수 감소·질문 쌍별 점수 퇴행·중요 실패 증가가 없어야 한다. 그 위에서 A는 말투·성격·실용 도움 중 최소 한 축의 충분 응답 +1 이상, B는 실제 총 입력·출력 토큰 각각 20% 이상 감소를 요구한다. B만 성립하면 성격 향상이 아니라 품질 보존에 따른 효율 개선으로 표시한다. `compiledGate`나 v9 판정 대신 **wrapper가 반환한 기존 판정기의 `qualityGain`, `efficiencyGain`, `overallPass`, `disposition`**을 확인한다.
+
+단일 세션의 `--policy slim-v10` 실행 명령과 전체 검토 절차는 [정책 README](policy/README.md)에 있다. 기본 정책은 계속 `baseline`이고 일반 수동 예시도 v8로 유지한다. slim은 명시 선택하는 독립 Pi CLI 실험이며 실제 Elda-CLI 레지스트리·Agno·운영 웹에는 별도 연결이 필요하다. 최종 실행·평가·한계는 [두 번째 사이클 보고서](../../PERSONA-CYCLE2-2026-11-11.md)를 따른다.
 
 ## 실제 모델 평가
 

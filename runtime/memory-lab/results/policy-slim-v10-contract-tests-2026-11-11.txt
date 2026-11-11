@@ -1,0 +1,15 @@
+✔ native contract requests only visible reply parts and keeps actual authority out of generated metadata (8.989374ms)
+✔ configuration instructions are smaller than v8 without collapsing an arbitrary role into a category (2.259461ms)
+✔ quoted name requests remain data; supported registers and arbitrary operator tones stay distinct (1.265748ms)
+✔ strict decoder rejects hidden fields, nonobjects, partial shapes and empty visible replies (2.775524ms)
+✔ rendering preserves every model character and fixed part order without semantic repair (0.612026ms)
+✔ trusted context keeps complete approved records, capability flags and final style within the budget (2.614957ms)
+✔ fresh names, roles and runtime settings are not fixture substitutions or shared mutable objects (1.427642ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 173.023905

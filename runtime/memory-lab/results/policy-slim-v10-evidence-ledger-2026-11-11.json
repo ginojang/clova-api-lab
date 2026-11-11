@@ -1,0 +1,1431 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-11T04:52:13.888357+00:00",
+  "scope": "Cycle2: development revisions r1/r2 (8 calls each), followed by a frozen two-topic confirmation (32 calls). Development data is excluded from confirmation acceptance.",
+  "trials": [
+    {
+      "stage": "development",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-slim-v10-development-live-2026-11-11.json",
+        "sha256": "94e37f9dd6ecd13573701a66364ca2950b65502254100f3d129cdc2fc7a10f64",
+        "bytes": 423148
+      },
+      "planSha256": "3d10d4b0288f120c5a558c044aa90919bfcbf64a3384faa9c2be171796e49ded",
+      "summary": {
+        "attemptedPrompts": 8,
+        "delivered": 8,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "composed-v8"
+          },
+          "externalCalls": 4,
+          "usage": {
+            "input": 14066,
+            "output": 1368,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 6755.5,
+          "medianLatencyMs": 6669.5,
+          "rangeLatencyMs": [
+            6426,
+            7257
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 4,
+          "usage": {
+            "input": 8754,
+            "output": 560,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 2828.25,
+          "medianLatencyMs": 2858.5,
+          "rangeLatencyMs": [
+            2233,
+            3363
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "ae6135c981cf5a7056178964f53a06e17504326a347235fabdb6ffeaec48af21",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/slim.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/acceptance-v9.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794371145212-3559543/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-slim-development.json": {
+          "sha256": "3d10d4b0288f120c5a558c044aa90919bfcbf64a3384faa9c2be171796e49ded",
+          "path": ".local/policy-live/1794371145212-3559543/source/policy/eval-plan-slim-development.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+          "path": ".local/policy-live/1794371145212-3559543/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794371145212-3559543/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794371145212-3559543/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794371145212-3559543/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794371145212-3559543/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    },
+    {
+      "stage": "development-r2",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-slim-v10-development-r2-live-2026-11-11.json",
+        "sha256": "9edbe593a11ea06cef4a6739a83cb6c2170d803443733d027ef81b8c01904c82",
+        "bytes": 423325
+      },
+      "planSha256": "577b838411b4a275edabcb9e62b09a63eb572fd48d30567b5b50a7541f1a2e06",
+      "summary": {
+        "attemptedPrompts": 8,
+        "delivered": 8,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "composed-v8"
+          },
+          "externalCalls": 4,
+          "usage": {
+            "input": 14044,
+            "output": 1297,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 5884.25,
+          "medianLatencyMs": 6019.0,
+          "rangeLatencyMs": [
+            5245,
+            6254
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 4,
+          "usage": {
+            "input": 9194,
+            "output": 630,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3402.75,
+          "medianLatencyMs": 3501.5,
+          "rangeLatencyMs": [
+            2364,
+            4244
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/slim.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/acceptance-v9.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794371473154-3565646/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-slim-development-r2.json": {
+          "sha256": "577b838411b4a275edabcb9e62b09a63eb572fd48d30567b5b50a7541f1a2e06",
+          "path": ".local/policy-live/1794371473154-3565646/source/policy/eval-plan-slim-development-r2.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+          "path": ".local/policy-live/1794371473154-3565646/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794371473154-3565646/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794371473154-3565646/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794371473154-3565646/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794371473154-3565646/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    },
+    {
+      "stage": "confirmation",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-slim-v10-confirmation-live-2026-11-11.json",
+        "sha256": "0471215bb9ee79bc0ef62c6ad13999cf8bbe9d6811d7823cff7cb1873438340f",
+        "bytes": 1590024
+      },
+      "planSha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+      "summary": {
+        "attemptedPrompts": 32,
+        "delivered": 32,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "composed-v8"
+          },
+          "externalCalls": 16,
+          "usage": {
+            "input": 57978,
+            "output": 4656,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 5489.9375,
+          "medianLatencyMs": 5394.0,
+          "rangeLatencyMs": [
+            4616,
+            7003
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 16,
+          "usage": {
+            "input": 38876,
+            "output": 2754,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3391,
+          "medianLatencyMs": 3135.0,
+          "rangeLatencyMs": [
+            2828,
+            4639
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/slim.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/acceptance-v9.mjs"
+        },
+        "policy/acceptance-v10.mjs": {
+          "sha256": "9a23df1322195319aaf990aa66bf73e3ff865d2917be0b9d96d9ff7a475aad20",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/acceptance-v10.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794371610201-3568004/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-slim.json": {
+          "sha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+          "path": ".local/policy-live/1794371610201-3568004/source/policy/eval-plan-slim.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+          "path": ".local/policy-live/1794371610201-3568004/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794371610201-3568004/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794371610201-3568004/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794371610201-3568004/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794371610201-3568004/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    }
+  ],
+  "externalCalls": 48,
+  "knownUsage": {
+    "input": 142912,
+    "output": 11265,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "cost": null,
+  "creditBalance": null,
+  "acceptance": {
+    "path": "runtime/memory-lab/results/policy-slim-v10-acceptance-2026-11-11.json",
+    "sha256": "316ebb1e3d32c0543786f3bccd3894d7bf16229923d2867b8762f8eabaccd2e6",
+    "bytes": 10695
+  },
+  "overallPass": false,
+  "qualityGain": false,
+  "efficiencyGain": false,
+  "disposition": "quality_protection_failed",
+  "historicalLedgers": [
+    {
+      "path": "runtime/memory-lab/results/policy-evidence-ledger-2026-11-11.json",
+      "sha256": "7f26bcaf144e5f1042d3b9fa4effc0c796aeaff8c533fe2776e82a6a85245f76",
+      "bytes": 64269,
+      "verifiedArtifacts": 70
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-evidence-ledger-2026-11-11.json",
+      "sha256": "e27709eaa5b8100d99ecdbc19cec7d65a51b5683be1226f960c92a788df133f7",
+      "bytes": 17779,
+      "verifiedArtifacts": 12
+    }
+  ],
+  "cumulativeInPolicyAndProbeScope": {
+    "externalCalls": 280,
+    "knownInputTokens": 537950,
+    "knownOutputTokens": 54431,
+    "knownTotalTokens": 592381
+  },
+  "immutableArtifacts": [
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-acceptance-2026-11-11.json",
+      "sha256": "316ebb1e3d32c0543786f3bccd3894d7bf16229923d2867b8762f8eabaccd2e6",
+      "bytes": 10695
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-acceptance-initial-error-2026-11-11.txt",
+      "sha256": "a80f00f2879b4e9775a142adfdd3819e2c3c61d0bf8c6e8743faef3e676cfa94",
+      "bytes": 3375
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-acceptance-tests-2026-11-11.txt",
+      "sha256": "4dc286b1b2b578e838fe4350c8e8d0fab6fa46e47896aa7af4c9189fd4286c32",
+      "bytes": 1304
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-blind-2026-11-11.json",
+      "sha256": "3b1fc1efac2779c64fbe8823326aef7aa30cde1fcdad6f133b1c43e9e900817e",
+      "bytes": 166292
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-blind-map-2026-11-11.json",
+      "sha256": "593389847ae926692d321acc950ae81261fc15ffb22822d922f7facc42e426e7",
+      "bytes": 6558
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-confirmation-live-2026-11-11.json",
+      "sha256": "0471215bb9ee79bc0ef62c6ad13999cf8bbe9d6811d7823cff7cb1873438340f",
+      "bytes": 1590024
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-contract-tests-2026-11-11.txt",
+      "sha256": "09d8ec272d268aaf3e65f4ef1831d0ee690e48205d6cba787c969aa8f03bdfa3",
+      "bytes": 908
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-development-live-2026-11-11.json",
+      "sha256": "94e37f9dd6ecd13573701a66364ca2950b65502254100f3d129cdc2fc7a10f64",
+      "bytes": 423148
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-development-r2-live-2026-11-11.json",
+      "sha256": "9edbe593a11ea06cef4a6739a83cb6c2170d803443733d027ef81b8c01904c82",
+      "bytes": 423325
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-primary-review-2026-11-11.json",
+      "sha256": "895d047cb9c70970bad39371905b012e6ed3e9ec7aa1204b211b66629d096d3f",
+      "bytes": 79502
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-primary-summary-2026-11-11.json",
+      "sha256": "b4b30f62879ffe7ad06775cee8ce97161873ee929deae30ca17acf299b405f8f",
+      "bytes": 6590
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-r2-contract-tests-2026-11-11.txt",
+      "sha256": "2424d4a61e2502000fe5a6fa4ac5b37a1643e3f9fce0cfa876686315ff7d4d0f",
+      "bytes": 908
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-r2-regression-tests-2026-11-11.txt",
+      "sha256": "79b4fa8115680ffb7128410caa020e1f2abfc0d133a01618fd73bd3899791293",
+      "bytes": 10766
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-regression-tests-2026-11-11.txt",
+      "sha256": "993aabd2b5b76ece076cd2892fdda543a2701feaf878bf5e3f513fd452eaf872",
+      "bytes": 10758
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-report-acceptance-tests-2026-11-11.txt",
+      "sha256": "c89d82e3327a035a618b9b37eb8cd4f256e7ee839558c8af5b45ae3ff855c220",
+      "bytes": 804
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-secondary-review-2026-11-11.json",
+      "sha256": "86abc361e5d653789ac3d4c039f7fd8fdd15b37285316fc1697023f91cf417d4",
+      "bytes": 65101
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-secondary-summary-2026-11-11.json",
+      "sha256": "2ad6d2cd95e7af6ab9e5a98fa13a8e68e12fe75edc72d55c0033bf364c8b8395",
+      "bytes": 6590
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-source-snapshots-2026-11-11.tar.gz",
+      "sha256": "476a908f56ba63a1a4edc6aab2105c48245a9c80fb64d0f69b1d5b2ee9bddcc3",
+      "bytes": 190385
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-slim-development.json",
+      "sha256": "3d10d4b0288f120c5a558c044aa90919bfcbf64a3384faa9c2be171796e49ded",
+      "bytes": 22676
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-slim-development-r2.json",
+      "sha256": "577b838411b4a275edabcb9e62b09a63eb572fd48d30567b5b50a7541f1a2e06",
+      "bytes": 23130
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-slim.json",
+      "sha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+      "bytes": 32711
+    }
+  ],
+  "sourceArchive": {
+    "path": "runtime/memory-lab/results/policy-slim-v10-source-snapshots-2026-11-11.tar.gz",
+    "sha256": "476a908f56ba63a1a4edc6aab2105c48245a9c80fb64d0f69b1d5b2ee9bddcc3",
+    "bytes": 190385,
+    "members": [
+      {
+        "stage": "development",
+        "source": "policy/live.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/live.mjs",
+        "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+        "bytes": 13039
+      },
+      {
+        "stage": "development",
+        "source": "policy/session.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "development",
+        "source": "policy/compiler.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "development",
+        "source": "policy/guard.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "development",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "development",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "development",
+        "source": "policy/register.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "development",
+        "source": "policy/voice.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "development",
+        "source": "policy/structured.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "development",
+        "source": "policy/focused.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "development",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "development",
+        "source": "policy/composed.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "development",
+        "source": "policy/enacted.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "development",
+        "source": "policy/slim.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/slim.mjs",
+        "sha256": "ae6135c981cf5a7056178964f53a06e17504326a347235fabdb6ffeaec48af21",
+        "bytes": 6448
+      },
+      {
+        "stage": "development",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "development",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "development",
+        "source": "policy/summarize.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "development",
+        "source": "../clova/common.ts",
+        "member": "persona-slim-v10-development-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "development",
+        "source": "policy/eval-plan-slim-development.json",
+        "member": "persona-slim-v10-development-2026-11-11/source/policy/eval-plan-slim-development.json",
+        "sha256": "3d10d4b0288f120c5a558c044aa90919bfcbf64a3384faa9c2be171796e49ded",
+        "bytes": 22676
+      },
+      {
+        "stage": "development",
+        "source": "pi/cli.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/pi/cli.mjs",
+        "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+        "bytes": 33151
+      },
+      {
+        "stage": "development",
+        "source": "pi/store.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "development",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-slim-v10-development-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "development",
+        "source": "../clova/provider.ts",
+        "member": "persona-slim-v10-development-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "development",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-slim-v10-development-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/live.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/live.mjs",
+        "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+        "bytes": 13039
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/session.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/compiler.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/guard.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/register.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/voice.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/structured.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/focused.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/composed.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/enacted.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/slim.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/slim.mjs",
+        "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+        "bytes": 7055
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/summarize.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/common.ts",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/eval-plan-slim-development-r2.json",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/policy/eval-plan-slim-development-r2.json",
+        "sha256": "577b838411b4a275edabcb9e62b09a63eb572fd48d30567b5b50a7541f1a2e06",
+        "bytes": 23130
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/cli.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/pi/cli.mjs",
+        "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+        "bytes": 33151
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/store.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/provider.ts",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-slim-v10-development-r2-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/live.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/live.mjs",
+        "sha256": "47e35acf6574928e9a518c9f33dd1be0171b1e85ac3a8c88ed2f7bf3df702196",
+        "bytes": 13039
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/session.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/compiler.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/guard.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/register.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/voice.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/structured.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/focused.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/composed.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/enacted.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/slim.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/slim.mjs",
+        "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+        "bytes": 7055
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/acceptance-v10.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/acceptance-v10.mjs",
+        "sha256": "9a23df1322195319aaf990aa66bf73e3ff865d2917be0b9d96d9ff7a475aad20",
+        "bytes": 20506
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/summarize.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/common.ts",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/eval-plan-slim.json",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/policy/eval-plan-slim.json",
+        "sha256": "938206b4ee6c815b7e6d8abd4b5832fdc6bf866bf16ebe7be0c4dbc55f20fdaa",
+        "bytes": 32711
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/cli.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/pi/cli.mjs",
+        "sha256": "e33bd0035407ac3ee4a442392eebb8b0acd9d88ea101fa15f00ff35d79654d1f",
+        "bytes": 33151
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/store.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/provider.ts",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-slim-v10-two-topics-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      }
+    ]
+  },
+  "cleanup": {
+    "processCount": 28,
+    "processes": [
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794371145212-3559543/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794371473154-3565646/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/baseline/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/calm/structured/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/structured/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794371610201-3568004/playful/baseline/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      }
+    ],
+    "remainingPrivateHelperKeyFiles": 0
+  },
+  "limitations": [
+    "Previously observed development prompts are not held-out evidence; r1/r2 failures remain disclosed.",
+    "Single samples, two personas and two confirmation topics; no statistical significance, human validation, or long-dialogue guarantee.",
+    "Two independent AI reviews were frozen before unmasking, not proof of statistical independence.",
+    "Schema/compiler interventions are combined; no single-cause attribution.",
+    "Savings concern measured tokens, not queried prices, credit balances, or monetary charges.",
+    "Independent Pi CLI integration only; no operational Elda-CLI registration or web deployment."
+  ]
+}
