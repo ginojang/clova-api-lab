@@ -27,9 +27,9 @@ node runtime/clova/h31/malformed.mjs --output .local/new-native-argument-check.j
 
 ## 소스 식별과 관측 한계
 
-추가 수신 `381c4a52dc`와 [Elda-Spec b888f05 키트 기록](https://github.com/ginojang/Elda-Spec/blob/b888f05a36d4310ffbbccb6bb81f9d68013f44f7/harness/kit/README.md)을 읽었다. 새 kit0.808/harness0.809는 CLI4696537 + Ops9731339에 FAIL2/WARN1을 기록했다. **H57 notify의 origin.kind=human을 사람 입력처럼 취급하는 경로는 코딩고래에게 추가 인계**한다. 현재 설치 `events.py:327`에도 이 분기가 있다. 거절하거나 비인간 알림으로 감싸는 처리가 필요하다. H61 feed_read/resource 누락은 Ops의 인프라 몫이다. 이 랩은 새 키트를 직접 실행하지 않았으며, 앞선 kit0.805의 FAIL0/WARN0과 섞어 적합성을 주장하지 않는다.
+추가 수신 `381c4a52dc`와 [Elda-Spec b888f05 키트 기록](https://github.com/ginojang/Elda-Spec/blob/b888f05a36d4310ffbbccb6bb81f9d68013f44f7/harness/kit/README.md)을 읽었다. 새 kit0.808/harness0.809는 CLI4696537 + Ops9731339에 FAIL2/WARN1을 기록했다. H57 notify의 origin.kind=human을 사람 입력처럼 취급하는 경로는 당시 설치 `events.py:327`에서도 확인했다. H61 feed_read/resource 누락은 Ops의 인프라 몫이었다. 이 랩은 새 키트를 직접 실행하지 않았으며, 앞선 kit0.805의 FAIL0/WARN0과 섞어 적합성을 주장하지 않는다.
 
-이후 `c2810a7ec6`에서 인프라가 Ops `cf7138e`의 H61 수정과 mars 키트 FAIL1/WARN0을 보고했다. 따라서 최신 잔여 키트 항목은 H57이며, H61 중복 수정 요청은 하지 않는다. 배포·재측정은 인프라 보고이지 이 랩의 직접 실행 결과가 아니다.
+이후 `c2810a7ec6`에서 인프라가 Ops `cf7138e`의 H61 수정과 mars 키트 FAIL1/WARN0을 보고했다. 최신 `7bf84d06a5`에서는 풀스택이 CLI `b50f9ee`의 H57 수정, kit0.808 적합·경고0,8개 호스트 배포 완료를 보고했다. H57/H61 중복 수정 요청은 종료하고, 본문42901·40080·빈 properties의 세 항목은 코딩고래 판단을 기다린다. 배포·재측정은 담당 팀 보고이지 이 랩의 직접 실행 결과가 아니다.
 
 이번 읽기 시 설치 CLI HEAD는 `469653789ca820f8919bb43477e14fefe37eb281`이었다. 다음 해시는 최종 malformed 결과의 native 소스와 같다. 저장소 HEAD만으로 실험 당시 모든 설치 파일이 같았다고 추정하지 않고 파일별로 대조했다.
 
