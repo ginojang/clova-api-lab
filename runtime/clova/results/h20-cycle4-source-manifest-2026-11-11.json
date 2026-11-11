@@ -1,0 +1,18 @@
+{
+  "kind": "cycle4 source manifest",
+  "sha256": {
+    "common.ts": "0165f306a4aa1d2f310c34280a6ea18631537d478b97b409daa33663762f8815",
+    "provider.ts": "edd444e5e2453087234c0ee7961d534d175af2e014a7b5a13b27a91ef94d8887",
+    "provider-errors.ts": "a356054e2e02e79abb8cc0fa5ed020b24a508cb88a6c81d6cea3aa23ff2566d8",
+    "http.ts": "0e5fed8a64a209494c9d27ddf5f96d9fdd7c8d073d884a0cbde84e065efcd811",
+    "provider-smoke.ts": "e73004a0d06cad0e4966dcc7796447acb854fb3c56842f7f737ee7e8e7d518eb",
+    "test/http.test.ts": "d332d829bd9dd8bf608ccc2c25997fd8f7833fea2c4e730a7ab2dce6c7a24959",
+    "integration/elda-cli-register.patch": "67deb6823175737cd9728e25f02de9fbee4e61ab6ee4e04241749536099941d2"
+  },
+  "externalReadOnly": {
+    "elda": "9a9ceb10b3fb6c5960c8e8dbc40d1219760f40a615545dc2379f8407ab00ce34",
+    "profiles.py": "c797d67e1908a35f61dccc354533d9a4337f5faf6f5bc350136ccacea6a357fd",
+    "adapters/loop.py": "ef06a04b7c4e6b2f05b6b77963c27cf556ff5d1fa761adb201bd13d1ad31eab4",
+    "providers/clova.py": "c021eaa3bc41a9180207693248c704eeaacd4c36f84296c6e1024f2be1f2a8f6"
+  }
+}

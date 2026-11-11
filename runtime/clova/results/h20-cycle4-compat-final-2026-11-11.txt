@@ -1,0 +1,26 @@
+✔ Anthropic text blocks, function history, tool result errors and system blocks translate without losing IDs (6.366244ms)
+✔ Anthropic output and SSE preserve tool IDs, JSON arguments, actual usage and all finish reasons (0.890906ms)
+✔ HTTP Anthropic route accepts beta query and either gateway credential header, then shares native Brain (96.490309ms)
+✔ Anthropic SSE sends a waiting ping, then a complete ordered buffered response (25.945839ms)
+✔ Unsupported Anthropic capabilities and invalid bodies fail before native requests without echoing values (58.595051ms)
+✔ Native HTTP errors keep status in JSON and become terminal Anthropic SSE error events without retries (18.09615ms)
+✔ Closing an Anthropic stream aborts native generation and reports cancellation once (29.202086ms)
+✔ Anthropic max_tokens reaches native generation and streamed deadlines remain explicit errors (67.788711ms)
+✔ HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks (240.300227ms)
+✔ HTTP wrapper authenticates health and models with a token distinct from the native key (30.954983ms)
+✔ OpenAI tool history and native CLOVA function calls preserve IDs, schemas, usage and finish reason (19.803439ms)
+✔ Invalid inputs, streaming, model or credential injection and unsupported sampling fail before native HTTP (57.973177ms)
+✔ Chunked requests also enforce the 1 MiB limit without reaching CLOVA (17.668158ms)
+✔ Native statuses survive without retries or sensitive error bodies; malformed responses become 502 (36.972994ms)
+✔ Wrapper deadline cancels native HTTP and returns 504 once (112.252896ms)
+✔ Disconnecting the HTTP client aborts the native request without a retry (11.181646ms)
+✔ Standalone wrapper binds loopback and prints only address and port to stderr (263.761155ms)
+✔ HCX-007 wrapper forwards native generation fields and removes thinkingContent (28.185744ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1142.572169

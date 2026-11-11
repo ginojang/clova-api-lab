@@ -1,0 +1,40 @@
+✖ HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks (102.596335ms)
+✔ HTTP wrapper authenticates health and models with a token distinct from the native key (36.898757ms)
+✔ OpenAI tool history and native CLOVA function calls preserve IDs, schemas, usage and finish reason (24.648317ms)
+✔ Invalid inputs, streaming, model or credential injection and unsupported sampling fail before native HTTP (52.19913ms)
+✔ Chunked requests also enforce the 1 MiB limit without reaching CLOVA (15.514719ms)
+✔ Native statuses survive without retries or sensitive error bodies; malformed responses become 502 (41.083485ms)
+✔ Wrapper deadline cancels native HTTP and returns 504 once (112.127404ms)
+✔ Disconnecting the HTTP client aborts the native request without a retry (10.41094ms)
+✔ Standalone wrapper binds loopback and prints only address and port to stderr (272.953942ms)
+✔ HCX-007 wrapper forwards native generation fields and removes thinkingContent (21.492293ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1005.846321
+
+✖ failing tests:
+
+test at runtime/clova/test/http.test.ts:18:1
+✖ HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks (102.596335ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'invalid_request'
+  
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/http.test.ts:39:16)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'invalid_request',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

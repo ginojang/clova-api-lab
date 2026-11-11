@@ -1,0 +1,225 @@
+✔ Anthropic text blocks, function history, tool result errors and system blocks translate without losing IDs (6.73543ms)
+✔ Anthropic output and SSE preserve tool IDs, JSON arguments, actual usage and all finish reasons (1.583669ms)
+✔ HTTP Anthropic route accepts beta query and either gateway credential header, then shares native Brain (119.46452ms)
+✔ Anthropic SSE sends a waiting ping, then a complete ordered buffered response (27.639512ms)
+✔ Unsupported Anthropic capabilities and invalid bodies fail before native requests without echoing values (75.557881ms)
+✔ Native HTTP errors keep status in JSON and become terminal Anthropic SSE error events without retries (21.333331ms)
+✔ Closing an Anthropic stream aborts native generation and reports cancellation once (28.961343ms)
+✔ Anthropic max_tokens reaches native generation and streamed deadlines remain explicit errors (67.654901ms)
+✔ installed native Claude uses the CLOVA wrapper and one MCP session for create/edit/undo with local model fixtures (1656.473683ms)
+✔ installed Elda --attach observes real native Claude TUI tool round trips through the CLOVA wrapper with local model fixtures (4773.20427ms)
+✔ HCX-005 preserves the existing default and explicit request settings (4.10378ms)
+✔ HCX-007 uses the completion budget field and explicitly disables thinking (0.77413ms)
+✔ other native names keep previous request shape rather than silently adopting 007 options (0.513758ms)
+✔ the existing lab token policy is the same for both models (1.509776ms)
+✔ tool calls retain the existing minimum token budget while 007 thinking stays off (1.781043ms)
+✔ malformed native model identifiers and arguments fail explicitly (2.881474ms)
+✔ the pure helper does not mutate or reuse caller-owned generation objects (0.85361ms)
+✔ 007 accepts each explicit effort while preserving temperature and the lab budget (1.099524ms)
+✔ an explicit thinking option is rejected on other models, including explicit none (1.47269ms)
+✔ invalid effort values do not silently become none or service defaults (1.311424ms)
+✔ thinking and function calling cannot be combined; none still allows tools (0.860733ms)
+✔ native structured output uses the explicit schema with default or explicit none (0.997903ms)
+✔ structured output cannot be used by other models or alongside thinking or tools (4.180606ms)
+✔ invalid response format and non-object schema are rejected before transport (1.204776ms)
+✔ schema is deeply copied without guessing validation-keyword support (0.930227ms)
+✔ omitting structured output preserves both existing plain wire contracts (0.518787ms)
+error: patch failed: elda:136
+error: elda: patch does not apply
+error: patch failed: elda:136
+error: elda: patch does not apply
+error: patch failed: elda:136
+error: elda: patch does not apply
+error: patch failed: elda:136
+error: elda: patch does not apply
+✖ registered Elda clova mode 2 forwards the outer approval callback once before a LangGraph tool effect (57.040093ms)
+✖ registered Elda clova mode 3 uses one persistent LangGraph/MCP session without approval (35.104443ms)
+✖ registered Elda clova interrupt produces one interrupted event and no pending tool effect (27.237571ms)
+✖ registered Elda clova EOF completes the serving turn and closes the graph child (32.160949ms)
+✔ Elda mode 2 uses the original approval callback before any MCP side effect (604.154411ms)
+✔ Elda mode 3 reuses its actual model/MCP session for create, edit, read and undo without approval (512.444504ms)
+✔ Elda mode 3 interrupt suppresses pending tool execution and emits interrupted plus idle (712.866115ms)
+✔ Elda mode 3 EOF lets the active turn finish and closes the real MCP child (622.094954ms)
+✔ HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks (240.209245ms)
+✔ HTTP wrapper authenticates health and models with a token distinct from the native key (25.618492ms)
+✔ OpenAI tool history and native CLOVA function calls preserve IDs, schemas, usage and finish reason (19.3795ms)
+✔ Invalid inputs, streaming, model or credential injection and unsupported sampling fail before native HTTP (53.576135ms)
+✔ Chunked requests also enforce the 1 MiB limit without reaching CLOVA (15.693584ms)
+✔ Native statuses survive without retries or sensitive error bodies; malformed responses become 502 (32.190142ms)
+✔ Wrapper deadline cancels native HTTP and returns 504 once (111.514885ms)
+✔ Disconnecting the HTTP client aborts the native request without a retry (10.608174ms)
+✔ Standalone wrapper binds loopback and prints only address and port to stderr (273.073224ms)
+✔ HCX-007 wrapper forwards native generation fields and removes thinkingContent (20.025469ms)
+✔ LangGraph mode 2 asks before MCP effects, accepts approval, and honors denial (1618.988394ms)
+✔ LangGraph mode 3 retains the MCP document/undo state and records usage without approval (1539.15478ms)
+✔ LangGraph cancels an approval wait without executing a tool and remains usable (1562.943268ms)
+✔ LangGraph applies maxTurns after tool results and enforces per-turn tool limits (3056.015753ms)
+✔ LangGraph EOF completes a serving turn and denies a pending human approval (3078.349636ms)
+✔ LangGraph notifies an idle conversation and does not run an unlisted tool (1542.142056ms)
+✔ LangGraph uses a real local HTTP CLOVA provider, retries only before tools and cancels timeout (4877.253772ms)
+✔ CLOVA MCP crosses real stdio and HTTP; rejects invalid input and survives provider failures (520.771564ms)
+error: patch failed: elda:136
+error: elda: patch does not apply
+error: patch failed: elda:136
+error: elda: patch does not apply
+✖ mode 2 runs each provider through actual Elda, graph and MCP using only local model fixtures (65.268746ms)
+✔ live providers without credential files are explicitly unverified and do not start a CLI (5.175647ms)
+✔ live configured credential paths missing on disk remain not_configured without starting a CLI (3.527444ms)
+✔ live empty credential files remain failed rather than not_configured (2.772242ms)
+✖ a model claiming completion without a tool effect fails the exact-file comparison (39.95274ms)
+✔ a configured live credential with unsafe permissions fails before CLI or network startup (2.593935ms)
+✔ 005 keeps its wire contract; 007 selects native token/thinking fields and never replays thinkingContent (92.798466ms)
+✔ groq: native HTTP tool round-trip preserves arguments, IDs, reasoning and disjoint usage (93.861812ms)
+✔ openrouter: native HTTP tool round-trip preserves arguments, IDs, reasoning and disjoint usage (29.39625ms)
+✔ zai: native HTTP tool round-trip preserves arguments, IDs, reasoning and disjoint usage (20.839897ms)
+✔ fixed catalog rejects paid/random models and unsafe URL/credential configuration before HTTP (5.875395ms)
+✔ HTTP failures and redirects expose neither response secrets nor credential-bearing URLs and never retry (29.699784ms)
+✔ malformed/unsupported tool responses retain billed usage while invalid counters are rejected (70.457523ms)
+✔ cancellation and timeout abort pending HTTP including a stalled response body (20.796316ms)
+✔ natural basic prose remains exact through redaction and saved-plan cleaning (10.594833ms)
+✔ bare Basic credentials are masked with padding, Unicode, empty fields and mixed case (4.55524ms)
+✔ explicit Authorization headers hide even malformed Basic credentials and preserve surrounding text (1.352422ms)
+✔ Bearer credential masking remains case-insensitive outside headers (0.584998ms)
+✔ registered secrets and other existing credential patterns still redact (9.237802ms)
+✔ structured credential fields remain masked without losing counters or pass results (0.779717ms)
+✔ MCP atomic writes, relative/absolute/symlink isolation and partial batch semantics (13.715866ms)
+✔ v3 provider sends tools, toolCallId and bearer file; normalizes usage and HTTP errors (86.194549ms)
+✔ harness executes MCP, accumulates usage, preserves/new sessions and caps turns (1458.352529ms)
+✔ Stop hooks block final text, retry once then fail closed; timeouts emit interrupted + idle (1590.550376ms)
+✔ real adapter loop retries only before tools; charges usage and stops at session budget (2420.065044ms)
+✔ redaction preserves boolean pass results and masks credential strings (1.257856ms)
+✔ per-turn tool execution limit denies repeated side effects (718.269933ms)
+✔ live HCX null arguments become repairable empty arguments, invalid structures stay rejected (1.377425ms)
+✔ native 005 and 007 replace empty descriptions with names while preserving valid descriptions and caller tools (17.648813ms)
+✔ requests without tools retain each model native generation shape (2.932948ms)
+✔ HTTP wrapper omitted description is repaired only at the native boundary for both models (61.952924ms)
+ℹ tests 83
+ℹ suites 0
+ℹ pass 77
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17677.117827
+
+✖ failing tests:
+
+test at runtime/clova/test/elda-adapter.test.ts:78:1
+✖ registered Elda clova mode 2 forwards the outer approval callback once before a LangGraph tool effect (57.040093ms)
+  Error: Command failed: git apply --check /home/gino/WorkArea/clova-api-lab/runtime/clova/integration/elda-cli-register.patch
+  error: patch failed: elda:136
+  error: elda: patch does not apply
+  
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at checkExecSyncError (node:child_process:925:11)
+      at execFileSync (node:child_process:961:15)
+      at registered (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:28:5)
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:79:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    status: 1,
+    signal: null,
+    output: [ null, <Buffer >, <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes> ],
+    pid: 3846294,
+    stdout: <Buffer >,
+    stderr: <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes>
+  }
+
+test at runtime/clova/test/elda-adapter.test.ts:95:1
+✖ registered Elda clova mode 3 uses one persistent LangGraph/MCP session without approval (35.104443ms)
+  Error: Command failed: git apply --check /home/gino/WorkArea/clova-api-lab/runtime/clova/integration/elda-cli-register.patch
+  error: patch failed: elda:136
+  error: elda: patch does not apply
+  
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at checkExecSyncError (node:child_process:925:11)
+      at execFileSync (node:child_process:961:15)
+      at registered (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:28:5)
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:96:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19) {
+    status: 1,
+    signal: null,
+    output: [ null, <Buffer >, <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes> ],
+    pid: 3846305,
+    stdout: <Buffer >,
+    stderr: <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes>
+  }
+
+test at runtime/clova/test/elda-adapter.test.ts:112:1
+✖ registered Elda clova interrupt produces one interrupted event and no pending tool effect (27.237571ms)
+  Error: Command failed: git apply --check /home/gino/WorkArea/clova-api-lab/runtime/clova/integration/elda-cli-register.patch
+  error: patch failed: elda:136
+  error: elda: patch does not apply
+  
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at checkExecSyncError (node:child_process:925:11)
+      at execFileSync (node:child_process:961:15)
+      at registered (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:28:5)
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:113:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19) {
+    status: 1,
+    signal: null,
+    output: [ null, <Buffer >, <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes> ],
+    pid: 3846319,
+    stdout: <Buffer >,
+    stderr: <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes>
+  }
+
+test at runtime/clova/test/elda-adapter.test.ts:127:1
+✖ registered Elda clova EOF completes the serving turn and closes the graph child (32.160949ms)
+  Error: Command failed: git apply --check /home/gino/WorkArea/clova-api-lab/runtime/clova/integration/elda-cli-register.patch
+  error: patch failed: elda:136
+  error: elda: patch does not apply
+  
+      at genericNodeError (node:internal/errors:985:15)
+      at wrappedFn (node:internal/errors:539:14)
+      at checkExecSyncError (node:child_process:925:11)
+      at execFileSync (node:child_process:961:15)
+      at registered (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:28:5)
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/elda-adapter.test.ts:128:17)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19) {
+    status: 1,
+    signal: null,
+    output: [ null, <Buffer >, <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes> ],
+    pid: 3846324,
+    stdout: <Buffer >,
+    stderr: <Buffer 65 72 72 6f 72 3a 20 70 61 74 63 68 20 66 61 69 6c 65 64 3a 20 65 6c 64 61 3a 31 33 36 0a 65 72 72 6f 72 3a 20 65 6c 64 61 3a 20 70 61 74 63 68 20 64 ... 14 more bytes>
+  }
+
+test at runtime/clova/test/mode2-compare.test.ts:14:1
+✖ mode 2 runs each provider through actual Elda, graph and MCP using only local model fixtures (65.268746ms)
+  AssertionError [ERR_ASSERTION]: []
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/mode2-compare.test.ts:20:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at runtime/clova/test/mode2-compare.test.ts:83:1
+✖ a model claiming completion without a tool effect fails the exact-file comparison (39.95274ms)
+  TypeError: Cannot read properties of undefined (reading 'inference')
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/clova/test/mode2-compare.test.ts:88:56)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)

@@ -1,0 +1,18 @@
+✔ HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks (222.767726ms)
+✔ HTTP wrapper authenticates health and models with a token distinct from the native key (30.697897ms)
+✔ OpenAI tool history and native CLOVA function calls preserve IDs, schemas, usage and finish reason (18.602297ms)
+✔ Invalid inputs, streaming, model or credential injection and unsupported sampling fail before native HTTP (52.763663ms)
+✔ Chunked requests also enforce the 1 MiB limit without reaching CLOVA (17.453115ms)
+✔ Native statuses survive without retries or sensitive error bodies; malformed responses become 502 (35.134336ms)
+✔ Wrapper deadline cancels native HTTP and returns 504 once (111.02257ms)
+✔ Disconnecting the HTTP client aborts the native request without a retry (10.996915ms)
+✔ Standalone wrapper binds loopback and prints only address and port to stderr (277.160735ms)
+✔ HCX-007 wrapper forwards native generation fields and removes thinkingContent (29.204254ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1146.529191

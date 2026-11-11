@@ -15,6 +15,38 @@ const nativeAnswer = (finishReason = 'stop', message: object = {role: 'assistant
   status: {code: '20000'}, result: {message, finishReason, usage: {promptTokens: 11, completionTokens: 7}},
 });
 type Captured = {url: string | undefined; headers: IncomingMessage['headers']; body: any};
+test('HTTP 200 native failures preserve classification through both compatibility routes without retry or body leaks', async () => {
+  let nativeCode: unknown = '40001';
+  const f = await fixture((_req, res) => res.end(JSON.stringify({status: {code: nativeCode, message: API_KEY + ' private-request-content'}})));
+  try {
+    for (const [value, status, apiError, retryable] of [
+      ['40001', 400, 'invalid_request', false], ['40104', 401, 'authentication_failed', false],
+      ['40200', 402, 'billing_error', false], ['40080', 400, 'model_not_found', false],
+      ['42901', 429, 'rate_limit', true], ['50000', 500, 'server_error', true],
+      ['50300', 503, 'server_error', true],
+      ['50100', 501, 'server_error', false], ['50400', 504, 'server_error', false],
+      ['60000', 422, 'unknown', false], ['unsafe-secret', 422, 'unknown', false],
+      [null, 422, 'unknown', false], ['', 422, 'unknown', false],
+    ] as const) {
+      nativeCode = value;
+      for (const anthropic of [false, true]) {
+        const before = f.captured.length;
+        const response = anthropic ? await fetch(f.url + '/v1/messages', {
+          method: 'POST', headers: {'content-type': 'application/json', 'x-api-key': WRAPPER_TOKEN},
+          body: JSON.stringify({...simpleRequest, max_tokens: 1024}),
+        }) : await f.post();
+        assert.equal(response.status, status, String(value));
+        const raw = await response.text(), body = JSON.parse(raw);
+        assert.equal(body.error.apiError, apiError, JSON.stringify({value, anthropic, body}));
+        assert.equal(body.error.retryable, retryable);
+        assert.ok(!body.error.message.includes('not configured'));
+        assert.equal(body.error.providerCode, typeof value === 'string' && /^\d{5}$/.test(value) ? value : undefined);
+        assert.equal(f.captured.length - before, 1);
+        for (const secret of [API_KEY, 'private-request-content', 'unsafe-secret']) assert.ok(!raw.includes(secret));
+      }
+    }
+  } finally { await f.cleanup(); }
+});
 type Handler = (req: IncomingMessage, res: ServerResponse, input: Captured) => void;
 async function listen(server: Server): Promise<string> {
   await new Promise<void>((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });

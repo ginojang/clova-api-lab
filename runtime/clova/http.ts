@@ -118,18 +118,22 @@ function errorDetails(error: unknown) {
   const timeout = error instanceof Fault && error.code === 'timeout';
   // Native error bodies, credentials, URLs, paths and request contents never cross this boundary.
   return {status: timeout ? 504 : status,
-    message: timeout ? 'CLOVA request timed out.' : status === 503 ? 'CLOVA wrapper is not configured.' : `CLOVA upstream request failed (HTTP ${status}).`,
+    message: timeout ? 'CLOVA request timed out.' : error instanceof Fault && error.code === 'configuration' ? 'CLOVA wrapper is not configured.' : `CLOVA upstream request failed (HTTP ${status}).`,
     code: timeout ? 'timeout' : 'api_error'};
+}
+function providerErrorFields(error: unknown) {
+  return error instanceof Fault && error.apiError !== undefined
+    ? {apiError: error.apiError, retryable: error.retryable === true, ...(error.providerCode ? {providerCode: error.providerCode} : {})} : {};
 }
 function anthropicError(error: unknown) {
   const details = errorDetails(error);
   const type = ({400: 'invalid_request_error', 401: 'authentication_error', 403: 'permission_error', 404: 'not_found_error', 413: 'request_too_large', 429: 'rate_limit_error', 529: 'overloaded_error'} as Record<number, string>)[details.status] ?? 'api_error';
-  return {type: 'error', error: {type, message: details.message}, request_id: `req_${randomUUID()}`};
+  return {type: 'error', error: {type, message: details.message, ...providerErrorFields(error)}, request_id: `req_${randomUUID()}`};
 }
 function fail(res: ServerResponse, error: unknown, anthropic = false) {
   const {status, message, code} = errorDetails(error);
   if (status === 413) res.shouldKeepAlive = false;
-  send(res, status, anthropic ? anthropicError(error) : {error: {message, code,
+  send(res, status, anthropic ? anthropicError(error) : {error: {message, code, ...providerErrorFields(error),
     type: error instanceof InputError ? 'invalid_request_error' : 'upstream_error'}});
 }
 function sse(res: ServerResponse, event: AnthropicEvent) {

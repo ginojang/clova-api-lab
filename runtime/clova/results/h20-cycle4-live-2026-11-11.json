@@ -1,0 +1,45 @@
+{
+  "scope": "provider success-path smoke, not H31 or persona evaluation",
+  "startedAt": "2026-11-11T07:58:29.530Z",
+  "sourceHashes": {
+    "provider.ts": "edd444e5e2453087234c0ee7961d534d175af2e014a7b5a13b27a91ef94d8887",
+    "provider-errors.ts": "a356054e2e02e79abb8cc0fa5ed020b24a508cb88a6c81d6cea3aa23ff2566d8",
+    "common.ts": "0165f306a4aa1d2f310c34280a6ea18631537d478b97b409daa33663762f8815"
+  },
+  "results": [
+    {
+      "model": "clova:HCX-005",
+      "ok": true,
+      "message": {
+        "role": "assistant",
+        "content": "네, 연결이 잘 되었습니다. 확인하였습니다."
+      },
+      "finishReason": "stop",
+      "usage": {
+        "input": 20,
+        "output": 13,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "durationMs": 707
+    },
+    {
+      "model": "clova:HCX-007",
+      "ok": true,
+      "message": {
+        "role": "assistant",
+        "content": "알겠습니다, 연결 확인 완료되었습니다."
+      },
+      "finishReason": "stop",
+      "usage": {
+        "input": 20,
+        "output": 11,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "durationMs": 431
+    }
+  ],
+  "pass": true,
+  "finishedAt": "2026-11-11T07:58:30.670Z"
+}

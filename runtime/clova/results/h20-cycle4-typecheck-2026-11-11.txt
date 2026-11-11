@@ -1,0 +1,4 @@
+
+> clova-api-lab@0.0.1 check:clova-runtime
+> tsc -p runtime/clova/tsconfig.json
+

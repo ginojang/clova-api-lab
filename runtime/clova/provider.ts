@@ -1,3 +1,4 @@
+import { clovaBodyFault } from './provider-errors.ts';
 import { readFileSync } from 'node:fs';
 import { Fault, secretFile, usageZero, type Answer, type Message, type Tool, type ToolCall } from './common.ts';
 import {OpenAIProvider} from './openai-provider.ts';
@@ -65,7 +66,7 @@ export class Brain {
       throw new Fault('api_error', 'CLOVA response is not valid JSON', 502);
     }
     if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Fault('api_error', 'invalid CLOVA response', 502);
-    if (body.status?.code && body.status.code !== '20000') throw new Fault('api_error', 'CLOVA rejected the request');
+    if (body.status?.code !== undefined && body.status.code !== '20000') throw clovaBodyFault(body.status.code);
     const r = body.result;
     if (!r?.message || r.message.role !== 'assistant' || typeof r.message.content !== 'string') throw new Fault('api_error', 'invalid CLOVA response');
     if (!['stop','length','tool_calls'].includes(r.finishReason ?? '')) throw new Fault('api_error', 'unsupported CLOVA finish reason');

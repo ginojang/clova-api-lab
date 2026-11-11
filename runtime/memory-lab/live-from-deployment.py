@@ -44,7 +44,12 @@ local.mkdir(parents=True, exist_ok=True, mode=0o700)
 os.chmod(local, 0o700)
 credential_path = None
 arguments = sys.argv[1:]
+if sum(flag in arguments for flag in ("--provider-smoke", "--policy-eval", "--policy-probe")) > 1:
+    raise SystemExit("Choose one live runner.")
 runner = ROOT / "runtime/memory-lab/live.mjs"
+if "--provider-smoke" in arguments:
+    arguments.remove("--provider-smoke")
+    runner = ROOT / "runtime/clova/provider-smoke.ts"
 if "--policy-eval" in arguments and "--policy-probe" in arguments:
     raise SystemExit("Choose one live runner.")
 if "--policy-probe" in arguments:

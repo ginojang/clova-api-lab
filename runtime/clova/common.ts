@@ -3,6 +3,7 @@ import { dirname, isAbsolute, relative, resolve } from 'node:path';
 
 export class Fault extends Error {
   code: string; status?: number; usage?: Usage;
+  providerCode?: string; apiError?: string; retryable?: boolean;
   constructor(code: string, message: string, status?: number) { super(message); this.code = code; this.status = status; }
 }
 export function secretFile(path: string | undefined): string {
