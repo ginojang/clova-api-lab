@@ -6,6 +6,21 @@ import {tmpdir} from 'node:os';
 import {join, resolve} from 'node:path';
 import {Mcp} from '../client.ts';
 
+test('direct MCP artifact boundary rejects invalid schema before any file effect',async()=>{
+  const root=mkdtempSync(join(tmpdir(),'clova-schema-api-'));
+  const mcp=new Mcp([process.execPath,resolve('runtime/clova/mcp.ts'),'mcp','--workspace',root],root,{CLOVA_MCP_ALLOWED_TOOLS:'artifact_write,artifact_read'});
+  try{
+    await mcp.initialize();
+    for(const args of [{path:'bad.txt'},{path:'bad.txt',text:42},{path:'bad.txt',text:'bad',extra:true}]){
+      const result=await mcp.request('tools/call',{name:'artifact_write',arguments:args});
+      assert.equal(result.isError,true);assert.equal(JSON.parse(result.content[0].text).sideEffect,'not_started');
+      assert.equal(existsSync(join(root,'bad.txt')),false);
+    }
+    assert.equal((await mcp.request('tools/call',{name:'artifact_write',arguments:{path:'good.txt',text:'GOOD'}})).isError,false);
+    assert.equal(existsSync(join(root,'good.txt')),true);
+  }finally{await mcp.close();rmSync(root,{recursive:true,force:true});}
+});
+
 test('CLOVA MCP crosses real stdio and HTTP; rejects invalid input and survives provider failures', async () => {
   const root=mkdtempSync(join(tmpdir(),'clova-mcp-api-'));
   const key=join(root,'credential');

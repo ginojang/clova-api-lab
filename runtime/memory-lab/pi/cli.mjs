@@ -10,6 +10,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { Mcp } from '../../clova/client.ts';
 import { Fault, inside, usageZero, redact } from '../../clova/common.ts';
 import { Brain, normalizeToolCalls } from '../../clova/provider.ts';
+import { toolArgumentError } from '../../clova/tool-schema.ts';
 import { LabError, MemoryStore, loadPersona, buildContext, bounded, identifier, keys, object, digest } from './store.mjs';
 import { brainRequest, transportForModel } from './provider-bridge.mjs';
 import { compileContext, runtimeCapabilities } from '../policy/compiler.mjs';
@@ -136,13 +137,14 @@ async function main() {
   let modelRequestIndex = 0;
   let lastModelStarted = 0;
   let history = [];
+  let sessionId = randomUUID();
   // `idle` is a completion boundary, never a status update during an active
   // operation. Invalid/stale approvals must not look like a completed commit.
   const idle = () => {
     if (active || pending) return;
-    emit('idle', { ...namespace, busy: false, requiresRestart: poisoned });
+    emit('idle', { ...namespace, sessionId, busy: false, requiresRestart: poisoned });
   };
-  const errorEvent = error => emit('error', { code: error instanceof LabError ? error.code : 'engine', message: error instanceof LabError ? error.message : 'Memory experiment operation failed' });
+  const errorEvent = error => emit('error', { code: error instanceof LabError ? error.code === 'invalid_input' ? 'bad_input' : error.code : 'engine', message: error instanceof LabError ? error.message : 'Memory experiment operation failed' });
   const closeMcp = () => mcpClosing ??= mcp?.close() ?? Promise.resolve();
   function approve(operation, input, signal, extra = {}) {
     if (pending) throw new LabError('busy', 'Another approval is pending');
@@ -220,9 +222,9 @@ async function main() {
     async function prompt(text) {
       const memories = config.comparison ? [] : store.recall();
       const assembled = config.comparison ? {text: config.comparison.system, selectedCount: 0, omittedCount: 0, contextChars: [...config.comparison.system].length, contextBudget: null, unit: 'explicit comparison system', selectedItems: []} : config.policy === 'baseline' ? buildContext(config.persona, config.personaHash, memories, config.contextBudget) : config.compile(config.persona, config.personaHash, memories, config.contextBudget, config.capabilities);
-      const state = { kind: 'prompt', cancelled: false, loopCompleted: false, policyRejected: false, toolFailed: false, effects: new Map(), correctionModelCalls: 0, turns: 0, toolCalls: 0, inFlight: 0, providerCallAttempts: 0, externalModelCalls: 0, modelResponses: 0, usageComplete: true, finishReason: undefined, usage: usageZero(), failure: undefined, finalText: '', phase: 'initial', started: Date.now() };
+      const state = { kind: 'prompt', cancelled: false, policyRejected: false, toolFailed: false, effects: new Map(), correctionModelCalls: 0, turns: 0, toolCalls: 0, inFlight: 0, providerCallAttempts: 0, externalModelCalls: 0, modelResponses: 0, usageComplete: true, finishReason: undefined, usage: usageZero(), failure: undefined, finalText: '', phase: 'initial', started: Date.now() };
       active = state;
-      emit('turn_start', { ...namespace, personaHash: config.personaHash, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport });
+      emit('turn_start', { ...namespace, sessionId, personaHash: config.personaHash, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport });
       agent = new Agent({
         initialState: { systemPrompt: assembled.text, model, tools, messages: history, thinkingLevel: 'off' },
         toolExecution: 'sequential',
@@ -283,6 +285,11 @@ async function main() {
         },
         async beforeToolCall({ toolCall, args }, signal) {
           if (state.policyRejected) return {block: true, reason: 'denied: earlier approval in this turn was denied', terminate: true};
+          // SDK validation coerces a copy before this hook. Validate the original
+          // model arguments too; a numeric text value must not silently become a write.
+          const tool = tools.find(candidate => candidate.name === toolCall.name);
+          const diagnostic = tool && toolArgumentError(tool.parameters, toolCall.arguments);
+          if (diagnostic) return {block: true, reason: JSON.stringify(diagnostic)};
           const allow = await approve(toolCall.name, args, signal, { tool: toolCall.name, callId: toolCall.id });
           if (signal?.aborted || state.cancelled || closing) return { block: true, reason: 'Operation interrupted', terminate: true };
           if (!allow) { state.policyRejected = true; state.failure = new LabError('denied', 'Tool execution was denied'); }
@@ -296,7 +303,9 @@ async function main() {
       agent.subscribe(event => {
         if (event.type === 'tool_execution_start') emit('tool_call', { tool: event.toolName, callId: event.toolCallId, input: event.args });
         if (event.type === 'tool_execution_end') {
-          if (event.isError && !state.policyRejected && !state.cancelled) { state.toolFailed = true; state.failure ??= new LabError('tool_error', 'A tool failed or was denied'); }
+          // Tool failures are durable evidence, not terminal loop failures. The model
+          // may handle them; only a normal validated final response completes the loop.
+          if (event.isError && !state.policyRejected && !state.cancelled) state.toolFailed = true;
           emit('tool_result', { tool: event.toolName, callId: event.toolCallId, ok: !event.isError, sideEffect: state.effects.get(event.toolCallId) ?? 'not_started', output: event.result.details?.output ?? event.result });
         }
         if (event.type === 'message_end' && event.message.role === 'assistant' && !['error', 'aborted'].includes(event.message.stopReason)) state.finalText = textContent(event.message.content);
@@ -304,12 +313,6 @@ async function main() {
       const timer = setTimeout(() => { state.failure ??= new LabError('timeout', 'Prompt deadline exceeded'); interrupt(); }, config.timeoutMs);
       try {
         await agent.prompt(text);
-        // A recovered tool failure remains an error axis, but does not erase
-        // a later normal model stop. Limits/aborts leave another terminal shape.
-        const terminal = agent.state.messages.at(-1);
-        state.loopCompleted = !state.cancelled && !state.policyRejected && !agent.state.errorMessage
-          && terminal?.role === 'assistant' && terminal.stopReason === 'stop'
-          && Boolean(textContent(terminal.content).trim());
         if (!state.failure && config.structured) {
           let decoded;
           try { decoded = config.decode(state.finalText, config.persona, config.capabilities); }
@@ -367,7 +370,7 @@ async function main() {
         clearTimeout(timer);
         if (mcpClosing) await mcpClosing;
         if (state.failure) errorEvent(state.failure);
-        emit('turn_end', { policy: config.policy, comparison: Boolean(config.comparison), runCompleted: !state.failure || (state.loopCompleted && state.failure.code === 'tool_error'), policyRejected: state.policyRejected, toolFailed: state.toolFailed, costBasis: 'unknown', ok: !state.failure, endReason: state.failure?.code ?? 'completed', finishReason: state.finishReason ?? null, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport, turns: state.turns, providerCallAttempts: state.providerCallAttempts, externalModelCalls: state.externalModelCalls, modelResponses: state.modelResponses, toolCalls: state.toolCalls, usage: state.usage, usageComplete: state.usageComplete, costStatus: 'not_calculated', durationMs: Date.now() - state.started, rewritingStrategy: config.comparison ? 'none: explicit comparison profile' : config.composed ? 'model parts joined with two newlines; no semantic repair' : config.structured ? 'parse-only; no semantic repair' : config.voiced ? 'fresh-context-always' : 'same-history-if-violation', correctionAttempts: state.phase !== 'initial' ? 1 : 0, correctionModelCalls: state.correctionModelCalls });
+        emit('turn_end', { sessionId, policy: config.policy, comparison: Boolean(config.comparison), runCompleted: !state.failure, policyRejected: state.policyRejected, toolFailed: state.toolFailed, costBasis: 'unknown', ok: !state.failure, endReason: state.failure?.code ?? 'completed', finishReason: state.finishReason ?? null, model: config.modelName, synthetic: Boolean(config.script), providerTransport: config.providerTransport, turns: state.turns, providerCallAttempts: state.providerCallAttempts, externalModelCalls: state.externalModelCalls, modelResponses: state.modelResponses, toolCalls: state.toolCalls, usage: state.usage, usageComplete: state.usageComplete, costStatus: 'not_calculated', durationMs: Date.now() - state.started, rewritingStrategy: config.comparison ? 'none: explicit comparison profile' : config.composed ? 'model parts joined with two newlines; no semantic repair' : config.structured ? 'parse-only; no semantic repair' : config.voiced ? 'fresh-context-always' : 'same-history-if-violation', correctionAttempts: state.phase !== 'initial' ? 1 : 0, correctionModelCalls: state.correctionModelCalls });
         active = undefined; agent = undefined; idle();
       }
     }
@@ -388,7 +391,7 @@ async function main() {
         if (command.op === 'recall') { keys(command, ['op', 'slot'], ['op']); emit('memories', { items: store.recall(command.slot), ...namespace }); idle(); return; }
         if (command.op === 'observe') { keys(command, ['op', 'turnId', 'text']); emit('observed', store.observe(command.turnId, command.text)); idle(); return; }
         if (active || pending) throw new LabError('busy', 'Wait for the active operation or approval');
-        if (command.op === 'new') { keys(command, ['op']); history = []; emit('notice', { text: 'Conversation transcript cleared; namespace, memory and scripted cursor preserved', ...namespace }); idle(); return; }
+        if (command.op === 'new') { keys(command, ['op']); history = []; sessionId = randomUUID(); emit('notice', { sessionId, text: 'Conversation transcript cleared; namespace, memory and scripted cursor preserved', ...namespace }); idle(); return; }
         if (command.op === 'remember') {
           keys(command, ['op', 'memory']);
           const proposal = store.proposal(command.memory);
@@ -407,10 +410,10 @@ async function main() {
         throw new LabError('invalid_input', 'Unknown operation');
       } catch (error) { errorEvent(error instanceof SyntaxError ? new LabError('invalid_input', 'Expected JSON object') : error); idle(); }
     });
-    emit('ready', { policy: config.policy, comparison: Boolean(config.comparison), comparisonSystemHash: config.comparison ? digest(config.comparison.system) : undefined, tokenLimit: config.comparison?.tokenLimit, minCallIntervalMs: config.minCallIntervalMs, capabilities: config.capabilities, framework: 'pi-agent-core+node:sqlite', version, ...namespace, personaHash: config.personaHash, personaRevision: config.persona.revision, model: config.modelName, syntheticOnly: Boolean(config.script), providerTransport: config.providerTransport, toolMode: config.toolMode, maxTokens: config.maxTokens, workspace: config.workspace, store: config.storePath, mcpPid: mcp.proc.pid, contextBudget: config.contextBudget });
+    emit('ready', { sessionId, policy: config.policy, comparison: Boolean(config.comparison), comparisonSystemHash: config.comparison ? digest(config.comparison.system) : undefined, tokenLimit: config.comparison?.tokenLimit, minCallIntervalMs: config.minCallIntervalMs, capabilities: config.capabilities, framework: 'pi-agent-core+node:sqlite', version, ...namespace, personaHash: config.personaHash, personaRevision: config.persona.revision, model: config.modelName, syntheticOnly: Boolean(config.script), providerTransport: config.providerTransport, toolMode: config.toolMode, maxTokens: config.maxTokens, workspace: config.workspace, store: config.storePath, mcpPid: mcp.proc.pid, contextBudget: config.contextBudget });
     await new Promise(resolveClosed => input.once('close', () => { closing = true; interrupt(); resolveClosed(); }));
     await task;
     process.removeListener('SIGTERM', shutdown); process.removeListener('SIGINT', shutdown);
   } finally { await closeMcp(); store.close(); }
 }
-main().catch(error => { emit('error', { code: error instanceof LabError || error instanceof Fault ? error.code : 'configuration', message: error instanceof LabError || error instanceof Fault ? redact(error.message) : 'Memory worker startup failed' }); process.exitCode = 1; });
+main().catch(error => { emit('error', { code: error instanceof LabError || error instanceof Fault ? error.code === 'invalid_input' ? 'bad_input' : error.code : 'configuration', message: error instanceof LabError || error instanceof Fault ? redact(error.message) : 'Memory worker startup failed' }); process.exitCode = 1; });

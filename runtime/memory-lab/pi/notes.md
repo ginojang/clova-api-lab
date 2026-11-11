@@ -115,3 +115,25 @@ H40 수정은 기본·비교 모드 모두에 적용된다. 첫 거절은 턴의
 turn_end의 runCompleted/policyRejected/toolFailed를 구분하며 판정기 없는 taskSucceeded는 생략한다. costBasis는 unknown이다. 이 변경은 승인 대기 시간 분리·상태 heartbeat·H1–H56 전체 적합성 선언이 아니다.
 
 검증: `node --test runtime/memory-lab/pi/smoke.test.mjs`. 첫 거절 뒤 나머지 승인·효과0, 첫 허용 뒤 둘째 거절, 둘 다 허용, 두 번째 native 요청의 tool 결과 텍스트, 정확한 system·raw 도구 이름, 기억·literal repair 제외, 토큰 상한 및 잘못된 프로필의 DB 생성 전 거절을 확인한다. mock/대본만 사용하며 실제 API 호출은 없다.
+
+## H31 후속: 복구 뒤 최종 응답과 종료 오류 축
+
+도구의 `isError`는 `toolFailed:true`와 원시 `tool_result`에 보존하고, 모델 루프 자체를 끝내는 `failure`와 분리한다. 모델이 이후 비어 있지 않은 정상 답변으로 끝나고 기존 persona/schema 검사를 통과하면 최종 `text`와 `ok:true`, `runCompleted:true`, `endReason:completed`를 낸다. 도구 오류 기록은 지우지 않으며 정상 대화 이력에도 남는다. 이전 H31 실제 보고서의 `ok:false`·최종 text 부재는 과거 실행 그대로 보존한다.
+
+이는 과제 성공 판정이 아니다. 모델이 파일을 복구하지 않고 단지 "Done"이라고 끝내도 루프 완료일 수 있으므로 `taskSucceeded`는 계속 생략한다. 실제 파일과 필요한 도구 수행은 독립 판정기가 확인해야 한다. 같은 이유로 오류를 숨기는 `toolFailed:false` 변환이나 템플릿 성공 문장 보충은 하지 않는다.
+
+API/model 오류·출력 잘림·빈 답·중단·시간/왕복/토큰 한도·승인 거절·불확실한 MCP 효과·최종 정책/스키마 오류는 종료 실패로 남는다. 앞선 도구 오류 때문에 뒤의 실패 이유가 가려지지 않는다. 도구 오류 이후에도 literal/persona 교정과 최종 출력 검사를 실행한다.
+
+회귀에는 실제 MCP `not_found`→write→read→정상 stop, 복구 없는 완료 주장, 도구 오류 뒤 API401·빈 답·length·대본 소진·왕복/토큰 한도·취소·timeout, 도구 오류 뒤 persona 교정을 포함한다. 새 검사는 모두 대본 또는 loopback 공급자를 사용한다. 이 변경으로 실제 API 재호출이나 H1–H56 전체 적합성을 주장하지 않는다.
+
+## 원시 도구 인자 검사
+
+Pi SDK는 인자 사본을 coercion한 뒤 beforeToolCall을 부른다. 승인 앞에서 공유 `toolArgumentError`로 원래 `toolCall.arguments`를 다시 검사해 숫자 text42가 몰래 문자열 쓰기로 바뀌는 것을 막는다. 실패는 승인/실행 없이 category·badField·validShape·retryable·sideEffect:not_started 진단으로 반환하고, 모델이 별도 올바른 호출을 만들 기회는 남긴다. policyRejected로 분류하거나 도구의 입력/원래 대화 이력을 고쳐 쓰지 않는다.
+
+SDK가 먼저 거절한 missing/extra 필드의 오류 문구는 여전히 SDK가 생성한다. 이번 승인의 원시 인자 검사를 전체 오류 envelope 통일이나 모든 JSON Schema 방언 지원으로 확대하지 않는다. 숫자→문자 오류 뒤 모델이 명시적으로 문자열을 다시 제출하면 그 새 호출에만 승인 질문을 하고 실행한다.
+
+## 공식 키트 입력·세션 필드 보완
+
+외부 입력 검증 실패의 이벤트 코드는 `bad_input`으로 정규화한다. 문자열 `approve.allow`를 거절해도 기존 approvalId의 기다림은 유지하며 그때 idle이나 파일 효과를 내지 않는다. 올바른 boolean 답만 그 승인을 해제한다.
+
+ready·turn_start·turn_end·idle에는 런타임 대화의 UUID `sessionId`를 싣는다. 같은 프로세스에서 이어지는 턴은 같은 값을 쓰고 `new`는 새 UUID와 빈 대화 transcript를 만든다. 이것은 기억 namespace의 `conversation`과 별개다. 기존 승인된 저장 기억과 principal/persona/conversation 값은 바꾸지 않는다. 프로세스 재시작 시 이 runtime sessionId를 resume하는 기능은 이번 범위가 아니다.

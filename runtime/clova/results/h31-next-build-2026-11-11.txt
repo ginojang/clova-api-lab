@@ -1,0 +1,12 @@
+
+> clova-api-lab@0.0.1 build:clova-runtime
+> esbuild runtime/clova/live.ts runtime/clova/harness.ts runtime/clova/mcp.ts runtime/clova/http.ts runtime/clova/langgraph.ts --bundle --platform=node --format=esm --target=node20 --outdir=server-dist/clova --out-extension:.js=.mjs && node -e "require('fs').cpSync('runtime/clova/fixtures','server-dist/clova/fixtures',{recursive:true})"
+
+
+  server-dist/clova/langgraph.mjs    2.6mb ⚠️
+  server-dist/clova/mcp.mjs        324.5kb
+  server-dist/clova/http.mjs        46.7kb
+  server-dist/clova/harness.mjs     40.9kb
+  server-dist/clova/live.mjs        11.2kb
+
+⚡ Done in 198ms

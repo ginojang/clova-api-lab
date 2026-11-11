@@ -24,7 +24,7 @@ async function start(dir, config = {}) {
   writeFileSync(scriptPath, JSON.stringify(config.script ?? [answer('안내하겠습니다.')]));
   const store = resolve(dir, 'memory.sqlite');
   const modelArgs = config.model ? ['--model', config.model] : ['--script', scriptPath];
-  const child = spawn(process.execPath, [resolve(folder, 'cli.mjs'), '--store', store, '--principal', config.principal ?? 'alice', '--conversation', config.conversation ?? 'c1', '--persona', personaPath, ...modelArgs, '--scope', config.scope ?? 'session', ...(config.contextChars ? ['--context-chars', String(config.contextChars)] : []), ...(config.maxTokens ? ['--max-tokens', String(config.maxTokens)] : []), ...(config.tools ? ['--tools', config.tools] : []), ...(config.maxTurns ? ['--max-turns', String(config.maxTurns)] : []), ...(config.comparisonProfile ? ['--comparison-profile', config.comparisonProfile] : []), ...(config.policy ? ['--policy',config.policy] : [])], { cwd: folder, stdio: 'pipe', env: { ...process.env, ...config.env } });
+  const child = spawn(process.execPath, [resolve(folder, 'cli.mjs'), '--store', store, '--principal', config.principal ?? 'alice', '--conversation', config.conversation ?? 'c1', '--persona', personaPath, ...modelArgs, '--scope', config.scope ?? 'session', ...(config.contextChars ? ['--context-chars', String(config.contextChars)] : []), ...(config.maxTokens ? ['--max-tokens', String(config.maxTokens)] : []), ...(config.tools ? ['--tools', config.tools] : []), ...(config.maxTurns ? ['--max-turns', String(config.maxTurns)] : []), ...(config.timeoutMs ? ['--timeout-ms', String(config.timeoutMs)] : []), ...(config.comparisonProfile ? ['--comparison-profile', config.comparisonProfile] : []), ...(config.policy ? ['--policy',config.policy] : [])], { cwd: folder, stdio: 'pipe', env: { ...process.env, ...config.env } });
   const events = []; const listeners = new Set(); let stderr = '';
   child.stderr.on('data', chunk => { stderr += chunk; });
   const closed = new Promise(resolveClose => child.once('close', resolveClose));
@@ -391,7 +391,7 @@ test('denial after validation failure records independent policyRejected and too
   assert.equal(events.filter(e=>e.t==='model_context').length,1);
 });
 
-test('H40 recovered tool failure preserves error flags while reporting normally completed loop', async t => {
+test('H40 recovered tool failure emits final response and completes while retaining toolFailed', async t => {
   const dir=sandbox(),profile=comparisonProfile(dir);
   const call=(id,name,args)=>({message:{role:'assistant',content:'',toolCalls:[{id,type:'function',function:{name,arguments:args}}]},finishReason:'tool_calls',usage:{input:11,output:5}});
   const script=[call('missing','artifact_read',{path:'recovered.txt'}),call('write','artifact_write',{path:'recovered.txt',text:'RECOVERED'}),call('read','artifact_read',{path:'recovered.txt'}),answer('Recovered and verified the file.')];
@@ -405,9 +405,10 @@ test('H40 recovered tool failure preserves error flags while reporting normally 
   const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
   assert.deepEqual(events.filter(e=>e.t==='tool_result').map(e=>[e.data.callId,e.data.ok]),[['missing',false],['write',true],['read',true]]);
   assert.equal(readFileSync(resolve(worker.ready.workspace,'recovered.txt'),'utf8'),'RECOVERED');
-  assert.equal(end.runCompleted,true);assert.equal(end.ok,false);assert.equal(end.endReason,'tool_error');assert.equal(end.toolFailed,true);assert.equal(end.policyRejected,false);assert.equal(end.turns,4);assert.equal(end.toolCalls,3);
+  assert.equal(end.runCompleted,true);assert.equal(end.ok,true);assert.equal(end.endReason,'completed');assert.equal(end.toolFailed,true);assert.equal(end.policyRejected,false);assert.equal(end.turns,4);assert.equal(end.toolCalls,3);
   assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
-  assert.equal(events.some(e=>e.t==='text'),false,'existing failed-turn text suppression stays unchanged');
+  assert.equal(events.find(e=>e.t==='text')?.data.text,'Recovered and verified the file.');
+  assert.equal(events.some(e=>e.t==='error'),false);
 });
 
 test('normal model stop does not mark empty or invalid structured output as a completed run', async t => {
@@ -424,4 +425,135 @@ test('existing successful voiced correction keeps runCompleted true after an emp
   const worker=await start(sandbox(),{script:[answer(''),answer('엘다입니다. 차분하게 안내하겠습니다.')],policy:'voiced-v3',tools:'none'});t.after(worker.close);
   const events=await worker.command({op:'prompt',text:'짧게 안내해 주세요.'}),end=events.find(e=>e.t==='turn_end').data;
   assert.equal(end.ok,true);assert.equal(end.runCompleted,true);assert.equal(end.correctionAttempts,1);assert.equal(end.toolFailed,false);
+});
+
+const failedRead = (name='clova__artifact_read') => ({message:{role:'assistant',content:'',toolCalls:[{id:'missing',type:'function',function:{name,arguments:{path:'missing.txt'}}}]},finishReason:'tool_calls',usage:{input:11,output:5}});
+async function approveMissing(worker, prompt='Read the file.') {
+  const mark=worker.events.length;worker.send({op:'prompt',text:prompt});
+  const approval=await worker.wait(e=>e.t==='approval',mark);
+  worker.send({op:'approve',approvalId:approval.data.approvalId,allow:true});
+  await worker.wait(e=>e.t==='tool_result'&&e.data.callId==='missing',mark);
+  return mark;
+}
+
+test('tool failure plus model completion is never an inferred task success',async t=>{
+  const worker=await start(sandbox(),{script:[failedRead(),answer('Done.')]});t.after(worker.close);
+  const mark=await approveMissing(worker);await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.ok,true);assert.equal(end.runCompleted,true);assert.equal(end.toolFailed,true);
+  assert.equal(end.endReason,'completed');assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+  assert.equal(events.find(e=>e.t==='tool_result').data.ok,false);
+  assert.equal(existsSync(resolve(worker.ready.workspace,'missing.txt')),false);
+  assert.equal(events.find(e=>e.t==='text').data.text,'Done.');
+});
+
+test('tool failure cannot mask later empty output, truncation, exhausted script or loop limits',async t=>{
+  for(const [tail,extra,expected] of [
+    [[answer('')],{},'empty_response'],
+    [[{...answer('partial'),finishReason:'length'}],{},'truncated'],
+    [[],{},'script_exhausted'],
+    [[answer('unused')],{maxTurns:1},'max_turns'],
+  ]){
+    const worker=await start(sandbox(),{script:[failedRead(),...tail],...extra});t.after(worker.close);
+    const mark=await approveMissing(worker);await worker.wait(e=>e.t==='idle',mark);
+    const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+    assert.equal(end.toolFailed,true);assert.equal(end.ok,false);assert.equal(end.runCompleted,false);
+    assert.equal(end.endReason,expected);assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+    assert.equal(events.some(e=>e.t==='text'),false);await worker.close();
+  }
+});
+
+test('tool failure does not suppress later native API failure or persona correction',async t=>{
+  const dir=sandbox();
+  const mock=await localClova(t,(_body,response,n)=>{
+    if(n===1)clovaResponse(response,failedRead());
+    else{response.writeHead(401,{'content-type':'application/json'});response.end('{}');}
+  });
+  const worker=await start(dir,{model:'clova:HCX-005',env:{CLOVA_API_KEY_FILE:fakeCredential(dir),CLOVA_BASE_URL:mock.url}});t.after(worker.close);
+  const mark=await approveMissing(worker);await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.toolFailed,true);assert.equal(end.ok,false);assert.equal(end.runCompleted,false);assert.equal(end.endReason,'api_error');
+  assert.equal(events.some(e=>e.t==='text'),false);assert.equal(mock.requests.length,2);assert.deepEqual(mock.errors,[]);
+  await worker.close();
+  const repaired=await start(sandbox(),{script:[failedRead(),answer('TEST_BOUNDARY_VIOLATION'),answer('정정한 안내입니다.')]});t.after(repaired.close);
+  const repairedMark=await approveMissing(repaired);await repaired.wait(e=>e.t==='idle',repairedMark);
+  const repairedEvents=repaired.events.slice(repairedMark),repairedEnd=repairedEvents.find(e=>e.t==='turn_end').data;
+  assert.equal(repairedEnd.ok,true);assert.equal(repairedEnd.toolFailed,true);assert.equal(repairedEnd.correctionAttempts,1);
+  assert.deepEqual(repairedEvents.filter(e=>e.t==='text').map(e=>e.data.text),['정정한 안내입니다.']);
+});
+
+test('tool failure cannot mask cancellation or timeout during the next model response',async t=>{
+  for(const timeout of [false,true]){
+    const worker=await start(sandbox(),{script:[failedRead(),{...answer('too late'),delayMs:2000}],...(timeout?{timeoutMs:500}:{})});t.after(worker.close);
+    const mark=await approveMissing(worker);await worker.wait(e=>e.t==='model_context'&&e.data.requestIndex===2,mark);
+    if(!timeout)worker.send({op:'interrupt'});
+    await worker.wait(e=>e.t==='idle',mark);
+    const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+    assert.equal(end.toolFailed,true);assert.equal(end.runCompleted,false);assert.equal(end.ok,false);
+    assert.equal(end.endReason,timeout?'timeout':'interrupted');assert.equal(events.some(e=>e.t==='text'),false);
+    await worker.close();
+  }
+});
+
+test('a failed tool cannot mask the comparison token limit before the next request',async t=>{
+  const dir=sandbox(),profile=comparisonProfile(dir,{tokenLimit:1});
+  const worker=await start(dir,{script:[failedRead('artifact_read'),answer('unused')],comparisonProfile:profile});t.after(worker.close);
+  const mark=await approveMissing(worker);await worker.wait(e=>e.t==='idle',mark);
+  const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+  assert.equal(end.endReason,'token_limit');assert.equal(end.toolFailed,true);assert.equal(end.ok,false);assert.equal(end.runCompleted,false);
+  assert.equal(end.turns,1);assert.equal(events.filter(e=>e.t==='model_context').length,1);assert.equal(events.some(e=>e.t==='text'),false);
+});
+
+test('raw numeric text is blocked before approval and effect, while later explicit string repair can execute',async t=>{
+  for(const comparison of [false,true]){
+    const dir=sandbox(),name=comparison?'artifact_write':'clova__artifact_write';
+    const call=(id,text)=>({message:{role:'assistant',content:'',toolCalls:[{id,type:'function',function:{name,arguments:{path:'numeric.txt',text}}}]},finishReason:'tool_calls',usage:{input:11,output:5}});
+    const worker=await start(dir,{script:[call('numeric',42),call('repaired','42'),answer('Stored the explicit corrected string.')],...(comparison?{comparisonProfile:comparisonProfile(dir)}:{})});t.after(worker.close);
+    const mark=worker.events.length;worker.send({op:'prompt',text:'Write the requested text.'});
+    const invalid=await worker.wait(e=>e.t==='tool_result'&&e.data.callId==='numeric',mark);
+    assert.equal(invalid.data.ok,false);assert.equal(invalid.data.sideEffect,'not_started');
+    assert.equal(existsSync(resolve(worker.ready.workspace,'numeric.txt')),false);
+    const diagnostic=JSON.parse(invalid.data.output.content[0].text);
+    assert.equal(diagnostic.category,'wrong_type');assert.equal(diagnostic.badField,'text');assert.equal(diagnostic.sideEffect,'not_started');assert.equal(diagnostic.retryable,true);
+    const approval=await worker.wait(e=>e.t==='approval',mark);assert.equal(approval.data.callId,'repaired');assert.equal(approval.data.input.text,'42');
+    worker.send({op:'approve',approvalId:approval.data.approvalId,allow:true});await worker.wait(e=>e.t==='idle',mark);
+    const events=worker.events.slice(mark),end=events.find(e=>e.t==='turn_end').data;
+    assert.equal(events.filter(e=>e.t==='approval').length,1);assert.equal(end.toolCalls,1);
+    assert.equal(readFileSync(resolve(worker.ready.workspace,'numeric.txt'),'utf8'),'42');
+    assert.equal(end.toolFailed,true);assert.equal(end.policyRejected,false);assert.equal(end.ok,true);assert.equal(end.runCompleted,true);assert.equal(Object.hasOwn(end,'taskSucceeded'),false);
+    const contexts=events.filter(e=>e.t==='model_context');
+    assert.equal(contexts[1].data.providerMessages.find(m=>m.toolCalls?.some(c=>c.id==='numeric')).toolCalls[0].function.arguments.text,42,'original model history is not rewritten by coercion');
+    await worker.close();
+  }
+});
+
+test('invalid approval boolean emits bad_input and preserves the pending approval without effects',async t=>{
+  const worker=await start(sandbox(),{script:[pairAnswer(),answer('unused')]});t.after(worker.close);
+  const mark=worker.events.length;worker.send({op:'prompt',text:'Write the files.'});
+  const approval=await worker.wait(e=>e.t==='approval',mark);
+  const before=worker.events.length;worker.send({op:'approve',approvalId:approval.data.approvalId,allow:'false'});
+  const rejected=await worker.wait(e=>e.t==='error',before);assert.equal(rejected.data.code,'bad_input');
+  assert.equal(worker.events.slice(before).some(e=>e.t==='idle'),false);
+  assert.equal(existsSync(resolve(worker.ready.workspace,'first.txt')),false);
+  worker.send({op:'approve',approvalId:approval.data.approvalId,allow:false});await worker.wait(e=>e.t==='idle',before);
+  assert.equal(worker.events.slice(mark).find(e=>e.t==='turn_end').data.endReason,'denied');
+  assert.equal(worker.events.slice(mark).filter(e=>e.t==='approval').length,1);
+});
+
+test('sessionId remains stable across turns and new changes it while retaining explicit memory namespace',async t=>{
+  const worker=await start(sandbox(),{script:[answer('First reply.'),answer('Second reply.')]});t.after(worker.close);
+  const firstId=worker.ready.sessionId;assert.match(firstId,/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/);
+  await worker.command({op:'observe',turnId:'session-evidence',text:'Synthetic color preference.'});
+  await worker.mutate({op:'remember',memory:memory('blue','session-evidence')});
+  const first=await worker.command({op:'prompt',text:'First question.'});
+  for(const type of ['turn_start','turn_end','idle'])assert.equal(first.find(e=>e.t===type).data.sessionId,firstId);
+  const cleared=await worker.command({op:'new'}),newId=cleared.find(e=>e.t==='idle').data.sessionId;
+  assert.notEqual(newId,firstId);assert.equal(cleared.find(e=>e.t==='notice').data.sessionId,newId);
+  assert.equal(cleared.find(e=>e.t==='idle').data.conversation,worker.ready.conversation);
+  assert.equal(items(await worker.command({op:'recall'}))[0].value,'blue');
+  const second=await worker.command({op:'prompt',text:'Second question.'});
+  for(const type of ['turn_start','turn_end','idle'])assert.equal(second.find(e=>e.t===type).data.sessionId,newId);
+  const context=second.find(e=>e.t==='model_context').data;
+  assert.equal(context.providerMessages.some(m=>m.content==='First question.'),false);
+  assert.ok(context.providerMessages[0].content.includes('blue'));
 });

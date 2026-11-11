@@ -1,0 +1,11 @@
+✔ recovery verdict requires both verified effects and honest final completion (9.570828ms)
+✔ whole-report gate rejects live wire mismatch and even a 1ms pacing miss (3.447272ms)
+✔ early-waking timer cannot bypass the minimum request interval (1.860945ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.976022

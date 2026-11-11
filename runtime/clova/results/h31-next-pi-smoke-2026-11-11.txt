@@ -1,0 +1,34 @@
+✔ approval keeps DB unchanged; restart/isolation/correction/idempotence/forget use actual SQLite (7061.207831ms)
+✔ explicit long_term crosses conversations with origin evidence; default session does not (2957.511464ms)
+✔ actual Pi model context contains retrieved data while MCP still requires explicit approval (1126.653436ms)
+✔ literal persona Stop check allows clean output, corrects once and blocks repetition (2884.718894ms)
+✔ live Brain adapter via loopback: system, memory, tool history, token limit, native usage and correction tool removal (1324.518039ms)
+✔ live Brain length termination retains raw diagnostic content and usage without emitting accepted final text (1052.338247ms)
+✔ tools none removes actual SDK/provider tools while delivering the persona response in one request (1060.755704ms)
+✔ live Brain request abort leaves no late effects and marks unavailable usage (1044.154265ms)
+✔ Brain translation replays Pi system sections/tool deltas and preserves provider reasoning (2.671746ms)
+✔ H40 first denial blocks tail approvals and effects while preserving two result pairs (2065.141215ms)
+✔ H40 mixed batch keeps completed first effect and stops after second denial (1106.05553ms)
+✔ comparison profile uses exact system/raw tool names/text results and allows both approved calls without persona repair (1220.72745ms)
+✔ comparison known-usage token limit prevents another model request (1109.513066ms)
+✔ comparison profile rejects incompatible policy, invalid budget and outside workspace before creating DB (1836.699151ms)
+✔ denial after validation failure records independent policyRejected and toolFailed axes (1020.04826ms)
+✔ H40 recovered tool failure emits final response and completes while retaining toolFailed (1142.511364ms)
+✔ normal model stop does not mark empty or invalid structured output as a completed run (1967.847547ms)
+✔ existing successful voiced correction keeps runCompleted true after an empty initial draft (979.988054ms)
+✔ tool failure plus model completion is never an inferred task success (1125.384843ms)
+✔ tool failure cannot mask later empty output, truncation, exhausted script or loop limits (4348.110838ms)
+✔ tool failure does not suppress later native API failure or persona correction (2359.081463ms)
+✔ tool failure cannot mask cancellation or timeout during the next model response (2613.114601ms)
+✔ a failed tool cannot mask the comparison token limit before the next request (1143.080824ms)
+✔ raw numeric text is blocked before approval and effect, while later explicit string repair can execute (2246.863635ms)
+✔ invalid approval boolean emits bad_input and preserves the pending approval without effects (1057.315495ms)
+✔ sessionId remains stable across turns and new changes it while retaining explicit memory namespace (965.646963ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 47084.454312

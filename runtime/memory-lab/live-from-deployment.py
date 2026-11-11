@@ -44,9 +44,12 @@ local.mkdir(parents=True, exist_ok=True, mode=0o700)
 os.chmod(local, 0o700)
 credential_path = None
 arguments = sys.argv[1:]
-if sum(flag in arguments for flag in ("--h31-r2", "--h31", "--provider-smoke", "--policy-eval", "--policy-probe")) > 1:
+if sum(flag in arguments for flag in ("--h31-recovery-next", "--h31-r2", "--h31", "--provider-smoke", "--policy-eval", "--policy-probe")) > 1:
     raise SystemExit("Choose one live runner.")
 runner = ROOT / "runtime/memory-lab/live.mjs"
+if "--h31-recovery-next" in arguments:
+    arguments.remove("--h31-recovery-next")
+    runner = ROOT / "runtime/clova/h31/recovery-next.mjs"
 if "--h31-r2" in arguments:
     arguments.remove("--h31-r2")
     runner = ROOT / "runtime/clova/h31/run-r2.mjs"

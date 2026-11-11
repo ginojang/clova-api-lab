@@ -1,0 +1,174 @@
+{
+  "date": "2026-11-11",
+  "baseCommit": "109a2952ab3c000e0d064ba5708a938c4e5cfa03",
+  "actualExternalModelCalls": 12,
+  "knownUsage": {
+    "input": 1830,
+    "output": 360
+  },
+  "usageUnreportedCalls": 0,
+  "apiErrors": 0,
+  "costBasis": "unknown",
+  "priorH31ActualCalls": 79,
+  "h31TotalActualCalls": 91,
+  "liveRunnerVersion": 3,
+  "releaseRunnerVersion": 4,
+  "changedAfterLiveMeasurement": [
+    "runtime/clova/h31/recovery-next.mjs",
+    "runtime/clova/h31/recovery-next-verdict.mjs"
+  ],
+  "addedAfterLiveMeasurement": [
+    "runtime/clova/h31/pacing.mjs"
+  ],
+  "runtimeSourcesUnchangedSinceLive": true,
+  "liveStrictProtocolPass": false,
+  "liveStrictProtocolReason": "Two observed request intervals of 5999ms, below the prospectively required 6000ms. Original raw result retained.",
+  "recoveryExecutionPass": true,
+  "releaseMockPreflightPass": true,
+  "releaseMockExternalCalls": 0,
+  "credentialCopyRemoved": true,
+  "previousFrozenEvidence": {
+    "h31-confirm-live-2026-11-11.json": "3828b20c9cfeb299954c4076b6b4a4a5ad7893b31efeede12692b87b65ca3137",
+    "h31-confirm-preflight-2026-11-11.json": "f6f5710167ff7ab6d80c5c21671cfe952f0701e689c96f1acd5f85996b45f8d2"
+  },
+  "artifacts": {
+    "runtime/clova/results/h31-kit-final-2026-11-11.json": {
+      "sha256": "96c4cc7765848689444d709024a56c0fedbf87f38da0e2f36de895dc9dce1fae",
+      "bytes": 269288
+    },
+    "runtime/clova/results/h31-kit-first-2026-11-11.json": {
+      "sha256": "0f96050cbfc718b73ad0838f0b110d16d0583843b8fdfbed442708a1febb52d8",
+      "bytes": 267799
+    },
+    "runtime/clova/results/h31-kit-schema-final-2026-11-11.json": {
+      "sha256": "c7db5f74f3a7273bf997c12ee6ecbe4fdfce0f784a17dcab167c4a0794a6cb8d",
+      "bytes": 274012
+    },
+    "runtime/clova/results/h31-malformed-baseline-2026-11-11.json": {
+      "sha256": "a1dddac9330b87fb3d7ee88487b7d27873989604bd7c9432cc580fc20769b078",
+      "bytes": 551218
+    },
+    "runtime/clova/results/h31-malformed-final-2026-11-11.json": {
+      "sha256": "da3242094bada3ba32291f5e773283f1e1e7aceb0798ca4c7994ba03b9d8e31c",
+      "bytes": 562167
+    },
+    "runtime/clova/results/h31-malformed-schema-final-2026-11-11.json": {
+      "sha256": "95c586918ebd1ba50d93eb7eef56cb01ae304c1f37d9bd6190f6724103fc2185",
+      "bytes": 562167
+    },
+    "runtime/clova/results/h31-next-build-2026-11-11.txt": {
+      "sha256": "1f4bb4a50b37f4006bae038097280a4ee511adb565d09de586965fe5f5217da1",
+      "bytes": 625
+    },
+    "runtime/clova/results/h31-next-built-mcp-2026-11-11.txt": {
+      "sha256": "4ed27baa7924ff1cce32a847a367dbf37ca2837130f7178a3f6e92b303e87621",
+      "bytes": 260
+    },
+    "runtime/clova/results/h31-next-final-typecheck-2026-11-11.txt": {
+      "sha256": "9d80677d50b0501e446445e5450f6786f825e9b39e9ac4e447748a83c8fdc413",
+      "bytes": 81
+    },
+    "runtime/clova/results/h31-next-pi-smoke-2026-11-11.txt": {
+      "sha256": "235a41ea80339526a9ac12480dfa6f269001df2a66dff01d867baabaa4db1eb7",
+      "bytes": 2967
+    },
+    "runtime/clova/results/h31-next-policy-regression-2026-11-11.txt": {
+      "sha256": "5b9f954dd9132da7925614c4ca1f1aa91bd9c91be14afb528d6f0b9308a050a3",
+      "bytes": 15760
+    },
+    "runtime/clova/results/h31-next-runtime-regression-2026-11-11.txt": {
+      "sha256": "d3bf7633489c17eaec0a3efa4dd27d5ea45d8ada3e0ea941745564629dbdf2fd",
+      "bytes": 9702
+    },
+    "runtime/clova/results/h31-next-schema-regression-2026-11-11.txt": {
+      "sha256": "78806b6474e2601a1a3b1b2eae90e98181dfeb1d04550b23bfed3d078c16b385",
+      "bytes": 1676
+    },
+    "runtime/clova/results/h31-next-typecheck-2026-11-11.txt": {
+      "sha256": "9d80677d50b0501e446445e5450f6786f825e9b39e9ac4e447748a83c8fdc413",
+      "bytes": 81
+    },
+    "runtime/clova/results/h31-recovery-next-final-gate-tests-2026-11-11.txt": {
+      "sha256": "6e3a484a1f04423b827fa50e365466b1878c1b5b074eed2fecd6951d8d30f307",
+      "bytes": 376
+    },
+    "runtime/clova/results/h31-recovery-next-final-preflight-2026-11-11.json": {
+      "sha256": "e643aed499bb45e3ca5d64c517a01539d5063c70f367972fab9595d76e15a09c",
+      "bytes": 137528
+    },
+    "runtime/clova/results/h31-recovery-next-final-preflight-2026-11-11.txt": {
+      "sha256": "8a3133fef94ab3daafb1d970accf06167d08d78605dd2c622a09c7a388aeaf88",
+      "bytes": 492
+    },
+    "runtime/clova/results/h31-recovery-next-gate-tests-2026-11-11.txt": {
+      "sha256": "8150f91c95cc491833ba179cd3816054087d3d87a6dc94907a29890ff2a8637b",
+      "bytes": 376
+    },
+    "runtime/clova/results/h31-recovery-next-live-2026-11-11.json": {
+      "sha256": "2d1a68651f724236e15a05de63231bdd5f9d70643f80cfcf1b3390b2b079eb7b",
+      "bytes": 145767
+    },
+    "runtime/clova/results/h31-recovery-next-live-2026-11-11.txt": {
+      "sha256": "c783e23aaad36ad576c805f843cf5e2cc76da6895087b63d2b2e8f842c0410e4",
+      "bytes": 528
+    },
+    "runtime/clova/results/h31-recovery-next-live-audit-2026-11-11.json": {
+      "sha256": "1ccc24383c63ce0a4744727aec1dad48101e236ce0395f231766563de48fefdb",
+      "bytes": 1741
+    },
+    "runtime/clova/results/h31-recovery-next-live-final-audit-2026-11-11.json": {
+      "sha256": "05c5096a75d8f28e9280f00681da210122ad56b07104f3cc4abc51adeefa3665",
+      "bytes": 1828
+    },
+    "runtime/clova/results/h31-recovery-next-preflight-2026-11-11.json": {
+      "sha256": "6f16d7dd77039872cd2dc58dd35fab15ddde59ecfc39b3de469c16d66dcd1318",
+      "bytes": 135712
+    },
+    "runtime/clova/results/h31-recovery-next-preflight-2026-11-11.txt": {
+      "sha256": "8a3133fef94ab3daafb1d970accf06167d08d78605dd2c622a09c7a388aeaf88",
+      "bytes": 492
+    },
+    "runtime/clova/results/h31-recovery-next-release-preflight-2026-11-11.json": {
+      "sha256": "d223080e5c62d6b51f781134720a7ea3f8828da0476157cc8647a25c60c5b583",
+      "bytes": 137528
+    },
+    "runtime/clova/results/h31-recovery-next-release-preflight-2026-11-11.txt": {
+      "sha256": "8a3133fef94ab3daafb1d970accf06167d08d78605dd2c622a09c7a388aeaf88",
+      "bytes": 492
+    },
+    "runtime/clova/results/h31-recovery-next-source-2026-11-11.zip": {
+      "sha256": "8496e5a1235092c1a826bdf05829c96cd1c5143fae85664a3eed0c7843a5062d",
+      "bytes": 144213
+    }
+  },
+  "releaseSourceHashes": {
+    "runtime/clova/langgraph.ts": "ff5b227f9525b57e962e2f305ffc1f0981827c1bf265a9023fd125a7c9971de2",
+    "runtime/memory-lab/pi/cli.mjs": "dc7877d7454e08318185e69852df1ea06ce4f7fffb6f2226ac1dd891a5cbb5f5",
+    "runtime/memory-lab/pi/provider-bridge.mjs": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+    "runtime/clova/provider.ts": "edd444e5e2453087234c0ee7961d534d175af2e014a7b5a13b27a91ef94d8887",
+    "runtime/clova/mcp.ts": "26cdb66da9eb1abf0a970aff9d5f308e5f7ba22d4370090bb34b5ae94b225598",
+    "runtime/clova/h31/elda-native.py": "acd778a5eec7b286b3b2033890c156e5f261ba2058d5113ec97f9a0c603cce5b",
+    "runtime/clova/h31/recovery-next.mjs": "669206a88db6def90ec8a5041e2164a5287b070cffa917d61c57801a5dfdad12",
+    "runtime/clova/h31/recovery-next-verdict.mjs": "0476706c62016e9fe1c87ba56f9ee5f1850b511ebbfb445c50c3328f4b2b17ed",
+    "runtime/clova/h31/pacing.mjs": "d3f89c4b3eeccfdce5b27197808bf24bc4c89ebdeb0912d8e3c127ec4b63b389",
+    "runtime/clova/tool-schema.ts": "caa527522650861f89d9d731174cb7e6f0fa89c361bb59e3019e21ff1677c81b",
+    "package.json": "522742251ff739e7194841a3f57bd514a60d42a328f51f794aa991e2ba98983e",
+    "package-lock.json": "ecfd94489bf65f3be9bccbf382ad7740f6075502403f016b8b9829babf88e9d5",
+    "runtime/clova/h31/verdict-r2.mjs": "a97a84412fd578e7a32420679ba09efe59d19d875d998d074b722c916206d40c",
+    "runtime/clova/common.ts": "0165f306a4aa1d2f310c34280a6ea18631537d478b97b409daa33663762f8815",
+    "runtime/clova/provider-errors.ts": "a356054e2e02e79abb8cc0fa5ed020b24a508cb88a6c81d6cea3aa23ff2566d8",
+    "runtime/clova/clova-model-config.ts": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+    "runtime/clova/client.ts": "dfbfb772c3ff04030be0022a2e6e99f2584b8d091282a45b0f5a3bec1f39d0d5",
+    "runtime/memory-lab/pi/store.mjs": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162"
+  },
+  "nativeHashes": {
+    "elda": "9a9ceb10b3fb6c5960c8e8dbc40d1219760f40a615545dc2379f8407ab00ce34",
+    "events.py": "fabfa9195f5ebdf093b1eb5c2a64065f4f71331753abb6286af37ba0aff1c836",
+    "adapters/loop.py": "ef06a04b7c4e6b2f05b6b77963c27cf556ff5d1fa761adb201bd13d1ad31eab4",
+    "profiles.py": "c797d67e1908a35f61dccc354533d9a4337f5faf6f5bc350136ccacea6a357fd",
+    "providers/clova.py": "c021eaa3bc41a9180207693248c704eeaacd4c36f84296c6e1024f2be1f2a8f6",
+    "providers/__init__.py": "fa58618e5453b03e02f768c5f9f606f0cdff944659ccb7e6ea0d9c94b9962f20",
+    "adapters/__init__.py": "be0a096ad8df66620b0ec7e2af7259d66db939d9fa941cdf3199521db9ae9d6b",
+    "mcp_client.py": "617522d6ad76240541f4ab04b8df4535a6e9cba21ad53982a5d9e89b75db4f42"
+  }
+}

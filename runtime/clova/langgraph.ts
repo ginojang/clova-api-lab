@@ -6,6 +6,7 @@ import {readFileSync, mkdirSync, appendFileSync, realpathSync, readdirSync, stat
 import {resolve, dirname, join} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {spawn} from 'node:child_process';
+import {compileToolSchema, toolArgumentError} from './tool-schema.ts';
 import {Brain} from './provider.ts';
 import {Mcp} from './client.ts';
 import {Fault, clean, usageZero, type Message, type Tool, type Usage} from './common.ts';
@@ -28,7 +29,7 @@ const State = Annotation.Root({
 type Pending = {resolve:(decision:{allow:boolean;reason?:string})=>void;callId:string};
 type Turn = {
   controller:AbortController;usage:Usage;turns:number;toolCalls:number;retried:boolean;
-  policyRejected:boolean;toolFailed:boolean;stopActive:boolean;executed:Map<string,number>;messages:Message[];
+  malformed:number;policyRejected:boolean;toolFailed:boolean;stopActive:boolean;executed:Map<string,number>;messages:Message[];
 };
 
 /** Shared mode-2/mode-3 engine. LangGraph schedules every model/tool transition. */
@@ -107,6 +108,7 @@ export class ClovaGraphHarness {
           if(tool.name==='clova_chat')continue;
           const name=this.config.rawToolNames?tool.name:`${server.name}__${tool.name}`;
           if(this.available.has(name))throw new Fault('configuration','duplicate MCP tool name');
+          compileToolSchema(tool.inputSchema);
           this.available.set(name,{client,original:tool.name});this.tools.push({...tool,name});
         }
       }
@@ -155,17 +157,19 @@ export class ClovaGraphHarness {
       const permission=pre.hookSpecificOutput?.permissionDecision;
       let denied=limited||!target||pre.continue===false||pre.decision==='block'||['deny','defer'].includes(permission);
       if(pre.hookSpecificOutput?.updatedInput)input=pre.hookSpecificOutput.updatedInput;
+      const diagnostic=!denied&&target?toolArgumentError(this.tools.find(t=>t.name===call.function.name)!.inputSchema,input):undefined;
       this.emit('tool_call',{tool:call.function.name,callId:call.id,input});
       let reason=limited?'tool reached its per-turn execution limit':'tool is not allowed by policy';
-      if(!denied&&(this.approvalMode==='ask'||permission==='ask')){
+      if(!denied&&!diagnostic&&(this.approvalMode==='ask'||permission==='ask')){
         if(this.approvalMode==='never'){denied=true;reason='serving policy cannot ask for approval';}
         else{const decision=await this.ask(call.function.name,call.id,input,turn.controller.signal);denied=!decision.allow;reason=decision.reason??'user denied tool execution';}
       }
       turn.controller.signal.throwIfAborted();
       let output:unknown,ok=false;
-      if(denied)output=`denied: ${reason}`;
+      if(diagnostic){output=diagnostic;turn.malformed++;}
+      else if(denied)output=`denied: ${reason}`;
       else {
-        turn.toolCalls++;turn.executed.set(call.function.name,(turn.executed.get(call.function.name)??0)+1);
+        turn.malformed=0;turn.toolCalls++;turn.executed.set(call.function.name,(turn.executed.get(call.function.name)??0)+1);
         try {
           const result=await target!.client.request('tools/call',{name:target!.original,arguments:input},turn.controller.signal);
           output=result;ok=!result.isError;
@@ -173,8 +177,15 @@ export class ClovaGraphHarness {
         } catch(error){this.poisoned=true;throw error;}
       }
       if(!ok&&!denied)turn.toolFailed=true;
-      this.emit('tool_result',{tool:call.function.name,callId:call.id,ok,output,sideEffect:denied?'not_started':'completed'});
+      this.emit('tool_result',{tool:call.function.name,callId:call.id,ok,output,sideEffect:denied||diagnostic?'not_started':'completed'});
       messages.push({role:'tool',toolCallId:call.id,content:this.config.plainToolResults&&output&&typeof output==='object'&&Array.isArray((output as any).content)?(output as any).content.filter((c:any)=>c.type==='text').map((c:any)=>c.text).join(''):JSON.stringify(output)});turn.messages=messages;
+      if(diagnostic&&turn.malformed>=4){
+        for(const tail of calls.slice(calls.indexOf(call)+1)){
+          this.emit('tool_result',{tool:tail.function.name,callId:tail.id,ok:false,output:'malformed_tool_use: repeated invalid arguments',sideEffect:'not_started'});
+          messages.push({role:'tool',toolCallId:tail.id,content:'malformed_tool_use: repeated invalid arguments'});
+        }
+        throw new Fault('malformed_tool_use','repeated invalid tool arguments');
+      }
       if(denied){
         turn.policyRejected=true;
         for(const tail of calls.slice(calls.indexOf(call)+1)){
@@ -222,7 +233,7 @@ export class ClovaGraphHarness {
   }
 
   private async runTurn(prompt:string) {
-    const turn:Turn={controller:new AbortController(),usage:usageZero(),turns:0,toolCalls:0,retried:false,policyRejected:false,toolFailed:false,stopActive:false,executed:new Map(),messages:[...structuredClone(this.history),{role:'user',content:prompt}]};
+    const turn:Turn={controller:new AbortController(),usage:usageZero(),turns:0,toolCalls:0,retried:false,malformed:0,policyRejected:false,toolFailed:false,stopActive:false,executed:new Map(),messages:[...structuredClone(this.history),{role:'user',content:prompt}]};
     this.current=turn;let timedOut=false;
     const timer=setTimeout(()=>{timedOut=true;turn.controller.abort();},this.timeoutMs),started=Date.now();
     let summaryReason='error';
@@ -243,7 +254,7 @@ export class ClovaGraphHarness {
     } catch(error) {
       if(turn.toolCalls>0)this.poisoned=true;
       if(turn.controller.signal.aborted){summaryReason='interrupted';this.emit('error',{code:'interrupted',message:timedOut?'budget_exceeded: turn time limit reached':'turn interrupted'});}
-      else{const fault=error instanceof Fault?error:new Fault('error','graph turn failed');this.emit('error',{code:fault.code,message:fault.message});finish(false,['denied','token_limit'].includes(fault.code)?fault.code:'error',fault.status);}
+      else{const fault=error instanceof Fault?error:new Fault('error','graph turn failed');this.emit('error',{code:fault.code,message:fault.message});finish(false,['denied','token_limit','malformed_tool_use'].includes(fault.code)?fault.code:'error',fault.status);}
     } finally {
       clearTimeout(timer);this.current=undefined;
       if(this.records)appendFileSync(join(this.records,'summaries.ndjson'),JSON.stringify(clean({sessionId:this.sessionId,model:this.model,at:new Date().toISOString(),ok:summaryReason==='completed',endReason:summaryReason,turns:turn.turns,toolCalls:turn.toolCalls,usage:turn.usage,costUsd:this.cost,durationMs:Date.now()-started,harness:'langgraph'}))+'\n',{mode:0o600});
@@ -259,14 +270,14 @@ export class ClovaGraphHarness {
   }
 
   input(op:unknown) {
-    if(!op||typeof op!=='object'||Array.isArray(op)){this.emit('error',{code:'invalid_input',message:'expected operation object'});return;}
+    if(!op||typeof op!=='object'||Array.isArray(op)){this.emit('error',{code:'bad_input',message:'expected operation object'});return;}
     const value=op as Record<string,unknown>;
     if(value.op==='interrupt'){this.current?.controller.abort();return;}
     if(value.op==='approve'){
       if(this.approvalMode==='never'){this.emit('error',{code:'approval_disabled',message:'serving never asks for approval'});return;}
       const pending=typeof value.approvalId==='string'?this.pending.get(value.approvalId):undefined;
       if(!pending){this.emit('error',{code:'no_such_approval',message:'no matching pending approval'});return;}
-      if(typeof value.allow!=='boolean'){this.emit('error',{code:'invalid_input',message:'approve.allow must be boolean'});return;}
+      if(typeof value.allow!=='boolean'){this.emit('error',{code:'bad_input',message:'approve.allow must be boolean'});return;}
       pending.resolve({allow:value.allow,reason:typeof value.reason==='string'?value.reason:undefined});return;
     }
     if(value.op==='new'){
@@ -275,7 +286,7 @@ export class ClovaGraphHarness {
       this.sessionId=randomUUID();this.history=[this.system];this.brain.reset();this.notifications.length=0;
       this.emit('notice',{text:'new conversation',sessionId:this.sessionId});return;
     }
-    if(!['prompt','notify'].includes(String(value.op))||typeof value.text!=='string'||!value.text.trim()||value.text.length>100000){this.emit('error',{code:'invalid_input',message:'expected prompt, notify, approve, interrupt or new'});return;}
+    if(!['prompt','notify'].includes(String(value.op))||typeof value.text!=='string'||!value.text.trim()||value.text.length>100000){this.emit('error',{code:'bad_input',message:'expected prompt, notify, approve, interrupt or new'});return;}
     if(this.closing||this.poisoned){this.emit('error',{code:'session_invalid',message:'restart with a fresh workspace'});return;}
     if(value.op==='notify'){
       if(this.notifications.length>=16){this.emit('error',{code:'queue_full',message:'notification limit reached'});return;}
@@ -315,7 +326,7 @@ export async function runLangGraph(argv=process.argv.slice(2)) {
     const lines=createInterface({input:process.stdin});let interrupted=false;
     const shutdown=()=>{interrupted=true;harness!.input({op:'interrupt'});lines.close();};
     process.once('SIGINT',shutdown);process.once('SIGTERM',shutdown);
-    lines.on('line',line=>{try {harness!.input(JSON.parse(line));} catch {emit('error',{code:'invalid_input',message:'expected JSON object'});}});
+    lines.on('line',line=>{try {harness!.input(JSON.parse(line));} catch {emit('error',{code:'bad_input',message:'expected JSON object'});}});
     await new Promise<void>(resolve=>lines.once('close',resolve));
     await harness.close(interrupted);
     process.removeListener('SIGINT',shutdown);process.removeListener('SIGTERM',shutdown);

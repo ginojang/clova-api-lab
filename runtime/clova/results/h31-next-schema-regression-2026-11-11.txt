@@ -1,0 +1,23 @@
+✔ first batch denial prevents later approval and effects; allowed batch preserves both effects (3541.766429ms)
+✔ reported per-turn token cap blocks the next model request, preserving the completed tool effect (1844.989279ms)
+✔ invalid tool arguments never ask or execute; a later valid call can repair them (1847.481244ms)
+✔ four consecutive schema failures stop the remaining batch before approval and execution (1775.732268ms)
+✔ LangGraph mode 2 asks before MCP effects, accepts approval, and honors denial (1805.531656ms)
+✔ LangGraph mode 3 retains the MCP document/undo state and records usage without approval (1847.5841ms)
+✔ LangGraph cancels an approval wait without executing a tool and remains usable (1773.749984ms)
+✔ LangGraph applies maxTurns after tool results and enforces per-turn tool limits (3525.121857ms)
+✔ LangGraph EOF completes a serving turn and denies a pending human approval (3440.726524ms)
+✔ LangGraph notifies an idle conversation and does not run an unlisted tool (1774.284873ms)
+✔ LangGraph uses a real local HTTP CLOVA provider, retries only before tools and cancels timeout (5604.095925ms)
+✔ CLOVA MCP crosses real stdio and HTTP; rejects invalid input and survives provider failures (571.149103ms)
+✔ validation never coerces, drops unknown properties, or fills missing required values (69.503819ms)
+✔ error diagnostics do not leak input values or attacker-controlled property names (0.525843ms)
+✔ nested constraints and draft2020 are validated; unsupported references fail closed (72.237376ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 29063.409635

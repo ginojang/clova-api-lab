@@ -1,0 +1,3982 @@
+{
+  "version": 3,
+  "experiment": "recovery-next",
+  "live": false,
+  "startedAt": "2026-11-11T09:00:14.493Z",
+  "sourceHashes": {
+    "runtime/clova/langgraph.ts": "ff5b227f9525b57e962e2f305ffc1f0981827c1bf265a9023fd125a7c9971de2",
+    "runtime/memory-lab/pi/cli.mjs": "dc7877d7454e08318185e69852df1ea06ce4f7fffb6f2226ac1dd891a5cbb5f5",
+    "runtime/memory-lab/pi/provider-bridge.mjs": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+    "runtime/clova/provider.ts": "edd444e5e2453087234c0ee7961d534d175af2e014a7b5a13b27a91ef94d8887",
+    "runtime/clova/mcp.ts": "26cdb66da9eb1abf0a970aff9d5f308e5f7ba22d4370090bb34b5ae94b225598",
+    "runtime/clova/h31/elda-native.py": "acd778a5eec7b286b3b2033890c156e5f261ba2058d5113ec97f9a0c603cce5b",
+    "runtime/clova/h31/recovery-next.mjs": "0d0801d8af7b6ac3cda56bdb18b1af3709a0c7e0323509f08831cbc6879434e5",
+    "runtime/clova/h31/recovery-next-verdict.mjs": "c197c83832400bc66e7a8836b6c22e1ad64744cd49e330c9c2941deec570413f",
+    "runtime/clova/tool-schema.ts": "caa527522650861f89d9d731174cb7e6f0fa89c361bb59e3019e21ff1677c81b",
+    "package.json": "522742251ff739e7194841a3f57bd514a60d42a328f51f794aa991e2ba98983e",
+    "package-lock.json": "ecfd94489bf65f3be9bccbf382ad7740f6075502403f016b8b9829babf88e9d5",
+    "runtime/clova/h31/verdict-r2.mjs": "a97a84412fd578e7a32420679ba09efe59d19d875d998d074b722c916206d40c",
+    "runtime/clova/common.ts": "0165f306a4aa1d2f310c34280a6ea18631537d478b97b409daa33663762f8815",
+    "runtime/clova/provider-errors.ts": "a356054e2e02e79abb8cc0fa5ed020b24a508cb88a6c81d6cea3aa23ff2566d8",
+    "runtime/clova/clova-model-config.ts": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+    "runtime/clova/client.ts": "dfbfb772c3ff04030be0022a2e6e99f2584b8d091282a45b0f5a3bec1f39d0d5",
+    "runtime/memory-lab/pi/store.mjs": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162"
+  },
+  "nativeHashes": {
+    "elda": "9a9ceb10b3fb6c5960c8e8dbc40d1219760f40a615545dc2379f8407ab00ce34",
+    "events.py": "fabfa9195f5ebdf093b1eb5c2a64065f4f71331753abb6286af37ba0aff1c836",
+    "adapters/loop.py": "ef06a04b7c4e6b2f05b6b77963c27cf556ff5d1fa761adb201bd13d1ad31eab4",
+    "profiles.py": "c797d67e1908a35f61dccc354533d9a4337f5faf6f5bc350136ccacea6a357fd",
+    "providers/clova.py": "c021eaa3bc41a9180207693248c704eeaacd4c36f84296c6e1024f2be1f2a8f6",
+    "providers/__init__.py": "fa58618e5453b03e02f768c5f9f606f0cdff944659ccb7e6ea0d9c94b9962f20",
+    "adapters/__init__.py": "be0a096ad8df66620b0ec7e2af7259d66db939d9fa941cdf3199521db9ae9d6b",
+    "mcp_client.py": "617522d6ad76240541f4ab04b8df4535a6e9cba21ad53982a5d9e89b75db4f42"
+  },
+  "settings": {
+    "model": "clova:HCX-005",
+    "system": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+    "maxTokens": 2048,
+    "temperature": 0,
+    "maxTurns": 6,
+    "tokenLimit": 20000,
+    "outerDeadlineMs": 120000,
+    "totalCallCap": 18,
+    "minimumRequestIntervalMs": 6000,
+    "approval": "ask every call",
+    "costBasis": "unknown"
+  },
+  "runs": [
+    {
+      "harness": "elda",
+      "case": "recovery",
+      "events": [
+        {
+          "v": 1,
+          "seq": 1,
+          "ts": "2026-11-11T09:00:14.644+00:00",
+          "t": "ready",
+          "data": {
+            "agent": "h31-native",
+            "title": "우리 루프",
+            "model": "clova:HCX-005",
+            "cwd": "/home/gino/WorkArea/clova-api-lab/.local/h31/run-wXT702/recovery/elda/workspace",
+            "sessionId": null,
+            "approve": "ask",
+            "status": "clova · HCX-005"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 2,
+          "ts": "2026-11-11T09:00:14.964+00:00",
+          "t": "turn_start",
+          "data": {
+            "task": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요.",
+            "model": "clova:HCX-005",
+            "sessionId": "bc6999c773b04485afe8381d6baffe15"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 3,
+          "ts": "2026-11-11T09:00:15.024+00:00",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "callId": "r1",
+            "summary": {
+              "verb": "artifact_read",
+              "arg": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 4,
+          "ts": "2026-11-11T09:00:15.025+00:00",
+          "t": "state",
+          "data": {
+            "status": "waiting",
+            "reason": "approval",
+            "approvalId": "ap_4f1323705c0ee594"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 5,
+          "ts": "2026-11-11T09:00:15.025+00:00",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "callId": "r1",
+            "approvalId": "ap_4f1323705c0ee594",
+            "summary": "artifact_read(path=recovered.txt)"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 6,
+          "ts": "2026-11-11T09:00:15.027+00:00",
+          "t": "approval_result",
+          "data": {
+            "approvalId": "ap_4f1323705c0ee594",
+            "callId": "r1",
+            "tool": "artifact_read",
+            "outcome": "allowed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 7,
+          "ts": "2026-11-11T09:00:15.027+00:00",
+          "t": "state",
+          "data": {
+            "status": "running"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 8,
+          "ts": "2026-11-11T09:00:15.098+00:00",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "ok": false,
+            "output": "not_found: file does not exist; use artifact_list",
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 9,
+          "ts": "2026-11-11T09:00:15.101+00:00",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_write",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            },
+            "callId": "r2",
+            "summary": {
+              "verb": "artifact_write",
+              "arg": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 10,
+          "ts": "2026-11-11T09:00:15.101+00:00",
+          "t": "state",
+          "data": {
+            "status": "waiting",
+            "reason": "approval",
+            "approvalId": "ap_a5a3a9842e3fe8cd"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 11,
+          "ts": "2026-11-11T09:00:15.101+00:00",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_write",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            },
+            "callId": "r2",
+            "approvalId": "ap_a5a3a9842e3fe8cd",
+            "summary": "artifact_write(path=recovered.txt, text=RECOVERED)"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 12,
+          "ts": "2026-11-11T09:00:15.102+00:00",
+          "t": "approval_result",
+          "data": {
+            "approvalId": "ap_a5a3a9842e3fe8cd",
+            "callId": "r2",
+            "tool": "artifact_write",
+            "outcome": "allowed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 13,
+          "ts": "2026-11-11T09:00:15.102+00:00",
+          "t": "state",
+          "data": {
+            "status": "running"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 14,
+          "ts": "2026-11-11T09:00:15.108+00:00",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "ok": true,
+            "output": "{\"id\":\"recovered.txt\",\"bytes\":9}",
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 15,
+          "ts": "2026-11-11T09:00:15.111+00:00",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "callId": "r3",
+            "summary": {
+              "verb": "artifact_read",
+              "arg": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 16,
+          "ts": "2026-11-11T09:00:15.112+00:00",
+          "t": "state",
+          "data": {
+            "status": "waiting",
+            "reason": "approval",
+            "approvalId": "ap_a72b3a7f22de064f"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 17,
+          "ts": "2026-11-11T09:00:15.112+00:00",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "callId": "r3",
+            "approvalId": "ap_a72b3a7f22de064f",
+            "summary": "artifact_read(path=recovered.txt)"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 18,
+          "ts": "2026-11-11T09:00:15.112+00:00",
+          "t": "approval_result",
+          "data": {
+            "approvalId": "ap_a72b3a7f22de064f",
+            "callId": "r3",
+            "tool": "artifact_read",
+            "outcome": "allowed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 19,
+          "ts": "2026-11-11T09:00:15.112+00:00",
+          "t": "state",
+          "data": {
+            "status": "running"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 20,
+          "ts": "2026-11-11T09:00:15.114+00:00",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "ok": true,
+            "output": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}",
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 21,
+          "ts": "2026-11-11T09:00:15.117+00:00",
+          "t": "text",
+          "data": {
+            "text": "완료했습니다."
+          }
+        },
+        {
+          "v": 1,
+          "seq": 22,
+          "ts": "2026-11-11T09:00:15.117+00:00",
+          "t": "turn_end",
+          "data": {
+            "ok": true,
+            "endReason": "completed",
+            "messages": 8,
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "turns": 4,
+            "toolCalls": 3,
+            "diag": {
+              "retries": 0,
+              "emptyRetries": 0,
+              "lastFinishReason": "end"
+            },
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "usageUnreported": [
+              "cacheRead",
+              "cacheWrite"
+            ],
+            "costBasis": "unknown",
+            "durationMs": 402,
+            "model": "clova:HCX-005",
+            "sessionId": "bc6999c773b04485afe8381d6baffe15"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 23,
+          "ts": "2026-11-11T09:00:15.117+00:00",
+          "t": "idle",
+          "data": {
+            "sessionId": "bc6999c773b04485afe8381d6baffe15"
+          }
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              }
+            ],
+            "temperature": 0,
+            "maxTokens": 2048,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:15.021Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              }
+            ],
+            "temperature": 0,
+            "maxTokens": 2048,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:15.100Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              }
+            ],
+            "temperature": 0,
+            "maxTokens": 2048,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:15.111Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r3",
+                "content": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+              }
+            ],
+            "temperature": 0,
+            "maxTokens": 2048,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:15.116Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "완료했습니다."
+              },
+              "finishReason": "stop",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        }
+      ],
+      "turns": [
+        {
+          "prompt": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요.",
+          "durationMs": 428,
+          "requests": 4,
+          "artifactExpected": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactActual": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactPass": true,
+          "approvals": 3,
+          "turnEnd": {
+            "ok": true,
+            "endReason": "completed",
+            "messages": 8,
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "turns": 4,
+            "toolCalls": 3,
+            "diag": {
+              "retries": 0,
+              "emptyRetries": 0,
+              "lastFinishReason": "end"
+            },
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "usageUnreported": [
+              "cacheRead",
+              "cacheWrite"
+            ],
+            "costBasis": "unknown",
+            "durationMs": 402,
+            "model": "clova:HCX-005",
+            "sessionId": "bc6999c773b04485afe8381d6baffe15"
+          }
+        }
+      ],
+      "stderr": "",
+      "invalidLines": [],
+      "errors": [],
+      "exitCode": 0,
+      "signal": null,
+      "processGroupClean": true,
+      "pass": true,
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "recoveryVerdictVersion": 1,
+      "finalOutputPass": true,
+      "completionPass": true
+    },
+    {
+      "harness": "langgraph",
+      "case": "recovery",
+      "events": [
+        {
+          "v": 1,
+          "seq": 1,
+          "ts": "2026-11-11T09:00:16.470Z",
+          "t": "ready",
+          "data": {
+            "sessionId": "8049db2c-cce7-4036-ab98-193c7e0b8fde",
+            "model": "clova:HCX-005",
+            "approve": "ask",
+            "harness": "langgraph",
+            "framework": "@langchain/langgraph",
+            "tools": [
+              "artifact_list",
+              "artifact_read",
+              "artifact_write",
+              "artifact_undo"
+            ]
+          }
+        },
+        {
+          "v": 1,
+          "seq": 2,
+          "ts": "2026-11-11T09:00:16.539Z",
+          "t": "turn_start",
+          "data": {
+            "sessionId": "8049db2c-cce7-4036-ab98-193c7e0b8fde",
+            "harness": "langgraph"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 3,
+          "ts": "2026-11-11T09:00:16.672Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "input": {
+              "path": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 4,
+          "ts": "2026-11-11T09:00:16.673Z",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "approvalId": "ap_a055dc82-d0ab-4c98-ac3d-1b3bc1c61011"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 5,
+          "ts": "2026-11-11T09:00:16.743Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "ok": false,
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "not_found: file does not exist; use artifact_list"
+                }
+              ],
+              "isError": true
+            },
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 6,
+          "ts": "2026-11-11T09:00:16.756Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 7,
+          "ts": "2026-11-11T09:00:16.756Z",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            },
+            "approvalId": "ap_38f3d4be-9836-4428-95ac-726d09ca2e11"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 8,
+          "ts": "2026-11-11T09:00:16.763Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "ok": true,
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                }
+              ],
+              "isError": false
+            },
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 9,
+          "ts": "2026-11-11T09:00:16.775Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "input": {
+              "path": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 10,
+          "ts": "2026-11-11T09:00:16.775Z",
+          "t": "approval",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "approvalId": "ap_d33b3e4f-317c-4006-8f14-65ad32254987"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 11,
+          "ts": "2026-11-11T09:00:16.777Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "ok": true,
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+                }
+              ],
+              "isError": false
+            },
+            "sideEffect": "completed"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 12,
+          "ts": "2026-11-11T09:00:16.786Z",
+          "t": "text_delta",
+          "data": {
+            "text": "완료했습니다."
+          }
+        },
+        {
+          "v": 1,
+          "seq": 13,
+          "ts": "2026-11-11T09:00:16.787Z",
+          "t": "text",
+          "data": {
+            "text": "완료했습니다.",
+            "merged": true
+          }
+        },
+        {
+          "v": 1,
+          "seq": 14,
+          "ts": "2026-11-11T09:00:16.793Z",
+          "t": "turn_end",
+          "data": {
+            "ok": true,
+            "endReason": "completed",
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "costBasis": "unknown",
+            "turns": 4,
+            "toolCalls": 3,
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "durationMs": 254,
+            "model": "clova:HCX-005",
+            "sessionId": "8049db2c-cce7-4036-ab98-193c7e0b8fde",
+            "messages": 9,
+            "harness": "langgraph"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 15,
+          "ts": "2026-11-11T09:00:16.793Z",
+          "t": "idle",
+          "data": {
+            "sessionId": "8049db2c-cce7-4036-ab98-193c7e0b8fde",
+            "requiresRestart": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:16.650Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:16.750Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:16.769Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r3",
+                "content": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:16.784Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "완료했습니다."
+              },
+              "finishReason": "stop",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        }
+      ],
+      "turns": [
+        {
+          "prompt": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요.",
+          "durationMs": 262,
+          "requests": 4,
+          "artifactExpected": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactActual": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactPass": true,
+          "approvals": 3,
+          "turnEnd": {
+            "ok": true,
+            "endReason": "completed",
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "costBasis": "unknown",
+            "turns": 4,
+            "toolCalls": 3,
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "durationMs": 254,
+            "model": "clova:HCX-005",
+            "sessionId": "8049db2c-cce7-4036-ab98-193c7e0b8fde",
+            "messages": 9,
+            "harness": "langgraph"
+          }
+        }
+      ],
+      "stderr": "",
+      "invalidLines": [],
+      "errors": [],
+      "exitCode": 0,
+      "signal": null,
+      "processGroupClean": true,
+      "pass": true,
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "recoveryVerdictVersion": 1,
+      "finalOutputPass": true,
+      "completionPass": true
+    },
+    {
+      "harness": "pi",
+      "case": "recovery",
+      "events": [
+        {
+          "v": 1,
+          "seq": 1,
+          "ts": "2026-11-11T09:00:17.794Z",
+          "t": "ready",
+          "data": {
+            "sessionId": "9f896412-f5d2-42f6-8acd-8d321abc2c07",
+            "policy": "baseline",
+            "comparison": true,
+            "comparisonSystemHash": "349a3b35cbd46d44121255705b63908d3166bbb3c7db67dbe368dfb6c5de623e",
+            "tokenLimit": 20000,
+            "minCallIntervalMs": 0,
+            "capabilities": {
+              "webSearch": false,
+              "notifications": false,
+              "physicalPresence": false,
+              "artifacts": true
+            },
+            "framework": "pi-agent-core+node:sqlite",
+            "version": "1.5.1",
+            "principal": "h31",
+            "personaId": "live-calm",
+            "conversation": "recovery",
+            "scope": "session",
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "personaRevision": 1,
+            "model": "clova:HCX-005",
+            "syntheticOnly": false,
+            "providerTransport": "loopback",
+            "toolMode": "artifacts",
+            "maxTokens": 2048,
+            "workspace": "/home/gino/WorkArea/clova-api-lab/.local/h31/run-wXT702/recovery/pi/workspace",
+            "store": "/home/gino/WorkArea/clova-api-lab/.local/h31/run-wXT702/recovery/pi/memory.sqlite",
+            "mcpPid": 3959486,
+            "contextBudget": 6000
+          }
+        },
+        {
+          "v": 1,
+          "seq": 2,
+          "ts": "2026-11-11T09:00:17.854Z",
+          "t": "turn_start",
+          "data": {
+            "principal": "h31",
+            "personaId": "live-calm",
+            "conversation": "recovery",
+            "scope": "session",
+            "sessionId": "9f896412-f5d2-42f6-8acd-8d321abc2c07",
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "model": "clova:HCX-005",
+            "synthetic": false,
+            "providerTransport": "loopback"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 3,
+          "ts": "2026-11-11T09:00:17.860Z",
+          "t": "model_context",
+          "data": {
+            "providerMessages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              }
+            ],
+            "demonstrationCount": 0,
+            "demonstrationChars": 0,
+            "policy": "baseline",
+            "responseFormat": null,
+            "actualSystemChars": 207,
+            "contextAccounting": "explicit comparison system; retrieved memories and persona policies bypassed",
+            "callStartedAt": "2026-11-11T09:00:17.860Z",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+                "toolsAdded": [
+                  {
+                    "name": "artifact_list",
+                    "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_read",
+                    "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        }
+                      },
+                      "required": [
+                        "path"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_write",
+                    "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "저장할 UTF-8 글자"
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_undo",
+                    "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  }
+                ],
+                "timestamp": 0
+              },
+              {
+                "role": "user",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+                  }
+                ],
+                "timestamp": 1794387617855
+              }
+            ],
+            "systemPrompt": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+            "toolNames": [
+              "artifact_list",
+              "artifact_read",
+              "artifact_write",
+              "artifact_undo"
+            ],
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "selectedCount": 0,
+            "omittedCount": 0,
+            "contextChars": 207,
+            "contextBudget": null,
+            "unit": "explicit comparison system",
+            "phase": "initial",
+            "synthetic": false,
+            "model": "clova:HCX-005",
+            "requestIndex": 1,
+            "providerTransport": "loopback"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 4,
+          "ts": "2026-11-11T09:00:17.940Z",
+          "t": "model_response",
+          "data": {
+            "model": "clova:HCX-005",
+            "requestIndex": 1,
+            "phase": "initial",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "ok": true,
+            "content": "",
+            "toolCalls": [
+              {
+                "id": "r1",
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "arguments": {
+                    "path": "recovered.txt"
+                  }
+                }
+              }
+            ],
+            "finishReason": "tool_calls",
+            "usage": {
+              "input": 100,
+              "output": 20,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 5,
+          "ts": "2026-11-11T09:00:17.941Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "input": {
+              "path": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 6,
+          "ts": "2026-11-11T09:00:18.009Z",
+          "t": "approval",
+          "data": {
+            "approvalId": "7d84de9e-aa14-4290-9423-5899f6def269",
+            "operation": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "tool": "artifact_read",
+            "callId": "r1"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 7,
+          "ts": "2026-11-11T09:00:18.077Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r1",
+            "ok": false,
+            "sideEffect": "completed",
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "not_found: file does not exist; use artifact_list"
+                }
+              ],
+              "isError": true
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 8,
+          "ts": "2026-11-11T09:00:18.079Z",
+          "t": "model_context",
+          "data": {
+            "providerMessages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              }
+            ],
+            "demonstrationCount": 0,
+            "demonstrationChars": 0,
+            "policy": "baseline",
+            "responseFormat": null,
+            "actualSystemChars": 207,
+            "contextAccounting": "explicit comparison system; retrieved memories and persona policies bypassed",
+            "callStartedAt": "2026-11-11T09:00:18.078Z",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+                "toolsAdded": [
+                  {
+                    "name": "artifact_list",
+                    "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_read",
+                    "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        }
+                      },
+                      "required": [
+                        "path"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_write",
+                    "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "저장할 UTF-8 글자"
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_undo",
+                    "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  }
+                ],
+                "timestamp": 0
+              },
+              {
+                "role": "user",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+                  }
+                ],
+                "timestamp": 1794387617855
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r1",
+                    "name": "artifact_read",
+                    "arguments": {
+                      "path": "recovered.txt"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387617940,
+                "durationMs": 81,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r1",
+                "toolName": "artifact_read",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "not_found: file does not exist; use artifact_list"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "not_found: file does not exist; use artifact_list"
+                      }
+                    ],
+                    "isError": true
+                  }
+                },
+                "isError": true,
+                "durationMs": 64,
+                "timestamp": 1794387618077
+              }
+            ],
+            "systemPrompt": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+            "toolNames": [
+              "artifact_list",
+              "artifact_read",
+              "artifact_write",
+              "artifact_undo"
+            ],
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "selectedCount": 0,
+            "omittedCount": 0,
+            "contextChars": 207,
+            "contextBudget": null,
+            "unit": "explicit comparison system",
+            "phase": "initial",
+            "synthetic": false,
+            "model": "clova:HCX-005",
+            "requestIndex": 2,
+            "providerTransport": "loopback"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 9,
+          "ts": "2026-11-11T09:00:18.086Z",
+          "t": "model_response",
+          "data": {
+            "model": "clova:HCX-005",
+            "requestIndex": 2,
+            "phase": "initial",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "ok": true,
+            "content": "",
+            "toolCalls": [
+              {
+                "id": "r2",
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "arguments": {
+                    "path": "recovered.txt",
+                    "text": "RECOVERED"
+                  }
+                }
+              }
+            ],
+            "finishReason": "tool_calls",
+            "usage": {
+              "input": 100,
+              "output": 20,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 10,
+          "ts": "2026-11-11T09:00:18.086Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 11,
+          "ts": "2026-11-11T09:00:18.089Z",
+          "t": "approval",
+          "data": {
+            "approvalId": "77eb9fd1-9a1c-48d8-9963-5178d6aaebbc",
+            "operation": "artifact_write",
+            "input": {
+              "path": "recovered.txt",
+              "text": "RECOVERED"
+            },
+            "tool": "artifact_write",
+            "callId": "r2"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 12,
+          "ts": "2026-11-11T09:00:18.095Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_write",
+            "callId": "r2",
+            "ok": true,
+            "sideEffect": "completed",
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                }
+              ],
+              "isError": false
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 13,
+          "ts": "2026-11-11T09:00:18.096Z",
+          "t": "model_context",
+          "data": {
+            "providerMessages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              }
+            ],
+            "demonstrationCount": 0,
+            "demonstrationChars": 0,
+            "policy": "baseline",
+            "responseFormat": null,
+            "actualSystemChars": 207,
+            "contextAccounting": "explicit comparison system; retrieved memories and persona policies bypassed",
+            "callStartedAt": "2026-11-11T09:00:18.096Z",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+                "toolsAdded": [
+                  {
+                    "name": "artifact_list",
+                    "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_read",
+                    "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        }
+                      },
+                      "required": [
+                        "path"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_write",
+                    "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "저장할 UTF-8 글자"
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_undo",
+                    "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  }
+                ],
+                "timestamp": 0
+              },
+              {
+                "role": "user",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+                  }
+                ],
+                "timestamp": 1794387617855
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r1",
+                    "name": "artifact_read",
+                    "arguments": {
+                      "path": "recovered.txt"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387617940,
+                "durationMs": 81,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r1",
+                "toolName": "artifact_read",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "not_found: file does not exist; use artifact_list"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "not_found: file does not exist; use artifact_list"
+                      }
+                    ],
+                    "isError": true
+                  }
+                },
+                "isError": true,
+                "durationMs": 64,
+                "timestamp": 1794387618077
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r2",
+                    "name": "artifact_write",
+                    "arguments": {
+                      "path": "recovered.txt",
+                      "text": "RECOVERED"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387618086,
+                "durationMs": 8,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r2",
+                "toolName": "artifact_write",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                      }
+                    ],
+                    "isError": false
+                  }
+                },
+                "isError": false,
+                "durationMs": 5,
+                "timestamp": 1794387618095
+              }
+            ],
+            "systemPrompt": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+            "toolNames": [
+              "artifact_list",
+              "artifact_read",
+              "artifact_write",
+              "artifact_undo"
+            ],
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "selectedCount": 0,
+            "omittedCount": 0,
+            "contextChars": 207,
+            "contextBudget": null,
+            "unit": "explicit comparison system",
+            "phase": "initial",
+            "synthetic": false,
+            "model": "clova:HCX-005",
+            "requestIndex": 3,
+            "providerTransport": "loopback"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 14,
+          "ts": "2026-11-11T09:00:18.101Z",
+          "t": "model_response",
+          "data": {
+            "model": "clova:HCX-005",
+            "requestIndex": 3,
+            "phase": "initial",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "ok": true,
+            "content": "",
+            "toolCalls": [
+              {
+                "id": "r3",
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "arguments": {
+                    "path": "recovered.txt"
+                  }
+                }
+              }
+            ],
+            "finishReason": "tool_calls",
+            "usage": {
+              "input": 100,
+              "output": 20,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 15,
+          "ts": "2026-11-11T09:00:18.101Z",
+          "t": "tool_call",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "input": {
+              "path": "recovered.txt"
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 16,
+          "ts": "2026-11-11T09:00:18.102Z",
+          "t": "approval",
+          "data": {
+            "approvalId": "fc851c14-824a-40fb-842d-e4764c1db834",
+            "operation": "artifact_read",
+            "input": {
+              "path": "recovered.txt"
+            },
+            "tool": "artifact_read",
+            "callId": "r3"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 17,
+          "ts": "2026-11-11T09:00:18.103Z",
+          "t": "tool_result",
+          "data": {
+            "tool": "artifact_read",
+            "callId": "r3",
+            "ok": true,
+            "sideEffect": "completed",
+            "output": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+                }
+              ],
+              "isError": false
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 18,
+          "ts": "2026-11-11T09:00:18.105Z",
+          "t": "model_context",
+          "data": {
+            "providerMessages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r3",
+                "content": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+              }
+            ],
+            "demonstrationCount": 0,
+            "demonstrationChars": 0,
+            "policy": "baseline",
+            "responseFormat": null,
+            "actualSystemChars": 207,
+            "contextAccounting": "explicit comparison system; retrieved memories and persona policies bypassed",
+            "callStartedAt": "2026-11-11T09:00:18.104Z",
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+                "toolsAdded": [
+                  {
+                    "name": "artifact_list",
+                    "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_read",
+                    "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        }
+                      },
+                      "required": [
+                        "path"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_write",
+                    "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "작업장 기준 상대 파일 경로"
+                        },
+                        "text": {
+                          "type": "string",
+                          "description": "저장할 UTF-8 글자"
+                        }
+                      },
+                      "required": [
+                        "path",
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "name": "artifact_undo",
+                    "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                    "parameters": {
+                      "type": "object",
+                      "properties": {},
+                      "required": [],
+                      "additionalProperties": false
+                    }
+                  }
+                ],
+                "timestamp": 0
+              },
+              {
+                "role": "user",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+                  }
+                ],
+                "timestamp": 1794387617855
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r1",
+                    "name": "artifact_read",
+                    "arguments": {
+                      "path": "recovered.txt"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387617940,
+                "durationMs": 81,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r1",
+                "toolName": "artifact_read",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "not_found: file does not exist; use artifact_list"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "not_found: file does not exist; use artifact_list"
+                      }
+                    ],
+                    "isError": true
+                  }
+                },
+                "isError": true,
+                "durationMs": 64,
+                "timestamp": 1794387618077
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r2",
+                    "name": "artifact_write",
+                    "arguments": {
+                      "path": "recovered.txt",
+                      "text": "RECOVERED"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387618086,
+                "durationMs": 8,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r2",
+                "toolName": "artifact_write",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+                      }
+                    ],
+                    "isError": false
+                  }
+                },
+                "isError": false,
+                "durationMs": 5,
+                "timestamp": 1794387618095
+              },
+              {
+                "role": "assistant",
+                "api": "openai-completions",
+                "provider": "elda-brain",
+                "model": "clova:HCX-005",
+                "content": [
+                  {
+                    "type": "toolCall",
+                    "id": "r3",
+                    "name": "artifact_read",
+                    "arguments": {
+                      "path": "recovered.txt"
+                    }
+                  }
+                ],
+                "usage": {
+                  "input": 100,
+                  "output": 20,
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "totalTokens": 120,
+                  "cost": {
+                    "input": 0,
+                    "output": 0,
+                    "cacheRead": 0,
+                    "cacheWrite": 0,
+                    "total": 0
+                  }
+                },
+                "stopReason": "toolUse",
+                "timestamp": 1794387618101,
+                "durationMs": 6,
+                "thinkingLevel": "off"
+              },
+              {
+                "role": "toolResult",
+                "toolCallId": "r3",
+                "toolName": "artifact_read",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+                  }
+                ],
+                "details": {
+                  "output": {
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+                      }
+                    ],
+                    "isError": false
+                  }
+                },
+                "isError": false,
+                "durationMs": 1,
+                "timestamp": 1794387618103
+              }
+            ],
+            "systemPrompt": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean.",
+            "toolNames": [
+              "artifact_list",
+              "artifact_read",
+              "artifact_write",
+              "artifact_undo"
+            ],
+            "personaHash": "3ac6d30340f5a73b2774afa5457a851d68471af8b908da0a87543e633e473bd9",
+            "selectedCount": 0,
+            "omittedCount": 0,
+            "contextChars": 207,
+            "contextBudget": null,
+            "unit": "explicit comparison system",
+            "phase": "initial",
+            "synthetic": false,
+            "model": "clova:HCX-005",
+            "requestIndex": 4,
+            "providerTransport": "loopback"
+          }
+        },
+        {
+          "v": 1,
+          "seq": 19,
+          "ts": "2026-11-11T09:00:18.109Z",
+          "t": "model_response",
+          "data": {
+            "model": "clova:HCX-005",
+            "requestIndex": 4,
+            "phase": "initial",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "ok": true,
+            "content": "완료했습니다.",
+            "toolCalls": [],
+            "finishReason": "stop",
+            "usage": {
+              "input": 100,
+              "output": 20,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "v": 1,
+          "seq": 20,
+          "ts": "2026-11-11T09:00:18.110Z",
+          "t": "text",
+          "data": {
+            "text": "완료했습니다."
+          }
+        },
+        {
+          "v": 1,
+          "seq": 21,
+          "ts": "2026-11-11T09:00:18.110Z",
+          "t": "turn_end",
+          "data": {
+            "sessionId": "9f896412-f5d2-42f6-8acd-8d321abc2c07",
+            "policy": "baseline",
+            "comparison": true,
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "costBasis": "unknown",
+            "ok": true,
+            "endReason": "completed",
+            "finishReason": "stop",
+            "model": "clova:HCX-005",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "turns": 4,
+            "providerCallAttempts": 4,
+            "externalModelCalls": 0,
+            "modelResponses": 4,
+            "toolCalls": 3,
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "usageComplete": true,
+            "costStatus": "not_calculated",
+            "durationMs": 256,
+            "rewritingStrategy": "none: explicit comparison profile",
+            "correctionAttempts": 0,
+            "correctionModelCalls": 0
+          }
+        },
+        {
+          "v": 1,
+          "seq": 22,
+          "ts": "2026-11-11T09:00:18.110Z",
+          "t": "idle",
+          "data": {
+            "principal": "h31",
+            "personaId": "live-calm",
+            "conversation": "recovery",
+            "scope": "session",
+            "sessionId": "9f896412-f5d2-42f6-8acd-8d321abc2c07",
+            "busy": false,
+            "requiresRestart": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:17.926Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:18.083Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:18.099Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              "finishReason": "tool_calls",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "role": "system",
+                "content": "Use the supplied artifact tools to perform the user request exactly. Never claim an operation succeeded unless the tool result confirms it. Do not change filenames or file contents. Answer briefly in Korean."
+              },
+              {
+                "role": "user",
+                "content": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요."
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r1",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r1",
+                "content": "not_found: file does not exist; use artifact_list"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r2",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_write",
+                      "arguments": {
+                        "path": "recovered.txt",
+                        "text": "RECOVERED"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r2",
+                "content": "{\"id\":\"recovered.txt\",\"bytes\":9}"
+              },
+              {
+                "role": "assistant",
+                "content": "",
+                "toolCalls": [
+                  {
+                    "id": "r3",
+                    "type": "function",
+                    "function": {
+                      "name": "artifact_read",
+                      "arguments": {
+                        "path": "recovered.txt"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "role": "tool",
+                "toolCallId": "r3",
+                "content": "{\"id\":\"recovered.txt\",\"text\":\"RECOVERED\"}"
+              }
+            ],
+            "maxTokens": 2048,
+            "temperature": 0,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_list",
+                  "description": "작업장 바로 아래 파일과 폴더 이름을 조회한다. 링크는 열지 않는다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_read",
+                  "description": "작업장 UTF-8 파일을 읽는다. 최대 1 MiB.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_write",
+                  "description": "작업장 UTF-8 파일을 원자적으로 생성하거나 덮어쓴다. 최대 100000자.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "작업장 기준 상대 파일 경로"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "저장할 UTF-8 글자"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "text"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              {
+                "type": "function",
+                "function": {
+                  "name": "artifact_undo",
+                  "description": "최근 파일 쓰기 한 번을 되돌린다. 세션 안 최대 40단계를 보관한다.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ]
+          },
+          "at": "2026-11-11T09:00:18.108Z",
+          "response": {
+            "status": {
+              "code": "20000"
+            },
+            "result": {
+              "message": {
+                "role": "assistant",
+                "content": "완료했습니다."
+              },
+              "finishReason": "stop",
+              "usage": {
+                "promptTokens": 100,
+                "completionTokens": 20
+              }
+            }
+          },
+          "httpStatus": 200,
+          "durationMs": 0
+        }
+      ],
+      "turns": [
+        {
+          "prompt": "artifact_read로 recovered.txt를 읽어 주세요. 파일이 없다는 오류가 나오면 artifact_write로 정확히 RECOVERED를 저장한 뒤 artifact_read로 다시 확인해 주세요.",
+          "durationMs": 265,
+          "requests": 4,
+          "artifactExpected": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactActual": {
+            "recovered.txt": "RECOVERED"
+          },
+          "artifactPass": true,
+          "approvals": 3,
+          "turnEnd": {
+            "sessionId": "9f896412-f5d2-42f6-8acd-8d321abc2c07",
+            "policy": "baseline",
+            "comparison": true,
+            "runCompleted": true,
+            "policyRejected": false,
+            "toolFailed": true,
+            "costBasis": "unknown",
+            "ok": true,
+            "endReason": "completed",
+            "finishReason": "stop",
+            "model": "clova:HCX-005",
+            "synthetic": false,
+            "providerTransport": "loopback",
+            "turns": 4,
+            "providerCallAttempts": 4,
+            "externalModelCalls": 0,
+            "modelResponses": 4,
+            "toolCalls": 3,
+            "usage": {
+              "input": 400,
+              "output": 80,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "usageComplete": true,
+            "costStatus": "not_calculated",
+            "durationMs": 256,
+            "rewritingStrategy": "none: explicit comparison profile",
+            "correctionAttempts": 0,
+            "correctionModelCalls": 0
+          }
+        }
+      ],
+      "stderr": "",
+      "invalidLines": [],
+      "errors": [],
+      "exitCode": 0,
+      "signal": null,
+      "processGroupClean": true,
+      "pass": true,
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "recoveryVerdictVersion": 1,
+      "finalOutputPass": true,
+      "completionPass": true
+    }
+  ],
+  "parity": {
+    "checks": [
+      {
+        "harness": "elda",
+        "case": "recovery",
+        "first": true,
+        "second": true
+      },
+      {
+        "harness": "langgraph",
+        "case": "recovery",
+        "first": true,
+        "second": true
+      },
+      {
+        "harness": "pi",
+        "case": "recovery",
+        "first": true,
+        "second": true
+      }
+    ],
+    "pass": true
+  },
+  "sourceStable": true,
+  "boundaryPass": true,
+  "providerRequests": 12,
+  "externalModelCalls": 0,
+  "usageUnreportedCalls": 0,
+  "usage": {
+    "input": 1200,
+    "output": 240
+  },
+  "finishedAt": "2026-11-11T09:00:18.463Z",
+  "workDirectory": "/home/gino/WorkArea/clova-api-lab/.local/h31/run-wXT702"
+}

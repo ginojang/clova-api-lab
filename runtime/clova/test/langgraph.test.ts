@@ -45,6 +45,33 @@ test('reported per-turn token cap blocks the next model request, preserving the 
   }finally{await s.cleanup();}
 });
 
+test('invalid tool arguments never ask or execute; a later valid call can repair them',async()=>{
+  const uses=[call('artifact_write',{path:'bad.txt'},'missing'),call('artifact_write',{path:'bad.txt',text:42},'numeric'),call('artifact_write',{path:'bad.txt',text:'bad',extra:true},'extra'),call('artifact_write',{path:'good.txt',text:'GOOD'},'good')];
+  const batch={...uses[0],message:{role:'assistant',content:'',toolCalls:uses.flatMap(x=>x.message.toolCalls)}};
+  const s=await session({approve:'ask',script:[batch,answer()]});
+  try{
+    s.send({op:'prompt',text:'repair invalid calls'});const approval=await s.wait('approval');
+    assert.equal(approval.data.callId,'good');assert.equal(existsSync(join(s.workspace,'bad.txt')),false);
+    s.send({op:'approve',approvalId:approval.data.approvalId,allow:true});await s.wait('idle');
+    assert.equal(s.events.filter(e=>e.t==='approval').length,1);
+    assert.equal(readFileSync(join(s.workspace,'good.txt'),'utf8'),'GOOD');
+    const results=s.events.filter(e=>e.t==='tool_result');assert.equal(results.length,4);
+    assert.ok(results.slice(0,3).every(e=>e.data.sideEffect==='not_started'&&e.data.output.retryable===true));
+    const end=s.events.find(e=>e.t==='turn_end')!.data;assert.equal(end.ok,true);assert.equal(end.toolFailed,true);assert.equal(end.policyRejected,false);
+  }finally{await s.cleanup();}
+});
+
+test('four consecutive schema failures stop the remaining batch before approval and execution',async()=>{
+  const uses=Array.from({length:5},(_,i)=>call('artifact_write',{path:'bad.txt'},String(i)));
+  const s=await session({approve:'ask',script:[{...uses[0],message:{role:'assistant',content:'',toolCalls:uses.flatMap(x=>x.message.toolCalls)}},answer()]});
+  try{
+    const events=await s.turn();assert.equal(events.filter(e=>e.t==='approval').length,0);
+    assert.equal(existsSync(join(s.workspace,'bad.txt')),false);
+    const end=events.find(e=>e.t==='turn_end')!.data;assert.equal(end.endReason,'malformed_tool_use');assert.equal(end.toolFailed,true);assert.equal(end.turns,1);
+    assert.equal(events.filter(e=>e.t==='tool_result').length,5);
+  }finally{await s.cleanup();}
+});
+
 async function session(options:{script?:object[];config?:object;approve?:string;env?:NodeJS.ProcessEnv;model?:string}={}) {
   const root=mkdtempSync(join(tmpdir(),'clova-langgraph-test-')),workspace=join(root,'workspace'),records=join(root,'records');mkdirSync(workspace);
   const fixture=join(root,'brain.json'),config=join(root,'config.json');

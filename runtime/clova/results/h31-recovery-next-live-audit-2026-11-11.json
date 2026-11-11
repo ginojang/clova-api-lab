@@ -1,0 +1,63 @@
+{
+  "input": "runtime/clova/results/h31-recovery-next-live-2026-11-11.json",
+  "inputSha256": "2d1a68651f724236e15a05de63231bdd5f9d70643f80cfcf1b3390b2b079eb7b",
+  "auditType": "post-measurement stricter verification; original report unchanged",
+  "version": 2,
+  "runs": [
+    {
+      "harness": "elda",
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "pass": true,
+      "recoveryVerdictVersion": 2,
+      "finalOutputPass": true,
+      "completionPass": true,
+      "approvalPass": true
+    },
+    {
+      "harness": "langgraph",
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "pass": true,
+      "recoveryVerdictVersion": 2,
+      "finalOutputPass": true,
+      "completionPass": true,
+      "approvalPass": true
+    },
+    {
+      "harness": "pi",
+      "verdictVersion": 2,
+      "artifactPass": true,
+      "processPass": true,
+      "callResultPairsPass": true,
+      "requiredToolsPass": true,
+      "batchObserved": false,
+      "noRequestsAfterDenial": null,
+      "h56": "not_assessed",
+      "pass": true,
+      "recoveryVerdictVersion": 2,
+      "finalOutputPass": true,
+      "completionPass": true,
+      "approvalPass": true
+    }
+  ],
+  "executionPass": true,
+  "parityPass": true,
+  "pacingPass": false,
+  "budgetPass": true,
+  "minimumObservedIntervalMs": 5999,
+  "sourceStable": true,
+  "protocolPass": false
+}

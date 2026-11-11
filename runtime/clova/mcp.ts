@@ -4,6 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, renameSync, rmSync, readdirSync
 import { dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { randomUUID } from 'node:crypto';
+import {toolArgumentError} from './tool-schema.ts';
 import { Brain } from './provider.ts';
 import { Fault, clean, inside, text, number, type Tool } from './common.ts';
 
@@ -120,6 +121,8 @@ export async function serve(workspace:string,lean=false) {
           if(!tool || (lean&&tool.name!=='batch')) throw new Fault('not_found','unknown tool; use tools/list');
           const args=req.params?.arguments??{};
           if(!args||typeof args!=='object'||Array.isArray(args)) throw new Fault('invalid_argument','arguments must be an object');
+          const diagnostic=tool.name.startsWith('artifact_')?toolArgumentError(tool.inputSchema,args):undefined;
+          if(diagnostic){reply({content:[{type:'text',text:JSON.stringify(diagnostic)}],isError:true});return;}
           const result=await tool.run(args);
           reply({content:[{type:'text',text:JSON.stringify(clean(result))}],isError:false});
         } catch(e) {reply({content:[{type:'text',text:errorText(e)}],isError:true});}
