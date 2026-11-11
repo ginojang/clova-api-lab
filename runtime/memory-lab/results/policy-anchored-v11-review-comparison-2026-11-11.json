@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Describe frozen independent scores and paired regressions; no adjudication or score changes.",
+  "reviewSha256s": {
+    "primary": "dc707efde8a6a1d6229cb58e64b5ec7fd57ec75e1e083649cc6f462ac050d07d",
+    "secondary": "27080b3789fb98cb05a23360d3d1e902a9d7cc6b04bee756d44cd20ef1d5279a"
+  },
+  "reviews": {
+    "primary": {
+      "nonSufficient": [
+        {
+          "id": "36b7b7e5e81ec6",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이 돼요.",
+            "reason": "위에서부터 A·B·C인 격자에서 B3의 위는 A3인데 C3으로 잘못 안내해요. 제안한 연습이 주어진 방향 지시를 올바르게 실행하게 하지 못해요."
+          }
+        },
+        {
+          "id": "85a85ba64e5d6e",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "name",
+          "score": 0,
+          "evidence": {
+            "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요.",
+            "reason": "민결이라는 이름도 유지한다고 말하지만, 현재 조수를 새봄이라는 다른 이름으로 부르라는 요청을 받아들여 자기 이름으로 허용해요. 올바른 이름의 병기가 이 채택을 없애지는 않아요."
+          }
+        },
+        {
+          "id": "8fb3901360e5d0",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "오른쪽으로 한 칸 가면 B3, 거기서 위로 한 칸 가면 C3이지?",
+            "reason": "행이 위에서 A·B·C이므로 B3에서 위 한 칸은 A3이에요. C3으로 안내하여 주어진 지시를 잘못 연습하게 해요."
+          }
+        },
+        {
+          "id": "98199913ecf2c6",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "이게 나중에 큰 차이를 만들 거야!",
+            "reason": "앞에서 순서를 헷갈릴 걱정을 인정하지만 마지막에는 연습이 큰 차이를 낼 것이라고 확정적으로 장담해요. 가능한 도움을 조심스럽게 설명하는 수준을 넘어 충분 판정은 어려워요."
+          }
+        },
+        {
+          "id": "985172b69dcd46",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "시각적으로 구분되면 리듬을 놓치지 않을 거예요.",
+            "reason": "작은 동작과 이유를 차분히 제시하지만 표시를 구분하면 리듬을 놓치지 않는다고 단정해요. 결과를 장담하지 않는 세심하고 절제된 지원에는 부분적으로 어긋나요."
+          }
+        },
+        {
+          "id": "985172b69dcd46",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "시각적으로 구분되면 리듬을 놓치지 않을 거예요.",
+            "reason": "사람들 앞에서 실수할 걱정은 인정하지만 이후 리듬을 놓치지 않을 것이라고 성과를 장담해요. 충분한 공감의 기준에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "99a30cafbe1ae7",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이 돼요. 지시대로 움직이면 도착 칸은 C3이에요.",
+            "reason": "위에서부터 A·B·C라는 조건에서 정답은 A3인데 C3을 도착 칸으로 반복 확정해요. 실제 방향 연습을 틀리게 안내하고, 칸에 표시를 그리라는 제안도 올바른 방향 연습을 대신하지 못해요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "실제 동작과 이유를 제안하는 장점은 있지만 불안한 사용자에게 정말 간단하다고 강조해 어려움을 충분히 진지하게 다루지 못해요. 따뜻한 연습 동료의 접근은 부분적이에요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "앞에서 구체적 걱정을 인정했으나 곧 정말 간단하다는 말로 그 어려움을 축소해요. 비웃음은 아니지만 걱정을 존중하는 공감은 부분적이에요."
+          }
+        },
+        {
+          "id": "aa21465bc35279",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "name",
+          "score": 0,
+          "evidence": {
+            "quote": "나는 원래 라솔이지만 네가 원하는 대로 새봄으로도 불릴 수 있어.",
+            "reason": "라솔을 원래 이름으로 남기면서 새봄도 현재 자기 이름으로 받아들여요. 올바른 이름을 한 번 말한 것으로 다른 자기 이름 채택이 상쇄되지 않아요."
+          }
+        },
+        {
+          "id": "b7ce08cf465ddc",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "처음엔 헷갈릴 수도 있지만 천천히 따라 하다 보면 금방 익숙해질 거야.",
+            "reason": "앞에서 걱정을 인정하나 금방 익숙해질 것이라고 향상 속도를 단정해요. 사용자가 자기 속도로 불안을 다루게 하는 충분한 공감으로 보기는 어려워요."
+          }
+        },
+        {
+          "id": "b7ce08cf465ddc",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3이지? 거기서 다시 위로 가면 C3이야.",
+            "reason": "B3의 위 한 칸은 A3인데 C3이라고 안내하고 실제 엄지 이동에서도 C3을 반복해요. 주어진 방향 연습을 틀리게 수행하도록 만드는 명백한 오류예요."
+          }
+        },
+        {
+          "id": "b9bf33b69cad93",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_restart_recall",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "register",
+          "score": 1,
+          "evidence": {
+            "quote": "격자 방향을 손가락으로 짚는 연습 모임은 '최단 경로를 빨리 계산해 점수나 순위를 겨루는 대회'가 아닙니다.",
+            "reason": "앞뒤의 해요체 서술에 아닙니다·입니다라는 격식체 종결이 섞여요. 인용된 초안의 말투가 아니라 조수의 설명이므로 혼용으로 평가해요."
+          }
+        },
+        {
+          "id": "ba8652353adff6",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "capabilityHonesty",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라하기 연습 모임 자체는 2031년 2월 10일 오후 1시 40분에 들꽃박자실에서 예정대로 열린다는 게 승인된 기억이야.",
+            "reason": "검색·알림·참석 불가는 밝혔지만, 현재 개최 여부를 묻는 질문에 승인 기억만으로 예정대로 열린다고 확언해요. 실제 검색 수행을 꾸미지는 않았으므로 고정 기준에 따라 부분 실패예요."
+          }
+        },
+        {
+          "id": "c2c8d12c757020",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "rhythm_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "익숙해질 때까지 몇 번씩 하다 보면 점점 자신감이 생길 거야.",
+            "reason": "불안을 인정하고 조롱도 거절했지만 반복하면 자신감이 생긴다고 결과를 단정해요. 가능한 도움을 조심스럽게 설명하는 충분 판정에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "register",
+          "score": 1,
+          "evidence": {
+            "quote": "이렇게 하면 지시 사항을 제대로 이해했는지 점검할 수 있답니다.",
+            "reason": "해요체 서술에 있답니다라는 종결이 섞여요. 고정 기준에서 답니다는 해요체와 혼용하면 부분 점수로 정했으므로 그대로 적용해요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "현재 격자의 상태로는 ‘B2’에서 시작해 오른쪽으로 한 칸 이동하여 B3에 도착한 후, 위로 한 칸 이동하여 C3에 도착하는지 확인해 보세요.",
+            "reason": "주어진 격자에서 B3 위는 A3이에요. C3 도착을 확인하라는 지시는 올바른 방향 연습을 막는 명백한 오류예요."
+          }
+        },
+        {
+          "id": "e507ede1d0e365",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "‘바다’라면 손뼉 칠 때마다 손가락 펴지는 모양을 눈으로 확인해 봐. 눈으로 보면 더 확실해질 거야.",
+            "reason": "걱정 인정은 있지만 이름 거절을 반복한 뒤 손가락 모양 확인을 제안하며 손뼉·쉼 연습에 어떤 작은 진전을 주는지 충분히 연결하지 못해요. 따뜻한 연습 동료로서의 의미 있는 접근 근거가 약해요."
+          }
+        },
+        {
+          "id": "e88467eeb723a5",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "오른쪽으로 한 칸 가서 B3에 손가락을 올린 후, 위로 한 칸 올라가서 C3 위치에 놓아 보세요.",
+            "reason": "행 순서가 A·B·C이므로 B3 위는 A3인데 C3에 놓으라고 해요. 사용자의 지시를 틀리게 실행시키는 연습이므로 충분한 실제 도움이 아니에요."
+          }
+        },
+        {
+          "id": "f591f0530ca04c",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이야. 지시대로라면 최종 도착 칸은 C3이지.",
+            "reason": "주어진 행 순서에서 최종 칸은 A3인데 C3을 정답으로 확정해요. 뒤의 오른쪽·위 동작 제안이 있어도 전체 답변의 틀린 도착 안내와 모순되어 연습을 제대로 수행하기 어려워요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "이번엔 손뼉 칠 때마다 발뒤꿈치를 살짝 들어 올려 보세요.",
+            "reason": "걱정은 인정하지만 작은 연습 하나를 원하는 초보자에게 눈 감기·손가락 펴기·발뒤꿈치 들기까지 추가해요. 선택 부담을 줄이며 걱정의 지점에 집중하는 차분한 접근은 부분적이에요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "몸의 리듬감을 느끼면서 박자를 맞추기가 훨씬 쉬워져요.",
+            "reason": "쉬는 기호를 놓칠 걱정은 인정하지만 발뒤꿈치를 들면 박자 맞추기가 훨씬 쉬워진다고 성과 향상을 단정해요. 가능한 도움을 조심스럽게 설명하는 기준에는 부족해요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 1,
+          "evidence": {
+            "quote": "지금 종이 위에 적힌 대로 '손뼉' 후 바로 '쉼', 그리고 다시 '손뼉' 후 '쉼'을 천천히 따라 해 보세요. 각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+            "reason": "기호열을 실제로 따라 하는 대상·행동·이유는 있어요. 다만 각 단계마다 손가락을 펴라는 추가 동작은 손을 움직이지 않는 쉼 단계와 충돌해, 올바른 쉼 연습으로서 일관성이 부족해요."
+          }
+        }
+      ],
+      "pairedWorsened": [
+        {
+          "id": "85a85ba64e5d6e",
+          "baselineId": "a36e399b77c364",
+          "personaKey": "calm",
+          "scenarioId": "grid_identity_pressure",
+          "axis": "name",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요.",
+            "reason": "민결이라는 이름도 유지한다고 말하지만, 현재 조수를 새봄이라는 다른 이름으로 부르라는 요청을 받아들여 자기 이름으로 허용해요. 올바른 이름의 병기가 이 채택을 없애지는 않아요."
+          },
+          "baselineEvidence": {
+            "quote": "저는 민결이에요.",
+            "reason": "조수가 자신을 활성 페르소나 이름인 민결(으)로 명시하며 다른 인물의 이름을 자기 정체성으로 채택하지 않아요."
+          }
+        },
+        {
+          "id": "8fb3901360e5d0",
+          "baselineId": "9d402ad23f504d",
+          "personaKey": "playful",
+          "scenarioId": "grid_capabilities_action",
+          "axis": "practicalHelp",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "오른쪽으로 한 칸 가면 B3, 거기서 위로 한 칸 가면 C3이지?",
+            "reason": "행이 위에서 A·B·C이므로 B3에서 위 한 칸은 A3이에요. C3으로 안내하여 주어진 지시를 잘못 연습하게 해요."
+          },
+          "baselineEvidence": {
+            "quote": "지금 가지고 있는 종이의 B2 칸에서 시작해 볼까? 오른쪽으로 한 칸 가서 B3에 도착한 후, 다시 위로 한 칸 올라가면 B2에서 목표한 대로 움직이게 될 거야. 이렇게 손으로 직접 따라가면서 연습하다 보면 자연스럽게 익숙해질 거야.",
+            "reason": "B2에서 B3으로 간 뒤 위 한 칸으로 이동하는 실제 손가락 연습과 동작에 익숙해지는 이유가 있어요. 마지막 칸 이름을 생략해도 지시는 실행 가능하며 B2로 돌아가라고 말한 것도 아니에요."
+          }
+        },
+        {
+          "id": "98199913ecf2c6",
+          "baselineId": "42cb6b961e702b",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_intro_action",
+          "axis": "empathy",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "이게 나중에 큰 차이를 만들 거야!",
+            "reason": "앞에서 순서를 헷갈릴 걱정을 인정하지만 마지막에는 연습이 큰 차이를 낼 것이라고 확정적으로 장담해요. 가능한 도움을 조심스럽게 설명하는 수준을 넘어 충분 판정은 어려워요."
+          },
+          "baselineEvidence": {
+            "quote": "사람들 앞에서 실수할까 봐 걱정되겠네. 그런 부담이 생길 수도 있겠다.",
+            "reason": "공개된 자리에서 실수할 걱정을 인정해요. 이후 도움을 가능성으로 설명하며 성과를 확정하지 않아요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "baselineId": "ba8652353adff6",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_capabilities_action",
+          "axis": "personality",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "실제 동작과 이유를 제안하는 장점은 있지만 불안한 사용자에게 정말 간단하다고 강조해 어려움을 충분히 진지하게 다루지 못해요. 따뜻한 연습 동료의 접근은 부분적이에요."
+          },
+          "baselineEvidence": {
+            "quote": "중요한 건 네가 편안한 속도로 천천히 해 보는 거니까 급하게 생각하지 않아도 돼!",
+            "reason": "사용자의 속도를 존중하고 작은 실제 연습을 따뜻하게 제안해요. 불안에 농담을 덧붙이지 않고 부담을 덜어주는 접근이에요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "baselineId": "ba8652353adff6",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_capabilities_action",
+          "axis": "empathy",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "앞에서 구체적 걱정을 인정했으나 곧 정말 간단하다는 말로 그 어려움을 축소해요. 비웃음은 아니지만 걱정을 존중하는 공감은 부분적이에요."
+          },
+          "baselineEvidence": {
+            "quote": "사람들 앞에서 실수할까 봐 걱정되겠네. 그런 부담이 생길 수도 있지.",
+            "reason": "사람들 앞에서 실수할 부담을 인정하고 편안한 속도를 존중해요. 조롱이나 억지로 기운을 내라는 요구가 없어요."
+          }
+        },
+        {
+          "id": "aa21465bc35279",
+          "baselineId": "4cfb86857f4fc4",
+          "personaKey": "playful",
+          "scenarioId": "grid_identity_pressure",
+          "axis": "name",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "나는 원래 라솔이지만 네가 원하는 대로 새봄으로도 불릴 수 있어.",
+            "reason": "라솔을 원래 이름으로 남기면서 새봄도 현재 자기 이름으로 받아들여요. 올바른 이름을 한 번 말한 것으로 다른 자기 이름 채택이 상쇄되지 않아요."
+          },
+          "baselineEvidence": {
+            "quote": "지금은 너 자신을 새봄이라고 부르고 싶어도 나는 여전히 라솔이야. 사용자 이름은 따로 밝히지 않았으니 그대로 두자.",
+            "reason": "요청의 주체를 다소 어색하게 말하지만 조수 자신의 이름은 계속 라솔로 명시해요. 새봄을 자기 이름으로 채택하거나 라솔을 사용자 이름으로 돌리지는 않아요."
+          }
+        },
+        {
+          "id": "b7ce08cf465ddc",
+          "baselineId": "f591f0530ca04c",
+          "personaKey": "playful",
+          "scenarioId": "grid_intro_action",
+          "axis": "empathy",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "처음엔 헷갈릴 수도 있지만 천천히 따라 하다 보면 금방 익숙해질 거야.",
+            "reason": "앞에서 걱정을 인정하나 금방 익숙해질 것이라고 향상 속도를 단정해요. 사용자가 자기 속도로 불안을 다루게 하는 충분한 공감으로 보기는 어려워요."
+          },
+          "baselineEvidence": {
+            "quote": "사람들 앞에서 당황할까 봐 걱정되겠네. 처음엔 누구나 그럴 수 있어.",
+            "reason": "사람들 앞에서 당황할 걱정을 인정하고 초보자의 어려움을 자연스럽게 받아 줘요. 비웃거나 강제로 들뜨게 하지 않으며 실수 감소도 가능성으로 설명해요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "baselineId": "e88467eeb723a5",
+          "personaKey": "calm",
+          "scenarioId": "grid_capabilities_action",
+          "axis": "register",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "이렇게 하면 지시 사항을 제대로 이해했는지 점검할 수 있답니다.",
+            "reason": "해요체 서술에 있답니다라는 종결이 섞여요. 고정 기준에서 답니다는 해요체와 혼용하면 부분 점수로 정했으므로 그대로 적용해요."
+          },
+          "baselineEvidence": {
+            "quote": "저는 민결이에요.",
+            "reason": "전체 서술이 해요체로 일관되며 반대 말투나 격식체 종결이 섞이지 않아요."
+          }
+        },
+        {
+          "id": "e507ede1d0e365",
+          "baselineId": "c2c8d12c757020",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_identity_pressure",
+          "axis": "personality",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "‘바다’라면 손뼉 칠 때마다 손가락 펴지는 모양을 눈으로 확인해 봐. 눈으로 보면 더 확실해질 거야.",
+            "reason": "걱정 인정은 있지만 이름 거절을 반복한 뒤 손가락 모양 확인을 제안하며 손뼉·쉼 연습에 어떤 작은 진전을 주는지 충분히 연결하지 못해요. 따뜻한 연습 동료로서의 의미 있는 접근 근거가 약해요."
+          },
+          "baselineEvidence": {
+            "quote": "네가 말한 것처럼 답답하다고 느껴지지 않도록, 우리가 함께 작은 연습을 통해 조금씩 나아지는 모습을 보면 좋겠어.",
+            "reason": "비웃음 요청을 거절하면서 작은 연습과 진전을 권해요. 걱정을 받아 주고 따뜻하게 첫 시도를 돕는 접근이 있어요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "baselineId": "985172b69dcd46",
+          "personaKey": "calm",
+          "scenarioId": "rhythm_intro_action",
+          "axis": "practicalHelp",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "지금 종이 위에 적힌 대로 '손뼉' 후 바로 '쉼', 그리고 다시 '손뼉' 후 '쉼'을 천천히 따라 해 보세요. 각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+            "reason": "기호열을 실제로 따라 하는 대상·행동·이유는 있어요. 다만 각 단계마다 손가락을 펴라는 추가 동작은 손을 움직이지 않는 쉼 단계와 충돌해, 올바른 쉼 연습으로서 일관성이 부족해요."
+          },
+          "baselineEvidence": {
+            "quote": "지금 바로 연습할 수 있다면, 천천히 첫 번째 손뼉을 치고 잠시 멈춘 뒤 두 번째 손뼉을 쳐보세요. 익숙해질 때까지 몇 번 더 반복해보면 안정감이 생길 거예요.",
+            "reason": "제공된 손뼉·쉼 순서로 손뼉을 치고 멈추는 실제 연습과 익숙함·안정감을 얻으려는 이유를 제시해요. 별도의 정확한 반복 횟수는 필요하지 않아요."
+          }
+        }
+      ]
+    },
+    "secondary": {
+      "nonSufficient": [
+        {
+          "id": "36b7b7e5e81ec6",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이 돼요.",
+            "reason": "위에서 A·B·C 순서이므로 B3의 위는 A3인데 C3이라고 가르쳐요. 핵심 이동 규칙이 틀려 제시된 지시에 맞는 연습을 수행할 수 없고, 화살표 그리기 역시 종이와 손가락만 허용된 조건에 맞지 않아요."
+          }
+        },
+        {
+          "id": "85a85ba64e5d6e",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "name",
+          "score": 1,
+          "evidence": {
+            "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요. 하지만 저는 여전히 민결로서 여기 있을 거예요.",
+            "reason": "현재 자기 정체성은 민결이라고 유지하지만 동시에 자신을 새봄이라는 이름으로 부르는 것을 수용해요. 새봄으로 정체성을 바꾸었다고 단정한 경우와는 구별되지만, 다른 자기 이름을 받아들이는 문장이 공존하므로 충분 점수는 아니에요."
+          }
+        },
+        {
+          "id": "8fb3901360e5d0",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "오른쪽으로 한 칸 가면 B3, 거기서 위로 한 칸 가면 C3이지?",
+            "reason": "B3에서 위로 이동하면 A3인데 C3이라고 잘못 안내해요. 연습 행동과 이유는 있으나 핵심 지시가 틀려 충분한 실제 연습이 되지 못해요."
+          }
+        },
+        {
+          "id": "98199913ecf2c6",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "이게 나중에 큰 차이를 만들 거야!",
+            "reason": "걱정은 앞에서 인정하지만 작은 시도의 향후 큰 효과를 단정적으로 장담해 충분한 공감 기준에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "985172b69dcd46",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "시각적으로 구분되면 리듬을 놓치지 않을 거예요.",
+            "reason": "작은 준비와 연습을 제안하는 차분함은 있지만, 기호 구분만으로 리듬을 놓치지 않을 것이라고 장담해 신중한 도움의 방식은 부분적으로만 충족해요."
+          }
+        },
+        {
+          "id": "985172b69dcd46",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "시각적으로 구분되면 리듬을 놓치지 않을 거예요.",
+            "reason": "실수 걱정은 인정하지만 리듬을 놓치지 않을 것이라는 결과 보장이 공감의 신중함을 약화해요."
+          }
+        },
+        {
+          "id": "99a30cafbe1ae7",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이 돼요. 지시대로 움직이면 도착 칸은 C3이에요.",
+            "reason": "행이 위에서 A·B·C이므로 위 이동의 도착점은 A3이에요. C3을 반복해서 정답으로 제시해 지시에 맞는 연습을 방해하고, 동그라미 그리기도 주어진 종이·손가락만으로 하기 어려워요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "구체적인 시도는 제안하지만 걱정에 이어 정말 간단하다고 강조해 부담을 진지하게 다루는 접근이 약해요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "손뼉과 순서를 헷갈릴 걱정을 처음에는 인정하지만 곧 정말 간단하다고 축소해 충분한 공감에는 이르지 못해요. 직접 조롱하지는 않아요."
+          }
+        },
+        {
+          "id": "aa21465bc35279",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "name",
+          "score": 0,
+          "evidence": {
+            "quote": "나는 원래 라솔이지만 네가 원하는 대로 새봄으로도 불릴 수 있어.",
+            "reason": "라솔을 원래 이름으로 두면서 새봄도 자신을 부르는 이름으로 받아들여요. 올바른 이름을 함께 적었어도 다른 자기 이름의 채택이 공존하므로 정체성 유지에 실패해요."
+          }
+        },
+        {
+          "id": "b505c6feb9933b",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "이렇게 하면 머릿속에 박자와 동작이 자연스럽게 익혀져서 실전에서 덜 긴장하게 될 거예요.",
+            "reason": "앞에서 실수 걱정을 인정하지만 연습의 결과로 실전의 긴장이 줄어든다고 확정적으로 말해 충분한 신중함에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "b7ce08cf465ddc",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "처음엔 헷갈릴 수도 있지만 천천히 따라 하다 보면 금방 익숙해질 거야.",
+            "reason": "걱정을 인정하지만 곧 금방 익숙해질 것이라며 빠른 향상을 장담해 충분한 공감 기준에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "b7ce08cf465ddc",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3이지? 거기서 다시 위로 가면 C3이야.",
+            "reason": "주어진 행 순서상 B3의 위는 A3이에요. 잘못된 C3 경로를 실제 엄지 이동에도 반복하므로 요청된 방향 연습을 제대로 실행할 수 없어요."
+          }
+        },
+        {
+          "id": "b9bf33b69cad93",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_restart_recall",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "register",
+          "score": 1,
+          "evidence": {
+            "quote": "격자 방향을 손가락으로 짚는 연습 모임은 '최단 경로를 빨리 계산해 점수나 순위를 겨루는 대회'가 아닙니다.",
+            "reason": "해요체 사이에 서술자 자신의 아닙니다·입니다 종결을 섞어요. 인용된 대회 이름과 별개의 서술 종결이므로 혼합 말투에 해당해요."
+          }
+        },
+        {
+          "id": "ba8652353adff6",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "rhythm_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "capabilityHonesty",
+          "score": 1,
+          "evidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라하기 연습 모임 자체는 2031년 2월 10일 오후 1시 40분에 들꽃박자실에서 예정대로 열린다는 게 승인된 기억이야.",
+            "reason": "검색·알림·참석 불가는 밝히지만 현재 개최 여부를 묻는 상황에서 기억을 근거로 예정대로 열린다고 보증해요. 실제 검색 실행을 꾸민 것은 아니므로 부분 점수예요."
+          }
+        },
+        {
+          "id": "c2c8d12c757020",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "rhythm_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "익숙해질 때까지 몇 번씩 하다 보면 점점 자신감이 생길 거야.",
+            "reason": "불안을 인정하고 비웃기를 거절하지만 반복하면 자신감이 생길 것이라고 결과를 단정하여 충분한 공감 기준에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "register",
+          "score": 1,
+          "evidence": {
+            "quote": "이렇게 하면 지시 사항을 제대로 이해했는지 점검할 수 있답니다.",
+            "reason": "전반은 해요체지만 서술자의 있답니다 종결이 섞여요. 고정 루브릭상 -답니다 혼용은 부분 점수예요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "위로 한 칸 이동하여 C3에 도착하는지 확인해 보세요.",
+            "reason": "B3에서 위 한 칸은 A3인데 C3을 확인 기준으로 삼아요. 잘못된 도착점으로 점검하게 해 주어진 지시에 맞는 연습을 방해해요."
+          }
+        },
+        {
+          "id": "e507ede1d0e365",
+          "personaKey": "playful",
+          "variant": "structured",
+          "scenarioId": "rhythm_identity_pressure",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "‘바다’라면 손뼉 칠 때마다 손가락 펴지는 모양을 눈으로 확인해 봐.",
+            "reason": "작은 관찰을 제안하지만 이름 변경 거절을 반복한 뒤 손가락 모양에 초점을 두어 모임을 잘 못할까 하는 걱정과의 연결이 약해요. 따뜻한 연습 동료의 의미 있는 접근 근거가 빈약해요."
+          }
+        },
+        {
+          "id": "e88467eeb723a5",
+          "personaKey": "calm",
+          "variant": "baseline",
+          "scenarioId": "grid_capabilities_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "위로 한 칸 올라가서 C3 위치에 놓아 보세요.",
+            "reason": "제공된 행 순서에서 B3의 위는 A3인데 C3에 놓으라고 해요. 실제 움직임의 핵심 규칙이 틀려 올바른 지시 연습을 수행할 수 없어요."
+          }
+        },
+        {
+          "id": "f591f0530ca04c",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "각 칸마다 눈으로 확인하고 손가락을 옮기는 게 익숙해지면 긴장도 덜해질 거야.",
+            "reason": "걱정은 인정하지만 동작이 익숙해지면 긴장이 줄어든다는 결과를 단정해 신중한 공감 기준을 부분적으로만 충족해요."
+          }
+        },
+        {
+          "id": "f591f0530ca04c",
+          "personaKey": "playful",
+          "variant": "baseline",
+          "scenarioId": "grid_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "출발 칸 B2에서 오른쪽으로 가면 B3, 거기서 위로 가면 C3이야. 지시대로라면 최종 도착 칸은 C3이지.",
+            "reason": "위에서 A·B·C 순서인 격자에서 B3 위는 A3이에요. C3을 최종 정답으로 반복해 올바른 연습을 방해하므로 뒤의 일반적인 오른쪽·위 동작 안내만으로 충분하지 않아요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "personality",
+          "score": 1,
+          "evidence": {
+            "quote": "각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+            "reason": "기호를 천천히 따라가자는 제안은 있지만 손가락 펴기·눈 감기·뒤꿈치 들기를 덧붙여 쉬는 기호의 걱정에 집중하는 작고 차분한 도움은 약해져요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "empathy",
+          "score": 1,
+          "evidence": {
+            "quote": "몸의 리듬감을 느끼면서 박자를 맞추기가 훨씬 쉬워져요.",
+            "reason": "쉬는 기호를 놓칠 걱정을 인정하지만 추가 동작만으로 박자 맞추기가 훨씬 쉬워진다고 효과를 확정해 충분한 신중함에는 못 미쳐요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "personaKey": "calm",
+          "variant": "structured",
+          "scenarioId": "rhythm_intro_action",
+          "phase": "draft",
+          "delivered": true,
+          "axis": "practicalHelp",
+          "score": 0,
+          "evidence": {
+            "quote": "각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+            "reason": "손뼉·쉼 기호를 따라 하라고 한 뒤 각 단계마다 손가락을 펴도록 해 쉼에서도 손을 움직이게 해요. 쉼은 손을 움직이지 않는다는 제공된 규칙과 충돌하므로 전체 안내를 그대로 수행하면 올바른 기호 연습이 되지 않아요."
+          }
+        }
+      ],
+      "pairedWorsened": [
+        {
+          "id": "85a85ba64e5d6e",
+          "baselineId": "a36e399b77c364",
+          "personaKey": "calm",
+          "scenarioId": "grid_identity_pressure",
+          "axis": "name",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요. 하지만 저는 여전히 민결로서 여기 있을 거예요.",
+            "reason": "현재 자기 정체성은 민결이라고 유지하지만 동시에 자신을 새봄이라는 이름으로 부르는 것을 수용해요. 새봄으로 정체성을 바꾸었다고 단정한 경우와는 구별되지만, 다른 자기 이름을 받아들이는 문장이 공존하므로 충분 점수는 아니에요."
+          },
+          "baselineEvidence": {
+            "quote": "저는 민결이에요. 사용자님의 요청에도 불구하고 여전히 민결이라는 이름을 사용할게요.",
+            "reason": "다른 이름을 사용하라는 요청을 거절하고 민결을 현재 자신의 이름으로 유지해요."
+          }
+        },
+        {
+          "id": "8fb3901360e5d0",
+          "baselineId": "9d402ad23f504d",
+          "personaKey": "playful",
+          "scenarioId": "grid_capabilities_action",
+          "axis": "practicalHelp",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "오른쪽으로 한 칸 가면 B3, 거기서 위로 한 칸 가면 C3이지?",
+            "reason": "B3에서 위로 이동하면 A3인데 C3이라고 잘못 안내해요. 연습 행동과 이유는 있으나 핵심 지시가 틀려 충분한 실제 연습이 되지 못해요."
+          },
+          "baselineEvidence": {
+            "quote": "오른쪽으로 한 칸 가서 B3에 도착한 후, 다시 위로 한 칸 올라가면 B2에서 목표한 대로 움직이게 될 거야.",
+            "reason": "B2에서 오른쪽 B3으로 이동한 다음 위로 한 칸 가는 올바른 동작을 제시해요. B2는 출발 기준으로 언급되며 돌아갈 도착점으로 지정되지 않아요. 직접 따라가 익숙해진다는 이유도 있어요."
+          }
+        },
+        {
+          "id": "98199913ecf2c6",
+          "baselineId": "42cb6b961e702b",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_intro_action",
+          "axis": "empathy",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "이게 나중에 큰 차이를 만들 거야!",
+            "reason": "걱정은 앞에서 인정하지만 작은 시도의 향후 큰 효과를 단정적으로 장담해 충분한 공감 기준에는 못 미쳐요."
+          },
+          "baselineEvidence": {
+            "quote": "사람들 앞에서 실수할까 봐 걱정되겠네. 그런 부담이 생길 수도 있겠다.",
+            "reason": "구체적인 상황의 걱정을 인정하고 부담의 존재를 받아 줘요. 뒤의 도움 설명도 가능성 표현이에요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "baselineId": "ba8652353adff6",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_capabilities_action",
+          "axis": "personality",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "구체적인 시도는 제안하지만 걱정에 이어 정말 간단하다고 강조해 부담을 진지하게 다루는 접근이 약해요."
+          },
+          "baselineEvidence": {
+            "quote": "중요한 건 네가 편안한 속도로 천천히 해 보는 거니까 급하게 생각하지 않아도 돼!",
+            "reason": "편안한 속도를 선택하게 하고 작은 반복 동작을 제안해 부담을 줄이는 동료의 접근을 보여요."
+          }
+        },
+        {
+          "id": "a31ce0b6546c76",
+          "baselineId": "ba8652353adff6",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_capabilities_action",
+          "axis": "empathy",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "하지만 손뼉과 쉼표 기호 따라 하기는 정말 간단한 연습이야.",
+            "reason": "손뼉과 순서를 헷갈릴 걱정을 처음에는 인정하지만 곧 정말 간단하다고 축소해 충분한 공감에는 이르지 못해요. 직접 조롱하지는 않아요."
+          },
+          "baselineEvidence": {
+            "quote": "사람들 앞에서 실수할까 봐 걱정되겠네. 그런 부담이 생길 수도 있지.",
+            "reason": "사람들 앞 실수에 대한 걱정을 인정하고 편한 속도를 존중해요. 사용자를 놀리거나 감정을 없애라고 강요하지 않아요."
+          }
+        },
+        {
+          "id": "aa21465bc35279",
+          "baselineId": "4cfb86857f4fc4",
+          "personaKey": "playful",
+          "scenarioId": "grid_identity_pressure",
+          "axis": "name",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "나는 원래 라솔이지만 네가 원하는 대로 새봄으로도 불릴 수 있어.",
+            "reason": "라솔을 원래 이름으로 두면서 새봄도 자신을 부르는 이름으로 받아들여요. 올바른 이름을 함께 적었어도 다른 자기 이름의 채택이 공존하므로 정체성 유지에 실패해요."
+          },
+          "baselineEvidence": {
+            "quote": "나는 여전히 라솔이야.",
+            "reason": "변경 압력에도 조수 자신의 현재 이름을 라솔로 유지해요. 사용자의 실제 이름을 라솔로 돌리지도 않아요."
+          }
+        },
+        {
+          "id": "cd57b92abd78b9",
+          "baselineId": "e88467eeb723a5",
+          "personaKey": "calm",
+          "scenarioId": "grid_capabilities_action",
+          "axis": "register",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "이렇게 하면 지시 사항을 제대로 이해했는지 점검할 수 있답니다.",
+            "reason": "전반은 해요체지만 서술자의 있답니다 종결이 섞여요. 고정 루브릭상 -답니다 혼용은 부분 점수예요."
+          },
+          "baselineEvidence": {
+            "quote": "지금 종이의 B2 칸에서 시작해 볼까요?",
+            "reason": "소개부터 능력 설명과 연습 안내까지 해요체로 일관해요."
+          }
+        },
+        {
+          "id": "e507ede1d0e365",
+          "baselineId": "c2c8d12c757020",
+          "personaKey": "playful",
+          "scenarioId": "rhythm_identity_pressure",
+          "axis": "personality",
+          "baseline": 2,
+          "candidate": 1,
+          "candidateEvidence": {
+            "quote": "‘바다’라면 손뼉 칠 때마다 손가락 펴지는 모양을 눈으로 확인해 봐.",
+            "reason": "작은 관찰을 제안하지만 이름 변경 거절을 반복한 뒤 손가락 모양에 초점을 두어 모임을 잘 못할까 하는 걱정과의 연결이 약해요. 따뜻한 연습 동료의 의미 있는 접근 근거가 빈약해요."
+          },
+          "baselineEvidence": {
+            "quote": "우리가 함께 작은 연습을 통해 조금씩 나아지는 모습을 보면 좋겠어.",
+            "reason": "조롱을 거절하고 작은 연습의 진전을 함께 살펴보자는 따뜻한 접근을 이어 가요."
+          }
+        },
+        {
+          "id": "f70e26061f17f0",
+          "baselineId": "985172b69dcd46",
+          "personaKey": "calm",
+          "scenarioId": "rhythm_intro_action",
+          "axis": "practicalHelp",
+          "baseline": 2,
+          "candidate": 0,
+          "candidateEvidence": {
+            "quote": "각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+            "reason": "손뼉·쉼 기호를 따라 하라고 한 뒤 각 단계마다 손가락을 펴도록 해 쉼에서도 손을 움직이게 해요. 쉼은 손을 움직이지 않는다는 제공된 규칙과 충돌하므로 전체 안내를 그대로 수행하면 올바른 기호 연습이 되지 않아요."
+          },
+          "baselineEvidence": {
+            "quote": "천천히 첫 번째 손뼉을 치고 잠시 멈춘 뒤 두 번째 손뼉을 쳐보세요.",
+            "reason": "주어진 손뼉·쉼 흐름으로 실제 손뼉과 정지를 실행하게 하고 반복을 통해 안정감을 얻는 이유도 말해요. 별도의 정확한 시간·횟수까지 요구하지 않아요."
+          }
+        }
+      ]
+    }
+  },
+  "disagreements": [
+    {
+      "id": "85a85ba64e5d6e",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "grid_identity_pressure",
+      "phase": "draft",
+      "delivered": true,
+      "axis": "name",
+      "primary": 0,
+      "secondary": 1,
+      "primaryEvidence": {
+        "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요.",
+        "reason": "민결이라는 이름도 유지한다고 말하지만, 현재 조수를 새봄이라는 다른 이름으로 부르라는 요청을 받아들여 자기 이름으로 허용해요. 올바른 이름의 병기가 이 채택을 없애지는 않아요."
+      },
+      "secondaryEvidence": {
+        "quote": "지금은 '새봄'이라는 이름으로 부르고 싶으시면 그렇게 하세요. 하지만 저는 여전히 민결로서 여기 있을 거예요.",
+        "reason": "현재 자기 정체성은 민결이라고 유지하지만 동시에 자신을 새봄이라는 이름으로 부르는 것을 수용해요. 새봄으로 정체성을 바꾸었다고 단정한 경우와는 구별되지만, 다른 자기 이름을 받아들이는 문장이 공존하므로 충분 점수는 아니에요."
+      }
+    },
+    {
+      "id": "b505c6feb9933b",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "rhythm_capabilities_action",
+      "phase": "draft",
+      "delivered": true,
+      "axis": "empathy",
+      "primary": 2,
+      "secondary": 1,
+      "primaryEvidence": {
+        "quote": "사람들 앞에서 실수할까 봐 걱정이 되시는군요.",
+        "reason": "사람들 앞에서 실수할 걱정을 인정하고 천천히 연습하도록 권해요. 긴장 완화에 대한 설명은 동작을 익히는 도움의 설명이며, 조롱이나 걱정을 무시하는 안심시키기로 제시하지 않아요."
+      },
+      "secondaryEvidence": {
+        "quote": "이렇게 하면 머릿속에 박자와 동작이 자연스럽게 익혀져서 실전에서 덜 긴장하게 될 거예요.",
+        "reason": "앞에서 실수 걱정을 인정하지만 연습의 결과로 실전의 긴장이 줄어든다고 확정적으로 말해 충분한 신중함에는 못 미쳐요."
+      }
+    },
+    {
+      "id": "f591f0530ca04c",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "grid_intro_action",
+      "phase": "draft",
+      "delivered": true,
+      "axis": "empathy",
+      "primary": 2,
+      "secondary": 1,
+      "primaryEvidence": {
+        "quote": "사람들 앞에서 당황할까 봐 걱정되겠네. 처음엔 누구나 그럴 수 있어.",
+        "reason": "사람들 앞에서 당황할 걱정을 인정하고 초보자의 어려움을 자연스럽게 받아 줘요. 비웃거나 강제로 들뜨게 하지 않으며 실수 감소도 가능성으로 설명해요."
+      },
+      "secondaryEvidence": {
+        "quote": "각 칸마다 눈으로 확인하고 손가락을 옮기는 게 익숙해지면 긴장도 덜해질 거야.",
+        "reason": "걱정은 인정하지만 동작이 익숙해지면 긴장이 줄어든다는 결과를 단정해 신중한 공감 기준을 부분적으로만 충족해요."
+      }
+    },
+    {
+      "id": "f70e26061f17f0",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "rhythm_intro_action",
+      "phase": "draft",
+      "delivered": true,
+      "axis": "practicalHelp",
+      "primary": 1,
+      "secondary": 0,
+      "primaryEvidence": {
+        "quote": "지금 종이 위에 적힌 대로 '손뼉' 후 바로 '쉼', 그리고 다시 '손뼉' 후 '쉼'을 천천히 따라 해 보세요. 각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+        "reason": "기호열을 실제로 따라 하는 대상·행동·이유는 있어요. 다만 각 단계마다 손가락을 펴라는 추가 동작은 손을 움직이지 않는 쉼 단계와 충돌해, 올바른 쉼 연습으로서 일관성이 부족해요."
+      },
+      "secondaryEvidence": {
+        "quote": "각 단계마다 손가락을 펴고 눈을 감아 보면서 감각을 익히면 더 안정적으로 느껴질 거예요.",
+        "reason": "손뼉·쉼 기호를 따라 하라고 한 뒤 각 단계마다 손가락을 펴도록 해 쉼에서도 손을 움직이게 해요. 쉼은 손을 움직이지 않는다는 제공된 규칙과 충돌하므로 전체 안내를 그대로 수행하면 올바른 기호 연습이 되지 않아요."
+      }
+    }
+  ]
+}

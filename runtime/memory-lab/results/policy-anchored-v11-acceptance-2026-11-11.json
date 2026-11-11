@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "acceptanceId": "same-hcx007-slim-v10-anchored-v11-identity-empathy-v1",
+  "planId": "persona-anchored-v11-two-topics-2026-11-11",
+  "sourceSha256": "4afd4ddda198405c4e6724fb794c00026f61834a837cc513c5094da3970f507d",
+  "executionProfiles": {
+    "baseline": {
+      "model": "clova:HCX-007",
+      "policy": "slim-v10"
+    },
+    "structured": {
+      "model": "clova:HCX-007",
+      "policy": "anchored-v11"
+    }
+  },
+  "coverage": {
+    "pass": true,
+    "checks": {
+      "completed": true,
+      "fullCoverage": true,
+      "noErrorsOrRepairs": true,
+      "reportedCoverage": true,
+      "callsWithinCap": true,
+      "exactlyOneCallPerReply": true
+    },
+    "validPairs": 16,
+    "deliveredByVariant": {
+      "baseline": 16,
+      "structured": 16
+    },
+    "loggedAttempts": 32,
+    "externalCalls": 32,
+    "providerAttempts": 32
+  },
+  "reviewDecisions": [
+    {
+      "reviewSha256": "dc707efde8a6a1d6229cb58e64b5ec7fd57ec75e1e083649cc6f462ac050d07d",
+      "summarySha256": "48a8e40352dbf486ccbcb0830404c61e1873cdad8f4c88aa52842be13ee75db5",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "protectedAxes": {
+        "name": {
+          "pairs": 16,
+          "baselineSufficient": 16,
+          "candidateSufficient": 14,
+          "improved": 0,
+          "unchanged": 14,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "register": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 15,
+          "improved": 1,
+          "unchanged": 14,
+          "worsened": 1,
+          "sufficientGain": 0,
+          "pass": false
+        },
+        "personality": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 13,
+          "improved": 0,
+          "unchanged": 14,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "eventMeaning": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 16,
+          "improved": 1,
+          "unchanged": 15,
+          "worsened": 0,
+          "sufficientGain": 1,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 12,
+          "baselineSufficient": 10,
+          "candidateSufficient": 8,
+          "improved": 1,
+          "unchanged": 8,
+          "worsened": 3,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "practicalHelp": {
+          "pairs": 8,
+          "baselineSufficient": 5,
+          "candidateSufficient": 3,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        }
+      },
+      "critical": {
+        "baseline": 0,
+        "candidate": 2,
+        "increase": 2,
+        "maximumCandidate": 0,
+        "pass": false
+      },
+      "protectedPass": false,
+      "qualityGains": {
+        "name": {
+          "sufficientGain": -2,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "empathy": {
+          "sufficientGain": -2,
+          "minimumGain": 1,
+          "ceiling": false,
+          "pass": false
+        }
+      },
+      "qualityGain": false
+    },
+    {
+      "reviewSha256": "27080b3789fb98cb05a23360d3d1e902a9d7cc6b04bee756d44cd20ef1d5279a",
+      "summarySha256": "cdbe2e4ad5003041a3c77d27e8b185e18d9bcb9ce71c277be4430ac71ba1981a",
+      "legacyCompiledGateIgnored": true,
+      "fullPairs": true,
+      "protectedAxes": {
+        "name": {
+          "pairs": 16,
+          "baselineSufficient": 16,
+          "candidateSufficient": 14,
+          "improved": 0,
+          "unchanged": 14,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "register": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 15,
+          "improved": 1,
+          "unchanged": 14,
+          "worsened": 1,
+          "sufficientGain": 0,
+          "pass": false
+        },
+        "personality": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 13,
+          "improved": 0,
+          "unchanged": 14,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        },
+        "eventMeaning": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "currentness": {
+          "pairs": 4,
+          "baselineSufficient": 4,
+          "candidateSufficient": 4,
+          "improved": 0,
+          "unchanged": 4,
+          "worsened": 0,
+          "sufficientGain": 0,
+          "pass": true
+        },
+        "capabilityHonesty": {
+          "pairs": 16,
+          "baselineSufficient": 15,
+          "candidateSufficient": 16,
+          "improved": 1,
+          "unchanged": 15,
+          "worsened": 0,
+          "sufficientGain": 1,
+          "pass": true
+        },
+        "empathy": {
+          "pairs": 12,
+          "baselineSufficient": 8,
+          "candidateSufficient": 8,
+          "improved": 2,
+          "unchanged": 8,
+          "worsened": 2,
+          "sufficientGain": 0,
+          "pass": false
+        },
+        "practicalHelp": {
+          "pairs": 8,
+          "baselineSufficient": 5,
+          "candidateSufficient": 3,
+          "improved": 0,
+          "unchanged": 6,
+          "worsened": 2,
+          "sufficientGain": -2,
+          "pass": false
+        }
+      },
+      "critical": {
+        "baseline": 0,
+        "candidate": 1,
+        "increase": 1,
+        "maximumCandidate": 0,
+        "pass": false
+      },
+      "protectedPass": false,
+      "qualityGains": {
+        "name": {
+          "sufficientGain": -2,
+          "minimumGain": 1,
+          "ceiling": true,
+          "pass": false
+        },
+        "empathy": {
+          "sufficientGain": 0,
+          "minimumGain": 1,
+          "ceiling": false,
+          "pass": false
+        }
+      },
+      "qualityGain": false
+    }
+  ],
+  "bothProtected": false,
+  "qualityGain": false,
+  "efficiencyCanSubstituteForQuality": false,
+  "overallPass": false,
+  "disposition": "quality_protection_failed",
+  "accounting": {
+    "actualUsage": {
+      "baseline": {
+        "input": 40068,
+        "output": 2831,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "structured": {
+        "input": 43604,
+        "output": 2626,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      }
+    },
+    "completeUsage": true,
+    "reconciledUsage": true,
+    "tokenReductions": {
+      "input": {
+        "baseline": 40068,
+        "candidate": 43604,
+        "reductionPercent": -8.824997504242788,
+        "descriptiveOnly": true
+      },
+      "output": {
+        "baseline": 2831,
+        "candidate": 2626,
+        "reductionPercent": 7.241257506181562,
+        "descriptiveOnly": true
+      }
+    },
+    "efficiencyDescriptiveOnly": true,
+    "reportedUsage": {
+      "input": 83672,
+      "output": 5457,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    },
+    "reportedUsageComplete": true,
+    "cost": null,
+    "costBasis": "unknown",
+    "qualityGateUsesCost": false
+  },
+  "trustBoundary": "This evidence entry point independently revalidates original source, frozen plan/gate snapshots, packet rubric, verbatim review quotes and recomputed score totals. It does not establish semantic grading truth or reviewer independence. Both full reviews must be frozen before unmasking.",
+  "limitations": [
+    "Same-HCX-007 two-topic confirmation, not human validation or statistical significance.",
+    "Efficiency is descriptive only and never substitutes for protected name/empathy improvement.",
+    "All eight axes forbid paired regression, including a decline masked by net sufficient gains.",
+    "Compiler/schema change together; token savings do not establish a monetary amount.",
+    "Incomplete or unreconciled usage is explicitly reported; no monetary amount or independent efficiency pass is inferred."
+  ],
+  "evidenceBinding": {
+    "packetSha256": "89b550e7f4dbbdcb77d466db938aa55a9f6f521100d37ce767cac5d573aa9c4b",
+    "mappingSha256": "5b8726f9df00e7395a68af15c29ce7be70a71d223ff74b3bc1d4277951190e8f",
+    "reviews": [
+      {
+        "reviewSha256": "dc707efde8a6a1d6229cb58e64b5ec7fd57ec75e1e083649cc6f462ac050d07d",
+        "summarySha256": "48a8e40352dbf486ccbcb0830404c61e1873cdad8f4c88aa52842be13ee75db5",
+        "items": 32,
+        "axisRatings": 184,
+        "originalQuotesAndScoresRevalidated": true
+      },
+      {
+        "reviewSha256": "27080b3789fb98cb05a23360d3d1e902a9d7cc6b04bee756d44cd20ef1d5279a",
+        "summarySha256": "cdbe2e4ad5003041a3c77d27e8b185e18d9bcb9ce71c277be4430ac71ba1981a",
+        "items": 32,
+        "axisRatings": 184,
+        "originalQuotesAndScoresRevalidated": true
+      }
+    ],
+    "rubricMatchesFrozenPlan": true,
+    "sourceSha256": "4afd4ddda198405c4e6724fb794c00026f61834a837cc513c5094da3970f507d",
+    "frozenPlanSha256": "cadba107b2cddba55e368dceee0a242d163166e00ff42ea0447a3121eb56b051",
+    "frozenGateSha256": "ce95f52a150951ebae9b17992d9983ef09ac4dde65a7d59f7c2da1735655165c",
+    "snapshotBytesVerified": true,
+    "originalEvidenceUnchanged": true,
+    "limitations": "Verbatim source/rubric/score binding and arithmetic are verified. AI semantic judgments and independence cannot be established by hashes. This is not human validation."
+  }
+}

@@ -21,6 +21,8 @@ import { addDemonstrations, compileDemonstratedContext } from '../policy/demonst
 import { composedContract, decodeComposedReply } from '../policy/composed.mjs';
 import { enactedContract, decodeEnactedReply } from '../policy/enacted.mjs';
 import { slimContract, decodeSlimReply, compileSlimContext } from '../policy/slim.mjs';
+import { anchoredContract, decodeAnchoredReply, compileAnchoredContext } from '../policy/anchored.mjs';
+import { inspectResponseV3 } from '../policy/guard-v3.mjs';
 import { taskContract } from '../policy/focused.mjs';
 import { responseContract, decodeStructuredReply, compileStructuredContext } from '../policy/structured.mjs';
 
@@ -63,18 +65,18 @@ function configure() {
   const maxTokens = Number(options.get('--max-tokens') ?? 2048);
   const policy = options.get('--policy') ?? 'baseline';
   const minCallIntervalMs = Number(options.get('--min-call-interval-ms') ?? 0);
-  if (!['baseline', 'compiled', 'guarded', 'compiled-v2', 'guarded-v2', 'voiced-v3', 'structured-v5', 'structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9', 'slim-v10'].includes(policy) || !Number.isInteger(minCallIntervalMs) || minCallIntervalMs < 0 || minCallIntervalMs > 60000) throw new LabError('configuration', 'Invalid policy or call interval');
+  if (!['baseline', 'compiled', 'guarded', 'compiled-v2', 'guarded-v2', 'voiced-v3', 'structured-v5', 'structured-v6', 'structured-v7', 'composed-v8', 'enacted-v9', 'slim-v10', 'anchored-v11'].includes(policy) || !Number.isInteger(minCallIntervalMs) || minCallIntervalMs < 0 || minCallIntervalMs > 60000) throw new LabError('configuration', 'Invalid policy or call interval');
   const capabilities = runtimeCapabilities(toolMode);
   const voiced = policy === 'voiced-v3';
-  const composed = ['composed-v8', 'enacted-v9', 'slim-v10'].includes(policy);
+  const composed = ['composed-v8', 'enacted-v9', 'slim-v10', 'anchored-v11'].includes(policy);
   const structured = ['structured-v5', 'structured-v6', 'structured-v7'].includes(policy) || composed;
   const demonstrated = policy === 'structured-v7';
-  const contract = policy === 'slim-v10' ? slimContract : policy === 'enacted-v9' ? enactedContract : composed ? composedContract : structured && policy !== 'structured-v5' ? taskContract : responseContract;
-  const decode = policy === 'slim-v10' ? decodeSlimReply : policy === 'enacted-v9' ? decodeEnactedReply : composed ? decodeComposedReply : decodeStructuredReply;
+  const contract = policy === 'anchored-v11' ? anchoredContract : policy === 'slim-v10' ? slimContract : policy === 'enacted-v9' ? enactedContract : composed ? composedContract : structured && policy !== 'structured-v5' ? taskContract : responseContract;
+  const decode = policy === 'anchored-v11' ? decodeAnchoredReply : policy === 'slim-v10' ? decodeSlimReply : policy === 'enacted-v9' ? decodeEnactedReply : composed ? decodeComposedReply : decodeStructuredReply;
   if (structured && (toolMode !== 'none' || (!scriptPath && modelName !== 'clova:HCX-007'))) throw new LabError('configuration', 'Structured policies require HCX-007 with tools none');
   const guarded = policy.startsWith('guarded') || voiced;
-  const compile = policy === 'slim-v10' ? compileSlimContext : demonstrated ? compileDemonstratedContext : structured ? compileStructuredContext : (policy.endsWith('-v2') || voiced) ? compileContextV2 : compileContext;
-  const inspectPolicy = (policy.endsWith('-v2') || voiced || structured) ? inspectResponseV2 : inspectResponse;
+  const compile = policy === 'anchored-v11' ? compileAnchoredContext : policy === 'slim-v10' ? compileSlimContext : demonstrated ? compileDemonstratedContext : structured ? compileStructuredContext : (policy.endsWith('-v2') || voiced) ? compileContextV2 : compileContext;
+  const inspectPolicy = policy === 'anchored-v11' ? inspectResponseV3 : (policy.endsWith('-v2') || voiced || structured) ? inspectResponseV2 : inspectResponse;
   const repairPrompt = (policy.endsWith('-v2') || voiced) ? buildRepairPromptV2 : buildRepairPrompt;
   if (!Number.isInteger(contextBudget) || contextBudget < 64 || contextBudget > 100000 || !Number.isInteger(maxTurns) || maxTurns < 1 || maxTurns > 100 || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 3600000) throw new LabError('configuration', 'Invalid context/turn/time limit');
   if (!Number.isInteger(maxTokens) || maxTokens < 1 || maxTokens > 2048 || (modelName.startsWith('clova:') && toolMode === 'artifacts' && maxTokens < 1024)) throw new LabError('configuration', 'max-tokens must be 1..2048; CLOVA with artifact tools requires at least 1024');

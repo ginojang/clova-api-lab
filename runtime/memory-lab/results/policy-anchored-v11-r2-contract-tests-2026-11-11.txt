@@ -1,0 +1,21 @@
+✔ candidate preserves the visible-only protocol without forced answers or hidden self-ratings (9.862129ms)
+✔ operator names stay authoritative without learning names or instructions from requests (1.885654ms)
+✔ arbitrary roles and unsupported tones remain operator-owned and unchanged (2.186742ms)
+✔ anchor budgeting preserves whole approved records, actual capabilities and caller state (4.249655ms)
+✔ decoding is the same byte-preserving projection even for identity and empathy failures (1.223556ms)
+✔ contract objects and decoded metadata are isolated between calls (1.114952ms)
+✔ native contract requests only visible reply parts and keeps actual authority out of generated metadata (9.519766ms)
+✔ configuration instructions are smaller than v8 without collapsing an arbitrary role into a category (2.27139ms)
+✔ quoted name requests remain data; supported registers and arbitrary operator tones stay distinct (1.260292ms)
+✔ strict decoder rejects hidden fields, nonobjects, partial shapes and empty visible replies (2.812313ms)
+✔ rendering preserves every model character and fixed part order without semantic repair (0.605806ms)
+✔ trusted context keeps complete approved records, capability flags and final style within the budget (2.455912ms)
+✔ fresh names, roles and runtime settings are not fixture substitutions or shared mutable objects (1.449214ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 191.815405

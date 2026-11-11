@@ -1,0 +1,15 @@
+✔ all explicit own-name claims are scanned after a correct introduction (11.532378ms)
+✔ quoted or emphasized isolated names retain exact evidence (2.00557ms)
+✔ whole quotations, code, reported speech, questions, negation and retraction are not adopted names (1.07989ms)
+✔ generic self descriptions and third-party names are not classified as name failures (0.462561ms)
+✔ subject attribution and aliases remain warnings, including after a valid self-name (0.831394ms)
+✔ new observations expose historical contradictions without claiming semantic verification or mutating evidence (16.677397ms)
+✔ unrelated mention of a retraction word does not erase an asserted conflict (0.496155ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.869227

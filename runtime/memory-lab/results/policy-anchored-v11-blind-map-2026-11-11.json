@@ -1,0 +1,263 @@
+{
+  "salt": "9353557cb94b5460447963f4423d742514cfab106efed8d7",
+  "source": "runtime/memory-lab/results/policy-anchored-v11-confirmation-live-2026-11-11.json",
+  "sha256": "4afd4ddda198405c4e6724fb794c00026f61834a837cc513c5094da3970f507d",
+  "items": [
+    {
+      "id": "985172b69dcd46",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "rhythm_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a4d8044cb613b8",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "rhythm_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "d911afae961e0d",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "rhythm_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b505c6feb9933b",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "rhythm_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "36b7b7e5e81ec6",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "grid_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a36e399b77c364",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "grid_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b9bf33b69cad93",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "grid_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "e88467eeb723a5",
+      "personaKey": "calm",
+      "variant": "baseline",
+      "scenarioId": "grid_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f70e26061f17f0",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "rhythm_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "c82b9ed27f44bd",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "rhythm_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "2d80a307a1a1e0",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "rhythm_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a547706a8fab56",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "rhythm_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "99a30cafbe1ae7",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "grid_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "85a85ba64e5d6e",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "grid_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "798fa15cbf5670",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "grid_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "cd57b92abd78b9",
+      "personaKey": "calm",
+      "variant": "structured",
+      "scenarioId": "grid_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "98199913ecf2c6",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "rhythm_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "e507ede1d0e365",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "rhythm_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "2cba28e79d8e83",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "rhythm_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a31ce0b6546c76",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "rhythm_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "b7ce08cf465ddc",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "grid_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "aa21465bc35279",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "grid_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "cc5c9165e15a13",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "grid_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "8fb3901360e5d0",
+      "personaKey": "playful",
+      "variant": "structured",
+      "scenarioId": "grid_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "42cb6b961e702b",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "rhythm_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "c2c8d12c757020",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "rhythm_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "a6ef57a7c27eaa",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "rhythm_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "ba8652353adff6",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "rhythm_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "f591f0530ca04c",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "grid_intro_action",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "4cfb86857f4fc4",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "grid_identity_pressure",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "29a361ac67e875",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "grid_restart_recall",
+      "phase": "draft",
+      "delivered": true
+    },
+    {
+      "id": "9d402ad23f504d",
+      "personaKey": "playful",
+      "variant": "baseline",
+      "scenarioId": "grid_capabilities_action",
+      "phase": "draft",
+      "delivered": true
+    }
+  ]
+}

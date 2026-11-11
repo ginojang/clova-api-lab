@@ -1,0 +1,211 @@
+✔ frozen plan targets identity/empathy with same-model reply-only conditions and fresh material (5.958675ms)
+✔ efficiency or other quality gains cannot substitute for identity/empathy progress (46.375867ms)
+✔ both complete reviewers must see a target gain; their improving target may differ (25.31262ms)
+✔ every protected axis forbids paired regressions even when net totals improve elsewhere (46.421334ms)
+✔ zero candidate critical failures is required even if the baseline has as many or more (18.17397ms)
+✔ the raw model parts and both native reply-only schemas must match displayed wording (62.628216ms)
+✔ incomplete coverage, extra calls, repairs and truncation cannot pass (41.932196ms)
+✔ wrong plan/model/profile/thresholds and reused reviews are rejected (35.147154ms)
+✔ unknown or unreconciled usage remains explicit without false monetary or efficiency conclusions (6.025514ms)
+✖ full evidence wrapper binds frozen plan/gate bytes, packet rubric and every original review score (675.169113ms)
+✔ snapshot drift, detached original plans, changed embedded plans and source links are rejected (143.359864ms)
+✔ modified rubric or packet evidence cannot be accepted even with a recomputed packet digest (114.483576ms)
+✔ review quotes, eligibility and recomputed totals cannot be replaced by forged summaries (107.908549ms)
+✔ CLI reads explicit evidence paths and frozen snapshots, writes exclusively, and preserves all originals (424.369621ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2044.358008
+
+✖ failing tests:
+
+test at runtime/memory-lab/policy/acceptance-v11.test.mjs:217:1
+✖ full evidence wrapper binds frozen plan/gate bytes, packet rubric and every original review score (675.169113ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+  +   frozenPlanRaw: Buffer(33494) [Uint8Array] [
+  -   frozenPlanRaw: Uint8Array(33494) [
+        123,
+        10,
+        32,
+        32,
+        34,
+  ...
+      ],
+  +   gateSnapshotRaw: Buffer(29297) [Uint8Array] [
+  -   gateSnapshotRaw: Uint8Array(29297) [
+        35,
+        33,
+        47,
+        117,
+        115,
+  ...
+      ],
+  +   mappingRaw: Buffer(6477) [Uint8Array] [
+  -   mappingRaw: Uint8Array(6477) [
+        123,
+        10,
+        32,
+        32,
+        34,
+  ...
+      ],
+  +   packetRaw: Buffer(96580) [Uint8Array] [
+  -   packetRaw: Uint8Array(96580) [
+        123,
+        10,
+        32,
+        32,
+        34,
+  ...
+      ],
+  +   planSnapshotRaw: Buffer(33494) [Uint8Array] [
+  -   planSnapshotRaw: Uint8Array(33494) [
+        123,
+        10,
+        32,
+        32,
+        34,
+  ...
+      reviewRaws: [
+  +     Buffer(33621) [Uint8Array] [
+  -     Uint8Array(33621) [
+          123,
+          10,
+          32,
+          32,
+          34,
+  ...
+        ],
+  +     Buffer(33621) [Uint8Array] [
+  -     Uint8Array(33621) [
+          123,
+          10,
+          32,
+          32,
+          34,
+  ...
+      sourcePath: 'runtime/memory-lab/results/synthetic-cycle3-source.json',
+  +   sourceRaw: Buffer(175766) [Uint8Array] [
+  -   sourceRaw: Uint8Array(175766) [
+        123,
+        10,
+        32,
+        32,
+        34,
+  ...
+      summaryRaws: [
+  +     Buffer(4481) [Uint8Array] [
+  -     Uint8Array(4481) [
+          123,
+          10,
+          32,
+          32,
+          34,
+  ...
+        ],
+  +     Buffer(4481) [Uint8Array] [
+  -     Uint8Array(4481) [
+          123,
+          10,
+          32,
+          32,
+          34,
+  
+      at TestContext.<anonymous> (file:///home/gino/WorkArea/clova-api-lab/runtime/memory-lab/policy/acceptance-v11.test.mjs:222:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { sourceRaw: <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 6d 6f 64 65 6c 22 3a 20 22 63 6c 6f 76 61 3a 48 43 58 2d 30 30 37 22 ... 175716 more bytes>, frozenPlanRaw: <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 69 64 22 3a 20 22 70 65 72 73 6f 6e 61 2d 61 6e 63 68 6f 72 65 64 2d ... 33444 more bytes>, planSnapshotRaw: <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 69 64 22 3a 20 22 70 65 72 73 6f 6e 61 2d 61 6e 63 68 6f 72 65 64 2d ... 33444 more bytes>, gateSnapshotRaw: <Buffer 23 21 2f 75 73 72 2f 62 69 6e 2f 65 6e 76 20 6e 6f 64 65 0a 69 6d 70 6f 72 74 20 61 73 73 65 72 74 20 66 72 6f 6d 20 27 6e 6f 64 65 3a 61 73 73 65 72 ... 29247 more bytes>, packetRaw: <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 72 75 62 72 69 63 22 3a 20 7b 0a 20 20 20 20 22 73 63 61 6c 65 22 3a ... 96530 more bytes>, mappingRaw: <Buffer 7b 0a 20 20 22 73 61 6c 74 22 3a 20 22 75 6e 69 74 2d 74 65 73 74 2d 66 69 78 65 64 2d 73 61 6c 74 22 2c 0a 20 20 22 73 6f 75 72 63 65 22 3a 20 22 72 ... 6427 more bytes>, reviewRaws: [ <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 72 65 76 69 65 77 65 72 22 3a 20 22 6f 6e 65 22 2c 0a 20 20 22 70 61 ... 33571 more bytes>, <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 72 65 76 69 65 77 65 72 22 3a 20 22 74 77 6f 22 2c 0a 20 20 22 70 61 ... 33571 more bytes> ], summaryRaws: [ <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 63 61 6e 64 69 64 61 74 65 22 3a 20 22 73 74 72 75 63 74 75 72 65 64 ... 4431 more bytes>, <Buffer 7b 0a 20 20 22 73 63 68 65 6d 61 56 65 72 73 69 6f 6e 22 3a 20 31 2c 0a 20 20 22 63 61 6e 64 69 64 61 74 65 22 3a 20 22 73 74 72 75 63 74 75 72 65 64 ... 4431 more bytes> ], sourcePath: 'runtime/memory-lab/results/synthetic-cycle3-source.json' },
+    expected: {
+      sourceRaw: Uint8Array(175766) [
+        123,  10,  32,  32,  34, 115,  99, 104, 101, 109,  97,  86,
+        101, 114, 115, 105, 111, 110,  34,  58,  32,  49,  44,  10,
+         32,  32,  34, 109, 111, 100, 101, 108,  34,  58,  32,  34,
+         99, 108, 111, 118,  97,  58,  72,  67,  88,  45,  48,  48,
+         55,  34,  44,  10,  32,  32,  34, 102, 114,  97, 109, 101,
+        119, 111, 114, 107,  34,  58,  32,  34, 112, 105,  34,  44,
+         10,  32,  32,  34, 115, 121, 110, 116, 104, 101, 116, 105,
+         99,  34,  58,  32, 102,  97, 108, 115, 101,  44,  10,  32,
+         32,  34, 112, 108,
+        ... 175666 more items
+      ],
+      frozenPlanRaw: Uint8Array(33494) [
+        123,  10,  32,  32,  34, 115,  99, 104, 101, 109,  97,  86,
+        101, 114, 115, 105, 111, 110,  34,  58,  32,  49,  44,  10,
+         32,  32,  34, 105, 100,  34,  58,  32,  34, 112, 101, 114,
+        115, 111, 110,  97,  45,  97, 110,  99, 104, 111, 114, 101,
+        100,  45, 118,  49,  49,  45, 116, 119, 111,  45, 116, 111,
+        112, 105,  99, 115,  45,  50,  48,  50,  54,  45,  49,  49,
+         45,  49,  49,  34,  44,  10,  32,  32,  34, 101, 118,  97,
+        108, 117,  97, 116, 105, 111, 110,  83, 116,  97, 103, 101,
+         34,  58,  32,  34,
+        ... 33394 more items
+      ],
+      planSnapshotRaw: Uint8Array(33494) [
+        123,  10,  32,  32,  34, 115,  99, 104, 101, 109,  97,  86,
+        101, 114, 115, 105, 111, 110,  34,  58,  32,  49,  44,  10,
+         32,  32,  34, 105, 100,  34,  58,  32,  34, 112, 101, 114,
+        115, 111, 110,  97,  45,  97, 110,  99, 104, 111, 114, 101,
+        100,  45, 118,  49,  49,  45, 116, 119, 111,  45, 116, 111,
+        112, 105,  99, 115,  45,  50,  48,  50,  54,  45,  49,  49,
+         45,  49,  49,  34,  44,  10,  32,  32,  34, 101, 118,  97,
+        108, 117,  97, 116, 105, 111, 110,  83, 116,  97, 103, 101,
+         34,  58,  32,  34,
+        ... 33394 more items
+      ],
+      gateSnapshotRaw: Uint8Array(29297) [
+         35,  33,  47, 117, 115, 114,  47,  98, 105, 110,  47, 101,
+        110, 118,  32, 110, 111, 100, 101,  10, 105, 109, 112, 111,
+        114, 116,  32,  97, 115, 115, 101, 114, 116,  32, 102, 114,
+        111, 109,  32,  39, 110, 111, 100, 101,  58,  97, 115, 115,
+        101, 114, 116,  47, 115, 116, 114, 105,  99, 116,  39,  59,
+         10, 105, 109, 112, 111, 114, 116,  32, 123,  32, 114, 101,
+         97, 100,  70, 105, 108, 101,  83, 121, 110,  99,  44,  32,
+        119, 114, 105, 116, 101,  70, 105, 108, 101,  83, 121, 110,
+         99,  44,  32, 101,
+        ... 29197 more items
+      ],
+      packetRaw: Uint8Array(96580) [
+        123,  10,  32,  32,  34, 115,  99, 104, 101, 109,  97,  86,
+        101, 114, 115, 105, 111, 110,  34,  58,  32,  49,  44,  10,
+         32,  32,  34, 114, 117,  98, 114, 105,  99,  34,  58,  32,
+        123,  10,  32,  32,  32,  32,  34, 115,  99,  97, 108, 101,
+         34,  58,  32, 123,  10,  32,  32,  32,  32,  32,  32,  34,
+         48,  34,  58,  32,  34, 235, 170, 133, 235, 176, 177, 237,
+        149, 156,  32, 236, 139, 164, 237, 140, 168,  58,  32, 236,
+        158, 152, 235, 170, 187, 235, 144, 156,  32, 236, 163, 188,
+        236, 178, 180,  47,
+        ... 96480 more items
+      ],
+      mappingRaw: Uint8Array(6477) [
+        123,  10,  32,  32,  34, 115,  97, 108, 116,  34,  58,  32,
+         34, 117, 110, 105, 116,  45, 116, 101, 115, 116,  45, 102,
+        105, 120, 101, 100,  45, 115,  97, 108, 116,  34,  44,  10,
+         32,  32,  34, 115, 111, 117, 114,  99, 101,  34,  58,  32,
+         34, 114, 117, 110, 116, 105, 109, 101,  47, 109, 101, 109,
+        111, 114, 121,  45, 108,  97,  98,  47, 114, 101, 115, 117,
+        108, 116, 115,  47, 115, 121, 110, 116, 104, 101, 116, 105,
+         99,  45,  99, 121,  99, 108, 101,  51,  45, 115, 111, 117,
+        114,  99, 101,  46,
+        ... 6377 more items
+      ],
+      reviewRaws: [ [Uint8Array], [Uint8Array] ],
+      summaryRaws: [ [Uint8Array], [Uint8Array] ],
+      sourcePath: 'runtime/memory-lab/results/synthetic-cycle3-source.json'
+    },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

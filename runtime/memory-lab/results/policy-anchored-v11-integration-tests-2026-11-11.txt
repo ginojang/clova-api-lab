@@ -1,0 +1,41 @@
+✔ candidate preserves the visible-only protocol without forced answers or hidden self-ratings (8.0162ms)
+✔ operator names stay authoritative without learning names or instructions from requests (1.30045ms)
+✔ arbitrary roles and unsupported tones remain operator-owned and unchanged (2.248827ms)
+✔ anchor budgeting preserves whole approved records, actual capabilities and caller state (4.069735ms)
+✔ decoding is the same byte-preserving projection even for identity and empathy failures (1.205185ms)
+✔ contract objects and decoded metadata are isolated between calls (1.131223ms)
+✔ all explicit own-name claims are scanned after a correct introduction (12.89945ms)
+✔ quoted or emphasized isolated names retain exact evidence (2.191557ms)
+✔ whole quotations, code, reported speech, questions, negation and retraction are not adopted names (0.939997ms)
+✔ generic self descriptions and third-party names are not classified as name failures (0.525278ms)
+✔ subject attribution and aliases remain warnings, including after a valid self-name (0.776987ms)
+✔ new observations expose historical contradictions without claiming semantic verification or mutating evidence (16.658879ms)
+✔ compiler preserves complete evidence and excludes over-budget memory without truncating the persona (4.933885ms)
+✔ guarded native Pi repairs once, emits exact model text, and excludes rejected draft and internal feedback from later history (930.993906ms)
+✔ a repeated violation is blocked after exactly two drafts and clears conversational history (925.381238ms)
+✔ compiled condition preserves uncorrected model evidence, while baseline remains the original JSON anchor (1759.214785ms)
+✔ empty model output is an explicit failure, not a successful delivered response (918.685829ms)
+✔ v2 keeps whole-record memory budgeting and derives style without evaluation answers (3.970142ms)
+✔ v2 repairs a detected register violation with actual model text and tracks the added call (898.40218ms)
+✔ v3 always writes in a fresh context and keeps only the accepted answer in conversation history (943.178705ms)
+✔ structured Pi delivers only exact generated reply and never replays metadata in conversation (931.278484ms)
+✔ structured metadata does not repair or hide a semantically wrong reply (907.551787ms)
+✔ invalid structured output is retained as raw evidence and cannot produce user text (930.89381ms)
+✔ structured suffix remains inside the budget and omits only complete memory records (1.240106ms)
+✔ task-aware structured contract derives explicit self-name from the current prompt without rendering an injected prefix (960.679063ms)
+✔ demonstrations reach provider input but never become actual conversation or approved memories (941.440452ms)
+✔ composed Pi displays only model-written parts with declared separators and retains the exact raw JSON (914.072986ms)
+✔ enacted Pi logs its support plan but displays only generated parts and never replays the plan (921.468372ms)
+✔ enacted invalid plan is preserved as evidence without a fallback answer or another model call (882.348671ms)
+✔ slim Pi uses only the native reply contract and replays exact visible words without synthetic metadata (943.578746ms)
+✔ slim rejects unexpected hidden fields instead of accepting an old protocol or retrying (918.905975ms)
+✔ anchored Pi keeps identity-conflict evidence and observation without hidden repair or an added model call (903.124589ms)
+✔ anchored Pi rejects hidden metadata as a protocol error without inventing a valid answer (920.382506ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17727.018818

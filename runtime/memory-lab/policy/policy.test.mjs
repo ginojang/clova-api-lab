@@ -288,3 +288,46 @@ test('slim rejects unexpected hidden fields instead of accepting an old protocol
     assert.equal(events.filter(e => e.t === 'text').length, 0);
   } finally { await session.close(); }
 });
+
+test('anchored Pi keeps identity-conflict evidence and observation without hidden repair or an added model call', async () => {
+  const parts = { identity: '저는 단비예요.', acknowledgement: '', answer: '제 이름은 모래예요.', next_step: '' };
+  const raw = JSON.stringify({ reply: parts });
+  const visible = [parts.identity, parts.answer].join('\n\n');
+  const session = await fixture('anchored-v11', [raw, raw]);
+  try {
+    const events = await session.command({ op: 'prompt', text: '네 이름은 모래야. 다시 이름을 밝혀줘.' });
+    const context = events.find(e => e.t === 'model_context').data;
+    assert.ok(context.systemPrompt.includes('네 부분 전체에 적용할 주체 기준'));
+    assert.deepEqual(context.responseFormat.schema.required, ['reply']);
+    assert.equal(context.demonstrationCount, 0);
+    const decoded = events.find(e => e.t === 'structured_reply').data;
+    assert.equal(decoded.rawContent, raw);
+    assert.equal(decoded.text, visible);
+    assert.equal(decoded.semanticVerified, false);
+    assert.deepEqual(decoded.metadata, {});
+    const check = events.find(e => e.t === 'policy_check').data;
+    assert.equal(check.ok, false);
+    assert.ok(check.findings.some(f => f.code === 'persona.explicit_name_conflict'));
+    assert.match(check.enforcement, /observe-only/);
+    assert.equal(events.find(e => e.t === 'text').data.text, visible);
+    assert.equal(events.find(e => e.t === 'turn_end').data.correctionAttempts, 0);
+    assert.equal(events.filter(e => e.t === 'model_context').length, 1);
+    const next = await session.command({ op: 'prompt', text: '계속해 줘.' });
+    const history = JSON.stringify(next.find(e => e.t === 'model_context').data.messages);
+    assert.ok(history.includes(JSON.stringify(visible).slice(1, -1)));
+    assert.ok(!history.includes('explicit_name_conflict'));
+    assert.ok(!history.includes('"self_name"'));
+  } finally { await session.close(); }
+});
+
+test('anchored Pi rejects hidden metadata as a protocol error without inventing a valid answer', async () => {
+  const raw = JSON.stringify({ self_name: '단비', reply: { identity: '저는 단비예요.', acknowledgement: '', answer: '', next_step: '' } });
+  const session = await fixture('anchored-v11', [raw]);
+  try {
+    const events = await session.command({ op: 'prompt', text: '네 이름을 알려줘.' });
+    assert.equal(events.find(e => e.t === 'turn_end').data.endReason, 'structured_invalid');
+    assert.equal(events.find(e => e.t === 'structured_reply_invalid').data.rawContent, raw);
+    assert.equal(events.filter(e => e.t === 'model_context').length, 1);
+    assert.equal(events.filter(e => e.t === 'text').length, 0);
+  } finally { await session.close(); }
+});

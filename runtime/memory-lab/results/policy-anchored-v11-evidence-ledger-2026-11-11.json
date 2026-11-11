@@ -1,0 +1,1517 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-11T05:46:40.273252+00:00",
+  "scope": "Cycle3: known-cards development r1/r2 (16 calls each), followed by a frozen two-topic confirmation (32 calls). Development data is excluded from confirmation acceptance.",
+  "trials": [
+    {
+      "stage": "development",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-anchored-v11-development-live-2026-11-11.json",
+        "sha256": "efda7a0420cfafe3a322a780b17c0ca8729b38bdbb2390215e332a42afdbeb87",
+        "bytes": 744813
+      },
+      "planSha256": "102bcb2f14f09bf83118bfe65631263b586d06c395ebbb7b771f35d86c0ac3a9",
+      "summary": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 8,
+          "usage": {
+            "input": 18576,
+            "output": 1324,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3317.5,
+          "medianLatencyMs": 3255.5,
+          "rangeLatencyMs": [
+            2818,
+            4263
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "anchored-v11"
+          },
+          "externalCalls": 8,
+          "usage": {
+            "input": 21820,
+            "output": 1299,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3325.25,
+          "medianLatencyMs": 3322.5,
+          "rangeLatencyMs": [
+            2782,
+            3823
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/slim.mjs"
+        },
+        "policy/anchored.mjs": {
+          "sha256": "e259c9ffc7b3e9c66faeb5ead0878c75e74263fddd48447b4c75ad7a091f72e7",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/anchored.mjs"
+        },
+        "policy/guard-v3.mjs": {
+          "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/guard-v3.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/acceptance-v9.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794374441767-3611275/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-anchored-development.json": {
+          "sha256": "102bcb2f14f09bf83118bfe65631263b586d06c395ebbb7b771f35d86c0ac3a9",
+          "path": ".local/policy-live/1794374441767-3611275/source/policy/eval-plan-anchored-development.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+          "path": ".local/policy-live/1794374441767-3611275/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794374441767-3611275/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794374441767-3611275/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794374441767-3611275/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794374441767-3611275/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    },
+    {
+      "stage": "development-r2",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-anchored-v11-development-r2-live-2026-11-11.json",
+        "sha256": "aaf717d870c6b6fee59af86efe647439d9c9cf92ac237fa42a3f99895033f972",
+        "bytes": 727827
+      },
+      "planSha256": "837a8a8bf5c5e8df59a9cf1ecc10847a825d830d102016c7eb399dceeec266e0",
+      "summary": {
+        "attemptedPrompts": 16,
+        "delivered": 16,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 8,
+          "usage": {
+            "input": 18588,
+            "output": 1384,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3579.125,
+          "medianLatencyMs": 3426.5,
+          "rangeLatencyMs": [
+            3040,
+            5269
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "anchored-v11"
+          },
+          "externalCalls": 8,
+          "usage": {
+            "input": 20324,
+            "output": 1218,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3896.125,
+          "medianLatencyMs": 3249.5,
+          "rangeLatencyMs": [
+            2487,
+            6925
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/slim.mjs"
+        },
+        "policy/anchored.mjs": {
+          "sha256": "9c13ff86e5c7fab3796898eed2996bddd6cd45c9a96f9f386225058d592eff09",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/anchored.mjs"
+        },
+        "policy/guard-v3.mjs": {
+          "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/guard-v3.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/acceptance-v9.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794374704278-3618175/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-anchored-development-r2.json": {
+          "sha256": "837a8a8bf5c5e8df59a9cf1ecc10847a825d830d102016c7eb399dceeec266e0",
+          "path": ".local/policy-live/1794374704278-3618175/source/policy/eval-plan-anchored-development-r2.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+          "path": ".local/policy-live/1794374704278-3618175/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794374704278-3618175/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794374704278-3618175/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794374704278-3618175/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794374704278-3618175/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    },
+    {
+      "stage": "confirmation",
+      "source": {
+        "path": "runtime/memory-lab/results/policy-anchored-v11-confirmation-live-2026-11-11.json",
+        "sha256": "4afd4ddda198405c4e6724fb794c00026f61834a837cc513c5094da3970f507d",
+        "bytes": 1529555
+      },
+      "planSha256": "cadba107b2cddba55e368dceee0a242d163166e00ff42ea0447a3121eb56b051",
+      "summary": {
+        "attemptedPrompts": 32,
+        "delivered": 32,
+        "blocked": 0,
+        "errors": 0,
+        "repairs": 0
+      },
+      "variants": {
+        "baseline": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "slim-v10"
+          },
+          "externalCalls": 16,
+          "usage": {
+            "input": 40068,
+            "output": 2831,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3523.5625,
+          "medianLatencyMs": 3449.0,
+          "rangeLatencyMs": [
+            2258,
+            5016
+          ]
+        },
+        "structured": {
+          "profile": {
+            "model": "clova:HCX-007",
+            "policy": "anchored-v11"
+          },
+          "externalCalls": 16,
+          "usage": {
+            "input": 43604,
+            "output": 2626,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "meanLatencyMs": 3271.5,
+          "medianLatencyMs": 3165.5,
+          "rangeLatencyMs": [
+            2189,
+            5045
+          ]
+        }
+      },
+      "sourceSnapshots": {
+        "policy/live.mjs": {
+          "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/live.mjs"
+        },
+        "policy/session.mjs": {
+          "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/session.mjs"
+        },
+        "policy/compiler.mjs": {
+          "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/compiler.mjs"
+        },
+        "policy/guard.mjs": {
+          "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/guard.mjs"
+        },
+        "policy/guard-v2.mjs": {
+          "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/guard-v2.mjs"
+        },
+        "policy/compiler-v2.mjs": {
+          "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/compiler-v2.mjs"
+        },
+        "policy/register.mjs": {
+          "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/register.mjs"
+        },
+        "policy/voice.mjs": {
+          "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/voice.mjs"
+        },
+        "policy/structured.mjs": {
+          "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/structured.mjs"
+        },
+        "policy/focused.mjs": {
+          "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/focused.mjs"
+        },
+        "policy/demonstrated.mjs": {
+          "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/demonstrated.mjs"
+        },
+        "policy/composed.mjs": {
+          "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/composed.mjs"
+        },
+        "policy/enacted.mjs": {
+          "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/enacted.mjs"
+        },
+        "policy/slim.mjs": {
+          "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/slim.mjs"
+        },
+        "policy/anchored.mjs": {
+          "sha256": "9c13ff86e5c7fab3796898eed2996bddd6cd45c9a96f9f386225058d592eff09",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/anchored.mjs"
+        },
+        "policy/guard-v3.mjs": {
+          "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/guard-v3.mjs"
+        },
+        "policy/acceptance-v9.mjs": {
+          "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/acceptance-v9.mjs"
+        },
+        "policy/acceptance-v11.mjs": {
+          "sha256": "ce95f52a150951ebae9b17992d9983ef09ac4dde65a7d59f7c2da1735655165c",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/acceptance-v11.mjs"
+        },
+        "policy/blind-packet.mjs": {
+          "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/blind-packet.mjs"
+        },
+        "policy/summarize.mjs": {
+          "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/summarize.mjs"
+        },
+        "../clova/common.ts": {
+          "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+          "path": ".local/policy-live/1794374874147-3623226/source/parent/clova/common.ts"
+        },
+        "policy/eval-plan-anchored.json": {
+          "sha256": "cadba107b2cddba55e368dceee0a242d163166e00ff42ea0447a3121eb56b051",
+          "path": ".local/policy-live/1794374874147-3623226/source/policy/eval-plan-anchored.json"
+        },
+        "pi/cli.mjs": {
+          "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+          "path": ".local/policy-live/1794374874147-3623226/source/pi/cli.mjs"
+        },
+        "pi/store.mjs": {
+          "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+          "path": ".local/policy-live/1794374874147-3623226/source/pi/store.mjs"
+        },
+        "pi/provider-bridge.mjs": {
+          "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+          "path": ".local/policy-live/1794374874147-3623226/source/pi/provider-bridge.mjs"
+        },
+        "../clova/provider.ts": {
+          "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+          "path": ".local/policy-live/1794374874147-3623226/source/parent/clova/provider.ts"
+        },
+        "../clova/clova-model-config.ts": {
+          "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+          "path": ".local/policy-live/1794374874147-3623226/source/parent/clova/clova-model-config.ts"
+        }
+      }
+    }
+  ],
+  "externalCalls": 64,
+  "knownUsage": {
+    "input": 162980,
+    "output": 10682,
+    "cacheRead": 0,
+    "cacheWrite": 0
+  },
+  "usageComplete": true,
+  "cost": null,
+  "creditBalance": null,
+  "acceptance": {
+    "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-2026-11-11.json",
+    "sha256": "1172f360129b657a8d980bddf1cb9c2cd4435a8198e475effb6e6d9fc72b1d2e",
+    "bytes": 10114
+  },
+  "overallPass": false,
+  "qualityGain": false,
+  "disposition": "quality_protection_failed",
+  "historicalLedgers": [
+    {
+      "path": "runtime/memory-lab/results/policy-evidence-ledger-2026-11-11.json",
+      "sha256": "7f26bcaf144e5f1042d3b9fa4effc0c796aeaff8c533fe2776e82a6a85245f76",
+      "bytes": 64269,
+      "verifiedArtifacts": 70
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-enacted-v9-evidence-ledger-2026-11-11.json",
+      "sha256": "e27709eaa5b8100d99ecdbc19cec7d65a51b5683be1226f960c92a788df133f7",
+      "bytes": 17779,
+      "verifiedArtifacts": 12
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-slim-v10-evidence-ledger-2026-11-11.json",
+      "sha256": "589704dd75f80eeca1af55f15ba32631446470a2a68840fa72aa7afd66ba5700",
+      "bytes": 56976,
+      "verifiedArtifacts": 21
+    }
+  ],
+  "cumulativeInPolicyAndProbeScope": {
+    "externalCalls": 344,
+    "knownInputTokens": 700930,
+    "knownOutputTokens": 65113,
+    "knownTotalTokens": 766043
+  },
+  "immutableArtifacts": [
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-2026-11-11.json",
+      "sha256": "1172f360129b657a8d980bddf1cb9c2cd4435a8198e475effb6e6d9fc72b1d2e",
+      "bytes": 10114
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-initial-tests-2026-11-11.txt",
+      "sha256": "47a6dcf6aac9559fc549e68a1174ffc7355b9dcc948d3d34780ea300ffdf10ef",
+      "bytes": 10348
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-r2-tests-2026-11-11.txt",
+      "sha256": "131a73659140b10ea08accc6a2ee56eaddfdb2a7d8226af877c148507cd2bebb",
+      "bytes": 1693
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-r3-tests-2026-11-11.txt",
+      "sha256": "c36ceca00fc19e75046a45d5bb9e23270f3cf12fbf2db47d018bbe7e66e4001d",
+      "bytes": 1693
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-acceptance-tests-2026-11-11.txt",
+      "sha256": "3dc5fa2cacc492f92d07d68f06be2751ba64d01b39f09f232bcc7e2520c441ea",
+      "bytes": 1595
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-blind-2026-11-11.json",
+      "sha256": "89b550e7f4dbbdcb77d466db938aa55a9f6f521100d37ce767cac5d573aa9c4b",
+      "bytes": 173699
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-blind-map-2026-11-11.json",
+      "sha256": "5b8726f9df00e7395a68af15c29ce7be70a71d223ff74b3bc1d4277951190e8f",
+      "bytes": 6530
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-confirmation-live-2026-11-11.json",
+      "sha256": "4afd4ddda198405c4e6724fb794c00026f61834a837cc513c5094da3970f507d",
+      "bytes": 1529555
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-development-live-2026-11-11.json",
+      "sha256": "efda7a0420cfafe3a322a780b17c0ca8729b38bdbb2390215e332a42afdbeb87",
+      "bytes": 744813
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-development-r2-live-2026-11-11.json",
+      "sha256": "aaf717d870c6b6fee59af86efe647439d9c9cf92ac237fa42a3f99895033f972",
+      "bytes": 727827
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-guard-tests-2026-11-11.txt",
+      "sha256": "b6c186b75f5207478c63559ea9369ac429e7e7085453460e28e09770ffeee450",
+      "bytes": 812
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-integration-tests-2026-11-11.txt",
+      "sha256": "c1a3503f6153b2a39427e791ab099cbb54d1d5bf6b6693151751e5ef780ced2f",
+      "bytes": 3696
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-primary-review-2026-11-11.json",
+      "sha256": "dc707efde8a6a1d6229cb58e64b5ec7fd57ec75e1e083649cc6f462ac050d07d",
+      "bytes": 69871
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-primary-summary-2026-11-11.json",
+      "sha256": "48a8e40352dbf486ccbcb0830404c61e1873cdad8f4c88aa52842be13ee75db5",
+      "bytes": 5934
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-r2-contract-tests-2026-11-11.txt",
+      "sha256": "e7036b123948ce04df50edda0c14d376c59e6f3a16932a69139f43520a3d9770",
+      "bytes": 1504
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-r2-regression-tests-2026-11-11.txt",
+      "sha256": "20de10a38d885db4a5e7e361534db31ae7e21758df0edc8fcd0cfc4746f17685",
+      "bytes": 12213
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-regression-tests-2026-11-11.txt",
+      "sha256": "9e423dd47736e723e364babe77f64fa7fa781df8e8f0b1307477fa2c40b1442f",
+      "bytes": 12209
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-review-comparison-2026-11-11.json",
+      "sha256": "268762738fd42edb1cc43b1d0b6e5e6d47eb3d2adcc03086e004859025043ae7",
+      "bytes": 56833
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-secondary-review-2026-11-11.json",
+      "sha256": "27080b3789fb98cb05a23360d3d1e902a9d7cc6b04bee756d44cd20ef1d5279a",
+      "bytes": 62731
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-secondary-summary-2026-11-11.json",
+      "sha256": "cdbe2e4ad5003041a3c77d27e8b185e18d9bcb9ce71c277be4430ac71ba1981a",
+      "bytes": 5932
+    },
+    {
+      "path": "runtime/memory-lab/results/policy-anchored-v11-source-snapshots-2026-11-11.tar.gz",
+      "sha256": "2720a32d08e4f82cdbcc81911df21f78b7cabac60ed1d3472a4920642950e568",
+      "bytes": 201598
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-anchored-development.json",
+      "sha256": "102bcb2f14f09bf83118bfe65631263b586d06c395ebbb7b771f35d86c0ac3a9",
+      "bytes": 21407
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-anchored-development-r2.json",
+      "sha256": "837a8a8bf5c5e8df59a9cf1ecc10847a825d830d102016c7eb399dceeec266e0",
+      "bytes": 21611
+    },
+    {
+      "path": "runtime/memory-lab/policy/eval-plan-anchored.json",
+      "sha256": "cadba107b2cddba55e368dceee0a242d163166e00ff42ea0447a3121eb56b051",
+      "bytes": 33494
+    }
+  ],
+  "sourceArchive": {
+    "path": "runtime/memory-lab/results/policy-anchored-v11-source-snapshots-2026-11-11.tar.gz",
+    "sha256": "2720a32d08e4f82cdbcc81911df21f78b7cabac60ed1d3472a4920642950e568",
+    "bytes": 201598,
+    "members": [
+      {
+        "stage": "development",
+        "source": "policy/live.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/live.mjs",
+        "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+        "bytes": 13344
+      },
+      {
+        "stage": "development",
+        "source": "policy/session.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "development",
+        "source": "policy/compiler.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "development",
+        "source": "policy/guard.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "development",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "development",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "development",
+        "source": "policy/register.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "development",
+        "source": "policy/voice.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "development",
+        "source": "policy/structured.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "development",
+        "source": "policy/focused.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "development",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "development",
+        "source": "policy/composed.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "development",
+        "source": "policy/enacted.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "development",
+        "source": "policy/slim.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/slim.mjs",
+        "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+        "bytes": 7055
+      },
+      {
+        "stage": "development",
+        "source": "policy/anchored.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/anchored.mjs",
+        "sha256": "e259c9ffc7b3e9c66faeb5ead0878c75e74263fddd48447b4c75ad7a091f72e7",
+        "bytes": 3543
+      },
+      {
+        "stage": "development",
+        "source": "policy/guard-v3.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/guard-v3.mjs",
+        "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+        "bytes": 5018
+      },
+      {
+        "stage": "development",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "development",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "development",
+        "source": "policy/summarize.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "development",
+        "source": "../clova/common.ts",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "development",
+        "source": "policy/eval-plan-anchored-development.json",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/policy/eval-plan-anchored-development.json",
+        "sha256": "102bcb2f14f09bf83118bfe65631263b586d06c395ebbb7b771f35d86c0ac3a9",
+        "bytes": 21407
+      },
+      {
+        "stage": "development",
+        "source": "pi/cli.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/pi/cli.mjs",
+        "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+        "bytes": 33545
+      },
+      {
+        "stage": "development",
+        "source": "pi/store.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "development",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "development",
+        "source": "../clova/provider.ts",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "development",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-anchored-v11-known-cards-development-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/live.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/live.mjs",
+        "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+        "bytes": 13344
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/session.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/compiler.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/guard.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/register.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/voice.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/structured.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/focused.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/composed.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/enacted.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/slim.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/slim.mjs",
+        "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+        "bytes": 7055
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/anchored.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/anchored.mjs",
+        "sha256": "9c13ff86e5c7fab3796898eed2996bddd6cd45c9a96f9f386225058d592eff09",
+        "bytes": 4902
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/guard-v3.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/guard-v3.mjs",
+        "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+        "bytes": 5018
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/summarize.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/common.ts",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "development-r2",
+        "source": "policy/eval-plan-anchored-development-r2.json",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/policy/eval-plan-anchored-development-r2.json",
+        "sha256": "837a8a8bf5c5e8df59a9cf1ecc10847a825d830d102016c7eb399dceeec266e0",
+        "bytes": 21611
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/cli.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/pi/cli.mjs",
+        "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+        "bytes": 33545
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/store.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "development-r2",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/provider.ts",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "development-r2",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-anchored-v11-known-cards-development-r2-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/live.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/live.mjs",
+        "sha256": "842cef90cd2acfe1bbbbbcb4287cecd7960b3ed08093eafa0cef7ee589af8394",
+        "bytes": 13344
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/session.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/session.mjs",
+        "sha256": "71c2427accc5a2b655da297e247f282eb93254fa898ef8eface0ee8e6a951619",
+        "bytes": 4919
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/compiler.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/compiler.mjs",
+        "sha256": "96d325d44e34fba93f1ca49c4ecda9e912e3f8da84644206c8e9f97f26d3c642",
+        "bytes": 3377
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/guard.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/guard.mjs",
+        "sha256": "6f44e289866f02a44f519f0e85a7af5efdb8b96ad8b6d4d8603e54c186c3cbb3",
+        "bytes": 16069
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/guard-v2.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/guard-v2.mjs",
+        "sha256": "0c37ba9ea960cb0681abd83ffb05dabb261d8e869ab3dfebe8635e16fd1f09c5",
+        "bytes": 2092
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/compiler-v2.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/compiler-v2.mjs",
+        "sha256": "baa8885e3495cc87fe0a27c8da04b9412cee509a8a82fea79238eadc0ed3f771",
+        "bytes": 3106
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/register.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/register.mjs",
+        "sha256": "c9c01ad6cab023d0e8adc0d88cb7db6d7adf63cf53de5b8d970e42ccf7df68c9",
+        "bytes": 9690
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/voice.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/voice.mjs",
+        "sha256": "6394389042633cba9eacffcc3feaa4e0b7a59365fa2e2e3c8d956c2ebcf0c8a8",
+        "bytes": 3482
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/structured.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/structured.mjs",
+        "sha256": "64208f2ef44c588a88d9d9480ab18c761ba0fe0fa3ccd352dd73b162a9e6604e",
+        "bytes": 4638
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/focused.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/focused.mjs",
+        "sha256": "a60935fead11d6acbaca64b6739909d408c53ae30a8f37550a892e9d4093263b",
+        "bytes": 4548
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/demonstrated.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/demonstrated.mjs",
+        "sha256": "617aceb920783ae1c960f5bd58f0eddcc9c7ebaa189b5b7f0963c5be3e8e2acf",
+        "bytes": 4668
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/composed.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/composed.mjs",
+        "sha256": "9d6ec3df1a8edcf1d834a4b880e853ec620072566f15c63a512448a3c0cc6bc7",
+        "bytes": 8211
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/enacted.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/enacted.mjs",
+        "sha256": "fa03c71b69919144d8a92bf9275526ab530b32b342aff65eabf450b34d2f28b0",
+        "bytes": 6943
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/slim.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/slim.mjs",
+        "sha256": "527a7097b98bc71cead13e5b8e7bbc89ba183055a2ac640ec7959d250d9de2f1",
+        "bytes": 7055
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/anchored.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/anchored.mjs",
+        "sha256": "9c13ff86e5c7fab3796898eed2996bddd6cd45c9a96f9f386225058d592eff09",
+        "bytes": 4902
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/guard-v3.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/guard-v3.mjs",
+        "sha256": "6484ffa366a6ecf9fb0885299154228e9d58a486a7819d44376babe63d6bbef5",
+        "bytes": 5018
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/acceptance-v9.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/acceptance-v9.mjs",
+        "sha256": "aaeea2dedf233c4d0b33b80bbf9dd2b2b6a46933090081e8113c1a6e7d3275e5",
+        "bytes": 14823
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/acceptance-v11.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/acceptance-v11.mjs",
+        "sha256": "ce95f52a150951ebae9b17992d9983ef09ac4dde65a7d59f7c2da1735655165c",
+        "bytes": 29609
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/blind-packet.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/blind-packet.mjs",
+        "sha256": "1ad390dbed00d6829fe3505f4c48791e8679a7b3864e2decd8c99c95a2210f46",
+        "bytes": 2570
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/summarize.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/summarize.mjs",
+        "sha256": "ecaff7fa3e44e3da23f776a5aa76a5bb391166f50590cf79ffe07e753ce8f740",
+        "bytes": 9705
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/common.ts",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/parent/clova/common.ts",
+        "sha256": "214642e57dd634c4fb51aba0f0f5245af1d9ea784a2efbdd1b283593bd8c7a1e",
+        "bytes": 4650
+      },
+      {
+        "stage": "confirmation",
+        "source": "policy/eval-plan-anchored.json",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/policy/eval-plan-anchored.json",
+        "sha256": "cadba107b2cddba55e368dceee0a242d163166e00ff42ea0447a3121eb56b051",
+        "bytes": 33494
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/cli.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/pi/cli.mjs",
+        "sha256": "4306ef58fc472293d10655386a2894448b5d9806631a24f8e103ab8901c00c7d",
+        "bytes": 33545
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/store.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/pi/store.mjs",
+        "sha256": "2b53eaf041cb875b3e185de96f1d043735b3832a2f7288e76fedac166ac3a162",
+        "bytes": 13229
+      },
+      {
+        "stage": "confirmation",
+        "source": "pi/provider-bridge.mjs",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/pi/provider-bridge.mjs",
+        "sha256": "3c40a91ae4340ef1b361ef1b998f3c5d808aae420f2e0952b0fc24998ca52f74",
+        "bytes": 2737
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/provider.ts",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/parent/clova/provider.ts",
+        "sha256": "e32d06471d11d30f43192d23e136300f50db01eae115d646534e2d262b500649",
+        "bytes": 7221
+      },
+      {
+        "stage": "confirmation",
+        "source": "../clova/clova-model-config.ts",
+        "member": "persona-anchored-v11-two-topics-2026-11-11/source/parent/clova/clova-model-config.ts",
+        "sha256": "8b6950a7bae2eafd6eac25fcd900ce40804c321f86d9526c1887ed8dd33b7440",
+        "bytes": 4805
+      }
+    ]
+  },
+  "cleanup": {
+    "processCount": 28,
+    "processes": [
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development",
+        "artifactDir": ".local/policy-live/1794374441767-3611275/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "development-r2",
+        "artifactDir": ".local/policy-live/1794374704278-3618175/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/baseline/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/calm/structured/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/structured/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/structured/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/structured/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/baseline/process-1",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/baseline/process-2",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      },
+      {
+        "stage": "confirmation",
+        "artifactDir": ".local/policy-live/1794374874147-3623226/playful/baseline/process-3",
+        "cleanup": {
+          "exitCode": 0,
+          "remainingPids": [],
+          "jsonlValid": true,
+          "sequenceValid": true
+        }
+      }
+    ],
+    "remainingPrivateHelperKeyFiles": 0
+  },
+  "limitations": [
+    "Known-topic development omits the preceding reading context; it is not exact replay or held-out evidence.",
+    "Single samples, two personas and two confirmation topics; no statistical significance, human validation, or long-dialogue guarantee.",
+    "Two independent AI reviews were frozen before unmasking, not proof of statistical independence.",
+    "Schema/compiler interventions are combined; no single-cause attribution. New guard diagnostics do not rewrite or enforce model answers.",
+    "Savings concern measured tokens, not queried prices, credit balances, or monetary charges.",
+    "Independent Pi CLI integration only; no operational Elda-CLI registration or web deployment."
+  ]
+}

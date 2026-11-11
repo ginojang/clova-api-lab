@@ -8,6 +8,8 @@ Pi Agent + 자체 SQLite 계층, Agno Agent + native MemoryManager/UserMemory/Sq
 
 다음 실험 정책 `slim-v10`은 숨은 자기보고·행동 계획을 제거하고 `reply` 안의 네 표시 문자열만 생성한다. 연구·개발 r1/r2 진단과 새 두 주제의 확인 시험은 [두 번째 사이클 보고서](../../PERSONA-CYCLE2-2026-11-11.md)에 구분한다. `--policy slim-v10`으로 명시적으로 선택할 수 있으며 CLI 기본 정책과 운영 적용 범위는 바꾸지 않았다. 실제 품질·효율 판단은 해당 보고서의 동결된 결과를 따른다.
 
+추가 실험 정책 `anchored-v11`은 같은 네 문자열 계약에서 자기 이름의 귀속, 실제 부담의 인정, 요청한 활동의 작은 동작을 생성 지시에 보강한다. `--policy anchored-v11`로 명시 선택하며 `guard-v3`는 관찰만 한다. 연구·개발 리비전·확인 결과와 한계는 [세 번째 사이클 보고서](../../PERSONA-CYCLE3-2026-11-11.md)를 따른다. 기본 `baseline`과 실제 Elda-CLI·Agno·운영 웹 적용 범위는 바꾸지 않았다.
+
 별도 `live.mjs`는 **실제 HCX-005**의 말투·정체성·기억 활용을 검사한다. 위 구조 검사와 달리 API 크레딧을 사용하며, 도구·자동 페르소나 교정을 제외한 첫 응답을 보존한다. [평가 설계](live-eval-design.md)와 아래 실행 방법을 참고한다.
 
 실행 결과: [실제 모델 분석](../../LIVE-PERSONA-RESULTS-2026-11-10.md) · [32개 응답 원문](results/live-transcript.md) · [독립 AI 의미 평가](results/live-review.md). API 완료 32/32와 페르소나 유지 평가는 구분한다.
@@ -106,6 +108,40 @@ node runtime/memory-lab/policy/acceptance-v10-report.mjs \
 
 단일 세션의 `--policy slim-v10` 실행 명령과 전체 검토 절차는 [정책 README](policy/README.md)에 있다. 기본 정책은 계속 `baseline`이고 일반 수동 예시도 v8로 유지한다. slim은 명시 선택하는 독립 Pi CLI 실험이며 실제 Elda-CLI 레지스트리·Agno·운영 웹에는 별도 연결이 필요하다. 최종 실행·평가·한계는 [두 번째 사이클 보고서](../../PERSONA-CYCLE2-2026-11-11.md)를 따른다.
 
+## 같은 HCX-007의 slim-v10·anchored-v11 확인 시험
+
+[확인 계획](policy/eval-plan-anchored.json)은 **HCX-007+slim-v10 대 HCX-007+anchored-v11**을32호출로 비교한다. 양쪽 모두 temperature0·최대 출력2048·thinking none·tools none이며 자동 재시도·교정 없이 첫 생성을 보존한다. 이 계획의 `baseline` 조건은 `slim-v10`이고 CLI 기본 `baseline` 정책과 다르다. 개발 r1·r2의 각16호출 진단은 별도 기록으로 보존하며 새 확인 결과와 합쳐 품질 합격을 주장하지 않는다.
+
+```bash
+python3 runtime/memory-lab/live-from-deployment.py --live --policy-eval \
+  --plan runtime/memory-lab/policy/eval-plan-anchored.json \
+  --output runtime/memory-lab/results/policy-anchored-new-run.json
+```
+
+이 명령은 최대32회의 과금 가능한 실제 API 요청을 실행한다. 새 output 경로를 사용해야 하며 배포 서버의 기존 자격증명을 읽어 로컬에서 비교한다. 운영 웹 배포 명령이 아니다. 현재 사용량이나 완료 횟수는 계획 수가 아닌 [실제 실행 보고서](../../PERSONA-CYCLE3-2026-11-11.md)를 확인한다.
+
+`anchored-v11`의 system·schema 지시는 모델 입력에 적용된다. renderer는 모델이 생성한 네 문자열을 그대로 연결하며 이름·정답·행동을 삽입하거나 치환하지 않는다. `guard-v3`는 명시적인 자기 이름 충돌과 모호한 주체·호칭을 관찰하지만 응답을 교정·차단하지 않는다. `semanticVerified:false`와 경고의 한계를 유지한다. 단일 세션에서 `--policy anchored-v11`을 선택하는 전체 명령은 [정책 README](policy/README.md)에 있다.
+
+새 실행은 `blind-packet.mjs SOURCE PACKET MAP`으로 익명 패킷을 만든 뒤, 개발 문맥이 없는 독립 평가자 두 명에게 **패킷만** 전달한다. 조건·소스·매핑·다른 리뷰는 제공하지 않는다. 두 전체 리뷰를 먼저 동결하고 각각 `summarize.mjs SOURCE PACKET MAP REVIEW SUMMARY`로 검증·집계한 다음 아래9인자 판정기를 실행한다. 패킷 생성부터 두 summary까지 복사해 실행할 전체 명령은 [정책 README](policy/README.md)에 있다.
+
+```bash
+# SOURCE PLAN PACKET MAP REVIEW1 SUMMARY1 REVIEW2 SUMMARY2 OUTPUT
+node runtime/memory-lab/policy/acceptance-v11.mjs \
+  runtime/memory-lab/results/policy-anchored-new-run.json \
+  runtime/memory-lab/policy/eval-plan-anchored.json \
+  runtime/memory-lab/results/policy-anchored-new-blind.json \
+  runtime/memory-lab/results/policy-anchored-new-map.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-summary.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-summary.json \
+  runtime/memory-lab/results/policy-anchored-new-acceptance.json
+```
+
+v11은 전수32응답·16쌍·요청당1회·오류/재시도/교정0과 함께 **두 리뷰 각각에서 이름 또는 공감 중 최소 한 축의 충분 응답 +1 이상**을 요구한다. 모든8축에서 충분 수 감소·질문 쌍별 점수 퇴행이 없어야 하며 후보 중요 실패는0이어야 한다. 효율은 보조 관측이고 품질 합격을 대신할 수 없다. `compiledGate`나 과거 v9·v10 기준을 재사용하지 않는다.
+
+판정기는 원본 리뷰의 인용·점수와 집계도 다시 대조하며 동결된 plan/gate snapshot을 요구한다. 새 live 실행은 필요한 snapshot을 저장한다. 검증은 AI 판정의 정답성이나 평가자 독립성을 증명하지 않는다. 기존 결과·기준은 보존하며 개발 실패·평가 불일치·최종 합격 여부는 [세 번째 사이클 보고서](../../PERSONA-CYCLE3-2026-11-11.md)에 기록한다.
+
 ## 실제 모델 평가
 
 동일 HCX-005에 서연(차분한 존댓말)·루리(친근한 반말)를 적용한다. 두 하네스 × 두 페르소나 × 여덟 시나리오로 구성한다. 이름·말투 변경 요구, 기억 정정, 같은 session의 프로세스 재시작, 긴 참고 자료를 포함한다. persona JSON은 [서연](fixtures/live-calm.json), [루리](fixtures/live-playful.json)에 있다.
@@ -140,3 +176,5 @@ python3 runtime/memory-lab/live-from-deployment.py --live \
 이 명령은 최대 80회의 실제 API 요청을 계획한다. `--min-interval-ms`는 요청 시작 사이의 최소 간격이며 한도 초과나 공급자 과부하가 다시 발생하지 않는다는 보장은 아니다. HTTP 실패는 모델의 성격 실패로 채점하지 않는다. 실패 토큰 사용량을 공급자가 주지 않은 경우 합계를 완전한 사용량으로 취급하지 않는다.
 
 `--resume-from`은 종료·기록된 HTTP 429 실행의 **남은 질문만** 진행한다. 실패 질문을 재호출하지 않고 이전 요청 수도 호출 상한에 포함한다. 부분 그룹 재개는 오류 뒤 history를 비우는 Pi에만 허용하며, 닫힌 SQLite를 새 작업장으로 복사한다. 다른 하네스는 해당 그룹의 마지막 질문까지 이미 시도한 경우에만 다음 새 그룹으로 진행한다. 기존 결과·DB는 보존하고 새 `--output` 경로가 필요하다. 이 재개는 진행 중인 Agent 상태를 일반적으로 복원하는 기능이 아니다.
+
+이번 anchored-v11 확인은 전반적인 개선을 입증하지 못해 **미채택**이다. 기능 정직성은 개선됐지만 이름·성격·실용 도움의 퇴행이 확인됐다. 두 독립 평가와 실패 원문은 [세 번째 사이클 보고서](../../PERSONA-CYCLE3-2026-11-11.md)에 보존한다.

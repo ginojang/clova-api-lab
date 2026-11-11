@@ -20,6 +20,7 @@
 | `composed-v8` | v5 기반 JSON에서 자기소개·공감·답변·다음 행동 네 문자열을 모델이 생성. 렌더러는 원문을 빈 줄로만 연결. 예제 없음. 새 상황에서 이름·말투·기억·공감·도움 개선 확인. 성격 향상의 평가자 간 일치가 부족해 전체 확인 기준은 미달. 실험 후보로 제공. |
 | `enacted-v9` | v8의 네 표시 문자열을 유지하고, 대상·동작·끝표시·역할에 따른 선택·이유를 모델이 짧게 작성하는 숨겨진 `support_plan`을 추가한다. 동일 HCX-007 비교에서 성격·도움은 개선되지 않았고 말투가 2문항 퇴행했다. 비교 우위 미입증으로 채택하지 않으며 명시적으로 선택 가능한 실험 정책으로 보존한다. |
 | `slim-v10` | 최상위 `reply` 하나 안에 네 표시 문자열만 생성한다. 숨은 자기보고·계획 metadata와 중복 설명을 줄이고 별도 compiler suffix로 말투를 명시한다. 운영자 정체성·실제 기능·승인 기억은 신뢰된 입력으로 유지한다. 명시적으로 선택하는 실험 정책이며 실제 확인 결과는 [두 번째 사이클 보고서](../../../PERSONA-CYCLE2-2026-11-11.md)를 따른다. |
+| `anchored-v11` | v10의 네 자유 문자열과 decoder를 유지하고 자기 이름의 귀속, 실제로 표현된 부담의 인정, 요청한 활동의 작은 동작과 관찰 가능한 목적을 생성 지시에 보강한다. `guard-v3`는 관찰 전용이며 답변을 교정·차단하지 않는다. 명시 선택하는 실험 정책으로, 개발 리비전과 실제 판정은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)를 따른다. |
 
 `compiled` 계열은 일반 의미 평가기가 아니다. 기존 `outputRules.forbiddenPhrases`를 설정하면 그 literal 교정 기능은 유지된다. 비교용 fixture에는 해당 항목이 없다.
 
@@ -55,6 +56,8 @@ python3 runtime/memory-lab/live-from-deployment.py --live --policy-eval \
 이전 `eval-plan-confirmation.json`은 HCX-005+baseline 대 HCX-007+composed-v8의 전체 설정 업그레이드 비교다. 모델과 하네스가 함께 바뀐 그 실험의 결론·실패 기록을 이번 같은 모델 비교로 대체하지 않는다.
 
 계획 파일은 초기 `eval-plan.json`, `eval-plan-v2.json`, `eval-plan-v3.json`, `eval-plan-models.json`, `eval-plan-structured.json`, `eval-plan-task.json`, `eval-plan-demonstrated.json`, `eval-plan-upgrade.json`, `eval-plan-composed.json`, `eval-plan-confirmation.json`, 후속 `eval-plan-enacted.json`이다. v10은 별도 개발용 `eval-plan-slim-development.json`·`eval-plan-slim-development-r2.json`과 새 확인용 `eval-plan-slim.json`으로 구분한다. 각 조건의 실제 모델·정책은 `executionProfiles`를 확인한다. `baseline`이라는 조건 표시는 항상 CLI 기본 정책을 뜻하지 않는다. **v9와 v10 확인 계획의 baseline 조건은 composed-v8**이다. 각 계획의 API 호출 상한과 10초 간격을 지킨다. 자동 재시도로 실패 원문을 대체하지 않는다. 응답 오류는 즉시 저장하고 실행을 중단하며, 검사 위반 차단은 별도 상태로 남긴다.
+
+v11은 개발용 `eval-plan-anchored-development.json`·`eval-plan-anchored-development-r2.json`과 확인용 `eval-plan-anchored.json`으로 구분한다. **v11 확인 계획의 baseline 조건은 slim-v10**이며 CLI 기본 정책 `baseline`이나 이전 v8 대조 조건과 다르다.
 
 ### v9의 두 평가와 별도 합격 판정
 
@@ -159,6 +162,98 @@ PY
 
 최종적으로 wrapper가 반환한 동결 판정기의 `overallPass`, `disposition`, `qualityGain`, `efficiencyGain`을 확인한다. `summarize.mjs`의 역사적 `compiledGate`나 `acceptance-v9.mjs`로 v10을 판정하지 않는다. 효율만 좋아졌다면 성격이 향상됐다고 표현하지 않는다. 인용 검증은 선행 `summarize.mjs`의 책임이고 판정기는 평가자 독립성이나 인간 검증을 증명하지 않는다. 실제 확인 결론과 판정 실패/복구 기록은 [두 번째 사이클 보고서](../../../PERSONA-CYCLE2-2026-11-11.md)를 따른다.
 
+### v11: 정체성·공감을 목표로 하는 같은 모델 확인 시험
+
+이번 저장된 확인 결과는 **전체 기준 미달·미채택**이다. 두 평가 모두 이름16/16→14/16·성격15/16→13/16·실용 도움5/8→3/8로 퇴행했다. 기능 정직성의 개선을 포함한 원문·평가 불일치·사용량은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)에 보존한다. 아래 명령은 비교 재현용이며 운영 추천 설정이 아니다.
+
+새 [확인 계획](eval-plan-anchored.json)은 **HCX-007+slim-v10 대 HCX-007+anchored-v11**의32호출 비교다. 인물2개·주제2개·주제별 질문4개를 조건2개에 적용한다. 양 조건은 temperature0·최대 출력2048·thinking none·tools none·요청당 첫 생성1회·최소 요청 간격10초이며, 자동 재시도·교정은 없다. 조건별 대화와 승인 기억을 분리하고 동일한 기억 정정·재시작 절차를 적용한다. 생성 지시와 그 길이가 달라지므로 입력 토큰이 동일한 실험은 아니다.
+
+```bash
+python3 runtime/memory-lab/live-from-deployment.py --live --policy-eval \
+  --plan runtime/memory-lab/policy/eval-plan-anchored.json \
+  --output runtime/memory-lab/results/policy-anchored-new-run.json
+```
+
+위 명령은 최대32회의 과금 가능한 실제 API 요청을 실행한다. 출력은 새 경로여야 한다. 배포 서버에 이미 설정된 이 프로젝트 자격증명을 읽어 로컬에서 비교하며 운영 웹에 배포하는 명령은 아니다. 개발 r1·r2의 각16호출 진단은 별도 기록으로 보존하며 이 확인 시험의 합격 증거에 합치지 않는다. 실제 완료 수·사용량·리비전별 실패와 최종 판단은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)를 확인한다.
+
+먼저 같은 실행 원문에서 블라인드 패킷과 매핑을 만든다.
+
+```bash
+node runtime/memory-lab/policy/blind-packet.mjs \
+  runtime/memory-lab/results/policy-anchored-new-run.json \
+  runtime/memory-lab/results/policy-anchored-new-blind.json \
+  runtime/memory-lab/results/policy-anchored-new-map.json
+```
+
+개발·생성 결과 분석에 참여하지 않은 **새 문맥의 독립 평가자 두 명에게 패킷만** 제공한다. 조건 매핑·실행 원문·구현·다른 리뷰를 제공하지 않는다. 패킷의 고정 rubric에 따라 각 평가자가 모든 문항의 점수와 정확한 원문 인용을 담은 `primary-review`·`secondary-review`를 작성한다. 아래 명령은 리뷰를 자동 생성하지 않는다. **두 리뷰를 모두 동결한 뒤** 조건을 풀고 각각 검증·집계한다.
+
+```bash
+node runtime/memory-lab/policy/summarize.mjs \
+  runtime/memory-lab/results/policy-anchored-new-run.json \
+  runtime/memory-lab/results/policy-anchored-new-blind.json \
+  runtime/memory-lab/results/policy-anchored-new-map.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-summary.json
+
+node runtime/memory-lab/policy/summarize.mjs \
+  runtime/memory-lab/results/policy-anchored-new-run.json \
+  runtime/memory-lab/results/policy-anchored-new-blind.json \
+  runtime/memory-lab/results/policy-anchored-new-map.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-summary.json
+
+# 인자 9개: SOURCE PLAN PACKET MAP REVIEW1 SUMMARY1 REVIEW2 SUMMARY2 OUTPUT
+node runtime/memory-lab/policy/acceptance-v11.mjs \
+  runtime/memory-lab/results/policy-anchored-new-run.json \
+  runtime/memory-lab/policy/eval-plan-anchored.json \
+  runtime/memory-lab/results/policy-anchored-new-blind.json \
+  runtime/memory-lab/results/policy-anchored-new-map.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-primary-summary.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-review.json \
+  runtime/memory-lab/results/policy-anchored-new-secondary-summary.json \
+  runtime/memory-lab/results/policy-anchored-new-acceptance.json
+```
+
+v11의 사전 기준은32응답 전수 전달·16개 유효 대응 쌍·요청당1회·오류/재시도/교정0을 요구한다. **두 리뷰 각각에서 이름 또는 공감 중 최소 한 축의 충분 응답이 +1 이상**이어야 하고, 모든8축의 충분 응답 수 감소0·질문 쌍별 점수 퇴행0·후보 중요 실패0이어야 한다. 이름과 공감의 순증가로 다른 질문의 퇴행을 상쇄하지 않는다. 대조군이 만점이면 그 축의 향상을 입증하지 못한 것으로 남긴다. 토큰·지연은 보조 관측이며 효율만으로 품질 합격을 대신할 수 없다.
+
+이 판정기는 원본 source·동결 plan/gate snapshot의 바이트 해시, 패킷 rubric·매핑, 두 원본 리뷰의 인용·점수와 다시 계산한 집계까지 검증한다. `sourceSnapshots`가 가리키는 해당 실행의 `policy/eval-plan-anchored.json`과 `policy/acceptance-v11.mjs` 사본이 필요하다. 새 실제 실행은 자신의 snapshot을 만든다. source 경로는 매핑에 기록된 경로와 같아야 하며, source·plan·snapshot·리뷰·summary·이전 판정은 고치지 않는다. 새 판정 출력 경로를 사용한다.
+
+Git clone 후 저장된 이번 확인 결과를 재검증할 때는 아래 명령으로 필요한 snapshot 두 개를 복원한다. 모델 호출 없이 보관본·멤버·파일 해시를 확인하며 기존 파일이 다르면 덮어쓰지 않는다.
+
+```bash
+python3 - <<'PY_RESTORE'
+import hashlib, json, tarfile
+from pathlib import Path
+root = Path.cwd().resolve()
+results = root / 'runtime/memory-lab/results'
+report = json.loads((results / 'policy-anchored-v11-confirmation-live-2026-11-11.json').read_text())
+archive = results / 'policy-anchored-v11-source-snapshots-2026-11-11.tar.gz'
+assert hashlib.sha256(archive.read_bytes()).hexdigest() == '2720a32d08e4f82cdbcc81911df21f78b7cabac60ed1d3472a4920642950e568'
+with tarfile.open(archive, 'r:gz') as source:
+    for name in ['policy/eval-plan-anchored.json', 'policy/acceptance-v11.mjs']:
+        saved = report['sourceSnapshots'][name]
+        assert saved['path'] == report['rawArtifacts'] + '/source/' + name
+        target = (root / saved['path']).resolve()
+        assert target.is_relative_to(root / '.local/policy-live')
+        member = source.getmember(report['runId'] + '/source/' + name)
+        assert member.isfile()
+        data = source.extractfile(member).read()
+        assert hashlib.sha256(data).hexdigest() == saved['sha256']
+        if target.exists():
+            assert target.read_bytes() == data
+        else:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with target.open('xb') as output:
+                output.write(data)
+print('Verified frozen plan/gate snapshots; no model calls.')
+PY_RESTORE
+```
+
+그 뒤 실제 저장된 `policy-anchored-v11-confirmation-live-2026-11-11.json`, `eval-plan-anchored.json`, `policy-anchored-v11-blind-2026-11-11.json`, `policy-anchored-v11-blind-map-2026-11-11.json`, primary/secondary review·summary를 위 9인자 명령에 연결하고 **새 판정 출력 파일명**을 준다. 기존 결과를 덮어쓰거나 원본 source 경로를 바꾸지 않는다.
+
+확인할 필드는 `coverage.pass`, `reviewDecisions`, `qualityGain`, `overallPass`, `disposition`, `evidenceBinding`이다. 역사적 `compiledGate`, v9·v10의 판정 도구나 효율 기준으로 v11을 판정하지 않는다. 해시와 인용 검증은 의미 채점의 정답성이나 평가자의 독립성을 증명하지 않으므로 두 블라인드 리뷰 절차를 생략하지 않는다. 기존 결과는 그대로 보존하며 실행·판정의 최종 결론은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)를 따른다.
+
 ## 단일 CLI 세션
 
 프로젝트 안의 실제 persona 경로와 저장소 경로를 지정한다:
@@ -187,6 +282,20 @@ node runtime/memory-lab/pi/cli.mjs \
   --persona "$PWD/runtime/memory-lab/fixtures/live-calm.json"
 ```
 
+anchored 후보도 별도 저장소·conversation에서 명시적으로 선택한다. 기존 키 파일·JSONL 입력 조건은 같으며 기본 정책은 계속 `baseline`이다.
+
+```bash
+node runtime/memory-lab/pi/cli.mjs \
+  --model clova:HCX-007 --tools none --policy anchored-v11 \
+  --max-tokens 2048 --max-turns 1 --min-call-interval-ms 10000 \
+  --context-chars 16000 \
+  --store "$PWD/.local/persona-anchored-manual/memory.sqlite" \
+  --principal local-user --conversation local-anchored-session \
+  --persona "$PWD/runtime/memory-lab/fixtures/live-calm.json"
+```
+
+`anchored-v11`의 `policy_check`는 관찰 결과다. `guard-v3`의 고신뢰 오류나 경고가 있어도 이 정책은 자동 교정·차단하지 않으며 원래 모델 응답을 그대로 전달한다. `ok:true`도 이름·성격의 의미 합격이 아니다. 실제 모델 응답과 별도 의미 평가를 확인해야 한다.
+
 `max-turns`는 도구 루프와 교정을 합친 전체 요청 상한이다. 한 번의 교정 공간이 필요하면 충분한 상한을 둔다. `correctionAttempts`는 교정 시도, `correctionModelCalls`는 실제 교정 모델 호출 수이므로 다를 수 있다.
 
 ## HCX-007 및 JSON 계약
@@ -202,6 +311,8 @@ v8의 `reply`는 네 문자열 객체다. `structured_reply.rendering.parts`와 
 v9도 같은 네 문자열과 렌더링 순서를 유지한다. 추가 `support_plan`은 `target`, `operation`, `completion_cue`, `persona_choice`, `reason`의 정확히 다섯 문자열이며 metadata에 보존된다. 계획만 맞고 표시 답변이 추상적이면 의미상 성공이 아니다. 계획이나 `next_action`을 답변에 자동 복사하지 않으며, 필요한 행동이 없는 질문은 관련 계획 필드와 다음 행동을 빈 문자열로 둘 수 있다. decoder의 형식 검사는 계속 `semanticVerified:false`를 반환한다.
 
 v10의 최상위 객체에는 `reply`만 있고 그 안에 정확히 네 모델 생성 문자열이 있다. 숨은 이름·기능·사실·계획 metadata는 생성하지 않으며 decoder는 `metadata:{}`를 반환한다. 정체성·capabilities·승인 기억은 여전히 실제 입력 상태로 전달한다. 표시 내용은 원문 네 부분을 연결하며, 이름·사실·행동 보충이나 어미 치환은 없다. 추가 필드·잘못된 타입·빈 표시 답변은 `structured_invalid`다. 파싱·구조 검사만 수행하므로 `semanticVerified:false`이며 의미 품질은 별도 평가한다.
+
+v11은 v10과 같은 출력 구조·decoder·원문 투영을 사용한다. 추가 지시는 모델 입력의 system과 세 필드 설명에 적용되며, 이름·사실·행동을 답변에 강제로 넣는 renderer가 아니다. 임의 운영자 이름과 실제 능력·승인 기억을 사용하며 확인 질문의 정답·호칭을 생성 코드에 하드코딩하지 않는다. `guard-v3`는 명시적 다른 자기 이름을 진단하지만, 일반 명사와 생략된 호칭 주체 등 모든 한국어 의미를 판정하지 않는다. 자세한 검출 범위와 개발 리비전은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)에 기록한다.
 
 ## 증거와 평가
 
@@ -219,3 +330,5 @@ v10의 최상위 객체에는 `reply`만 있고 그 안에 정확히 네 모델 
 이전 10회차 증거: [전체 분석](../../../PERSONA-POLICY-IMPROVEMENT-2026-11-11.md), [확인 시험 원문](../results/policy-confirmation-live-2026-11-11.json), [주 집계](../results/policy-confirmation-summary-2026-11-11.json), [두 번째 집계](../results/policy-confirmation-secondary-summary-2026-11-11.json), [호출·해시 원장](../results/policy-evidence-ledger-2026-11-11.json). 그 확인 시험의 16호출은 오류 없이 전달됐지만, 성격 +1을 두 평가자 모두 확인해야 하는 기준은 통과하지 못했다. v9의 진행·결론은 [별도 후속 보고서](../../../PERSONA-CONTINUATION-2026-11-11.md)에 기록한다. 구현 검사 통과·API 전달 성공·수치 기준·전체 품질 합격은 별개다.
 
 v10의 연구·개발 진단·새 확인 결과는 [두 번째 사이클 보고서](../../../PERSONA-CYCLE2-2026-11-11.md)에 이어 기록한다. v8·v9의 원문과 판정을 새 결과로 대체하지 않는다.
+
+v11의 연구·개발 r1/r2·새 확인·평가 불일치·최종 판정은 [세 번째 사이클 보고서](../../../PERSONA-CYCLE3-2026-11-11.md)를 따른다. 새 실험 옵션 제공은 운영 승격이나 전체 품질 합격을 뜻하지 않는다.

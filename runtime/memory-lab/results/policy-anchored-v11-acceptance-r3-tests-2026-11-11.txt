@@ -1,0 +1,23 @@
+✔ frozen plan targets identity/empathy with same-model reply-only conditions and fresh material (6.318155ms)
+✔ efficiency or other quality gains cannot substitute for identity/empathy progress (48.177395ms)
+✔ both complete reviewers must see a target gain; their improving target may differ (30.063616ms)
+✔ every protected axis forbids paired regressions even when net totals improve elsewhere (47.757578ms)
+✔ zero candidate critical failures is required even if the baseline has as many or more (17.807106ms)
+✔ the raw model parts and both native reply-only schemas must match displayed wording (64.914877ms)
+✔ incomplete coverage, extra calls, repairs and truncation cannot pass (42.299523ms)
+✔ wrong plan/model/profile/thresholds and reused reviews are rejected (36.311929ms)
+✔ unknown or unreconciled usage remains explicit without false monetary or efficiency conclusions (6.936672ms)
+✔ full evidence wrapper binds frozen plan/gate bytes, packet rubric and every original review score (79.906247ms)
+✔ snapshot drift, detached original plans, changed embedded plans and source links are rejected (136.266568ms)
+✔ modified rubric or packet evidence cannot be accepted even with a recomputed packet digest (118.472593ms)
+✔ review quotes, eligibility and recomputed totals cannot be replaced by forged summaries (103.961316ms)
+✔ CLI reads explicit evidence paths and frozen snapshots, writes exclusively, and preserves all originals (385.378869ms)
+✔ the complete frozen plan survives normal secret-redaction serialization unchanged (5.79546ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1382.285393
