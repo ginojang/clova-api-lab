@@ -1,0 +1,343 @@
+{
+  "schemaVersion": "1.0",
+  "model": "clova:HCX-005",
+  "fixtureSha256": "76baaf3e996ea25686a0bd553ee46ca9908afb0ef7ce51039f13cbcec1ee24be",
+  "outputs": [
+    {
+      "id": "R03-friendly-v1",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 1,
+      "text": "지아가 내일 교실에 연필 두 자루를 가져온대."
+    },
+    {
+      "id": "R03-friendly-v2",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 2,
+      "text": "지아가 내일 교실에 연필을 두 자루 가져온다네."
+    },
+    {
+      "id": "R03-blunt-v1",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 1,
+      "text": "지아가 내일 교실로 연필 2자루 가져온다."
+    },
+    {
+      "id": "R03-blunt-v2",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 2,
+      "text": "지아가 내일 교실로 연필 두 개 가져오는 거다."
+    },
+    {
+      "id": "R03-historical-v1",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 1,
+      "text": "지아는 내일에 교실로 연필 두 자루를 가져올 것이오."
+    },
+    {
+      "id": "R03-historical-v2",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 2,
+      "text": "지아는 내일 교실로 연필 두 자루를 가져올 터이네."
+    },
+    {
+      "id": "R04-friendly-v1",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 1,
+      "text": "준이 오후 세 시까지 사무실로 보고서 한 부 제출해 달래."
+    },
+    {
+      "id": "R04-friendly-v2",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 2,
+      "text": "준이 오후 세 시까지 보고서를 한 부 제출해 주기를 바란다고 하네요."
+    },
+    {
+      "id": "R04-blunt-v1",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 1,
+      "text": "준, 오후 3시까지 사무실로 보고서 1부 제출해."
+    },
+    {
+      "id": "R04-blunt-v2",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 2,
+      "text": "준 씨, 오늘 오후 3시까지 사무실로 보고서 한 부 제출하세요."
+    },
+    {
+      "id": "R04-historical-v1",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 1,
+      "text": "준이 아뢰길, 이따금 오후 세 시에는 사무실로 보고서 일 부를 올리겠답니다."
+    },
+    {
+      "id": "R04-historical-v2",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 2,
+      "text": "준이 고하길, 금일 십오시경 사무실로 보고서 일 부를 들인다 하옵니다."
+    },
+    {
+      "id": "R11-friendly-v1",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 1,
+      "text": "민아, 오늘은 부엌에서 쌀 일 점 오 킬로그램 좀 재 주겠니?"
+    },
+    {
+      "id": "R11-friendly-v2",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 2,
+      "text": "민이 오늘 부엌에서 쌀 1.5kg 재 줄래?"
+    },
+    {
+      "id": "R11-blunt-v1",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 1,
+      "text": "민, 오늘 부엌에서 쌀 1.5kg 재."
+    },
+    {
+      "id": "R11-blunt-v2",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 2,
+      "text": "오늘 민이 부엌에서 쌀 1.5kg 잴 것."
+    },
+    {
+      "id": "R11-historical-v1",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 1,
+      "text": "민아, 오늘은 부엌에서 쌀 일 점 오 킬로그램을 재도록 하거라."
+    },
+    {
+      "id": "R11-historical-v2",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 2,
+      "text": "오늘 그대는 부엌에서 쌀 일점 오 킬로그램을 재 주시게."
+    },
+    {
+      "id": "R12-friendly-v1",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 1,
+      "text": "은이야, 은은 오전 10시에 사무실에서 지아 노트 세 권을 돌려줬대!"
+    },
+    {
+      "id": "R12-friendly-v2",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 2,
+      "text": "은이가 10시에 사무실에서 지아에게 노트 세 권을 돌려줬구나~"
+    },
+    {
+      "id": "R12-blunt-v1",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 1,
+      "text": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬다."
+    },
+    {
+      "id": "R12-blunt-v2",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 2,
+      "text": "은이 오전 10시에 사무실에서 지아의 노트를 3권 돌려줬다."
+    },
+    {
+      "id": "R12-historical-v1",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 1,
+      "text": "은은 오전 열 시에 사무실에서 지아의 노트 세 권을 돌려주고 왔네."
+    },
+    {
+      "id": "R12-historical-v2",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 2,
+      "text": "은이 10시가 되어 사무실에서 지아의 노트를 세 권 돌려주었노라."
+    },
+    {
+      "id": "R15-friendly-v1",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 1,
+      "text": "라온이 지금 서버에서 여덟 개의 파일을 삭제 중이에요."
+    },
+    {
+      "id": "R15-friendly-v2",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 2,
+      "text": "라온이 지금 서버 안에서 8개의 파일들을 지우고 있네요."
+    },
+    {
+      "id": "R15-blunt-v1",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 1,
+      "text": "라온이 현재 서버 내 파일 8개를 삭제하는 중이다."
+    },
+    {
+      "id": "R15-blunt-v2",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 2,
+      "text": "라온이 지금 서버에서 파일 8개를 없애고 있다."
+    },
+    {
+      "id": "R15-historical-v1",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 1,
+      "text": "라온은 이 시각, 서버에서 여덟 개의 파일을 삭제하고 있느니라."
+    },
+    {
+      "id": "R15-historical-v2",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 2,
+      "text": "지금 서버에서 라온이 여덟 개의 파일을 지우는구나."
+    },
+    {
+      "id": "R16-friendly-v1",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 1,
+      "text": "보라야, 오늘은 전시회에서 찍은 사진 10장은 공개하지 말아 주겠니?"
+    },
+    {
+      "id": "R16-friendly-v2",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 2,
+      "text": "보라 씨, 오늘 전시회 가서 찍은 사진 열 장은 공개 안 하면 좋겠어요!"
+    },
+    {
+      "id": "R16-blunt-v1",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 1,
+      "text": "보라는 오늘 전시장에서 찍힌 사진 10장을 공개해서는 안 된다."
+    },
+    {
+      "id": "R16-blunt-v2",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 2,
+      "text": "보라가 오늘 전시장에서 사진을 십여 장 공개해선 안 돼."
+    },
+    {
+      "id": "R16-historical-v1",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 1,
+      "text": "보라야, 오늘은 전시장에서 촬영한 사진 열 장만은 공개치 말도록 하여라."
+    },
+    {
+      "id": "R16-historical-v2",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 2,
+      "text": "보라야, 오늘은 전시장에서 찍은 사진 열 장만큼은 공개하지 말거라."
+    },
+    {
+      "id": "R19-friendly-v1",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 1,
+      "text": "윤은 지금 준의 계약서를 서랍에 잘 보관하고 있답니다."
+    },
+    {
+      "id": "R19-friendly-v2",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 2,
+      "text": "윤 씨가 지금 준 씨의 계약서 다섯 부를 서랍 안에 안전하게 보관 중이에요."
+    },
+    {
+      "id": "R19-blunt-v1",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 1,
+      "text": "현재 윤이 준의 계약서 5부를 보관 중이다."
+    },
+    {
+      "id": "R19-blunt-v2",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 2,
+      "text": "윤은 현재 준의 계약서 5부를 서랍에 두고 있다."
+    },
+    {
+      "id": "R19-historical-v1",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 1,
+      "text": "윤은 지금 준의 계약서 다섯 부를 서랍에 간직하고 있느니라."
+    },
+    {
+      "id": "R19-historical-v2",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 2,
+      "text": "지금 윤은 준의 계약서 다섯 부를 서랍에 보관하여 두었네."
+    },
+    {
+      "id": "R20-friendly-v1",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 1,
+      "text": "어제 노아는 아쉽게도 우체국에서 소포를 못 받았어요."
+    },
+    {
+      "id": "R20-friendly-v2",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 2,
+      "text": "어제 노아가 우체국에 갔지만 아쉽게도 소포를 받지는 못했다네요."
+    },
+    {
+      "id": "R20-blunt-v1",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 1,
+      "text": "노아는 어제 우체국에서 소포 9개를 수령하지 않았다."
+    },
+    {
+      "id": "R20-blunt-v2",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 2,
+      "text": "노아는 어제 우체국에서 소포 9개를 받지 않았음."
+    },
+    {
+      "id": "R20-historical-v1",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 1,
+      "text": "어제 노아는 우체국에서 소포 아홉 개를 받지 아니하였네."
+    },
+    {
+      "id": "R20-historical-v2",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 2,
+      "text": "어제 노아는 우체국에서 소포 아홉 개를 받지 못하였다네."
+    }
+  ]
+}

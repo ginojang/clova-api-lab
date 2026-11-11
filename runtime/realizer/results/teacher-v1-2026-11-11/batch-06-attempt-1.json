@@ -1,0 +1,36 @@
+{
+  "batch": 6,
+  "attempt": 1,
+  "ordinal": 10,
+  "requestSha256": "831745b83a72fc2a68cebecfbb3fd913dbc623bbc89c5342e0732f085c521b79",
+  "startedAt": "2026-11-11T14:24:51.355Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R11-friendly-v1\",\"text\":\"민아, 오늘은 부엌에서 쌀 일 점 오 킬로그램 좀 재 주겠니?\"},{\"id\":\"R11-friendly-v2\",\"text\":\"민이 오늘 부엌에서 쌀 1.5kg 재 줄래?\"},{\"id\":\"R11-blunt-v1\",\"text\":\"민, 오늘 부엌에서 쌀 1.5kg 재.\"},{\"id\":\"R11-blunt-v2\",\"text\":\"오늘 민이 부엌에서 쌀 1.5kg 잴 것.\"},{\"id\":\"R11-historical-v1\",\"text\":\"민아, 오늘은 부엌에서 쌀 일 점 오 킬로그램을 재도록 하거라.\"},{\"id\":\"R11-historical-v2\",\"text\":\"오늘 그대는 부엌에서 쌀 일점 오 킬로그램을 재 주시게.\"},{\"id\":\"R12-friendly-v1\",\"text\":\"은이야, 은은 오전 10시에 사무실에서 지아 노트 세 권을 돌려줬대!\"},{\"id\":\"R12-friendly-v2\",\"text\":\"은이가 10시에 사무실에서 지아에게 노트 세 권을 돌려줬구나~\"},{\"id\":\"R12-blunt-v1\",\"text\":\"은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬다.\"},{\"id\":\"R12-blunt-v2\",\"text\":\"은이 오전 10시에 사무실에서 지아의 노트를 3권 돌려줬다.\"},{\"id\":\"R12-historical-v1\",\"text\":\"은은 오전 열 시에 사무실에서 지아의 노트 세 권을 돌려주고 왔네.\"},{\"id\":\"R12-historical-v2\",\"text\":\"은이 10시가 되어 사무실에서 지아의 노트를 세 권 돌려주었노라.\"}]}"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1068,
+      "output": 385,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "fenceRemoved": false,
+  "acceptedIds": [
+    "R11-friendly-v1",
+    "R11-friendly-v2",
+    "R11-blunt-v1",
+    "R11-blunt-v2",
+    "R11-historical-v1",
+    "R11-historical-v2",
+    "R12-friendly-v1",
+    "R12-friendly-v2",
+    "R12-blunt-v1",
+    "R12-blunt-v2",
+    "R12-historical-v1",
+    "R12-historical-v2"
+  ],
+  "elapsedMs": 8779
+}

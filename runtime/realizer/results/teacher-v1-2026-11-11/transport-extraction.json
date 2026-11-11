@@ -1,0 +1,157 @@
+{
+  "schema": "realizer-transport-extraction-v1",
+  "selectedFirstAttempts": 10,
+  "selectedPairs": 108,
+  "strictlyAcceptedBatches": 4,
+  "rejectedBatches": 1,
+  "plannedPairs": 120,
+  "missingPlannedIds": [
+    "R05-blunt-v1",
+    "R05-blunt-v2",
+    "R05-friendly-v1",
+    "R05-friendly-v2",
+    "R05-historical-v1",
+    "R05-historical-v2",
+    "R06-blunt-v1",
+    "R06-blunt-v2",
+    "R06-friendly-v1",
+    "R06-friendly-v2",
+    "R06-historical-v1",
+    "R06-historical-v2"
+  ],
+  "rootBraceRepairs": 5,
+  "rowsWithAdditionalFields": 1,
+  "textEdits": 0,
+  "additionalCalls": 0,
+  "unusedRetryResponses": 6,
+  "clientCallAttemptsIncludingRetries": 16,
+  "usageAllAttempts": {
+    "input": 16509,
+    "output": 5157
+  },
+  "audit": [
+    {
+      "batch": 1,
+      "attempt": 1,
+      "ordinal": 1,
+      "rawContentSha256": "5584bd8dd51847a4e77ea476f67ff89050f29ea845c31cb9bf857a2fee8f8290",
+      "appendedRootBrace": true,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 2,
+      "attempt": 1,
+      "ordinal": 3,
+      "rawContentSha256": "5cdd8cb3e177d1409478d163fa2c57d201d5bdc00ba213b0e4cdbcc68df09455",
+      "appendedRootBrace": false,
+      "originalStrictParserAccepted": true,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 3,
+      "attempt": 1,
+      "ordinal": 4,
+      "rawContentSha256": "65adc4504345b6a652ca834109a772d3d5839e2441d3e26e1bc24f2f40bc4c97",
+      "appendedRootBrace": true,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": [],
+      "rejected": "Whole batch rejected: incomplete or mismatched request IDs.",
+      "rawRowCount": 8,
+      "rawIds": [
+        "R05-friendly-v1",
+        "R05-friendly-v2",
+        "R05-blunt",
+        "R05-historical-v1",
+        "R06-friendly-v1",
+        "R06-friendly-v2",
+        "R06-blunt",
+        "R06-historical"
+      ],
+      "missingIds": [
+        "R05-blunt-v1",
+        "R05-blunt-v2",
+        "R05-historical-v2",
+        "R06-blunt-v1",
+        "R06-blunt-v2",
+        "R06-historical-v1",
+        "R06-historical-v2"
+      ],
+      "unexpectedIds": [
+        "R05-blunt",
+        "R06-blunt",
+        "R06-historical"
+      ]
+    },
+    {
+      "batch": 4,
+      "attempt": 1,
+      "ordinal": 6,
+      "rawContentSha256": "3968e023136e1b785d1be334bad1ccb6911d907497166c72757f74e14929bf37",
+      "appendedRootBrace": false,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": [
+        {
+          "id": "R08-historical-v1",
+          "additionalFields": {
+            "time": "모레"
+          }
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "attempt": 1,
+      "ordinal": 8,
+      "rawContentSha256": "f3f6187450936366d4e8fa231ce33c5c6892329581ffedd054118034439b98e8",
+      "appendedRootBrace": true,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 6,
+      "attempt": 1,
+      "ordinal": 10,
+      "rawContentSha256": "bff6d01d9043799e199c7ffd62269559f06e49ea43550ebe36dd529f768e5f20",
+      "appendedRootBrace": false,
+      "originalStrictParserAccepted": true,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 7,
+      "attempt": 1,
+      "ordinal": 11,
+      "rawContentSha256": "1cfc95f1f1b7651c2c47d441ed5f2cc85780f67da59f2886111baf4c0292eb79",
+      "appendedRootBrace": true,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 8,
+      "attempt": 1,
+      "ordinal": 13,
+      "rawContentSha256": "8d1158916df9781f87c8bb3046a2097491977492b54c43aa65b29421de9ea3e3",
+      "appendedRootBrace": false,
+      "originalStrictParserAccepted": true,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 9,
+      "attempt": 1,
+      "ordinal": 14,
+      "rawContentSha256": "cc3fe96f385c961fff97619eb85a524f534e198d5abf76b74b183b1b8be1e56c",
+      "appendedRootBrace": true,
+      "originalStrictParserAccepted": false,
+      "additionalFieldsNotUsedAsText": []
+    },
+    {
+      "batch": 10,
+      "attempt": 1,
+      "ordinal": 16,
+      "rawContentSha256": "8219ddc50c99d734246668e36f5d779e51057cefbb276cbcd384adc0f41edda1",
+      "appendedRootBrace": false,
+      "originalStrictParserAccepted": true,
+      "additionalFieldsNotUsedAsText": []
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "schema": "realizer-independent-ai-evaluation-v1",
+  "scope": "Two independent AI judgments; no human gold labels and no proof of full persona retention.",
+  "plannedPairs": 120,
+  "reviewedPairs": 108,
+  "reviewedSkeletons": 18,
+  "coverage": 0.9,
+  "transport": {
+    "schema": "realizer-transport-extraction-v1",
+    "selectedFirstAttempts": 10,
+    "selectedPairs": 108,
+    "strictlyAcceptedBatches": 4,
+    "rejectedBatches": 1,
+    "plannedPairs": 120,
+    "missingPlannedIds": [
+      "R05-blunt-v1",
+      "R05-blunt-v2",
+      "R05-friendly-v1",
+      "R05-friendly-v2",
+      "R05-historical-v1",
+      "R05-historical-v2",
+      "R06-blunt-v1",
+      "R06-blunt-v2",
+      "R06-friendly-v1",
+      "R06-friendly-v2",
+      "R06-historical-v1",
+      "R06-historical-v2"
+    ],
+    "rootBraceRepairs": 5,
+    "rowsWithAdditionalFields": 1,
+    "textEdits": 0,
+    "additionalCalls": 0,
+    "unusedRetryResponses": 6,
+    "clientCallAttemptsIncludingRetries": 16,
+    "usageAllAttempts": {
+      "input": 16509,
+      "output": 5157
+    },
+    "audit": [
+      {
+        "batch": 1,
+        "attempt": 1,
+        "ordinal": 1,
+        "rawContentSha256": "5584bd8dd51847a4e77ea476f67ff89050f29ea845c31cb9bf857a2fee8f8290",
+        "appendedRootBrace": true,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 2,
+        "attempt": 1,
+        "ordinal": 3,
+        "rawContentSha256": "5cdd8cb3e177d1409478d163fa2c57d201d5bdc00ba213b0e4cdbcc68df09455",
+        "appendedRootBrace": false,
+        "originalStrictParserAccepted": true,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 3,
+        "attempt": 1,
+        "ordinal": 4,
+        "rawContentSha256": "65adc4504345b6a652ca834109a772d3d5839e2441d3e26e1bc24f2f40bc4c97",
+        "appendedRootBrace": true,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": [],
+        "rejected": "Whole batch rejected: incomplete or mismatched request IDs.",
+        "rawRowCount": 8,
+        "rawIds": [
+          "R05-friendly-v1",
+          "R05-friendly-v2",
+          "R05-blunt",
+          "R05-historical-v1",
+          "R06-friendly-v1",
+          "R06-friendly-v2",
+          "R06-blunt",
+          "R06-historical"
+        ],
+        "missingIds": [
+          "R05-blunt-v1",
+          "R05-blunt-v2",
+          "R05-historical-v2",
+          "R06-blunt-v1",
+          "R06-blunt-v2",
+          "R06-historical-v1",
+          "R06-historical-v2"
+        ],
+        "unexpectedIds": [
+          "R05-blunt",
+          "R06-blunt",
+          "R06-historical"
+        ]
+      },
+      {
+        "batch": 4,
+        "attempt": 1,
+        "ordinal": 6,
+        "rawContentSha256": "3968e023136e1b785d1be334bad1ccb6911d907497166c72757f74e14929bf37",
+        "appendedRootBrace": false,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": [
+          {
+            "id": "R08-historical-v1",
+            "additionalFields": {
+              "time": "모레"
+            }
+          }
+        ]
+      },
+      {
+        "batch": 5,
+        "attempt": 1,
+        "ordinal": 8,
+        "rawContentSha256": "f3f6187450936366d4e8fa231ce33c5c6892329581ffedd054118034439b98e8",
+        "appendedRootBrace": true,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 6,
+        "attempt": 1,
+        "ordinal": 10,
+        "rawContentSha256": "bff6d01d9043799e199c7ffd62269559f06e49ea43550ebe36dd529f768e5f20",
+        "appendedRootBrace": false,
+        "originalStrictParserAccepted": true,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 7,
+        "attempt": 1,
+        "ordinal": 11,
+        "rawContentSha256": "1cfc95f1f1b7651c2c47d441ed5f2cc85780f67da59f2886111baf4c0292eb79",
+        "appendedRootBrace": true,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 8,
+        "attempt": 1,
+        "ordinal": 13,
+        "rawContentSha256": "8d1158916df9781f87c8bb3046a2097491977492b54c43aa65b29421de9ea3e3",
+        "appendedRootBrace": false,
+        "originalStrictParserAccepted": true,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 9,
+        "attempt": 1,
+        "ordinal": 14,
+        "rawContentSha256": "cc3fe96f385c961fff97619eb85a524f534e198d5abf76b74b183b1b8be1e56c",
+        "appendedRootBrace": true,
+        "originalStrictParserAccepted": false,
+        "additionalFieldsNotUsedAsText": []
+      },
+      {
+        "batch": 10,
+        "attempt": 1,
+        "ordinal": 16,
+        "rawContentSha256": "8219ddc50c99d734246668e36f5d779e51057cefbb276cbcd384adc0f41edda1",
+        "appendedRootBrace": false,
+        "originalStrictParserAccepted": true,
+        "additionalFieldsNotUsedAsText": []
+      }
+    ]
+  },
+  "lexical": {
+    "expected": 120,
+    "received": 108,
+    "present": 108,
+    "lexicalPass": 55,
+    "rawModelLexicalPass": 55,
+    "rawModelLexicalPassRate": 0.4583333333333333,
+    "fallbackCount": 0,
+    "fallbackLexicalPass": 0,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": false
+  },
+  "lexicalPassAmongRecovered": 0.5092592592592593,
+  "independentReviewAxes": {
+    "meaningPreserved": {
+      "aPass": 46,
+      "bPass": 47,
+      "bothPass": 44,
+      "agreementCount": 103,
+      "agreementRate": 0.9537037037037037,
+      "disagreementIds": [
+        "R09-blunt-v2",
+        "R11-blunt-v1",
+        "R13-blunt-v2",
+        "R13-historical-v1",
+        "R17-friendly-v1"
+      ]
+    },
+    "styleConsistent": {
+      "aPass": 81,
+      "bPass": 70,
+      "bothPass": 69,
+      "agreementCount": 95,
+      "agreementRate": 0.8796296296296297,
+      "disagreementIds": [
+        "R01-friendly-v2",
+        "R01-historical-v2",
+        "R04-historical-v2",
+        "R07-historical-v1",
+        "R07-historical-v2",
+        "R11-historical-v1",
+        "R13-friendly-v1",
+        "R16-historical-v1",
+        "R16-historical-v2",
+        "R17-friendly-v2",
+        "R19-friendly-v2",
+        "R20-friendly-v1",
+        "R20-friendly-v2"
+      ]
+    },
+    "natural": {
+      "aPass": 100,
+      "bPass": 100,
+      "bothPass": 99,
+      "agreementCount": 106,
+      "agreementRate": 0.9814814814814815,
+      "disagreementIds": [
+        "R04-historical-v1",
+        "R10-historical-v1"
+      ]
+    }
+  },
+  "reviewAllCertain": {
+    "a": 31,
+    "b": 30
+  },
+  "reviewUncertain": {
+    "a": 22,
+    "b": 25
+  },
+  "bothAllCertain": 29,
+  "bothAllCertainIds": [
+    "R01-blunt-v1",
+    "R01-friendly-v1",
+    "R02-friendly-v1",
+    "R03-historical-v2",
+    "R07-blunt-v1",
+    "R08-blunt-v2",
+    "R09-blunt-v1",
+    "R09-friendly-v2",
+    "R09-historical-v1",
+    "R10-blunt-v1",
+    "R12-blunt-v1",
+    "R12-blunt-v2",
+    "R12-historical-v2",
+    "R13-blunt-v1",
+    "R14-blunt-v1",
+    "R15-blunt-v1",
+    "R15-blunt-v2",
+    "R15-friendly-v1",
+    "R15-friendly-v2",
+    "R15-historical-v1",
+    "R17-blunt-v1",
+    "R17-historical-v1",
+    "R17-historical-v2",
+    "R18-blunt-v1",
+    "R19-blunt-v2",
+    "R19-historical-v1",
+    "R20-blunt-v1",
+    "R20-blunt-v2",
+    "R20-historical-v1"
+  ],
+  "bothAllCertainAmongRecovered": 0.26851851851851855,
+  "bothAllCertainAmongPlanned": 0.24166666666666667,
+  "lexicalPassButBothReviewsRejectMeaning": [
+    "R01-blunt-v2",
+    "R02-blunt-v2",
+    "R03-friendly-v1",
+    "R04-blunt-v1",
+    "R04-friendly-v1",
+    "R07-friendly-v1",
+    "R08-friendly-v1",
+    "R10-blunt-v2",
+    "R10-friendly-v1",
+    "R10-historical-v2",
+    "R11-blunt-v2",
+    "R12-friendly-v1",
+    "R12-historical-v1",
+    "R13-historical-v2",
+    "R14-historical-v1",
+    "R14-historical-v2",
+    "R16-blunt-v1",
+    "R18-friendly-v1",
+    "R18-historical-v1",
+    "R19-friendly-v2",
+    "R20-historical-v2"
+  ],
+  "lexicalPassAndBothAllCertain": [
+    "R01-blunt-v1",
+    "R02-friendly-v1",
+    "R03-historical-v2",
+    "R09-blunt-v1",
+    "R09-friendly-v2",
+    "R09-historical-v1",
+    "R10-blunt-v1",
+    "R12-blunt-v1",
+    "R12-blunt-v2",
+    "R12-historical-v2",
+    "R13-blunt-v1",
+    "R14-blunt-v1",
+    "R15-blunt-v2",
+    "R15-friendly-v1",
+    "R17-blunt-v1",
+    "R17-historical-v1",
+    "R17-historical-v2",
+    "R18-blunt-v1",
+    "R19-historical-v1",
+    "R20-blunt-v1",
+    "R20-blunt-v2"
+  ],
+  "perStyle": {
+    "friendly": {
+      "reviewed": 36,
+      "planned": 40,
+      "lexicalPass": 14,
+      "bothAllCertain": 5,
+      "axes": {
+        "meaningPreserved": {
+          "a": 9,
+          "b": 10
+        },
+        "styleConsistent": {
+          "a": 18,
+          "b": 12
+        },
+        "natural": {
+          "a": 34,
+          "b": 34
+        }
+      }
+    },
+    "blunt": {
+      "reviewed": 36,
+      "planned": 40,
+      "lexicalPass": 23,
+      "bothAllCertain": 16,
+      "axes": {
+        "meaningPreserved": {
+          "a": 22,
+          "b": 23
+        },
+        "styleConsistent": {
+          "a": 35,
+          "b": 35
+        },
+        "natural": {
+          "a": 36,
+          "b": 36
+        }
+      }
+    },
+    "historical": {
+      "reviewed": 36,
+      "planned": 40,
+      "lexicalPass": 18,
+      "bothAllCertain": 8,
+      "axes": {
+        "meaningPreserved": {
+          "a": 15,
+          "b": 14
+        },
+        "styleConsistent": {
+          "a": 28,
+          "b": 23
+        },
+        "natural": {
+          "a": 30,
+          "b": 30
+        }
+      }
+    }
+  },
+  "duplicates": {
+    "uniqueTexts": 108,
+    "repeatedExactTexts": {},
+    "note": "Two variants and three styles per skeleton are correlated, not independent population samples."
+  },
+  "fallback": {
+    "expected": 120,
+    "received": 120,
+    "present": 120,
+    "lexicalPass": 120,
+    "rawModelLexicalPass": 55,
+    "rawModelLexicalPassRate": 0.4583333333333333,
+    "fallbackCount": 65,
+    "fallbackLexicalPass": 65,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": true
+  },
+  "decision": "Do not treat the unfiltered teacher corpus or lexical fallback output as accepted training data."
+}

@@ -1,0 +1,568 @@
+[
+  {
+    "model": "ke-t5-small",
+    "dtype": "fp32",
+    "bundle_tokenizer_input_ids_match": true,
+    "token_count": 28,
+    "metadata_files": [
+      {
+        "name": "config.json",
+        "bytes": 708,
+        "sha256": "ae8c7211a38277cd02a9806755a506cdc5a159be8a780d9e83b348590950dbc3"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 142,
+        "sha256": "8145d7eecabff8e16a9876617a6d52728e9b8fbe24c426e6bf9ebbd6bfb87737"
+      },
+      {
+        "name": "special_tokens_map.json",
+        "bytes": 2543,
+        "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+      },
+      {
+        "name": "spiece.model",
+        "bytes": 1466734,
+        "sha256": "edc595fcd800672d6ef0e2aea5ba0f1dc8826471f6f40a87b70619dcc60ddd4a"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 4609020,
+        "sha256": "bb769f4209007f27196f4d8a2c3b19e1791ece6f27e65c7a7ca42e03ef6dd308"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 20848,
+        "sha256": "75572893d7b56cf54e18cac2d673c66b10498fe8843139ec6483dcf4e013eae6"
+      }
+    ],
+    "graphs": [
+      {
+        "name": "encoder_model.onnx",
+        "input_names": [
+          "input_ids",
+          "attention_mask"
+        ],
+        "output_names": [
+          "last_hidden_state"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "encoder_hidden_states"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.0.encoder.key",
+          "present.0.encoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.1.encoder.key",
+          "present.1.encoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.2.encoder.key",
+          "present.2.encoder.value",
+          "present.3.decoder.key",
+          "present.3.decoder.value",
+          "present.3.encoder.key",
+          "present.3.encoder.value",
+          "present.4.decoder.key",
+          "present.4.decoder.value",
+          "present.4.encoder.key",
+          "present.4.encoder.value",
+          "present.5.decoder.key",
+          "present.5.decoder.value",
+          "present.5.encoder.key",
+          "present.5.encoder.value",
+          "present.6.decoder.key",
+          "present.6.decoder.value",
+          "present.6.encoder.key",
+          "present.6.encoder.value",
+          "present.7.decoder.key",
+          "present.7.decoder.value",
+          "present.7.encoder.key",
+          "present.7.encoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_with_past_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "past_key_values.0.decoder.key",
+          "past_key_values.0.decoder.value",
+          "past_key_values.0.encoder.key",
+          "past_key_values.0.encoder.value",
+          "past_key_values.1.decoder.key",
+          "past_key_values.1.decoder.value",
+          "past_key_values.1.encoder.key",
+          "past_key_values.1.encoder.value",
+          "past_key_values.2.decoder.key",
+          "past_key_values.2.decoder.value",
+          "past_key_values.2.encoder.key",
+          "past_key_values.2.encoder.value",
+          "past_key_values.3.decoder.key",
+          "past_key_values.3.decoder.value",
+          "past_key_values.3.encoder.key",
+          "past_key_values.3.encoder.value",
+          "past_key_values.4.decoder.key",
+          "past_key_values.4.decoder.value",
+          "past_key_values.4.encoder.key",
+          "past_key_values.4.encoder.value",
+          "past_key_values.5.decoder.key",
+          "past_key_values.5.decoder.value",
+          "past_key_values.5.encoder.key",
+          "past_key_values.5.encoder.value",
+          "past_key_values.6.decoder.key",
+          "past_key_values.6.decoder.value",
+          "past_key_values.6.encoder.key",
+          "past_key_values.6.encoder.value",
+          "past_key_values.7.decoder.key",
+          "past_key_values.7.decoder.value",
+          "past_key_values.7.encoder.key",
+          "past_key_values.7.encoder.value"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.3.decoder.key",
+          "present.3.decoder.value",
+          "present.4.decoder.key",
+          "present.4.decoder.value",
+          "present.5.decoder.key",
+          "present.5.decoder.value",
+          "present.6.decoder.key",
+          "present.6.decoder.value",
+          "present.7.decoder.key",
+          "present.7.decoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "model": "ke-t5-small",
+    "dtype": "int8",
+    "bundle_tokenizer_input_ids_match": true,
+    "token_count": 28,
+    "metadata_files": [
+      {
+        "name": "config.json",
+        "bytes": 708,
+        "sha256": "ae8c7211a38277cd02a9806755a506cdc5a159be8a780d9e83b348590950dbc3"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 142,
+        "sha256": "8145d7eecabff8e16a9876617a6d52728e9b8fbe24c426e6bf9ebbd6bfb87737"
+      },
+      {
+        "name": "special_tokens_map.json",
+        "bytes": 2543,
+        "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+      },
+      {
+        "name": "spiece.model",
+        "bytes": 1466734,
+        "sha256": "edc595fcd800672d6ef0e2aea5ba0f1dc8826471f6f40a87b70619dcc60ddd4a"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 4609020,
+        "sha256": "bb769f4209007f27196f4d8a2c3b19e1791ece6f27e65c7a7ca42e03ef6dd308"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 20848,
+        "sha256": "75572893d7b56cf54e18cac2d673c66b10498fe8843139ec6483dcf4e013eae6"
+      }
+    ],
+    "graphs": [
+      {
+        "name": "encoder_model.onnx",
+        "input_names": [
+          "input_ids",
+          "attention_mask"
+        ],
+        "output_names": [
+          "last_hidden_state"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "encoder_hidden_states"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.0.encoder.key",
+          "present.0.encoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.1.encoder.key",
+          "present.1.encoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.2.encoder.key",
+          "present.2.encoder.value",
+          "present.3.decoder.key",
+          "present.3.decoder.value",
+          "present.3.encoder.key",
+          "present.3.encoder.value",
+          "present.4.decoder.key",
+          "present.4.decoder.value",
+          "present.4.encoder.key",
+          "present.4.encoder.value",
+          "present.5.decoder.key",
+          "present.5.decoder.value",
+          "present.5.encoder.key",
+          "present.5.encoder.value",
+          "present.6.decoder.key",
+          "present.6.decoder.value",
+          "present.6.encoder.key",
+          "present.6.encoder.value",
+          "present.7.decoder.key",
+          "present.7.decoder.value",
+          "present.7.encoder.key",
+          "present.7.encoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_with_past_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "past_key_values.0.decoder.key",
+          "past_key_values.0.decoder.value",
+          "past_key_values.0.encoder.key",
+          "past_key_values.0.encoder.value",
+          "past_key_values.1.decoder.key",
+          "past_key_values.1.decoder.value",
+          "past_key_values.1.encoder.key",
+          "past_key_values.1.encoder.value",
+          "past_key_values.2.decoder.key",
+          "past_key_values.2.decoder.value",
+          "past_key_values.2.encoder.key",
+          "past_key_values.2.encoder.value",
+          "past_key_values.3.decoder.key",
+          "past_key_values.3.decoder.value",
+          "past_key_values.3.encoder.key",
+          "past_key_values.3.encoder.value",
+          "past_key_values.4.decoder.key",
+          "past_key_values.4.decoder.value",
+          "past_key_values.4.encoder.key",
+          "past_key_values.4.encoder.value",
+          "past_key_values.5.decoder.key",
+          "past_key_values.5.decoder.value",
+          "past_key_values.5.encoder.key",
+          "past_key_values.5.encoder.value",
+          "past_key_values.6.decoder.key",
+          "past_key_values.6.decoder.value",
+          "past_key_values.6.encoder.key",
+          "past_key_values.6.encoder.value",
+          "past_key_values.7.decoder.key",
+          "past_key_values.7.decoder.value",
+          "past_key_values.7.encoder.key",
+          "past_key_values.7.encoder.value"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.3.decoder.key",
+          "present.3.decoder.value",
+          "present.4.decoder.key",
+          "present.4.decoder.value",
+          "present.5.decoder.key",
+          "present.5.decoder.value",
+          "present.6.decoder.key",
+          "present.6.decoder.value",
+          "present.7.decoder.key",
+          "present.7.decoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "model": "bart-ko-small",
+    "dtype": "fp32",
+    "bundle_tokenizer_input_ids_match": true,
+    "token_count": 28,
+    "metadata_files": [
+      {
+        "name": "config.json",
+        "bytes": 1018,
+        "sha256": "ae080c4a28daa92d87aeadc5de426350277cb88615b85e4c8a26f8756c483d7a"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 191,
+        "sha256": "f820de1344c653ae263a303a3c3ddf630d6c225e7bd9098b820d8f447f2ac416"
+      },
+      {
+        "name": "special_tokens_map.json",
+        "bytes": 149,
+        "sha256": "c365c09f51e355423b9cf09179821725a8ceb683b8909c1c31dd765ece3385eb"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 2413331,
+        "sha256": "2d0746a94b0bc7802a699030f1dd59e6b0e32ded377358989f0c1293d6e9d250"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 1360,
+        "sha256": "1dc3fb6c28c893c63daf80124cdbf65cd3a02a380a9c575d57df75ea80c95d4c"
+      }
+    ],
+    "graphs": [
+      {
+        "name": "encoder_model.onnx",
+        "input_names": [
+          "input_ids",
+          "attention_mask"
+        ],
+        "output_names": [
+          "last_hidden_state"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "encoder_hidden_states"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.0.encoder.key",
+          "present.0.encoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.1.encoder.key",
+          "present.1.encoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.2.encoder.key",
+          "present.2.encoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_with_past_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "past_key_values.0.decoder.key",
+          "past_key_values.0.decoder.value",
+          "past_key_values.0.encoder.key",
+          "past_key_values.0.encoder.value",
+          "past_key_values.1.decoder.key",
+          "past_key_values.1.decoder.value",
+          "past_key_values.1.encoder.key",
+          "past_key_values.1.encoder.value",
+          "past_key_values.2.decoder.key",
+          "past_key_values.2.decoder.value",
+          "past_key_values.2.encoder.key",
+          "past_key_values.2.encoder.value"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "model": "bart-ko-small",
+    "dtype": "int8",
+    "bundle_tokenizer_input_ids_match": true,
+    "token_count": 28,
+    "metadata_files": [
+      {
+        "name": "config.json",
+        "bytes": 1018,
+        "sha256": "ae080c4a28daa92d87aeadc5de426350277cb88615b85e4c8a26f8756c483d7a"
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 191,
+        "sha256": "f820de1344c653ae263a303a3c3ddf630d6c225e7bd9098b820d8f447f2ac416"
+      },
+      {
+        "name": "special_tokens_map.json",
+        "bytes": 149,
+        "sha256": "c365c09f51e355423b9cf09179821725a8ceb683b8909c1c31dd765ece3385eb"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 2413331,
+        "sha256": "2d0746a94b0bc7802a699030f1dd59e6b0e32ded377358989f0c1293d6e9d250"
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 1360,
+        "sha256": "1dc3fb6c28c893c63daf80124cdbf65cd3a02a380a9c575d57df75ea80c95d4c"
+      }
+    ],
+    "graphs": [
+      {
+        "name": "encoder_model.onnx",
+        "input_names": [
+          "input_ids",
+          "attention_mask"
+        ],
+        "output_names": [
+          "last_hidden_state"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "encoder_hidden_states"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.0.encoder.key",
+          "present.0.encoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.1.encoder.key",
+          "present.1.encoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value",
+          "present.2.encoder.key",
+          "present.2.encoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      },
+      {
+        "name": "decoder_with_past_model.onnx",
+        "input_names": [
+          "encoder_attention_mask",
+          "input_ids",
+          "past_key_values.0.decoder.key",
+          "past_key_values.0.decoder.value",
+          "past_key_values.0.encoder.key",
+          "past_key_values.0.encoder.value",
+          "past_key_values.1.decoder.key",
+          "past_key_values.1.decoder.value",
+          "past_key_values.1.encoder.key",
+          "past_key_values.1.encoder.value",
+          "past_key_values.2.decoder.key",
+          "past_key_values.2.decoder.value",
+          "past_key_values.2.encoder.key",
+          "past_key_values.2.encoder.value"
+        ],
+        "output_names": [
+          "logits",
+          "present.0.decoder.key",
+          "present.0.decoder.value",
+          "present.1.decoder.key",
+          "present.1.decoder.value",
+          "present.2.decoder.key",
+          "present.2.decoder.value"
+        ],
+        "opset_imports": [
+          {
+            "domain": "",
+            "version": 17
+          }
+        ]
+      }
+    ]
+  }
+]

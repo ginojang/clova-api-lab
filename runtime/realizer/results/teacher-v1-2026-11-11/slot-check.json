@@ -1,0 +1,2398 @@
+{
+  "schemaVersion": "1.0",
+  "checkScope": "controlled lexical slots and limited negative cues only",
+  "inputErrors": [],
+  "summary": {
+    "expected": 120,
+    "received": 108,
+    "present": 108,
+    "lexicalPass": 55,
+    "rawModelLexicalPass": 55,
+    "rawModelLexicalPassRate": 0.4583333333333333,
+    "fallbackCount": 0,
+    "fallbackLexicalPass": 0,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": false
+  },
+  "results": [
+    {
+      "id": "R01-friendly-v1",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R01-friendly-v2",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R01-blunt-v1",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R01-blunt-v2",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R01-historical-v1",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R01-historical-v2",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-friendly-v1",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-friendly-v2",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-blunt-v1",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-blunt-v2",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-historical-v1",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R02-historical-v2",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-friendly-v1",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-friendly-v2",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-blunt-v1",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-blunt-v2",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [
+        {
+          "type": "count",
+          "value": 2,
+          "unit": "개"
+        }
+      ],
+      "unexpectedNumeric": [
+        {
+          "text": "두 개",
+          "span": [
+            14,
+            17
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-historical-v1",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R03-historical-v2",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-friendly-v1",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-friendly-v2",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "location"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-blunt-v1",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-blunt-v2",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [],
+      "unexpectedProtected": [
+        {
+          "type": "time",
+          "value": "오늘"
+        }
+      ],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-historical-v1",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [
+        {
+          "text": "일 부를",
+          "span": [
+            30,
+            34
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R04-historical-v2",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [
+        {
+          "text": "일 부를",
+          "span": [
+            25,
+            29
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-friendly-v1",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-friendly-v2",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-blunt-v1",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-blunt-v2",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-historical-v1",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R05-historical-v2",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-friendly-v1",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-friendly-v2",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-blunt-v1",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-blunt-v2",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-historical-v1",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 1,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R06-historical-v2",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 2,
+      "present": false,
+      "provenance": "model_raw",
+      "recordErrors": [
+        "missing output"
+      ],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object",
+        "count",
+        "location",
+        "time",
+        "owner"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [
+        "text must be a nonempty string"
+      ],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-friendly-v1",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-friendly-v2",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-blunt-v1",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [
+        {
+          "text": "500",
+          "span": [
+            20,
+            23
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-blunt-v2",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [
+        {
+          "text": "9",
+          "span": [
+            4,
+            5
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-historical-v1",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [
+        {
+          "type": "time",
+          "value": "오늘"
+        }
+      ],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R07-historical-v2",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-friendly-v1",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-friendly-v2",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [
+        {
+          "type": "time",
+          "value": "내일"
+        }
+      ],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-blunt-v1",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-blunt-v2",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [],
+      "unexpectedProtected": [
+        {
+          "type": "time",
+          "value": "내일"
+        }
+      ],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-historical-v1",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [
+        {
+          "type": "time",
+          "value": "내일"
+        }
+      ],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R08-historical-v2",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-friendly-v1",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-friendly-v2",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-blunt-v1",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-blunt-v2",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-historical-v1",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R09-historical-v2",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-friendly-v1",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-friendly-v2",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-blunt-v1",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-blunt-v2",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-historical-v1",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R10-historical-v2",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-friendly-v1",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-friendly-v2",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-blunt-v1",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-blunt-v2",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-historical-v1",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R11-historical-v2",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-friendly-v1",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-friendly-v2",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-blunt-v1",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-blunt-v2",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-historical-v1",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R12-historical-v2",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-friendly-v1",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-friendly-v2",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-blunt-v1",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-blunt-v2",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-historical-v1",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R13-historical-v2",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-friendly-v1",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-friendly-v2",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-blunt-v1",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-blunt-v2",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-historical-v1",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R14-historical-v2",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-friendly-v1",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-friendly-v2",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "object"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-blunt-v1",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-blunt-v2",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-historical-v1",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R15-historical-v2",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-friendly-v1",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "location"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-friendly-v2",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "location"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [
+        {
+          "text": "공개",
+          "span": [
+            27,
+            29
+          ]
+        }
+      ],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-blunt-v1",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-blunt-v2",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-historical-v1",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R16-historical-v2",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "actor",
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-friendly-v1",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-friendly-v2",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-blunt-v1",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-blunt-v2",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-historical-v1",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R17-historical-v2",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-friendly-v1",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-friendly-v2",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-blunt-v1",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-blunt-v2",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-historical-v1",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R18-historical-v2",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-friendly-v1",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-friendly-v2",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-blunt-v1",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "location",
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-blunt-v2",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "time"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-historical-v1",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R19-historical-v2",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-friendly-v1",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-friendly-v2",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [
+        "count"
+      ],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-blunt-v1",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-blunt-v2",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-historical-v1",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 1,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": false,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [
+        "negative skeleton lacks a recognized negative cue; manual review needed"
+      ],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    },
+    {
+      "id": "R20-historical-v2",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 2,
+      "present": true,
+      "provenance": "model_raw",
+      "recordErrors": [],
+      "lexicalPass": true,
+      "missingSlots": [],
+      "unexpectedProtected": [],
+      "unexpectedNumeric": [],
+      "polarityHintIssues": [],
+      "textErrors": [],
+      "semanticReviewRequired": true,
+      "semanticVerdict": "unreviewed"
+    }
+  ]
+}

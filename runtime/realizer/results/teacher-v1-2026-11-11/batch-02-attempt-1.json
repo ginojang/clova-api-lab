@@ -1,0 +1,36 @@
+{
+  "batch": 2,
+  "attempt": 1,
+  "ordinal": 3,
+  "requestSha256": "5e5ef3a7b2451b4eee79bdf941e72efba1b11ea0d8746c374e8ec1e74548741d",
+  "startedAt": "2026-11-11T14:23:56.411Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R03-friendly-v1\",\"text\":\"지아가 내일 교실에 연필 두 자루를 가져온대.\"},{\"id\":\"R03-friendly-v2\",\"text\":\"지아가 내일 교실에 연필을 두 자루 가져온다네.\"},{\"id\":\"R03-blunt-v1\",\"text\":\"지아가 내일 교실로 연필 2자루 가져온다.\"},{\"id\":\"R03-blunt-v2\",\"text\":\"지아가 내일 교실로 연필 두 개 가져오는 거다.\"},{\"id\":\"R03-historical-v1\",\"text\":\"지아는 내일에 교실로 연필 두 자루를 가져올 것이오.\"},{\"id\":\"R03-historical-v2\",\"text\":\"지아는 내일 교실로 연필 두 자루를 가져올 터이네.\"},{\"id\":\"R04-friendly-v1\",\"text\":\"준이 오후 세 시까지 사무실로 보고서 한 부 제출해 달래.\"},{\"id\":\"R04-friendly-v2\",\"text\":\"준이 오후 세 시까지 보고서를 한 부 제출해 주기를 바란다고 하네요.\"},{\"id\":\"R04-blunt-v1\",\"text\":\"준, 오후 3시까지 사무실로 보고서 1부 제출해.\"},{\"id\":\"R04-blunt-v2\",\"text\":\"준 씨, 오늘 오후 3시까지 사무실로 보고서 한 부 제출하세요.\"},{\"id\":\"R04-historical-v1\",\"text\":\"준이 아뢰길, 이따금 오후 세 시에는 사무실로 보고서 일 부를 올리겠답니다.\"},{\"id\":\"R04-historical-v2\",\"text\":\"준이 고하길, 금일 십오시경 사무실로 보고서 일 부를 들인다 하옵니다.\"}]}"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1054,
+      "output": 370,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "fenceRemoved": false,
+  "acceptedIds": [
+    "R03-friendly-v1",
+    "R03-friendly-v2",
+    "R03-blunt-v1",
+    "R03-blunt-v2",
+    "R03-historical-v1",
+    "R03-historical-v2",
+    "R04-friendly-v1",
+    "R04-friendly-v2",
+    "R04-blunt-v1",
+    "R04-blunt-v2",
+    "R04-historical-v1",
+    "R04-historical-v2"
+  ],
+  "elapsedMs": 8473
+}

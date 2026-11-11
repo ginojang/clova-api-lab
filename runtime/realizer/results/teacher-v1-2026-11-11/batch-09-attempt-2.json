@@ -1,0 +1,26 @@
+{
+  "batch": 9,
+  "attempt": 2,
+  "ordinal": 15,
+  "requestSha256": "dcbbad9497ef703c1f280633456dd8c581711402334f3d241decc006355f77cb",
+  "startedAt": "2026-11-11T14:25:35.450Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R17-friendly-v1\",\"text\":\"은우가 오후 두 시에 찻집에서 차 두 잔을 주문해 뒀어요.\"},{\"id\":\"R17-friendly-v2\",\"text\":\"은우가 오후에 찻집에서 차를 두 잔이나 주문했어요.\"},{\"id\":\"R17-blunt-v1\",\"text\":\"은우가 오후 두 시에 찻집에서 차 두 잔을 주문했다.\"},{\"id\":\"R17-blunt-v2\",\"text\":\"은우가 찻집에서 차 두 잔을 주문했다, 오후 두 시에.\"},{\"id\":\"R17-historical-v1\",\"text\":\"은우는 오후 두 시에 찻집에서 차 두 잔을 주문하였네.\"},{\"id\":\"R17-historical-v2\",\"text\":\"오후 두 시에 은우가 찻집에서 차 두 잔을 주문하였다네.\"},{\"id\":\"R18-friendly-v1\",\"text\":\"유진이 내일 공원에서 약속 한 건을 확인하려 한대.\"},{\"id\":\"R18-friendly-v2\",\"text\":\"유진은 내일 공원에서 약속 하나를 확인할 예정이야.\"},{\"id\":\"R18-blunt-v1\",\"text\":\"유진은 내일 공원에서 약속 한 건을 확인할 예정이다.\"},{\"id\":\"R18-blunt-v2\",\"text\":\"공원에서 유진이 내일 약속 한 건을 확인하는구나.\"},{\"id\":\"R18-historical-v1\",\"text\":\"유진은 내일 공원에서 약속 한 건을 확인할 것이라 하네.\"},{\"id\":\"R18-historical-v2\",\"text\":\"내일 유진은 공원에서 약속 한 건을 확인할 터이라네.\"}]"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1038,
+      "output": 340,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "SyntaxError",
+    "message": "Expected ',' or '}' after property value in JSON at position 780 (line 1 column 781)"
+  },
+  "retryable": true,
+  "elapsedMs": 7739
+}

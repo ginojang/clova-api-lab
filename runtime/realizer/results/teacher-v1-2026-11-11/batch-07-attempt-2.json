@@ -1,0 +1,26 @@
+{
+  "batch": 7,
+  "attempt": 2,
+  "ordinal": 12,
+  "requestSha256": "b10726990c28491292439e905f98a9096401ddc4a7ce2d1cdf0e60a17864aa51",
+  "startedAt": "2026-11-11T14:25:09.792Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R13-friendly-v1\",\"text\":\"소율이 어제 지갑 속에 삼천 원을 잘 넣어뒀어요.\"},{\"id\":\"R13-friendly-v2\",\"text\":\"소율이가 어제 지갑 안에다가 현금을 보관해 뒀네요.\"},{\"id\":\"R13-blunt-v1\",\"text\":\"소율이 어제 지갑에 현금 3000원을 보관했다.\"},{\"id\":\"R13-blunt-v2\",\"text\":\"소율이 어제 지갑에 3000원을 보관하였다.\"},{\"id\":\"R13-historical-v1\",\"text\":\"소율께서는 어제 지갑에 삼천 원을 간직하셨네.\"},{\"id\":\"R13-historical-v2\",\"text\":\"소율께서 어제 지갑 속을 현금 삼천 원으로 채우셨구려.\"},{\"id\":\"R14-friendly-v1\",\"text\":\"하람이는 내일 운동장에서 열두 명을 만나기로 했어요.\"},{\"id\":\"R14-friendly-v2\",\"text\":\"하람 님이 내일 운동장에서 12명과 만남을 가질 예정이에요.\"},{\"id\":\"R14-blunt-v1\",\"text\":\"하람은 내일 운동장에서 참석자 12명을 만날 예정이다.\"},{\"id\":\"R14-blunt-v2\",\"text\":\"하람이 내일 운동장에서 12명을 만난다.\"},{\"id\":\"R14-historical-v1\",\"text\":\"하람은 내일 운동장에서 열두 명의 참석자를 맞이하리라.\"},{\"id\":\"R14-historical-v2\",\"text\":\"내일 하람은 운동장에 나가 열두 명의 참석자와 조우할 것이야.\"}]"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1025,
+      "output": 325,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "SyntaxError",
+    "message": "Expected ',' or '}' after property value in JSON at position 766 (line 1 column 767)"
+  },
+  "retryable": true,
+  "elapsedMs": 7924
+}

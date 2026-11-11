@@ -1,0 +1,967 @@
+{
+  "schema": "korean-realizer-independent-ai-review-v1",
+  "evaluator": {
+    "id": "A",
+    "kind": "AI",
+    "human": false,
+    "agent": "/root/realizer_slots",
+    "method": "108개 문장을 개별 독해한 AI 판정; 코드로 의미 점수를 자동 생성하지 않고 구조화·개수·ID 일치만 검증함.",
+    "limitations": [
+      "사람 정답이 아니며 다른 평가자와 독립 모델 계열 검증이 아님.",
+      "평가자는 앞서 fixture와 오프라인 검사기를 작성했으므로 완전한 설계자 블라인드는 아님. 이번 평가에서 실제 모델 출력의 슬롯 집계 및 다른 평가 원문을 읽지 않았음.",
+      "20개 골격에 종속된 108문장으로 일반화 또는 독립 표본 통계 주장을 하지 않음."
+    ]
+  },
+  "inputs": {
+    "rubric": "runtime/realizer/REVIEW-RUBRIC.md",
+    "fixtures": {
+      "path": "runtime/realizer/fixtures.json",
+      "sha256": "76baaf3e996ea25686a0bd553ee46ca9908afb0ef7ce51039f13cbcec1ee24be"
+    },
+    "samples": {
+      "path": "runtime/realizer/results/teacher-v1-2026-11-11/samples-first-attempt.json",
+      "sha256": "23f07fe80c82044a4026b6a6d561aeacfd57658accac41087cbd72a75c81f249"
+    },
+    "excludedInputs": [
+      "live slot-check aggregates",
+      "other evaluator review",
+      "retry samples"
+    ]
+  },
+  "interpretationNotes": [
+    "지정 해요체가 아닌 친근한 반말은 friendly 스타일 실패로 판단했다.",
+    "짧은 명사형 메모체(빌림/안 보냄/예정임)는 건조한 진술로 인정했고 그 문체 안에서 자연스러움을 판단했다.",
+    "단순 존칭·조사 변화는 새 사실로 보지 않았다.",
+    "미래 일정의 단순 현재/미래형은 예정으로 읽힐 수 있어 의미 통과로 판단하더라도 계획성·확정성 차이가 남으면 uncertain=true로 표시했다.",
+    "원문의 술어와 동의어의 범위, 생략으로 암시되는 현금, 사극 어미의 충분성 같은 경계는 불확실성에 포함했다."
+  ],
+  "rows": [
+    {
+      "id": "R01-friendly-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘어제 민이가 도서관에서 책 세 권을 빌렸어요’는 민·어제·도서관·책 3권·대여 완료를 보존한다. 이름 뒤 조사 변화만 있고 해요체와 어순이 자연스럽다."
+    },
+    {
+      "id": "R01-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘어제’가 빠졌고 ‘세 권이나’는 원문에 없는 수량 평가를 더한다. ‘민이에요’의 부드러운 해요체와 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R01-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘어제 민이 도서관에서 책 3권 빌림’은 모든 사실과 완료를 유지한다. 짧은 명사형 메모체를 건조한 진술로 인정하며 이 형식에서는 자연스럽다."
+    },
+    {
+      "id": "R01-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘도서관 책’은 도서관 소유 책으로 읽혀 원문의 대여 장소가 명시되지 않고 ‘빌려감’은 이동 방향도 더할 수 있다. 조사 생략 메모체로는 자연스럽고 건조하지만 장소 생략 해석에는 불확실성이 있다."
+    },
+    {
+      "id": "R01-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘빌리셨더군’에서 행위자 민이 사라지고 회상·발견 관점이 생겼다. 문법은 자연스럽지만 ‘-더군’만으로 사극 말투가 충분한지는 모호하여 스타일은 보수적으로 실패 처리했다."
+    },
+    {
+      "id": "R01-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘누구인가?’는 민의 대여 사실을 신원 질문으로 바꾸고 어제도 생략한다. 문장은 자연스러우나 ‘-인가’만으로 사극 말투인지 모호하여 스타일은 실패 처리했다."
+    },
+    {
+      "id": "R02-friendly-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘오늘 민수가 서재에서 편지 열세 통을 보내지 않았네요’는 13통과 과거 부정을 그대로 유지한다. ‘-네요’는 자연스러운 해요체이며 별도의 전언 출처를 말하지 않는다."
+    },
+    {
+      "id": "R02-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘편지를 보내지 않았답니다’에서 13통이 빠졌다. 문장은 자연스럽지만 ‘-답니다’는 지정된 해요체와 다르다."
+    },
+    {
+      "id": "R02-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘민수 오늘 서재에서 편지 13통 안 보냄’은 인물·오늘·장소·수량·행동 부정을 보존한다. 생략이 있는 건조한 메모 진술로 자연스럽다."
+    },
+    {
+      "id": "R02-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘못 보냈음’은 단순히 보내지 않았다는 원문을 능력·사정 때문에 보내지 못한 것으로 바꾼다. 메모체 스타일과 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R02-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘부치지 아니하였는가?’는 부정 사실을 질문으로 바꾸고 민수를 생략한다. ‘편지 열셋’은 13개 편지로 이해되며 고풍스러운 의문 어미와 문법은 성립한다."
+    },
+    {
+      "id": "R02-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": false,
+      "uncertain": false,
+      "reason": "‘민수’가 없고 ‘오늘인가’로 시점을 의문시한다. ‘하노라’는 사극풍이지만 ‘부치치 않은’은 잘못된 활용이라 문장도 부자연스럽다."
+    },
+    {
+      "id": "R03-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘가져온대’는 원문에 없는 전언 근거를 더하고 해요체도 아니다. 지아·내일·교실·연필 두 자루는 남아 있으며 구어 문장은 자연스럽다."
+    },
+    {
+      "id": "R03-friendly-v2",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": true,
+      "reason": "지아·내일·교실·연필 두 자루를 보존하며 ‘가져온다네’는 미래 일정 진술로 읽을 수 있다. 다만 명시적 예정과 단정의 차이가 불확실하고, ‘-다네’는 지정된 해요체가 아니다. 문법은 자연스럽다."
+    },
+    {
+      "id": "R03-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘내일 ... 가져온다’는 예정된 행동의 건조한 진술로 읽히고 인물·대상·수량·목적지가 보존된다. 다만 ‘예정’이 사라져 확정 사실로 더 강하게 읽힐 가능성은 남는다."
+    },
+    {
+      "id": "R03-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘연필 두 개’는 두 자루와 같은 수의 연필로 이해되고 나머지 슬롯도 보존된다. 짧은 평서문은 자연스럽지만 ‘가져오는 거다’가 예정 대신 단정·지시로 읽힐 수 있어 의미 판단이 불확실하다."
+    },
+    {
+      "id": "R03-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘지아는 내일에 교실로 연필 두 자루를 가져올 것이오’는 사실 슬롯과 하오체를 유지하고 문법도 성립한다. ‘예정’ 대신 일반 미래를 써 계획과 예측의 차이는 불확실하다."
+    },
+    {
+      "id": "R03-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘가져올 터이네’가 예정의 뜻을 담으며 지아·내일·교실·연필 두 자루를 모두 보존한다. 고풍스러운 종결어미와 한국어 연결이 자연스럽다."
+    },
+    {
+      "id": "R04-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘준이 ... 제출해 달래’는 준을 요청하는 사람으로 바꾸며 ‘오후 세 시까지’는 정각을 마감으로 바꾼다. 전언 반말이라 해요체가 아니지만 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R04-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘준이 ... 바란다고 하네요’는 행위자를 희망의 주체로 바꾸고 사무실을 생략하며 3시를 ‘3시까지’로 바꾼다. ‘하네요’ 해요체와 문법은 자연스럽다."
+    },
+    {
+      "id": "R04-blunt-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘오후 3시까지 사무실로’는 원문의 3시 정각·사무실에서 제출을 마감·목적지로 바꾼다. 간결한 직접 지시 문장은 무뚝뚝하고 문법적으로 자연스럽다."
+    },
+    {
+      "id": "R04-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "원문에 없는 ‘오늘’을 더하고 ‘오후 3시까지’로 시점을 바꾼다. ‘제출하세요’는 요청으로 자연스럽지만 지정된 건조한 평서/해라체와는 다르다."
+    },
+    {
+      "id": "R04-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘준이 아뢰길’은 발화 근거를, ‘이따금’은 반복 빈도를 더하고 요청을 ‘올리겠답니다’라는 의향 보고로 바꾼다. 문법은 성립하지만 아뢰다라는 어휘만 고풍스럽고 끝의 ‘-답니다’는 지정된 사극 어미가 아니다."
+    },
+    {
+      "id": "R04-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘준이 고하길’로 전언을 더하고 ‘금일’과 ‘십오시경’으로 날짜·근사 시점을 추가하며 요청이 진술로 바뀐다. ‘하옵니다’는 사극풍이며 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R07-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "철수·오전 9시·연구실·물 500mL·마신 사실은 남지만 ‘마셨대’가 전언을 추가한다. 반말이라 지정 해요체가 아니며 구어 문장은 자연스럽다."
+    },
+    {
+      "id": "R07-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘아침에’는 오전 9시의 정확성을 잃는다. ‘마셨구나’는 해요체가 아니지만 인물·장소·물 500mL가 들어간 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R07-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘오전 9시 ... 물을 500ml 마셨다’는 철수·연구실·500mL·완료를 보존한다. 단위의 소문자 표기는 이 의미 검토에서는 같은 양으로 인정하며 평서체도 자연스럽다."
+    },
+    {
+      "id": "R07-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘500mL 마심’에서 물이 빠지고 ‘9시’는 원문의 오전 구분을 잃는다. 짧은 메모 진술 자체는 건조하고 자연스럽다."
+    },
+    {
+      "id": "R07-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": false,
+      "uncertain": true,
+      "reason": "‘아뢰기를’로 발화 근거, ‘오늘’로 날짜, ‘시경’으로 근사 시간을 더하고 ‘물 오백’에는 mL 단위가 없다. ‘하옵니다’는 사극풍이나 단위 없는 물 오백의 독립 문장 자연스러움은 낮고 구어적 생략 가능성이 있어 불확실하다."
+    },
+    {
+      "id": "R07-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘다섯 홉’은 500mL와 다른 수량이며 정확한 오전 9시도 사라진다. ‘철수 그 아이’는 나이·관계 뉘앙스를 추가한다. ‘비웠네’는 고풍스러운 자연스러운 문장이지만 원뜻은 보존하지 않는다."
+    },
+    {
+      "id": "R08-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘창고 가서’가 이동을, ‘점검해 볼’이 시도를, ‘거래’가 전언을 더한다. 구어로 자연스럽지만 해요체가 아니다."
+    },
+    {
+      "id": "R08-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": false,
+      "uncertain": true,
+      "reason": "‘내일 모레’는 모레로 읽히지만 ‘상자 두 박스’는 상자 2개인지 상자를 담은 2박스인지 불명확하며 ‘확인’도 점검보다 약할 수 있다. 반말이고 단위 결합도 어색하여 실패로 판단하되 이 해석의 모호성을 표시한다."
+    },
+    {
+      "id": "R08-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘다온은 모레 창고에서 상자 두 개를 점검한다’는 예정 일정의 자연스러운 건조한 진술이다. 다만 명시적 예정 표현이 없어 확정성 차이가 남는다."
+    },
+    {
+      "id": "R08-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘내일 모레’는 모레의 자연스러운 표현이며 다온·창고·상자 두 개·점검 예정을 유지한다. ‘예정임’은 짧고 건조한 메모체로 자연스럽다."
+    },
+    {
+      "id": "R08-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": false,
+      "uncertain": true,
+      "reason": "다온·모레·창고·상자 두 개를 살필 미래라는 핵심은 읽힌다. 다만 ‘상자 두 점’은 부자연스러운 단위이고 계획/예측 차이도 남으며, ‘것이야’는 현대 반말이라 사극 스타일로 보지 않았다."
+    },
+    {
+      "id": "R08-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘창고에 가셔서’는 이동을, ‘것이라 하네’는 전언을 더하며 ‘둘러보다’는 점검보다 넓은 행동이다. ‘하네’의 고풍스러운 어미와 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R09-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘일곱 장을 검토해 봤어요’에서 문서라는 대상 종류가 빠지고 ‘해 보다’의 시도 뉘앙스가 생긴다. 해요체와 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R09-friendly-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘어제 회의실에서 7장의 문서를 살펴봤네요’는 이안·문서 7장·과거 검토를 자연스러운 동의 표현으로 보존한다. 부드러운 해요체이며 문법도 자연스럽다."
+    },
+    {
+      "id": "R09-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘이안이 어제 회의실에서 문서 7장을 검토했다’는 모든 의미와 완료를 그대로 유지하는 자연스러운 건조한 평서문이다."
+    },
+    {
+      "id": "R09-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "문서를 ‘서류’로 바꾼 것은 허용 가능하지만 ‘확인했다’는 내용 검토가 아니라 존재 확인일 수도 있어 원문의 검토를 보장하지 않는다. 문법과 건조한 말투는 자연스러우며 이 술어 동의성은 불확실하다."
+    },
+    {
+      "id": "R09-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘문서 일곱 장을 살펴보았네’는 이안·어제·회의실·검토 완료를 보존한다. ‘-보았네’는 고풍스러운 진술이고 어순도 자연스럽다."
+    },
+    {
+      "id": "R09-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": false,
+      "uncertain": false,
+      "reason": "이안·어제·회의실·문서 일곱 장·살핀 완료는 읽히고 ‘살피셨네’도 사극풍이다. 그러나 행동 장소에 ‘회의실에’를 써 ‘회의실에서’보다 문법 연결이 부자연스럽다."
+    },
+    {
+      "id": "R10-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘안 넣었대’는 과거 부정에 원문에 없는 전언 근거를 추가한다. 반말이라 지정 해요체가 아니지만 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R10-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘안 넣었다던걸?’은 단순 부정 사실을 전언을 되묻는 표현으로 바꾼다. 자연스러운 반말이지만 해요체 조건과 의미 보존을 만족하지 않는다."
+    },
+    {
+      "id": "R10-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘서준은 오늘 냉장고에 사과 6개를 넣지 않았다’는 인물·시점·장소·대상·수량·부정을 그대로 보존하는 자연스러운 건조한 진술이다."
+    },
+    {
+      "id": "R10-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘사과 6개로 채우지 않았어’는 넣지 않았다는 뜻보다 냉장고를 채우지 않았다는 뜻이어서 일부를 넣었을 가능성을 남긴다. 짧은 평서 구어와 문법은 자연스럽다."
+    },
+    {
+      "id": "R10-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": false,
+      "uncertain": true,
+      "reason": "‘사과 여섯 점’은 사과 여섯 개보다 조각 여섯 점으로 읽힐 수 있어 수량 단위가 불명확하다. ‘아니하였네’는 사극풍이나 사과와 점의 결합은 부자연스럽고 의미 해석에도 불확실성이 있다."
+    },
+    {
+      "id": "R10-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘오늘도 여전히’, ‘손길이 닿지 않아’, ‘사과가 그대로 남아’는 반복·원인·잔존 상태를 새로 만든다. 문장은 성립하지만 ‘있구나’만으로 사극 스타일을 판정하기 모호하여 스타일은 실패 처리했다."
+    },
+    {
+      "id": "R11-friendly-v1",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "민에게 오늘 부엌에서 쌀 1.5kg을 재 달라는 요청을 ‘재 주겠니?’로 보존한다. 부드럽고 자연스럽지만 반말이므로 지정된 해요체는 아니다."
+    },
+    {
+      "id": "R11-friendly-v2",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘민이 오늘 부엌에서 쌀 1.5kg 재 줄래?’는 인물·장소·시점·양·요청을 보존하는 자연스러운 구어다. 다만 해요체가 아니다."
+    },
+    {
+      "id": "R11-blunt-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘재’는 원문의 ‘재 줘’라는 부탁을 직접 명령으로 더 강하게 읽히게 한다. 건조한 명령문은 자연스럽지만 상황에 따라 부탁으로도 읽혀 양태 판정이 불확실하다."
+    },
+    {
+      "id": "R11-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘잴 것’은 부탁보다 수행 의무를 적은 지시로 읽힌다. 메모체로 자연스럽고 건조하지만 지시와 요청의 경계에 불확실성이 있어 의미는 보수적으로 실패 처리했다."
+    },
+    {
+      "id": "R11-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘재도록 하거라’는 ‘재 줘’라는 요청을 윗사람의 직접 명령으로 바꾼다. 나머지 사실은 유지하고 사극풍 문법은 자연스럽다."
+    },
+    {
+      "id": "R11-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘그대’로 바꿔 이름 민을 명시하지 않는다. 오늘·부엌·쌀 1.5kg·요청은 남으며 ‘재 주시게’의 사극풍과 문법은 자연스럽다."
+    },
+    {
+      "id": "R12-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": false,
+      "uncertain": false,
+      "reason": "‘돌려줬대’는 전언을 추가하고 ‘은이야, 은은’은 같은 사람을 부른 직후 삼인칭으로 반복해 독립 문장으로 어색하다. 반말이므로 지정된 해요체도 아니다."
+    },
+    {
+      "id": "R12-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘지아에게’는 소유자 지아를 반환 수신자로 바꾼다. 원문은 지아의 노트라고만 했으므로 수신자를 확정할 수 없다. ‘돌려줬구나’는 자연스러운 반말이나 해요체는 아니다."
+    },
+    {
+      "id": "R12-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "은·오전 10시·사무실·지아의 소유·노트 3권·반환 완료를 모두 보존한다. ‘돌려줬다’는 자연스럽고 건조한 평서체다."
+    },
+    {
+      "id": "R12-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘은이 ... 지아의 노트를 3권 돌려줬다’는 소유 관계와 원문의 시간·장소·수량·완료를 보존한다. 조사와 수량 위치 변화가 자연스럽다."
+    },
+    {
+      "id": "R12-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘돌려주고 왔네’는 반환 뒤 이동해 돌아왔다는 행동을 추가한다. 사극풍 종결어미와 문법은 자연스럽지만 원문에 없는 사건이다."
+    },
+    {
+      "id": "R12-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "은·10시·사무실·지아의 노트 세 권·반환 완료를 보존한다. 10시는 fixture에 명시된 오전 10시의 허용 표기이며 ‘돌려주었노라’는 자연스러운 사극풍이다."
+    },
+    {
+      "id": "R13-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘잘 넣어뒀어요’의 ‘잘’은 보관이 잘됐다는 평가를 새로 더한다. 소율·어제·지갑·삼천 원은 유지되고 해요체와 어순은 자연스럽다."
+    },
+    {
+      "id": "R13-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘현금을 보관해 뒀네요’에서 3000원이 빠졌다. 소율·어제·지갑·보관 완료의 자연스러운 해요체 문장이다."
+    },
+    {
+      "id": "R13-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘소율이 어제 지갑에 현금 3000원을 보관했다’는 원문의 사실과 보관 완료를 그대로 보존하는 건조한 자연스러운 진술이다."
+    },
+    {
+      "id": "R13-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘지갑에 3000원을 보관하였다’는 통상 현금 보관으로 읽혀 의미를 유지한다고 판단했다. 다만 현금이라는 종류가 명시되지 않아 상품권 등 다른 값 보관으로 해석할 여지가 남는다. 말투와 문법은 자연스럽다."
+    },
+    {
+      "id": "R13-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘소율께서는 어제 지갑에 삼천 원을 간직하셨네’는 보관 완료의 자연스러운 고풍스러운 표현으로 읽힌다. 다만 현금이 명시되지 않고 간직하다가 정서적 보유로 읽힐 여지도 있어 의미 동의성은 불확실하다."
+    },
+    {
+      "id": "R13-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘지갑 속을 ... 채우셨구려’는 3000원을 보관한 사실을 지갑을 채운 상태로 강화한다. 사극 어미와 한국어 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R14-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘열두 명’에서 그 사람들이 참석자라는 종류가 사라진다. 하람·내일·운동장·만남 예정은 남고 ‘만나기로 했어요’는 자연스러운 해요체다."
+    },
+    {
+      "id": "R14-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘12명과 만남’은 수량·예정을 유지하지만 참석자라는 대상 종류가 빠진다. 단순 존칭 ‘님’은 새 사실로 보지 않으며 해요체와 문법은 자연스럽다."
+    },
+    {
+      "id": "R14-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "하람·내일·운동장·참석자 12명·만날 예정을 모두 유지한다. 짧고 자연스러운 건조한 평서문이다."
+    },
+    {
+      "id": "R14-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘12명을 만난다’에서 참석자라는 대상 범주가 없어졌다. 내일 일정의 짧은 평서문 자체는 자연스럽고 건조하다."
+    },
+    {
+      "id": "R14-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘맞이하리라’는 만나다를 손님을 맞이하는 역할로 바꾸고 명시적인 예정도 일반 미래로 바꾼다. 고풍스러운 어미와 문법은 자연스럽다."
+    },
+    {
+      "id": "R14-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘운동장에 나가’는 이동을 추가하고 ‘조우’는 우연한 만남으로 읽힐 수 있다. 문장 자체는 성립하나 ‘것이야’는 현대 반말이어서 한자어만으로 사극 스타일에 통과시키지 않았다."
+    },
+    {
+      "id": "R15-friendly-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘라온이 지금 서버에서 여덟 개의 파일을 삭제 중이에요’는 모든 슬롯과 현재 진행을 보존한다. 자연스러운 해요체다."
+    },
+    {
+      "id": "R15-friendly-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘서버 안에서 8개의 파일들을 지우고 있네요’는 라온·현재·서버·파일 8개·삭제 진행을 보존한다. 서버 내부 파일을 다루는 관용적 표현과 해요체가 자연스럽다."
+    },
+    {
+      "id": "R15-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘현재 서버 내 파일 8개를 삭제하는 중이다’는 지금·서버·수량·삭제 진행을 동의 표현으로 보존한다. 건조한 진술과 문법이 자연스럽다."
+    },
+    {
+      "id": "R15-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘지금 서버에서 파일 8개를 없애고 있다’는 파일 삭제 중이라는 뜻을 보존한다. 라온도 유지되며 짧고 자연스러운 평서체다."
+    },
+    {
+      "id": "R15-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘이 시각 ... 삭제하고 있느니라’는 지금의 진행 상태와 라온·서버·파일 여덟 개를 보존한다. 사극풍 종결어미와 문법도 자연스럽다."
+    },
+    {
+      "id": "R15-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘지금 ... 여덟 개의 파일을 지우는구나’는 삭제 진행과 모든 사실을 유지한다. 문법은 자연스럽지만 ‘-구나’만으로 사극 스타일인지 모호하여 스타일은 보수적으로 실패 처리했다."
+    },
+    {
+      "id": "R16-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘전시회에서 찍은 사진’은 공개 장소인 전시장을 촬영 장소로 바꾸고 촬영 사실을 추가한다. ‘주겠니?’는 자연스러운 부드러운 반말이지만 해요체는 아니다."
+    },
+    {
+      "id": "R16-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘전시회 가서 찍은 사진’은 방문·촬영을 추가하고 원문의 공개 장소를 보존하지 않는다. ‘안 하면 좋겠어요’는 자연스러운 해요체의 완곡한 금지 요청이다."
+    },
+    {
+      "id": "R16-blunt-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘전시장에서 찍힌 사진’은 원문에 없는 촬영 장소를 지정하고 공개 금지의 장소 조건을 바꾼다. ‘안 된다’는 건조하고 문법적으로 자연스러운 금지다."
+    },
+    {
+      "id": "R16-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘십여 장’은 정확한 10장을 열 장 남짓으로 바꾼다. 보라·오늘·전시장·공개 금지는 유지하며 짧은 금지 구어는 자연스럽다."
+    },
+    {
+      "id": "R16-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘전시장에서 촬영한 사진’은 촬영 사실을 추가하고 공개 장소를 촬영 장소로 바꾼다. ‘말도록 하여라’는 자연스러운 사극풍 금지 명령이지만 원문 의미를 그대로 보존하지 않는다."
+    },
+    {
+      "id": "R16-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘전시장에서 찍은 사진’으로 촬영 사실과 장소를 새로 지정한다. 원래는 전시장에서 공개하지 말라는 뜻이며 ‘말거라’의 사극풍 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R17-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘주문해뒀어요’는 단순 주문 완료보다 미리 준비해 둔 상태를 더한다. 원문에 없는 준비 의도인지 일상적인 완료 표현인지 모호해 의미는 보수적으로 실패 처리했다. 나머지 슬롯과 해요체·문법은 자연스럽다."
+    },
+    {
+      "id": "R17-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘오후에’는 오후 2시를 잃고 ‘두 잔이나’는 양에 대한 평가를 추가한다. 은우·찻집·차 두 잔·주문 완료의 자연스러운 해요체 문장이다."
+    },
+    {
+      "id": "R17-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "은우·오후 두 시·찻집·차 두 잔·주문 완료를 모두 유지하는 자연스러운 건조한 진술이다."
+    },
+    {
+      "id": "R17-blunt-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘오후에’로 바꿔 정확한 2시가 빠졌다. 나머지 사실과 주문 완료, 건조한 평서체는 유지하며 문법도 자연스럽다."
+    },
+    {
+      "id": "R17-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "은우·오후 두 시·찻집·차 두 잔·주문 완료를 유지한다. ‘주문하였노라’는 고풍스럽고 문법도 자연스럽다."
+    },
+    {
+      "id": "R17-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "시간구를 앞으로 옮겼을 뿐 은우·오후 2시·찻집·차 2잔·주문 완료가 그대로다. ‘주문하였네’는 자연스러운 사극풍이다."
+    },
+    {
+      "id": "R18-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘확인하려 한대’는 유진의 예정에 원문에 없는 전언 출처를 추가한다. 문장은 자연스럽지만 반말이어서 해요체가 아니다."
+    },
+    {
+      "id": "R18-friendly-v2",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘약속 하나를 확인할 예정이야’는 약속 1건과 유진·내일·공원·예정을 보존한다. 자연스러운 반말이지만 지정 해요체는 아니다."
+    },
+    {
+      "id": "R18-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "유진·내일·공원·약속 한 건·확인 예정을 모두 유지한다. 간결하고 자연스러운 건조한 평서체다."
+    },
+    {
+      "id": "R18-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": true,
+      "reason": "‘확인할 것이다’는 내일 계획을 말하는 자연스러운 미래 진술로 읽히고 모든 슬롯이 유지된다. 다만 ‘예정’의 계획성보다 일반 예측·단정으로 읽힐 가능성이 있어 의미 판단은 불확실하다."
+    },
+    {
+      "id": "R18-historical-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘확인할 것이라 하네’는 원문에 없는 전언 출처를 더한다. 유진·내일·공원·약속 한 건은 남고 고풍스러운 ‘하네’와 문법은 자연스럽다."
+    },
+    {
+      "id": "R18-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": false,
+      "natural": false,
+      "uncertain": true,
+      "reason": "유진·내일·공원·약속 한 건·미래 확인은 읽힌다. 다만 ‘예정’과 일반 미래의 차이가 불확실하며 행동 장소를 ‘공원에’로 쓴 연결은 부자연스럽다. ‘것이야’도 현대 반말이라 사극 스타일이 아니다."
+    },
+    {
+      "id": "R19-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": false,
+      "natural": true,
+      "uncertain": false,
+      "reason": "계약서 5부가 빠지고 ‘잘 보관’이라는 평가가 더해졌다. 윤·지금·준의 소유·서랍은 남지만 ‘있답니다’는 지정 해요체와 다르며 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R19-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘안전하게 보관 중’은 원문에 없던 안전성을 보장한다. 단순 ‘씨’ 존칭은 허용하며 나머지 슬롯·현재 상태·해요체·문법은 자연스럽다."
+    },
+    {
+      "id": "R19-blunt-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘현재 윤이 준의 계약서 5부를 보관 중이다’에서 서랍이라는 장소가 빠졌다. 소유와 진행 상태를 담은 건조한 평서문 자체는 자연스럽다."
+    },
+    {
+      "id": "R19-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘현재 ... 서랍에 두고 있다’는 윤이 준의 계약서 5부를 지금 보관 중이라는 상태를 보존한다. 건조한 어미와 문법도 자연스럽다."
+    },
+    {
+      "id": "R19-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘지금 ... 서랍에 간직하고 있느니라’는 윤·준의 소유·계약서 다섯 부·현재 보관 상태를 보존한다. 사극풍 어미와 문법이 자연스럽다."
+    },
+    {
+      "id": "R19-historical-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘지금 ... 보관하여 두었네’는 현재 서랍에 보관되어 있는 상태로 읽혀 원문의 상태를 유지한다. 윤·준의 소유·계약서 다섯 부도 유지되며 고풍스러운 문장이 자연스럽다."
+    },
+    {
+      "id": "R20-friendly-v1",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "소포 9개가 빠지고 ‘아쉽게도’라는 감정을 더하며 단순 부정을 ‘못 받았다’는 불능·사정 부정으로 바꾼다. 해요체와 문장 자체는 자연스럽다."
+    },
+    {
+      "id": "R20-friendly-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘우체국에 갔지만’의 이동, ‘아쉽게도’의 감정, ‘못했다네요’의 불능과 전언을 더하고 소포 9개를 생략한다. 문장 자체는 자연스러운 해요체다."
+    },
+    {
+      "id": "R20-blunt-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘수령하지 않았다’는 받지 않았다는 뜻의 동의 표현으로 노아·어제·우체국·소포 9개·과거 부정을 보존한다. 건조한 평서체와 문법이 자연스럽다."
+    },
+    {
+      "id": "R20-blunt-v2",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘노아는 어제 우체국에서 소포 9개를 받지 않았음’은 모든 사실과 부정을 보존한다. 짧고 건조한 메모 진술로 자연스럽다."
+    },
+    {
+      "id": "R20-historical-v1",
+      "meaningPreserved": true,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘소포 아홉 개를 받지 아니하였네’는 노아·어제·우체국·9개·과거 부정을 유지한다. 사극풍 어미와 한국어 연결도 자연스럽다."
+    },
+    {
+      "id": "R20-historical-v2",
+      "meaningPreserved": false,
+      "styleConsistent": true,
+      "natural": true,
+      "uncertain": false,
+      "reason": "‘받지 못하였다네’는 단순히 받지 않았다는 원문을 받을 수 없었다는 뜻으로 바꾼다. 인물·시점·장소·수량은 남고 고풍스러운 문장 자체는 자연스럽다."
+    }
+  ],
+  "summary": {
+    "plannedDenominator": 120,
+    "evaluatedFirstAttemptRows": 108,
+    "unavailableOrTransportExcludedRows": 12,
+    "counts": {
+      "meaningPreserved": {
+        "pass": 46,
+        "fail": 62,
+        "rateOfEvaluated108": 0.42592592592592593,
+        "rateOfPlanned120": 0.38333333333333336
+      },
+      "styleConsistent": {
+        "pass": 81,
+        "fail": 27,
+        "rateOfEvaluated108": 0.75,
+        "rateOfPlanned120": 0.675
+      },
+      "natural": {
+        "pass": 100,
+        "fail": 8,
+        "rateOfEvaluated108": 0.9259259259259259,
+        "rateOfPlanned120": 0.8333333333333334
+      }
+    },
+    "uncertainCount": 22,
+    "allThreePassCount": 38,
+    "conservativeAllThreePassUncertainFalseCount": 31,
+    "conservativeRateOfEvaluated108": 0.28703703703703703,
+    "conservativeRateOfPlanned120": 0.25833333333333336,
+    "conservativeIds": [
+      "R01-friendly-v1",
+      "R01-blunt-v1",
+      "R02-friendly-v1",
+      "R02-blunt-v1",
+      "R03-historical-v2",
+      "R07-blunt-v1",
+      "R08-blunt-v2",
+      "R09-friendly-v2",
+      "R09-blunt-v1",
+      "R09-historical-v1",
+      "R10-blunt-v1",
+      "R12-blunt-v1",
+      "R12-blunt-v2",
+      "R12-historical-v2",
+      "R13-blunt-v1",
+      "R14-blunt-v1",
+      "R15-friendly-v1",
+      "R15-friendly-v2",
+      "R15-blunt-v1",
+      "R15-blunt-v2",
+      "R15-historical-v1",
+      "R17-blunt-v1",
+      "R17-historical-v1",
+      "R17-historical-v2",
+      "R18-blunt-v1",
+      "R19-blunt-v2",
+      "R19-historical-v1",
+      "R19-historical-v2",
+      "R20-blunt-v1",
+      "R20-blunt-v2",
+      "R20-historical-v1"
+    ]
+  }
+}

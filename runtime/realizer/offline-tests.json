@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-11-11T14:22:15.439860+00:00",
+  "scope": "offline stdlib tests; no model calls",
+  "testsRun": 51,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "failureDetails": [],
+  "referenceSummary": {
+    "expected": 120,
+    "received": 120,
+    "present": 120,
+    "lexicalPass": 120,
+    "rawModelLexicalPass": 0,
+    "rawModelLexicalPassRate": 0.0,
+    "fallbackCount": 0,
+    "fallbackLexicalPass": 0,
+    "offlineReferenceCount": 120,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": true
+  },
+  "emptyModelSummary": {
+    "expected": 120,
+    "received": 0,
+    "present": 0,
+    "lexicalPass": 0,
+    "rawModelLexicalPass": 0,
+    "rawModelLexicalPassRate": 0.0,
+    "fallbackCount": 0,
+    "fallbackLexicalPass": 0,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": false
+  },
+  "emptyModelFallbackSummary": {
+    "expected": 120,
+    "received": 120,
+    "present": 120,
+    "lexicalPass": 120,
+    "rawModelLexicalPass": 0,
+    "rawModelLexicalPassRate": 0.0,
+    "fallbackCount": 120,
+    "fallbackLexicalPass": 120,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": true
+  }
+}

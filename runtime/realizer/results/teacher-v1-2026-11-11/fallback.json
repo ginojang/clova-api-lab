@@ -1,0 +1,1851 @@
+{
+  "outputs": [
+    {
+      "id": "R01-friendly-v1",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 1,
+      "text": "민은 어제 도서관에서 책 3권을 빌렸어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R01-friendly-v2",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 2,
+      "text": "민은 어제 도서관에서 책 3권을 빌렸어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R01-blunt-v1",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 1,
+      "text": "어제 민이 도서관에서 책 3권 빌림.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R01-blunt-v2",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 2,
+      "text": "민이 어제 도서관 책 3권 빌려감.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R01-historical-v1",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 1,
+      "text": "민은 어제 도서관에서 책 3권을 빌렸소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R01-historical-v2",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 2,
+      "text": "민은 어제 도서관에서 책 3권을 빌렸소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R02-friendly-v1",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 1,
+      "text": "오늘 민수가 서재에서 편지 열세 통을 보내지 않았네요.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R02-friendly-v2",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 2,
+      "text": "민수는 오늘 서재에서 편지 13통을 보내지 않았어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R02-blunt-v1",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 1,
+      "text": "민수 오늘 서재에서 편지 13통 안 보냄.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R02-blunt-v2",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 2,
+      "text": "민수 오늘 서재에서 편지 13통 못 보냈음.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R02-historical-v1",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 1,
+      "text": "민수는 오늘 서재에서 편지 13통을 보내지 않았소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R02-historical-v2",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 2,
+      "text": "민수는 오늘 서재에서 편지 13통을 보내지 않았소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R03-friendly-v1",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 1,
+      "text": "지아가 내일 교실에 연필 두 자루를 가져온대.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R03-friendly-v2",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 2,
+      "text": "지아가 내일 교실에 연필을 두 자루 가져온다네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R03-blunt-v1",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 1,
+      "text": "지아가 내일 교실로 연필 2자루 가져온다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R03-blunt-v2",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 2,
+      "text": "지아는 내일 교실로 연필 2자루를 가져올 예정이다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [
+          {
+            "type": "count",
+            "value": 2,
+            "unit": "개"
+          }
+        ],
+        "unexpectedNumeric": [
+          {
+            "text": "두 개",
+            "span": [
+              14,
+              17
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R03-historical-v1",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 1,
+      "text": "지아는 내일에 교실로 연필 두 자루를 가져올 것이오.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R03-historical-v2",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 2,
+      "text": "지아는 내일 교실로 연필 두 자루를 가져올 터이네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R04-friendly-v1",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 1,
+      "text": "준이 오후 세 시까지 사무실로 보고서 한 부 제출해 달래.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R04-friendly-v2",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 2,
+      "text": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "location"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R04-blunt-v1",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 1,
+      "text": "준, 오후 3시까지 사무실로 보고서 1부 제출해.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R04-blunt-v2",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 2,
+      "text": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 줘.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [],
+        "unexpectedProtected": [
+          {
+            "type": "time",
+            "value": "오늘"
+          }
+        ],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R04-historical-v1",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 1,
+      "text": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [
+          {
+            "text": "일 부를",
+            "span": [
+              30,
+              34
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R04-historical-v2",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 2,
+      "text": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [
+          {
+            "text": "일 부를",
+            "span": [
+              25,
+              29
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R05-friendly-v1",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 1,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R05-friendly-v2",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 2,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R05-blunt-v1",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 1,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 줘.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R05-blunt-v2",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 2,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 줘.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R05-historical-v1",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 1,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R05-historical-v2",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 2,
+      "text": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-friendly-v1",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 1,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-friendly-v2",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 2,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-blunt-v1",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 1,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-blunt-v2",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 2,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-historical-v1",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 1,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R06-historical-v2",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 2,
+      "text": "영희는 지금 현관에서 민의 우산 1개를 들고 있소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [
+          "missing output"
+        ],
+        "missingSlots": [
+          "actor",
+          "object",
+          "count",
+          "location",
+          "time",
+          "owner"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": [
+          "text must be a nonempty string"
+        ]
+      }
+    },
+    {
+      "id": "R07-friendly-v1",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 1,
+      "text": "철수가 오전 아홉 시에 연구실에서 물 오백 밀리리터를 마셨대.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R07-friendly-v2",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 2,
+      "text": "철수는 오전 9시에 연구실에서 물 500mL를 마셨어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R07-blunt-v1",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 1,
+      "text": "철수는 오전 9시에 연구실에서 물 500mL를 마셨다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [
+          {
+            "text": "500",
+            "span": [
+              20,
+              23
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R07-blunt-v2",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 2,
+      "text": "철수는 오전 9시에 연구실에서 물 500mL를 마셨다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [
+          {
+            "text": "9",
+            "span": [
+              4,
+              5
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R07-historical-v1",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 1,
+      "text": "철수는 오전 9시에 연구실에서 물 500mL를 마셨소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [
+          {
+            "type": "time",
+            "value": "오늘"
+          }
+        ],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R07-historical-v2",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 2,
+      "text": "철수는 오전 9시에 연구실에서 물 500mL를 마셨소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R08-friendly-v1",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 1,
+      "text": "다온이 모레 창고 가서 상자 두 개를 점검해 볼 거래.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R08-friendly-v2",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 2,
+      "text": "다온은 모레 창고에서 상자 2개를 점검할 예정이에요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [
+          {
+            "type": "time",
+            "value": "내일"
+          }
+        ],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R08-blunt-v1",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 1,
+      "text": "다온은 모레 창고에서 상자 두 개를 점검한다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R08-blunt-v2",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 2,
+      "text": "다온은 모레 창고에서 상자 2개를 점검할 예정이다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [],
+        "unexpectedProtected": [
+          {
+            "type": "time",
+            "value": "내일"
+          }
+        ],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R08-historical-v1",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 1,
+      "text": "다온은 모레 창고에서 상자 2개를 점검할 예정이오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [
+          {
+            "type": "time",
+            "value": "내일"
+          }
+        ],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R08-historical-v2",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 2,
+      "text": "다온은 모레 창고에서 상자 2개를 점검할 예정이오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R09-friendly-v1",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 1,
+      "text": "이안은 어제 회의실에서 문서 7장을 검토했어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R09-friendly-v2",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 2,
+      "text": "이안이 어제 회의실에서 7장의 문서를 살펴봤네요.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R09-blunt-v1",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 1,
+      "text": "이안이 어제 회의실에서 문서 7장을 검토했다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R09-blunt-v2",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 2,
+      "text": "이안은 어제 회의실에서 문서 7장을 검토했다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R09-historical-v1",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 1,
+      "text": "이안은 어제 회의실에서 문서 일곱 장을 살펴보았네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R09-historical-v2",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 2,
+      "text": "회의실에 이안께서 어제 문서를 일곱 장 살피셨네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R10-friendly-v1",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 1,
+      "text": "서준이 오늘은 냉장고에 여섯 개의 사과를 안 넣었대.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R10-friendly-v2",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 2,
+      "text": "서준은 오늘 냉장고에 사과 6개를 넣지 않았어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R10-blunt-v1",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 1,
+      "text": "서준은 오늘 냉장고에 사과 6개를 넣지 않았다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R10-blunt-v2",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 2,
+      "text": "서준이 오늘 냉장고는 사과 6개로 채우지 않았어.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R10-historical-v1",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 1,
+      "text": "서준은 오늘 냉장고에 사과 6개를 넣지 않았소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R10-historical-v2",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 2,
+      "text": "냉장고에는 오늘도 여전히 서준이 손길이 닿지 않아 여섯 개의 사과가 그대로 남아 있구나.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R11-friendly-v1",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 1,
+      "text": "민은 오늘 부엌에서 쌀 1.5kg을 재 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R11-friendly-v2",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 2,
+      "text": "민이 오늘 부엌에서 쌀 1.5kg 재 줄래?",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R11-blunt-v1",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 1,
+      "text": "민, 오늘 부엌에서 쌀 1.5kg 재.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R11-blunt-v2",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 2,
+      "text": "오늘 민이 부엌에서 쌀 1.5kg 잴 것.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R11-historical-v1",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 1,
+      "text": "민은 오늘 부엌에서 쌀 1.5kg을 재 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R11-historical-v2",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 2,
+      "text": "민은 오늘 부엌에서 쌀 1.5kg을 재 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R12-friendly-v1",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 1,
+      "text": "은이야, 은은 오전 10시에 사무실에서 지아 노트 세 권을 돌려줬대!",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R12-friendly-v2",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 2,
+      "text": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R12-blunt-v1",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 1,
+      "text": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R12-blunt-v2",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 2,
+      "text": "은이 오전 10시에 사무실에서 지아의 노트를 3권 돌려줬다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R12-historical-v1",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 1,
+      "text": "은은 오전 열 시에 사무실에서 지아의 노트 세 권을 돌려주고 왔네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R12-historical-v2",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 2,
+      "text": "은이 10시가 되어 사무실에서 지아의 노트를 세 권 돌려주었노라.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R13-friendly-v1",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 1,
+      "text": "소율은 어제 지갑에 현금 3000원을 보관했어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R13-friendly-v2",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 2,
+      "text": "소율은 어제 지갑에 현금 3000원을 보관했어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R13-blunt-v1",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 1,
+      "text": "소율이 어제 지갑에 현금 3000원을 보관했다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R13-blunt-v2",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 2,
+      "text": "소율은 어제 지갑에 현금 3000원을 보관했다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R13-historical-v1",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 1,
+      "text": "소율은 어제 지갑에 현금 3000원을 보관했소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R13-historical-v2",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 2,
+      "text": "소율께서 어제 지갑 속을 현금 삼천 원으로 채우셨구려.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R14-friendly-v1",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 1,
+      "text": "하람은 내일 운동장에서 참석자 12명을 만날 예정이에요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R14-friendly-v2",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 2,
+      "text": "하람은 내일 운동장에서 참석자 12명을 만날 예정이에요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R14-blunt-v1",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 1,
+      "text": "하람은 내일 운동장에서 참석자 12명을 만날 예정이다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R14-blunt-v2",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 2,
+      "text": "하람은 내일 운동장에서 참석자 12명을 만날 예정이다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R14-historical-v1",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 1,
+      "text": "하람은 내일 운동장에서 열두 명의 참석자를 맞이하리라.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R14-historical-v2",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 2,
+      "text": "내일 하람은 운동장에 나가 열두 명의 참석자와 조우할 것이야.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R15-friendly-v1",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 1,
+      "text": "라온이 지금 서버에서 여덟 개의 파일을 삭제 중이에요.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R15-friendly-v2",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 2,
+      "text": "라온은 지금 서버에서 파일 8개를 삭제하고 있어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "object"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R15-blunt-v1",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 1,
+      "text": "라온은 지금 서버에서 파일 8개를 삭제하고 있다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R15-blunt-v2",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 2,
+      "text": "라온이 지금 서버에서 파일 8개를 없애고 있다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R15-historical-v1",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 1,
+      "text": "라온은 지금 서버에서 파일 8개를 삭제하고 있소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R15-historical-v2",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 2,
+      "text": "지금 서버에서 라온이 여덟 개의 파일을 지우는구나.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R16-friendly-v1",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 1,
+      "text": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "location"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R16-friendly-v2",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 2,
+      "text": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주세요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "location"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [
+          {
+            "text": "공개",
+            "span": [
+              27,
+              29
+            ]
+          }
+        ],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R16-blunt-v1",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 1,
+      "text": "보라는 오늘 전시장에서 찍힌 사진 10장을 공개해서는 안 된다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R16-blunt-v2",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 2,
+      "text": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 줘.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R16-historical-v1",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 1,
+      "text": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R16-historical-v2",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 2,
+      "text": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주시오.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "actor",
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R17-friendly-v1",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 1,
+      "text": "은우가 오후 두 시에 찻집에서 차 두 잔을 주문해뒀어요.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R17-friendly-v2",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 2,
+      "text": "은우는 오후 2시에 찻집에서 차 2잔을 주문했어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R17-blunt-v1",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 1,
+      "text": "은우가 오후 두 시에 찻집에서 차 두 잔을 주문했다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R17-blunt-v2",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 2,
+      "text": "은우는 오후 2시에 찻집에서 차 2잔을 주문했다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R17-historical-v1",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 1,
+      "text": "은우는 오후 두 시에 찻집에서 차 두 잔을 주문하였노라.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R17-historical-v2",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 2,
+      "text": "오후 두 시에 은우는 찻집에서 차 두 잔을 주문하였네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R18-friendly-v1",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 1,
+      "text": "유진이 내일 공원에서 약속 한 건을 확인하려 한대.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R18-friendly-v2",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 2,
+      "text": "유진은 내일 공원에서 약속 1건을 확인할 예정이에요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R18-blunt-v1",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 1,
+      "text": "유진은 내일 공원에서 약속 한 건을 확인할 예정이다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R18-blunt-v2",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 2,
+      "text": "내일 유진은 공원에서 약속 1건을 확인할 것이다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R18-historical-v1",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 1,
+      "text": "유진은 내일 공원에서 약속 한 건을 확인할 것이라 하네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R18-historical-v2",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 2,
+      "text": "내일 공원에 유진은 약속 한 건을 확인할 것이야.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R19-friendly-v1",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 1,
+      "text": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R19-friendly-v2",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 2,
+      "text": "윤 씨가 지금 준 씨의 계약서 다섯 부를 서랍 안에 안전하게 보관 중이에요.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R19-blunt-v1",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 1,
+      "text": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "location",
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R19-blunt-v2",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 2,
+      "text": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있다.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "time"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R19-historical-v1",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 1,
+      "text": "윤은 지금 준의 계약서 다섯 부를 서랍에 간직하고 있느니라.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R19-historical-v2",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 2,
+      "text": "지금 윤은 준의 계약서 다섯 부를 서랍에 보관하여 두었네.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R20-friendly-v1",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 1,
+      "text": "노아는 어제 우체국에서 소포 9개를 받지 않았어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R20-friendly-v2",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 2,
+      "text": "노아는 어제 우체국에서 소포 9개를 받지 않았어요.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [
+          "count"
+        ],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R20-blunt-v1",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 1,
+      "text": "노아는 어제 우체국에서 소포 9개를 수령하지 않았다.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R20-blunt-v2",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 2,
+      "text": "노아는 어제 우체국에서 소포 9개를 받지 않았음.",
+      "provenance": "model_raw"
+    },
+    {
+      "id": "R20-historical-v1",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 1,
+      "text": "노아는 어제 우체국에서 소포 9개를 받지 않았소.",
+      "provenance": "deterministic_template",
+      "fallbackReason": {
+        "recordErrors": [],
+        "missingSlots": [],
+        "unexpectedProtected": [],
+        "unexpectedNumeric": [],
+        "polarityHintIssues": [
+          "negative skeleton lacks a recognized negative cue; manual review needed"
+        ],
+        "textErrors": []
+      }
+    },
+    {
+      "id": "R20-historical-v2",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 2,
+      "text": "어제 노아는 우체국에서 소포 아홉 개를 받지 못하였다네.",
+      "provenance": "model_raw"
+    }
+  ],
+  "rawSummary": {
+    "expected": 120,
+    "received": 108,
+    "present": 108,
+    "lexicalPass": 55,
+    "rawModelLexicalPass": 55,
+    "rawModelLexicalPassRate": 0.4583333333333333,
+    "fallbackCount": 0,
+    "fallbackLexicalPass": 0,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": false
+  },
+  "rawInputErrors": [],
+  "finalSummary": {
+    "expected": 120,
+    "received": 120,
+    "present": 120,
+    "lexicalPass": 120,
+    "rawModelLexicalPass": 55,
+    "rawModelLexicalPassRate": 0.4583333333333333,
+    "fallbackCount": 65,
+    "fallbackLexicalPass": 65,
+    "offlineReferenceCount": 0,
+    "semanticReviewRequired": 120,
+    "semanticAccepted": 0,
+    "completeLexicalPass": true
+  },
+  "limitation": "Fallback repairs lexical rejection only. Every output still requires semantic/style review; raw counts are retained."
+}

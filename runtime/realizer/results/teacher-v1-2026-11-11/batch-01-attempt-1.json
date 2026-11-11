@@ -1,0 +1,26 @@
+{
+  "batch": 1,
+  "attempt": 1,
+  "ordinal": 1,
+  "requestSha256": "018fddb21025ab8888a9b17dcff131c7ea501b282bb9a87658d58c9f1e878780",
+  "startedAt": "2026-11-11T14:23:39.998Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R01-friendly-v1\",\"text\":\"어제 민이가 도서관에서 책 세 권을 빌렸어요.\"},{\"id\":\"R01-friendly-v2\",\"text\":\"도서관에서 책을 세 권이나 빌린 사람이 바로 민이에요.\"},{\"id\":\"R01-blunt-v1\",\"text\":\"어제 민이 도서관에서 책 3권 빌림.\"},{\"id\":\"R01-blunt-v2\",\"text\":\"민이 어제 도서관 책 3권 빌려감.\"},{\"id\":\"R01-historical-v1\",\"text\":\"어제 도서관에서 책을 세 권 빌리셨더군.\"},{\"id\":\"R01-historical-v2\",\"text\":\"도서관에서 책을 세 권 빌린 것은 누구인가?\"},{\"id\":\"R02-friendly-v1\",\"text\":\"오늘 민수가 서재에서 편지 열세 통을 보내지 않았네요.\"},{\"id\":\"R02-friendly-v2\",\"text\":\"민수가 오늘은 서재에서 편지를 보내지 않았답니다.\"},{\"id\":\"R02-blunt-v1\",\"text\":\"민수 오늘 서재에서 편지 13통 안 보냄.\"},{\"id\":\"R02-blunt-v2\",\"text\":\"민수 오늘 서재에서 편지 13통 못 보냈음.\"},{\"id\":\"R02-historical-v1\",\"text\":\"오늘 서재에서 편지 열셋을 부치지 아니하였는가?\"},{\"id\":\"R02-historical-v2\",\"text\":\"서재에서 편지 열셋을 부치치 않은 것이 오늘인가 하노라.\"}]"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1005,
+      "output": 316,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "SyntaxError",
+    "message": "Expected ',' or '}' after property value in JSON at position 729 (line 1 column 730)"
+  },
+  "retryable": true,
+  "elapsedMs": 7425
+}

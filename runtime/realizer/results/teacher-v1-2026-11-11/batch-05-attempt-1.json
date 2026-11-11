@@ -1,0 +1,26 @@
+{
+  "batch": 5,
+  "attempt": 1,
+  "ordinal": 8,
+  "requestSha256": "146e5eed60b2f97f118d22a88145ac88dfe17284fda66733faa4d516150dc7bc",
+  "startedAt": "2026-11-11T14:24:36.566Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R09-friendly-v1\",\"text\":\"이안이 어제 회의실에서 일곱 장을 검토해 봤어요.\"},{\"id\":\"R09-friendly-v2\",\"text\":\"이안이 어제 회의실에서 7장의 문서를 살펴봤네요.\"},{\"id\":\"R09-blunt-v1\",\"text\":\"이안이 어제 회의실에서 문서 7장을 검토했다.\"},{\"id\":\"R09-blunt-v2\",\"text\":\"이안은 회의실에서 어제 서류 일곱 장을 확인했다.\"},{\"id\":\"R09-historical-v1\",\"text\":\"이안은 어제 회의실에서 문서 일곱 장을 살펴보았네.\"},{\"id\":\"R09-historical-v2\",\"text\":\"회의실에 이안께서 어제 문서를 일곱 장 살피셨네.\"},{\"id\":\"R10-friendly-v1\",\"text\":\"서준이 오늘은 냉장고에 여섯 개의 사과를 안 넣었대.\"},{\"id\":\"R10-friendly-v2\",\"text\":\"서준이가 오늘은 냉장고에 사과 여섯 개를 안 넣었다던걸?\"},{\"id\":\"R10-blunt-v1\",\"text\":\"서준은 오늘 냉장고에 사과 6개를 넣지 않았다.\"},{\"id\":\"R10-blunt-v2\",\"text\":\"서준이 오늘 냉장고는 사과 6개로 채우지 않았어.\"},{\"id\":\"R10-historical-v1\",\"text\":\"오늘 서준이는 냉장고에 사과 여섯 점을 들이지 아니하였네.\"},{\"id\":\"R10-historical-v2\",\"text\":\"냉장고에는 오늘도 여전히 서준이 손길이 닿지 않아 여섯 개의 사과가 그대로 남아 있구나.\"}]"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1022,
+      "output": 334,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "SyntaxError",
+    "message": "Expected ',' or '}' after property value in JSON at position 783 (line 1 column 784)"
+  },
+  "retryable": true,
+  "elapsedMs": 7704
+}

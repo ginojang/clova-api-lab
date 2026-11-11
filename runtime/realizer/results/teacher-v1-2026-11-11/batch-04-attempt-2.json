@@ -1,0 +1,26 @@
+{
+  "batch": 4,
+  "attempt": 2,
+  "ordinal": 7,
+  "requestSha256": "da3f9719c7151ebe831f2613503d1725123c86d7377be45d145fa1509aad3160",
+  "startedAt": "2026-11-11T14:24:28.061Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R07-friendly-v1\",\"text\":\"철수가 오전 아홉 시에 연구실에서 물 오백 밀리리터를 마셨대.\"},{\"id\":\"R07-friendly-v2\",\"text\":\"아침에 철수가 연구실에서 물 500mL를 마셨구나.\"},{\"id\":\"R07-blunt-v1\",\"text\":\"철수가 오전 9시에 연구실에서 물을 500ml 마셨다.\"},{\"id\":\"R07-blunt-v2\",\"text\":\"철수가 9시에 연구실에서 500ml의 물을 마셨음.\"},{\"id\":\"R07-historical-v1\",\"text\":\"철수가 아뢰기를, 오늘 아침 아홉 시경 연구실에서 물 오백을 들이켰다 하옵니다.\"},{\"id\":\"R07-historical-v2\",\"text\":\"아침에 철수 그 아이는 연구실에서 물 다섯 홉을 비웠네.\"},{\"id\":\"R08-friendly-v1\",\"text\":\"다온이 모레 창고 가서 상자 두 개를 살펴볼 거야.\"},{\"id\":\"R08-friendly-v2\",\"text\":\"다온이는? 응, 걔 모레 창고에서 상자 두 개 점검하기로 했어.\"},{\"id\":\"R08-blunt-v1\",\"text\":\"다온은 모레 창고에서 상자 두 개를 점검한다.\"},{\"id\":\"R08-blunt-v2\",\"text\":\"다온이 내일 모레 창고에서 상자를 두 개 점검함.\"},{\"id\":\"R08-historical-v1\",\"time\":\"모레\",\"text\":\"내일 모레 다온님께서 창고에서 상자 둘을 살피실 예정이라 하오.\"},{\"id\":\"R08-historical-v2\",\"text\":\"모레면 다온께서 창고 안 상자 두 점을 검열하실 터이지.\"}]}"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1041,
+      "output": 372,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "Error",
+    "message": "Unexpected model output fields"
+  },
+  "retryable": true,
+  "elapsedMs": 8502
+}

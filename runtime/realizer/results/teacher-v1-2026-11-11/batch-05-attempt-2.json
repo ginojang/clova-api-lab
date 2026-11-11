@@ -1,0 +1,26 @@
+{
+  "batch": 5,
+  "attempt": 2,
+  "ordinal": 9,
+  "requestSha256": "146e5eed60b2f97f118d22a88145ac88dfe17284fda66733faa4d516150dc7bc",
+  "startedAt": "2026-11-11T14:24:46.274Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R09-friendly-v1\",\"text\":\"이안이 어제 회의실에서 일곱 장을 검토하였어요.\"},{\"id\":\"R09-friendly-v2\",\"text\":\"이안이 어제 회의실에서 7장의 문서를 살펴보았네요.\"},{\"id\":\"R09-blunt\",\"text\":\"이안이 어제 회의실에서 문서 7장을 검토했다.\"},{\"id\":\"R09-historical-v1\",\"text\":\"이안은 어제 회의실에 들어 일곱 장 문서를 살피셨네.\"},{\"id\":\"R10-friendly-v1\",\"text\":\"서준이 오늘은 냉장고에 여섯 개의 사과를 안 넣었대요.\"},{\"id\":\"R10-friendly-v2\",\"text\":\"서준이가 오늘은 냉장고에 사과 6개를 안 넣었다지 뭐예요.\"},{\"id\":\"R10-blunt\",\"text\":\"서준은 오늘 냉장고에 사과 6개를 넣지 않았다.\"},{\"id\":\"R10-historical-v1\",\"text\":\"서준은 금일 냉장고를 열어보니 사과 여섯 알을 아니 넣었더라.\"}]"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1022,
+      "output": 220,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "error": {
+    "name": "SyntaxError",
+    "message": "Expected ',' or '}' after property value in JSON at position 514 (line 1 column 515)"
+  },
+  "retryable": true,
+  "elapsedMs": 5079
+}

@@ -1,0 +1,36 @@
+{
+  "batch": 10,
+  "attempt": 1,
+  "ordinal": 16,
+  "requestSha256": "c685a18ef9ed4c381658aa6fc665794e317a14df6cd6e7cce217ae4ad6e6b229",
+  "startedAt": "2026-11-11T14:25:43.193Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R19-friendly-v1\",\"text\":\"윤은 지금 준의 계약서를 서랍에 잘 보관하고 있답니다.\"},{\"id\":\"R19-friendly-v2\",\"text\":\"윤 씨가 지금 준 씨의 계약서 다섯 부를 서랍 안에 안전하게 보관 중이에요.\"},{\"id\":\"R19-blunt-v1\",\"text\":\"현재 윤이 준의 계약서 5부를 보관 중이다.\"},{\"id\":\"R19-blunt-v2\",\"text\":\"윤은 현재 준의 계약서 5부를 서랍에 두고 있다.\"},{\"id\":\"R19-historical-v1\",\"text\":\"윤은 지금 준의 계약서 다섯 부를 서랍에 간직하고 있느니라.\"},{\"id\":\"R19-historical-v2\",\"text\":\"지금 윤은 준의 계약서 다섯 부를 서랍에 보관하여 두었네.\"},{\"id\":\"R20-friendly-v1\",\"text\":\"어제 노아는 아쉽게도 우체국에서 소포를 못 받았어요.\"},{\"id\":\"R20-friendly-v2\",\"text\":\"어제 노아가 우체국에 갔지만 아쉽게도 소포를 받지는 못했다네요.\"},{\"id\":\"R20-blunt-v1\",\"text\":\"노아는 어제 우체국에서 소포 9개를 수령하지 않았다.\"},{\"id\":\"R20-blunt-v2\",\"text\":\"노아는 어제 우체국에서 소포 9개를 받지 않았음.\"},{\"id\":\"R20-historical-v1\",\"text\":\"어제 노아는 우체국에서 소포 아홉 개를 받지 아니하였네.\"},{\"id\":\"R20-historical-v2\",\"text\":\"어제 노아는 우체국에서 소포 아홉 개를 받지 못하였다네.\"}]}"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1040,
+      "output": 359,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "fenceRemoved": false,
+  "acceptedIds": [
+    "R19-friendly-v1",
+    "R19-friendly-v2",
+    "R19-blunt-v1",
+    "R19-blunt-v2",
+    "R19-historical-v1",
+    "R19-historical-v2",
+    "R20-friendly-v1",
+    "R20-friendly-v2",
+    "R20-blunt-v1",
+    "R20-blunt-v2",
+    "R20-historical-v1",
+    "R20-historical-v2"
+  ],
+  "elapsedMs": 8167
+}

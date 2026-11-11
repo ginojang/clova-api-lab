@@ -1,0 +1,36 @@
+{
+  "batch": 8,
+  "attempt": 1,
+  "ordinal": 13,
+  "requestSha256": "387fd368c1d739833f7983aa4c83eb3745f4c59452a5f1a72258548a44914681",
+  "startedAt": "2026-11-11T14:25:17.719Z",
+  "answer": {
+    "message": {
+      "role": "assistant",
+      "content": "{\"outputs\":[{\"id\":\"R15-friendly-v1\",\"text\":\"라온이 지금 서버에서 여덟 개의 파일을 삭제 중이에요.\"},{\"id\":\"R15-friendly-v2\",\"text\":\"라온이 지금 서버 안에서 8개의 파일들을 지우고 있네요.\"},{\"id\":\"R15-blunt-v1\",\"text\":\"라온이 현재 서버 내 파일 8개를 삭제하는 중이다.\"},{\"id\":\"R15-blunt-v2\",\"text\":\"라온이 지금 서버에서 파일 8개를 없애고 있다.\"},{\"id\":\"R15-historical-v1\",\"text\":\"라온은 이 시각, 서버에서 여덟 개의 파일을 삭제하고 있느니라.\"},{\"id\":\"R15-historical-v2\",\"text\":\"지금 서버에서 라온이 여덟 개의 파일을 지우는구나.\"},{\"id\":\"R16-friendly-v1\",\"text\":\"보라야, 오늘은 전시회에서 찍은 사진 10장은 공개하지 말아 주겠니?\"},{\"id\":\"R16-friendly-v2\",\"text\":\"보라 씨, 오늘 전시회 가서 찍은 사진 열 장은 공개 안 하면 좋겠어요!\"},{\"id\":\"R16-blunt-v1\",\"text\":\"보라는 오늘 전시장에서 찍힌 사진 10장을 공개해서는 안 된다.\"},{\"id\":\"R16-blunt-v2\",\"text\":\"보라가 오늘 전시장에서 사진을 십여 장 공개해선 안 돼.\"},{\"id\":\"R16-historical-v1\",\"text\":\"보라야, 오늘은 전시장에서 촬영한 사진 열 장만은 공개치 말도록 하여라.\"},{\"id\":\"R16-historical-v2\",\"text\":\"보라야, 오늘은 전시장에서 찍은 사진 열 장만큼은 공개하지 말거라.\"}]}"
+    },
+    "finishReason": "stop",
+    "usage": {
+      "input": 1009,
+      "output": 348,
+      "cacheRead": 0,
+      "cacheWrite": 0
+    }
+  },
+  "fenceRemoved": false,
+  "acceptedIds": [
+    "R15-friendly-v1",
+    "R15-friendly-v2",
+    "R15-blunt-v1",
+    "R15-blunt-v2",
+    "R15-historical-v1",
+    "R15-historical-v2",
+    "R16-friendly-v1",
+    "R16-friendly-v2",
+    "R16-blunt-v1",
+    "R16-blunt-v2",
+    "R16-historical-v1",
+    "R16-historical-v2"
+  ],
+  "elapsedMs": 7999
+}

@@ -1,0 +1,35 @@
+{
+  "recordedUtc": "2026-11-11T14:46:55.187475+00:00",
+  "scope": "Final integration checks; no additional API/model calls or training.",
+  "unitTests": {
+    "command": "python3 -B -m unittest discover -s runtime/realizer/tests -v",
+    "count": 56,
+    "passed": 56,
+    "exitCode": 0,
+    "components": {
+      "slotAdversarial": 51,
+      "transportIntegrity": 5
+    }
+  },
+  "nodeSyntax": {
+    "command": "node --check runtime/realizer/generate-teacher.ts",
+    "exitCode": 0
+  },
+  "jsonFilesValidatedExcludingThisRecord": 33,
+  "pythonFilesSyntaxValidated": 6,
+  "brokenLocalMarkdownLinks": [],
+  "teacherFixtureHashMatches": true,
+  "benchmarkRunnerHashMatches": true,
+  "teacherClientAttempts": 16,
+  "teacherHardProjectLimit": 50,
+  "reviewedPairs": 108,
+  "bothAiAllCertain": 29,
+  "independentAiReviewNote": "Not human ground truth; same model family independence not claimed.",
+  "cpuModels": 2,
+  "cpuMeasurementCells": 16,
+  "cpuMeasuredSamplesPerCell": 10,
+  "cpuWarmupsPerCell": 5,
+  "cpuFp32PytorchFixed16IdsEqualBothModels": true,
+  "modelArtifactsOutsideCommit": ".local/realizer-models and .local/realizer-cache",
+  "readOnlyArtifactAudit": "Second agent found no numeric/scope mismatch; final review aggregation independently asserts IDs and booleans."
+}

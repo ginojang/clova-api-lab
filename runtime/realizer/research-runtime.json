@@ -1,0 +1,1317 @@
+{
+  "checked_date": "2026-11-11",
+  "checked_utc": "2026-11-11T14:23:05.158240+00:00",
+  "scope": "Metadata/config/source checks only. No model weights or inference in this research task.",
+  "packages": {
+    "@huggingface/transformers": {
+      "source": "https://registry.npmjs.org/@huggingface/transformers",
+      "dist_tags": {
+        "next": "4.4.0-next.0",
+        "latest": "4.3.2"
+      },
+      "latest": "4.3.2",
+      "release_utc": "2026-10-27T18:15:37.302Z",
+      "dependencies": {
+        "sharp": "^0.35.4",
+        "onnxruntime-web": "1.31.0-dev.20260914-8d85527a0",
+        "onnxruntime-node": "1.30.0",
+        "@huggingface/jinja": "^0.5.10",
+        "@huggingface/tokenizers": "^0.2.0"
+      },
+      "integrity": "sha512-V3+dqf3iWlRYJ9I9GreM3zGQd0lAXnnoPeddmkOQYWAEE4l/+Fi6p7tx/qVUJlKQgLXGim2W76rTOzz+eC0i7g=="
+    },
+    "onnxruntime-web": {
+      "source": "https://registry.npmjs.org/onnxruntime-web",
+      "dist_tags": {
+        "extensions": "1.9.0-extensions",
+        "latest": "1.31.1",
+        "dev": "1.32.0-dev.20261110-53934832d"
+      },
+      "latest": "1.31.1",
+      "release_utc": "2026-10-26T20:01:38.254Z",
+      "dependencies": {
+        "long": "^5.2.3",
+        "platform": "^1.3.6",
+        "protobufjs": "^7.2.4",
+        "flatbuffers": "^25.1.24",
+        "guid-typescript": "^1.0.9",
+        "onnxruntime-common": "1.31.1"
+      },
+      "integrity": "sha512-5GeH+bWQ+HxM10z7erGlsWqryrwMbSvm/1tkIsKTT48g0fI19VXVVC435t4t7VsPdSQeS7NmuZPXrQ73k82URw=="
+    },
+    "python:optimum-onnx": {
+      "source": "https://pypi.org/pypi/optimum-onnx/0.1.0/json",
+      "version": "0.1.0",
+      "release_utc": "2025-12-23T14:20:17.741297Z",
+      "requires_python": ">=3.9.0",
+      "requires_dist": [
+        "optimum~=2.1.0",
+        "transformers<4.58.0,>=4.36",
+        "onnx",
+        "onnxruntime>=1.18.0; extra == \"onnxruntime\"",
+        "onnxruntime-gpu>=1.18.0; extra == \"onnxruntime-gpu\"",
+        "accelerate>=0.26.0; extra == \"tests\"",
+        "datasets; extra == \"tests\"",
+        "einops; extra == \"tests\"",
+        "hf_xet; extra == \"tests\"",
+        "parameterized; extra == \"tests\"",
+        "Pillow; extra == \"tests\"",
+        "pytest-xdist; extra == \"tests\"",
+        "pytest; extra == \"tests\"",
+        "safetensors; extra == \"tests\"",
+        "scipy; extra == \"tests\"",
+        "sentencepiece; extra == \"tests\"",
+        "timm; extra == \"tests\"",
+        "onnxslim>=0.1.60; extra == \"tests\"",
+        "rjieba; extra == \"tests\"",
+        "sacremoses; extra == \"tests\"",
+        "ruff==0.12.3; extra == \"quality\""
+      ],
+      "is_latest_claim": true
+    },
+    "python:onnxruntime": {
+      "source": "https://pypi.org/pypi/onnxruntime/1.31.1/json",
+      "version": "1.31.1",
+      "release_utc": "2026-10-26T19:26:00.372533Z",
+      "requires_python": ">=3.11",
+      "requires_dist": [
+        "flatbuffers",
+        "numpy>=1.21.6",
+        "packaging",
+        "protobuf>=4.25.8",
+        "sympy; extra == \"symbolic\"",
+        "ml_dtypes; extra == \"quantization\""
+      ],
+      "is_latest_claim": true
+    },
+    "python:transformers": {
+      "source": "https://pypi.org/pypi/transformers/4.57.6/json",
+      "version": "4.57.6",
+      "release_utc": "2026-01-16T10:38:31.289337Z",
+      "requires_python": ">=3.9.0",
+      "requires_dist": [
+        "filelock",
+        "huggingface-hub<1.0,>=0.34.0",
+        "numpy>=1.17",
+        "packaging>=20.0",
+        "pyyaml>=5.1",
+        "regex!=2019.12.17",
+        "requests",
+        "tokenizers<=0.23.0,>=0.22.0",
+        "safetensors>=0.4.3",
+        "tqdm>=4.27",
+        "fugashi>=1.0; extra == \"ja\"",
+        "ipadic<2.0,>=1.0.0; extra == \"ja\"",
+        "unidic_lite>=1.0.7; extra == \"ja\"",
+        "unidic>=1.0.2; extra == \"ja\"",
+        "sudachipy>=0.6.6; extra == \"ja\"",
+        "sudachidict_core>=20220729; extra == \"ja\"",
+        "rhoknp<1.3.1,>=1.1.0; extra == \"ja\"",
+        "scikit-learn; extra == \"sklearn\"",
+        "tensorflow<2.16,>2.9; extra == \"tf\"",
+        "onnxconverter-common; extra == \"tf\"",
+        "tf2onnx; extra == \"tf\"",
+        "tensorflow-text<2.16; extra == \"tf\"",
+        "keras-nlp<0.14.0,>=0.3.1; extra == \"tf\"",
+        "keras<2.16,>2.9; extra == \"tf-cpu\"",
+        "tensorflow-cpu<2.16,>2.9; extra == \"tf-cpu\"",
+        "onnxconverter-common; extra == \"tf-cpu\"",
+        "tf2onnx; extra == \"tf-cpu\"",
+        "tensorflow-text<2.16; extra == \"tf-cpu\"",
+        "keras-nlp<0.14.0,>=0.3.1; extra == \"tf-cpu\"",
+        "tensorflow-probability<0.24; extra == \"tf-cpu\"",
+        "torch>=2.2; extra == \"torch\"",
+        "accelerate>=0.26.0; extra == \"torch\"",
+        "accelerate>=0.26.0; extra == \"accelerate\"",
+        "hf_xet; extra == \"hf-xet\"",
+        "faiss-cpu; extra == \"retrieval\"",
+        "datasets>=2.15.0; extra == \"retrieval\"",
+        "jax<=0.4.13,>=0.4.1; extra == \"flax\"",
+        "jaxlib<=0.4.13,>=0.4.1; extra == \"flax\"",
+        "flax<=0.7.0,>=0.4.1; extra == \"flax\"",
+        "optax<=0.1.4,>=0.0.8; extra == \"flax\"",
+        "scipy<1.13.0; extra == \"flax\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"tokenizers\"",
+        "ftfy; extra == \"ftfy\"",
+        "onnxruntime>=1.4.0; extra == \"onnxruntime\"",
+        "onnxruntime-tools>=1.4.2; extra == \"onnxruntime\"",
+        "onnxconverter-common; extra == \"onnx\"",
+        "tf2onnx; extra == \"onnx\"",
+        "onnxruntime>=1.4.0; extra == \"onnx\"",
+        "onnxruntime-tools>=1.4.2; extra == \"onnx\"",
+        "cookiecutter==1.7.3; extra == \"modelcreation\"",
+        "sagemaker>=2.31.0; extra == \"sagemaker\"",
+        "deepspeed>=0.9.3; extra == \"deepspeed\"",
+        "accelerate>=0.26.0; extra == \"deepspeed\"",
+        "optuna; extra == \"optuna\"",
+        "ray[tune]>=2.7.0; extra == \"ray\"",
+        "sigopt; extra == \"sigopt\"",
+        "kernels<=0.9,>=0.6.1; extra == \"hub-kernels\"",
+        "kernels<=0.9,>=0.6.1; extra == \"integrations\"",
+        "optuna; extra == \"integrations\"",
+        "ray[tune]>=2.7.0; extra == \"integrations\"",
+        "openai>=1.98.0; extra == \"serving\"",
+        "pydantic>=2; extra == \"serving\"",
+        "uvicorn; extra == \"serving\"",
+        "fastapi; extra == \"serving\"",
+        "starlette; extra == \"serving\"",
+        "torch>=2.2; extra == \"serving\"",
+        "accelerate>=0.26.0; extra == \"serving\"",
+        "librosa; extra == \"audio\"",
+        "pyctcdecode>=0.4.0; extra == \"audio\"",
+        "phonemizer; extra == \"audio\"",
+        "kenlm; extra == \"audio\"",
+        "torchaudio; extra == \"speech\"",
+        "librosa; extra == \"speech\"",
+        "pyctcdecode>=0.4.0; extra == \"speech\"",
+        "phonemizer; extra == \"speech\"",
+        "kenlm; extra == \"speech\"",
+        "torchaudio; extra == \"torch-speech\"",
+        "librosa; extra == \"torch-speech\"",
+        "pyctcdecode>=0.4.0; extra == \"torch-speech\"",
+        "phonemizer; extra == \"torch-speech\"",
+        "kenlm; extra == \"torch-speech\"",
+        "librosa; extra == \"tf-speech\"",
+        "pyctcdecode>=0.4.0; extra == \"tf-speech\"",
+        "phonemizer; extra == \"tf-speech\"",
+        "kenlm; extra == \"tf-speech\"",
+        "librosa; extra == \"flax-speech\"",
+        "pyctcdecode>=0.4.0; extra == \"flax-speech\"",
+        "phonemizer; extra == \"flax-speech\"",
+        "kenlm; extra == \"flax-speech\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"vision\"",
+        "timm!=1.0.18,<=1.0.19; extra == \"timm\"",
+        "torchvision; extra == \"torch-vision\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"torch-vision\"",
+        "natten<0.15.0,>=0.14.6; extra == \"natten\"",
+        "codecarbon>=2.8.1; extra == \"codecarbon\"",
+        "av; extra == \"video\"",
+        "num2words; extra == \"num2words\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"sentencepiece\"",
+        "protobuf; extra == \"sentencepiece\"",
+        "tiktoken; extra == \"tiktoken\"",
+        "blobfile; extra == \"tiktoken\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"mistral-common\"",
+        "jinja2>=3.1.0; extra == \"chat-template\"",
+        "pytest>=7.2.0; extra == \"testing\"",
+        "pytest-asyncio; extra == \"testing\"",
+        "pytest-rich; extra == \"testing\"",
+        "pytest-xdist; extra == \"testing\"",
+        "pytest-order; extra == \"testing\"",
+        "pytest-rerunfailures<16.0; extra == \"testing\"",
+        "timeout-decorator; extra == \"testing\"",
+        "parameterized>=0.9; extra == \"testing\"",
+        "psutil; extra == \"testing\"",
+        "datasets>=2.15.0; extra == \"testing\"",
+        "dill<0.3.5; extra == \"testing\"",
+        "evaluate>=0.2.0; extra == \"testing\"",
+        "pytest-timeout; extra == \"testing\"",
+        "ruff==0.13.1; extra == \"testing\"",
+        "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1; extra == \"testing\"",
+        "nltk<=3.8.1; extra == \"testing\"",
+        "GitPython<3.1.19; extra == \"testing\"",
+        "sacremoses; extra == \"testing\"",
+        "rjieba; extra == \"testing\"",
+        "beautifulsoup4; extra == \"testing\"",
+        "tensorboard; extra == \"testing\"",
+        "pydantic>=2; extra == \"testing\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"testing\"",
+        "sacrebleu<2.0.0,>=1.4.12; extra == \"testing\"",
+        "libcst; extra == \"testing\"",
+        "faiss-cpu; extra == \"testing\"",
+        "datasets>=2.15.0; extra == \"testing\"",
+        "cookiecutter==1.7.3; extra == \"testing\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"testing\"",
+        "openai>=1.98.0; extra == \"testing\"",
+        "pydantic>=2; extra == \"testing\"",
+        "uvicorn; extra == \"testing\"",
+        "fastapi; extra == \"testing\"",
+        "starlette; extra == \"testing\"",
+        "torch>=2.2; extra == \"testing\"",
+        "accelerate>=0.26.0; extra == \"testing\"",
+        "deepspeed>=0.9.3; extra == \"deepspeed-testing\"",
+        "accelerate>=0.26.0; extra == \"deepspeed-testing\"",
+        "pytest>=7.2.0; extra == \"deepspeed-testing\"",
+        "pytest-asyncio; extra == \"deepspeed-testing\"",
+        "pytest-rich; extra == \"deepspeed-testing\"",
+        "pytest-xdist; extra == \"deepspeed-testing\"",
+        "pytest-order; extra == \"deepspeed-testing\"",
+        "pytest-rerunfailures<16.0; extra == \"deepspeed-testing\"",
+        "timeout-decorator; extra == \"deepspeed-testing\"",
+        "parameterized>=0.9; extra == \"deepspeed-testing\"",
+        "psutil; extra == \"deepspeed-testing\"",
+        "datasets>=2.15.0; extra == \"deepspeed-testing\"",
+        "dill<0.3.5; extra == \"deepspeed-testing\"",
+        "evaluate>=0.2.0; extra == \"deepspeed-testing\"",
+        "pytest-timeout; extra == \"deepspeed-testing\"",
+        "ruff==0.13.1; extra == \"deepspeed-testing\"",
+        "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1; extra == \"deepspeed-testing\"",
+        "nltk<=3.8.1; extra == \"deepspeed-testing\"",
+        "GitPython<3.1.19; extra == \"deepspeed-testing\"",
+        "sacremoses; extra == \"deepspeed-testing\"",
+        "rjieba; extra == \"deepspeed-testing\"",
+        "beautifulsoup4; extra == \"deepspeed-testing\"",
+        "tensorboard; extra == \"deepspeed-testing\"",
+        "pydantic>=2; extra == \"deepspeed-testing\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"deepspeed-testing\"",
+        "sacrebleu<2.0.0,>=1.4.12; extra == \"deepspeed-testing\"",
+        "libcst; extra == \"deepspeed-testing\"",
+        "faiss-cpu; extra == \"deepspeed-testing\"",
+        "datasets>=2.15.0; extra == \"deepspeed-testing\"",
+        "cookiecutter==1.7.3; extra == \"deepspeed-testing\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"deepspeed-testing\"",
+        "openai>=1.98.0; extra == \"deepspeed-testing\"",
+        "pydantic>=2; extra == \"deepspeed-testing\"",
+        "uvicorn; extra == \"deepspeed-testing\"",
+        "fastapi; extra == \"deepspeed-testing\"",
+        "starlette; extra == \"deepspeed-testing\"",
+        "torch>=2.2; extra == \"deepspeed-testing\"",
+        "accelerate>=0.26.0; extra == \"deepspeed-testing\"",
+        "optuna; extra == \"deepspeed-testing\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"deepspeed-testing\"",
+        "protobuf; extra == \"deepspeed-testing\"",
+        "ruff==0.13.1; extra == \"ruff\"",
+        "datasets>=2.15.0; extra == \"quality\"",
+        "ruff==0.13.1; extra == \"quality\"",
+        "GitPython<3.1.19; extra == \"quality\"",
+        "urllib3<2.0.0; extra == \"quality\"",
+        "libcst; extra == \"quality\"",
+        "rich; extra == \"quality\"",
+        "pandas<2.3.0; extra == \"quality\"",
+        "tensorflow<2.16,>2.9; extra == \"all\"",
+        "onnxconverter-common; extra == \"all\"",
+        "tf2onnx; extra == \"all\"",
+        "tensorflow-text<2.16; extra == \"all\"",
+        "keras-nlp<0.14.0,>=0.3.1; extra == \"all\"",
+        "torch>=2.2; extra == \"all\"",
+        "accelerate>=0.26.0; extra == \"all\"",
+        "jax<=0.4.13,>=0.4.1; extra == \"all\"",
+        "jaxlib<=0.4.13,>=0.4.1; extra == \"all\"",
+        "flax<=0.7.0,>=0.4.1; extra == \"all\"",
+        "optax<=0.1.4,>=0.0.8; extra == \"all\"",
+        "scipy<1.13.0; extra == \"all\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"all\"",
+        "protobuf; extra == \"all\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"all\"",
+        "torchaudio; extra == \"all\"",
+        "librosa; extra == \"all\"",
+        "pyctcdecode>=0.4.0; extra == \"all\"",
+        "phonemizer; extra == \"all\"",
+        "kenlm; extra == \"all\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"all\"",
+        "kernels<=0.9,>=0.6.1; extra == \"all\"",
+        "optuna; extra == \"all\"",
+        "ray[tune]>=2.7.0; extra == \"all\"",
+        "timm!=1.0.18,<=1.0.19; extra == \"all\"",
+        "torchvision; extra == \"all\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"all\"",
+        "codecarbon>=2.8.1; extra == \"all\"",
+        "accelerate>=0.26.0; extra == \"all\"",
+        "av; extra == \"all\"",
+        "num2words; extra == \"all\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"all\"",
+        "jinja2>=3.1.0; extra == \"all\"",
+        "pytest>=7.2.0; extra == \"dev-torch\"",
+        "pytest-asyncio; extra == \"dev-torch\"",
+        "pytest-rich; extra == \"dev-torch\"",
+        "pytest-xdist; extra == \"dev-torch\"",
+        "pytest-order; extra == \"dev-torch\"",
+        "pytest-rerunfailures<16.0; extra == \"dev-torch\"",
+        "timeout-decorator; extra == \"dev-torch\"",
+        "parameterized>=0.9; extra == \"dev-torch\"",
+        "psutil; extra == \"dev-torch\"",
+        "datasets>=2.15.0; extra == \"dev-torch\"",
+        "dill<0.3.5; extra == \"dev-torch\"",
+        "evaluate>=0.2.0; extra == \"dev-torch\"",
+        "pytest-timeout; extra == \"dev-torch\"",
+        "ruff==0.13.1; extra == \"dev-torch\"",
+        "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1; extra == \"dev-torch\"",
+        "nltk<=3.8.1; extra == \"dev-torch\"",
+        "GitPython<3.1.19; extra == \"dev-torch\"",
+        "sacremoses; extra == \"dev-torch\"",
+        "rjieba; extra == \"dev-torch\"",
+        "beautifulsoup4; extra == \"dev-torch\"",
+        "tensorboard; extra == \"dev-torch\"",
+        "pydantic>=2; extra == \"dev-torch\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev-torch\"",
+        "sacrebleu<2.0.0,>=1.4.12; extra == \"dev-torch\"",
+        "libcst; extra == \"dev-torch\"",
+        "faiss-cpu; extra == \"dev-torch\"",
+        "datasets>=2.15.0; extra == \"dev-torch\"",
+        "cookiecutter==1.7.3; extra == \"dev-torch\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"dev-torch\"",
+        "openai>=1.98.0; extra == \"dev-torch\"",
+        "pydantic>=2; extra == \"dev-torch\"",
+        "uvicorn; extra == \"dev-torch\"",
+        "fastapi; extra == \"dev-torch\"",
+        "starlette; extra == \"dev-torch\"",
+        "torch>=2.2; extra == \"dev-torch\"",
+        "accelerate>=0.26.0; extra == \"dev-torch\"",
+        "torch>=2.2; extra == \"dev-torch\"",
+        "accelerate>=0.26.0; extra == \"dev-torch\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev-torch\"",
+        "protobuf; extra == \"dev-torch\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"dev-torch\"",
+        "torchaudio; extra == \"dev-torch\"",
+        "librosa; extra == \"dev-torch\"",
+        "pyctcdecode>=0.4.0; extra == \"dev-torch\"",
+        "phonemizer; extra == \"dev-torch\"",
+        "kenlm; extra == \"dev-torch\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"dev-torch\"",
+        "kernels<=0.9,>=0.6.1; extra == \"dev-torch\"",
+        "optuna; extra == \"dev-torch\"",
+        "ray[tune]>=2.7.0; extra == \"dev-torch\"",
+        "timm!=1.0.18,<=1.0.19; extra == \"dev-torch\"",
+        "torchvision; extra == \"dev-torch\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"dev-torch\"",
+        "codecarbon>=2.8.1; extra == \"dev-torch\"",
+        "datasets>=2.15.0; extra == \"dev-torch\"",
+        "ruff==0.13.1; extra == \"dev-torch\"",
+        "GitPython<3.1.19; extra == \"dev-torch\"",
+        "urllib3<2.0.0; extra == \"dev-torch\"",
+        "libcst; extra == \"dev-torch\"",
+        "rich; extra == \"dev-torch\"",
+        "pandas<2.3.0; extra == \"dev-torch\"",
+        "fugashi>=1.0; extra == \"dev-torch\"",
+        "ipadic<2.0,>=1.0.0; extra == \"dev-torch\"",
+        "unidic_lite>=1.0.7; extra == \"dev-torch\"",
+        "unidic>=1.0.2; extra == \"dev-torch\"",
+        "sudachipy>=0.6.6; extra == \"dev-torch\"",
+        "sudachidict_core>=20220729; extra == \"dev-torch\"",
+        "rhoknp<1.3.1,>=1.1.0; extra == \"dev-torch\"",
+        "scikit-learn; extra == \"dev-torch\"",
+        "cookiecutter==1.7.3; extra == \"dev-torch\"",
+        "onnxruntime>=1.4.0; extra == \"dev-torch\"",
+        "onnxruntime-tools>=1.4.2; extra == \"dev-torch\"",
+        "num2words; extra == \"dev-torch\"",
+        "pytest>=7.2.0; extra == \"dev-tensorflow\"",
+        "pytest-asyncio; extra == \"dev-tensorflow\"",
+        "pytest-rich; extra == \"dev-tensorflow\"",
+        "pytest-xdist; extra == \"dev-tensorflow\"",
+        "pytest-order; extra == \"dev-tensorflow\"",
+        "pytest-rerunfailures<16.0; extra == \"dev-tensorflow\"",
+        "timeout-decorator; extra == \"dev-tensorflow\"",
+        "parameterized>=0.9; extra == \"dev-tensorflow\"",
+        "psutil; extra == \"dev-tensorflow\"",
+        "datasets>=2.15.0; extra == \"dev-tensorflow\"",
+        "dill<0.3.5; extra == \"dev-tensorflow\"",
+        "evaluate>=0.2.0; extra == \"dev-tensorflow\"",
+        "pytest-timeout; extra == \"dev-tensorflow\"",
+        "ruff==0.13.1; extra == \"dev-tensorflow\"",
+        "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1; extra == \"dev-tensorflow\"",
+        "nltk<=3.8.1; extra == \"dev-tensorflow\"",
+        "GitPython<3.1.19; extra == \"dev-tensorflow\"",
+        "sacremoses; extra == \"dev-tensorflow\"",
+        "rjieba; extra == \"dev-tensorflow\"",
+        "beautifulsoup4; extra == \"dev-tensorflow\"",
+        "tensorboard; extra == \"dev-tensorflow\"",
+        "pydantic>=2; extra == \"dev-tensorflow\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev-tensorflow\"",
+        "sacrebleu<2.0.0,>=1.4.12; extra == \"dev-tensorflow\"",
+        "libcst; extra == \"dev-tensorflow\"",
+        "faiss-cpu; extra == \"dev-tensorflow\"",
+        "datasets>=2.15.0; extra == \"dev-tensorflow\"",
+        "cookiecutter==1.7.3; extra == \"dev-tensorflow\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"dev-tensorflow\"",
+        "openai>=1.98.0; extra == \"dev-tensorflow\"",
+        "pydantic>=2; extra == \"dev-tensorflow\"",
+        "uvicorn; extra == \"dev-tensorflow\"",
+        "fastapi; extra == \"dev-tensorflow\"",
+        "starlette; extra == \"dev-tensorflow\"",
+        "torch>=2.2; extra == \"dev-tensorflow\"",
+        "accelerate>=0.26.0; extra == \"dev-tensorflow\"",
+        "tensorflow<2.16,>2.9; extra == \"dev-tensorflow\"",
+        "onnxconverter-common; extra == \"dev-tensorflow\"",
+        "tf2onnx; extra == \"dev-tensorflow\"",
+        "tensorflow-text<2.16; extra == \"dev-tensorflow\"",
+        "keras-nlp<0.14.0,>=0.3.1; extra == \"dev-tensorflow\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev-tensorflow\"",
+        "protobuf; extra == \"dev-tensorflow\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"dev-tensorflow\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"dev-tensorflow\"",
+        "datasets>=2.15.0; extra == \"dev-tensorflow\"",
+        "ruff==0.13.1; extra == \"dev-tensorflow\"",
+        "GitPython<3.1.19; extra == \"dev-tensorflow\"",
+        "urllib3<2.0.0; extra == \"dev-tensorflow\"",
+        "libcst; extra == \"dev-tensorflow\"",
+        "rich; extra == \"dev-tensorflow\"",
+        "pandas<2.3.0; extra == \"dev-tensorflow\"",
+        "scikit-learn; extra == \"dev-tensorflow\"",
+        "cookiecutter==1.7.3; extra == \"dev-tensorflow\"",
+        "onnxconverter-common; extra == \"dev-tensorflow\"",
+        "tf2onnx; extra == \"dev-tensorflow\"",
+        "onnxruntime>=1.4.0; extra == \"dev-tensorflow\"",
+        "onnxruntime-tools>=1.4.2; extra == \"dev-tensorflow\"",
+        "librosa; extra == \"dev-tensorflow\"",
+        "pyctcdecode>=0.4.0; extra == \"dev-tensorflow\"",
+        "phonemizer; extra == \"dev-tensorflow\"",
+        "kenlm; extra == \"dev-tensorflow\"",
+        "tensorflow<2.16,>2.9; extra == \"dev\"",
+        "onnxconverter-common; extra == \"dev\"",
+        "tf2onnx; extra == \"dev\"",
+        "tensorflow-text<2.16; extra == \"dev\"",
+        "keras-nlp<0.14.0,>=0.3.1; extra == \"dev\"",
+        "torch>=2.2; extra == \"dev\"",
+        "accelerate>=0.26.0; extra == \"dev\"",
+        "jax<=0.4.13,>=0.4.1; extra == \"dev\"",
+        "jaxlib<=0.4.13,>=0.4.1; extra == \"dev\"",
+        "flax<=0.7.0,>=0.4.1; extra == \"dev\"",
+        "optax<=0.1.4,>=0.0.8; extra == \"dev\"",
+        "scipy<1.13.0; extra == \"dev\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev\"",
+        "protobuf; extra == \"dev\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"dev\"",
+        "torchaudio; extra == \"dev\"",
+        "librosa; extra == \"dev\"",
+        "pyctcdecode>=0.4.0; extra == \"dev\"",
+        "phonemizer; extra == \"dev\"",
+        "kenlm; extra == \"dev\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"dev\"",
+        "kernels<=0.9,>=0.6.1; extra == \"dev\"",
+        "optuna; extra == \"dev\"",
+        "ray[tune]>=2.7.0; extra == \"dev\"",
+        "timm!=1.0.18,<=1.0.19; extra == \"dev\"",
+        "torchvision; extra == \"dev\"",
+        "Pillow<=15.0,>=10.0.1; extra == \"dev\"",
+        "codecarbon>=2.8.1; extra == \"dev\"",
+        "accelerate>=0.26.0; extra == \"dev\"",
+        "av; extra == \"dev\"",
+        "num2words; extra == \"dev\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"dev\"",
+        "jinja2>=3.1.0; extra == \"dev\"",
+        "pytest>=7.2.0; extra == \"dev\"",
+        "pytest-asyncio; extra == \"dev\"",
+        "pytest-rich; extra == \"dev\"",
+        "pytest-xdist; extra == \"dev\"",
+        "pytest-order; extra == \"dev\"",
+        "pytest-rerunfailures<16.0; extra == \"dev\"",
+        "timeout-decorator; extra == \"dev\"",
+        "parameterized>=0.9; extra == \"dev\"",
+        "psutil; extra == \"dev\"",
+        "datasets>=2.15.0; extra == \"dev\"",
+        "dill<0.3.5; extra == \"dev\"",
+        "evaluate>=0.2.0; extra == \"dev\"",
+        "pytest-timeout; extra == \"dev\"",
+        "ruff==0.13.1; extra == \"dev\"",
+        "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1; extra == \"dev\"",
+        "nltk<=3.8.1; extra == \"dev\"",
+        "GitPython<3.1.19; extra == \"dev\"",
+        "sacremoses; extra == \"dev\"",
+        "rjieba; extra == \"dev\"",
+        "beautifulsoup4; extra == \"dev\"",
+        "tensorboard; extra == \"dev\"",
+        "pydantic>=2; extra == \"dev\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"dev\"",
+        "sacrebleu<2.0.0,>=1.4.12; extra == \"dev\"",
+        "libcst; extra == \"dev\"",
+        "faiss-cpu; extra == \"dev\"",
+        "datasets>=2.15.0; extra == \"dev\"",
+        "cookiecutter==1.7.3; extra == \"dev\"",
+        "mistral-common[opencv]>=1.6.3; extra == \"dev\"",
+        "openai>=1.98.0; extra == \"dev\"",
+        "pydantic>=2; extra == \"dev\"",
+        "uvicorn; extra == \"dev\"",
+        "fastapi; extra == \"dev\"",
+        "starlette; extra == \"dev\"",
+        "torch>=2.2; extra == \"dev\"",
+        "accelerate>=0.26.0; extra == \"dev\"",
+        "datasets>=2.15.0; extra == \"dev\"",
+        "ruff==0.13.1; extra == \"dev\"",
+        "GitPython<3.1.19; extra == \"dev\"",
+        "urllib3<2.0.0; extra == \"dev\"",
+        "libcst; extra == \"dev\"",
+        "rich; extra == \"dev\"",
+        "pandas<2.3.0; extra == \"dev\"",
+        "fugashi>=1.0; extra == \"dev\"",
+        "ipadic<2.0,>=1.0.0; extra == \"dev\"",
+        "unidic_lite>=1.0.7; extra == \"dev\"",
+        "unidic>=1.0.2; extra == \"dev\"",
+        "sudachipy>=0.6.6; extra == \"dev\"",
+        "sudachidict_core>=20220729; extra == \"dev\"",
+        "rhoknp<1.3.1,>=1.1.0; extra == \"dev\"",
+        "scikit-learn; extra == \"dev\"",
+        "cookiecutter==1.7.3; extra == \"dev\"",
+        "filelock; extra == \"torchhub\"",
+        "huggingface-hub<1.0,>=0.34.0; extra == \"torchhub\"",
+        "importlib_metadata; extra == \"torchhub\"",
+        "numpy>=1.17; extra == \"torchhub\"",
+        "packaging>=20.0; extra == \"torchhub\"",
+        "protobuf; extra == \"torchhub\"",
+        "regex!=2019.12.17; extra == \"torchhub\"",
+        "requests; extra == \"torchhub\"",
+        "sentencepiece!=0.1.92,>=0.1.91; extra == \"torchhub\"",
+        "torch>=2.2; extra == \"torchhub\"",
+        "tokenizers<=0.23.0,>=0.22.0; extra == \"torchhub\"",
+        "tqdm>=4.27; extra == \"torchhub\"",
+        "optimum-benchmark>=0.3.0; extra == \"benchmark\"",
+        "opentelemetry-api; extra == \"open-telemetry\"",
+        "opentelemetry-exporter-otlp; extra == \"open-telemetry\"",
+        "opentelemetry-sdk; extra == \"open-telemetry\""
+      ],
+      "is_latest_claim": false
+    }
+  },
+  "models": [
+    {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "metadata_url": "https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2",
+      "config_url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/raw/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 512,
+          "F32": 22713216
+        },
+        "total": 22713728
+      },
+      "config": {
+        "_name_or_path": "nreimers/MiniLM-L6-H384-uncased",
+        "architectures": [
+          "BertModel"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "gradient_checkpointing": false,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 384,
+        "initializer_range": 0.02,
+        "intermediate_size": 1536,
+        "layer_norm_eps": 1e-12,
+        "max_position_embeddings": 512,
+        "model_type": "bert",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 6,
+        "pad_token_id": 0,
+        "position_embedding_type": "absolute",
+        "transformers_version": "4.8.2",
+        "type_vocab_size": 2,
+        "use_cache": true,
+        "vocab_size": 30522
+      }
+    },
+    {
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "metadata_url": "https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "config_url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/raw/233902d25c440f23af6f7d6e94d2946bac0bee0a/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 512,
+          "F32": 22713601
+        },
+        "total": 22714113
+      },
+      "config": {
+        "_name_or_path": "cross-encoder/ms-marco-MiniLM-L-12-v2",
+        "architectures": [
+          "BertForSequenceClassification"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "gradient_checkpointing": false,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 384,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 1536,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "layer_norm_eps": 1e-12,
+        "max_position_embeddings": 512,
+        "model_type": "bert",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 6,
+        "pad_token_id": 0,
+        "position_embedding_type": "absolute",
+        "transformers_version": "4.4.2",
+        "type_vocab_size": 2,
+        "use_cache": true,
+        "vocab_size": 30522,
+        "sbert_ce_default_activation_function": "torch.nn.modules.linear.Identity"
+      }
+    },
+    {
+      "model": "BAAI/bge-small-en-v1.5",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "metadata_url": "https://huggingface.co/api/models/BAAI/bge-small-en-v1.5",
+      "config_url": "https://huggingface.co/BAAI/bge-small-en-v1.5/raw/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 512,
+          "F32": 33360000
+        },
+        "total": 33360512
+      },
+      "config": {
+        "_name_or_path": "/root/.cache/torch/sentence_transformers/BAAI_bge-small-en/",
+        "architectures": [
+          "BertModel"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "classifier_dropout": null,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 384,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 1536,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "layer_norm_eps": 1e-12,
+        "max_position_embeddings": 512,
+        "model_type": "bert",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 12,
+        "pad_token_id": 0,
+        "position_embedding_type": "absolute",
+        "torch_dtype": "float32",
+        "transformers_version": "4.30.0",
+        "type_vocab_size": 2,
+        "use_cache": true,
+        "vocab_size": 30522
+      }
+    },
+    {
+      "model": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "metadata_url": "https://huggingface.co/api/models/BAAI/bge-base-en-v1.5",
+      "config_url": "https://huggingface.co/BAAI/bge-base-en-v1.5/raw/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 512,
+          "F32": 109482240
+        },
+        "total": 109482752
+      },
+      "config": {
+        "_name_or_path": "/root/.cache/torch/sentence_transformers/BAAI_bge-base-en/",
+        "architectures": [
+          "BertModel"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "classifier_dropout": null,
+        "gradient_checkpointing": false,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 768,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "layer_norm_eps": 1e-12,
+        "max_position_embeddings": 512,
+        "model_type": "bert",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 12,
+        "pad_token_id": 0,
+        "position_embedding_type": "absolute",
+        "torch_dtype": "float32",
+        "transformers_version": "4.30.0",
+        "type_vocab_size": 2,
+        "use_cache": true,
+        "vocab_size": 30522
+      }
+    },
+    {
+      "model": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "metadata_url": "https://huggingface.co/api/models/BAAI/bge-m3",
+      "config_url": "https://huggingface.co/BAAI/bge-m3/raw/5617a9f61b028005a4858fdac845db406aefb181/config.json",
+      "safetensors_metadata": null,
+      "config": {
+        "_name_or_path": "",
+        "architectures": [
+          "XLMRobertaModel"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "bos_token_id": 0,
+        "classifier_dropout": null,
+        "eos_token_id": 2,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 4096,
+        "layer_norm_eps": 1e-05,
+        "max_position_embeddings": 8194,
+        "model_type": "xlm-roberta",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 24,
+        "output_past": true,
+        "pad_token_id": 1,
+        "position_embedding_type": "absolute",
+        "torch_dtype": "float32",
+        "transformers_version": "4.33.0",
+        "type_vocab_size": 1,
+        "use_cache": true,
+        "vocab_size": 250002
+      }
+    },
+    {
+      "model": "BAAI/bge-reranker-base",
+      "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+      "metadata_url": "https://huggingface.co/api/models/BAAI/bge-reranker-base",
+      "config_url": "https://huggingface.co/BAAI/bge-reranker-base/raw/2cfc18c9415c912f9d8155881c133215df768a70/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 514,
+          "F32": 278044417
+        },
+        "total": 278044931
+      },
+      "config": {
+        "_name_or_path": "xlm-roberta-base",
+        "architectures": [
+          "XLMRobertaForSequenceClassification"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "bos_token_id": 0,
+        "classifier_dropout": null,
+        "eos_token_id": 2,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 768,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "layer_norm_eps": 1e-05,
+        "max_position_embeddings": 514,
+        "model_type": "xlm-roberta",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 12,
+        "output_past": true,
+        "pad_token_id": 1,
+        "position_embedding_type": "absolute",
+        "torch_dtype": "float32",
+        "transformers_version": "4.30.0",
+        "type_vocab_size": 1,
+        "use_cache": true,
+        "vocab_size": 250002
+      }
+    },
+    {
+      "model": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "metadata_url": "https://huggingface.co/api/models/BAAI/bge-reranker-v2-m3",
+      "config_url": "https://huggingface.co/BAAI/bge-reranker-v2-m3/raw/953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "F32": 567755777
+        },
+        "total": 567755777
+      },
+      "config": {
+        "_name_or_path": "BAAI/bge-m3",
+        "architectures": [
+          "XLMRobertaForSequenceClassification"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "bos_token_id": 0,
+        "classifier_dropout": null,
+        "eos_token_id": 2,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 1024,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 4096,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "layer_norm_eps": 1e-05,
+        "max_position_embeddings": 8194,
+        "model_type": "xlm-roberta",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 24,
+        "output_past": true,
+        "pad_token_id": 1,
+        "position_embedding_type": "absolute",
+        "torch_dtype": "float32",
+        "transformers_version": "4.38.1",
+        "type_vocab_size": 1,
+        "use_cache": true,
+        "vocab_size": 250002
+      }
+    },
+    {
+      "model": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "metadata_url": "https://huggingface.co/api/models/intfloat/multilingual-e5-small",
+      "config_url": "https://huggingface.co/intfloat/multilingual-e5-small/raw/614241f622f53c4eeff9890bdc4f31cfecc418b3/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "I64": 512,
+          "F32": 117653760
+        },
+        "total": 117654272
+      },
+      "config": {
+        "_name_or_path": "tmp/",
+        "architectures": [
+          "BertModel"
+        ],
+        "attention_probs_dropout_prob": 0.1,
+        "classifier_dropout": null,
+        "hidden_act": "gelu",
+        "hidden_dropout_prob": 0.1,
+        "hidden_size": 384,
+        "initializer_range": 0.02,
+        "intermediate_size": 1536,
+        "layer_norm_eps": 1e-12,
+        "max_position_embeddings": 512,
+        "model_type": "bert",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 12,
+        "pad_token_id": 0,
+        "position_embedding_type": "absolute",
+        "tokenizer_class": "XLMRobertaTokenizer",
+        "torch_dtype": "float32",
+        "transformers_version": "4.29.0",
+        "type_vocab_size": 2,
+        "use_cache": true,
+        "vocab_size": 250037
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-Embedding-0.6B",
+      "config_url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/raw/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "BF16": 595776512
+        },
+        "total": 595776512
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 32768,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151669
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Embedding-4B",
+      "revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+      "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-Embedding-4B",
+      "config_url": "https://huggingface.co/Qwen/Qwen3-Embedding-4B/raw/5cf2132abc99cad020ac570b19d031efec650f2b/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "BF16": 4021774336
+        },
+        "total": 4021774336
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 2560,
+        "initializer_range": 0.02,
+        "intermediate_size": 9728,
+        "max_position_embeddings": 40960,
+        "max_window_layers": 36,
+        "model_type": "qwen3",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 36,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.2",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151665
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Embedding-8B",
+      "revision": "1d8ad4ca9b3dd8059ad90a75d4983776a23d44af",
+      "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-Embedding-8B",
+      "config_url": "https://huggingface.co/Qwen/Qwen3-Embedding-8B/raw/1d8ad4ca9b3dd8059ad90a75d4983776a23d44af/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "BF16": 7567295488
+        },
+        "total": 7567295488
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 4096,
+        "initializer_range": 0.02,
+        "intermediate_size": 12288,
+        "max_position_embeddings": 40960,
+        "max_window_layers": 36,
+        "model_type": "qwen3",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 36,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.2",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151665
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Reranker-0.6B",
+      "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-Reranker-0.6B",
+      "config_url": "https://huggingface.co/Qwen/Qwen3-Reranker-0.6B/raw/e61197ed45024b0ed8a2d74b80b4d909f1255473/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "BF16": 595776512
+        },
+        "total": 595776512
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 40960,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151669
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-Reranker-8B",
+      "revision": "77d193c791ed757ca307ee72715aa132723da912",
+      "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-Reranker-8B",
+      "config_url": "https://huggingface.co/Qwen/Qwen3-Reranker-8B/raw/77d193c791ed757ca307ee72715aa132723da912/config.json",
+      "safetensors_metadata": {
+        "parameters": {
+          "BF16": 8188548096
+        },
+        "total": 8188548096
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 4096,
+        "initializer_range": 0.02,
+        "intermediate_size": 12288,
+        "max_position_embeddings": 40960,
+        "max_window_layers": 36,
+        "model_type": "qwen3",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 36,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_sliding_window": false,
+        "vocab_size": 151669
+      }
+    }
+  ],
+  "artifact_trees": {
+    "BAAI/bge-m3": {
+      "source": "https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "size": 1627
+        },
+        {
+          "path": "1_Pooling/config.json",
+          "size": 191
+        },
+        {
+          "path": "README.md",
+          "size": 15822
+        },
+        {
+          "path": "colbert_linear.pt",
+          "size": 2100674
+        },
+        {
+          "path": "config.json",
+          "size": 687
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "size": 123
+        },
+        {
+          "path": "imgs/.DS_Store",
+          "size": 6148
+        },
+        {
+          "path": "imgs/bm25.jpg",
+          "size": 131849
+        },
+        {
+          "path": "imgs/long.jpg",
+          "size": 485432
+        },
+        {
+          "path": "imgs/miracl.jpg",
+          "size": 576482
+        },
+        {
+          "path": "imgs/mkqa.jpg",
+          "size": 608027
+        },
+        {
+          "path": "imgs/nqa.jpg",
+          "size": 158358
+        },
+        {
+          "path": "imgs/others.webp",
+          "size": 20984
+        },
+        {
+          "path": "long.jpg",
+          "size": 126894
+        },
+        {
+          "path": "modules.json",
+          "size": 349
+        },
+        {
+          "path": "onnx/Constant_7_attr__value",
+          "size": 65552
+        },
+        {
+          "path": "onnx/config.json",
+          "size": 698
+        },
+        {
+          "path": "onnx/model.onnx",
+          "size": 724923
+        },
+        {
+          "path": "onnx/model.onnx_data",
+          "size": 2266820608
+        },
+        {
+          "path": "onnx/sentencepiece.bpe.model",
+          "size": 5069051
+        },
+        {
+          "path": "onnx/special_tokens_map.json",
+          "size": 964
+        },
+        {
+          "path": "onnx/tokenizer.json",
+          "size": 17082821
+        },
+        {
+          "path": "onnx/tokenizer_config.json",
+          "size": 1173
+        },
+        {
+          "path": "pytorch_model.bin",
+          "size": 2271145830
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "size": 54
+        },
+        {
+          "path": "sentencepiece.bpe.model",
+          "size": 5069051
+        },
+        {
+          "path": "sparse_linear.pt",
+          "size": 3516
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 964
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 17098108
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 444
+        }
+      ]
+    },
+    "klebster/g2p_multilingual_byT5_tiny_onnx": {
+      "source": "https://huggingface.co/api/models/klebster/g2p_multilingual_byT5_tiny_onnx/tree/main?recursive=true",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "size": 1519
+        },
+        {
+          "path": "README.md",
+          "size": 13834
+        },
+        {
+          "path": "added_tokens.json",
+          "size": 3018
+        },
+        {
+          "path": "config.json",
+          "size": 846
+        },
+        {
+          "path": "decoder_model.onnx",
+          "size": 26118052
+        },
+        {
+          "path": "decoder_with_past_model.onnx",
+          "size": 22960684
+        },
+        {
+          "path": "encoder_model.onnx",
+          "size": 57234020
+        },
+        {
+          "path": "generation_config.json",
+          "size": 142
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 3090
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 25602
+        }
+      ]
+    }
+  },
+  "raw_weight_arithmetic": {
+    "count": 100000000,
+    "assumption": "Each unique parameter stored once; uniform dtype; quantization overhead excluded",
+    "rows": [
+      {
+        "dtype": "fp32",
+        "bytes": 400000000,
+        "MB": 400.0,
+        "MiB": 381.4697265625
+      },
+      {
+        "dtype": "fp16",
+        "bytes": 200000000,
+        "MB": 200.0,
+        "MiB": 190.73486328125
+      },
+      {
+        "dtype": "int8",
+        "bytes": 100000000,
+        "MB": 100.0,
+        "MiB": 95.367431640625
+      },
+      {
+        "dtype": "4bit",
+        "bytes": 50000000,
+        "MB": 50.0,
+        "MiB": 47.6837158203125
+      }
+    ]
+  },
+  "bge_m3_derived_counts": {
+    "word_embedding": 256002048,
+    "backbone_with_pooler": 567754752,
+    "backbone_without_pooler": 566705152,
+    "official_onnx_external_data_bytes": 2266820608,
+    "note": "Config-derived backbone counts; separate sparse/ColBERT heads are not included."
+  },
+  "evidence_status": {
+    "transformers_js_t5_bart": "Source implementation verified at tag4.3.2; browser inference not run.",
+    "native_latency": "External author reports, not independently reproduced; see markdown for missing conditions.",
+    "browser_support": "Vendor releases and gpuweb WG implementation table checked; no browser/device smoke tests run."
+  }
+}
