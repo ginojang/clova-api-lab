@@ -1,5 +1,7 @@
 # H31 세 실행기 비교
 
+현재 방향은 [H31 결론](CONCLUSION-2026-11-11.md)을 따른다. 비교 실험은 종료하고 ②는 Elda CLI native로 정리한다. 아래 명령은 과거 결과 재현용이며 추가 유료 비교를 예정한 작업 목록이 아니다. LangGraph는 동결 기준선, Pi는 페르소나 실험용으로 남긴다.
+
 설치 Elda CLI native loop, LangGraph, memory-lab Pi를 같은 native HCX-005 요청으로 비교한다. 외부 CLI 소스는 읽기만 하고 비교 작업장은 이 저장소의 `.local/h31`에 만든다. 원시 요청에는 인증 헤더를 저장하지 않는다. 네 artifact 도구만 제공하며 Comms·Notion은 붙이지 않는다.
 
 실행 전 [최초 계획](PLAN-2026-11-11.md), [후속 계획](PLAN-R2-2026-11-11.md), [설계 감사](DESIGN-AUDIT-2026-11-11.md)를 읽는다. r1/r2는 판정과 pacing이 다르므로 결과를 합쳐 하나의 점수로 만들지 않는다. 기존 결과 파일은 덮어쓰지 않는다.
