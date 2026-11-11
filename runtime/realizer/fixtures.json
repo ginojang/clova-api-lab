@@ -1,0 +1,2013 @@
+{
+  "schemaVersion": "1.0",
+  "language": "ko-KR",
+  "purpose": "Research-only Korean surface-realization trial; no training or deployment.",
+  "globalInstruction": "source의 행위자·행위·시제·극성·양태·상태·소유 관계와 모든 protectedSlots를 보존한다. 지정된 말투로 한 문장만 쓴다. 조사와 띄어쓰기는 바꿀 수 있지만 슬롯의 명시적 surfaces 밖 동의어·단위변환은 쓰지 않는다. 의미, 사실, 감정, 증거 출처, 확신 정도, 신분, 관계를 추가하지 않는다. 숫자는 해당 슬롯에 열거된 표기만 쓴다. 두 variant는 독립적인 표현 시도이며 새 사실 추가가 아니다.",
+  "styles": {
+    "friendly": {
+      "label": "다정",
+      "instruction": "부드러운 해요체를 쓴다. 요청은 정중하고 부드럽게 표현한다. 친밀한 관계, 감정, 위로, 약속, 평가를 새로 만들지 않는다."
+    },
+    "blunt": {
+      "label": "무뚝뚝",
+      "instruction": "짧고 건조한 해라체 또는 평서체를 쓴다. 무례한 호칭, 비난, 새 명령, 감정을 추가하지 않는다."
+    },
+    "historical": {
+      "label": "사극",
+      "instruction": "하오체 등 사극풍 종결어미만 쓴다. 화자 신분, 시대 배경, 군신 관계, 전하/소인 같은 호칭, 명령 권한을 추가하지 않는다."
+    }
+  },
+  "skeletons": [
+    {
+      "id": "R01",
+      "actor": "민",
+      "predicate": {
+        "lemma": "빌리다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "민은 어제 도서관에서 책 3권을 빌렸다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "민",
+          "surfaces": [
+            "민"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "책",
+          "surfaces": [
+            "책"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 3,
+          "surfaces": [
+            "3권",
+            "세 권"
+          ],
+          "unit": "권"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "도서관",
+          "surfaces": [
+            "도서관"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "어제",
+          "surfaces": [
+            "어제"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "민은 어제 도서관에서 책 3권을 빌렸어요.",
+        "blunt": "민은 어제 도서관에서 책 3권을 빌렸다.",
+        "historical": "민은 어제 도서관에서 책 3권을 빌렸소."
+      }
+    },
+    {
+      "id": "R02",
+      "actor": "민수",
+      "predicate": {
+        "lemma": "보내다",
+        "tense": "past",
+        "polarity": "negative",
+        "modality": "assertion",
+        "status": "unspecified"
+      },
+      "source": "민수는 오늘 서재에서 편지 13통을 보내지 않았다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "민수",
+          "surfaces": [
+            "민수"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "편지",
+          "surfaces": [
+            "편지"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 13,
+          "surfaces": [
+            "13통",
+            "열세 통"
+          ],
+          "unit": "통"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "서재",
+          "surfaces": [
+            "서재"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오늘",
+          "surfaces": [
+            "오늘"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "민수는 오늘 서재에서 편지 13통을 보내지 않았어요.",
+        "blunt": "민수는 오늘 서재에서 편지 13통을 보내지 않았다.",
+        "historical": "민수는 오늘 서재에서 편지 13통을 보내지 않았소."
+      }
+    },
+    {
+      "id": "R03",
+      "actor": "지아",
+      "predicate": {
+        "lemma": "가져오다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "plan",
+        "status": "planned"
+      },
+      "source": "지아는 내일 교실로 연필 2자루를 가져올 예정이다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "지아",
+          "surfaces": [
+            "지아"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "연필",
+          "surfaces": [
+            "연필"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 2,
+          "surfaces": [
+            "2자루",
+            "두 자루"
+          ],
+          "unit": "자루"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "교실",
+          "surfaces": [
+            "교실"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "내일",
+          "surfaces": [
+            "내일"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "지아는 내일 교실로 연필 2자루를 가져올 예정이에요.",
+        "blunt": "지아는 내일 교실로 연필 2자루를 가져올 예정이다.",
+        "historical": "지아는 내일 교실로 연필 2자루를 가져올 예정이오."
+      }
+    },
+    {
+      "id": "R04",
+      "actor": "준",
+      "predicate": {
+        "lemma": "제출하다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "request",
+        "status": "unspecified"
+      },
+      "source": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 줘.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "준",
+          "surfaces": [
+            "준"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "보고서",
+          "surfaces": [
+            "보고서"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 1,
+          "surfaces": [
+            "1부",
+            "한 부"
+          ],
+          "unit": "부"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "사무실",
+          "surfaces": [
+            "사무실"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오후 3시",
+          "surfaces": [
+            "오후 3시",
+            "오후 세 시",
+            "15시",
+            "15:00"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 주세요.",
+        "blunt": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 줘.",
+        "historical": "준은 오후 3시에 사무실에서 보고서 1부를 제출해 주시오."
+      }
+    },
+    {
+      "id": "R05",
+      "actor": "수아",
+      "predicate": {
+        "lemma": "옮기다",
+        "tense": "future",
+        "polarity": "negative",
+        "modality": "prohibition",
+        "status": "unspecified"
+      },
+      "source": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 줘.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "수아",
+          "surfaces": [
+            "수아"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "유리컵",
+          "surfaces": [
+            "유리컵"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 4,
+          "surfaces": [
+            "4개",
+            "네 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "주방",
+          "surfaces": [
+            "주방"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오늘",
+          "surfaces": [
+            "오늘"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주세요.",
+        "blunt": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 줘.",
+        "historical": "수아는 오늘 주방에서 유리컵 4개를 옮기지 말아 주시오."
+      }
+    },
+    {
+      "id": "R06",
+      "actor": "영희",
+      "predicate": {
+        "lemma": "들다",
+        "tense": "present",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "ongoing"
+      },
+      "source": "영희는 지금 현관에서 민의 우산 1개를 들고 있다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "영희",
+          "surfaces": [
+            "영희"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "우산",
+          "surfaces": [
+            "우산"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 1,
+          "surfaces": [
+            "1개",
+            "한 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "현관",
+          "surfaces": [
+            "현관"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "지금",
+          "surfaces": [
+            "지금"
+          ]
+        },
+        {
+          "key": "owner",
+          "type": "person",
+          "value": "민",
+          "surfaces": [
+            "민"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "영희는 지금 현관에서 민의 우산 1개를 들고 있어요.",
+        "blunt": "영희는 지금 현관에서 민의 우산 1개를 들고 있다.",
+        "historical": "영희는 지금 현관에서 민의 우산 1개를 들고 있소."
+      }
+    },
+    {
+      "id": "R07",
+      "actor": "철수",
+      "predicate": {
+        "lemma": "마시다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "철수는 오전 9시에 연구실에서 물 500mL를 마셨다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "철수",
+          "surfaces": [
+            "철수"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "물",
+          "surfaces": [
+            "물"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 500,
+          "surfaces": [
+            "500mL",
+            "500밀리리터",
+            "오백 밀리리터"
+          ],
+          "unit": "mL"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "연구실",
+          "surfaces": [
+            "연구실"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오전 9시",
+          "surfaces": [
+            "오전 9시",
+            "오전 아홉 시",
+            "09시",
+            "09:00"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "철수는 오전 9시에 연구실에서 물 500mL를 마셨어요.",
+        "blunt": "철수는 오전 9시에 연구실에서 물 500mL를 마셨다.",
+        "historical": "철수는 오전 9시에 연구실에서 물 500mL를 마셨소."
+      }
+    },
+    {
+      "id": "R08",
+      "actor": "다온",
+      "predicate": {
+        "lemma": "점검하다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "plan",
+        "status": "planned"
+      },
+      "source": "다온은 모레 창고에서 상자 2개를 점검할 예정이다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "다온",
+          "surfaces": [
+            "다온"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "상자",
+          "surfaces": [
+            "상자"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 2,
+          "surfaces": [
+            "2개",
+            "두 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "창고",
+          "surfaces": [
+            "창고"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "모레",
+          "surfaces": [
+            "모레"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "다온은 모레 창고에서 상자 2개를 점검할 예정이에요.",
+        "blunt": "다온은 모레 창고에서 상자 2개를 점검할 예정이다.",
+        "historical": "다온은 모레 창고에서 상자 2개를 점검할 예정이오."
+      }
+    },
+    {
+      "id": "R09",
+      "actor": "이안",
+      "predicate": {
+        "lemma": "검토하다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "이안은 어제 회의실에서 문서 7장을 검토했다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "이안",
+          "surfaces": [
+            "이안"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "문서",
+          "surfaces": [
+            "문서"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 7,
+          "surfaces": [
+            "7장",
+            "일곱 장"
+          ],
+          "unit": "장"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "회의실",
+          "surfaces": [
+            "회의실"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "어제",
+          "surfaces": [
+            "어제"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "이안은 어제 회의실에서 문서 7장을 검토했어요.",
+        "blunt": "이안은 어제 회의실에서 문서 7장을 검토했다.",
+        "historical": "이안은 어제 회의실에서 문서 7장을 검토했소."
+      }
+    },
+    {
+      "id": "R10",
+      "actor": "서준",
+      "predicate": {
+        "lemma": "넣다",
+        "tense": "past",
+        "polarity": "negative",
+        "modality": "assertion",
+        "status": "unspecified"
+      },
+      "source": "서준은 오늘 냉장고에 사과 6개를 넣지 않았다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "서준",
+          "surfaces": [
+            "서준"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "사과",
+          "surfaces": [
+            "사과"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 6,
+          "surfaces": [
+            "6개",
+            "여섯 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "냉장고",
+          "surfaces": [
+            "냉장고"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오늘",
+          "surfaces": [
+            "오늘"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "서준은 오늘 냉장고에 사과 6개를 넣지 않았어요.",
+        "blunt": "서준은 오늘 냉장고에 사과 6개를 넣지 않았다.",
+        "historical": "서준은 오늘 냉장고에 사과 6개를 넣지 않았소."
+      }
+    },
+    {
+      "id": "R11",
+      "actor": "민",
+      "predicate": {
+        "lemma": "재다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "request",
+        "status": "unspecified"
+      },
+      "source": "민은 오늘 부엌에서 쌀 1.5kg을 재 줘.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "민",
+          "surfaces": [
+            "민"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "쌀",
+          "surfaces": [
+            "쌀"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 1.5,
+          "surfaces": [
+            "1.5kg",
+            "1.5킬로그램",
+            "일 점 오 킬로그램"
+          ],
+          "unit": "kg"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "부엌",
+          "surfaces": [
+            "부엌"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오늘",
+          "surfaces": [
+            "오늘"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "민은 오늘 부엌에서 쌀 1.5kg을 재 주세요.",
+        "blunt": "민은 오늘 부엌에서 쌀 1.5kg을 재 줘.",
+        "historical": "민은 오늘 부엌에서 쌀 1.5kg을 재 주시오."
+      }
+    },
+    {
+      "id": "R12",
+      "actor": "은",
+      "predicate": {
+        "lemma": "돌려주다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "은",
+          "surfaces": [
+            "은"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "노트",
+          "surfaces": [
+            "노트"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 3,
+          "surfaces": [
+            "3권",
+            "세 권"
+          ],
+          "unit": "권"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "사무실",
+          "surfaces": [
+            "사무실"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오전 10시",
+          "surfaces": [
+            "오전 10시",
+            "오전 열 시",
+            "10시",
+            "10:00"
+          ]
+        },
+        {
+          "key": "owner",
+          "type": "person",
+          "value": "지아",
+          "surfaces": [
+            "지아"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬어요.",
+        "blunt": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬다.",
+        "historical": "은은 오전 10시에 사무실에서 지아의 노트 3권을 돌려줬소."
+      }
+    },
+    {
+      "id": "R13",
+      "actor": "소율",
+      "predicate": {
+        "lemma": "보관하다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "소율은 어제 지갑에 현금 3000원을 보관했다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "소율",
+          "surfaces": [
+            "소율"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "현금",
+          "surfaces": [
+            "현금"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 3000,
+          "surfaces": [
+            "3000원",
+            "3,000원",
+            "삼천 원"
+          ],
+          "unit": "원"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "지갑",
+          "surfaces": [
+            "지갑"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "어제",
+          "surfaces": [
+            "어제"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "소율은 어제 지갑에 현금 3000원을 보관했어요.",
+        "blunt": "소율은 어제 지갑에 현금 3000원을 보관했다.",
+        "historical": "소율은 어제 지갑에 현금 3000원을 보관했소."
+      }
+    },
+    {
+      "id": "R14",
+      "actor": "하람",
+      "predicate": {
+        "lemma": "만나다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "plan",
+        "status": "planned"
+      },
+      "source": "하람은 내일 운동장에서 참석자 12명을 만날 예정이다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "하람",
+          "surfaces": [
+            "하람"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "참석자",
+          "surfaces": [
+            "참석자"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 12,
+          "surfaces": [
+            "12명",
+            "열두 명"
+          ],
+          "unit": "명"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "운동장",
+          "surfaces": [
+            "운동장"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "내일",
+          "surfaces": [
+            "내일"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "하람은 내일 운동장에서 참석자 12명을 만날 예정이에요.",
+        "blunt": "하람은 내일 운동장에서 참석자 12명을 만날 예정이다.",
+        "historical": "하람은 내일 운동장에서 참석자 12명을 만날 예정이오."
+      }
+    },
+    {
+      "id": "R15",
+      "actor": "라온",
+      "predicate": {
+        "lemma": "삭제하다",
+        "tense": "present",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "ongoing"
+      },
+      "source": "라온은 지금 서버에서 파일 8개를 삭제하고 있다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "라온",
+          "surfaces": [
+            "라온"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "파일",
+          "surfaces": [
+            "파일"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 8,
+          "surfaces": [
+            "8개",
+            "여덟 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "서버",
+          "surfaces": [
+            "서버"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "지금",
+          "surfaces": [
+            "지금"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "라온은 지금 서버에서 파일 8개를 삭제하고 있어요.",
+        "blunt": "라온은 지금 서버에서 파일 8개를 삭제하고 있다.",
+        "historical": "라온은 지금 서버에서 파일 8개를 삭제하고 있소."
+      }
+    },
+    {
+      "id": "R16",
+      "actor": "보라",
+      "predicate": {
+        "lemma": "공개하다",
+        "tense": "future",
+        "polarity": "negative",
+        "modality": "prohibition",
+        "status": "unspecified"
+      },
+      "source": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 줘.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "보라",
+          "surfaces": [
+            "보라"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "사진",
+          "surfaces": [
+            "사진"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 10,
+          "surfaces": [
+            "10장",
+            "열 장"
+          ],
+          "unit": "장"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "전시장",
+          "surfaces": [
+            "전시장"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오늘",
+          "surfaces": [
+            "오늘"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주세요.",
+        "blunt": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 줘.",
+        "historical": "보라는 오늘 전시장에서 사진 10장을 공개하지 말아 주시오."
+      }
+    },
+    {
+      "id": "R17",
+      "actor": "은우",
+      "predicate": {
+        "lemma": "주문하다",
+        "tense": "past",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "completed"
+      },
+      "source": "은우는 오후 2시에 찻집에서 차 2잔을 주문했다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "은우",
+          "surfaces": [
+            "은우"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "차",
+          "surfaces": [
+            "차"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 2,
+          "surfaces": [
+            "2잔",
+            "두 잔"
+          ],
+          "unit": "잔"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "찻집",
+          "surfaces": [
+            "찻집"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "오후 2시",
+          "surfaces": [
+            "오후 2시",
+            "오후 두 시",
+            "14시",
+            "14:00"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "은우는 오후 2시에 찻집에서 차 2잔을 주문했어요.",
+        "blunt": "은우는 오후 2시에 찻집에서 차 2잔을 주문했다.",
+        "historical": "은우는 오후 2시에 찻집에서 차 2잔을 주문했소."
+      }
+    },
+    {
+      "id": "R18",
+      "actor": "유진",
+      "predicate": {
+        "lemma": "확인하다",
+        "tense": "future",
+        "polarity": "positive",
+        "modality": "plan",
+        "status": "planned"
+      },
+      "source": "유진은 내일 공원에서 약속 1건을 확인할 예정이다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "유진",
+          "surfaces": [
+            "유진"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "약속",
+          "surfaces": [
+            "약속"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 1,
+          "surfaces": [
+            "1건",
+            "한 건"
+          ],
+          "unit": "건"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "공원",
+          "surfaces": [
+            "공원"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "내일",
+          "surfaces": [
+            "내일"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "유진은 내일 공원에서 약속 1건을 확인할 예정이에요.",
+        "blunt": "유진은 내일 공원에서 약속 1건을 확인할 예정이다.",
+        "historical": "유진은 내일 공원에서 약속 1건을 확인할 예정이오."
+      }
+    },
+    {
+      "id": "R19",
+      "actor": "윤",
+      "predicate": {
+        "lemma": "보관하다",
+        "tense": "present",
+        "polarity": "positive",
+        "modality": "assertion",
+        "status": "ongoing"
+      },
+      "source": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "윤",
+          "surfaces": [
+            "윤"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "계약서",
+          "surfaces": [
+            "계약서"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 5,
+          "surfaces": [
+            "5부",
+            "다섯 부"
+          ],
+          "unit": "부"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "서랍",
+          "surfaces": [
+            "서랍"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "지금",
+          "surfaces": [
+            "지금"
+          ]
+        },
+        {
+          "key": "owner",
+          "type": "person",
+          "value": "준",
+          "surfaces": [
+            "준"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있어요.",
+        "blunt": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있다.",
+        "historical": "윤은 지금 서랍에 준의 계약서 5부를 보관하고 있소."
+      }
+    },
+    {
+      "id": "R20",
+      "actor": "노아",
+      "predicate": {
+        "lemma": "받다",
+        "tense": "past",
+        "polarity": "negative",
+        "modality": "assertion",
+        "status": "unspecified"
+      },
+      "source": "노아는 어제 우체국에서 소포 9개를 받지 않았다.",
+      "protectedSlots": [
+        {
+          "key": "actor",
+          "type": "person",
+          "value": "노아",
+          "surfaces": [
+            "노아"
+          ]
+        },
+        {
+          "key": "object",
+          "type": "object",
+          "value": "소포",
+          "surfaces": [
+            "소포"
+          ]
+        },
+        {
+          "key": "count",
+          "type": "count",
+          "value": 9,
+          "surfaces": [
+            "9개",
+            "아홉 개"
+          ],
+          "unit": "개"
+        },
+        {
+          "key": "location",
+          "type": "location",
+          "value": "우체국",
+          "surfaces": [
+            "우체국"
+          ]
+        },
+        {
+          "key": "time",
+          "type": "time",
+          "value": "어제",
+          "surfaces": [
+            "어제"
+          ]
+        }
+      ],
+      "templates": {
+        "friendly": "노아는 어제 우체국에서 소포 9개를 받지 않았어요.",
+        "blunt": "노아는 어제 우체국에서 소포 9개를 받지 않았다.",
+        "historical": "노아는 어제 우체국에서 소포 9개를 받지 않았소."
+      }
+    }
+  ],
+  "plan": [
+    {
+      "id": "R01-friendly-v1",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R01-friendly-v2",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R01-blunt-v1",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R01-blunt-v2",
+      "skeletonId": "R01",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R01-historical-v1",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R01-historical-v2",
+      "skeletonId": "R01",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R02-friendly-v1",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R02-friendly-v2",
+      "skeletonId": "R02",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R02-blunt-v1",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R02-blunt-v2",
+      "skeletonId": "R02",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R02-historical-v1",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R02-historical-v2",
+      "skeletonId": "R02",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R03-friendly-v1",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R03-friendly-v2",
+      "skeletonId": "R03",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R03-blunt-v1",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R03-blunt-v2",
+      "skeletonId": "R03",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R03-historical-v1",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R03-historical-v2",
+      "skeletonId": "R03",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R04-friendly-v1",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R04-friendly-v2",
+      "skeletonId": "R04",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R04-blunt-v1",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R04-blunt-v2",
+      "skeletonId": "R04",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R04-historical-v1",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R04-historical-v2",
+      "skeletonId": "R04",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R05-friendly-v1",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R05-friendly-v2",
+      "skeletonId": "R05",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R05-blunt-v1",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R05-blunt-v2",
+      "skeletonId": "R05",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R05-historical-v1",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R05-historical-v2",
+      "skeletonId": "R05",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R06-friendly-v1",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R06-friendly-v2",
+      "skeletonId": "R06",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R06-blunt-v1",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R06-blunt-v2",
+      "skeletonId": "R06",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R06-historical-v1",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R06-historical-v2",
+      "skeletonId": "R06",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R07-friendly-v1",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R07-friendly-v2",
+      "skeletonId": "R07",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R07-blunt-v1",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R07-blunt-v2",
+      "skeletonId": "R07",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R07-historical-v1",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R07-historical-v2",
+      "skeletonId": "R07",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R08-friendly-v1",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R08-friendly-v2",
+      "skeletonId": "R08",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R08-blunt-v1",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R08-blunt-v2",
+      "skeletonId": "R08",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R08-historical-v1",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R08-historical-v2",
+      "skeletonId": "R08",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R09-friendly-v1",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R09-friendly-v2",
+      "skeletonId": "R09",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R09-blunt-v1",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R09-blunt-v2",
+      "skeletonId": "R09",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R09-historical-v1",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R09-historical-v2",
+      "skeletonId": "R09",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R10-friendly-v1",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R10-friendly-v2",
+      "skeletonId": "R10",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R10-blunt-v1",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R10-blunt-v2",
+      "skeletonId": "R10",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R10-historical-v1",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R10-historical-v2",
+      "skeletonId": "R10",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R11-friendly-v1",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R11-friendly-v2",
+      "skeletonId": "R11",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R11-blunt-v1",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R11-blunt-v2",
+      "skeletonId": "R11",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R11-historical-v1",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R11-historical-v2",
+      "skeletonId": "R11",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R12-friendly-v1",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R12-friendly-v2",
+      "skeletonId": "R12",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R12-blunt-v1",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R12-blunt-v2",
+      "skeletonId": "R12",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R12-historical-v1",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R12-historical-v2",
+      "skeletonId": "R12",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R13-friendly-v1",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R13-friendly-v2",
+      "skeletonId": "R13",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R13-blunt-v1",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R13-blunt-v2",
+      "skeletonId": "R13",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R13-historical-v1",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R13-historical-v2",
+      "skeletonId": "R13",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R14-friendly-v1",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R14-friendly-v2",
+      "skeletonId": "R14",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R14-blunt-v1",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R14-blunt-v2",
+      "skeletonId": "R14",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R14-historical-v1",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R14-historical-v2",
+      "skeletonId": "R14",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R15-friendly-v1",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R15-friendly-v2",
+      "skeletonId": "R15",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R15-blunt-v1",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R15-blunt-v2",
+      "skeletonId": "R15",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R15-historical-v1",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R15-historical-v2",
+      "skeletonId": "R15",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R16-friendly-v1",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R16-friendly-v2",
+      "skeletonId": "R16",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R16-blunt-v1",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R16-blunt-v2",
+      "skeletonId": "R16",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R16-historical-v1",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R16-historical-v2",
+      "skeletonId": "R16",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R17-friendly-v1",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R17-friendly-v2",
+      "skeletonId": "R17",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R17-blunt-v1",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R17-blunt-v2",
+      "skeletonId": "R17",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R17-historical-v1",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R17-historical-v2",
+      "skeletonId": "R17",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R18-friendly-v1",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R18-friendly-v2",
+      "skeletonId": "R18",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R18-blunt-v1",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R18-blunt-v2",
+      "skeletonId": "R18",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R18-historical-v1",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R18-historical-v2",
+      "skeletonId": "R18",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R19-friendly-v1",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R19-friendly-v2",
+      "skeletonId": "R19",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R19-blunt-v1",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R19-blunt-v2",
+      "skeletonId": "R19",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R19-historical-v1",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R19-historical-v2",
+      "skeletonId": "R19",
+      "style": "historical",
+      "variant": 2
+    },
+    {
+      "id": "R20-friendly-v1",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 1
+    },
+    {
+      "id": "R20-friendly-v2",
+      "skeletonId": "R20",
+      "style": "friendly",
+      "variant": 2
+    },
+    {
+      "id": "R20-blunt-v1",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 1
+    },
+    {
+      "id": "R20-blunt-v2",
+      "skeletonId": "R20",
+      "style": "blunt",
+      "variant": 2
+    },
+    {
+      "id": "R20-historical-v1",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 1
+    },
+    {
+      "id": "R20-historical-v2",
+      "skeletonId": "R20",
+      "style": "historical",
+      "variant": 2
+    }
+  ],
+  "outputContract": {
+    "type": "array",
+    "record": {
+      "id": "R01-friendly-v1",
+      "skeletonId": "R01",
+      "style": "friendly",
+      "variant": 1,
+      "text": "민은 어제 도서관에서 책 세 권을 빌렸어요."
+    }
+  }
+}
