@@ -14,6 +14,7 @@
 | 2026-11-14 12:45:59 | PRSN/페르소나-리서치-의뢰 | 51ffcf2758 | 7cbb3dc | `4b2fab48ae`에 울지마·오케스트레이터·풀스택 전체 회신. R4 v1 90줄 구성·입력 누설 방지·호칭 정책·두 종류 v2 구분. ref `ginojang/clova-api-lab@c059a97`, origin/main 반영 후 발송 |
 | 2026-11-14 12:49:35 | PRSN/페르소나-리서치-의뢰 | b3af24311b | 10b34a6 | `77e8f9cb82`에 전체 회신. 지정 축 채점, 정책 보류 후 대상 88/58·spot 19/15, 지정 축 결과 누락 구분 전달. ref `ginojang/clova-api-lab@b19bcda`, origin/main 반영 후 발송 |
 | 2026-11-14 13:10:08 | PRSN/페르소나-리서치-의뢰 | 423ce87eaa | 5ba5f9d | `c68536094a`에 오케스트레이터·울지마·풀스택 전체 회신. v1·v2 재계수, 말씨 제외 안 raw unknown 2, 결과 도착 73/74, 정책 변경 run 구분·P14 블록 원문·실제 호출 원장 보완 요청. ref `ginojang/clova-api-lab@b54ca5f3a`, origin/main 반영 후 발송 |
+| 2026-11-14 13:15:22 | PRSN/페르소나-리서치-의뢰 | 46207c2e01 | 6041cd0 | `7a4d2c92c9`에 전체 회신. unknown 분리·두 블록 예산 생략 확인 해소, 3초 타이머와 DB 쓰기 완료 대기의 차이 및 누락 방지 후속 전달. ref `ginojang/clova-api-lab@14614a67d`, origin/main 반영 후 발송 |
 
 ## 수신한 결정과 정정
 
