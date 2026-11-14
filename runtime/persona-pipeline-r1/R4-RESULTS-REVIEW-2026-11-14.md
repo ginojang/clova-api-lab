@@ -1,6 +1,6 @@
 # R4 v1과 v2 결과 검토
 
-2026-11-14. 오케스트레이터 `488ffed42b`·`c68536094a` 실측과 후속 `7a4d2c92c9` 보완을 정적으로 검토했다. **v2 등급 일치 73/73과 결과 도착 73/74는 유지된다. 정책 제외 안의 raw unknown 2개가 addendum에 분리됐고, 재구성한 두 블록의 원문 해시·생략 0도 대조했다.** 남은 원장 문제는 종료 전 3초 대기가 DB 쓰기 완료를 보장하지 않는다는 점이다. 두 판 모두 AI 라벨 기준 단일 판정자 pretest이며 사람 기준 보정이나 차단 활성화 완료가 아니다.
+2026-11-14. 오케스트레이터의 v1·v2 실측과 `7a4d2c92c9`·`1db38ba049` 보완을 정적으로 검토했다. **v2 등급 일치 73/73과 결과 도착 73/74는 유지된다. raw unknown 분리·두 블록 생략 0에 이어, 등록된 원장 쓰기의 실제 완료·실패를 기다리는 수정도 소스에서 확인했다.** 남은 저장 조건은 DB 비활성 시 쓰기를 건너뛰고 0/0/0으로 성공 종료할 수 있는 경로다. 두 판 모두 AI 라벨 기준 단일 판정자 pretest이며 사람 기준 보정이나 차단 활성화 완료가 아니다.
 
 클로버는 커밋 자료·판정 및 집계 소스·규격을 읽고 저장된 결과를 대조했다. 모델 호출·관문 조회·실험 실행·원자료 변경은 하지 않았다. 실제 서빙에서 그대로 실행했다는 설명과 당시 DB 상태는 담당자 보고다.
 
@@ -112,9 +112,13 @@ raw 계수의 단위는 평가 행이다. v1의 공유 입력 30/56도 각 축�
 
 동시에 `judge_sample`은 88·103행으로 각각 한 행 부족하다는 보고를 받았다. 결과 JSON의 행은 온전히 남았고 이전 판과 동일하므로 이 원장 누락을 응답 결과 소실이나 성능 변화로 처리하지 않는다. 종료 전에 비동기 쓰기가 끝나지 않았다는 설명은 소스상 가능한 경로와 맞지만, 누락 행별 원인을 직접 조사한 것은 아니다.
 
-**`250669d2` 수정은 DB 완료 대기가 아니라 3초 지연이다.** [집계 도구 104행](https://github.com/ginojang/GanpanAI/blob/250669d2bae7d4086dfb2bca361e58f17a349325/elda-orchestrator/src/tools/r4PersonaJudge.ts#L104)은 타이머 뒤 `process.exit(0)`을 호출한다. [personaJudge 64행](https://github.com/ginojang/GanpanAI/blob/250669d2bae7d4086dfb2bca361e58f17a349325/elda-orchestrator/src/core/personaJudge.ts#L64)은 여전히 `void pool.query(...).catch(logger.warn)` 후 반환하므로 삽입 Promise의 완료·실패를 집계 도구가 확인하지 못한다. 3초보다 긴 DB 지연이나 쓰기 실패에 대해 저장 완료를 보장하지 않는다.
+`250669d2`의 종료 전 3초 대기는 실제 쓰기 완료를 보장하지 않아 `46207c2e01`로 재검토를 요청했다. 후속 **`0df1f3851a87a3eca9e7c6b69c3ec94644ffe8be`에서 이 문제는 등록된 쓰기 범위에 대해 수정됐다.** [personaJudge 34~45행](https://github.com/ginojang/GanpanAI/blob/0df1f3851a87a3eca9e7c6b69c3ec94644ffe8be/elda-orchestrator/src/core/personaJudge.ts#L34)은 INSERT Promise를 모아 성공·실패를 세고, pending이 빌 때까지 `Promise.allSettled`로 기다린다. [집계 도구 106행](https://github.com/ginojang/GanpanAI/blob/0df1f3851a87a3eca9e7c6b69c3ec94644ffe8be/elda-orchestrator/src/tools/r4PersonaJudge.ts#L106)은 flush 결과를 기다린 뒤 실패 또는 예상/완료 불일치에 exit 2를 반환한다. 고정 시간 대기를 실제 완료 회수로 바꿨음을 확인했다.
 
-따라서 원장 누락 방지 완료로 닫지 않는다. 후속 설계는 검증 도구에서 미완료 쓰기를 추적해 종료 전에 완료/실패를 회수하고 예상 저장 수와 실제 완료 수를 보고하는 방식이다. 지연·실패 조건의 저장 검증은 담당자의 별도 확인이며 모델 재호출을 전제로 하지 않는다. 이미 빠진 2행의 복구 완료도 현재 보고에는 없다.
+`1db38ba049`의 정상 DB 5/5/0·잘못된 비밀번호 5/0/5는 담당자의 expected/done/failed 검증 보고다. 디코드 요청은 닫힌 포트로 보내 모델 호출 없이 확인했다고 보고했다. 클로버는 이를 재실행하지 않았다. 새 ledger 요약은 결과 JSON을 쓴 **뒤 stderr로 출력**되므로 종료 코드와 stderr도 실행 근거로 보존해야 한다. 판정 SYSTEM MD5는 `db9d5f4d913ac8418aa408861252e256`로 동일하고 두 결과 파일도 `250669d2`와 바이트 단위로 동일하다.
+
+다만 **DB 비활성은 잘못된 비밀번호와 다른 경로**다. [chatDb 13~18행](https://github.com/ginojang/GanpanAI/blob/0df1f3851a87a3eca9e7c6b69c3ec94644ffe8be/elda-orchestrator/src/core/chatDb.ts#L13)은 PGCHAT_USER/PASSWORD 중 하나가 없으면 pool을 만들지 않는다. 이때 personaStore는 fallback을 반환하고 도구는 source를 확인하지 않은 채 진행할 수 있다. [personaJudge 78행](https://github.com/ginojang/GanpanAI/blob/0df1f3851a87a3eca9e7c6b69c3ec94644ffe8be/elda-orchestrator/src/core/personaJudge.ts#L78)의 `if (pool)` 때문에 쓰기가 track되지 않아 예상·완료·실패가 0/0/0이고 종료 검사는 성공한다. 즉 현재 expected는 **모든 판정 시도 수가 아니라 등록된 INSERT 수**다. 기존 v1·v2 실행이 이 경로를 탔다는 주장은 아니며, 앞으로의 검증 도구에서는 DB/정본 준비를 먼저 확인하거나 미등록 쓰기를 별도 실패로 세는 조건이 필요하다.
+
+과거 누락 복구는 별도 완료 보고를 받았다. 담당자는 `r4-090`(be33df53)·`r4v2-103`(db9d5f4d)을 기존 결과 파일에서 복구해 `judge_sample`이 89·104행이 됐다고 밝혔다. note는 `recovered_from:<파일>#<id>`, ms는 NULL, created_at은 복구 시각으로 남겼다고 한다. 두 ID가 원자료에 존재하며 판정 값이 pass/none인 것은 직접 확인했다. DB 삽입·행 수는 담당 보고이며 직접 조회하지 않았다. 복구 행의 시각·ms를 원래 호출 지연으로 사용하지 않고, 이 복구를 새 모델 판정으로 세지 않는다.
 
 같은 집계 소스의 cid는 `cv-orch01-verify-r4-v1`로 고정돼 있으므로 원장 연결에는 dataset SHA·prompt 판·실행 시각 등으로 실행을 구분한다. 사람 annotation 갱신과 DB 원장 복구를 새 판정 실행으로 혼동하지 않는다.
 
