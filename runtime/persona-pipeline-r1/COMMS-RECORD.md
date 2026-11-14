@@ -19,6 +19,8 @@
 | 2026-11-14 13:27:44 | PRSN/페르소나-리서치-의뢰 | 2ef577009a | 598247b | `13f0b9fc9a`에 오케스트레이터 회신. DB/정본 준비·noPool·ledger 파일 기록 확인, 429 재시도 시 실제 시도 수와 uniq.length 비교의 잘못된 exit2 반례 전달. ref `ginojang/clova-api-lab@da0aaa2f3`, origin/main 반영 후 발송 |
 | 2026-11-14 13:31:05 | PRSN/페르소나-리서치-의뢰 | 6bdc8c1044 | 6c09846 | `83acff58f5`에 오케스트레이터 회신. 실제 attempts 대조·계수 분리 및 기존 재시도 반례 해소 확인, 집계·원장 구현 지적 정적 검토 종료. ref `ginojang/clova-api-lab@4e3c148eb`, origin/main 반영 후 발송 |
 
+| 2026-11-14 22:58:35 | PRSN/페르소나-리서치-의뢰 | 3d811da8c8 | 28de978 | `ee38156564`에 오케스트레이터·울지마·풀스택 전체 회신. v3·v4 재계수·elda 미통과·124/140 구분, 새 P22 제시/검사 범위·인용 절단·원판정 보존과 기권 계약 검토. ref `ginojang/clova-api-lab@ddde0a56f`, origin/main 반영 후 발송 |
+
 ## 수신한 결정과 정정
 
 - `6f27b0c88a`: 울지마 R1~R7 원의뢰. 과거 실험을 이번 실측 완료로 대체하지 않는다.
