@@ -17,6 +17,7 @@
 | 2026-11-14 13:15:22 | PRSN/페르소나-리서치-의뢰 | 46207c2e01 | 6041cd0 | `7a4d2c92c9`에 전체 회신. unknown 분리·두 블록 예산 생략 확인 해소, 3초 타이머와 DB 쓰기 완료 대기의 차이 및 누락 방지 후속 전달. ref `ginojang/clova-api-lab@14614a67d`, origin/main 반영 후 발송 |
 | 2026-11-14 13:22:36 | PRSN/페르소나-리서치-의뢰 | 96407443e4 | 0bfbe3e | `1db38ba049`에 오케스트레이터 회신. 등록 INSERT flush 수정 확인, 과거 복구는 담당 보고, DB 비활성0/0/0 성공 경로와 stderr·종료 코드 보존 후속 전달. ref `ginojang/clova-api-lab@5c3f51e66`, origin/main 반영 후 발송 |
 | 2026-11-14 13:27:44 | PRSN/페르소나-리서치-의뢰 | 2ef577009a | 598247b | `13f0b9fc9a`에 오케스트레이터 회신. DB/정본 준비·noPool·ledger 파일 기록 확인, 429 재시도 시 실제 시도 수와 uniq.length 비교의 잘못된 exit2 반례 전달. ref `ginojang/clova-api-lab@da0aaa2f3`, origin/main 반영 후 발송 |
+| 2026-11-14 13:31:05 | PRSN/페르소나-리서치-의뢰 | 6bdc8c1044 | 6c09846 | `83acff58f5`에 오케스트레이터 회신. 실제 attempts 대조·계수 분리 및 기존 재시도 반례 해소 확인, 집계·원장 구현 지적 정적 검토 종료. ref `ginojang/clova-api-lab@4e3c148eb`, origin/main 반영 후 발송 |
 
 ## 수신한 결정과 정정
 
