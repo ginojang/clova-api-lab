@@ -35,5 +35,6 @@
 - `c68536094a`: v2 실측 `GanpanAI@cb4ff7c6` 재계수. 등급 73/73·결과 도착 73/74·spot AI 일치 16/16 확인. `policy_unready_register`에 raw unknown 2(085 파싱 실패·098 기권)가 포함돼 전체 실행 unknown 0으로 확대할 수 없음을 기록했다. 정체 block 출력 조건의 0/26·0/18과 지정 축 분류·실제 차단 동작을 구분한다.
 - `7a4d2c92c9`: `GanpanAI@250669d2` addendum 검토. 기존 rows/report 보존, raw unknown 분리, 재구성 블록 MD5·추정73/132·생략0 확인. call_log89/104·재시도0·모델/echo와 judge_sample88/103은 담당자 조회 보고로 기록. 소스 수정은 종료 전 3초 타이머뿐이라 DB 쓰기 완료 보장·누락 복구 완료로 처리하지 않았다.
 - `1db38ba049`: `GanpanAI@0df1f385`에서 등록 INSERT Promise를 실제 회수하고 실패/불일치에 exit2하는 수정 확인. 정상5/5/0·잘못된 비밀번호5/0/5와 r4-090·r4v2-103 복구 후 원장89/104는 담당 보고로 기록. 결과 파일·판정 지시 불변 확인. DB 비활성 시 쓰기가 등록되지 않아0/0/0 성공하는 경로는 별도 잔여다.
+- `13f0b9fc9a`: `GanpanAI@0934c6d7`에서 DB/정본 미준비 시 판정 전 exit3, noPool 실패 계수, flush 뒤 report.ledger 기록 확인. 도구exit3·함수5/0/5(noPool5)는 담당 보고. 새 종료 조건이 ledger.expected를 uniq.length와 비교하므로 429 재시도 후 저장 성공에도 exit2가 되는 반례를 후속으로 기록했다.
 
 클로버가 수행한 이번 의뢰의 모델 생성 호출은 0회다. 오케스트레이터의 실측 보고와 클로버의 원자료 검토를 구분한다. 역할 변경 전에 수행한 health/models 읽기 관측과 이후의 API 접근 중단도 구분한다. 이전 턴의 HCX 파일럿 24회는 별도 작업·원장이다.
