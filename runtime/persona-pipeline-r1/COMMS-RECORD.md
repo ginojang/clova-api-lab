@@ -37,5 +37,6 @@
 - `7a4d2c92c9`: `GanpanAI@250669d2` addendum 검토. 기존 rows/report 보존, raw unknown 분리, 재구성 블록 MD5·추정73/132·생략0 확인. call_log89/104·재시도0·모델/echo와 judge_sample88/103은 담당자 조회 보고로 기록. 소스 수정은 종료 전 3초 타이머뿐이라 DB 쓰기 완료 보장·누락 복구 완료로 처리하지 않았다.
 - `1db38ba049`: `GanpanAI@0df1f385`에서 등록 INSERT Promise를 실제 회수하고 실패/불일치에 exit2하는 수정 확인. 정상5/5/0·잘못된 비밀번호5/0/5와 r4-090·r4v2-103 복구 후 원장89/104는 담당 보고로 기록. 결과 파일·판정 지시 불변 확인. DB 비활성 시 쓰기가 등록되지 않아0/0/0 성공하는 경로는 별도 잔여다.
 - `13f0b9fc9a`: `GanpanAI@0934c6d7`에서 DB/정본 미준비 시 판정 전 exit3, noPool 실패 계수, flush 뒤 report.ledger 기록 확인. 도구exit3·함수5/0/5(noPool5)는 담당 보고. 새 종료 조건이 ledger.expected를 uniq.length와 비교하므로 429 재시도 후 저장 성공에도 exit2가 되는 반례를 후속으로 기록했다.
+- `83acff58f5`: `GanpanAI@d69efc55`에서 매 호출 직전 attempts 증가, ledger.expected와 실제 시도 수 대조, judge_attempts/retries/unique_inputs 분리를 확인했다. 기존 429→성공 반례는 소스상 exit0이며, 판정 함수·지시 및 결과 파일은 불변이다. 이번 집계·원장 구현 지적은 정적 검토상 해소로 기록했고 추가 실행 검증으로 표시하지 않았다.
 
 클로버가 수행한 이번 의뢰의 모델 생성 호출은 0회다. 오케스트레이터의 실측 보고와 클로버의 원자료 검토를 구분한다. 역할 변경 전에 수행한 health/models 읽기 관측과 이후의 API 접근 중단도 구분한다. 이전 턴의 HCX 파일럿 24회는 별도 작업·원장이다.

@@ -1,6 +1,6 @@
 # R4 v1과 v2 결과 검토
 
-2026-11-14. 오케스트레이터의 v1·v2 실측과 `13f0b9fc9a`까지의 보완을 정적으로 검토했다. **v2 등급 일치 73/73과 결과 도착 73/74는 유지된다. raw unknown 분리·블록 생략 0·실제 원장 완료 회수에 이어, DB 비활성 및 정본 fallback 상태에서 판정 전에 종료하는 수정도 확인했다.** 새 종료 검사에서 고유 입력 수를 판정 시도 수로 사용해 429 재시도 후 저장이 모두 성공해도 exit 2가 되는 계수 문제가 남았다. 두 판 모두 AI 라벨 기준 단일 판정자 pretest이며 사람 기준 보정이나 차단 활성화 완료가 아니다.
+2026-11-14. 오케스트레이터의 v1·v2 실측과 `83acff58f5`까지의 보완을 정적으로 검토했다. **v2 등급 일치 73/73과 결과 도착 73/74는 유지된다. raw unknown 분리·블록 생략 0·원장 완료 회수·DB/정본 준비 검사에 이어, 재시도를 포함한 시도 수 대조도 수정됐다.** 이번에 지적한 집계·원장 구현 항목은 소스 검토 기준으로 해소됐다. 두 판 모두 AI 라벨 기준 단일 판정자 pretest이며 사람 기준 보정이나 차단 활성화 완료가 아니다.
 
 클로버는 커밋 자료·판정 및 집계 소스·규격을 읽고 저장된 결과를 대조했다. 모델 호출·관문 조회·실험 실행·원자료 변경은 하지 않았다. 실제 서빙에서 그대로 실행했다는 설명과 당시 DB 상태는 담당자 보고다.
 
@@ -118,9 +118,11 @@ raw 계수의 단위는 평가 행이다. v1의 공유 입력 30/56도 각 축�
 
 **DB 비활성의 0/0/0 성공 경로는 `0934c6d75ce9e1cb71945f50d2b90a8eb144853d`에서 해소됐다.** [도구 31~37행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/tools/r4PersonaJudge.ts#L31)은 pool이 없거나 persona.source가 db가 아니면 판정 호출 루프 전에 exit 3으로 끝낸다. [판정 함수 78행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/core/personaJudge.ts#L78)도 pool 없는 시도를 expected·failed·noPool에 각각 더한다. 담당자는 모델 호출 없이 도구 exit 3·함수 5/0/5(noPool 5)를 확인했다고 보고했다(`13f0b9fc9a`). 소스 수정 확인과 담당자 실행 보고를 구분한다.
 
-다만 같은 수정의 **판정 시도 수 대조에는 재시도 반례가 있다.** [도구 47~50행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/tools/r4PersonaJudge.ts#L47)은 429에서 다시 `judgePersona`를 부르지만, [110~112행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/tools/r4PersonaJudge.ts#L110)은 `uniq.length`를 judge_attempts로 기록하고 ledger.expected와 비교한다. 고유 입력 1개가 429 후 성공하고 두 시도의 원장 쓰기가 모두 완료된 경우 expected=2·done=2·failed=0인데 uniq.length=1이어서 exit 2가 된다. 이는 소스의 조건을 대조한 반례이며 실제 재시도 실험은 하지 않았다.
+이전 `0934c6d7`의 **판정 시도 수 대조에는 재시도 반례가 있었다.** [도구 47~50행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/tools/r4PersonaJudge.ts#L47)은 429에서 다시 `judgePersona`를 부르지만, [110~112행](https://github.com/ginojang/GanpanAI/blob/0934c6d75ce9e1cb71945f50d2b90a8eb144853d/elda-orchestrator/src/tools/r4PersonaJudge.ts#L110)은 `uniq.length`를 judge_attempts로 기록하고 ledger.expected와 비교했다. 고유 입력 1개가 429 후 성공하고 두 시도의 원장 쓰기가 모두 완료된 경우 expected=2·done=2·failed=0인데 uniq.length=1이어서 exit 2가 되는 조건이었다.
 
-후속은 호출 루프에서 **429 재시도를 포함한 실제 judgePersona 시도 수**를 별도로 세어 ledger.expected와 비교하고, unique_inputs는 고유 입력 수로 유지하는 것이다. `judge_attempts`, `retries`, `unique_inputs`를 구분하면 완료된 저장을 누락으로 오인하지 않는다. 기존 v1·v2의 재시도 0이라는 담당 보고와 성능 집계는 이 후속 종료 조건 문제로 바뀌지 않는다.
+**`d69efc55d550781d9d36e13f0cdb31d557f98274`에서 이 계수 문제도 해소됐다.** [49~50행](https://github.com/ginojang/GanpanAI/blob/d69efc55d550781d9d36e13f0cdb31d557f98274/elda-orchestrator/src/tools/r4PersonaJudge.ts#L49)은 `judgePersona`를 부르기 직전마다 attempts를 증가시키며, [112~115행](https://github.com/ginojang/GanpanAI/blob/d69efc55d550781d9d36e13f0cdb31d557f98274/elda-orchestrator/src/tools/r4PersonaJudge.ts#L112)은 ledger.expected를 attempts와 대조한다. report.ledger에는 judge_attempts=attempts, retries=attempts−unique_inputs, unique_inputs를 각각 저장한다. 실제 flush → ledger 포함 파일 저장 → 종료 순서도 유지된다.
+
+앞선 반례는 이제 attempts=2·expected=2·done=2·failed=0·retries=1·unique_inputs=1이므로 exit 0 조건을 만족한다. 이는 소스 분기를 대조한 확인이며 새 재시도 실행 결과는 아니다. 담당자의 `83acff58f5`에도 추가 실행 결과는 제시되지 않았다. 판정 함수 파일·SYSTEM 해시와 기존 v1·v2 결과 파일은 `0934c6d7`과 동일하다. 기존 성능 집계와 재시도 0이라는 담당 보고도 그대로 유지한다.
 
 과거 누락 복구는 별도 완료 보고를 받았다. 담당자는 `r4-090`(be33df53)·`r4v2-103`(db9d5f4d)을 기존 결과 파일에서 복구해 `judge_sample`이 89·104행이 됐다고 밝혔다. note는 `recovered_from:<파일>#<id>`, ms는 NULL, created_at은 복구 시각으로 남겼다고 한다. 두 ID가 원자료에 존재하며 판정 값이 pass/none인 것은 직접 확인했다. DB 삽입·행 수는 담당 보고이며 직접 조회하지 않았다. 복구 행의 시각·ms를 원래 호출 지연으로 사용하지 않고, 이 복구를 새 모델 판정으로 세지 않는다.
 
