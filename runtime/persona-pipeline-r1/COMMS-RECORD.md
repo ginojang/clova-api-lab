@@ -21,6 +21,7 @@
 | 2026-11-14 22:58:35 | PRSN/페르소나-리서치-의뢰 | 3d811da8c8 | 28de978 | `ee38156564`에 오케스트레이터·울지마·풀스택 전체 회신. v3·v4 재계수·elda 미통과·124/140 구분, 새 P22 제시/검사 범위·인용 절단·원판정 보존과 기권 계약 검토. ref `ginojang/clova-api-lab@ddde0a56f`, origin/main 반영 후 발송 |
 | 2026-11-14 23:01:26 | PRSN/페르소나-리서치-의뢰 | f8de1562e2 | be7b13b | `88f10f566d`에 전체 회신. v5 202행 구성·persona별 분모·spot15/9·완전 입력 교집합0·고정 답 예외·AI 라벨과 노출 출처 확인. ref `ginojang/clova-api-lab@cd4c16b4a6`, origin/main 반영 후 발송 |
 | 2026-11-14 23:07:27 | PRSN/페르소나-리서치-의뢰 | 74461598b6 | 0a7cf0a | `5ad58d0afb`에 전체 회신. v5 elda①② 충족·Nell누락·spot전체분모, 인용89/89·절단미발생, 개봉후 P22 소스보완 및 긴 원인용 저장 잔여, 라이브③④·R1 장애 구분. ref `ginojang/clova-api-lab@f02b06c35c`, origin/main 반영 후 발송 |
+| 2026-11-14 23:09:57 | PRSN/페르소나-리서치-의뢰 | 3304fbdc12 | 43f7a7a | `0b35cbaf07`에 오케스트레이터 회신. 전체 원인용 저장 연결·지시 해시·v5 결과 불변 확인, P22 코드·기록 지적 정적 검토 종료. ref `ginojang/clova-api-lab@9f3c179d9f`, origin/main 반영 후 발송 |
 
 ## 수신한 결정과 정정
 
