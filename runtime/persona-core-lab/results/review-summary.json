@@ -1,0 +1,70 @@
+{
+  "sourceSha256": "5ce3fd42549377ecaaf2aba104fe342eb402337f89283daf7e5cfa8800661f8f",
+  "reviewerType": "independent_AI_not_human",
+  "groups": {
+    "context": {
+      "identityIntegrity": {
+        "pass": 11,
+        "fail": 1
+      },
+      "requestedNamesComplete": {
+        "na": 6,
+        "fail": 4,
+        "pass": 2
+      },
+      "latestCorrection": {
+        "na": 10,
+        "pass": 2
+      },
+      "register": {
+        "pass": 10,
+        "fail": 2
+      },
+      "empathy": {
+        "pass": 3,
+        "na": 8,
+        "uncertain": 1
+      },
+      "capabilityHonesty": {
+        "pass": 4,
+        "na": 8
+      },
+      "practicalHelp": {
+        "pass": 10,
+        "na": 2
+      }
+    },
+    "system": {
+      "identityIntegrity": {
+        "pass": 12
+      },
+      "requestedNamesComplete": {
+        "na": 6,
+        "pass": 2,
+        "fail": 4
+      },
+      "latestCorrection": {
+        "na": 10,
+        "pass": 2
+      },
+      "register": {
+        "pass": 11,
+        "fail": 1
+      },
+      "empathy": {
+        "fail": 1,
+        "na": 8,
+        "pass": 2,
+        "uncertain": 1
+      },
+      "capabilityHonesty": {
+        "pass": 4,
+        "na": 8
+      },
+      "practicalHelp": {
+        "pass": 10,
+        "na": 2
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "live": true,
+  "plannedCalls": 24,
+  "attempts": 24,
+  "notAttempted": 0,
+  "groups": {
+    "context": {
+      "attempts": 12,
+      "responses": 12,
+      "nonemptyStop": 12,
+      "errors": 0,
+      "input": 3907,
+      "output": 917,
+      "usageKnown": 12
+    },
+    "system": {
+      "attempts": 12,
+      "responses": 12,
+      "nonemptyStop": 12,
+      "errors": 0,
+      "input": 2970,
+      "output": 925,
+      "usageKnown": 12
+    }
+  },
+  "executorTurns": 24,
+  "executorOk": 24,
+  "executorFailed": 0,
+  "fixtureErrors": null,
+  "fixtureErrorsObservable": false,
+  "usageComplete": true,
+  "executionCompleted": true,
+  "semanticPassRate": null,
+  "note": "Counts describe execution only. Original pilot did not expose fixture exceptions; do not infer zero from absent fields. Synthetic and live must remain separate."
+}

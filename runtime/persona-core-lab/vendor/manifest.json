@@ -1,0 +1,14 @@
+{
+  "repository": "GanpanAI",
+  "commit": "523571772cda91429769ed08e915044004b9778e",
+  "source": "elda-orchestrator/harness/executor",
+  "contract": "harness v1.000 / hook v1.0",
+  "files": {
+    "src/main.ts": "903775cc9625ffa52d83afdbdfd296a5957d5e5c83ac093531d1199c8bc5ed88",
+    "src/brains.ts": "327329d8fabe9b546b3fcb66f42b1e72b6c93c4fe731ee9d62c8702d76f4f68d",
+    "src/hooks.ts": "16648cc0dfaabded97160be74231d617215bb371ccd0b8b723e174b8cef43efd",
+    "src/events.ts": "a987ef9de8014912862e9169399c6b2b334a25d0793d0938c9f54327292f7a31",
+    "src/mcp.ts": "ad74e7952ccbc4837b6bb205a30f806426c59fd26c1fd729a67ad2d41c11df1e",
+    "eldacore-hooks.ts": "bbc8803e242b593e764fd6cb8a6adb8ff24ba03c6f6e39426cb8aef0681dfef5"
+  }
+}

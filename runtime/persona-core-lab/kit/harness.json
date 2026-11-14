@@ -1,0 +1,23 @@
+{
+  "name": "Core unchanged executor persona audit",
+  "spec": "1.000",
+  "command": [
+    "node",
+    "${LAB_ROOT}/vendor/src/main.ts"
+  ],
+  "env": {
+    "ELDA_MODEL": "{brain}",
+    "ELDA_WORKSPACE": "{workspace}",
+    "ELDA_MCP": "[\"node\",\"${LAB_ROOT}/kit/mcp/main.ts\",\"mcp\",\"--workspace\",\"{workspace}\"]",
+    "ELDA_HOOKS": "",
+    "ELDA_HISTORY": "0",
+    "ELDA_BRAIN_ALLOW": "",
+    "ELDA_HOOK_FAIL_REPLY": ""
+  },
+  "brain": "scripted:${LAB_ROOT}/kit/fixtures/memo-basic.json",
+  "prompt": "메모판 하나 만들어 줘",
+  "maxTurnsEnv": "ELDA_MAX_TURNS",
+  "turnTimeoutMs": 30000,
+  "hooksEnv": "ELDA_HOOKS",
+  "altBrain": "scripted:${LAB_ROOT}/kit/fixtures/alt-text.json"
+}

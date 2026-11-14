@@ -1,0 +1,146 @@
+{
+  "name": "Core unchanged executor persona audit",
+  "spec": "1.000",
+  "kit": "0.817",
+  "at": "2026-11-14T09:00:15.595Z",
+  "conforms": true,
+  "fail": 0,
+  "warn": 0,
+  "findings": [
+    {
+      "rule": "H0",
+      "level": "PASS",
+      "msg": "Core unchanged executor persona audit — 규격 1.000 (키트 0.817)"
+    },
+    {
+      "rule": "H4",
+      "level": "PASS",
+      "msg": "시작하면 ready"
+    },
+    {
+      "rule": "H5",
+      "level": "PASS",
+      "msg": "turn_end 칸(usage 4칸 포함) · model scripted:/home/gino/WorkArea/clova-api-lab/runtime/persona-core-lab/kit/fixtures/memo-basic.json"
+    },
+    {
+      "rule": "H33",
+      "level": "PASS",
+      "msg": "endReason completed"
+    },
+    {
+      "rule": "H40",
+      "level": "PASS",
+      "msg": "결과 칸 runCompleted:true policyRejected:false toolFailed:false"
+    },
+    {
+      "rule": "H42",
+      "level": "PASS",
+      "msg": "costBasis unknown"
+    },
+    {
+      "rule": "H53",
+      "level": "PASS",
+      "msg": "diag {\"brainMs\":0,\"toolMs\":1,\"retried\":false}"
+    },
+    {
+      "rule": "H7",
+      "level": "PASS",
+      "msg": "turn_end 에 대화 기록 전체를 싣지 않는다"
+    },
+    {
+      "rule": "H6",
+      "level": "PASS",
+      "msg": "턴이 끝나면 idle"
+    },
+    {
+      "rule": "H2",
+      "level": "PASS",
+      "msg": "모르는 op → error{bad_input}"
+    },
+    {
+      "rule": "H2",
+      "level": "PASS",
+      "msg": "깨진 줄 → error{bad_input}"
+    },
+    {
+      "rule": "H2",
+      "level": "PASS",
+      "msg": "new → sessionId 바뀜"
+    },
+    {
+      "rule": "H1",
+      "level": "PASS",
+      "msg": "stdout 은 JSON 줄만(18줄)"
+    },
+    {
+      "rule": "H1",
+      "level": "PASS",
+      "msg": "EOF 면 정리하고 끝난다"
+    },
+    {
+      "rule": "H3",
+      "level": "PASS",
+      "msg": "줄 머리 · seq 1부터 빠짐없이"
+    },
+    {
+      "rule": "H4",
+      "level": "PASS",
+      "msg": "이벤트 이름이 규격 목록 안"
+    },
+    {
+      "rule": "H10",
+      "level": "PASS",
+      "msg": "출력에 열쇠 모양 글 없음"
+    },
+    {
+      "rule": "H34",
+      "level": "PASS",
+      "msg": "왕복 상한 1 → turn_end{ok:false, endReason:max_turns}"
+    },
+    {
+      "rule": "H38",
+      "level": "SKIP",
+      "msg": "harness.json 에 approvalArgs·approvalEnv 가 없다 — ② 승인 시험을 건너뛴다(③ 서빙 실행기면 정상)"
+    },
+    {
+      "rule": "H56",
+      "level": "SKIP",
+      "msg": "multiCallEnv·approvalArgs 가 없다 — 같은 응답 여러 호출 시험을 건너뛴다"
+    },
+    {
+      "rule": "H57",
+      "level": "SKIP",
+      "msg": "harness.json 에 notifyEnv 가 없다 — 알림 출처·전달(H57·H58) 시험을 건너뛴다"
+    },
+    {
+      "rule": "H61",
+      "level": "SKIP",
+      "msg": "harness.json 에 feedMcp 가 없다 — 범용 피드 MCP 시험을 건너뛴다"
+    },
+    {
+      "rule": "H36",
+      "level": "PASS",
+      "msg": "block+reason → 두뇌 없이 답: text [\"KIT 거절 문장\"] · turn_end ok:true answeredBy:hook turns:0"
+    },
+    {
+      "rule": "H36",
+      "level": "PASS",
+      "msg": "UserPromptSubmit 시간 초과 → error{hook_failed} · 두뇌 0 (오류 [\"hook_failed\"] · turns 0)"
+    },
+    {
+      "rule": "H36",
+      "level": "PASS",
+      "msg": "ELDA_HOOK_FAIL_REPLY → 그 문장 · turn_end ok:false hookFailed:true"
+    },
+    {
+      "rule": "H13",
+      "level": "PASS",
+      "msg": "훅이 고른 두뇌(허용 목록 안) → 이 턴 model scripted:/home/gino/WorkArea/clova-api-lab/runtime/persona-core-lab/kit/fixtures/alt-text.json"
+    },
+    {
+      "rule": "H13",
+      "level": "PASS",
+      "msg": "허용 목록 밖 두뇌 → notice 있음 · 기본 두뇌 scripted:/home/gino/WorkArea/clova-api-lab/runtime/persona-core-lab/kit/fixtures/memo-basic.json"
+    }
+  ]
+}

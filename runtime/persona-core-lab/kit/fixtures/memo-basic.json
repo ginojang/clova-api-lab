@@ -1,0 +1,5 @@
+[
+  [{"type": "text", "text": "메모판을 만듭니다."}, {"type": "tool_use", "id": "call_t1", "name": "document_create", "input": {"width": 300, "height": 100}}],
+  [{"type": "text", "text": "300x100mm 메모판을 만들었습니다."}],
+  [{"type": "text", "text": "새 대화입니다."}]
+]

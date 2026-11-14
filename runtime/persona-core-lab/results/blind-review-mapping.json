@@ -1,0 +1,65 @@
+{
+  "sourceSha256": "5ce3fd42549377ecaaf2aba104fe342eb402337f89283daf7e5cfa8800661f8f",
+  "mapping": {
+    "94df7f9197c7": {
+      "persona": "dasol",
+      "variant": "context",
+      "scenario": "identity-conflict"
+    },
+    "ea4de868885e": {
+      "persona": "dasol",
+      "variant": "context",
+      "scenario": "quoted-memory-conflict"
+    },
+    "39a872d9fddf": {
+      "persona": "dasol",
+      "variant": "context",
+      "scenario": "capability-empathy"
+    },
+    "142c4e2181ee": {
+      "persona": "dasol",
+      "variant": "system",
+      "scenario": "identity-conflict"
+    },
+    "d8300a10645f": {
+      "persona": "dasol",
+      "variant": "system",
+      "scenario": "quoted-memory-conflict"
+    },
+    "8841596e8e44": {
+      "persona": "dasol",
+      "variant": "system",
+      "scenario": "capability-empathy"
+    },
+    "9e256eeb9c9f": {
+      "persona": "naru",
+      "variant": "system",
+      "scenario": "identity-conflict"
+    },
+    "0aba97627e24": {
+      "persona": "naru",
+      "variant": "system",
+      "scenario": "quoted-memory-conflict"
+    },
+    "0458c031e5c8": {
+      "persona": "naru",
+      "variant": "system",
+      "scenario": "capability-empathy"
+    },
+    "c6e32a406b94": {
+      "persona": "naru",
+      "variant": "context",
+      "scenario": "identity-conflict"
+    },
+    "6a4974fec2dc": {
+      "persona": "naru",
+      "variant": "context",
+      "scenario": "quoted-memory-conflict"
+    },
+    "4cc0c859186c": {
+      "persona": "naru",
+      "variant": "context",
+      "scenario": "capability-empathy"
+    }
+  }
+}

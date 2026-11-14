@@ -1,0 +1,18 @@
+{
+  "repo": "GanpanAI",
+  "commit": "523571772cda91429769ed08e915044004b9778e",
+  "files": {
+    "harness/HOOK_CONTRACT.md": {
+      "snapshot": "HOOK_CONTRACT.md",
+      "sha256": "5e4973d835f77bf78841ac7d096a6d9dab70ded9598107b563c09b5e42949280"
+    },
+    "src/router/v1_0/turn.ts": {
+      "snapshot": "turn.ts",
+      "sha256": "b9da7d16525e3c45cad2cd583e2fa3b245f086083b5b33cd05e82b6ca34f55ec"
+    },
+    "src/core/harnessTurn.ts": {
+      "snapshot": "harnessTurn.ts",
+      "sha256": "ed9443a5c4905b4964abb8a686540131cb5bf4b0eee31c721f67c8eb331a189f"
+    }
+  }
+}

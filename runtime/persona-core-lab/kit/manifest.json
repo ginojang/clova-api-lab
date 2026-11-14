@@ -1,0 +1,39 @@
+{
+  "repository": "Elda-Spec",
+  "commit": "7ca01ca6458d4ce7ec7b630efc44c2a295ba241b",
+  "kit": "0.817",
+  "files": {
+    "harness/kit/check.ts": {
+      "snapshot": "check.ts",
+      "sha256": "3f3722f64130325c344cc9caf8cc918462e4c1cdcc3566c3982dbe4452bc4d50"
+    },
+    "harness/template/fixtures/memo-basic.json": {
+      "snapshot": "fixtures/memo-basic.json",
+      "sha256": "3e0e6ca6aeb11923322b632e86a7c134ffb90a956481307c9fd628e393af8caa"
+    },
+    "harness/kit/examples/fixtures/alt-text.json": {
+      "snapshot": "fixtures/alt-text.json",
+      "sha256": "95801f1f1986ee50792ff7ae9c98ca3479c514e72a2e7b464de76fd25f6c0bec"
+    },
+    "mcp-wrapper/template/src/tools.ts": {
+      "snapshot": "mcp/tools.ts",
+      "sha256": "be162e60fef9e4a94ffb738cbaaa97711e22671ea7e3de5938896fbe596c82ea"
+    },
+    "mcp-wrapper/template/src/server.ts": {
+      "snapshot": "mcp/server.ts",
+      "sha256": "3f5438c0467cc3dc729b5175fb9ddfbffa317b9c07f55bef9004e0e4bd482732"
+    },
+    "mcp-wrapper/template/src/app.ts": {
+      "snapshot": "mcp/app.ts",
+      "sha256": "f1a7c99bb0a16dfd56980acc43b2369bcf57cf98a55e9158232a0799b1621391"
+    },
+    "mcp-wrapper/template/src/kit.ts": {
+      "snapshot": "mcp/kit.ts",
+      "sha256": "03078c218eecfda110bd59e7b4969e666dac8b3f520a9f80a225d9b5e55f1e93"
+    },
+    "mcp-wrapper/template/src/main.ts": {
+      "snapshot": "mcp/main.ts",
+      "sha256": "67de11665e76ab07dc4db2e3c1f30ed7f06ac8acd27a7968aa72cb729d0f5b36"
+    }
+  }
+}
