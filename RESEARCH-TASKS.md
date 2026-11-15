@@ -12,7 +12,7 @@
 | R2 긴 대화 | [재판정 범위·분모 검토](runtime/persona-pipeline-r1/R1-R2-LABEL-REJUDGE-REVIEW-2026-11-15.md) | 탐침209는 신·구판 모두pass, 본대화1920은 구판정 그대로. 동일rev 첫턴 주입 확인, 시점별 대화 재생성·반복1·40턴 미측정 유지 |
 | R3 네 필드 계약 | 의미 분할과 native 형식 강제를 별도 비교로 구분 | 담당·실행 시점 별도 결정 |
 | R4 판정자 보정 | [v5 결과·라이브 조건](runtime/persona-pipeline-r1/R4-V5-REVIEW-2026-11-15.md), [D4 이후 기준](runtime/persona-pipeline-r1/D4-POLICY-REVIEW-2026-11-15.md) | elda①② 승계. ③④ 기준 기동11-15 01:46:19Z·a0cbdaf3·f93ec664 담당 확인, 라이브400턴·실패율 결과 미수신. D4 검증 판정1155개는 분모 밖. unknown 원출력 보존은 다음 판 변경 때 소유자 후속 |
-| R5 이름과 호칭 | [D4 규칙](runtime/persona-pipeline-r1/D4-POLICY-REVIEW-2026-11-15.md), [재측정 결과 검토](runtime/persona-pipeline-r1/D4-RESULTS-REVIEW-2026-11-15.md) | cc13cf8·e045921 이름210 job 완료. R1 0/81, R2 채점 탐침pass·unknown1. 앞 판 대비 개선·동등성 입증 아님. 직답 설명·k5 상한 반올림·비교 계산·run.log 출처 보완 전달. 이름③ 미검출 유지 |
+| R5 이름과 호칭 | [D4 규칙](runtime/persona-pipeline-r1/D4-POLICY-REVIEW-2026-11-15.md), [재측정 결과 검토](runtime/persona-pipeline-r1/D4-RESULTS-REVIEW-2026-11-15.md) | 이름210 job 완료, c9267e9에서 네 문서·재현 근거 지적 해소·감사 마감. R1 0/81, R2 채점 탐침pass·unknown1과 원자료 불변. 개선·동등성 입증 아님, 이름③ 미검출 유지 |
 | R6 정본 값 삽입 | 모델 출력·렌더러·최종 의미의 분리 평가 제안 | 효과 크기·운영 채택 미확정 |
 | R7 홀드아웃 | 비열람·해시·개봉·사람 라벨 절차 제안 | 실제 생성·동결·라벨링은 수행하지 않음 |
 
