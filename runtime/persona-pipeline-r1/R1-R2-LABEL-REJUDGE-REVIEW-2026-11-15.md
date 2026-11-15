@@ -1,8 +1,8 @@
 # R1·R2 AI 라벨·새 판 재판정과 배포 상태
 
-2026-11-15 KST. **AI 라벨 40개와의 등급·축 일치는 구판·신판 모두39/40이다.** 신판은 기존 P20 경계 불일치 한 건을 해소했지만 이름 판정에서 다른 한 건이 갈렸다. 탐침 재판정655개는 입력과 구판정이 보존됐으나, **296행의 생성 주입 블록 해시가 canonical_block_md5로 잘못 표기**돼 출처 정정이 필요하다. 실제 재판정 기준까지 잘못됐다고 단정한 것은 아니다.
+2026-11-15 KST. **AI 라벨 40개와의 등급·축 일치는 구판·신판 모두39/40이다.** 신판은 기존 P20 경계 불일치 한 건을 해소했지만 이름 판정에서 다른 한 건이 갈렸다. **296행의 해시 출처 표기 문제는 GanpanAI d2092412에서 정정됐다.** 생성 주입 해시와 재판정 정본 해시가 분리됐고, 655행의 질문·답·구판정·신판정은 모두 불변이다. 이 메타데이터 감사 항목은 정적 검토상 마감한다.
 
-새 판의 기동 시각은 담당자들이 **2026-11-14 23:44:07 UTC = 11월15일 08:44:07 KST**로 확인했다. 확인 시점의 라이브 대상은0턴, 검증1턴이며 D2③④는 아직 미충족이다. 클로버는 자료·소스를 정적으로 검토했고 API·DB·관문·실험·재시작·라벨 부여는 수행하지 않았다.
+새 판의 기동 시각은 담당자들이 **2026-11-14 23:44:07 UTC = 11월15일 08:44:07 KST**로 확인했다. 당시 라이브 대상은0턴, 검증1턴이다. 이후 D4 결정으로 **③④는 새 이름 정책 블록 배포 시각부터 다시 집계**하기로 했다. [D4 후속 기준](D4-POLICY-REVIEW-2026-11-15.md). 클로버는 자료·소스를 정적으로 검토했고 API·DB·관문·실험·재시작·라벨 부여는 수행하지 않았다.
 
 ## 근거
 
@@ -12,6 +12,8 @@
 | 울지마 라벨40행 | [Uljima6 266ad7a1](https://github.com/ginojang/Uljima6/blob/266ad7a1bf417c14714e438e7176535322279264/slices/uljima6_r1r2_label_v1.jsonl) | `c672a06e207f59872eaa3482522dde88e83e9673c214a06da9d306e699aa5f75` |
 | 구판 라벨 대조 보고 | [Elda-AI-Agent 1e05c90d RESULT.md](https://github.com/ginojang/Elda-AI-Agent/blob/1e05c90d377f31fab88df9d6fc7bd842a5ee30c5/serve-gate/research/persona-r1r2/RESULT.md) | 아래에서 독립 재계수 |
 | 신판 재판정655행·567,395바이트 | [GanpanAI 51e975fa](https://github.com/ginojang/GanpanAI/blob/51e975fafd37767a481c81659365af99574faf50/elda-orchestrator/measurements/persona/r1r2_rejudge_f195455a_1115.jsonl) | `6cbb72ed8d95d8d067486ae4fefaa861bc408e4ecda831c3643d2acad4dda782` |
+| 해시 출처 정정655행 | [GanpanAI d2092412](https://github.com/ginojang/GanpanAI/blob/d20924120d92a29c7f0818ef86b0fc12d3a7acc2/elda-orchestrator/measurements/persona/r1r2_rejudge_f195455a_1115.jsonl) | `40c4e6d333f741ba5656a18c731df87bb256a10a9bee8a5a8a1eee2e44c5abf7` |
+| 재판정 출처·시도 메타데이터 | [GanpanAI d2092412 meta](https://github.com/ginojang/GanpanAI/blob/d20924120d92a29c7f0818ef86b0fc12d3a7acc2/elda-orchestrator/measurements/persona/r1r2_rejudge_f195455a_1115.meta.json) | `6c60f41034bbab80e4e3e1ee05d8680f7892d125c09cf02d8b292dae068b5acd` |
 
 라벨 입력은15,119바이트, 완료 라벨은27,761바이트다. 최초 측정·계획·원장 계수는 [R1·R2 결과 검토](R1-R2-RESULTS-REVIEW-2026-11-15.md)에 보존한다. `de8cd69`의 핵심 네 정정과 `07a104a`의 R2 요청 턴·재판정 호출 표현 보완도 확인했다. 계획·실행기·data4개 원자료는 불변이다.
 
@@ -57,13 +59,13 @@ R1 446+R2 209개로, 원자료 중 비직답·canonical 보유 행과 ID·순서
 | B31 정체 | **30/68** | **1** | 26/69 | **6** |
 | B31 이름 | 12/81 | 0 | 14/81 | 4 |
 
-구판은 pass591/block48/fix15/unknown1, 신판은 pass595/block48/fix12/unknown0이다. 신판 no_quote도0이다. **등급 변경11 = pass↔fix/block 9 + unknown→pass1 + fix→block1**이다. 담당 메시지 표의 B31 정체 변경4는 등급·축 변경6과 다르다. `r1-B31-identity-2-2`의 fix→block과 `…-18-1`의 unknown→pass는 축이 그대로지만 등급이 바뀌었다.
+구판은 pass591/block48/fix15/unknown1, 신판은 pass595/block48/fix12/unknown0이다. 신판 no_quote도0이다. **등급 변경11 = pass↔fix/block 9 + unknown→pass1 + fix→block1**이다. 최초 담당 메시지 표의 B31 정체 변경4는 등급·축 변경6과 달랐다. `r1-B31-identity-2-2`의 fix→block과 `…-18-1`의 unknown→pass는 축이 그대로지만 등급이 바뀌었다. 후속 [풀스택 bd84312 RESULT.md](https://github.com/ginojang/Elda-AI-Agent/blob/bd8431238a31aef864402d0aeb45a17565ab2bb9/serve-gate/research/persona-r1r2/RESULT.md)와 오케 d2092412 meta의 변경6·합계11·구판30/68+unknown1 정정이 이 계수와 일치한다. 풀스택의 구·신판 AI 라벨39/40 및 정체 block40/40 지표 분리도 확인했다.
 
 R2 모델 탐침209개는 모든 시점에서 신·구판 모두pass다. B300 정체 탐침0은 유지됐지만 **B300 이름 탐침1/81도 유지**되므로 “B300 전체 위반0”이라고 쓰지 않는다. 본대화1,920개는 이번 재판정 대상이 아니며 구판 결과로 남는다. 새 판은 원답을 다시 생성하지 않고 판정 모델만 호출한 자료이고, 새 독립 홀드아웃 평가가 아니다.
 
-## 재판정 메타데이터 정정 필요
+## 재판정 메타데이터 정정 완료
 
-`canonical_block_md5`의655개 값이 모두 **원래 생성 시점 `probe.block.block_md5`**와 일치한다.
+최초 51e975fa의 `canonical_block_md5` 값655개는 모두 **원래 생성 시점 `probe.block.block_md5`**와 일치했다.
 
 | 기록 해시 | 행 | 실제 출처 |
 |---|---:|---|
@@ -71,9 +73,11 @@ R2 모델 탐침209개는 모든 시점에서 신·구판 모두pass다. B300 �
 | 9d588496be9a4c9eb44c9357b0b37502 | 150 | B31 생성 주입 블록 |
 | 8b90eca6b8a5af48de5ea7ef45fc5c47 | 146 | B53 생성 주입 블록 |
 
-따라서296행의 필드 이름과 출처가 충돌한다. [재판정 도구](https://github.com/ginojang/GanpanAI/blob/51e975fafd37767a481c81659365af99574faf50/elda-orchestrator/src/tools/r1r2Rejudge.ts)는 elda DB 정본을 한 번 만들고 그 `b.text`를 모든 호출에 사용한다. 이것만으로 실제 짧은 블록을 기준으로 판정했다고 단정하지 않는다. **생성 주입 해시와 실제 재판정 정본 해시를 분리하고 후자의 실행 근거를 확인해 정정할 항목**이다. 원질문·답·old/new 결과는 보존한다.
+따라서296행의 필드 이름과 출처가 충돌했다. [재판정 도구](https://github.com/ginojang/GanpanAI/blob/51e975fafd37767a481c81659365af99574faf50/elda-orchestrator/src/tools/r1r2Rejudge.ts)는 elda DB 정본을 한 번 만들고 그 `b.text`를 모든 호출에 사용한다. 짧은 블록을 기준으로 판정했다는 증거로 해석하지 않았으며, 오케의 `28b7d28cd6` 회신은 실제 실행 로그도 정본 c9562bfa였다고 확인했다. 로그 자체를 직접 조회한 것은 아니다.
 
-도구 반환에는 session/rep/checkpoint/md5가 없지만 제출 파일에는 있어 사후 보완된 메타데이터의 출처도 구분한다. 파일에는 유효 cid·시도수·ledger가 없다. 소스는 `…-rejudge2`를 사용하고 ledger는 stderr에만 남긴다. 잘못된 질문 매핑119호출이 `…-rejudge`에 남고 유효655호출이 별도라는 것은 담당 보고다. 최종 질문 매핑 오류0은 직접 확인했으나 DB 원장 분리를 직접 조회한 것은 아니다. 무효 시도를 성능 집계에서는 제외하되 비용·시도 기록에서 삭제하지 않는다.
+후속 d2092412와 최초 파일을 행별로 비교했다. **ID·순서·q/a·old/new 및 기존 필드 모두 보존**됐다. 기존 해시는 값과 분포를 그대로 `gen_injected_block_md5`로 옮겼다. 새 `judge_block_md5`는655행 모두 `c9562bfab9dc26d5a747bf36cd4132f7`, `judge_cid`도 모두 `cv-orch01-verify-r1r2-rejudge2`다. 실제 판정 결과를 바꾸거나 재생성한 정정이 아니다.
+
+추가 meta는 입력7be089b·0-based family·판정/도구 코드판, 유효655회와 무효119회의 별도 cid, 변경행4+6+1을 기록한다. valid의 attempts655·ledger expected/done655·failed0은 **커밋된 담당 보고값**이며 DB 원장을 독립 확인한 수치가 아니다. 잘못된 질문 매핑119호출은 성능 집계에서 제외하되 시도·비용 기록에서 삭제하지 않는다. 도구가 직접 반환한 값과 session/rep/checkpoint/hash 등 사후 보완한 메타데이터의 출처 구분은 유지한다.
 
 ## 블록 생략 순서와 라이브 측정
 
@@ -83,4 +87,4 @@ R2 모델 탐침209개는 모든 시점에서 신·구판 모두pass다. B300 �
 
 `55a1c5a84b`에서 풀스택이 사용자 재시작을 보고했고, `83faae008b`에서 오케스트레이터가 원장 기준으로 확인했다. 기동23:44:07Z·build a8413e34·always f195455a·never281a1b86·elda 정본 c9562bfa다. 확인 당시23:44:35Z의 postdeploy 검증1행(is_verify=true), 라이브0행이다. 클로버는 서버·원장을 직접 조회하지 않았다.
 
-D2③④는 **23:44:07Z 이후 elda 라이브**에서 집계한다. 검증 cid·점검 아바타·연구 재판정·중복 판정을 분모에 넣지 않는다. live≥400과 모든 identity block의 검토·오차단≤0.5%·unknown/판정 실패≤2%는 아직 완료되지 않았다. AI 라벨40이나 재판정655를 라이브400 대신 사용하지 않는다.
+D2③④의 최초 기준은23:44:07Z였으나, **후속 D4 결정00219b375f로 새 블록 배포 시각부터 다시 시작**한다. 그 전 구간은 옛 블록 기록으로 보존한다. 검증 cid·점검 아바타·연구 재판정·중복 판정을 분모에 넣지 않는다. live≥400과 모든 identity block의 검토·오차단≤0.5%·unknown/판정 실패≤2%는 아직 완료되지 않았다. AI 라벨40이나 재판정655를 라이브400 대신 사용하지 않는다. 새 블록·배포·세션 구분과 이름 재측정은 [D4 후속 검토](D4-POLICY-REVIEW-2026-11-15.md)를 따른다.
