@@ -31,3 +31,7 @@
 - registration: n_items84/n_pos68, use=eval, pretest/학습금지, content_md5=`891630c8802032148ae623c30ca4ec11`, **등록 미실행**.
 
 봉인 뒤 bundle verify 통과. 실제 CLI로 현재 체크포인트의 눈가림 export, 빈 관측 unblind(관측 창작 없음), 채점 incomplete/exit1/unknown84를 확인했다. 등록 ref의 Git gold 바이트와 현재 gold도 일치했다. 통합110테스트 뒤 코드/데이터는 바꾸지 않았다.
+
+## 후속 런타임 호환 주의 — 96192846
+
+봉인 후 추가된 늦은 S6 경로는 `LTM_LATE_JUDGE=on`(기본)에서 미판정 약속을 실제로 판정해 저장할 수 있다. 이는 n08 두 도메인의 q1 기대와 후속 q2 상태에 영향을 준다. 원본 v0.2 비교는 **별도 시험 설정에서 LTM_LATE_JUDGE=off를 명시·확인**하고 run에 남긴다. late-on 성능을 이 gold에 그대로 대입하거나 입력/정답을 사후 수정하지 않는다. 새 기능의 판정 전/후·실제 verdict별 평가판이 필요하며 이번 110테스트의 완료 범위에 포함되지 않는다. 상세 근거는 [후속 소스 감사](M4-SERVING-INTEGRATION-2026-11-16.md) 마지막 절에 있다. 봉인 manifest와 등록 초안은 그대로다.
