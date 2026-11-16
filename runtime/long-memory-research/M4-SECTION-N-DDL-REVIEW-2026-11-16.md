@@ -2,6 +2,8 @@
 
 2026-11-16 · 클로버 · 모델/API·관문·DB 호출 0회, SQL 실행 0회.
 
+**후속 상태:** 아래 초기 감사 뒤 `00da9148` 수정본과 `77c84459` 적용 함수·`20897644` 관계 함수를 읽었다. 삭제 범위·INSERT 경쟁·철회 복원·과거 값 노출·관계 조회는 소스상 보완됐고, 직접 UPDATE 권한/세대 경계는 남아 있다. 상세 구분은 마지막 「후속 수정 확인」을 따른다.
+
 DBA `6ab04f7ad2`는 절 N DDL·purge를 memoryDB에 적용하고 되돌리는 시험14개가 기대대로 끝났다고 보고했다. 여기서는 **GanpanAI `3bf6d587cc635bd02ff538587bc0584d75886262:db/ddl/chat_ltm_section_n_1116.sql`(447줄), `6a61e1908357e406f2fa939412b6581ba29e7b1d:db/ddl/chat_ltm_purge_1116.sql`(92줄)의 소스**를 읽었다. 실제 배포 상태·14개 시험 원자료·동시성·운영 피해는 독립 검증하지 않았다.
 
 소스상 원자 기억·episode·연산 원장·현재값/관계 뷰·forget/pause·정리 함수가 생겼다. DDL이 아직 없다는 앞선 상태는 이 보고로 갱신한다. 다만 아래 쓰기·삭제 경계는 담당자가 재현·보완한 뒤 실제 M3에 연결해야 한다. C·S4·결합 어댑터까지 완성됐다는 뜻은 아니다.
@@ -72,3 +74,29 @@ purge:9~21은 기본180일을 사용하고 현재 행을 가리키는 직전 과
 ## 다음 확인 순서
 
 DBA가 위 경계를 시험 가능한 판으로 보완하고, 오케·리소너가 T/C 및 S4·원장 어댑터 판을 맞춘 뒤 후속 M3 판을 고정한다. 이번에는 봉인 v0.1을 변경하거나 실서빙을 실행하지 않았다. 14개 기존 시험에 어떤 반례가 포함됐는지는 시험 원자료가 없어 알 수 없다. 이 문서의 SQL 경계 반례는 **소스 감사와 담당자 재현 요청**이며 DB 재현 성공 결과가 아니다.
+
+## 후속 수정 확인 — 00da9148
+
+풀스택 `d7e6606fb8`은 cid 소유권·해제 링크 문제를 닫은 뒤 forget API/단추를 열도록 정리했다. 이어 DBA `0f41cf478e`는 수정 적용과 두 연결 시험을 보고했다. 다음 소스를 고정해 읽었으며 실 DB·ACL·운영 호출부는 조회하지 않았다.
+
+- `00da914827359f2e063bc15e5348eb710bee4537:db/ddl/chat_ltm_audit_fix_1116.sql`.
+- `77c84459b369e2cf49d88e2e9aef7f3aa4101130:db/ddl/chat_ltm_apply_op_1116.sql`.
+- `2089764409d28d29ad7ae5b9bd5dc360845f9f21:db/ddl/chat_ltm_relation_from_def_1116.sql`.
+
+| 초기 감사 항목 | 직접 확인한 후속 코드 | 상태 |
+|---|---|---|
+| cid 소유권 | audit_fix:36~39 conversation/snapshot의 principal 범위 확인 후 아니면 거절 | 원래 반례에 대한 코드 보완 확인 |
+| 해제 링크 | :32 active 링크만 수집, :34 범위 principal 전부 ID 순 잠금 | 원래 삭제 범위 반례에 대한 코드 보완 확인 |
+| INSERT 세대 경쟁 | :143 principal FOR SHARE 후 epoch 검사; apply_op:86~93은 owner FOR UPDATE 후 작업 epoch/pause 검사 | 잠금 경로 보완 확인. 실제 두 연결 결과는 DBA 보고 |
+| 철회 행 재활성화 | audit_fix:134~136 무효화된 행의 invalid_at/invalid_reason NULL 복원 거절 | 일반 guard 경로의 재활성화 거절 확인 |
+| contested_from | :168~172 needs_confirm 때만, 같은 product/principal/persona와 최근 invalid_at을 사용 | CONFIRM 뒤 옛값·범위 혼입 조회 조건 보완 확인 |
+| 관계 첫 턴 전/후 | relation_from_def:28~48에서 p_current_cid 제외 후 prior_chats/last_visit 계산 | 올바른 현재 CID를 전달하는 함수 경로에서 보완 확인. 화면 뷰와 구분 |
+| 대기/거부 enum | apply_op:18~21에 session/await_s6/sensitive_no_consent/slot_occupied 포함 | 초기 DDL의 enum 불일치 보완 확인 |
+
+**잔여 — 직접 UPDATE 경로:** audit_fix:128~138은 상태 칼럼·재활성화 조건만 검사하고 epoch/pause 검사 전에 반환한다. 초기 section_n:437~438의 `elda_chat_writer` UPDATE 권한은 저장소에 남아 있고, `00da9148`까지 db/ddl에서 이를 회수하는 후속 REVOKE를 찾지 못했다. `ltm_apply_op`의 함수 권한 제한은 테이블 직접 UPDATE 권한 회수와 다르다.
+
+따라서 함수 경로는 보완됐지만, 직접 상태 UPDATE가 실제 역할에 허용되는지 확인해야 한다. pause 뒤 `needs_confirm=false`·`confirmed_at`을 직접 바꾸는 경우는 재활성화 금지와 다른 경계다. 실제 ACL이 이미 회수됐는지는 미확인이다. 담당자에게 함수 전용 적용 또는 동등한 직접 갱신 검사·실권한 확인을 요청한다. 저장 행의 생성 epoch와 새로운 정상 작업의 epoch를 섞지 않는다.
+
+DBA의 동시성 보고는 ① forget 선점→구세대 직접 INSERT 대기 뒤 epoch_stale/잔여0, ② apply_op 선점→forget 대기 뒤 fact1 포함 삭제/fact·op 잔여0이다. 클로버가 재실행하거나 원로그를 확인한 결과가 아니다. `turn_id_at(cid, turn_index)` 추가도 소스로 확인했으나, runtime turn 번호와 DB id 순서의 실제 일치 여부는 어댑터 검증에 남긴다.
+
+오케 `16b2d9af70`의 T v0.007·LTM_TURN=test·v0.4 K3 결과32·33·32는 별도 T 담당 보고다. M3 96탐침 실측으로 합산하지 않는다. forget endpoint는 다음 구현 예정으로 보고됐으며 외부 개방 완료로 쓰지 않는다. 원래 M3 봉인본은 그대로 유지한다.
