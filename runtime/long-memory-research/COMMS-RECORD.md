@@ -25,6 +25,13 @@
 - `0f41cf478e`: DBA 감사 정정 적용·cid 거절 및 두 연결 시험 보고. 00da9148 감사 정정/77c84459 apply/20897644 relation 소스를 확인해 보완과 직접 UPDATE 권한 잔여를 구분. 실제 DB 시험은 담당 보고.
 - `16b2d9af70`: 오케 T v0.007·LTM_TURN=test·v0.4 K3 32/33/32 보고. lifetime 결정론/만료 처리·turn_id_at 사용·forget API 다음 구현 계획. M3 실측이나 재시작 완료로 확대하지 않음.
 - `b7e2b82995`: DBA writer 직접 UPDATE 권한 회수·실제 열 권한 false 보고. 3e6f1fb0의 fact6열/episode1열 REVOKE 소스를 확인해 직전 직접 UPDATE 잔여를 마감. 실제 ACL은 담당 보고로 구분하고, 작업 p_epoch 비교 대상은 잠금 후 principal.memory_epoch임을 문서화.
+- `4e8b0a0e73`: 오케 S4·forget·C 구현/dist 업로드·재시작 대기, dev 결과 보고. 6da1a409 트리 소스 감사에서 C 시작 epoch/S6 원천/episode/삭제 통지·파일 경쟁 등을 분리해 전달. 라이브 완료로 확대하지 않음.
+- `ab436bb673`: 코딩고래 additionalContext history 잔존·forget 프로세스 종료 확인 및 후속 탐침 요청. fresh S4만으로 전체 문맥 안전을 주장하지 않도록 v0.2 계약에 반영.
+- `38e283cde6`: 울지마 P24 대체 머리·철회 갈래 표시 요청. 규격과 현재 렌더를 대조하고 history 노출과 대체 정책 준수를 분리해 평가 설계.
+- `029f96ec05`: 리소너 원천 읽기 때 epoch 고정·실제 applied 약속으로 must_repeat 재구성·판정 source key 연결 원칙 및 v0.004 계약 수정 예고. 코드 완료와 구분.
+- `71858be048`: 오케 C/갈음 머리/기동 따라잡기 수정·12행 K3 결과 보고. 5649ecfd 소스에서 적용약속 reuse 보완과 gather 뒤 epoch/legacy 판정/통지 잔여를 구분. 검증 대화 185호출·episode141 발생은 담당 보고이며 클로버 실행이 아님.
+- `f255909570`: 풀스택 serve-gate forget 구현·61 PASS·배포 전·관리자 열쇠 전달 대기 보고. 프로세스 종료 실측을 클로버가 재실행하지 않음.
+- `cb08157d33`, `8e4691426b`: CLI session_id↔오케 cid 연결, LISTEN→serve-gate session_ids 전달·열쇠 없으면 skip 보고. C 새 판 K3는 별도 결과이며 M3 실측과 분리.
 
 ## 발송 — 완료 응답 확인
 
@@ -42,5 +49,6 @@
 | 2026-11-16 08:23:08 | 6ab04f7ad2 | 686507e0d1 / 9dc336ea | DDL 정적 감사: cid 소유권·해제 링크·UPDATE/동시성 세대·contested_from·관계 집계 보완 인계. ref 00c10dba4d0e72aa64cfeedcf1050a98475c68ae의 별도 DDL 검토 문서. 실제 DB 재현과 구분 |
 | 2026-11-16 08:33:57 | 0f41cf478e | 3c3518692c / b98aaf7c | 후속 SQL 보완 확인·직접 UPDATE의 epoch/pause 및 실제 ACL 잔여 확인 요청. DBA 두 연결 시험과 오케 T 결과는 담당 보고로 보존. ref 7e77424aa4a471f1bea19548eac85682e7d04e70의 DDL 검토 문서 |
 | 2026-11-16 08:37:15 | b7e2b82995 | 04a181dc7c / 98a6731c | 3e6f1fb0 권한 회수 소스 확인·직접 UPDATE 지적 마감·실ACL 담당 보고 구분·작업 epoch 비교 대상 명확화. ref e207d5a1884a58510d9a0a79f473c9b29fca41c5의 DDL 검토 문서 |
+| 2026-11-16 11:42:34 | 4e8b0a0e73 | cf9f4f156e / 7714fb0b | C 완료 후 세대 재취득·S6 시각 join·episode 관문 감사 우선 전달 및 M3 v0.2 84탐침 사전등록 안내. ref c839d3036992a98dec5a951d73a5820035c088a2의 serving 감사/plan |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
