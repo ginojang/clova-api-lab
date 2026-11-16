@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "preregistration_commit": "66c7b4ed7924df7e866a8ad3bfc7dfcffa043925",
+  "counts": {
+    "stories": 32,
+    "sessions": 96,
+    "targets": 96,
+    "positive_targets": 80,
+    "families": 16,
+    "model_calls": 0
+  },
+  "sha256": {
+    "CONTRACT.md": "ad7c96268f6ebaa374408e6e8e3ab657c7cec52f9b451e4ec9e3d77a3eeab549",
+    "README.md": "6dd3bc55cbd3653eb7d935e56fd961d7f5fdc84fee71c9406185879ce74bc2a5",
+    "blind/annotation_template.jsonl": "a0134386aba222471fce0103e32442603f690414efb1bf59439cf60f4879f092",
+    "blind/scenarios.jsonl": "72e4298da50d819feba4b5986684f0c94847ff3e81d901bd2b1001a3f8ac9627",
+    "build_dataset.py": "cc378b633a90cfc570d8406ddc002a370f7adaf7b3da9bdcf316ebcbab8f0024",
+    "bundle.py": "8baf97fc34ca4efcdc5d0d6cf03866c7734d0806c380813a96280820470361bf",
+    "gold.jsonl": "f6aafa721e2983712afe28f3fb0d47037312418c6180d033fc89818d4d3faa16",
+    "plan.json": "4bd537d16a51abd43ed66b7456699b84f1c3046af08add353a14a25cd1d1380d",
+    "private/blind_map.json": "e8b0b1018789febae1778617da5c0f58f92f91c6c7358f700e244a9b726933f1",
+    "registration.json": "3d0033b19f15de9151c20ea34feae77edf1cb0b085d88d93528fe8bce48ff83d",
+    "scenarios.jsonl": "a053174ddab4dd0fc39535a1639e4795ab9bdcec6492111f64a89b6a12d8912a",
+    "scorer.py": "e3f38706897b2a3b56234aadae3109f497367ffd419b0013807fd596c61786ad",
+    "test_bundle.py": "b3f594aa1edffb322d29783bf021e5bfe60e2157961a0f1819675e2427d34ac0",
+    "test_scenarios.py": "c908e7b22650f0bb13a0afeba5f163ad1aa346dffa0538cd77156d768c5c576e",
+    "test_scorer.py": "169f90d15cc94d5875ea02332516e15da4d25e2143b952054464ae548bca27a2"
+  }
+}

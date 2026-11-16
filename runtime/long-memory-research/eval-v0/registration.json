@@ -1,0 +1,38 @@
+{
+  "name": "customer_memory_multisession",
+  "ver": "0.1",
+  "owner": "giant-clova",
+  "axes": [
+    "return_visit",
+    "explicit_correction",
+    "withdraw_no_resurrection",
+    "forget_late_job",
+    "principal_isolation",
+    "anonymous_scope",
+    "quotation",
+    "third_party",
+    "assistant_suggestion",
+    "time_and_expiry",
+    "contest_confirm",
+    "session_only",
+    "instruction_poisoning",
+    "consent_pause",
+    "implicit_recall_budget",
+    "episode_provenance"
+  ],
+  "n_items": 96,
+  "n_pos": 80,
+  "langs": [
+    "ko"
+  ],
+  "made_on": "2026-11-16",
+  "source_model": "OpenAI Codex GPT-6 agent; exact serving build unavailable",
+  "authored_by": "other_llm",
+  "ref_repo": "ginojang/clova-api-lab",
+  "ref_commit": "2261def7bf9c72b46ce11e432c546d95458403d6",
+  "ref_path": "runtime/long-memory-research/eval-v0/gold.jsonl",
+  "content_md5": "412026558c03458773c3a1de5b7612fb",
+  "has_customer_text": false,
+  "use": "eval",
+  "note": "registration_status=draft;not_inserted; evaluation_phase=pretest;training_forbidden=true; unit=target_checkpoint; n_pos=targets_requiring_eligible_memory_injection; stories=32;sessions=96;mechanism_clusters=16;contract_targets=94;challenge_targets=2; human_gold_review=not_performed; model_calls=0; preregistration_commit=66c7b4ed7924df7e866a8ad3bfc7dfcffa043925; gold_sha256=f6aafa721e2983712afe28f3fb0d47037312418c6180d033fc89818d4d3faa16; inputs=scenarios.jsonl; inputs_sha256=a053174ddab4dd0fc39535a1639e4795ab9bdcec6492111f64a89b6a12d8912a"
+}
