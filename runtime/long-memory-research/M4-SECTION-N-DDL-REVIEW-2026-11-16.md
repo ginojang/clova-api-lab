@@ -2,7 +2,7 @@
 
 2026-11-16 · 클로버 · 모델/API·관문·DB 호출 0회, SQL 실행 0회.
 
-**후속 상태:** 아래 초기 감사 뒤 `00da9148` 수정본과 `77c84459` 적용 함수·`20897644` 관계 함수를 읽었다. 삭제 범위·INSERT 경쟁·철회 복원·과거 값 노출·관계 조회는 소스상 보완됐고, 직접 UPDATE 권한/세대 경계는 남아 있다. 상세 구분은 마지막 「후속 수정 확인」을 따른다.
+**후속 상태:** 아래 초기 감사 뒤 `00da9148` 수정본과 `77c84459` 적용 함수·`20897644` 관계 함수, `3e6f1fb0` 직접 UPDATE 권한 회수를 읽었다. 삭제 범위·INSERT 경쟁·철회 복원·과거 값 노출·관계 조회와 writer의 직접 UPDATE 경로는 소스상 보완됐다. 실제 UPDATE 권한 부재는 DBA 실측 보고이며 독립 DB 확인은 하지 않았다. 상세 구분은 마지막 두 「후속 수정 확인」을 따른다. C/어댑터·후속 평가판 및 별도 purge 확인 사항까지 완료된 뜻은 아니다.
 
 DBA `6ab04f7ad2`는 절 N DDL·purge를 memoryDB에 적용하고 되돌리는 시험14개가 기대대로 끝났다고 보고했다. 여기서는 **GanpanAI `3bf6d587cc635bd02ff538587bc0584d75886262:db/ddl/chat_ltm_section_n_1116.sql`(447줄), `6a61e1908357e406f2fa939412b6581ba29e7b1d:db/ddl/chat_ltm_purge_1116.sql`(92줄)의 소스**를 읽었다. 실제 배포 상태·14개 시험 원자료·동시성·운영 피해는 독립 검증하지 않았다.
 
@@ -100,3 +100,14 @@ DBA가 위 경계를 시험 가능한 판으로 보완하고, 오케·리소너�
 DBA의 동시성 보고는 ① forget 선점→구세대 직접 INSERT 대기 뒤 epoch_stale/잔여0, ② apply_op 선점→forget 대기 뒤 fact1 포함 삭제/fact·op 잔여0이다. 클로버가 재실행하거나 원로그를 확인한 결과가 아니다. `turn_id_at(cid, turn_index)` 추가도 소스로 확인했으나, runtime turn 번호와 DB id 순서의 실제 일치 여부는 어댑터 검증에 남긴다.
 
 오케 `16b2d9af70`의 T v0.007·LTM_TURN=test·v0.4 K3 결과32·33·32는 별도 T 담당 보고다. M3 96탐침 실측으로 합산하지 않는다. forget endpoint는 다음 구현 예정으로 보고됐으며 외부 개방 완료로 쓰지 않는다. 원래 M3 봉인본은 그대로 유지한다.
+
+## 후속 수정 확인 — 직접 UPDATE 권한 회수 3e6f1fb0
+
+DBA `b7e2b82995`가 잔여 권한 회수를 보고했다. GanpanAI `3e6f1fb0c489de1f0dddb1e6ed8c9dab8079780e:db/ddl/chat_ltm_revoke_direct_update_1116.sql` 전체 7줄을 직접 확인했다.
+
+- :5는 `elda_chat_writer`의 `ltm_fact` 상태 6열(`needs_confirm`, `confirmed_at`, `invalid_at`, `invalid_reason`, `superseded_by`, `expires_at`) UPDATE를 회수한다. :6은 `ltm_episode.expires_at` UPDATE를 회수한다. 초기 section_n:437~438에서 부여했던 열 권한과 일치한다.
+- 따라서 직전 감사의 **writer 직접 UPDATE 우회는 소스 보완 확인으로 마감**한다. DBA는 실제 `has_column_privilege` 확인 두 건 모두 false라고 보고했다. 클로버가 운영 ACL이나 해당 질의 원출력을 직접 확인한 것은 아니며, 이 판정을 모든 역할·DB 소유자의 권한 부재로 확대하지 않는다.
+- 상태 전이 호출자는 `chat.ltm_apply_op`를 사용한다. `77c84459:86~93`은 principal을 `FOR UPDATE`로 읽은 뒤 **작업의 `p_epoch`와 현재 `principal.memory_epoch`를 대조**하고 pause·대화 memory_off를 검사한다. 기존 fact의 생성 epoch와 새 작업 epoch를 같게 요구하는 비교가 아니다. 상태 변경 시 기존 fact의 생성 epoch는 유지되고 새 fact를 만들 때 작업 epoch를 저장한다(:113~129).
+- 직접 INSERT는 남으며 `00da9148:143~155`의 principal `FOR SHARE`와 세대·pause·memory_off·금지 숫자 검사를 거친다. 위 권한 회수가 이 경로의 모든 의미적 입력 검증이나 실제 호출부 완성을 증명하지는 않는다.
+
+이번 변경은 감사 문서와 작업 목록 갱신이다. SQL 실행·DB 접근·모델/API 호출은 0회이며 봉인 M3 자료·채점기에는 변경이 없다. 기존 63개 오프라인 테스트를 새 DB 실측 결과로 사용하지 않는다. C/운영 어댑터·새 T 직접 저장 계약의 평가판, 앞서 분리한 purge 범위/권한 확인은 각각 후속으로 유지한다.

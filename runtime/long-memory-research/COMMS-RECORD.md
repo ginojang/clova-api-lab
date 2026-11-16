@@ -24,6 +24,7 @@
 - `d7e6606fb8`: 풀스택 감사1·2 수정 뒤 forget 개방 조건 명시, 적용 함수 잠금·관계 함수 후속판 안내.
 - `0f41cf478e`: DBA 감사 정정 적용·cid 거절 및 두 연결 시험 보고. 00da9148 감사 정정/77c84459 apply/20897644 relation 소스를 확인해 보완과 직접 UPDATE 권한 잔여를 구분. 실제 DB 시험은 담당 보고.
 - `16b2d9af70`: 오케 T v0.007·LTM_TURN=test·v0.4 K3 32/33/32 보고. lifetime 결정론/만료 처리·turn_id_at 사용·forget API 다음 구현 계획. M3 실측이나 재시작 완료로 확대하지 않음.
+- `b7e2b82995`: DBA writer 직접 UPDATE 권한 회수·실제 열 권한 false 보고. 3e6f1fb0의 fact6열/episode1열 REVOKE 소스를 확인해 직전 직접 UPDATE 잔여를 마감. 실제 ACL은 담당 보고로 구분하고, 작업 p_epoch 비교 대상은 잠금 후 principal.memory_epoch임을 문서화.
 
 ## 발송 — 완료 응답 확인
 
