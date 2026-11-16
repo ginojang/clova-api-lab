@@ -21,3 +21,13 @@
 봉인 전 의미 검토에서 현재 대화 episode의 재주입 강제를 제거하고, returning 첫 질문 전에 인사 턴이 끼지 않도록 고쳤다. T/C 전에 끝나야 하는 입력의 시간도 맞췄다. 삭제 후 새 자기주장은 허용하며 옛 작업·원문·episode 복원과 구분한다. n01 재시도는 값 유지 검사이지 중복 적용 횟수 전체의 idempotency 증명이 아니다.
 
 완료 범위는 합성 데이터·gold·눈가림·채점·무결성·export/unblind·등록 초안이다. 어댑터의 실제 원천/입력 캡처 정확성, 모델 응답, serve-gate 배포·열쇠 연결·프로세스 종료, 전체 물리 삭제는 미측정이다. episode did별 S6·큰 NOTIFY·append 경쟁 등 감사 후속은 [연결 검토](M4-SERVING-INTEGRATION-2026-11-16.md)에 별도로 남긴다.
+
+## 봉인·등록 초안 확인
+
+- 데이터/코드 커밋: `1169c8863bbd788626f185e30fa5775817038e79`.
+- gold SHA256: `4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717`.
+- scenarios SHA256: `0c465321689f12ea590a1b2c8205a7a5e6ac3f35241abbd9e46a1a97f57303da`.
+- manifest SHA256: `9e7d15f75ae5e0504c5f0a9c38349c68c58fa1c311b00127f0e85e519e67026b`(16파일 고정).
+- registration: n_items84/n_pos68, use=eval, pretest/학습금지, content_md5=`891630c8802032148ae623c30ca4ec11`, **등록 미실행**.
+
+봉인 뒤 bundle verify 통과. 실제 CLI로 현재 체크포인트의 눈가림 export, 빈 관측 unblind(관측 창작 없음), 채점 incomplete/exit1/unknown84를 확인했다. 등록 ref의 Git gold 바이트와 현재 gold도 일치했다. 통합110테스트 뒤 코드/데이터는 바꾸지 않았다.

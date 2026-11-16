@@ -1,0 +1,30 @@
+{
+  "version": "0.2",
+  "preregistration_commit": "c839d3036992a98dec5a951d73a5820035c088a2",
+  "counts": {
+    "stories": 28,
+    "checkpoints": 84,
+    "positive_targets": 68,
+    "checks": 470,
+    "families": 14,
+    "model_calls": 0
+  },
+  "sha256": {
+    "CONTRACT.md": "9948f6a0225aad00b075d47896d26e073bbdca46637442805f408c3de9536112",
+    "README.md": "0dd8f680cefde7c1cef4d2083bf162975875ffc589f3823fe497261ebea96a75",
+    "_base_scorer.py": "e3f38706897b2a3b56234aadae3109f497367ffd419b0013807fd596c61786ad",
+    "blind/annotation_template.jsonl": "fa53b0fb723960d1238cc403145de09533d204ad4c4c024c5c4465978cf77b3a",
+    "blind/scenarios.jsonl": "62e14f2b437e60879dd184771ad9fb39c051364f1688de3162728ec4c445ec49",
+    "build_dataset.py": "928dbd127dae7bfd3934d931360ee05f55d7e7e0bc8eadd9223dad4df796c0c1",
+    "bundle.py": "6c13fa675601ce4ebf247d37e63bf62d47b7778f3f8e0f2cd2fff2f4c64b9ee1",
+    "gold.jsonl": "4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717",
+    "plan.json": "a5ac584f14e401301ac6642f53dd3e6c3dd79b64d8e0d478b911b23e607de0a0",
+    "private/blind_map.json": "fbaaf2f85b6ba28c3d22d8511fd8dd8391026d5bdf24ce78e5231ffdd05cf5a3",
+    "registration.json": "3c045743bfa85fba6c52ec2d011ce6adce88b7ae65f57a948136308129b042ca",
+    "scenarios.jsonl": "0c465321689f12ea590a1b2c8205a7a5e6ac3f35241abbd9e46a1a97f57303da",
+    "scorer.py": "a221c9fbe726a329ea033ff01f615ab70d11ccfbfd5c072eabbc0d03e46439e5",
+    "test_bundle.py": "78e7af49cf007733c7cf4dbd5c564a2ea2b73a30ae6fde0d70d1aa9715ca7869",
+    "test_scenarios.py": "ed70f409016eb6011be64dabd6f3daf49010e207009b744e6458a0f378e61ff8",
+    "test_scorer.py": "60a26dc65d64ae9863f55a0423d809945a43a5d897146eb091ee0571ee9f031c"
+  }
+}
