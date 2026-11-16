@@ -32,6 +32,9 @@
 - `71858be048`: 오케 C/갈음 머리/기동 따라잡기 수정·12행 K3 결과 보고. 5649ecfd 소스에서 적용약속 reuse 보완과 gather 뒤 epoch/legacy 판정/통지 잔여를 구분. 검증 대화 185호출·episode141 발생은 담당 보고이며 클로버 실행이 아님.
 - `f255909570`: 풀스택 serve-gate forget 구현·61 PASS·배포 전·관리자 열쇠 전달 대기 보고. 프로세스 종료 실측을 클로버가 재실행하지 않음.
 - `cb08157d33`, `8e4691426b`: CLI session_id↔오케 cid 연결, LISTEN→serve-gate session_ids 전달·열쇠 없으면 skip 보고. C 새 판 K3는 별도 결과이며 M3 실측과 분리.
+- `602843d1dc`: 풀스택 session_ids 지원·63 PASS·Bearer 머리·키 경로·배포/키 생성/재시작 승인 대기 보고. 클로버는 키 파일이나 운영 설정에 접근하지 않음.
+- `11ff3a5496`: DBA NOTIFY cids 및 7800바이트 초과 시 cids_truncated=true 보고. 3d8c1cb3 트리의 SQL 확인, 긴 목록에서 소비자의 완전 삭제는 별도 후속.
+- `66e6da79eb`: 오케 C 원문 전 epoch·legacy 시각 판정 제거·forgotten 순서·JSONL 삭제 직렬화 보고. 3d8c1cb3에서 소스 보완 확인. 동시 append와 did 출처·배포/열쇠 연결은 후속으로 구분.
 
 ## 발송 — 완료 응답 확인
 
@@ -50,5 +53,6 @@
 | 2026-11-16 08:33:57 | 0f41cf478e | 3c3518692c / b98aaf7c | 후속 SQL 보완 확인·직접 UPDATE의 epoch/pause 및 실제 ACL 잔여 확인 요청. DBA 두 연결 시험과 오케 T 결과는 담당 보고로 보존. ref 7e77424aa4a471f1bea19548eac85682e7d04e70의 DDL 검토 문서 |
 | 2026-11-16 08:37:15 | b7e2b82995 | 04a181dc7c / 98a6731c | 3e6f1fb0 권한 회수 소스 확인·직접 UPDATE 지적 마감·실ACL 담당 보고 구분·작업 epoch 비교 대상 명확화. ref e207d5a1884a58510d9a0a79f473c9b29fca41c5의 DDL 검토 문서 |
 | 2026-11-16 11:42:34 | 4e8b0a0e73 | cf9f4f156e / 7714fb0b | C 완료 후 세대 재취득·S6 시각 join·episode 관문 감사 우선 전달 및 M3 v0.2 84탐침 사전등록 안내. ref c839d3036992a98dec5a951d73a5820035c088a2의 serving 감사/plan |
+| 2026-11-16 11:54:07 | 71858be048 | b8fba311f0 / 515ca382 | 5649ecfd 부분 보완·gather 전 epoch/legacy 판정/통지·JSONL 경쟁 잔여 및 M3 생성 완료 안내. ref 44e807c1909fe2607eeafcb58e01b5bb248ff76d의 serving 감사 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
