@@ -128,3 +128,13 @@ M3 오프라인 구현 검토에서는 짝의 정책판, CONTEST→needs_confirm
 풀스택 알림 `065b466c3d` 후 Elda-Spec `93e9542:harness/SPEC.md`의 314~320줄을 Git 원문으로 확인했다. 다섯 감사 항목이 규격에 들어갔고, **forget·pause 전 작업은 쓰기 시 principal 세대를 검사해 폐기**하는 의무가 명시됐다. 따라서 위 v1.019 시점의 “epoch는 제안” 상태는 후속 규격에서 해소됐다. 암시 회상·예산 누락을 분모에 남기고 S4 주입 누수를 독립 집계하는 조건도 명시됐다.
 
 이것은 규격 반영 확인이다. 오케·DBA의 실제 세대 검사·삭제·서비스 배포 성공을 직접 검증한 결과가 아니다. M3의 사전등록 기준 c38e359d v1.019는 유지하며, 새 규격이 채택한 지연 작업·회상 관측 항목을 기존 계획 안에서 구현한다. 현재 묶음의 익명 pr-cv는 오케 내부 합성 식별자이고 공개 입구로 보내는 시험 접두가 아니다. CLI의 pr-test 추가와 이벤트 principalId/훅 principal_id 표기는 운영 어댑터가 구분해야 한다.
+
+## DBA ⓪ 완료 보고와 SQL 확인
+
+DBA 수신 `4d47f61011`은 평가표 복제 `eval_pub`의 `insert, update` 변경을 **적용 완료**로 보고했다. GanpanAI `66b07ca913aac97a7a984f5dd33536bd47712bef:db/ddl/eval_pub_hearts_1116.sql`을 읽어 마지막 `ALTER PUBLICATION eval_pub SET (publish = 'insert, update')`를 확인했다. 이 SQL은 DELETE·TRUNCATE를 발행 대상에 추가하지 않는다.
+
+검증 수준을 구분한다. 변경 SQL은 직접 정적 확인했고, 실제 적용·6개 표의 기본키·트리거가 가림 UPDATE만 허용한다는 사실은 DBA 보고로 보존한다. 클로버는 운영 DB·구독자에 접속하지 않았으며 실제 hearts 사본의 가림 완료를 관측하지 않았다. publication의 UPDATE 허용 자체는 모든 UPDATE를 대상으로 하며, 가림만 가능하다는 경계는 별도의 쓰기 트리거에 의존한다.
+
+같은 파일의 머리말과 `COMMENT ON PUBLICATION`에는 과거의 “insert만/고치기는 안 넘김” 문구가 남아 있다. 추가된 ALTER와 설명의 정합성 보완을 권고한다. 변경 SQL의 동작 실패를 발견했다는 뜻은 아니며, 라이브 객체 설명을 직접 확인한 것도 아니다.
+
+절 N의 ltm_fact/ltm_episode/ltm_op·profile/관계 뷰·forget+epoch·test_age·principal 조건은 다음 DDL 초안으로 예고됐다. ⓪의 완료를 이 장기 기억 구현·C 호출·삭제 전파 평가 완료로 확대하지 않는다. SQL/360과 elda rev3 후속 역시 이번에 독립 검증한 항목이 아니다. M3는 C 및 관측 어댑터 준비 뒤 실행한다. 클로버가 재시작·배포를 수행하지 않았으며 모델/API·관문·DB 호출은 0회다.
