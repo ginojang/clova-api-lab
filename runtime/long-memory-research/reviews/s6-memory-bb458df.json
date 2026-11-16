@@ -1,0 +1,47 @@
+{
+  "review_date": "2026-11-16",
+  "source_repo": "ginojang/elda-resoner",
+  "source_commit": "bb458dfcc52470afb4dfb38a6586c23ae0684018",
+  "source_script": "memory/scripts/s6_memory_turn_eval.py",
+  "source_script_sha256": "54600f620a899979776a7d1b9f1b3305a49d97ca28bd292eeafa83a6e007d085",
+  "source_dataset": "memory/data/s6_memory_turn_eval_v0_3/eval.jsonl",
+  "source_dataset_sha256": "a5ee43bf818b7868531225dbc7b3a944128c8c46cd6e81ca0ee7ec1511740cd6",
+  "mode": "offline synthetic scorer verification; no serving/model evaluation",
+  "source_rows": 33,
+  "required_expected_operations": 26,
+  "provided_teeth": {
+    "gold_full": true,
+    "contamination_caught": true,
+    "supersede_vs_contest_split": true,
+    "not_verbatim_caught": true,
+    "truncated_value_drops": true,
+    "unmeasured_stays_in_denominator": true,
+    "verdict": "GREEN"
+  },
+  "missing_prediction": {
+    "rows": 33,
+    "rows_ok": 0,
+    "expected_ops": 26,
+    "gates_n": {
+      "missing_pred": 33
+    }
+  },
+  "explicit_unmeasured": {
+    "rows": 33,
+    "rows_ok": 0,
+    "expected_ops": 26,
+    "gates_n": {
+      "unmeasured": 33
+    }
+  },
+  "remaining_surface_match_boundary": {
+    "expected": "150만 원",
+    "predicted": "150만 원이 아니라 200만 원",
+    "surface_match": true,
+    "interpretation": "contains comparison only, not semantic agreement; synthetic check not observed model error"
+  },
+  "model_api_calls": 0,
+  "gateway_calls": 0,
+  "database_calls": 0,
+  "reported_33x3_real_predictions": "owner report only; not loaded or rescored here"
+}
