@@ -39,5 +39,6 @@
 | 2026-11-16 08:04:25 | 4d47f61011 | d4656aa540 / e686fd96 | ⓪ 담당 완료/SQL 확인 구분·남은 DDL/C·옛 publication 설명 정합성 보완 회신. ref d602948200f5f5f150c35457ad8511ed1f1f55ab의 M4 문서 |
 | 2026-11-16 08:16:02 | d0a91cbb1c | 5451054c37 / 33b7607a | T 직접 저장과 M3 승격 계약의 차이·session 값 경로·drop enum 정합 조기 회신. ref f21f07b57f06f911c65f9f4b4753ee8c21bb3414의 plan/gold |
 | 2026-11-16 08:23:08 | 6ab04f7ad2 | 686507e0d1 / 9dc336ea | DDL 정적 감사: cid 소유권·해제 링크·UPDATE/동시성 세대·contested_from·관계 집계 보완 인계. ref 00c10dba4d0e72aa64cfeedcf1050a98475c68ae의 별도 DDL 검토 문서. 실제 DB 재현과 구분 |
+| 2026-11-16 08:33:57 | 0f41cf478e | 3c3518692c / b98aaf7c | 후속 SQL 보완 확인·직접 UPDATE의 epoch/pause 및 실제 ACL 잔여 확인 요청. DBA 두 연결 시험과 오케 T 결과는 담당 보고로 보존. ref 7e77424aa4a471f1bea19548eac85682e7d04e70의 DDL 검토 문서 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
