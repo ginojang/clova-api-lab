@@ -1,0 +1,31 @@
+{
+  "name": "customer_memory_direct_write_context_followup",
+  "version": "0.2",
+  "phase": "pretest",
+  "training_forbidden": true,
+  "authored_by": "other_llm",
+  "has_customer_text": false,
+  "created_on": "2026-11-16",
+  "authorization": "User implementation authorization; offline synthetic bundle only; model/API/DB calls 0",
+  "spec_ref": "ginojang/Elda-Spec@88f5b45960dc4f97ffe127351646a49de66426aa:harness/SPEC.md",
+  "persona_ref": "ginojang/Elda-Spec@88f5b45960dc4f97ffe127351646a49de66426aa:persona/SPEC.md",
+  "runtime_ref": "ginojang/GanpanAI@6da1a409b79c8c7d4c02ad610e28491e78d52051",
+  "predecessor": "eval-v0 version 0.1 remains sealed; this supplement changes T/C policy and adds full-input observations; results must not be pooled",
+  "counts": {"mechanism_families": 14, "domains": 2, "stories": 28, "checkpoints_per_story": 3, "targets": 84},
+  "domains": ["signage", "guest_service_persona"],
+  "families": ["t_direct", "correction_history", "withdraw_history", "forget_process", "c_forget_race", "c_pause_race", "session_context", "promise_source_binding", "episode_s6", "returning_episode", "budget_actual_load", "restart_c_missing", "scope_isolation", "contest_confirm"],
+  "units": "84 related checkpoints in 28 stories; family is the correlation cluster; 3 checkpoints may share a conversation; positive count computed from gold",
+  "policy": {
+    "T": "eligible human self-facts persist immediately after T; session-only values do not enter structured LTM",
+    "C": "promise and episode source S6 must be pass; missing source verdict is not pass; captured job epoch must not be refreshed after forget/pause",
+    "context": "fresh S4 emission, accumulated memory blocks, active memory projection, and all raw model input are distinct",
+    "history_exposure": "Count stale historical block values even with a replacement header. Report strict zero-exposure separately from H92/P24 replacement-policy compliance; header is not physical erasure. No blanket history-safe claim.",
+    "forget": "old process closure, forbidden resume, and absence from complete next model input require separate evidence; DB receipt alone is insufficient",
+    "restart": "recovery of interrupted C is a separately marked challenge, not silently treated as executed"
+  },
+  "controls": ["settle_turn", "finish_c", "queue_c", "release_c", "forget", "pause", "resume", "restart_worker", "attempt_resume", "attach_s6", "advance_time", "trim_context", "retry_turn"],
+  "observation_contract": "CONTRACT.md; no inference from timestamp proximity; unknown for missing captures, source joins, C execution, process/deletion evidence",
+  "scoring": "Strict JSON exact structural checks plus externally supplied answer-bound semantic judgment; fresh/effective/all-input evidence are independent; history exposure diagnostic never silently removed",
+  "freeze": "Commit this plan and CONTRACT before dataset/code generation. Fixes before sealing are reviewed; post-seal changes require a new version. Freeze actual tested runtime/prompt/adapter refs in each run, not just this baseline.",
+  "limits": "No model inference, production validation, database registration, or whole-system physical deletion certification. AI-authored synthetic pretest; no human label claim."
+}
