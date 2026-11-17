@@ -1,0 +1,22 @@
+{
+  "comms_id": "e65e7b68b2",
+  "repo": "ginojang/GanpanAI",
+  "remote_tag": "refs/tags/orch01-m3v02-r2-runtime-1eb72970",
+  "advertised_tag_object": "928ffec19797f36cdebdd7271e7b04043796a709",
+  "advertised_peeled_commit": "1eb72970d818d062801d0a24c8e2426f192182d8",
+  "local_tag_object_targets_runtime": true,
+  "runtime_commit_available_after_fetch": true,
+  "old_audit_sha256": "a6f27d928422a79341d1582c9e1e9eceb261fa5321f162354588f4389e42220e",
+  "new_audit_sha256": "68fd2999bfa7e3fd51c0fff241bcc21f86e97df13ad4343f0b38ecc5023818dc",
+  "changed_top_level_fields": [
+    "adapter",
+    "limits",
+    "prompts_source_ref"
+  ],
+  "exit_code_after_tag": 0,
+  "source_validation_only": true,
+  "limits": [
+    "The remote tag and Git source match the claimed ref; deployed binary or service execution was not independently verified.",
+    "Original partial-provenance audit is preserved."
+  ]
+}
