@@ -1,0 +1,524 @@
+{
+  "changed_checks": [
+    {
+      "gate": true,
+      "gold_operator": "eq",
+      "gold_path": "/artifacts/load_projection_matches",
+      "gold_value": true,
+      "id": "n11-guest-q2-c04",
+      "metric": "load_trace",
+      "new_observation": {
+        "missing": true
+      },
+      "new_reason": "missing_projection_item_ids",
+      "new_status": "unknown",
+      "old_observation": {
+        "missing": true
+      },
+      "old_reason": "observed_comparison",
+      "old_status": "pass",
+      "projection_ids": {
+        "r2": {
+          "recorded_item_ids": [
+            "194",
+            "195",
+            "196",
+            "197",
+            "198",
+            "199",
+            "200",
+            "201",
+            "202",
+            "203",
+            "204",
+            "205",
+            "206",
+            "207",
+            "208",
+            "209",
+            "210",
+            "211"
+          ],
+          "rendered_item_ids": [
+            "194",
+            "195",
+            "196",
+            "197",
+            "198",
+            "199",
+            "200",
+            "201",
+            "202",
+            "203",
+            "204",
+            "205",
+            "206",
+            "207",
+            "208",
+            "209",
+            "210",
+            "211"
+          ]
+        },
+        "r3": {
+          "recorded_item_ids": null,
+          "rendered_item_ids": null
+        }
+      },
+      "target_id": "n11-guest-q2"
+    },
+    {
+      "gate": true,
+      "gold_operator": "eq",
+      "gold_path": "/artifacts/load_projection_matches",
+      "gold_value": true,
+      "id": "n11-signage-q2-c04",
+      "metric": "load_trace",
+      "new_observation": {
+        "missing": true
+      },
+      "new_reason": "missing_projection_item_ids",
+      "new_status": "unknown",
+      "old_observation": {
+        "missing": true
+      },
+      "old_reason": "observed_comparison",
+      "old_status": "pass",
+      "projection_ids": {
+        "r2": {
+          "recorded_item_ids": [
+            "176",
+            "182",
+            "177",
+            "179",
+            "183",
+            "184",
+            "180",
+            "181",
+            "186",
+            "188",
+            "189",
+            "185",
+            "178",
+            "187",
+            "190",
+            "191",
+            "192",
+            "193"
+          ],
+          "rendered_item_ids": [
+            "182",
+            "176",
+            "177",
+            "179",
+            "183",
+            "184",
+            "180",
+            "181",
+            "186",
+            "188",
+            "189",
+            "185",
+            "178",
+            "187",
+            "190",
+            "191",
+            "192",
+            "193"
+          ]
+        },
+        "r3": {
+          "recorded_item_ids": null,
+          "rendered_item_ids": null
+        }
+      },
+      "target_id": "n11-signage-q2"
+    },
+    {
+      "gate": false,
+      "gold_operator": "contains",
+      "gold_path": "/artifacts/current_values",
+      "gold_value": "유자차",
+      "id": "n14-guest-q2-c04",
+      "metric": "state_accuracy",
+      "new_observation": [],
+      "new_reason": "observed_comparison",
+      "new_status": "fail",
+      "old_observation": [
+        "유자차"
+      ],
+      "old_reason": "observed_comparison",
+      "old_status": "pass",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "gate": true,
+      "gold_operator": "eq",
+      "gold_path": "/artifacts/needs_confirm",
+      "gold_value": true,
+      "id": "n14-guest-q2-c05",
+      "metric": "contest",
+      "new_observation": true,
+      "new_reason": "observed_comparison",
+      "new_status": "pass",
+      "old_observation": false,
+      "old_reason": "observed_comparison",
+      "old_status": "fail",
+      "target_id": "n14-guest-q2"
+    }
+  ],
+  "common_observed_counts": {
+    "all": {
+      "r2": {
+        "failed": 18,
+        "passed": 324,
+        "planned": 366,
+        "unknown": 24
+      },
+      "r3": {
+        "failed": 18,
+        "passed": 322,
+        "planned": 366,
+        "unknown": 26
+      }
+    },
+    "gate": {
+      "r2": {
+        "failed": 4,
+        "passed": 184,
+        "planned": 212,
+        "unknown": 24
+      },
+      "r3": {
+        "failed": 3,
+        "passed": 183,
+        "planned": 212,
+        "unknown": 26
+      }
+    },
+    "nongate": {
+      "r2": {
+        "failed": 14,
+        "passed": 140,
+        "planned": 154,
+        "unknown": 0
+      },
+      "r3": {
+        "failed": 15,
+        "passed": 139,
+        "planned": 154,
+        "unknown": 0
+      }
+    }
+  },
+  "common_prediction_ids": [
+    "n01-guest-q1",
+    "n01-guest-q2",
+    "n01-guest-q3",
+    "n01-signage-q1",
+    "n01-signage-q2",
+    "n01-signage-q3",
+    "n02-guest-q1",
+    "n02-guest-q2",
+    "n02-guest-q3",
+    "n02-signage-q1",
+    "n02-signage-q2",
+    "n02-signage-q3",
+    "n03-guest-q1",
+    "n03-guest-q2",
+    "n03-guest-q3",
+    "n03-signage-q1",
+    "n03-signage-q2",
+    "n03-signage-q3",
+    "n04-guest-q1",
+    "n04-guest-q2",
+    "n04-guest-q3",
+    "n04-signage-q1",
+    "n04-signage-q2",
+    "n04-signage-q3",
+    "n05-guest-q1",
+    "n05-guest-q2",
+    "n05-signage-q1",
+    "n05-signage-q2",
+    "n06-guest-q1",
+    "n06-guest-q2",
+    "n06-signage-q1",
+    "n06-signage-q2",
+    "n07-guest-q1",
+    "n07-guest-q2",
+    "n07-guest-q3",
+    "n07-signage-q1",
+    "n07-signage-q2",
+    "n07-signage-q3",
+    "n08-guest-q1",
+    "n08-guest-q2",
+    "n08-guest-q3",
+    "n08-signage-q1",
+    "n08-signage-q2",
+    "n08-signage-q3",
+    "n09-guest-q1",
+    "n09-guest-q2",
+    "n09-guest-q3",
+    "n09-signage-q1",
+    "n09-signage-q2",
+    "n09-signage-q3",
+    "n10-guest-q1",
+    "n10-signage-q1",
+    "n11-guest-q1",
+    "n11-guest-q2",
+    "n11-guest-q3",
+    "n11-signage-q1",
+    "n11-signage-q2",
+    "n11-signage-q3",
+    "n12-guest-q1",
+    "n12-signage-q1",
+    "n13-guest-q1",
+    "n13-signage-q1",
+    "n14-guest-q1",
+    "n14-guest-q2",
+    "n14-guest-q3",
+    "n14-signage-q1",
+    "n14-signage-q2",
+    "n14-signage-q3"
+  ],
+  "gold_sha256": "4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717",
+  "history": {
+    "changed_targets": [
+      {
+        "id": "n02-guest-q3",
+        "r2": {
+          "expected_watch_count": 1,
+          "exposed_count": 2,
+          "exposed_values": [
+            "보리차",
+            "유자차"
+          ],
+          "reason": "captured_exact_value_intersection",
+          "status": "fail",
+          "watched_count": 2
+        },
+        "r3": {
+          "expected_watch_count": 1,
+          "exposed_count": 1,
+          "exposed_values": [
+            "보리차"
+          ],
+          "reason": "captured_exact_value_intersection",
+          "status": "fail",
+          "watched_count": 1
+        }
+      }
+    ],
+    "r2": {
+      "by_interpretation": {
+        "challenge": {
+          "failed": 0,
+          "measured_exposed_values": 0,
+          "measured_watch_values": 0,
+          "not_applicable": 2,
+          "pass_rate_decided": null,
+          "pass_rate_planned": 0.0,
+          "pass_rate_relevant": null,
+          "passed": 0,
+          "planned": 2,
+          "policy_gate": false,
+          "relevant_planned": 0,
+          "status": "incomplete",
+          "strict_zero_status": "incomplete",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 0
+        },
+        "contract": {
+          "failed": 12,
+          "measured_exposed_values": 15,
+          "measured_watch_values": 21,
+          "not_applicable": 60,
+          "pass_rate_decided": 0.25,
+          "pass_rate_planned": 0.04878048780487805,
+          "pass_rate_relevant": 0.18181818181818182,
+          "passed": 4,
+          "planned": 82,
+          "policy_gate": false,
+          "relevant_planned": 22,
+          "status": "fail",
+          "strict_zero_status": "fail",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 6
+        }
+      },
+      "failed": 12,
+      "measured_exposed_values": 15,
+      "measured_watch_values": 21,
+      "not_applicable": 62,
+      "pass_rate_decided": 0.25,
+      "pass_rate_planned": 0.047619047619047616,
+      "pass_rate_relevant": 0.18181818181818182,
+      "passed": 4,
+      "planned": 84,
+      "policy_gate": false,
+      "relevant_planned": 22,
+      "status": "fail",
+      "strict_zero_status": "fail",
+      "unit": "target/value pairs; repeated checkpoints are not independent",
+      "unknown": 6
+    },
+    "r3": {
+      "by_interpretation": {
+        "challenge": {
+          "failed": 0,
+          "measured_exposed_values": 0,
+          "measured_watch_values": 0,
+          "not_applicable": 2,
+          "pass_rate_decided": null,
+          "pass_rate_planned": 0.0,
+          "pass_rate_relevant": null,
+          "passed": 0,
+          "planned": 2,
+          "policy_gate": false,
+          "relevant_planned": 0,
+          "status": "incomplete",
+          "strict_zero_status": "incomplete",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 0
+        },
+        "contract": {
+          "failed": 12,
+          "measured_exposed_values": 14,
+          "measured_watch_values": 20,
+          "not_applicable": 60,
+          "pass_rate_decided": 0.25,
+          "pass_rate_planned": 0.04878048780487805,
+          "pass_rate_relevant": 0.18181818181818182,
+          "passed": 4,
+          "planned": 82,
+          "policy_gate": false,
+          "relevant_planned": 22,
+          "status": "fail",
+          "strict_zero_status": "fail",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 6
+        }
+      },
+      "failed": 12,
+      "measured_exposed_values": 14,
+      "measured_watch_values": 20,
+      "not_applicable": 62,
+      "pass_rate_decided": 0.25,
+      "pass_rate_planned": 0.047619047619047616,
+      "pass_rate_relevant": 0.18181818181818182,
+      "passed": 4,
+      "planned": 84,
+      "policy_gate": false,
+      "relevant_planned": 22,
+      "status": "fail",
+      "strict_zero_status": "fail",
+      "unit": "target/value pairs; repeated checkpoints are not independent",
+      "unknown": 6
+    }
+  },
+  "limits": [
+    "State changes compare supplied projections, not causal runtime improvements.",
+    "History exposure denominator is target/value pairs; changing observed values changes that denominator.",
+    "Semantic judgments remain unknown; source_binding remains unknown and is not authenticated by report equality.",
+    "The sealed C policy remains source S6=pass for promise and episode; newer policy is not applied retrospectively."
+  ],
+  "local_reports_byte_identical_to_git": true,
+  "missing_prediction_ids": [
+    "n05-guest-q3",
+    "n05-signage-q3",
+    "n06-guest-q3",
+    "n06-signage-q3",
+    "n10-guest-q2",
+    "n10-guest-q3",
+    "n10-signage-q2",
+    "n10-signage-q3",
+    "n12-guest-q2",
+    "n12-guest-q3",
+    "n12-signage-q2",
+    "n12-signage-q3",
+    "n13-guest-q2",
+    "n13-guest-q3",
+    "n13-signage-q2",
+    "n13-signage-q3"
+  ],
+  "missing_prediction_ids_equal": true,
+  "prediction_counts": {
+    "r2": 68,
+    "r3": 68
+  },
+  "previous_gate_failures": [
+    {
+      "id": "n03-guest-q2-c06",
+      "metric": "withdrawal",
+      "new_status": "fail"
+    },
+    {
+      "id": "n03-signage-q2-c06",
+      "metric": "withdrawal",
+      "new_status": "fail"
+    },
+    {
+      "id": "n14-guest-q2-c05",
+      "metric": "contest",
+      "new_status": "pass"
+    },
+    {
+      "id": "n14-signage-q2-c05",
+      "metric": "contest",
+      "new_status": "fail"
+    }
+  ],
+  "protected_audit_files_sha256": {
+    "/home/gino/WorkArea/clova-api-lab/runtime/long-memory-research/reviews/m3-v02-r2-2026-11-17/score_audit.json": "8f75df4c283ebb009f19b49c05f75fdf49b213de10eb84eae0d3f7c0f3e99d62",
+    "/home/gino/WorkArea/clova-api-lab/runtime/long-memory-research/reviews/m3-v02-r2-2026-11-17/score_audit.report.json": "42578d45641bebdb004062bafaca9ad9c28d1bc2cf29cd333a838fc04ff634c6",
+    "/home/gino/WorkArea/clova-api-lab/runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/score_audit.json": "9fdd03c7b2b4a2019a4705d377fc3d816847c53810743b10c61aa58cde265a49",
+    "/home/gino/WorkArea/clova-api-lab/runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/score_audit.report.json": "c9cb6d16c466ff9c13576eb614b8912301cf7b3a1cf1063a61136869de9f80b4"
+  },
+  "protected_audit_files_unchanged": true,
+  "r2_only_prediction_ids": [],
+  "r2_ref": "89e0930274396589d16069a050b2a58be532f807",
+  "r3_only_prediction_ids": [],
+  "r3_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+  "raw_inventory_names_only": {
+    "emitted_prediction_blind_ids": 68,
+    "raw_contents_read": false,
+    "raw_response_without_emitted_prediction": 12,
+    "request_files": 80,
+    "request_response_id_sets_equal": true,
+    "response_files": 80
+  },
+  "scope": "read-only comparison of committed synthetic projections/reports; raw file names only; no API/DB/gz/raw contents",
+  "source_hashes": {
+    "r2": {
+      "predictions.jsonl": "65c3ca1cda17a2e057b418d7e36b53326d7a12d0b80f9ec6f7af46c012e33da2",
+      "report.json": "42578d45641bebdb004062bafaca9ad9c28d1bc2cf29cd333a838fc04ff634c6"
+    },
+    "r3": {
+      "predictions.jsonl": "3f7129174ff7a5b00d19ad1a2d748a1f719e6179d1131b640c03d10a5d94425b",
+      "report.json": "c9cb6d16c466ff9c13576eb614b8912301cf7b3a1cf1063a61136869de9f80b4"
+    }
+  },
+  "state_transitions": {
+    "all": {
+      "fail->fail": 17,
+      "fail->pass": 1,
+      "pass->fail": 1,
+      "pass->pass": 321,
+      "pass->unknown": 2,
+      "unknown->unknown": 128
+    },
+    "gate": {
+      "fail->fail": 3,
+      "fail->pass": 1,
+      "pass->pass": 182,
+      "pass->unknown": 2,
+      "unknown->unknown": 92
+    },
+    "nongate": {
+      "fail->fail": 14,
+      "pass->fail": 1,
+      "pass->pass": 139,
+      "unknown->unknown": 36
+    }
+  }
+}

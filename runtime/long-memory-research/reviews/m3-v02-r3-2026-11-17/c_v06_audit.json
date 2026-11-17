@@ -1,0 +1,1049 @@
+{
+  "old_ref": "b91323f4580e17fec9431289c88e0f601dccd669",
+  "new_ref": "80b386fb449bac1e05d78451c3033c4716617803",
+  "source_path": "memory/scripts/s6_memory_chat_eval.py",
+  "source_sha256": "717c9f2d33e222f19e152fc56a58a7898c822333a3fc589e90683aefd0b6a094",
+  "scope": "static Git review plus pure _gold/score_rows synthetic diagnostics; no K3/main/build/teeth/model/API/DB/runtime execution",
+  "old_gold": {
+    "path": "memory/data/s6_memory_chat_eval_v0_5/eval.jsonl",
+    "sha256": "356d04559d3a35be371a0f9f63af357bd2751cfe7bea51510124c24c18213c8c",
+    "md5": "c9ef1b200f37ee718c7232ef22ea8477",
+    "rows": 13
+  },
+  "new_gold": {
+    "path": "memory/data/s6_memory_chat_eval_v0_6/eval.jsonl",
+    "sha256": "216f6a39d7337a2304ee4038677e71ebdc7cfc48687f06d84be41583155c7064",
+    "md5": "649911e73dafef3ed09a15e134e28ef3",
+    "rows": 15
+  },
+  "META": {
+    "name": "s6_memory_chat",
+    "version": "0.6",
+    "rows": 15,
+    "expected_promises": 5,
+    "by_subset": {
+      "promise": 2,
+      "promise_fix": 2,
+      "promise_unknown": 1,
+      "not_promise": 1,
+      "self": 1,
+      "episode": 1,
+      "none": 1,
+      "cooldown": 1,
+      "joke": 1,
+      "order": 1,
+      "episode_other": 1,
+      "promise_repeat": 2
+    },
+    "langs": {
+      "ko": 12,
+      "en": 2,
+      "ja": 1
+    },
+    "eval_md5": "649911e73dafef3ed09a15e134e28ef3",
+    "authored_by": "claude",
+    "use": "eval",
+    "made": "2026-11-17",
+    "builder": "scripts/s6_memory_chat_eval.py",
+    "prompt_pair": "memory/prompts/s6_memory_chat_end_v0.md v0.002 (예시와 안 겹침)"
+  },
+  "old_thirteen_exact_byte_prefix": true,
+  "old_v05_file_preserved": true,
+  "old_thirteen_generated_predictions_unchanged": true,
+  "score_rows_AST_unchanged": true,
+  "added_rows": [
+    {
+      "id": "d01",
+      "input": {
+        "id": "d01",
+        "lang": "ko",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 조명 타이머 설정이 헷갈려요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "지금 정해진 약속 같은 거 있어요?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "아직 따로 정해 둔 건 없어요"
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "그럼 그 순서표 부탁해요"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "none",
+          "5": "pass"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "순서표"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "generated_prediction": {
+        "id": "d01",
+        "promises": [
+          {
+            "t": "순서표",
+            "evidence": {
+              "turn_index": 5,
+              "t": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "순서표"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "duplicate_assistant_text_1_equals_5": true,
+      "promise_source_indices": [
+        5
+      ],
+      "did_source_indices": [
+        3
+      ]
+    },
+    {
+      "id": "d02",
+      "input": {
+        "id": "d02",
+        "lang": "en",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "The vinyl lettering is peeling at the corner."
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "I'll bring a repair kit on my next visit."
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "How long should the glue dry?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "Give it about a day before you touch it."
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "Okay, and the kit?"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "I'll bring a repair kit on my next visit."
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "none",
+          "5": "pass"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "repair kit"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "generated_prediction": {
+        "id": "d02",
+        "promises": [
+          {
+            "t": "repair kit",
+            "evidence": {
+              "turn_index": 5,
+              "t": "I'll bring a repair kit on my next visit."
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "repair kit"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "duplicate_assistant_text_1_equals_5": true,
+      "promise_source_indices": [
+        5
+      ],
+      "did_source_indices": [
+        3
+      ]
+    }
+  ],
+  "old_builder_on_new_fixture_self_score": {
+    "rows_ok": 13,
+    "rows": 15,
+    "promise_recall": 1.0,
+    "episode_acc": 1.0,
+    "counts": {
+      "exp_promises": 5,
+      "promise_hit": 5,
+      "episode_n": 15,
+      "episode_ok": 15,
+      "cooldown_n": 1,
+      "cooldown_hit": 1,
+      "must_not_repeat_n": 1,
+      "must_not_repeat_hit": 1
+    },
+    "gates": {
+      "promise_not_pass": [
+        "d01",
+        "d02"
+      ]
+    },
+    "gates_n": {
+      "promise_not_pass": 2
+    },
+    "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+    "_per": [
+      [
+        "p01",
+        true
+      ],
+      [
+        "p02",
+        true
+      ],
+      [
+        "p03",
+        true
+      ],
+      [
+        "p04",
+        true
+      ],
+      [
+        "p05",
+        true
+      ],
+      [
+        "e01",
+        true
+      ],
+      [
+        "e02",
+        true
+      ],
+      [
+        "e03",
+        true
+      ],
+      [
+        "e04",
+        true
+      ],
+      [
+        "e05",
+        true
+      ],
+      [
+        "x01",
+        true
+      ],
+      [
+        "x02",
+        true
+      ],
+      [
+        "e06",
+        true
+      ],
+      [
+        "d01",
+        false
+      ],
+      [
+        "d02",
+        false
+      ]
+    ]
+  },
+  "new_builder_on_new_fixture_self_score": {
+    "rows_ok": 15,
+    "rows": 15,
+    "promise_recall": 1.0,
+    "episode_acc": 1.0,
+    "counts": {
+      "exp_promises": 5,
+      "promise_hit": 5,
+      "episode_n": 15,
+      "episode_ok": 15,
+      "cooldown_n": 1,
+      "cooldown_hit": 1,
+      "must_not_repeat_n": 1,
+      "must_not_repeat_hit": 1
+    },
+    "gates": {},
+    "gates_n": {},
+    "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+    "_per": [
+      [
+        "p01",
+        true
+      ],
+      [
+        "p02",
+        true
+      ],
+      [
+        "p03",
+        true
+      ],
+      [
+        "p04",
+        true
+      ],
+      [
+        "p05",
+        true
+      ],
+      [
+        "e01",
+        true
+      ],
+      [
+        "e02",
+        true
+      ],
+      [
+        "e03",
+        true
+      ],
+      [
+        "e04",
+        true
+      ],
+      [
+        "e05",
+        true
+      ],
+      [
+        "x01",
+        true
+      ],
+      [
+        "x02",
+        true
+      ],
+      [
+        "e06",
+        true
+      ],
+      [
+        "d01",
+        true
+      ],
+      [
+        "d02",
+        true
+      ]
+    ]
+  },
+  "diagnostics": [
+    {
+      "id": "d01_block_source_same_text_rejected",
+      "analyst_created": true,
+      "input": {
+        "id": "d01",
+        "lang": "ko",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 조명 타이머 설정이 헷갈려요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "지금 정해진 약속 같은 거 있어요?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "아직 따로 정해 둔 건 없어요"
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "그럼 그 순서표 부탁해요"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "none",
+          "5": "pass"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "순서표"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "d01",
+        "promises": [
+          {
+            "t": "순서표",
+            "evidence": {
+              "turn_index": 1,
+              "t": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "순서표"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 1,
+          "promise_hit": 1,
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {
+          "promise_not_pass": [
+            "d01"
+          ]
+        },
+        "gates_n": {
+          "promise_not_pass": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "d01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "d02_block_source_same_text_rejected",
+      "analyst_created": true,
+      "input": {
+        "id": "d02",
+        "lang": "en",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "The vinyl lettering is peeling at the corner."
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "I'll bring a repair kit on my next visit."
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "How long should the glue dry?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "Give it about a day before you touch it."
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "Okay, and the kit?"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "I'll bring a repair kit on my next visit."
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "none",
+          "5": "pass"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "repair kit"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "d02",
+        "promises": [
+          {
+            "t": "repair kit",
+            "evidence": {
+              "turn_index": 1,
+              "t": "I'll bring a repair kit on my next visit."
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "repair kit"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 1,
+          "promise_hit": 1,
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {
+          "promise_not_pass": [
+            "d02"
+          ]
+        },
+        "gates_n": {
+          "promise_not_pass": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "d02",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "no_matching_pass_falls_back_to_block_and_fails",
+      "analyst_created": true,
+      "input": {
+        "id": "d01",
+        "lang": "ko",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 조명 타이머 설정이 헷갈려요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "지금 정해진 약속 같은 거 있어요?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "아직 따로 정해 둔 건 없어요"
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "그럼 그 순서표 부탁해요"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "none",
+          "5": "unknown"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "순서표"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "d01",
+        "promises": [
+          {
+            "t": "순서표",
+            "evidence": {
+              "turn_index": 1,
+              "t": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "순서표"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 1,
+          "promise_hit": 1,
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {
+          "promise_not_pass": [
+            "d01"
+          ]
+        },
+        "gates_n": {
+          "promise_not_pass": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "d01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "unrelated_pass_fallback_self_score_passes",
+      "analyst_created": true,
+      "input": {
+        "id": "d01",
+        "lang": "ko",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 조명 타이머 설정이 헷갈려요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "현재는 간판 상담만 하고 있습니다."
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "지금 정해진 약속 같은 거 있어요?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "아직 따로 정해 둔 건 없어요"
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "그럼 그 순서표 부탁해요"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          }
+        ],
+        "elda_s6": {
+          "1": "pass",
+          "3": "none",
+          "5": "unknown"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "순서표"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "d01",
+        "promises": [
+          {
+            "t": "순서표",
+            "evidence": {
+              "turn_index": 1,
+              "t": "현재는 간판 상담만 하고 있습니다."
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "순서표"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 1,
+          "promise_hit": 1,
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "d01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "incidental_keyword_pass_selected_before_real_promise",
+      "analyst_created": true,
+      "input": {
+        "id": "d01",
+        "lang": "ko",
+        "subset": "promise_repeat",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 조명 타이머 설정이 헷갈려요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "지금 정해진 약속 같은 거 있어요?"
+          },
+          {
+            "turn_index": 3,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "순서표라는 말은 예시일 뿐이고 지금 약속한 것은 없습니다."
+          },
+          {
+            "turn_index": 4,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "그럼 그 순서표 부탁해요"
+          },
+          {
+            "turn_index": 5,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "다음 주에 타이머 설정 순서표를 문자로 넣어 둘게요"
+          }
+        ],
+        "elda_s6": {
+          "1": "block",
+          "3": "pass",
+          "5": "pass"
+        },
+        "expect": {
+          "promises": [
+            {
+              "contains": "순서표"
+            }
+          ],
+          "episode_kinds": [
+            "consult"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "d01",
+        "promises": [
+          {
+            "t": "순서표",
+            "evidence": {
+              "turn_index": 3,
+              "t": "순서표라는 말은 예시일 뿐이고 지금 약속한 것은 없습니다."
+            }
+          }
+        ],
+        "episode": {
+          "did": [
+            {
+              "kind": "consult",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 3
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": [
+              "순서표"
+            ]
+          }
+        },
+        "measured": true
+      },
+      "score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 1,
+          "promise_hit": 1,
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "d01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    }
+  ],
+  "limits": [
+    "15/15 is synthetic _gold self-scoring, not model accuracy or a new K3 result.",
+    "The two actual added rows have a unique pass assistant turn 5 containing the expected promise keyword; current _gold selection is correct for them.",
+    "The data stores expected promise keywords, not an explicit expected promise source index. Source 5 follows from this fixture's S6 map.",
+    "Generated episode did uses turn 3 (none), distinct from promise turn 5 (pass).",
+    "The first matching pass keyword and fallback to the first assistant are lexical source selection, not promise entailment validation.",
+    "The unrelated-pass diagnostic intentionally preserves a promise expectation without an eligible matching pass; it demonstrates _gold can mask an inconsistent future fixture, not that the present fifteen rows are wrong.",
+    "These disclosed cases target an observed r3 failure and are a development pretest, not unseen holdout/generalization evidence."
+  ],
+  "protected_prior_artifact_sha256": {
+    "score_audit.json": "9fdd03c7b2b4a2019a4705d377fc3d816847c53810743b10c61aa58cde265a49",
+    "score_audit.report.json": "c9cb6d16c466ff9c13576eb614b8912301cf7b3a1cf1063a61136869de9f80b4",
+    "score_audit.md": "08b4beab0a0906b34fa30b459d7e24ef2057caa173d6a066106df60a8e75b5d9",
+    "comparison.py": "e490e56596f0355a0948186cde70573533d095d78cc5d0440f9abfa77319ddbf",
+    "comparison.json": "f58b6eb9e9b0d99a323800af8773d1c46de835a2a34a913d676b9718e70eaf7a"
+  },
+  "protected_prior_artifacts_unchanged": true
+}

@@ -1,0 +1,2695 @@
+{
+  "audit": "M3 v0.2 r3 synthetic runtime cases; no new model judgment or relabeling",
+  "artifact_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+  "runtime_ref": "a315c32c008694e52b0fcfc11651ae986340a7ad",
+  "bundle_ref": "7b9b9443d8b885742f66aa40d4308018ec46303a",
+  "reasoner_ref": "b91323f4580e17fec9431289c88e0f601dccd669",
+  "method": "Read-only git blobs and JSON projections/arithmetic; no model/API/DB/serving execution; no server gzip log opened.",
+  "run_meta": {
+    "run_id": "m3v02-orch-20261117-a315c32c",
+    "started": "2026-11-17T04:39:19.687Z",
+    "runtime_ref": "ginojang/GanpanAI@a315c32c008694e52b0fcfc11651ae986340a7ad",
+    "runtime_src_dirty": null,
+    "dist_sha256": "d678471aa7b063ed0721a674532b933e3c1fb914dc8f03d8cc850c34d5b19fc7",
+    "prompts": {
+      "eldacore/s6_memory_turn": "f3de219605fd16bf",
+      "eldacore/s6_memory_chat_end": "7fd13cb04c2128a6",
+      "harness/no_self_intro": "b5d0cb47703f491b",
+      "harness/serve_consult": "59178de712226024"
+    },
+    "bundle_ref": "ginojang/clova-api-lab@7b9b9443d8b885742f66aa40d4308018ec46303a",
+    "bundle_head_sha": "bad05ac30d51b6403531d36374fe4b09a8b5ccc21921bb9bb02ad51608fd41e3",
+    "adapter_sha256": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "executor": "adapter stand-in (not Elda CLI) — hook before→brain→after",
+    "executor_system_sha256": "b9186a43ca4fc304d36062b829a15d6491ed651f0516b940ff5b9be0caf83328",
+    "brain_model": "claude-haiku-5-5",
+    "dev_env_overrides": {
+      "PORT": "3299",
+      "LTM_LATE_JUDGE": "off",
+      "LTM_CHAT_END_MS": "604800000",
+      "INTENT_SERVING": "off",
+      "PERSONA_JUDGE": "off",
+      "LTM_TURN": "test",
+      "LTM_LOAD": "test",
+      "LTM_FORGET": "test",
+      "LTM_CATCHUP_MAX": "20"
+    },
+    "tokenizer": "none (estimate:tokensEst)",
+    "judgment": "not supplied (semantic = unknown)",
+    "source_bound": "not emitted (unknown) — source hash/judge id/episode join not measured",
+    "taint": "probes after prep failure or state-affecting unsupported control are not emitted (raw.invalid_observation)",
+    "settle": "expected T lines = turns delivered to cid"
+  },
+  "adapter_sha256": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+  "source_files": {
+    "ltm_op_dump.jsonl": "c877b34dbd2de9b2bf3f06dfd91f446e22f93cce47615876a7c07e9a4d734c9a",
+    "t_receipts.jsonl": "0aa796e7b0bc38b59bb6712ddf4591bdae6c6fa2e1ad9ca4d40445a1411a4ff3",
+    "run_events.jsonl": "1bbd22036e1daf1c48f28d715a8bc2d2cfefc4075ace82dc5899ff23a01f4e6f",
+    "run_meta.json": "eef813bff757a9e09fa29453e2a3bc8013d77de40f70afac9e4b218cee2935a4"
+  },
+  "cases": [
+    {
+      "id": "n03-signage-q2",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-d59f8a6e143c4f3ae284.json",
+      "raw_sha256": "6771c2f81459331a86e75cab1658ed88df484f24a1923c8c31a28e9c20c26d7a",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [],
+        "current_values": [],
+        "needs_confirm": false,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference",
+          "SUPERSEDE:fact:preference",
+          "WITHDRAW:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": false,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [
+          "남색",
+          "연두색"
+        ],
+        "_owner": "pr-test-m3-3a8850-366d9ef4539a",
+        "_profile": [],
+        "_facts": [
+          {
+            "fact_id": "237",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": "238",
+            "values": [
+              "남색"
+            ]
+          },
+          {
+            "fact_id": "238",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": null,
+            "values": [
+              "연두색"
+            ]
+          }
+        ],
+        "_op_boundary": 446,
+        "_obs_start": "2026-11-17T04:41:14.524Z"
+      },
+      "c_runs": [],
+      "ops_at_observation": [
+        {
+          "line": 9,
+          "row": {
+            "op_id": "444",
+            "principal_id": "pr-test-m3-3a8850-366d9ef4539a",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-f313afcfddcf",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "237",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 31,
+            "p_yes": 0.85,
+            "why": "손님이 가게 간판 기본색을 남색이라고 자기 입으로 말함 · 기억 요청도 있음",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:40:59.714Z"
+          }
+        },
+        {
+          "line": 10,
+          "row": {
+            "op_id": "445",
+            "principal_id": "pr-test-m3-3a8850-366d9ef4539a",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-f313afcfddcf",
+            "scope": "chat",
+            "op": "SUPERSEDE",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "237",
+            "fact_id": "238",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 2,
+            "ev_start": 13,
+            "ev_end": 38,
+            "p_yes": 0.9,
+            "why": "손님이 간판 기본색을 연두색으로 정정함 — 고친다는 말 있음",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:41:05.581Z"
+          }
+        },
+        {
+          "line": 11,
+          "row": {
+            "op_id": "446",
+            "principal_id": "pr-test-m3-3a8850-366d9ef4539a",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-f313afcfddcf",
+            "scope": "chat",
+            "op": "WITHDRAW",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "238",
+            "fact_id": null,
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 4,
+            "ev_start": 0,
+            "ev_end": 26,
+            "p_yes": 0.9,
+            "why": "새 값 없이 철회 · 예전 설정으로 되돌리지도 않음",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:41:14.437Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 25,
+          "row": {
+            "cid": "m3-3a8850-f313afcfddcf",
+            "n": 1,
+            "ev": "blind-event-8db27eda0ccf335ceddf",
+            "at": "2026-11-17T04:40:57.605Z",
+            "fixture": false,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:40:59.713Z",
+              "turn_index": 1,
+              "turn_id": 8627,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 26,
+          "row": {
+            "cid": "m3-3a8850-f313afcfddcf",
+            "n": 2,
+            "ev": "blind-event-2207f0bab68057fd9eb3",
+            "at": "2026-11-17T04:41:03.103Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:05.581Z",
+              "turn_index": 2,
+              "turn_id": 8628,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 27,
+          "row": {
+            "cid": "m3-3a8850-f313afcfddcf",
+            "n": 3,
+            "ev": "blind-target-0c4740e0eb2a24c49675",
+            "at": "2026-11-17T04:41:07.574Z",
+            "fixture": false,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:09.434Z",
+              "turn_index": 3,
+              "turn_id": 8629,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 28,
+          "row": {
+            "cid": "m3-3a8850-f313afcfddcf",
+            "n": 4,
+            "ev": "blind-event-58d34e0336fa5b75eed3",
+            "at": "2026-11-17T04:41:12.213Z",
+            "fixture": false,
+            "chat_turn": 4,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:14.435Z",
+              "turn_index": 4,
+              "turn_id": 8630,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [],
+      "projected_context": {
+        "withdrawn_slots": [
+          "취향"
+        ],
+        "effective_active_values": [],
+        "fresh_values": []
+      }
+    },
+    {
+      "id": "n03-guest-q2",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6aeb3412d004a81f4420.json",
+      "raw_sha256": "c59363aea3b86c7ed663357ad91d9eb07a9afd46a720b0ebcfe0b311faea5e25",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [],
+        "current_values": [],
+        "needs_confirm": false,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference",
+          "SUPERSEDE:fact:preference",
+          "WITHDRAW:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": false,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [
+          "보리차",
+          "유자차"
+        ],
+        "_owner": "pr-test-m3-3a8850-158e82752f85",
+        "_profile": [],
+        "_facts": [
+          {
+            "fact_id": "240",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": null,
+            "values": [
+              "유자차"
+            ]
+          },
+          {
+            "fact_id": "239",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": "240",
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_op_boundary": 449,
+        "_obs_start": "2026-11-17T04:41:40.989Z"
+      },
+      "c_runs": [],
+      "ops_at_observation": [
+        {
+          "line": 12,
+          "row": {
+            "op_id": "447",
+            "principal_id": "pr-test-m3-3a8850-158e82752f85",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-fb951cfe358f",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "239",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 28,
+            "p_yes": 0.9,
+            "why": "손님이 기본 차를 보리차라고 분명히 말하고 기억해 달라고 요청함 — 취향으로 기록",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:41:28.726Z"
+          }
+        },
+        {
+          "line": 13,
+          "row": {
+            "op_id": "448",
+            "principal_id": "pr-test-m3-3a8850-158e82752f85",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-fb951cfe358f",
+            "scope": "chat",
+            "op": "SUPERSEDE",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "239",
+            "fact_id": "240",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 2,
+            "ev_start": 13,
+            "ev_end": 33,
+            "p_yes": 0.9,
+            "why": "정정 표현(「정정할게」「지금부터」)으로 기본 차를 바꿈 — 기존 보리차를 대체",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:41:32.883Z"
+          }
+        },
+        {
+          "line": 14,
+          "row": {
+            "op_id": "449",
+            "principal_id": "pr-test-m3-3a8850-158e82752f85",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-fb951cfe358f",
+            "scope": "chat",
+            "op": "WITHDRAW",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "240",
+            "fact_id": null,
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 4,
+            "ev_start": 0,
+            "ev_end": 22,
+            "p_yes": 0.9,
+            "why": "기본 차 설정을 값 없이 철회하고 미정으로 둠 · 예전 값으로 되돌리는 것도 아님",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:41:40.936Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 32,
+          "row": {
+            "cid": "m3-3a8850-fb951cfe358f",
+            "n": 1,
+            "ev": "blind-event-f8d2647097cac99efe11",
+            "at": "2026-11-17T04:41:26.650Z",
+            "fixture": false,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:28.725Z",
+              "turn_index": 1,
+              "turn_id": 8634,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 33,
+          "row": {
+            "cid": "m3-3a8850-fb951cfe358f",
+            "n": 2,
+            "ev": "blind-event-b329dcf17068cbf34c1b",
+            "at": "2026-11-17T04:41:30.464Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:32.883Z",
+              "turn_index": 2,
+              "turn_id": 8635,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 34,
+          "row": {
+            "cid": "m3-3a8850-fb951cfe358f",
+            "n": 3,
+            "ev": "blind-target-8c749339b740cd229171",
+            "at": "2026-11-17T04:41:34.420Z",
+            "fixture": false,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:36.144Z",
+              "turn_index": 3,
+              "turn_id": 8636,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 35,
+          "row": {
+            "cid": "m3-3a8850-fb951cfe358f",
+            "n": 4,
+            "ev": "blind-event-b2838476c6f9ea306e50",
+            "at": "2026-11-17T04:41:38.872Z",
+            "fixture": false,
+            "chat_turn": 4,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:41:40.935Z",
+              "turn_index": 4,
+              "turn_id": 8637,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [],
+      "projected_context": {
+        "withdrawn_slots": [
+          "취향"
+        ],
+        "effective_active_values": [],
+        "fresh_values": []
+      }
+    },
+    {
+      "id": "n08-signage-q3",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-d942bedd1696be7d7b09.json",
+      "raw_sha256": "ed6fc59b271cda89cefd68ce530f279f38ee6051165f203b6d922f99b65b18ed",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "남색"
+        ],
+        "current_values": [
+          "남색"
+        ],
+        "needs_confirm": false,
+        "episode_values": [
+          "남색"
+        ],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": true,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [],
+        "_owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+        "_profile": [
+          {
+            "fact_id": "255",
+            "state": "current",
+            "values": [
+              "남색"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "255",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "남색"
+            ]
+          }
+        ],
+        "_op_boundary": 470,
+        "_obs_start": "2026-11-17T04:46:54.690Z"
+      },
+      "c_runs": [
+        {
+          "cid": "m3-3a8850-a23415d24015",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-f44f4a7d9be7|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "none"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        },
+        {
+          "cid": "m3-3a8850-a23415d24015",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-f44f4a7d9be7|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": true,
+            "promises_seen": 0,
+            "s6": {
+              "1": "block",
+              "3": "none",
+              "5": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        },
+        {
+          "cid": "m3-3a8850-a23415d24015",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-f44f4a7d9be7|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "block",
+              "3": "none",
+              "5": "pass",
+              "7": "none",
+              "9": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        }
+      ],
+      "ops_at_observation": [
+        {
+          "line": 31,
+          "row": {
+            "op_id": "470",
+            "principal_id": "pr-test-m3-3a8850-f44f4a7d9be7",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-a23415d24015",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "255",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 31,
+            "p_yes": 0.85,
+            "why": "손님이 간판 기본색을 남색이라고 분명히 말하고 기억해 달라고 함",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:46:40.481Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 83,
+          "row": {
+            "cid": "m3-3a8850-a23415d24015",
+            "n": 1,
+            "ev": "blind-event-c498be4974eb3c0723a6",
+            "at": "2026-11-17T04:46:38.036Z",
+            "fixture": true,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:46:40.478Z",
+              "turn_index": 1,
+              "turn_id": 8685,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 84,
+          "row": {
+            "cid": "m3-3a8850-a23415d24015",
+            "n": 2,
+            "ev": "blind-target-28dd1cdfed90c18f05c6",
+            "at": "2026-11-17T04:46:44.288Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:46:46.101Z",
+              "turn_index": 2,
+              "turn_id": 8686,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 85,
+          "row": {
+            "cid": "m3-3a8850-a23415d24015",
+            "n": 3,
+            "ev": "blind-event-23df61bc655c44198934",
+            "at": "2026-11-17T04:46:47.983Z",
+            "fixture": true,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:46:49.733Z",
+              "turn_index": 3,
+              "turn_id": 8687,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 86,
+          "row": {
+            "cid": "m3-3a8850-a23415d24015",
+            "n": 4,
+            "ev": "blind-target-868da2aa4e17f3943c00",
+            "at": "2026-11-17T04:46:51.459Z",
+            "fixture": false,
+            "chat_turn": 4,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:46:53.191Z",
+              "turn_index": 4,
+              "turn_id": 8688,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 87,
+          "row": {
+            "cid": "m3-3a8850-a23415d24015",
+            "n": 5,
+            "ev": "blind-event-fb7d6d2ec414a36b98aa",
+            "at": "2026-11-17T04:46:52.889Z",
+            "fixture": true,
+            "chat_turn": 5,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:46:54.540Z",
+              "turn_index": 5,
+              "turn_id": 8689,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [
+        {
+          "line": 146,
+          "row": {
+            "t": "2026-11-17T04:46:41.506Z",
+            "ev": "finish_c",
+            "id": "blind-event-ba046ad427ab385d1604",
+            "cid": "m3-3a8850-a23415d24015",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "none"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        },
+        {
+          "line": 151,
+          "row": {
+            "t": "2026-11-17T04:46:49.973Z",
+            "ev": "finish_c",
+            "id": "blind-event-58c0c0c00b824545e97f",
+            "cid": "m3-3a8850-a23415d24015",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": true,
+              "promises_seen": 0,
+              "s6": {
+                "1": "block",
+                "3": "none",
+                "5": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        },
+        {
+          "line": 155,
+          "row": {
+            "t": "2026-11-17T04:46:54.690Z",
+            "ev": "finish_c",
+            "id": "blind-event-4c04399cb4e82f1aed2f",
+            "cid": "m3-3a8850-a23415d24015",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-f44f4a7d9be7",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "block",
+                "3": "none",
+                "5": "pass",
+                "7": "none",
+                "9": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        }
+      ],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "남색"
+        ],
+        "fresh_values": []
+      },
+      "synthetic_assistant_history": [
+        "다음 방문에 창문 치수 재확인할게.",
+        "지금까지 확인된 내용은 이렇습니다.\n\n- **기본 설정**: 간판 기본색은 **남색**으로 기억해 두었습니다.\n- **확정된 다음 약속**: 아직 없습니다. 앞서 제가 \"다음 방문에 창문 치수 재확인할게\"라고 드린 말은 약속으로 확정된 것이 아니라 제안에 가깝습니다. 원하시면 그 부분을 확정 약속으로 기록해 두겠습니다.",
+        "네, 오늘 대화에 집중할게.",
+        "기본 설정은 **간판 기본색 남색**입니다. 확정된 다음 약속은 아직 없습니다. 앞서 말씀드린 창문 치수 재확인은 제안이었고, 확정 약속으로 기록하지는 않았습니다. 원하시면 날짜와 함께 약속으로 남겨 두겠습니다.",
+        "다음 방문에 창문 치수 재확인할게."
+      ]
+    },
+    {
+      "id": "n08-guest-q3",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-b7e4f5e1d37aebf23951.json",
+      "raw_sha256": "c8dcf298f2617b7ed1d78294db2f8fad74dfe4ce9154922ca1dc6c20647bf2d2",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "보리차"
+        ],
+        "current_values": [
+          "보리차"
+        ],
+        "needs_confirm": false,
+        "episode_values": [
+          "보리차"
+        ],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": true,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [],
+        "_owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+        "_profile": [
+          {
+            "fact_id": "256",
+            "state": "current",
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "256",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_op_boundary": 471,
+        "_obs_start": "2026-11-17T04:47:13.151Z"
+      },
+      "c_runs": [
+        {
+          "cid": "m3-3a8850-0548da74305c",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-4b6617ea9ca8|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "none"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        },
+        {
+          "cid": "m3-3a8850-0548da74305c",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-4b6617ea9ca8|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "block",
+              "3": "none",
+              "5": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        },
+        {
+          "cid": "m3-3a8850-0548da74305c",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-4b6617ea9ca8|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": true,
+            "promises_seen": 0,
+            "s6": {
+              "1": "block",
+              "3": "none",
+              "5": "pass",
+              "7": "none",
+              "9": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        }
+      ],
+      "ops_at_observation": [
+        {
+          "line": 32,
+          "row": {
+            "op_id": "471",
+            "principal_id": "pr-test-m3-3a8850-4b6617ea9ca8",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-0548da74305c",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "256",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 27,
+            "p_yes": 0.9,
+            "why": "손님이 기본 차를 보리차로 분명히 말하고 기억해 달라고 함",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:47:01.549Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 89,
+          "row": {
+            "cid": "m3-3a8850-0548da74305c",
+            "n": 1,
+            "ev": "blind-event-a2d71abc1f40fe8c3736",
+            "at": "2026-11-17T04:46:59.304Z",
+            "fixture": true,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:47:01.545Z",
+              "turn_index": 1,
+              "turn_id": 8691,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 90,
+          "row": {
+            "cid": "m3-3a8850-0548da74305c",
+            "n": 2,
+            "ev": "blind-target-74bd8eecd95bf36c6de8",
+            "at": "2026-11-17T04:47:03.981Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:47:05.911Z",
+              "turn_index": 2,
+              "turn_id": 8692,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 91,
+          "row": {
+            "cid": "m3-3a8850-0548da74305c",
+            "n": 3,
+            "ev": "blind-event-4931178c51a4165e431b",
+            "at": "2026-11-17T04:47:06.393Z",
+            "fixture": true,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:47:08.048Z",
+              "turn_index": 3,
+              "turn_id": 8693,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 92,
+          "row": {
+            "cid": "m3-3a8850-0548da74305c",
+            "n": 4,
+            "ev": "blind-target-166657f2f216ccc63f48",
+            "at": "2026-11-17T04:47:09.668Z",
+            "fixture": false,
+            "chat_turn": 4,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:47:11.521Z",
+              "turn_index": 4,
+              "turn_id": 8694,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 93,
+          "row": {
+            "cid": "m3-3a8850-0548da74305c",
+            "n": 5,
+            "ev": "blind-event-de02a95717cb50eac946",
+            "at": "2026-11-17T04:47:11.208Z",
+            "fixture": true,
+            "chat_turn": 5,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:47:12.826Z",
+              "turn_index": 5,
+              "turn_id": 8695,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [
+        {
+          "line": 159,
+          "row": {
+            "t": "2026-11-17T04:47:02.655Z",
+            "ev": "finish_c",
+            "id": "blind-event-6b7103ae060b65b772d9",
+            "cid": "m3-3a8850-0548da74305c",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "none"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        },
+        {
+          "line": 164,
+          "row": {
+            "t": "2026-11-17T04:47:08.155Z",
+            "ev": "finish_c",
+            "id": "blind-event-8f22cff4059504f9a7fa",
+            "cid": "m3-3a8850-0548da74305c",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "block",
+                "3": "none",
+                "5": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        },
+        {
+          "line": 168,
+          "row": {
+            "t": "2026-11-17T04:47:13.151Z",
+            "ev": "finish_c",
+            "id": "blind-event-22a9b2073b3f9e785f72",
+            "cid": "m3-3a8850-0548da74305c",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-4b6617ea9ca8",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": true,
+              "promises_seen": 0,
+              "s6": {
+                "1": "block",
+                "3": "none",
+                "5": "pass",
+                "7": "none",
+                "9": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        }
+      ],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "보리차"
+        ],
+        "fresh_values": []
+      },
+      "synthetic_assistant_history": [
+        "다음 방문에 독서 소감 재확인할게.",
+        "기본 설정은 보리차로 기억해 두고 있어요. 확정된 다음 약속은 따로 없고, 앞서 제가 드린 \"다음 방문에 독서 소감 재확인\"은 약속이라기보다 제안이었어요. 필요하시면 그렇게 메모해 둘게요.",
+        "네, 오늘 대화에 집중할게.",
+        "기본 설정은 보리차예요. 확정된 다음 약속은 아직 없어요. 앞서 말씀드린 독서 소감 재확인은 제안이었을 뿐이라, 원하시면 이 내용을 다음 방문 때 확인할 항목으로 남겨 둘게요.",
+        "다음 방문에 독서 소감 재확인할게."
+      ]
+    },
+    {
+      "id": "n10-signage-q1",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-78edfc22c0be61e5826c.json",
+      "raw_sha256": "219ff245869321c1283cadc27f7e2b7f092cf5cec2c8239e74b5488b4864af90",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "남색"
+        ],
+        "current_values": [
+          "남색"
+        ],
+        "needs_confirm": false,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": true,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [],
+        "_owner": "pr-test-m3-3a8850-c648ec90c810",
+        "_profile": [
+          {
+            "fact_id": "257",
+            "state": "current",
+            "values": [
+              "남색"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "257",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "남색"
+            ]
+          }
+        ],
+        "_op_boundary": 472,
+        "_obs_start": "2026-11-17T04:48:02.975Z"
+      },
+      "c_runs": [
+        {
+          "cid": "m3-3a8850-19ccb48d43ed",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-c648ec90c810|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-c648ec90c810",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        }
+      ],
+      "ops_at_observation": [
+        {
+          "line": 33,
+          "row": {
+            "op_id": "472",
+            "principal_id": "pr-test-m3-3a8850-c648ec90c810",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-19ccb48d43ed",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "257",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 30,
+            "p_yes": 0.85,
+            "why": "가게 간판 기본색이라는 손님 사실을 기억해 달라고 분명히 요청함 (붙여쓴 오타는 원문 그대로 근거로 씀)",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:48:02.120Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 107,
+          "row": {
+            "cid": "m3-3a8850-19ccb48d43ed",
+            "n": 1,
+            "ev": "blind-event-83bcb7e3967d6d1afa92",
+            "at": "2026-11-17T04:47:59.461Z",
+            "fixture": true,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:48:02.116Z",
+              "turn_index": 1,
+              "turn_id": 8709,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [
+        {
+          "line": 197,
+          "row": {
+            "t": "2026-11-17T04:48:02.974Z",
+            "ev": "finish_c",
+            "id": "blind-event-b71c62deb3026e8b9e7f",
+            "cid": "m3-3a8850-19ccb48d43ed",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-c648ec90c810",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        }
+      ],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "남색"
+        ],
+        "fresh_values": [
+          "남색"
+        ]
+      }
+    },
+    {
+      "id": "n10-guest-q1",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-1011dc738eff4ee04985.json",
+      "raw_sha256": "165be3722673cbb64bdf067f6bf6fbd008f420cd39cdf43e75d8b0dae4cac594",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "보리차"
+        ],
+        "current_values": [
+          "보리차"
+        ],
+        "needs_confirm": false,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": true,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [],
+        "_owner": "pr-test-m3-3a8850-f8b60b2e82c6",
+        "_profile": [
+          {
+            "fact_id": "258",
+            "state": "current",
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "258",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_op_boundary": 473,
+        "_obs_start": "2026-11-17T04:48:24.172Z"
+      },
+      "c_runs": [
+        {
+          "cid": "m3-3a8850-117affb5b81b",
+          "scopeKey": "ganpan|pr-test-m3-3a8850-f8b60b2e82c6|elda",
+          "sum": {
+            "ran": true,
+            "why": null,
+            "owner": "pr-test-m3-3a8850-f8b60b2e82c6",
+            "epoch_start": 0,
+            "epoch_end": 0,
+            "applied": 0,
+            "held": 0,
+            "dropped": [],
+            "episode": false,
+            "promises_seen": 0,
+            "s6": {
+              "1": "pass"
+            },
+            "config": "6d7325df",
+            "applied_t": []
+          },
+          "via": "finish_c"
+        }
+      ],
+      "ops_at_observation": [
+        {
+          "line": 34,
+          "row": {
+            "op_id": "473",
+            "principal_id": "pr-test-m3-3a8850-f8b60b2e82c6",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-117affb5b81b",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "258",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 28,
+            "p_yes": 0.9,
+            "why": "손님이 기본 차를 분명히 말하고 기억해 달라고 함",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:48:23.076Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 112,
+          "row": {
+            "cid": "m3-3a8850-117affb5b81b",
+            "n": 1,
+            "ev": "blind-event-1acf663f4efd48107118",
+            "at": "2026-11-17T04:48:20.777Z",
+            "fixture": true,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:48:23.072Z",
+              "turn_index": 1,
+              "turn_id": 8714,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [
+        {
+          "line": 206,
+          "row": {
+            "t": "2026-11-17T04:48:24.172Z",
+            "ev": "finish_c",
+            "id": "blind-event-09dd4b80819d78299780",
+            "cid": "m3-3a8850-117affb5b81b",
+            "sum": {
+              "ran": true,
+              "why": null,
+              "owner": "pr-test-m3-3a8850-f8b60b2e82c6",
+              "epoch_start": 0,
+              "epoch_end": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": [],
+              "episode": false,
+              "promises_seen": 0,
+              "s6": {
+                "1": "pass"
+              },
+              "config": "6d7325df",
+              "applied_t": []
+            }
+          }
+        }
+      ],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "보리차"
+        ],
+        "fresh_values": [
+          "보리차"
+        ]
+      }
+    },
+    {
+      "id": "n14-signage-q2",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a47baf27ca91d3c8602a.json",
+      "raw_sha256": "8be1067f09c5b12199d4b1b6149df7aa356308e57c4daf426a59f445326f79d7",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "연두색"
+        ],
+        "current_values": [
+          "연두색"
+        ],
+        "needs_confirm": false,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference",
+          "SUPERSEDE:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": false,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [
+          "남색"
+        ],
+        "_owner": "pr-test-m3-3a8850-1c2c6abd84a4",
+        "_profile": [
+          {
+            "fact_id": "306",
+            "state": "current",
+            "values": [
+              "연두색"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "306",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "연두색"
+            ]
+          },
+          {
+            "fact_id": "305",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": "306",
+            "values": [
+              "남색"
+            ]
+          }
+        ],
+        "_op_boundary": 539,
+        "_obs_start": "2026-11-17T04:56:31.390Z"
+      },
+      "c_runs": [],
+      "ops_at_observation": [
+        {
+          "line": 63,
+          "row": {
+            "op_id": "538",
+            "principal_id": "pr-test-m3-3a8850-1c2c6abd84a4",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-938dc57d3bd3",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "305",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 31,
+            "p_yes": 0.85,
+            "why": "간판 기본색 — 손님이 가게 사정으로 말함(preference 슬롯)",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:56:21.934Z"
+          }
+        },
+        {
+          "line": 64,
+          "row": {
+            "op_id": "539",
+            "principal_id": "pr-test-m3-3a8850-1c2c6abd84a4",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-938dc57d3bd3",
+            "scope": "chat",
+            "op": "SUPERSEDE",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "305",
+            "fact_id": "306",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 3,
+            "ev_start": 0,
+            "ev_end": 32,
+            "p_yes": 0.9,
+            "why": "손님이 간판 기본색을 연두색으로 바꾸라고 분명히 고침",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:56:31.098Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 189,
+          "row": {
+            "cid": "m3-3a8850-938dc57d3bd3",
+            "n": 1,
+            "ev": "blind-event-f5ef1a9c5e5451da0f23",
+            "at": "2026-11-17T04:56:19.608Z",
+            "fixture": false,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:21.929Z",
+              "turn_index": 1,
+              "turn_id": 8850,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 190,
+          "row": {
+            "cid": "m3-3a8850-938dc57d3bd3",
+            "n": 2,
+            "ev": "blind-target-a8084834adf76a800bec",
+            "at": "2026-11-17T04:56:24.178Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:26.386Z",
+              "turn_index": 2,
+              "turn_id": 8852,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 191,
+          "row": {
+            "cid": "m3-3a8850-938dc57d3bd3",
+            "n": 3,
+            "ev": "blind-event-ca896277324980503369",
+            "at": "2026-11-17T04:56:28.783Z",
+            "fixture": false,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:31.094Z",
+              "turn_index": 3,
+              "turn_id": 8854,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "연두색"
+        ],
+        "fresh_values": [
+          "연두색"
+        ]
+      },
+      "synthetic_human_history": [
+        "앞으로도 기억해 줘. 우리 가게 간판의 기본색는 남색야.",
+        "기억해 둔 우리 가게 간판의 기본색를 알려 줘.",
+        "앞으로도 기억해 줘. 우리 가게 간판의 기본색는 연두색야.",
+        "기억해 둔 우리 가게 간판의 기본색를 알려 줘."
+      ]
+    },
+    {
+      "id": "n14-guest-q2",
+      "raw_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-9e867f3f1f3ddbe4218c.json",
+      "raw_sha256": "f380669321263419fb9701753ae3f2b221297c19975549abb54b3a6806ea2265",
+      "invalid_observation": null,
+      "observed_db": {
+        "principal_values": [
+          "유자차"
+        ],
+        "current_values": [],
+        "needs_confirm": true,
+        "episode_values": [],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference",
+          "CONTEST:fact:preference"
+        ],
+        "dropped_reasons": [],
+        "c_completed": false,
+        "paused": false,
+        "memory_epoch": 0,
+        "relation_prior_count": 0,
+        "_invalidated_values": [
+          "보리차"
+        ],
+        "_owner": "pr-test-m3-3a8850-329106f9b646",
+        "_profile": [
+          {
+            "fact_id": "309",
+            "state": "needs_confirm",
+            "values": [
+              "유자차"
+            ]
+          }
+        ],
+        "_facts": [
+          {
+            "fact_id": "309",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": true,
+            "invalid": false,
+            "superseded_by": null,
+            "values": [
+              "유자차"
+            ]
+          },
+          {
+            "fact_id": "308",
+            "kind": "fact",
+            "slot": "preference",
+            "needs_confirm_flag": false,
+            "invalid": true,
+            "superseded_by": "309",
+            "values": [
+              "보리차"
+            ]
+          }
+        ],
+        "_op_boundary": 543,
+        "_obs_start": "2026-11-17T04:56:54.663Z"
+      },
+      "c_runs": [],
+      "ops_at_observation": [
+        {
+          "line": 66,
+          "row": {
+            "op_id": "542",
+            "principal_id": "pr-test-m3-3a8850-329106f9b646",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-7501bb89a5a8",
+            "scope": "chat",
+            "op": "ADD",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": null,
+            "fact_id": "308",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 1,
+            "ev_start": 12,
+            "ev_end": 28,
+            "p_yes": 0.9,
+            "why": "손님이 평소 기본 차를 자기 입으로 말하고 기억해 달라고 함 · 취향(durable)",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:56:47.064Z"
+          }
+        },
+        {
+          "line": 67,
+          "row": {
+            "op_id": "543",
+            "principal_id": "pr-test-m3-3a8850-329106f9b646",
+            "persona_id": "elda",
+            "cid": "m3-3a8850-7501bb89a5a8",
+            "scope": "chat",
+            "op": "CONTEST",
+            "kind": "fact",
+            "slot": "preference",
+            "target_id": "308",
+            "fact_id": "309",
+            "applied": true,
+            "dropped_why": null,
+            "ev_turn_index": 3,
+            "ev_start": 12,
+            "ev_end": 27,
+            "p_yes": 0.6,
+            "why": "기본 차를 유자차로 분명히 고쳐 말함 — 고친다는 말(이제 ~예요 류)은 없지만 '내 평소 기본 차는 ~야'라는 정정 의도가 명확함. 기존 값과 다르므로 덮지 않고 CONTEST",
+            "producer": "anthropic:claude-haiku-5-5@3391e5be",
+            "epoch": 0,
+            "created_at": "2026-11-17T04:56:54.481Z"
+          }
+        }
+      ],
+      "receipts_delivered_before_observation": [
+        {
+          "line": 195,
+          "row": {
+            "cid": "m3-3a8850-7501bb89a5a8",
+            "n": 1,
+            "ev": "blind-event-f8fecaad48c310240b02",
+            "at": "2026-11-17T04:56:44.825Z",
+            "fixture": false,
+            "chat_turn": 1,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:47.060Z",
+              "turn_index": 1,
+              "turn_id": 8860,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 196,
+          "row": {
+            "cid": "m3-3a8850-7501bb89a5a8",
+            "n": 2,
+            "ev": "blind-target-16937946f0a5254cd77d",
+            "at": "2026-11-17T04:56:48.558Z",
+            "fixture": false,
+            "chat_turn": 2,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:50.257Z",
+              "turn_index": 2,
+              "turn_id": 8861,
+              "ok": true,
+              "ops": 0,
+              "applied": 0,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": "show",
+              "config": "3391e5be"
+            }
+          }
+        },
+        {
+          "line": 197,
+          "row": {
+            "cid": "m3-3a8850-7501bb89a5a8",
+            "n": 3,
+            "ev": "blind-event-28e2ffb815be168f4f48",
+            "at": "2026-11-17T04:56:51.959Z",
+            "fixture": false,
+            "chat_turn": 3,
+            "match": "turn_index",
+            "nth_agrees": true,
+            "t_receipt": {
+              "ts": "2026-11-17T04:56:54.477Z",
+              "turn_index": 3,
+              "turn_id": 8862,
+              "ok": true,
+              "ops": 1,
+              "applied": 1,
+              "held": 0,
+              "dropped": 0,
+              "dropped_why": [],
+              "cmd": null,
+              "config": "3391e5be"
+            }
+          }
+        }
+      ],
+      "finish_c_events": [],
+      "projected_context": {
+        "withdrawn_slots": [],
+        "effective_active_values": [
+          "유자차"
+        ],
+        "fresh_values": [
+          "유자차"
+        ]
+      },
+      "synthetic_human_history": [
+        "앞으로도 기억해 줘. 내 평소 기본 차는 보리차야.",
+        "기억해 둔 내 평소 기본 차를 알려 줘.",
+        "앞으로도 기억해 줘. 내 평소 기본 차는 유자차야.",
+        "기억해 둔 내 평소 기본 차를 알려 줘."
+      ]
+    }
+  ],
+  "coverage": {
+    "chat_eval_ref": "b91323f4580e17fec9431289c88e0f601dccd669:memory/data/s6_memory_chat_eval_v0_5/eval.jsonl",
+    "eval_md5": "c9ef1b200f37ee718c7232ef22ea8477",
+    "rows": 13,
+    "expected_promises": 3,
+    "positive_rows": [
+      {
+        "line": 1,
+        "row": {
+          "id": "p01",
+          "lang": "ko",
+          "subset": "promise",
+          "turns": [
+            {
+              "turn_index": 0,
+              "speaker": "user",
+              "origin_kind": "human",
+              "text": "견적이 좀 부담돼요"
+            },
+            {
+              "turn_index": 1,
+              "speaker": "assistant",
+              "origin_kind": "human",
+              "text": "다음에 견적서를 두 가지 가격대로 다시 보내 드릴게요"
+            }
+          ],
+          "elda_s6": {
+            "1": "pass"
+          },
+          "expect": {
+            "promises": [
+              {
+                "contains": "견적서"
+              }
+            ],
+            "episode_kinds": [
+              "quote"
+            ],
+            "cooldown": [],
+            "must_not_repeat": []
+          }
+        }
+      },
+      {
+        "line": 10,
+        "row": {
+          "id": "e05",
+          "lang": "ko",
+          "subset": "order",
+          "turns": [
+            {
+              "turn_index": 0,
+              "speaker": "user",
+              "origin_kind": "human",
+              "text": "두 번째 시안으로 주문할게요"
+            },
+            {
+              "turn_index": 1,
+              "speaker": "assistant",
+              "origin_kind": "human",
+              "text": "주문 접수했어요. 다음 주 수요일에 설치 일정 확정해서 알려 드릴게요"
+            }
+          ],
+          "elda_s6": {
+            "1": "pass"
+          },
+          "expect": {
+            "promises": [
+              {
+                "contains": "설치 일정"
+              }
+            ],
+            "episode_kinds": [
+              "order"
+            ],
+            "cooldown": [],
+            "must_not_repeat": []
+          }
+        }
+      },
+      {
+        "line": 11,
+        "row": {
+          "id": "x01",
+          "lang": "en",
+          "subset": "promise",
+          "turns": [
+            {
+              "turn_index": 0,
+              "speaker": "user",
+              "origin_kind": "human",
+              "text": "Can I see a warmer color option?"
+            },
+            {
+              "turn_index": 1,
+              "speaker": "assistant",
+              "origin_kind": "human",
+              "text": "Sure, I'll send you a warmer version next time."
+            }
+          ],
+          "elda_s6": {
+            "1": "pass"
+          },
+          "expect": {
+            "promises": [
+              {
+                "contains": "warmer"
+              }
+            ],
+            "episode_kinds": [
+              "design"
+            ],
+            "cooldown": [],
+            "must_not_repeat": []
+          }
+        }
+      }
+    ],
+    "gap": "All 13 cases contain one assistant turn and 2–3 total turns. No duplicate identical promise across block/pass sources and no generated intervening probe replies that downgrade the earlier promise to a suggestion."
+  },
+  "definition_comparison": {
+    "n14_frozen_scenarios": [
+      {
+        "line": 27,
+        "row": {
+          "checkpoints": [
+            {
+              "at": "2026-12-01T10:00:00+00:00",
+              "conversation_id": "cid-24826ee4d5d44eedff05",
+              "events": [
+                {
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "id": "n14-signage-e001",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  },
+                  "speaker": "human",
+                  "text": "앞으로도 기억해 줘. 우리 가게 간판의 기본색는 남색야."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-signage-e002",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-signage-e001"
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  }
+                }
+              ],
+              "id": "n14-signage-k1",
+              "probe": {
+                "id": "n14-signage-q1",
+                "query": "기억해 둔 우리 가게 간판의 기본색를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-d620e5a7efcad3c6345b",
+                  "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                  "product": "ganpan"
+                }
+              }
+            },
+            {
+              "at": "2026-12-01T10:30:00+00:00",
+              "conversation_id": "cid-24826ee4d5d44eedff05",
+              "events": [
+                {
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "id": "n14-signage-e003",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  },
+                  "speaker": "human",
+                  "text": "앞으로도 기억해 줘. 우리 가게 간판의 기본색는 연두색야."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-signage-e004",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-signage-e003"
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  }
+                }
+              ],
+              "id": "n14-signage-k2",
+              "probe": {
+                "id": "n14-signage-q2",
+                "query": "기억해 둔 우리 가게 간판의 기본색를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-d620e5a7efcad3c6345b",
+                  "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                  "product": "ganpan"
+                }
+              }
+            },
+            {
+              "at": "2026-12-01T11:00:00+00:00",
+              "conversation_id": "cid-24826ee4d5d44eedff05",
+              "events": [
+                {
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "id": "n14-signage-e005",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  },
+                  "speaker": "human",
+                  "text": "확인할게. 지금부터 우리 가게 간판의 기본색는 연두색가 맞아. 그 값으로 확정해 줘."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-24826ee4d5d44eedff05",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-signage-e006",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-signage-e005"
+                  },
+                  "scope": {
+                    "persona_id": "persona-d620e5a7efcad3c6345b",
+                    "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                    "product": "ganpan"
+                  }
+                }
+              ],
+              "id": "n14-signage-k3",
+              "probe": {
+                "id": "n14-signage-q3",
+                "query": "기억해 둔 우리 가게 간판의 기본색를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-d620e5a7efcad3c6345b",
+                  "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+                  "product": "ganpan"
+                }
+              }
+            }
+          ],
+          "domain": "signage",
+          "family": "contest_confirm",
+          "id": "n14-signage",
+          "scope": {
+            "persona_id": "persona-d620e5a7efcad3c6345b",
+            "principal_id": "pr-test-675f3d7b9d28d5fe3756",
+            "product": "ganpan"
+          }
+        }
+      },
+      {
+        "line": 28,
+        "row": {
+          "checkpoints": [
+            {
+              "at": "2026-12-01T10:00:00+00:00",
+              "conversation_id": "cid-9b319cf6814d8c04936b",
+              "events": [
+                {
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "id": "n14-guest-e001",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  },
+                  "speaker": "human",
+                  "text": "앞으로도 기억해 줘. 내 평소 기본 차는 보리차야."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-guest-e002",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-guest-e001"
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  }
+                }
+              ],
+              "id": "n14-guest-k1",
+              "probe": {
+                "id": "n14-guest-q1",
+                "query": "기억해 둔 내 평소 기본 차를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                  "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                  "product": "uljima6"
+                }
+              }
+            },
+            {
+              "at": "2026-12-01T10:30:00+00:00",
+              "conversation_id": "cid-9b319cf6814d8c04936b",
+              "events": [
+                {
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "id": "n14-guest-e003",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  },
+                  "speaker": "human",
+                  "text": "앞으로도 기억해 줘. 내 평소 기본 차는 유자차야."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-guest-e004",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-guest-e003"
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  }
+                }
+              ],
+              "id": "n14-guest-k2",
+              "probe": {
+                "id": "n14-guest-q2",
+                "query": "기억해 둔 내 평소 기본 차를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                  "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                  "product": "uljima6"
+                }
+              }
+            },
+            {
+              "at": "2026-12-01T11:00:00+00:00",
+              "conversation_id": "cid-9b319cf6814d8c04936b",
+              "events": [
+                {
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "id": "n14-guest-e005",
+                  "kind": "turn",
+                  "origin": {
+                    "kind": "human",
+                    "synthetic_fixture": true
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  },
+                  "speaker": "human",
+                  "text": "확인할게. 지금부터 내 평소 기본 차는 유자차가 맞아. 그 값으로 확정해 줘."
+                },
+                {
+                  "action": "settle_turn",
+                  "conversation_id": "cid-9b319cf6814d8c04936b",
+                  "description": "지정 사람 턴의 T가 끝날 때까지 기다린다. C는 실행하지 않는다.",
+                  "id": "n14-guest-e006",
+                  "kind": "control",
+                  "params": {
+                    "source_event_id": "n14-guest-e005"
+                  },
+                  "scope": {
+                    "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                    "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                    "product": "uljima6"
+                  }
+                }
+              ],
+              "id": "n14-guest-k3",
+              "probe": {
+                "id": "n14-guest-q3",
+                "query": "기억해 둔 내 평소 기본 차를 알려 줘.",
+                "scope": {
+                  "persona_id": "persona-5d420e4f3a32db5b4dc1",
+                  "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+                  "product": "uljima6"
+                }
+              }
+            }
+          ],
+          "domain": "guest_service_persona",
+          "family": "contest_confirm",
+          "id": "n14-guest",
+          "scope": {
+            "persona_id": "persona-5d420e4f3a32db5b4dc1",
+            "principal_id": "pr-test-7244c1e0fea8677bbaf0",
+            "product": "uljima6"
+          }
+        }
+      }
+    ],
+    "n14_q2_frozen_gold": [
+      {
+        "line": 80,
+        "row": {
+          "answer_rubric": "상충한 새값을 잠정 현재값으로 적용하되 확인을 요청한다. 옛값 확인 언급과 옛값 현재 채택은 구분한다.",
+          "checks": [
+            {
+              "gate": true,
+              "id": "n14-signage-q2-c01",
+              "metric": "capture_complete",
+              "operator": "eq",
+              "path": "/artifacts/context/capture_complete",
+              "value": true
+            },
+            {
+              "gate": false,
+              "id": "n14-signage-q2-c02",
+              "metric": "recall",
+              "operator": "contains",
+              "path": "/artifacts/context/effective_active_values",
+              "value": "연두색"
+            },
+            {
+              "gate": false,
+              "id": "n14-signage-q2-c03",
+              "metric": "state_accuracy",
+              "operator": "contains",
+              "path": "/artifacts/principal_values",
+              "value": "연두색"
+            },
+            {
+              "gate": false,
+              "id": "n14-signage-q2-c04",
+              "metric": "state_accuracy",
+              "operator": "contains",
+              "path": "/artifacts/current_values",
+              "value": "연두색"
+            },
+            {
+              "gate": true,
+              "id": "n14-signage-q2-c05",
+              "metric": "contest",
+              "operator": "eq",
+              "path": "/artifacts/needs_confirm",
+              "value": true
+            },
+            {
+              "gate": true,
+              "id": "n14-signage-q2-c06",
+              "metric": "forbidden_value",
+              "operator": "excludes",
+              "path": "/artifacts/context/effective_active_values",
+              "value": "남색"
+            }
+          ],
+          "domain": "signage",
+          "family": "contest_confirm",
+          "history_watch_values": [
+            "남색"
+          ],
+          "id": "n14-signage-q2",
+          "interpretation": "contract",
+          "positive": true,
+          "scenario_id": "n14-signage"
+        }
+      },
+      {
+        "line": 83,
+        "row": {
+          "answer_rubric": "상충한 새값을 잠정 현재값으로 적용하되 확인을 요청한다. 옛값 확인 언급과 옛값 현재 채택은 구분한다.",
+          "checks": [
+            {
+              "gate": true,
+              "id": "n14-guest-q2-c01",
+              "metric": "capture_complete",
+              "operator": "eq",
+              "path": "/artifacts/context/capture_complete",
+              "value": true
+            },
+            {
+              "gate": false,
+              "id": "n14-guest-q2-c02",
+              "metric": "recall",
+              "operator": "contains",
+              "path": "/artifacts/context/effective_active_values",
+              "value": "유자차"
+            },
+            {
+              "gate": false,
+              "id": "n14-guest-q2-c03",
+              "metric": "state_accuracy",
+              "operator": "contains",
+              "path": "/artifacts/principal_values",
+              "value": "유자차"
+            },
+            {
+              "gate": false,
+              "id": "n14-guest-q2-c04",
+              "metric": "state_accuracy",
+              "operator": "contains",
+              "path": "/artifacts/current_values",
+              "value": "유자차"
+            },
+            {
+              "gate": true,
+              "id": "n14-guest-q2-c05",
+              "metric": "contest",
+              "operator": "eq",
+              "path": "/artifacts/needs_confirm",
+              "value": true
+            },
+            {
+              "gate": true,
+              "id": "n14-guest-q2-c06",
+              "metric": "forbidden_value",
+              "operator": "excludes",
+              "path": "/artifacts/context/effective_active_values",
+              "value": "보리차"
+            }
+          ],
+          "domain": "guest_service_persona",
+          "family": "contest_confirm",
+          "history_watch_values": [
+            "보리차"
+          ],
+          "id": "n14-guest-q2",
+          "interpretation": "contract",
+          "positive": true,
+          "scenario_id": "n14-guest"
+        }
+      }
+    ],
+    "t_k08": [
+      {
+        "line": 8,
+        "row": {
+          "id": "k08",
+          "lang": "ko",
+          "subset": "supersede",
+          "turns": [
+            {
+              "turn_index": 0,
+              "speaker": "user",
+              "origin_kind": "human",
+              "text": "예산은 150 말고 200까지 돼요"
+            }
+          ],
+          "now_index": 0,
+          "chat_memory": [
+            {
+              "id": "m2",
+              "slot": "budget",
+              "value": "150만 원"
+            }
+          ],
+          "expect": {
+            "ops": [
+              {
+                "op": "SUPERSEDE",
+                "slot": "budget",
+                "target_id": "m2",
+                "value": "200"
+              }
+            ],
+            "memory_command": null
+          }
+        }
+      }
+    ],
+    "misquoted_source": "7b9b9443d8b885742f66aa40d4308018ec46303a:runtime/long-memory-research/eval-v0/build_dataset.py:347-352",
+    "misquoted_source_resolution": "The earlier-value-instead-of-new-value formulation belongs to eval-v0 m07/m08/m09 adoption positives; it already expects SUPERSEDE. It is not eval-v1 n14 q2.",
+    "gold_preserved": true,
+    "projection_boundary": "n14-guest CONTEST is applied and fact.needs_confirm_flag=true/profile.state=needs_confirm. Adapter current_values includes only profile.state=current, whereas frozen gold q2-c04 expects the tentative value there."
+  },
+  "evidence_limits": [
+    "Committed ltm_op dump omits correction_evidence and raw model response; t_receipts omits raw, correction_evidence and downgrade count. Exact n14-signage correction text is not independently preserved here.",
+    "Successful C summary with promises_seen=0 means zero length of parsed j.promises or an absent/null promises field; raw C response is not retained in these case captures.",
+    "episode=false with ran=true/why=null/dropped=[] cannot distinguish absent/empty model episode from caught episode INSERT failure; the warning-only catch is a runtime-source alternative, not a demonstrated failure.",
+    "n08 probe replies call the earlier promise a suggestion before its final pass-rated restatement. This is committed synthetic history; exact causal influence on C is not established.",
+    "Rule/prompt/model/harness versions, generated histories and single stochastic runs differ; no single prompt-line causal effect is isolated. Existing golden files remain unchanged.",
+    "A closed correction-marker list would be a conservative policy change, not proof of self-correction. Quotation, negation, another person and valid unlisted/multilingual corrections remain relevant."
+  ]
+}

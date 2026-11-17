@@ -1,0 +1,2262 @@
+{
+  "source_commit": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+  "source_prefix": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/",
+  "bundle_ref": "7b9b9443d8b885742f66aa40d4308018ec46303a",
+  "mapping_sha256": "fbaaf2f85b6ba28c3d22d8511fd8dd8391026d5bdf24ce78e5231ffdd05cf5a3",
+  "events_sha256": "1bbd22036e1daf1c48f28d715a8bc2d2cfefc4075ace82dc5899ff23a01f4e6f",
+  "predictions_sha256": "3f7129174ff7a5b00d19ad1a2d748a1f719e6179d1131b640c03d10a5d94425b",
+  "reported_rollout_utc_approximate": "2026-11-17T04:56:00.000Z",
+  "raw_requests": 80,
+  "emitted_requests": 68,
+  "embedded_requests_equal": 80,
+  "requests_with_persona": 80,
+  "requests_with_rev10": 0,
+  "requests_with_current_conversation_only_statement": 80,
+  "persona_signatures": [
+    {
+      "persona": "elda",
+      "revision": 9,
+      "header_md5_prefix": "904d8895",
+      "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+      "occurrences": 82
+    }
+  ],
+  "at_or_after_reported_rollout": [
+    {
+      "target": "n13-signage-q1",
+      "probe_event_utc": "2026-11-17T04:56:00.514Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n13-guest-q1",
+      "probe_event_utc": "2026-11-17T04:56:17.752Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-signage-q1",
+      "probe_event_utc": "2026-11-17T04:56:26.380Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-signage-q2",
+      "probe_event_utc": "2026-11-17T04:56:35.001Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-signage-q3",
+      "probe_event_utc": "2026-11-17T04:56:43.263Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-guest-q1",
+      "probe_event_utc": "2026-11-17T04:56:50.338Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-guest-q2",
+      "probe_event_utc": "2026-11-17T04:56:57.927Z",
+      "in_predictions": true
+    },
+    {
+      "target": "n14-guest-q3",
+      "probe_event_utc": "2026-11-17T04:57:06.348Z",
+      "in_predictions": true
+    }
+  ],
+  "limitations": [
+    "Probe event timestamps follow observations/model responses; they are not block injection timestamps.",
+    "The rollout boundary is approximate owner testimony, not independently measured.",
+    "Equality covers the contiguous persona paragraph through its first blank line, not all changing memory/instructions.",
+    "Committed requests are evidence of exported captures, not a network trace or independently authenticated live runtime.",
+    "T/C model requests and background service state are not covered by these brain captures.",
+    "The 12 nonemitted raw requests do not become scored observations."
+  ],
+  "rows": [
+    {
+      "target": "n01-signage-q1",
+      "probe": "blind-target-9d7bcc18a4c506edd13b",
+      "probe_event_utc": "2026-11-17T04:39:32.697Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-9d7bcc18a4c506edd13b.json",
+      "raw_sha256": "63e106e0776683ef22ec234ebd846a8c012f33a8be4dfd22c6685ec603ff76a6",
+      "request_sha256": "0e4409a609b3c71f046947157ed3c6e1ad86fadd63f245d627b233ce53e4580c",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n01-signage-q2",
+      "probe": "blind-target-c2346c3ffdd696e7c24d",
+      "probe_event_utc": "2026-11-17T04:39:42.645Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-c2346c3ffdd696e7c24d.json",
+      "raw_sha256": "8762f961e0ec759a3db7bdf0f97d4f22b0c484fcb3af4f34d85989a893652464",
+      "request_sha256": "3b86b5c1fe7dea2984d2ca59e533dab671abb756afca3d30bf82d8eb471b89be",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n01-signage-q3",
+      "probe": "blind-target-b4defb4ac1029c7e16da",
+      "probe_event_utc": "2026-11-17T04:39:49.134Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-b4defb4ac1029c7e16da.json",
+      "raw_sha256": "55c2ee8315cebcae08e43c02c6c0d9dfc3b7a47d6ef8f516d7d4af3d7168a9b0",
+      "request_sha256": "fe45c7019dbdf1089f1aac4c270b99d9a269c1808f3812ba3198a9614a4e5b0c",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n01-guest-q1",
+      "probe": "blind-target-5b0701758f605425889e",
+      "probe_event_utc": "2026-11-17T04:39:58.711Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-5b0701758f605425889e.json",
+      "raw_sha256": "1f24af5df0789106d05eef7fc71d2ed569202febc127ccff007e7466c1247932",
+      "request_sha256": "c6a369f4ed400b11cd6a474e6a9a0535863b66b858c60729a030dbb6fe78fc99",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n01-guest-q2",
+      "probe": "blind-target-3a615084db84657035b6",
+      "probe_event_utc": "2026-11-17T04:40:03.089Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-3a615084db84657035b6.json",
+      "raw_sha256": "36f4a289209f56926a3fffd9271af388ed772272149b75dce03d3053903be420",
+      "request_sha256": "0a3d0db0e71d9f91df34f31aa1b6b55722af8ed3c4a4df1210a1586c44fe9351",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n01-guest-q3",
+      "probe": "blind-target-42d1ec0344d7b1c64860",
+      "probe_event_utc": "2026-11-17T04:40:08.944Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-42d1ec0344d7b1c64860.json",
+      "raw_sha256": "db72fc9597407674b8bfc878697cb2807d4ea348211ca4ed68a01b1955b0a887",
+      "request_sha256": "1e5b808f23564de3c3d1e7cdccae5e2d6a26554af4485da615e91cd9d99ff763",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n02-signage-q1",
+      "probe": "blind-target-33aa00fd985f148b4e49",
+      "probe_event_utc": "2026-11-17T04:40:16.919Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-33aa00fd985f148b4e49.json",
+      "raw_sha256": "4f51fe4ecda82dff3c54f1b061f0323a3a0554053c8069693047daa35c9968cb",
+      "request_sha256": "5b8f94781aede28e61025355f6e92b90acc8090e867f33bbfb45d209c4bb1489",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n02-signage-q2",
+      "probe": "blind-target-bcdf7dbecaf8ea1f3a61",
+      "probe_event_utc": "2026-11-17T04:40:26.252Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-bcdf7dbecaf8ea1f3a61.json",
+      "raw_sha256": "5959beb28c527e7f1a9d6e64b1139d2f7950fe8ff43d37d788826ac4c64a0f20",
+      "request_sha256": "03f8c0c1b56b23ab2f0c71f49bb25705f8e60e6cb0c61dd97267659d94d3e5ea",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n02-signage-q3",
+      "probe": "blind-target-5c49b2934e33a2a4f111",
+      "probe_event_utc": "2026-11-17T04:40:34.142Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-5c49b2934e33a2a4f111.json",
+      "raw_sha256": "174faf84bbca3a4abc93c74554155fa80022bc5f4483877c4c21428646c0756c",
+      "request_sha256": "a979a21fdfdb2ddcacf0d8888edd86b5efc9b984b5004a4183fe55876a368e3b",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    },
+    {
+      "target": "n02-guest-q1",
+      "probe": "blind-target-1e229e2253472bddd786",
+      "probe_event_utc": "2026-11-17T04:40:41.210Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-1e229e2253472bddd786.json",
+      "raw_sha256": "3f0e81fef6b4c22988fb65be56718b2c0f5e22e926c08b93d2f2734ce9e862d1",
+      "request_sha256": "d57ce3f53b3e3f5ce098a500e09f1d300f8109aa077baa79025e96b877af2c9e",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n02-guest-q2",
+      "probe": "blind-target-1f5958ae0ac19601c725",
+      "probe_event_utc": "2026-11-17T04:40:49.625Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-1f5958ae0ac19601c725.json",
+      "raw_sha256": "8fb57b2be24222b4a29832ed0ab9d2d426de53d41b15eaabfe59d1eb7694e1fb",
+      "request_sha256": "12ca506702f83aabc3acaf43cd6c44bdc946addc565fdb27769315a4d54c19b4",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n02-guest-q3",
+      "probe": "blind-target-57917cc1551118c7c84e",
+      "probe_event_utc": "2026-11-17T04:40:55.706Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-57917cc1551118c7c84e.json",
+      "raw_sha256": "03aa0611259af9bcf8c8b5e6d2d72ce9dc661ee0f95d26da9336a33fd78ba63b",
+      "request_sha256": "89fee087d04e223d065044e3eacea067f588689872fb4fdf634ee22dc3dd2f8a",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    },
+    {
+      "target": "n03-signage-q1",
+      "probe": "blind-target-0c4740e0eb2a24c49675",
+      "probe_event_utc": "2026-11-17T04:41:09.452Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-0c4740e0eb2a24c49675.json",
+      "raw_sha256": "1d8e682e92b37224c3b7a1e37bf9f3513804b80dd94c587034eb7dd7c377bdc1",
+      "request_sha256": "912a85d3e9317a98b8c33d8f89244b2cf3a8940041072059676d3226127ea32f",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n03-signage-q2",
+      "probe": "blind-target-d59f8a6e143c4f3ae284",
+      "probe_event_utc": "2026-11-17T04:41:18.402Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-d59f8a6e143c4f3ae284.json",
+      "raw_sha256": "6771c2f81459331a86e75cab1658ed88df484f24a1923c8c31a28e9c20c26d7a",
+      "request_sha256": "28b40d79a93612ac9843d6604bf932ae6703ac83c6b682091eb2bd8a776a7de0",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 5
+    },
+    {
+      "target": "n03-signage-q3",
+      "probe": "blind-target-a9035eb736689aa2799c",
+      "probe_event_utc": "2026-11-17T04:41:25.204Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a9035eb736689aa2799c.json",
+      "raw_sha256": "1da7726caf81eb91666816a69e22a5719787617ba23c716b157b5193142c19b1",
+      "request_sha256": "44cb516709f8216a0db54784b3c660a85fc5eb36dd78906852edf4c709238502",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n03-guest-q1",
+      "probe": "blind-target-8c749339b740cd229171",
+      "probe_event_utc": "2026-11-17T04:41:36.245Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-8c749339b740cd229171.json",
+      "raw_sha256": "c15f3e92f045dccfb6dd711ec7b0463f0cdedd15cca3673ad763e751dd5bd6fe",
+      "request_sha256": "39ae14b996624e53ade4a71104736ff4677ff6619f1d56618b70352075982dea",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n03-guest-q2",
+      "probe": "blind-target-6aeb3412d004a81f4420",
+      "probe_event_utc": "2026-11-17T04:41:44.283Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6aeb3412d004a81f4420.json",
+      "raw_sha256": "c59363aea3b86c7ed663357ad91d9eb07a9afd46a720b0ebcfe0b311faea5e25",
+      "request_sha256": "5ca1abc7b25a7f0e62e3d02c6bfa36209c622b02c00d83320b77bfbadd11ebef",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 5
+    },
+    {
+      "target": "n03-guest-q3",
+      "probe": "blind-target-0c5a8b1e45c47d16d942",
+      "probe_event_utc": "2026-11-17T04:41:49.545Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-0c5a8b1e45c47d16d942.json",
+      "raw_sha256": "d9f9eaa12853c28312a39a06e3061efe0c479b71da53c062659d4686759c1f7c",
+      "request_sha256": "991920408e7cf7980e03c55df112fd4ac5c00c70364e12dc2211136bb55db000",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n04-signage-q1",
+      "probe": "blind-target-8c8a429bd65cf94026a3",
+      "probe_event_utc": "2026-11-17T04:41:57.896Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-8c8a429bd65cf94026a3.json",
+      "raw_sha256": "05c3a3cfedb6dfd8e3f622ac7070c6ea49497dcc1524eb1a5c8f39af05a30cc1",
+      "request_sha256": "a5cc408688100efd75d8287ad7675acc8dc0740d793a77582018a67b0aafc994",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n04-signage-q2",
+      "probe": "blind-target-6e5cabe4ad6aafbb62c4",
+      "probe_event_utc": "2026-11-17T04:42:04.639Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6e5cabe4ad6aafbb62c4.json",
+      "raw_sha256": "dd2771e5b1a58bfd11744f16c6de3bf7d86d2e27211931519f7a8082b9288f84",
+      "request_sha256": "6bad7cc5811828544e82ccab5cec21fcfc5ae7a1015b8d7499d2406870331290",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n04-signage-q3",
+      "probe": "blind-target-ad3514f1e4c34f2904cb",
+      "probe_event_utc": "2026-11-17T04:42:13.789Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-ad3514f1e4c34f2904cb.json",
+      "raw_sha256": "e046905b0db6f051b8c9fc4e92c262f388fa7bc8cbb0329c6ae11ed9253a181e",
+      "request_sha256": "f406b67b828b9de1c97a6757b2bd4247cbdea187d780c326fb9d82b8cb9e40e2",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n04-guest-q1",
+      "probe": "blind-target-c8b0e4ef659336ff15df",
+      "probe_event_utc": "2026-11-17T04:42:20.904Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-c8b0e4ef659336ff15df.json",
+      "raw_sha256": "3aad822516b60c48cffb21b206dce4f12351c581ba593875862c5224dd56ed8f",
+      "request_sha256": "74b36e6ad7aa90473b42ef0e1b3ea069272ddc4ea54c86500849ce0ef6e3c856",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n04-guest-q2",
+      "probe": "blind-target-614ebf83a3e2c77b22c1",
+      "probe_event_utc": "2026-11-17T04:42:26.740Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-614ebf83a3e2c77b22c1.json",
+      "raw_sha256": "505f436f79d369851b8ea3425cd23f629c2437256724ae49b5bb9f75764c9c07",
+      "request_sha256": "f2c102b290037211d46f0631bbe519b52748eeed8f7f008d73c2500e509f14dc",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n04-guest-q3",
+      "probe": "blind-target-7ae95009d6a82ab0043c",
+      "probe_event_utc": "2026-11-17T04:42:35.130Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-7ae95009d6a82ab0043c.json",
+      "raw_sha256": "a16cf4e7325a21ab9f851c1074317b7eddc558e7585d5a51bab06bc43a978c82",
+      "request_sha256": "65a0956f7c1961e05cc0c174090e4f0781ef6afbc3b04cd1eac1de8f6d23c3f2",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n05-signage-q1",
+      "probe": "blind-target-5b78b33b57ff7e6d40dc",
+      "probe_event_utc": "2026-11-17T04:42:41.539Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-5b78b33b57ff7e6d40dc.json",
+      "raw_sha256": "cd6ba567adacf9ece356425b33dd0a7a39a86c4916ec047dfb0e9172bb729685",
+      "request_sha256": "e8c88c6b0b0e6ac058fdb1cc4550e8a80e9228f972fdc53fd3b7400c7fd1ed76",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n05-signage-q2",
+      "probe": "blind-target-addb2b9784e169b2ad3e",
+      "probe_event_utc": "2026-11-17T04:42:49.769Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-addb2b9784e169b2ad3e.json",
+      "raw_sha256": "beedf6afb3a9754df32c55008d48f5f5f6f4d4167982b68764791ccfad335309",
+      "request_sha256": "6bad7cc5811828544e82ccab5cec21fcfc5ae7a1015b8d7499d2406870331290",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n05-signage-q3",
+      "probe": "blind-target-bc55940dc14b5bdbd569",
+      "probe_event_utc": "2026-11-17T04:43:41.599Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-bc55940dc14b5bdbd569.json",
+      "raw_sha256": "d096f8b0c027673917c9240614b7d7bf2093416a3d23b20c491923e5234bd674",
+      "request_sha256": "f13a2465aaba22bcd8a185189bf82f9ee90a64a9537664279121ea7e03e53449",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        },
+        {
+          "message_index": 3,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n05-guest-q1",
+      "probe": "blind-target-485217516e71fdf0302e",
+      "probe_event_utc": "2026-11-17T04:43:49.544Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-485217516e71fdf0302e.json",
+      "raw_sha256": "114cd42169700413cabd36d95d2fe1f2da467cd4dac993a1aec9caa9e21fa282",
+      "request_sha256": "234816423c760a0b523dbc8cc8be3705197f32279e8f334c5a3a28f2f035a75a",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n05-guest-q2",
+      "probe": "blind-target-8ebf593e61294aa63998",
+      "probe_event_utc": "2026-11-17T04:43:56.992Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-8ebf593e61294aa63998.json",
+      "raw_sha256": "62c5a73f4500a918df375a9a6436c6f90c0a9a8b944247d2004dc4236f3d8c02",
+      "request_sha256": "f2c102b290037211d46f0631bbe519b52748eeed8f7f008d73c2500e509f14dc",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n05-guest-q3",
+      "probe": "blind-target-ee538bbfbe0798c64dbf",
+      "probe_event_utc": "2026-11-17T04:44:47.329Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-ee538bbfbe0798c64dbf.json",
+      "raw_sha256": "8febf8acf59a774c0887a50fbe4591347340f39bcd91c13d93b711ebd4cbb1a7",
+      "request_sha256": "166b618fe7f33c036422768c59d90dfdad1d63c236729b62d600031717488204",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        },
+        {
+          "message_index": 3,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n06-signage-q1",
+      "probe": "blind-target-7a02453502ab6304fbdb",
+      "probe_event_utc": "2026-11-17T04:44:56.724Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-7a02453502ab6304fbdb.json",
+      "raw_sha256": "d00b60613c1e494f10545a42ad163ad459d106bc09aa7c545acbad1c4eb0f046",
+      "request_sha256": "bd996a58d59327784e49654c99ef79d4971104fb33f53c85f0a661fc59a4eca6",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n06-signage-q2",
+      "probe": "blind-target-12f45cad271cd3ac9ff4",
+      "probe_event_utc": "2026-11-17T04:45:10.662Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-12f45cad271cd3ac9ff4.json",
+      "raw_sha256": "229cc176673e6fc9a0091954a0eb2097bb04ded99b78fdc1e3c125210690cef1",
+      "request_sha256": "3bd737f5e855c9a96f735e255b8c4ace02ef7e8957c70a881fb8b3c2f0293546",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n06-signage-q3",
+      "probe": "blind-target-03d6a957de0a64738f36",
+      "probe_event_utc": "2026-11-17T04:45:20.390Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-03d6a957de0a64738f36.json",
+      "raw_sha256": "550f73ff4b588a9407863fda40dbf42daf6bc236b6cd5b4ce6026f6cec336d8e",
+      "request_sha256": "45ed3cb06a43070f609f0dd66d4dc14a4eb54b5e93e302533bbd5df3102a00e0",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n06-guest-q1",
+      "probe": "blind-target-9f83633ff1325a54b4ea",
+      "probe_event_utc": "2026-11-17T04:45:28.162Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-9f83633ff1325a54b4ea.json",
+      "raw_sha256": "89ff5504a36d1fb352420d4e32a952862fc4423945f6cd5d2fcaecd45bf4b1aa",
+      "request_sha256": "2b99d8c5cb9c3810f47f151bda0708a0fe8921d0acf4fdf5a1f5b09b4b01548f",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n06-guest-q2",
+      "probe": "blind-target-60af107867ffd8f8db3d",
+      "probe_event_utc": "2026-11-17T04:45:40.636Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-60af107867ffd8f8db3d.json",
+      "raw_sha256": "843408d64ba7f3cbdc62ddc6d68e52b3c255637551bc0643d433ed2db060d6b0",
+      "request_sha256": "93534479bf8b1e7aa539819aefdc095d375b473349b358084b71b04eaac71b8a",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n06-guest-q3",
+      "probe": "blind-target-1194d095fe58a84fb740",
+      "probe_event_utc": "2026-11-17T04:45:47.889Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-1194d095fe58a84fb740.json",
+      "raw_sha256": "d3588e45d41c6c3aa5d639870f1030b49994f1744ee69af288a75a3aad282037",
+      "request_sha256": "a8963e32f762b6568b9f4969a8fad8df33ae3d44234fc5c29020a69dbe121961",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n07-signage-q1",
+      "probe": "blind-target-a8f4afad515e715ca8f5",
+      "probe_event_utc": "2026-11-17T04:45:56.300Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a8f4afad515e715ca8f5.json",
+      "raw_sha256": "9dee78c25c7b21dc943df0fe08b51ac9b7b62eee4611f748250665522f82a219",
+      "request_sha256": "d2bdd162b7ad9dcde13567038fe5b7f884ca2d16f1a1806f6ac4ce2d192fe94d",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n07-signage-q2",
+      "probe": "blind-target-49c8de21bff884c90f99",
+      "probe_event_utc": "2026-11-17T04:46:08.252Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-49c8de21bff884c90f99.json",
+      "raw_sha256": "da1fccce5b38a8652c665f763334fe1636ed9a51a3f3cf40682c610cc43c495e",
+      "request_sha256": "0e5294931a3b7f5f42ddeb481747bbbcd58351bd2a60f34be90374d8955849b5",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n07-signage-q3",
+      "probe": "blind-target-48e18b8a86ca4b326c7d",
+      "probe_event_utc": "2026-11-17T04:46:16.964Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-48e18b8a86ca4b326c7d.json",
+      "raw_sha256": "3a6df52284c9c7763ae0383f0d7c624a73400d487ea4c8fe112a8e57332581bb",
+      "request_sha256": "d7af3a32862b8e862fb6334532ef356b4cd4a923f301e2d2062f4d2ca2207e11",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n07-guest-q1",
+      "probe": "blind-target-8271300778af334cd284",
+      "probe_event_utc": "2026-11-17T04:46:24.005Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-8271300778af334cd284.json",
+      "raw_sha256": "5258163840a53b03883042d7cfb6dd656661b666579d8f15b328e04a335f2ddd",
+      "request_sha256": "23eaaa426c2dc3541a23e359e26497c72be051bab19a50e72fcdb48c4bdc40cd",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n07-guest-q2",
+      "probe": "blind-target-43f099876419486778f9",
+      "probe_event_utc": "2026-11-17T04:46:32.383Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-43f099876419486778f9.json",
+      "raw_sha256": "1d0542c6439ec86db18845efba375af26669d531606e71d5bf27eb0ec9844dfc",
+      "request_sha256": "50ae9ce8ea8c2a67b8798ad52e0b598c67bf0afc1959bb16262f1017fe46d5ee",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n07-guest-q3",
+      "probe": "blind-target-c5e0159bae565e828257",
+      "probe_event_utc": "2026-11-17T04:46:37.511Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-c5e0159bae565e828257.json",
+      "raw_sha256": "94ac5cef72835ba731d78cdbeecb7d804043a067a1d5997083bb648d1b28ac1e",
+      "request_sha256": "ee629933348a3f401814ad3b05601ec95b03d35212269fd9d2ba0b66ec191629",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n08-signage-q1",
+      "probe": "blind-target-28dd1cdfed90c18f05c6",
+      "probe_event_utc": "2026-11-17T04:46:46.151Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-28dd1cdfed90c18f05c6.json",
+      "raw_sha256": "e550175c06150612ee172583202823c20cf2fe949e9212079dc0513f0e4c854e",
+      "request_sha256": "c1b2e61f32696b9a2324b8e7c993a21cc0fb94cd2095667a8b638a5ef560a354",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n08-signage-q2",
+      "probe": "blind-target-868da2aa4e17f3943c00",
+      "probe_event_utc": "2026-11-17T04:46:52.427Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-868da2aa4e17f3943c00.json",
+      "raw_sha256": "2ff8aaaf11f8991fe99e987422761543f4fe6de436c09399390a8c6ef435289e",
+      "request_sha256": "529854b2e28545b2144cfcfb313849acd8e9f7f99b6b03c5e2f405cd17a3a26d",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n08-signage-q3",
+      "probe": "blind-target-d942bedd1696be7d7b09",
+      "probe_event_utc": "2026-11-17T04:46:58.852Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-d942bedd1696be7d7b09.json",
+      "raw_sha256": "ed6fc59b271cda89cefd68ce530f279f38ee6051165f203b6d922f99b65b18ed",
+      "request_sha256": "d7f7df52cc9af17cff6126e97e9eaef0c601eb62c9bd74c4713ed6b7437b32c1",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    },
+    {
+      "target": "n08-guest-q1",
+      "probe": "blind-target-74bd8eecd95bf36c6de8",
+      "probe_event_utc": "2026-11-17T04:47:05.928Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-74bd8eecd95bf36c6de8.json",
+      "raw_sha256": "8fd155111cd3f7499b55516da73f9bf080e78619bf2fb406d9defb7175365cbc",
+      "request_sha256": "a6b353c5ac2e71a38004b1b154b4b4fa9747a3e8475ac2a5f576ffbb82c70add",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n08-guest-q2",
+      "probe": "blind-target-166657f2f216ccc63f48",
+      "probe_event_utc": "2026-11-17T04:47:10.731Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-166657f2f216ccc63f48.json",
+      "raw_sha256": "f666837f43b37749e8f55f294eea026f4ea07595da23495d26f73972b7a7dcca",
+      "request_sha256": "f5fa71ed2834694916f7513e4c5b000a1fef41df6243c2c415f063d501e7bfbc",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n08-guest-q3",
+      "probe": "blind-target-b7e4f5e1d37aebf23951",
+      "probe_event_utc": "2026-11-17T04:47:15.755Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-b7e4f5e1d37aebf23951.json",
+      "raw_sha256": "c8dcf298f2617b7ed1d78294db2f8fad74dfe4ce9154922ca1dc6c20647bf2d2",
+      "request_sha256": "77773c8c36641882a389282a8e60934d19b8e1cbbd3cf1f82883483adad95937",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    },
+    {
+      "target": "n09-signage-q1",
+      "probe": "blind-target-f034c0b16fcfe408b42c",
+      "probe_event_utc": "2026-11-17T04:47:26.209Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-f034c0b16fcfe408b42c.json",
+      "raw_sha256": "19d72143f800cc94961ad72573ff57e70559233695a1786a46b95fad77c215d3",
+      "request_sha256": "33feae63ab1d822f1820f2b689f655e2253641a664dfeabf20fb630e7a2fa912",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n09-signage-q2",
+      "probe": "blind-target-86e454948efda66fa550",
+      "probe_event_utc": "2026-11-17T04:47:33.234Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-86e454948efda66fa550.json",
+      "raw_sha256": "4889dce25acbbe7f057cdd40fad9b15aaa20def7d03c71e66865b474d603557c",
+      "request_sha256": "a676bcdb750b46d228f1948076fea85a42c04f6739e551307a4bdab3e4bdccb8",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n09-signage-q3",
+      "probe": "blind-target-892d7931786a136d0425",
+      "probe_event_utc": "2026-11-17T04:47:41.735Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-892d7931786a136d0425.json",
+      "raw_sha256": "9a78ff09dea25a8ada02705bf9b4bed2d43c4907af58ee362fe73fa3f8e6c0c9",
+      "request_sha256": "2d9aa9a4c30f85d95c6f192f641307271729739b3876338d67e4d3a559848910",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n09-guest-q1",
+      "probe": "blind-target-ea95cd9f62992bcbe361",
+      "probe_event_utc": "2026-11-17T04:47:46.998Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-ea95cd9f62992bcbe361.json",
+      "raw_sha256": "5333b29406754f309af0f8ecae511b7baba7737ed376c1d7132281a21b6bf366",
+      "request_sha256": "22a48f2e7d4b6587b0cfec3b0faf9234242c451f4169369047ca3f5613d90765",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n09-guest-q2",
+      "probe": "blind-target-629df1899dc26e7b6fed",
+      "probe_event_utc": "2026-11-17T04:47:52.173Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-629df1899dc26e7b6fed.json",
+      "raw_sha256": "e3d86242e451ac0e59a59171ff4036ce62fcaf330c9a53b19ac3329a61796532",
+      "request_sha256": "bfcea49dcbb09b679d6a98a8b98e1adf00d62f73f21756b01beafc359040b792",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n09-guest-q3",
+      "probe": "blind-target-585558190611cfd86b12",
+      "probe_event_utc": "2026-11-17T04:47:58.926Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-585558190611cfd86b12.json",
+      "raw_sha256": "05a8767b6ebcb502f2b7f509b355a854aa2811f7e4c98c18a085e8a316325622",
+      "request_sha256": "93792ed5e45584db5ca46de6ce514c088ad7aa6d740717bcddedc3c3aea9beff",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n10-signage-q1",
+      "probe": "blind-target-78edfc22c0be61e5826c",
+      "probe_event_utc": "2026-11-17T04:48:06.239Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-78edfc22c0be61e5826c.json",
+      "raw_sha256": "219ff245869321c1283cadc27f7e2b7f092cf5cec2c8239e74b5488b4864af90",
+      "request_sha256": "bd996a58d59327784e49654c99ef79d4971104fb33f53c85f0a661fc59a4eca6",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n10-signage-q2",
+      "probe": "blind-target-47a8a9fe92918970d81b",
+      "probe_event_utc": "2026-11-17T04:48:11.205Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-47a8a9fe92918970d81b.json",
+      "raw_sha256": "85396f9465061b35fe095732ccf8e45a96b09e15ecb89007d56856d8b3ee96ea",
+      "request_sha256": "cc75b5f51d24bfec6c1f4de1868cf52806b335b215e0b01f996e6fdedb394177",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n10-signage-q3",
+      "probe": "blind-target-f19c2f03fce3a1591871",
+      "probe_event_utc": "2026-11-17T04:48:20.310Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-f19c2f03fce3a1591871.json",
+      "raw_sha256": "d3a8b0aae37d2a2807048c834598efd6b758bb8027aa2de00f5af848c25b1b8e",
+      "request_sha256": "ed9c59bbf290c09a8d3b457693516646b4c2896c957f3e195ffe6bf3f6006f9b",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n10-guest-q1",
+      "probe": "blind-target-1011dc738eff4ee04985",
+      "probe_event_utc": "2026-11-17T04:48:27.195Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-1011dc738eff4ee04985.json",
+      "raw_sha256": "165be3722673cbb64bdf067f6bf6fbd008f420cd39cdf43e75d8b0dae4cac594",
+      "request_sha256": "2b99d8c5cb9c3810f47f151bda0708a0fe8921d0acf4fdf5a1f5b09b4b01548f",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n10-guest-q2",
+      "probe": "blind-target-612bbe271e74bde19db9",
+      "probe_event_utc": "2026-11-17T04:48:30.709Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-612bbe271e74bde19db9.json",
+      "raw_sha256": "a7f0b43d2bb0e46d26474f1c5476945633127580ee630c77302adee7a535b464",
+      "request_sha256": "9a1780b4579966ef769449c450aeadefa2877263f816aa4ca607b6dba3497bb7",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n10-guest-q3",
+      "probe": "blind-target-ec338062336334072fbe",
+      "probe_event_utc": "2026-11-17T04:48:35.968Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-ec338062336334072fbe.json",
+      "raw_sha256": "40fb2776ac9302e337cbf2ee2e53d545f3dc5a9ba197f98fa6e1c1e377c5a274",
+      "request_sha256": "5fa1d8b16df95f1e5eef95e08f3c13b88bbeb7b3cf59058364c97afd7eb908da",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 3
+    },
+    {
+      "target": "n11-signage-q1",
+      "probe": "blind-target-a13c4dc6796f92484327",
+      "probe_event_utc": "2026-11-17T04:48:44.525Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a13c4dc6796f92484327.json",
+      "raw_sha256": "4543752a0b34da42b0c86f92c765621857cf744053477471cb2482cadc35865a",
+      "request_sha256": "ab919f9d953ce4668de6485b965a0c791f93c805b384ada09ae9e377ee577900",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n11-signage-q2",
+      "probe": "blind-target-630a3d2715ce64b39ec9",
+      "probe_event_utc": "2026-11-17T04:51:27.248Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-630a3d2715ce64b39ec9.json",
+      "raw_sha256": "e5ac42207b485037ca0822e6931b16f6198248b31f7aa58e35e2d173b0ebf0ae",
+      "request_sha256": "70aa61da35d6c3916ecbac496f26331da4fe9d9226ad9f2b2f907e16854b38b9",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 27
+    },
+    {
+      "target": "n11-signage-q3",
+      "probe": "blind-target-94292564a4a0c2813913",
+      "probe_event_utc": "2026-11-17T04:51:37.934Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-94292564a4a0c2813913.json",
+      "raw_sha256": "aafaa07969639d3938bab3b7938b83ff1e1f57044c6a3f80f0f151bf50697fb6",
+      "request_sha256": "42291afab6c6f9a993d6cda3ecaf3a306f45e308d23053658930553fe29116fb",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 29
+    },
+    {
+      "target": "n11-guest-q1",
+      "probe": "blind-target-0a8666cfca3ee60d1b2b",
+      "probe_event_utc": "2026-11-17T04:51:44.703Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-0a8666cfca3ee60d1b2b.json",
+      "raw_sha256": "8eb2e1608dead84691a78e964a4fac77ee5b9241ca43e782f73012f5b1d30e44",
+      "request_sha256": "4ac0bc37f666faa21ae0bab6551ea8cf710da27c06e52d94c1f8a1019fcf9da7",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n11-guest-q2",
+      "probe": "blind-target-6d71da0a206249d3e35e",
+      "probe_event_utc": "2026-11-17T04:53:43.756Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6d71da0a206249d3e35e.json",
+      "raw_sha256": "62901ec858ab3afb8c46d1d2a7634d530c9e7f9041f03cb5fec808c2fee7e853",
+      "request_sha256": "63a1ac32c271591bbcbc620754e97d95d7326bf31b03ed57f3ee8b8784b8b8c4",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 27
+    },
+    {
+      "target": "n11-guest-q3",
+      "probe": "blind-target-068f702b0e13f5080f50",
+      "probe_event_utc": "2026-11-17T04:53:49.283Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-068f702b0e13f5080f50.json",
+      "raw_sha256": "7c78c9b04f0aa2a019b0d10d1913bb836525cdca92df2164b4c0eb3e6cf15d35",
+      "request_sha256": "af011719292e24dcc72eebaa373454dbe8c1a57230dd24920c33d8d3b94f50a5",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 29
+    },
+    {
+      "target": "n12-signage-q1",
+      "probe": "blind-target-a57c292919d4ca09f7d1",
+      "probe_event_utc": "2026-11-17T04:53:55.888Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a57c292919d4ca09f7d1.json",
+      "raw_sha256": "744dc00c2c0ccc516ecfcde115a6aa4bf6d4cd63229d5aae51cc533dfc375f43",
+      "request_sha256": "bd996a58d59327784e49654c99ef79d4971104fb33f53c85f0a661fc59a4eca6",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n12-signage-q2",
+      "probe": "blind-target-6d7e7d12e37aa351ec51",
+      "probe_event_utc": "2026-11-17T04:54:38.122Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6d7e7d12e37aa351ec51.json",
+      "raw_sha256": "5ab66a34cc9845ae25bcb3d01b7d81f8f401201e2bcb21231ad4fabcca99b141",
+      "request_sha256": "02b80ea59243c123dd1bde0a9ff005cd589ce57a14dbbe691d61ba90a0faefe0",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n12-signage-q3",
+      "probe": "blind-target-3d88591c6f13c146bd0c",
+      "probe_event_utc": "2026-11-17T04:54:42.438Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-3d88591c6f13c146bd0c.json",
+      "raw_sha256": "7148d5ae68cb31e952d97c3e8c0f056705730212cbec660e0641fa32792a798f",
+      "request_sha256": "06318558d5d536d252350d18c99c8c001dd9bd815b141d97e273ed5fe9c6df28",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n12-guest-q1",
+      "probe": "blind-target-3781383cd4046e591c48",
+      "probe_event_utc": "2026-11-17T04:54:50.825Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-3781383cd4046e591c48.json",
+      "raw_sha256": "296bc3acbd50c3019365d1980f02ef7c1502c1ba0928839629998a5d03d535e4",
+      "request_sha256": "2b99d8c5cb9c3810f47f151bda0708a0fe8921d0acf4fdf5a1f5b09b4b01548f",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n12-guest-q2",
+      "probe": "blind-target-2455a86e2bf70efa4827",
+      "probe_event_utc": "2026-11-17T04:55:36.413Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-2455a86e2bf70efa4827.json",
+      "raw_sha256": "98230cb270c6750f41eab2d48bd0bc7edd889d83ad5753c88b9066509d761867",
+      "request_sha256": "cf122da8971b7a435244be7805368a00dda2d5252f4cacc45d0ca817c1d9d742",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 1
+    },
+    {
+      "target": "n12-guest-q3",
+      "probe": "blind-target-64809b619e7c8b9b1246",
+      "probe_event_utc": "2026-11-17T04:55:40.940Z",
+      "probe_event_kind": "probe_invalid",
+      "in_predictions": false,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-64809b619e7c8b9b1246.json",
+      "raw_sha256": "7d5a61642b08297ac90177d043fd15d996c63e6b515db8bb963ba32a1aabdfaf",
+      "request_sha256": "3124805cf7b6751a1c9e0eb179c33d3392b6be9291fb470ce3333d1e38d206b3",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n13-signage-q1",
+      "probe": "blind-target-e31e7a2253506a5d746f",
+      "probe_event_utc": "2026-11-17T04:56:00.514Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-e31e7a2253506a5d746f.json",
+      "raw_sha256": "77d7f19ea4d4eb7839bef7366c843e72feaae26f9123b41dbd7d3a2177756c17",
+      "request_sha256": "268960d9bf71460f93b3007135586a7837888dd78eb898f794573c791c4e367d",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n13-guest-q1",
+      "probe": "blind-target-525f0d17ae2994250554",
+      "probe_event_utc": "2026-11-17T04:56:17.752Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-525f0d17ae2994250554.json",
+      "raw_sha256": "42e1056da583d731df53b59129c45b736025f3ec89c4b05229ee1bf6f3aaeb28",
+      "request_sha256": "d54c9c5665bc5865142c76080484c362e1af00d9609ec9bb8b7316672388cc85",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n14-signage-q1",
+      "probe": "blind-target-a8084834adf76a800bec",
+      "probe_event_utc": "2026-11-17T04:56:26.380Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a8084834adf76a800bec.json",
+      "raw_sha256": "25dc1e17482c15996b9fc072b3d0ab2c078651984f53f8dc916946220295df04",
+      "request_sha256": "969c3aa8d65d4eb811068ca5868cb8d774d9484516269c54502f869a102358e6",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n14-signage-q2",
+      "probe": "blind-target-a47baf27ca91d3c8602a",
+      "probe_event_utc": "2026-11-17T04:56:35.001Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-a47baf27ca91d3c8602a.json",
+      "raw_sha256": "8be1067f09c5b12199d4b1b6149df7aa356308e57c4daf426a59f445326f79d7",
+      "request_sha256": "35eff5b82bf64243f3b50272c3d62cadc9413e6f4d694d1ae9bb4a8418b2fbb3",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n14-signage-q3",
+      "probe": "blind-target-bd55e5fa836519a8cf61",
+      "probe_event_utc": "2026-11-17T04:56:43.263Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-bd55e5fa836519a8cf61.json",
+      "raw_sha256": "fad5e6e64733d6a972943158c6799ef5ba4ac60c290b9e9593404fc9f215109d",
+      "request_sha256": "1243671d2117ec1ae7edf902c0534cdcb9ddcc3a2de4b3de9f2ad176eaffe578",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    },
+    {
+      "target": "n14-guest-q1",
+      "probe": "blind-target-16937946f0a5254cd77d",
+      "probe_event_utc": "2026-11-17T04:56:50.338Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-16937946f0a5254cd77d.json",
+      "raw_sha256": "4de8e6072176c38bb4ff0e6ce7d17b1f4647588629510e06300eec30a08f0e3a",
+      "request_sha256": "7f80bce68446c2f460fa02bd04d4f68128bb09f26280af5c205285e348367dab",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 2
+    },
+    {
+      "target": "n14-guest-q2",
+      "probe": "blind-target-9e867f3f1f3ddbe4218c",
+      "probe_event_utc": "2026-11-17T04:56:57.927Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-9e867f3f1f3ddbe4218c.json",
+      "raw_sha256": "f380669321263419fb9701753ae3f2b221297c19975549abb54b3a6806ea2265",
+      "request_sha256": "43a998238fed90582265aefc0655fa341b25e3d7667eaf321ee55f9d58a87d30",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 4
+    },
+    {
+      "target": "n14-guest-q3",
+      "probe": "blind-target-074b8b974ca3c2cfa018",
+      "probe_event_utc": "2026-11-17T04:57:06.348Z",
+      "probe_event_kind": "probe",
+      "in_predictions": true,
+      "raw_path": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-074b8b974ca3c2cfa018.json",
+      "raw_sha256": "2a379220816ec17264698561be1b7f6c43ff173d8def017c20e77eca00c0f62d",
+      "request_sha256": "e77f81eab8a2798865ec8becbe4d96a09f713bcfb2065ca23ec5ba8e43b0f29d",
+      "request_matches_embedded": true,
+      "headers": [
+        {
+          "message_index": 1,
+          "role": "user",
+          "persona": "elda",
+          "revision": 9,
+          "header_md5_prefix": "904d8895",
+          "paragraph_sha256": "bcb1523dedc2ef6cb24afa1c6ba2f281f85e35518c37f6fcca3c7ddb46d976da",
+          "paragraph_chars": 514,
+          "has_name_line": true,
+          "has_style_line": true,
+          "doing_lines": 5,
+          "rule_lines": 5
+        }
+      ],
+      "current_conversation_only_statement_count": 6
+    }
+  ]
+}

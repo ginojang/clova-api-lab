@@ -1,0 +1,307 @@
+{
+  "audit": "r3 adapter execution/receipt static audit",
+  "report_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+  "runtime_ref": "a315c32c008694e52b0fcfc11651ae986340a7ad",
+  "adapter_commit": "41df84e975c390b6255f7100479164f55bc0f1d8",
+  "bundle_ref": "7b9b9443d8b885742f66aa40d4308018ec46303a",
+  "adapter_sha256": {
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "a315c32c008694e52b0fcfc11651ae986340a7ad": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "41df84e975c390b6255f7100479164f55bc0f1d8": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f"
+  },
+  "run_started": "2026-11-17T04:39:19.687Z",
+  "last_event": {
+    "t": "2026-11-17T04:57:07.851Z",
+    "ev": "done",
+    "preds": 68
+  },
+  "receipt_count": 200,
+  "conversation_count": 48,
+  "receipt_ok_counts": {
+    "true": 196,
+    "false": 4
+  },
+  "receipt_match_counts": {
+    "turn_index": 200
+  },
+  "fixture_counts": {
+    "false": 180,
+    "true": 20
+  },
+  "duplicate_selected_cid_turn_keys": [],
+  "duplicate_selected_turn_ids": [],
+  "duplicate_delivery_event_ids": [],
+  "event_counts": {
+    "dev_up": 5,
+    "turn": 106,
+    "settle": 94,
+    "probe": 68,
+    "retry_turn": 4,
+    "forget": 4,
+    "attempt_resume": 2,
+    "fixture_s6": 18,
+    "queue_c": 6,
+    "release_c": 10,
+    "dev_down": 5,
+    "restart_worker": 4,
+    "probe_invalid": 12,
+    "pause": 2,
+    "resume": 2,
+    "finish_c": 14,
+    "attach_s6": 2,
+    "turn_notification_fixture": 10,
+    "advance_time": 4,
+    "trim_context": 2,
+    "job_lost": 3,
+    "scope_collision": 6,
+    "probe_skipped": 4,
+    "ltm_op_dump": 1,
+    "done": 1
+  },
+  "settle_count": 94,
+  "settle_true_on_failed_receipt_count": 4,
+  "failed_receipts": [
+    {
+      "delivery": {
+        "cid": "m3-3a8850-c93f85f0e54e",
+        "n": 12,
+        "ev": "blind-event-7d15e8fd79535d7eca1b",
+        "at": "2026-11-17T04:52:27.310Z",
+        "fixture": false,
+        "chat_turn": 12,
+        "match": "turn_index",
+        "nth_agrees": true,
+        "t_receipt": {
+          "ts": "2026-11-17T04:52:32.278Z",
+          "turn_index": 12,
+          "turn_id": 8767,
+          "ok": false,
+          "ops": 0,
+          "applied": 0,
+          "held": 0,
+          "dropped": 0,
+          "dropped_why": [],
+          "cmd": null,
+          "config": "3391e5be"
+        }
+      },
+      "story": "n11-guest",
+      "checkpoint": 2,
+      "source_text": "별개 정리함 10의 라벨은 합성표식-10야. 기억해 줘.",
+      "following_settles": [
+        {
+          "id": "blind-event-d9ac6c36a28b29ae465c",
+          "source_event_id": "blind-event-7d15e8fd79535d7eca1b",
+          "settle_ok": true,
+          "settle_at": "2026-11-17T04:52:32.610Z",
+          "receipt_present": true,
+          "receipt_ok": false,
+          "receipt_at": "2026-11-17T04:52:32.278Z",
+          "receipt_before_settle": true
+        }
+      ]
+    },
+    {
+      "delivery": {
+        "cid": "m3-3a8850-c93f85f0e54e",
+        "n": 21,
+        "ev": "blind-event-3f4e4c6913e246d10b1c",
+        "at": "2026-11-17T04:53:07.117Z",
+        "fixture": false,
+        "chat_turn": 21,
+        "match": "turn_index",
+        "nth_agrees": true,
+        "t_receipt": {
+          "ts": "2026-11-17T04:53:12.030Z",
+          "turn_index": 21,
+          "turn_id": 8789,
+          "ok": false,
+          "ops": 0,
+          "applied": 0,
+          "held": 0,
+          "dropped": 0,
+          "dropped_why": [],
+          "cmd": null,
+          "config": "3391e5be"
+        }
+      },
+      "story": "n11-guest",
+      "checkpoint": 2,
+      "source_text": "별개 정리함 19의 라벨은 합성표식-19야. 기억해 줘.",
+      "following_settles": [
+        {
+          "id": "blind-event-07009fc3713fe1b7b0fe",
+          "source_event_id": "blind-event-3f4e4c6913e246d10b1c",
+          "settle_ok": true,
+          "settle_at": "2026-11-17T04:53:12.459Z",
+          "receipt_present": true,
+          "receipt_ok": false,
+          "receipt_at": "2026-11-17T04:53:12.030Z",
+          "receipt_before_settle": true
+        }
+      ]
+    },
+    {
+      "delivery": {
+        "cid": "m3-3a8850-c93f85f0e54e",
+        "n": 22,
+        "ev": "blind-event-75d9dca86a4714159266",
+        "at": "2026-11-17T04:53:14.124Z",
+        "fixture": false,
+        "chat_turn": 22,
+        "match": "turn_index",
+        "nth_agrees": true,
+        "t_receipt": {
+          "ts": "2026-11-17T04:53:19.167Z",
+          "turn_index": 22,
+          "turn_id": 8790,
+          "ok": false,
+          "ops": 0,
+          "applied": 0,
+          "held": 0,
+          "dropped": 0,
+          "dropped_why": [],
+          "cmd": null,
+          "config": "3391e5be"
+        }
+      },
+      "story": "n11-guest",
+      "checkpoint": 2,
+      "source_text": "별개 정리함 20의 라벨은 합성표식-20야. 기억해 줘.",
+      "following_settles": [
+        {
+          "id": "blind-event-073bcff019430833dcf1",
+          "source_event_id": "blind-event-75d9dca86a4714159266",
+          "settle_ok": true,
+          "settle_at": "2026-11-17T04:53:19.557Z",
+          "receipt_present": true,
+          "receipt_ok": false,
+          "receipt_at": "2026-11-17T04:53:19.167Z",
+          "receipt_before_settle": true
+        }
+      ]
+    },
+    {
+      "delivery": {
+        "cid": "m3-3a8850-c93f85f0e54e",
+        "n": 24,
+        "ev": "blind-event-48fda9cd946ac7185267",
+        "at": "2026-11-17T04:53:27.681Z",
+        "fixture": false,
+        "chat_turn": 24,
+        "match": "turn_index",
+        "nth_agrees": true,
+        "t_receipt": {
+          "ts": "2026-11-17T04:53:32.688Z",
+          "turn_index": 24,
+          "turn_id": 8792,
+          "ok": false,
+          "ops": 0,
+          "applied": 0,
+          "held": 0,
+          "dropped": 0,
+          "dropped_why": [],
+          "cmd": null,
+          "config": "3391e5be"
+        }
+      },
+      "story": "n11-guest",
+      "checkpoint": 2,
+      "source_text": "별개 정리함 22의 라벨은 합성표식-22야. 기억해 줘.",
+      "following_settles": [
+        {
+          "id": "blind-event-93b66b0cd199e3db735e",
+          "source_event_id": "blind-event-48fda9cd946ac7185267",
+          "settle_ok": true,
+          "settle_at": "2026-11-17T04:53:32.924Z",
+          "receipt_present": true,
+          "receipt_ok": false,
+          "receipt_at": "2026-11-17T04:53:32.688Z",
+          "receipt_before_settle": true
+        }
+      ]
+    }
+  ],
+  "affected_family_probes": [
+    {
+      "event": {
+        "t": "2026-11-17T04:51:44.703Z",
+        "ev": "probe",
+        "story": "n11-guest",
+        "k": 1,
+        "probe": "blind-target-0a8666cfca3ee60d1b2b",
+        "blocked": false,
+        "emitted": true
+      },
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 1,
+      "snapshot_started": "2026-11-17T04:51:41.797Z"
+    },
+    {
+      "event": {
+        "t": "2026-11-17T04:53:43.756Z",
+        "ev": "probe",
+        "story": "n11-guest",
+        "k": 2,
+        "probe": "blind-target-6d71da0a206249d3e35e",
+        "blocked": false,
+        "emitted": false
+      },
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 2,
+      "snapshot_started": "2026-11-17T04:53:41.185Z"
+    },
+    {
+      "event": {
+        "t": "2026-11-17T04:53:49.283Z",
+        "ev": "probe",
+        "story": "n11-guest",
+        "k": 3,
+        "probe": "blind-target-068f702b0e13f5080f50",
+        "blocked": false,
+        "emitted": false
+      },
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 2,
+      "snapshot_started": "2026-11-17T04:53:46.875Z"
+    }
+  ],
+  "checks": {
+    "adapter_hash_matches_metadata_at_all_three_refs": true,
+    "runtime_metadata_ref_matches_pinned_runtime": true,
+    "delivery_event_multiset_equals_receipt_event_multiset": true,
+    "all_200_match_by_key": true,
+    "all_200_nth_agree": true,
+    "all_receipt_turn_indexes_match_delivery": true,
+    "all_selected_turn_ids_present": true,
+    "per_cid_delivery_numbers_contiguous": true,
+    "per_cid_selected_completion_timestamps_nondecreasing": true,
+    "selected_receipt_not_before_delivery": true,
+    "all_settles_have_source_receipt_before_completion": true
+  },
+  "metadata_settle_text": "expected T lines = turns delivered to cid",
+  "scope_limits": [
+    "200/200 is selected delivery-to-receipt binding, not 200 successful T results: 196 true and 4 false.",
+    "Export selects first matching key; it is not an unfiltered per-attempt ledger. No complete-log duplicate/failure census was performed.",
+    "turn_id is receipt-only; delivery chat_turn is inferred from increased max(turn_index), not a request-returned turn id.",
+    "All four T failures occurred in n11-guest checkpoint 2; every corresponding settle returned true. n11 checkpoints 2/3 still emitted predictions.",
+    "Failure reason is omitted from receipt export, although source logger includes reason; it cannot be recovered from these receipts.",
+    "No server logs, live services, DB, API, adapter or model were run/read. Runtime dist hash is metadata, not an independently rebuilt artifact.",
+    "No automatic score or denominator changes: operational preparation status and end-to-end observed model outcomes must be reported separately."
+  ],
+  "input_sha256": {
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/run_meta.json": "eef813bff757a9e09fa29453e2a3bc8013d77de40f70afac9e4b218cee2935a4",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/t_receipts.jsonl": "0aa796e7b0bc38b59bb6712ddf4591bdae6c6fa2e1ad9ca4d40445a1411a4ff3",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/run_events.jsonl": "1bbd22036e1daf1c48f28d715a8bc2d2cfefc4075ace82dc5899ff23a01f4e6f",
+    "7b9b9443d8b885742f66aa40d4308018ec46303a:runtime/long-memory-research/eval-v1/blind/scenarios.jsonl": "62e14f2b437e60879dd184771ad9fb39c051364f1688de3162728ec4c445ec49",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/src/tools/m3v02Run.ts": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "a315c32c008694e52b0fcfc11651ae986340a7ad:elda-orchestrator/src/tools/m3v02Run.ts": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "41df84e975c390b6255f7100479164f55bc0f1d8:elda-orchestrator/src/tools/m3v02Run.ts": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-0a8666cfca3ee60d1b2b.json": "8eb2e1608dead84691a78e964a4fac77ee5b9241ca43e782f73012f5b1d30e44",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-6d71da0a206249d3e35e.json": "62901ec858ab3afb8c46d1d2a7634d530c9e7f9041f03cb5fec808c2fee7e853",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/raw/blind-target-068f702b0e13f5080f50.json": "7c78c9b04f0aa2a019b0d10d1913bb836525cdca92df2164b4c0eb3e6cf15d35"
+  }
+}
