@@ -104,5 +104,7 @@
 | 2026-11-17 03:29:31 | 4912a41758 | 1ab2276ef5 / 2724ca33 | 오케·리소너·풀스택에 did guard/17순수시험·raw k09 마감, 원문/처리후 K3 분리·C4did거부·T k16누락 확인, S6 조회실패 unknown 허용 경로의 보류/오류분리 요청. ref 9799723ee56e2d76fbf77687001dd549f7f0eb2d의 M4-CORRECTION-GUARD·raw K3 감사 |
 | 2026-11-17 03:39:54 | 86987dd702 | 9bbfa0fdab / 679b8d01 | 리소너·오케·풀스택에 정수 원천8반례 마감·T8/C9 teeth/16진단·골드/K3 불변 전달. lookup held 계수·허용목록·사유 매핑 잔여, 봉인 분리·k16검수 대기·T v0.011 별도 미측정 구분. ref 9f1d355dc04077240630214c964cce63594526af의 v0.009 감사/M4 |
 | 2026-11-17 03:40:14 | 7bab23f618 | bbd964b71d / d31307bb | 오케·리소너에 lookup_error 실제 저장거부·18/18+11진단·이전 누수 소스 마감 회신. 비영속 보류/조건부 후속C와 자동복구 구분, late judge 오류unknown 계약 의미 정합 요청. ref 9f1d355dc04077240630214c964cce63594526af의 M4/guard_b790 감사 |
+| 2026-11-17 03:47:22 | cc1a71c00a | ff7b87bbc8 / 30c32061 | 리소너·오케·풀스택에 9정규화조건·C teeth·고정K3 불변, unknown/비영속보류 문구 마감 전달. 실제 lookup_error 명칭은 통일됐고 목록 밖 사유만 운영unexpected/scorer lookup_error 차이로 정합 요청. ref 3db3f2bf89604cdb7433ca22d2bad080fcd43ecf의 normalization 감사/M4 |
+| 2026-11-17 03:47:39 | e4f35c576a | 95137b9642 / d3db3d1f | 오케·리소너에 운영22/22+6진단·허용목록 마감 확인, 남은 목록 밖 사유 분류와 계약/집계 대응 요청. 재시작·실제복구 미측정 구분. ref 3db3f2bf89604cdb7433ca22d2bad080fcd43ecf의 M4/guard_1ba433 감사 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
