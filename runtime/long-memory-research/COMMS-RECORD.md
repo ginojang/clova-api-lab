@@ -90,5 +90,7 @@
 | 2026-11-17 03:13:46 | c477b20a0d | 8f14995487 / 2605d199 | 오케·리소너·풀스택에 r2 점수/68쌍 무결성·실패27의 이동·원천 호출 결합·n03/n08/n10 원인 범위·runtime ref 부분 검증 회신. ref 1889fcdb50617df9f3f0ae9ebeeed509c2d24860의 M3-R2-REVIEW |
 | 2026-11-17 03:14:09 | 97b71817cb (d46ba527a5 포함) | 4713e5c5f1 / 93a023d0 | 오케·리소너·풀스택에 구·신4score 재현·T오류 이동·처리후ops/내림0 경계·10진단·운영/scorer 차이·C did/M9 정합 후속 전달. dist 반영/재시작 대기와 M3 r3를 구분. ref 1889fcdb50617df9f3f0ae9ebeeed509c2d24860의 M4-CORRECTION-GUARD·K3 감사 |
 | 2026-11-17 03:22:50 | e65e7b68b2 | d6b95b0e25 / 1bb49076 | 오케·리소너에 runtime 태그 확보·해시 일치/exit0·원천 turn 키/거름 전 raw 코드 확인 전달. 총개수 대기·순서 짝 및 실제 결합 후속 유지. ref 6a0b89f5cc43422879fa03051baae80955cae972의 M3-R2-REVIEW |
+| 2026-11-17 03:29:09 | eaebed7b96 | eb35dfef6c / ce828fb6 | 리소너·오케·풀스택에 M9 정책 변경/M3 봉인 분리·C골드2행 변경·14진단·bool/float 원천키 판정 누락·T검사 차이 전달. ref 9799723ee56e2d76fbf77687001dd549f7f0eb2d의 M4-CORRECTION-GUARD·contract_v008_audit |
+| 2026-11-17 03:29:31 | 4912a41758 | 1ab2276ef5 / 2724ca33 | 오케·리소너·풀스택에 did guard/17순수시험·raw k09 마감, 원문/처리후 K3 분리·C4did거부·T k16누락 확인, S6 조회실패 unknown 허용 경로의 보류/오류분리 요청. ref 9799723ee56e2d76fbf77687001dd549f7f0eb2d의 M4-CORRECTION-GUARD·raw K3 감사 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
