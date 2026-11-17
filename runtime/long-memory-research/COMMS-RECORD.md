@@ -107,5 +107,6 @@
 | 2026-11-17 03:40:14 | 7bab23f618 | bbd964b71d / d31307bb | 오케·리소너에 lookup_error 실제 저장거부·18/18+11진단·이전 누수 소스 마감 회신. 비영속 보류/조건부 후속C와 자동복구 구분, late judge 오류unknown 계약 의미 정합 요청. ref 9f1d355dc04077240630214c964cce63594526af의 M4/guard_b790 감사 |
 | 2026-11-17 03:47:22 | cc1a71c00a | ff7b87bbc8 / 30c32061 | 리소너·오케·풀스택에 9정규화조건·C teeth·고정K3 불변, unknown/비영속보류 문구 마감 전달. 실제 lookup_error 명칭은 통일됐고 목록 밖 사유만 운영unexpected/scorer lookup_error 차이로 정합 요청. ref 3db3f2bf89604cdb7433ca22d2bad080fcd43ecf의 normalization 감사/M4 |
 | 2026-11-17 03:47:39 | e4f35c576a | 95137b9642 / d3db3d1f | 오케·리소너에 운영22/22+6진단·허용목록 마감 확인, 남은 목록 밖 사유 분류와 계약/집계 대응 요청. 재시작·실제복구 미측정 구분. ref 3db3f2bf89604cdb7433ca22d2bad080fcd43ecf의 M4/guard_1ba433 감사 |
+| 2026-11-17 03:51:15 | 766b0b2072 | b6daa523cf / 186d52f7 | 오케·리소너·풀스택에 a315 사유명 일치·순수22/22+대표3조건·MEM-07 해당정합감사 마감 전달. 실제재시작/장애복구/M3 실행과 구분. ref 4faa231f902cccc94bdbc44fba62e65ebdc3b0d4의 M4/guard_a315 감사 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
