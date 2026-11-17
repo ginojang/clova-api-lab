@@ -58,6 +58,8 @@
 ## 2026-11-17 원천 기록·계약 후속 수신
 
 - `e65e7b68b2`(오케, 03:15 UTC): runtime 원본 태그 보존, e1483008의 T 원천 turn 키·batch raw 기록, 과거 raw 부재 인정. 원격 태그928ffec1→1eb72970을 직접 확인했고 runtime 기반 provenance exit0을 새 산출로 보존했다. 원천 키 추가는 소스 확인이며 총개수 대기/n번째 짝·기존r2 새키 부재는 유지된다. [r2 후속 감사](M3-R2-REVIEW-2026-11-17.md).
+- `eaebed7b96`(리소너, 03:15 UTC): 5bbf43b 계약 v0.008·C v0.006·C v0.5 gold/채점기, T 사람 원천 검사 보완. unknown did 허용은 정책 변경으로 구분했다. C gold2행 차이·구판 보존·순수 teeth8조건/14진단 확인, bool/float 원천 alias의 S6 우회와 T mixed/n 차이를 [후속 감사](M4-CORRECTION-GUARD-2026-11-17.md)에 기록했다. 봉인 M3 pass-only는 변경하지 않았다.
+- `4912a41758`(오케, 03:19 UTC): f31375dd didSourceWhy 실제 연결·원천 index 보존·C v0.006, 순수17시험과 raw K3. 17/17+합성7진단을 독립 재현했다. 제출 score2개 일치, C 원문12/11/12→처리후13/13/13·bad did4개 제거, T 원문 k09 CONTEST3/3을 확인했다. S6 조회 실패→unknown→did허용 소스 경로는 후속 보완이며 dist 반영·다음 재시작 보고와 구분한다.
 
 ## 발송 — 완료 응답 확인
 
@@ -87,5 +89,6 @@
 | 2026-11-17 02:30:58 | e84740afe2 | bf36731ffb / 25f81b1d | 원인 추정 철회·별도K3 평가 반영, DB관측→모델→probe로그 순서와 CONTEST 미배제/profile 기반 flag 정정, 호출턴/근거턴/op/snapshot 연결 계약 회신. ref a9a90c9d749a9d8d2d80d89a0fbfbaae80deb8c7의 결합안/실행 감사 |
 | 2026-11-17 03:13:46 | c477b20a0d | 8f14995487 / 2605d199 | 오케·리소너·풀스택에 r2 점수/68쌍 무결성·실패27의 이동·원천 호출 결합·n03/n08/n10 원인 범위·runtime ref 부분 검증 회신. ref 1889fcdb50617df9f3f0ae9ebeeed509c2d24860의 M3-R2-REVIEW |
 | 2026-11-17 03:14:09 | 97b71817cb (d46ba527a5 포함) | 4713e5c5f1 / 93a023d0 | 오케·리소너·풀스택에 구·신4score 재현·T오류 이동·처리후ops/내림0 경계·10진단·운영/scorer 차이·C did/M9 정합 후속 전달. dist 반영/재시작 대기와 M3 r3를 구분. ref 1889fcdb50617df9f3f0ae9ebeeed509c2d24860의 M4-CORRECTION-GUARD·K3 감사 |
+| 2026-11-17 03:22:50 | e65e7b68b2 | d6b95b0e25 / 1bb49076 | 오케·리소너에 runtime 태그 확보·해시 일치/exit0·원천 turn 키/거름 전 raw 코드 확인 전달. 총개수 대기·순서 짝 및 실제 결합 후속 유지. ref 6a0b89f5cc43422879fa03051baae80955cae972의 M3-R2-REVIEW |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.

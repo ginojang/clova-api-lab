@@ -1,0 +1,170 @@
+{
+  "source_repo": "ginojang/GanpanAI",
+  "source_sha": "f31375dd8a1f8cdbaa61d167d47ee66606f007f5",
+  "sources": {
+    "memory": {
+      "path": "elda-orchestrator/src/core/eldacore/s6memory.ts",
+      "sha256": "130512935a038e78cdf5d1118771a14bc4def27cd1620304d3e8b0bb62bae4de"
+    },
+    "chat": {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "sha256": "a2bca6075f28289cc40fdb724c02719b9d1e6e566b56dfd9a75f4c8bb83f430f"
+    },
+    "selftest": {
+      "path": "elda-orchestrator/src/tools/s6GuardSelfTest.ts",
+      "sha256": "f535c0e569681bf86952b4349b65582db25adb2267655812a98ef529c6e95443"
+    }
+  },
+  "method": "Hash-pinned read-only git blobs; extracted locateIn/checkEvidence/correctionGuard/didSourceWhy plus HUMAN and original 17-test body; Node stripTypeScriptTypes and isolated VM; application imports removed.",
+  "model_api_calls": 0,
+  "db_calls": 0,
+  "serving_imports": 0,
+  "interpretation": "Diagnostic expectations describe observed guard behavior, not desired policy or human gold. The lookup-failure diagnostic simulates gather's unknown output; it does not run gather or a DB failure.",
+  "results": {
+    "ok": true,
+    "selftest": {
+      "n": 17,
+      "fail": 0,
+      "reported_exit": 0,
+      "logs": [
+        "ok   정정 말이 사람 턴 원문에 있음 → SUPERSEDE 유지",
+        "ok   correction_evidence 없음 → CONTEST(no_evidence)",
+        "ok   빈 t → CONTEST",
+        "ok   원문에 없는 말 → CONTEST(not_verbatim)",
+        "ok   엘다 턴에서 댄 말 → CONTEST(evidence_turn_missing)",
+        "ok   알림 턴에서 댄 말 → CONTEST(evidence_not_human)",
+        "ok   없는 턴 → CONTEST",
+        "ok   SUPERSEDE 아닌 연산은 안 건드림",
+        "ok   CONTEST 는 그대로(올리지 않음)",
+        "ok   pass 턴 → 받음",
+        "ok   판정 없음(none) 턴 → 받음",
+        "ok   unknown 턴 → 받음",
+        "ok   block 턴 → did_source_bad",
+        "ok   fix 턴 → did_source_bad",
+        "ok   사람 턴을 댐 → did_source_bad",
+        "ok   turn_index 없음 → did_no_source",
+        "ok   turn_index 글자 → did_no_source",
+        "17/17 ok"
+      ]
+    },
+    "diagnostics": [
+      {
+        "id": "known_block_rejected",
+        "actual": "did_source_bad",
+        "expected": "did_source_bad",
+        "matches_observation": true
+      },
+      {
+        "id": "lookup_failure_mapped_to_unknown_is_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "what_and_outcome_not_bound_to_source_text",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "non_correction_span_retained",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 3,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 3,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "negated_correction_span_retained",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "mixed_origin_accepted",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "missing_nth_occurrence_falls_back",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      }
+    ]
+  },
+  "static_findings": [
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        43,
+        46,
+        98,
+        103,
+        203
+      ],
+      "finding": "S6 lookup failure still maps all assistant turns to unknown; didSourceWhy accepts unknown. Existing block may be hidden by a failed lookup. No DB exploit or failure was executed."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        36,
+        40,
+        204,
+        213,
+        217
+      ],
+      "finding": "Stored did now retains the C flattened turn_index. It is not the DB chat_turn, response hash, or judge ID, and what/outcome are not checked against source text."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6memory.ts",
+      "lines": [
+        12,
+        38,
+        55,
+        58,
+        65
+      ],
+      "finding": "Correction logic unchanged: human/mixed literal span, missing positive nth occurrence falls back, self-correction meaning not checked. The pinned reasoner scorer 5bbf43b2 only allows human and ignores n."
+    },
+    {
+      "path": "elda-orchestrator/src/tools/s6ChatEndBatch.ts",
+      "lines": [
+        24,
+        31
+      ],
+      "finding": "Batch and serving share didSourceWhy; full C parity does not follow. Batch promise check uses literal includes and pass, without serving's loose-markdown/actual-judge-range handling or applied-promise reuse reconstruction."
+    }
+  ]
+}

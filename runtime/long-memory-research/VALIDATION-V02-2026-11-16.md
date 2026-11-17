@@ -49,3 +49,5 @@
 `e65e7b68b2` 후속으로 원격 태그→1eb72970 원본을 확보했다. 같은 provenance 도구가 runtime adapter·프롬프트4개·68쌍 자료를 확인해 exit0을 반환했다. [태그 후 결과](reviews/m3-v02-r2-2026-11-17/provenance_audit.after_tag.json)는 초기 exit1 산출과 별도 보존한다. 실제 dist/운영 실행 검증으로 확대하지 않는다. e1483008의 원천 turn 키·T batch raw 보존은 코드에서 확인했고, r2 기록/점수는 그대로다.
 
 `d46ba527a5`·`97b71817cb`의 [새 T/C 검토](M4-CORRECTION-GUARD-2026-11-17.md)는 별도39/13사례 K=3다. 구·신 해당 채점기로4개 저장 report를 재현하고 정정 근거 순수함수10진단을 추가했다. M3 점수나 기존110테스트 수에 합산하지 않는다. 새 프롬프트의 M3 r3는 담당 재시작 뒤 후속이다.
+
+계약 v0.008의 unknown did 허용은 `plan.json:20`의 봉인 pass-only와 다르다. 5bbf43b의 C v0.5 기대값2행 변경과 순수14진단, f31375dd의 guard17/17+7진단 및 raw K3 재현은 [후속 감사](M4-CORRECTION-GUARD-2026-11-17.md)에 별도 보존했다. 새 정책을 v0.2 gold에 반영하거나 새 C13/13을 M3 통과로 합산하지 않는다. r3를 구 gold로 계산하면 구 계약 점수임을 명시하고 새 정책 평가는 별도 기준을 먼저 고정한다.
