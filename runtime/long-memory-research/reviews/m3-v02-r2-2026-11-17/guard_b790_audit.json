@@ -1,0 +1,190 @@
+{
+  "source_repo": "ginojang/GanpanAI",
+  "source_sha": "b79015192a9055bca4902e8388e66707947c7c8b",
+  "sources": {
+    "memory": {
+      "path": "elda-orchestrator/src/core/eldacore/s6memory.ts",
+      "sha256": "130512935a038e78cdf5d1118771a14bc4def27cd1620304d3e8b0bb62bae4de"
+    },
+    "chat": {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "sha256": "9477bd6a04279a069dd8fe14299e31e1626eb55fc0140627135d8e047ce13d13"
+    },
+    "selftest": {
+      "path": "elda-orchestrator/src/tools/s6GuardSelfTest.ts",
+      "sha256": "458d650c7dc1e40c2ecf441308a306901011db8d1b333b9db619fdf22a5839b5"
+    }
+  },
+  "method": "Hash-pinned read-only git blobs; extracted locateIn/checkEvidence/correctionGuard/didSourceWhy plus HUMAN and original 18-test body; Node stripTypeScriptTypes and isolated VM; application imports removed.",
+  "model_api_calls": 0,
+  "db_calls": 0,
+  "serving_imports": 0,
+  "interpretation": "Diagnostic expectations describe observed guard behavior, not desired policy or human gold. The lookup-error diagnostic supplies the authoritative marker directly; it does not run gather or a DB failure. The fixed gather/model/save boundary is a separate static source finding.",
+  "results": {
+    "ok": true,
+    "selftest": {
+      "n": 18,
+      "fail": 0,
+      "reported_exit": 0,
+      "logs": [
+        "ok   정정 말이 사람 턴 원문에 있음 → SUPERSEDE 유지",
+        "ok   correction_evidence 없음 → CONTEST(no_evidence)",
+        "ok   빈 t → CONTEST",
+        "ok   원문에 없는 말 → CONTEST(not_verbatim)",
+        "ok   엘다 턴에서 댄 말 → CONTEST(evidence_turn_missing)",
+        "ok   알림 턴에서 댄 말 → CONTEST(evidence_not_human)",
+        "ok   없는 턴 → CONTEST",
+        "ok   SUPERSEDE 아닌 연산은 안 건드림",
+        "ok   CONTEST 는 그대로(올리지 않음)",
+        "ok   pass 턴 → 받음",
+        "ok   판정 없음(none) 턴 → 받음",
+        "ok   unknown 턴 → 받음",
+        "ok   block 턴 → did_source_bad",
+        "ok   fix 턴 → did_source_bad",
+        "ok   사람 턴을 댐 → did_source_bad",
+        "ok   turn_index 없음 → did_no_source",
+        "ok   S6 조회 실패 턴 → did_source_lookup_error",
+        "ok   turn_index 글자 → did_no_source",
+        "18/18 ok"
+      ]
+    },
+    "diagnostics": [
+      {
+        "id": "known_block_rejected",
+        "actual": "did_source_bad",
+        "expected": "did_source_bad",
+        "matches_observation": true
+      },
+      {
+        "id": "genuine_unknown_is_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "authoritative_lookup_error_rejected",
+        "actual": "did_source_lookup_error",
+        "expected": "did_source_lookup_error",
+        "matches_observation": true
+      },
+      {
+        "id": "out_of_allowlist_abstain_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "out_of_allowlist_arbitrary_string_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "missing_status_entry_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "what_and_outcome_not_bound_to_source_text",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "non_correction_span_retained",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 3,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 3,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "negated_correction_span_retained",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "mixed_origin_accepted",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      },
+      {
+        "id": "missing_nth_occurrence_falls_back",
+        "actual": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "expected": {
+          "op": "SUPERSEDE",
+          "start": 0,
+          "target": "m1"
+        },
+        "matches_observation": true
+      }
+    ]
+  },
+  "contract_ref": "ginojang/elda-resoner@0334e5e228fc51d2cc988f8251746947242caf7d:memory/S6_MEMORY_CONTRACT_v0.md:3",
+  "static_findings": [
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        43,
+        47,
+        149,
+        150,
+        161,
+        205
+      ],
+      "finding": "CLOSED: lookup failure becomes authoritative g.s6 lookup_error. A new s6ForModel object maps it to unknown for model input, without replacing g.s6. Late judging only runs for none. did storage checks the authoritative g.s6 and rejects lookup_error."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        99,
+        105
+      ],
+      "finding": "REMAINS: did guard is a blacklist of lookup_error/fix/block, not the contract's allowlist pass/unknown/none. abstain, arbitrary strings and missing entries are accepted. No malformed DB row or serving exploit was executed."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        161,
+        171
+      ],
+      "finding": "SEPARATE: a late-judge failure still becomes unknown. It is not the gather lookup_error path; the contract/retry interpretation is outside this narrow self-test audit."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        104
+      ],
+      "finding": "Reason spelling is did_source_lookup_error in this source; the contract names did_s6_lookup_error. Parent handles contract/retry integration."
+    }
+  ]
+}

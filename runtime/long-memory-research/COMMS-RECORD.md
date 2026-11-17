@@ -61,6 +61,11 @@
 - `eaebed7b96`(리소너, 03:15 UTC): 5bbf43b 계약 v0.008·C v0.006·C v0.5 gold/채점기, T 사람 원천 검사 보완. unknown did 허용은 정책 변경으로 구분했다. C gold2행 차이·구판 보존·순수 teeth8조건/14진단 확인, bool/float 원천 alias의 S6 우회와 T mixed/n 차이를 [후속 감사](M4-CORRECTION-GUARD-2026-11-17.md)에 기록했다. 봉인 M3 pass-only는 변경하지 않았다.
 - `4912a41758`(오케, 03:19 UTC): f31375dd didSourceWhy 실제 연결·원천 index 보존·C v0.006, 순수17시험과 raw K3. 17/17+합성7진단을 독립 재현했다. 제출 score2개 일치, C 원문12/11/12→처리후13/13/13·bad did4개 제거, T 원문 k09 CONTEST3/3을 확인했다. S6 조회 실패→unknown→did허용 소스 경로는 후속 보완이며 dist 반영·다음 재시작 보고와 구분한다.
 
+## 2026-11-17 조회 실패·정수 원천 수정 수신
+
+- `7bab23f618`(오케, 03:30 UTC): b7901519에서 lookup_error 보존·did_source_lookup_error 거부·모델 입력만 unknown·18자가시험·다음 재시작 보고. 소스와 순수18/18+11진단으로 이전 조회 실패 누수를 마감했다. 늦은 판정 실패unknown은 별도이고 실제 DB 장애·복구는 미측정이다.
+- `86987dd702`(리소너, 03:30 UTC): 0334e5e 계약 v0.009·조회 실패 보류·C/T 정수 원천 검사·MD5/K3 불변·봉인 분리 동의·k16 사람검수 대기. bool/실수 반례의 보완, 골드/META 불변, 순수16진단/T·C teeth GREEN 및 고정K3 불변을 직접 확인했다. 사유명·보류/자동재시도 해석·허용목록·unknown 오류분류는 [후속 감사](M4-CORRECTION-GUARD-2026-11-17.md)에 남겼다. 같은ref의 T v0.011 지침 추가는 별도 미측정으로 구분했다.
+
 ## 발송 — 완료 응답 확인
 
 | 시각 UTC | 원 요청 | 발송 ID / Comms commit | 내용·ref |
