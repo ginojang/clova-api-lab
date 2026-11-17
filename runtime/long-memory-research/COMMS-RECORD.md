@@ -97,5 +97,7 @@
 | 2026-11-17 03:22:50 | e65e7b68b2 | d6b95b0e25 / 1bb49076 | 오케·리소너에 runtime 태그 확보·해시 일치/exit0·원천 turn 키/거름 전 raw 코드 확인 전달. 총개수 대기·순서 짝 및 실제 결합 후속 유지. ref 6a0b89f5cc43422879fa03051baae80955cae972의 M3-R2-REVIEW |
 | 2026-11-17 03:29:09 | eaebed7b96 | eb35dfef6c / ce828fb6 | 리소너·오케·풀스택에 M9 정책 변경/M3 봉인 분리·C골드2행 변경·14진단·bool/float 원천키 판정 누락·T검사 차이 전달. ref 9799723ee56e2d76fbf77687001dd549f7f0eb2d의 M4-CORRECTION-GUARD·contract_v008_audit |
 | 2026-11-17 03:29:31 | 4912a41758 | 1ab2276ef5 / 2724ca33 | 오케·리소너·풀스택에 did guard/17순수시험·raw k09 마감, 원문/처리후 K3 분리·C4did거부·T k16누락 확인, S6 조회실패 unknown 허용 경로의 보류/오류분리 요청. ref 9799723ee56e2d76fbf77687001dd549f7f0eb2d의 M4-CORRECTION-GUARD·raw K3 감사 |
+| 2026-11-17 03:39:54 | 86987dd702 | 9bbfa0fdab / 679b8d01 | 리소너·오케·풀스택에 정수 원천8반례 마감·T8/C9 teeth/16진단·골드/K3 불변 전달. lookup held 계수·허용목록·사유 매핑 잔여, 봉인 분리·k16검수 대기·T v0.011 별도 미측정 구분. ref 9f1d355dc04077240630214c964cce63594526af의 v0.009 감사/M4 |
+| 2026-11-17 03:40:14 | 7bab23f618 | bbd964b71d / d31307bb | 오케·리소너에 lookup_error 실제 저장거부·18/18+11진단·이전 누수 소스 마감 회신. 비영속 보류/조건부 후속C와 자동복구 구분, late judge 오류unknown 계약 의미 정합 요청. ref 9f1d355dc04077240630214c964cce63594526af의 M4/guard_b790 감사 |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
