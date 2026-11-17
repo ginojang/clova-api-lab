@@ -1,0 +1,1153 @@
+{
+  "old_ref": "0334e5e228fc51d2cc988f8251746947242caf7d",
+  "new_ref": "b91323f4580e17fec9431289c88e0f601dccd669",
+  "runtime_ref_read_only": "1ba433abdc3e43fd9486d099cd854e16768912fa",
+  "prediction_ref": "f31375dd8a1f8cdbaa61d167d47ee66606f007f5",
+  "scope": "reviewed C score_rows/_gold/teeth only; no model/API/DB/TS/upstream main/build execution",
+  "source_path": "memory/scripts/s6_memory_chat_eval.py",
+  "old_source_sha256": "41f37f94898fee4a77765f9bbdbaf717bf3962f0b726b30e60f2eedffa0bb9ce",
+  "new_source_sha256": "a2c4e4ca568b6811ba7ec06b1471682b893346948dd6e555f0c634b7caa7b8ad",
+  "gold": {
+    "chat": {
+      "path": "memory/data/s6_memory_chat_eval_v0_5/eval.jsonl",
+      "rows": 13,
+      "sha256": "356d04559d3a35be371a0f9f63af357bd2751cfe7bea51510124c24c18213c8c",
+      "md5": "c9ef1b200f37ee718c7232ef22ea8477",
+      "gold_bytes_equal": true,
+      "meta_bytes_equal": true
+    },
+    "turn": {
+      "path": "memory/data/s6_memory_turn_eval_v0_5/eval.jsonl",
+      "rows": 39,
+      "sha256": "b842e99d32d1ac119e37ea3e42f18f6d59b917298ee0f4e35caee5d9cb8a646a",
+      "md5": "3372c065ac4008ea281e9bd603d94969",
+      "gold_bytes_equal": true,
+      "meta_bytes_equal": true
+    }
+  },
+  "T_source_bytes_unchanged": true,
+  "T_source_sha256": "351aed4057417e039dba2bef4df67ad53338b381aa6cb0782b26f47d05c38eff",
+  "T_note": "T source, gold, and frozen predictions unchanged; no unnecessary new T scorer execution.",
+  "upstream_C_pure_teeth": {
+    "gold_full": true,
+    "promise_not_pass_caught": true,
+    "promise_false_caught": true,
+    "episode_kind_out_caught": true,
+    "cooldown_drop_caught": true,
+    "did_source_bad_caught": true,
+    "did_no_source_caught": true,
+    "did_nonint_source_caught": true,
+    "unmeasured_in_denominator": true,
+    "verdict": "GREEN"
+  },
+  "normalization_cases": [
+    {
+      "id": "pass",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "pass"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 1,
+        "gates_n": {},
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "fix",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "fix"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 0,
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {
+          "did_source_bad": [
+            "e01"
+          ]
+        },
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {
+          "did_source_bad": [
+            "e01"
+          ]
+        },
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "block",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "block"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 0,
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {
+          "did_source_bad": [
+            "e01"
+          ]
+        },
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {
+          "did_source_bad": [
+            "e01"
+          ]
+        },
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "unknown",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "unknown"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 1,
+        "gates_n": {},
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "none",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "none"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 1,
+        "gates_n": {},
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "lookup_error",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "lookup_error"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 0,
+        "gates_n": {},
+        "did_s6_lookup_error": 1
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "did_held_lookup_error": 1,
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "did_s6_lookup_error": 1,
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "missing_key",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {},
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 1,
+        "gates_n": {},
+        "did_s6_lookup_error": 0
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "abstain",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "abstain"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 0,
+        "gates_n": {},
+        "did_s6_lookup_error": 1
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "did_s6_lookup_error": 1,
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    },
+    {
+      "id": "unexpected_verdict",
+      "input": {
+        "id": "e01",
+        "lang": "ko",
+        "subset": "episode",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "간판 시안 좀 보여 주세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "assistant",
+            "origin_kind": "human",
+            "text": "세 가지 시안을 준비했어요"
+          },
+          {
+            "turn_index": 2,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "가운데 것이 좋네요"
+          }
+        ],
+        "elda_s6": {
+          "1": "unexpected_verdict"
+        },
+        "expect": {
+          "promises": [],
+          "episode_kinds": [
+            "design"
+          ],
+          "cooldown": [],
+          "must_not_repeat": []
+        }
+      },
+      "prediction": {
+        "id": "e01",
+        "promises": [],
+        "episode": {
+          "did": [
+            {
+              "kind": "design",
+              "what": "x",
+              "outcome": null,
+              "date": "2026-11-16",
+              "turn_index": 1
+            }
+          ],
+          "reuse": {
+            "cooldown": [],
+            "must_not_repeat": [],
+            "must_repeat": []
+          }
+        },
+        "measured": true
+      },
+      "expected_observed": {
+        "rows_ok": 0,
+        "gates_n": {},
+        "did_s6_lookup_error": 1
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 1.0,
+        "counts": {
+          "episode_n": 1,
+          "episode_ok": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "promise_recall": null,
+        "episode_acc": 0.0,
+        "counts": {
+          "did_s6_lookup_error": 1,
+          "episode_n": 1,
+          "episode_ok": 0
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+        "_per": [
+          [
+            "e01",
+            false
+          ]
+        ]
+      },
+      "inputs_unchanged": true
+    }
+  ],
+  "frozen_C_K3": {
+    "prediction_sha256": "f4fec03db617bfdd6207208dba2abed32fa8d1a8d7d0a0ca936f7f924704bd5a",
+    "prediction_rows": 39,
+    "comparison": {
+      "stored_post_score_equal": true,
+      "previous_post_summary_equal": true,
+      "previous_post_per_run_equal": true,
+      "previous_raw_summary_equal": true,
+      "previous_raw_per_run_equal": true
+    },
+    "post_guard_summary": {
+      "K": 3,
+      "per_run_rows_ok": [
+        13,
+        13,
+        13
+      ],
+      "rows": 13,
+      "majority_ok": 13,
+      "gates_n_per_run": [
+        {},
+        {},
+        {}
+      ],
+      "run0": {
+        "rows_ok": 13,
+        "rows": 13,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 3,
+          "promise_hit": 3,
+          "episode_n": 13,
+          "episode_ok": 13,
+          "cooldown_n": 1,
+          "cooldown_hit": 1,
+          "must_not_repeat_n": 1,
+          "must_not_repeat_hit": 1
+        },
+        "gates": {},
+        "gates_n": {},
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3"
+      },
+      "eval_md5": "c9ef1b200f37ee718c7232ef22ea8477"
+    },
+    "raw_input_summary": {
+      "K": 3,
+      "per_run_rows_ok": [
+        12,
+        11,
+        12
+      ],
+      "rows": 13,
+      "majority_ok": 11,
+      "gates_n_per_run": [
+        {
+          "did_source_bad": 1
+        },
+        {
+          "did_source_bad": 2
+        },
+        {
+          "did_source_bad": 1
+        }
+      ],
+      "run0": {
+        "rows_ok": 12,
+        "rows": 13,
+        "promise_recall": 1.0,
+        "episode_acc": 1.0,
+        "counts": {
+          "exp_promises": 3,
+          "promise_hit": 3,
+          "episode_n": 13,
+          "episode_ok": 13,
+          "cooldown_n": 1,
+          "cooldown_hit": 1,
+          "must_not_repeat_n": 1,
+          "must_not_repeat_hit": 1
+        },
+        "gates": {
+          "did_source_bad": [
+            "x02"
+          ]
+        },
+        "gates_n": {
+          "did_source_bad": 1
+        },
+        "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3"
+      },
+      "eval_md5": "c9ef1b200f37ee718c7232ef22ea8477"
+    }
+  },
+  "runtime_source": {
+    "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+    "sha256": "f8076f81f6587be59bea007ee0bdaa1b2c51c11ec60c4a1ffce6d772101106a3",
+    "lines_99_107": [
+      "export function didSourceWhy(d: Record<string, unknown>, turns: Array<{ turn_index: number; speaker: string }>, s6: Record<string, string>): string | null {",
+      "    const ti = d.turn_index;",
+      "    if (typeof ti !== 'number' || !Number.isInteger(ti)) return 'did_no_source';   // 정수만(bool·실수 = 원천 없음 · 계약 v0.009)",
+      "    if (!turns.some((t) => t.turn_index === ti && t.speaker === 'assistant')) return 'did_source_bad';",
+      "    const v = s6[String(ti)] ?? 'none';                            // 값 없음 = none(판정 안 함)",
+      "    if (v === 'pass' || v === 'unknown' || v === 'none') return null;   // 계약 v0.009 허용 셋",
+      "    if (v === 'fix' || v === 'block') return 'did_source_bad';",
+      "    if (v === 'lookup_error') return 'did_s6_lookup_error';           // 판정을 못 읽었다 ≠ unknown(실제 block 일 수 있다 · 보류)",
+      "    return 'did_s6_unexpected';                                      // 목록 밖 값 = 닫힌 쪽(클로버 9bbfa0fdab)"
+    ]
+  },
+  "reason_alignment": {
+    "lookup_error": {
+      "contract": "did_s6_lookup_error",
+      "runtime": "did_s6_lookup_error",
+      "scorer_count": "did_s6_lookup_error"
+    },
+    "out_of_list": {
+      "contract": "did_s6_lookup_error",
+      "runtime": "did_s6_unexpected",
+      "scorer_count": "did_s6_lookup_error"
+    }
+  },
+  "limits": [
+    "Nine analyst-created normalization cases are not model measurements or official gold.",
+    "The scorer now excludes out-of-list values; arbitrary strings no longer become eligible did sources.",
+    "Hold counts remain separate from gates and row success; normalization does not change this aggregation contract.",
+    "Scorer and runtime both exclude out-of-list strings, but runtime preserves a different reason key.",
+    "The contract explicitly allows unknown caused by late-judge failures; held does not imply automatic retry or guaranteed recovery.",
+    "Missing-key behavior was tested. Explicit JSON null is not the missing-key test; no expanded malformed-type survey was run."
+  ],
+  "previous_artifact_sha256": {
+    "k3_audit.py": "d9dc4dcb316d5085ab54aa99025f58abda21a4baea8ccfe3886dbe3324deda9a",
+    "k3_audit.json": "4e93fa18eaf170559d3865db70004b2b19351d820d6001e5effd2e4f334cfa59",
+    "k3_audit.md": "d3aa7493aac10ff66c46a6ecc65f30c11e4421562dcaabf9d9e03a2bd9f87a0f",
+    "contract_v008_audit.py": "028868b42a675ed8ee04ab745f02d5f07a8d2d7036e4b7f059a649a0736d8a8b",
+    "contract_v008_audit.json": "0c137324618e81e45062effdd602b84cfcfc9f3a92967f6033a86d75fdfafb00",
+    "raw_k3_audit.py": "c49c07dc85a0a67960b0a5399826a776745264905e34c56d1b8b06050da7473b",
+    "raw_k3_audit.json": "86b0b60536213055e34e7392c28e329faf85df2482a98a1cea40783734956494",
+    "raw_k3_audit.md": "10f93cb02a03f4c961c2f8e181cabf9b10bccf719e1c07d2e14cd67200ccd397",
+    "contract_v009_audit.py": "b0f055ef0230b028adaa1415b2f3eff5fc28169dbe76080034cc239c9aba20e6",
+    "contract_v009_audit.json": "3ac03a7cf54e84e6db26cafe3ec1737bfe08c21fa54424649bb5415fc8264841",
+    "contract_v009_audit.md": "b8f7aab5b92eb30a6f7c77e34bc0b51cae26a795181fc339dcb321745725e1a8"
+  },
+  "previous_artifacts_unchanged": true
+}

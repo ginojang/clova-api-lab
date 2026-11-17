@@ -1,0 +1,126 @@
+{
+  "source_repo": "ginojang/GanpanAI",
+  "source_sha": "1ba433abdc3e43fd9486d099cd854e16768912fa",
+  "sources": {
+    "memory": {
+      "path": "elda-orchestrator/src/core/eldacore/s6memory.ts",
+      "sha256": "130512935a038e78cdf5d1118771a14bc4def27cd1620304d3e8b0bb62bae4de"
+    },
+    "chat": {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "sha256": "f8076f81f6587be59bea007ee0bdaa1b2c51c11ec60c4a1ffce6d772101106a3"
+    },
+    "selftest": {
+      "path": "elda-orchestrator/src/tools/s6GuardSelfTest.ts",
+      "sha256": "32acdf35dea0925c87d533d46e2b71fdc366b085b06d793dcf839e64cadb40e4"
+    }
+  },
+  "method": "Hash-pinned read-only git blobs; extracted locateIn/checkEvidence/correctionGuard/didSourceWhy plus HUMAN and original 22-test body; Node stripTypeScriptTypes and isolated VM; application imports removed.",
+  "model_api_calls": 0,
+  "db_calls": 0,
+  "serving_imports": 0,
+  "interpretation": "Diagnostic expectations describe observed guard behavior, not desired policy or human gold. The lookup-error diagnostic supplies the authoritative marker directly; it does not run gather or a DB failure. The fixed gather/model/save boundary is a separate static source finding.",
+  "results": {
+    "ok": true,
+    "selftest": {
+      "n": 22,
+      "fail": 0,
+      "reported_exit": 0,
+      "logs": [
+        "ok   정정 말이 사람 턴 원문에 있음 → SUPERSEDE 유지",
+        "ok   correction_evidence 없음 → CONTEST(no_evidence)",
+        "ok   빈 t → CONTEST",
+        "ok   원문에 없는 말 → CONTEST(not_verbatim)",
+        "ok   엘다 턴에서 댄 말 → CONTEST(evidence_turn_missing)",
+        "ok   알림 턴에서 댄 말 → CONTEST(evidence_not_human)",
+        "ok   없는 턴 → CONTEST",
+        "ok   SUPERSEDE 아닌 연산은 안 건드림",
+        "ok   CONTEST 는 그대로(올리지 않음)",
+        "ok   pass 턴 → 받음",
+        "ok   판정 없음(none) 턴 → 받음",
+        "ok   unknown 턴 → 받음",
+        "ok   block 턴 → did_source_bad",
+        "ok   fix 턴 → did_source_bad",
+        "ok   사람 턴을 댐 → did_source_bad",
+        "ok   turn_index 없음 → did_no_source",
+        "ok   S6 조회 실패 턴 → did_s6_lookup_error",
+        "ok   S6 값 없음 → none 으로 받음",
+        "ok   S6 목록 밖 값 → did_s6_unexpected",
+        "ok   turn_index 실수 → did_no_source",
+        "ok   turn_index bool → did_no_source",
+        "ok   turn_index 글자 → did_no_source",
+        "22/22 ok"
+      ]
+    },
+    "diagnostics": [
+      {
+        "id": "known_block_rejected",
+        "actual": "did_source_bad",
+        "expected": "did_source_bad",
+        "matches_observation": true
+      },
+      {
+        "id": "genuine_unknown_is_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      },
+      {
+        "id": "authoritative_lookup_error_rejected",
+        "actual": "did_s6_lookup_error",
+        "expected": "did_s6_lookup_error",
+        "matches_observation": true
+      },
+      {
+        "id": "out_of_allowlist_abstain_rejected",
+        "actual": "did_s6_unexpected",
+        "expected": "did_s6_unexpected",
+        "matches_observation": true
+      },
+      {
+        "id": "out_of_allowlist_arbitrary_string_rejected",
+        "actual": "did_s6_unexpected",
+        "expected": "did_s6_unexpected",
+        "matches_observation": true
+      },
+      {
+        "id": "missing_status_entry_accepted",
+        "actual": null,
+        "expected": null,
+        "matches_observation": true
+      }
+    ]
+  },
+  "contract_ref": "ginojang/elda-resoner@b91323f4580e17fec9431289c88e0f601dccd669:memory/S6_MEMORY_CONTRACT_v0.md:3",
+  "static_findings": [
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        103,
+        107
+      ],
+      "finding": "CLOSED: explicit pass/unknown/none allowlist replaces blacklist. Missing status becomes none; fix/block and unexpected status strings are rejected. Pure diagnostics reproduce abstain and arbitrary-string rejection."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        106
+      ],
+      "finding": "CLOSED for actual lookup_error: reason renamed from did_source_lookup_error to contractual did_s6_lookup_error."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        107
+      ],
+      "finding": "CLASSIFICATION DIFFERENCE: runtime rejects out-of-list values as did_s6_unexpected. Contract b91323f requires normalization to lookup_error and a single did_s6_lookup_error reason. Rejection outcome agrees; exact cause keys and their aggregation do not yet agree."
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s6chatEnd.ts",
+      "lines": [
+        101
+      ],
+      "finding": "Source index now requires an integer; the original self-test adds float and boolean rejection. This audit claims only pure-guard execution, not deployment or end-to-end operation."
+    }
+  ]
+}
