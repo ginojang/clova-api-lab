@@ -1,0 +1,6591 @@
+{
+  "base_scorer_sha256": "e3f38706897b2a3b56234aadae3109f497367ffd419b0013807fd596c61786ad",
+  "by_interpretation": {
+    "challenge": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "contract": {
+      "failed": 22,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 82,
+      "status": "fail",
+      "unknown": 60
+    }
+  },
+  "causal_provenance": "externally supplied source/job/epoch links; no timestamp inference",
+  "claims_scope": "supplied_observation_projection_only",
+  "context_coverage": {
+    "failed": 0,
+    "pass_rate_decided": 1.0,
+    "pass_rate_planned": 0.9166666666666666,
+    "passed": 77,
+    "planned": 84,
+    "status": "incomplete",
+    "unknown": 7
+  },
+  "context_provenance": "externally supplied capture and projections; not independently authenticated",
+  "coverage": {
+    "failed": 0,
+    "pass_rate_decided": 1.0,
+    "pass_rate_planned": 0.9166666666666666,
+    "passed": 77,
+    "planned": 84,
+    "status": "incomplete",
+    "unknown": 7
+  },
+  "deployment_approval": false,
+  "gate_overall": {
+    "failed": 27,
+    "pass_rate_decided": 0.8831168831168831,
+    "pass_rate_planned": 0.7285714285714285,
+    "passed": 204,
+    "planned": 280,
+    "status": "fail",
+    "unknown": 49
+  },
+  "gates": {
+    "capture_complete": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.9166666666666666,
+      "passed": 77,
+      "planned": 84,
+      "status": "incomplete",
+      "unknown": 7
+    },
+    "changed_only": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 2,
+      "planned": 2,
+      "status": "pass",
+      "unknown": 0
+    },
+    "confirm": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 2,
+      "planned": 2,
+      "status": "pass",
+      "unknown": 0
+    },
+    "contest": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "context_budget": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 8,
+      "status": "incomplete",
+      "unknown": 8
+    },
+    "forbidden_value": {
+      "failed": 8,
+      "pass_rate_decided": 0.9111111111111111,
+      "pass_rate_planned": 0.8367346938775511,
+      "passed": 82,
+      "planned": 98,
+      "status": "fail",
+      "unknown": 8
+    },
+    "forget_full_input": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 4,
+      "planned": 4,
+      "status": "pass",
+      "unknown": 0
+    },
+    "forget_process": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 4,
+      "status": "incomplete",
+      "unknown": 4
+    },
+    "load_trace": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.5,
+      "passed": 4,
+      "planned": 8,
+      "status": "incomplete",
+      "unknown": 4
+    },
+    "pause": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 6,
+      "planned": 6,
+      "status": "pass",
+      "unknown": 0
+    },
+    "phase_boundary": {
+      "failed": 2,
+      "pass_rate_decided": 0.8333333333333334,
+      "pass_rate_planned": 0.8333333333333334,
+      "passed": 10,
+      "planned": 12,
+      "status": "fail",
+      "unknown": 0
+    },
+    "relation_scope": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.6666666666666666,
+      "passed": 4,
+      "planned": 6,
+      "status": "incomplete",
+      "unknown": 2
+    },
+    "replacement_policy": {
+      "failed": 1,
+      "pass_rate_decided": 0.5,
+      "pass_rate_planned": 0.5,
+      "passed": 1,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "restart_recovery": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "returning_episode": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 6,
+      "status": "incomplete",
+      "unknown": 6
+    },
+    "scope_isolation": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.16666666666666666,
+      "passed": 2,
+      "planned": 12,
+      "status": "incomplete",
+      "unknown": 10
+    },
+    "source_binding": {
+      "failed": 10,
+      "pass_rate_decided": 0.16666666666666666,
+      "pass_rate_planned": 0.16666666666666666,
+      "passed": 2,
+      "planned": 12,
+      "status": "fail",
+      "unknown": 0
+    },
+    "stale_write": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 8,
+      "planned": 8,
+      "status": "pass",
+      "unknown": 0
+    },
+    "withdrawal": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    }
+  },
+  "history_exposure": {
+    "by_interpretation": {
+      "challenge": {
+        "failed": 0,
+        "measured_exposed_values": 0,
+        "measured_watch_values": 0,
+        "not_applicable": 2,
+        "pass_rate_decided": null,
+        "pass_rate_planned": 0.0,
+        "pass_rate_relevant": null,
+        "passed": 0,
+        "planned": 2,
+        "policy_gate": false,
+        "relevant_planned": 0,
+        "status": "incomplete",
+        "strict_zero_status": "incomplete",
+        "unit": "target/value pairs; repeated checkpoints are not independent",
+        "unknown": 0
+      },
+      "contract": {
+        "failed": 7,
+        "measured_exposed_values": 7,
+        "measured_watch_values": 13,
+        "not_applicable": 60,
+        "pass_rate_decided": 0.36363636363636365,
+        "pass_rate_planned": 0.04878048780487805,
+        "pass_rate_relevant": 0.18181818181818182,
+        "passed": 4,
+        "planned": 82,
+        "policy_gate": false,
+        "relevant_planned": 22,
+        "status": "fail",
+        "strict_zero_status": "fail",
+        "unit": "target/value pairs; repeated checkpoints are not independent",
+        "unknown": 11
+      }
+    },
+    "failed": 7,
+    "measured_exposed_values": 7,
+    "measured_watch_values": 13,
+    "not_applicable": 62,
+    "pass_rate_decided": 0.36363636363636365,
+    "pass_rate_planned": 0.047619047619047616,
+    "pass_rate_relevant": 0.18181818181818182,
+    "passed": 4,
+    "planned": 84,
+    "policy_gate": false,
+    "relevant_planned": 22,
+    "status": "fail",
+    "strict_zero_status": "fail",
+    "unit": "target/value pairs; repeated checkpoints are not independent",
+    "unknown": 11
+  },
+  "input_hashes": {
+    "gold_sha256": "4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717",
+    "predictions_sha256": "dcddfd86ab753a5a0cbd308582adf2af68d0739a46d989dfaf1f3bf4c2862eaf"
+  },
+  "judgment_provenance": "externally_supplied; not independently authenticated",
+  "metrics": {
+    "capture_complete": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.9166666666666666,
+      "passed": 77,
+      "planned": 84,
+      "status": "incomplete",
+      "unknown": 7
+    },
+    "changed_only": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 2,
+      "planned": 2,
+      "status": "pass",
+      "unknown": 0
+    },
+    "confirm": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 2,
+      "planned": 2,
+      "status": "pass",
+      "unknown": 0
+    },
+    "contest": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "context_budget": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 8,
+      "status": "incomplete",
+      "unknown": 8
+    },
+    "forbidden_value": {
+      "failed": 8,
+      "pass_rate_decided": 0.9111111111111111,
+      "pass_rate_planned": 0.8367346938775511,
+      "passed": 82,
+      "planned": 98,
+      "status": "fail",
+      "unknown": 8
+    },
+    "forget_full_input": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 4,
+      "planned": 4,
+      "status": "pass",
+      "unknown": 0
+    },
+    "forget_process": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 4,
+      "status": "incomplete",
+      "unknown": 4
+    },
+    "load_trace": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.5,
+      "passed": 4,
+      "planned": 8,
+      "status": "incomplete",
+      "unknown": 4
+    },
+    "pause": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 6,
+      "planned": 6,
+      "status": "pass",
+      "unknown": 0
+    },
+    "phase_boundary": {
+      "failed": 2,
+      "pass_rate_decided": 0.8333333333333334,
+      "pass_rate_planned": 0.8333333333333334,
+      "passed": 10,
+      "planned": 12,
+      "status": "fail",
+      "unknown": 0
+    },
+    "recall": {
+      "failed": 14,
+      "pass_rate_decided": 0.7971014492753623,
+      "pass_rate_planned": 0.7432432432432432,
+      "passed": 55,
+      "planned": 74,
+      "status": "fail",
+      "unknown": 5
+    },
+    "relation_scope": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.6666666666666666,
+      "passed": 4,
+      "planned": 6,
+      "status": "incomplete",
+      "unknown": 2
+    },
+    "replacement_policy": {
+      "failed": 1,
+      "pass_rate_decided": 0.5,
+      "pass_rate_planned": 0.5,
+      "passed": 1,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "restart_recovery": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    },
+    "returning_episode": {
+      "failed": 0,
+      "pass_rate_decided": null,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 6,
+      "status": "incomplete",
+      "unknown": 6
+    },
+    "scope_isolation": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 0.16666666666666666,
+      "passed": 2,
+      "planned": 12,
+      "status": "incomplete",
+      "unknown": 10
+    },
+    "session_context": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 2,
+      "planned": 2,
+      "status": "pass",
+      "unknown": 0
+    },
+    "source_binding": {
+      "failed": 10,
+      "pass_rate_decided": 0.16666666666666666,
+      "pass_rate_planned": 0.16666666666666666,
+      "passed": 2,
+      "planned": 12,
+      "status": "fail",
+      "unknown": 0
+    },
+    "stale_write": {
+      "failed": 0,
+      "pass_rate_decided": 1.0,
+      "pass_rate_planned": 1.0,
+      "passed": 8,
+      "planned": 8,
+      "status": "pass",
+      "unknown": 0
+    },
+    "state_accuracy": {
+      "failed": 22,
+      "pass_rate_decided": 0.7981651376146789,
+      "pass_rate_planned": 0.7631578947368421,
+      "passed": 87,
+      "planned": 114,
+      "status": "fail",
+      "unknown": 5
+    },
+    "withdrawal": {
+      "failed": 2,
+      "pass_rate_decided": 0.0,
+      "pass_rate_planned": 0.0,
+      "passed": 0,
+      "planned": 2,
+      "status": "fail",
+      "unknown": 0
+    }
+  },
+  "physical_deletion": "not_measured",
+  "policy_pass_implies_history_zero_exposure": false,
+  "run_id": "m3v02-orch-20261117-e7a5cd9c",
+  "schema_version": "0.2",
+  "semantic": {
+    "failed": 0,
+    "pass_rate_decided": null,
+    "pass_rate_planned": 0.0,
+    "passed": 0,
+    "planned": 84,
+    "status": "incomplete",
+    "unknown": 84
+  },
+  "status": "fail",
+  "targets": [
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n01-guest-q1-c05",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n01-guest-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n01-signage-q1-c05",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n01-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n01-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n01-signage-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "t_direct",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n01-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n01-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n02-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n02-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n02-guest-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n02-guest-q2-c07",
+          "metric": "replacement_policy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n02-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-guest-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-guest-q3-c06",
+          "metric": "changed_only",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "보리차"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n02-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n02-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-signage-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-signage-q2-c07",
+          "metric": "replacement_policy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "남색"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n02-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 109,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n02-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n02-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-signage-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n02-signage-q3-c06",
+          "metric": "changed_only",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "correction_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "남색"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n02-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n02-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "보리차"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n03-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n03-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 109,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c02",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q2-c06",
+          "metric": "withdrawal",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n03-guest-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n03-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q3-c02",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q3-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-guest-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": 0,
+        "exposed_values": [],
+        "reason": "captured_exact_value_intersection",
+        "status": "pass",
+        "watched_count": 2
+      },
+      "id": "n03-guest-q3",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n03-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n03-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "남색"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n03-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n03-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 114,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c02",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q2-c06",
+          "metric": "withdrawal",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n03-signage-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n03-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n03-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q3-c02",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q3-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n03-signage-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "withdraw_history",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": 0,
+        "exposed_values": [],
+        "reason": "captured_exact_value_intersection",
+        "status": "pass",
+        "watched_count": 2
+      },
+      "id": "n03-signage-q3",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n03-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n04-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n04-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c02",
+          "metric": "forget_process",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c03",
+          "metric": "forget_process",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q2-c06",
+          "metric": "forget_full_input",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 0,
+        "exposed_values": [],
+        "reason": "captured_exact_value_intersection",
+        "status": "pass",
+        "watched_count": 1
+      },
+      "id": "n04-guest-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n04-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 61,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-guest-q3-c05",
+          "metric": "forget_full_input",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n04-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n04-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 105,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n04-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n04-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c02",
+          "metric": "forget_process",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c03",
+          "metric": "forget_process",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q2-c06",
+          "metric": "forget_full_input",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 0,
+        "exposed_values": [],
+        "reason": "captured_exact_value_intersection",
+        "status": "pass",
+        "watched_count": 1
+      },
+      "id": "n04-signage-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n04-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 61,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n04-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n04-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n04-signage-q3-c05",
+          "metric": "forget_full_input",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "forget_process",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n04-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n04-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q1-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n05-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n05-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c02",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n05-guest-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n05-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 61,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q3-c05",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q3-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-guest-q3-c08",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n05-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n05-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 105,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q1-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n05-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n05-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c02",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n05-signage-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n05-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 61,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n05-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n05-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q3-c05",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q3-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n05-signage-q3-c08",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_forget_race",
+      "history_exposure": {
+        "expected_watch_count": 2,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n05-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n05-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n06-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c02",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c05",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c06",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q2-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-guest-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n06-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q3-c05",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q3-c06",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q3-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-guest-q3-c08",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n06-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 95,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n06-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c02",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c05",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c06",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q2-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-signage-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n06-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n06-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n06-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q3-c05",
+          "metric": "pause",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q3-c06",
+          "metric": "stale_write",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q3-c07",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n06-signage-q3-c08",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "c_pause_race",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n06-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n06-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 94,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q2-c06",
+          "metric": "session_context",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-guest-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-guest-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q2-c06",
+          "metric": "session_context",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n07-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n07-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-signage-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n07-signage-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "session_context",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n07-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n07-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q1-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q1-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q2-c03",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q3-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q3-c04",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-guest-q3-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-guest-q3-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 122,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q1-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q1-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q2-c03",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n08-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q3-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q3-c04",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n08-signage-q3-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n08-signage-q3-c06",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "promise_source_binding",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n08-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n08-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 121,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-guest-q1-c02",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q1-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q1-c04",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-guest-q1",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n09-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-guest-q2-c02",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q2-c05",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-guest-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n09-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n09-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-guest-q3-c06",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n09-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 96,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-signage-q1-c02",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q1-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q1-c04",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-signage-q1",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n09-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-signage-q2-c02",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q2-c03",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q2-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q2-c05",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-signage-q2",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n09-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n09-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n09-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n09-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q3-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n09-signage-q3-c06",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "episode_s6",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n09-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n09-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 96,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q1-c03",
+          "metric": "relation_scope",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q1-c04",
+          "metric": "returning_episode",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n10-guest-q1-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-guest-q2-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q2-c04",
+          "metric": "relation_scope",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q2-c05",
+          "metric": "returning_episode",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q2-c06",
+          "metric": "load_trace",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q2-c07",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 95,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n10-guest-q3-c02",
+          "metric": "recall",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q3-c03",
+          "metric": "relation_scope",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-guest-q3-c04",
+          "metric": "returning_episode",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "guest_service_persona",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-guest",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q1-c03",
+          "metric": "relation_scope",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q1-c04",
+          "metric": "returning_episode",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n10-signage-q1-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n10-signage-q2-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q2-c04",
+          "metric": "relation_scope",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q2-c05",
+          "metric": "returning_episode",
+          "reason": "missing_path",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q2-c06",
+          "metric": "load_trace",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q2-c07",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 94,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n10-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n10-signage-q3-c02",
+          "metric": "recall",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q3-c03",
+          "metric": "relation_scope",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n10-signage-q3-c04",
+          "metric": "returning_episode",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "signage",
+      "family": "returning_episode",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n10-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n10-signage",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q1-c05",
+          "metric": "load_trace",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q1-c06",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q2-c04",
+          "metric": "load_trace",
+          "reason": "missing_projection_item_ids",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q2-c05",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q3-c04",
+          "metric": "load_trace",
+          "reason": "missing_projection_item_ids",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n11-guest-q3-c05",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q1-c05",
+          "metric": "load_trace",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q1-c06",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 109,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q2-c02",
+          "metric": "recall",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q2-c04",
+          "metric": "load_trace",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q2-c05",
+          "metric": "context_budget",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "signage",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-signage",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n11-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n11-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q3-c04",
+          "metric": "load_trace",
+          "reason": "missing_projection_item_ids",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n11-signage-q3-c05",
+          "metric": "context_budget",
+          "reason": "actual_tokenizer_count_required",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "budget_actual_load",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n11-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n11-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n12-guest-q1-c05",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n12-guest-q1-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n12-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q2-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q2-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-guest-q2-c06",
+          "metric": "restart_recovery",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-guest-q2",
+      "interpretation": "challenge",
+      "positive": true,
+      "scenario_id": "n12-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 95,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n12-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-guest-q3-c04",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-guest-q3-c05",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n12-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n12-signage-q1-c05",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n12-signage-q1-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n12-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 103,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q2-c03",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q2-c05",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-signage-q2-c06",
+          "metric": "restart_recovery",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-signage-q2",
+      "interpretation": "challenge",
+      "positive": true,
+      "scenario_id": "n12-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 94,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n12-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n12-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-signage-q3-c04",
+          "metric": "phase_boundary",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n12-signage-q3-c05",
+          "metric": "source_binding",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "restart_c_missing",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n12-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n12-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q1-c06",
+          "metric": "scope_isolation",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n13-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q2-c02",
+          "metric": "recall",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-guest-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q2-c06",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q2-c07",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "guest_service_persona",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n13-guest",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c02",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c03",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c05",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c06",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-guest-q3-c07",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "guest_service_persona",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-guest-q3",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n13-guest",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q1-c05",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q1-c06",
+          "metric": "scope_isolation",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n13-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q2-c02",
+          "metric": "recall",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": false,
+          "id": "n13-signage-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q2-c05",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q2-c06",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q2-c07",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "signage",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n13-signage",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c02",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c03",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c04",
+          "metric": "forbidden_value",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c05",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c06",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        },
+        {
+          "gate": true,
+          "id": "n13-signage-q3-c07",
+          "metric": "scope_isolation",
+          "reason": "missing_prediction",
+          "status": "unknown"
+        }
+      ],
+      "context_capture": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "domain": "signage",
+      "family": "scope_isolation",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n13-signage-q3",
+      "interpretation": "contract",
+      "positive": false,
+      "scenario_id": "n13-signage",
+      "semantic": {
+        "reason": "missing_prediction",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": null,
+        "kind": "unknown",
+        "reason": "missing_prediction",
+        "token_method": null
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-guest-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n14-guest-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 104,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-guest-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n14-guest-q2-c05",
+          "metric": "contest",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n14-guest-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n14-guest-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-guest-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-guest-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n14-guest-q3-c05",
+          "metric": "confirm",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n14-guest-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "guest_service_persona",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "보리차"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n14-guest-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-guest",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-signage-q1-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q1-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q1-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q1-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 0,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "no_expected_history_watch_values",
+        "status": "not_applicable",
+        "watched_count": null
+      },
+      "id": "n14-signage-q1",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 115,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-signage-q2-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q2-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q2-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q2-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n14-signage-q2-c05",
+          "metric": "contest",
+          "reason": "observed_comparison",
+          "status": "fail"
+        },
+        {
+          "gate": true,
+          "id": "n14-signage-q2-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "fail"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": null,
+        "exposed_values": null,
+        "reason": "watch_projection_incomplete",
+        "status": "unknown",
+        "watched_count": null
+      },
+      "id": "n14-signage-q2",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "fail",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    },
+    {
+      "checks": [
+        {
+          "gate": true,
+          "id": "n14-signage-q3-c01",
+          "metric": "capture_complete",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q3-c02",
+          "metric": "recall",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q3-c03",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": false,
+          "id": "n14-signage-q3-c04",
+          "metric": "state_accuracy",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n14-signage-q3-c05",
+          "metric": "confirm",
+          "reason": "observed_comparison",
+          "status": "pass"
+        },
+        {
+          "gate": true,
+          "id": "n14-signage-q3-c06",
+          "metric": "forbidden_value",
+          "reason": "observed_comparison",
+          "status": "pass"
+        }
+      ],
+      "context_capture": {
+        "reason": "externally_supplied_complete_capture",
+        "status": "pass"
+      },
+      "domain": "signage",
+      "family": "contest_confirm",
+      "history_exposure": {
+        "expected_watch_count": 1,
+        "exposed_count": 1,
+        "exposed_values": [
+          "남색"
+        ],
+        "reason": "captured_exact_value_intersection",
+        "status": "fail",
+        "watched_count": 1
+      },
+      "id": "n14-signage-q3",
+      "interpretation": "contract",
+      "positive": true,
+      "scenario_id": "n14-signage",
+      "semantic": {
+        "reason": "missing_judgment_provenance",
+        "status": "unknown"
+      },
+      "status": "incomplete",
+      "token_measurement": {
+        "fresh_tokens": 0,
+        "kind": "estimate",
+        "reason": "externally_supplied_count",
+        "token_method": "estimate:tokensEst"
+      }
+    }
+  ],
+  "token_measurements": {
+    "actual_tokenizer": 0,
+    "estimate": 77,
+    "exact_budget_uses": "actual_tokenizer_only",
+    "planned": 84,
+    "unknown": 7
+  },
+  "units": {
+    "families": 14,
+    "independent_targets_assumed": false,
+    "positive_targets": 68,
+    "scenarios": 28,
+    "targets": 84
+  }
+}

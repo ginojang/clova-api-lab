@@ -1,0 +1,1622 @@
+{
+  "all_structural_checks": {
+    "failed": 63,
+    "passed": 348,
+    "planned": 470,
+    "unknown": 59
+  },
+  "audit_kind": "offline re-score of committed synthetic supplied observations",
+  "by_family": {
+    "budget_actual_load": {
+      "failed": 0,
+      "passed": 19,
+      "planned": 32,
+      "unknown": 13
+    },
+    "c_forget_race": {
+      "failed": 3,
+      "passed": 37,
+      "planned": 40,
+      "unknown": 0
+    },
+    "c_pause_race": {
+      "failed": 0,
+      "passed": 40,
+      "planned": 40,
+      "unknown": 0
+    },
+    "contest_confirm": {
+      "failed": 10,
+      "passed": 22,
+      "planned": 32,
+      "unknown": 0
+    },
+    "correction_history": {
+      "failed": 6,
+      "passed": 28,
+      "planned": 34,
+      "unknown": 0
+    },
+    "episode_s6": {
+      "failed": 14,
+      "passed": 16,
+      "planned": 30,
+      "unknown": 0
+    },
+    "forget_process": {
+      "failed": 0,
+      "passed": 26,
+      "planned": 30,
+      "unknown": 4
+    },
+    "promise_source_binding": {
+      "failed": 6,
+      "passed": 28,
+      "planned": 34,
+      "unknown": 0
+    },
+    "restart_c_missing": {
+      "failed": 14,
+      "passed": 20,
+      "planned": 34,
+      "unknown": 0
+    },
+    "returning_episode": {
+      "failed": 4,
+      "passed": 14,
+      "planned": 32,
+      "unknown": 14
+    },
+    "scope_isolation": {
+      "failed": 0,
+      "passed": 12,
+      "planned": 40,
+      "unknown": 28
+    },
+    "session_context": {
+      "failed": 0,
+      "passed": 32,
+      "planned": 32,
+      "unknown": 0
+    },
+    "t_direct": {
+      "failed": 0,
+      "passed": 28,
+      "planned": 28,
+      "unknown": 0
+    },
+    "withdraw_history": {
+      "failed": 6,
+      "passed": 26,
+      "planned": 32,
+      "unknown": 0
+    }
+  },
+  "by_interpretation": {
+    "challenge": {
+      "checks": {
+        "failed": 6,
+        "passed": 6,
+        "planned": 12,
+        "unknown": 0
+      },
+      "gates": {
+        "failed": 2,
+        "passed": 2,
+        "planned": 4,
+        "unknown": 0
+      }
+    },
+    "contract": {
+      "checks": {
+        "failed": 57,
+        "passed": 342,
+        "planned": 458,
+        "unknown": 59
+      },
+      "gates": {
+        "failed": 25,
+        "passed": 202,
+        "planned": 276,
+        "unknown": 49
+      }
+    }
+  },
+  "by_metric": {
+    "capture_complete": {
+      "failed": 0,
+      "passed": 77,
+      "planned": 84,
+      "unknown": 7
+    },
+    "changed_only": {
+      "failed": 0,
+      "passed": 2,
+      "planned": 2,
+      "unknown": 0
+    },
+    "confirm": {
+      "failed": 0,
+      "passed": 2,
+      "planned": 2,
+      "unknown": 0
+    },
+    "contest": {
+      "failed": 2,
+      "passed": 0,
+      "planned": 2,
+      "unknown": 0
+    },
+    "context_budget": {
+      "failed": 0,
+      "passed": 0,
+      "planned": 8,
+      "unknown": 8
+    },
+    "forbidden_value": {
+      "failed": 8,
+      "passed": 82,
+      "planned": 98,
+      "unknown": 8
+    },
+    "forget_full_input": {
+      "failed": 0,
+      "passed": 4,
+      "planned": 4,
+      "unknown": 0
+    },
+    "forget_process": {
+      "failed": 0,
+      "passed": 0,
+      "planned": 4,
+      "unknown": 4
+    },
+    "load_trace": {
+      "failed": 0,
+      "passed": 4,
+      "planned": 8,
+      "unknown": 4
+    },
+    "pause": {
+      "failed": 0,
+      "passed": 6,
+      "planned": 6,
+      "unknown": 0
+    },
+    "phase_boundary": {
+      "failed": 2,
+      "passed": 10,
+      "planned": 12,
+      "unknown": 0
+    },
+    "recall": {
+      "failed": 14,
+      "passed": 55,
+      "planned": 74,
+      "unknown": 5
+    },
+    "relation_scope": {
+      "failed": 0,
+      "passed": 4,
+      "planned": 6,
+      "unknown": 2
+    },
+    "replacement_policy": {
+      "failed": 1,
+      "passed": 1,
+      "planned": 2,
+      "unknown": 0
+    },
+    "restart_recovery": {
+      "failed": 2,
+      "passed": 0,
+      "planned": 2,
+      "unknown": 0
+    },
+    "returning_episode": {
+      "failed": 0,
+      "passed": 0,
+      "planned": 6,
+      "unknown": 6
+    },
+    "scope_isolation": {
+      "failed": 0,
+      "passed": 2,
+      "planned": 12,
+      "unknown": 10
+    },
+    "session_context": {
+      "failed": 0,
+      "passed": 2,
+      "planned": 2,
+      "unknown": 0
+    },
+    "source_binding": {
+      "failed": 10,
+      "passed": 2,
+      "planned": 12,
+      "unknown": 0
+    },
+    "stale_write": {
+      "failed": 0,
+      "passed": 8,
+      "planned": 8,
+      "unknown": 0
+    },
+    "state_accuracy": {
+      "failed": 22,
+      "passed": 87,
+      "planned": 114,
+      "unknown": 5
+    },
+    "withdrawal": {
+      "failed": 2,
+      "passed": 0,
+      "planned": 2,
+      "unknown": 0
+    }
+  },
+  "by_scenario": {
+    "n01-guest": {
+      "failed": 0,
+      "passed": 14,
+      "planned": 14,
+      "unknown": 0
+    },
+    "n01-signage": {
+      "failed": 0,
+      "passed": 14,
+      "planned": 14,
+      "unknown": 0
+    },
+    "n02-guest": {
+      "failed": 6,
+      "passed": 11,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n02-signage": {
+      "failed": 0,
+      "passed": 17,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n03-guest": {
+      "failed": 3,
+      "passed": 13,
+      "planned": 16,
+      "unknown": 0
+    },
+    "n03-signage": {
+      "failed": 3,
+      "passed": 13,
+      "planned": 16,
+      "unknown": 0
+    },
+    "n04-guest": {
+      "failed": 0,
+      "passed": 13,
+      "planned": 15,
+      "unknown": 2
+    },
+    "n04-signage": {
+      "failed": 0,
+      "passed": 13,
+      "planned": 15,
+      "unknown": 2
+    },
+    "n05-guest": {
+      "failed": 0,
+      "passed": 20,
+      "planned": 20,
+      "unknown": 0
+    },
+    "n05-signage": {
+      "failed": 3,
+      "passed": 17,
+      "planned": 20,
+      "unknown": 0
+    },
+    "n06-guest": {
+      "failed": 0,
+      "passed": 20,
+      "planned": 20,
+      "unknown": 0
+    },
+    "n06-signage": {
+      "failed": 0,
+      "passed": 20,
+      "planned": 20,
+      "unknown": 0
+    },
+    "n07-guest": {
+      "failed": 0,
+      "passed": 16,
+      "planned": 16,
+      "unknown": 0
+    },
+    "n07-signage": {
+      "failed": 0,
+      "passed": 16,
+      "planned": 16,
+      "unknown": 0
+    },
+    "n08-guest": {
+      "failed": 3,
+      "passed": 14,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n08-signage": {
+      "failed": 3,
+      "passed": 14,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n09-guest": {
+      "failed": 7,
+      "passed": 8,
+      "planned": 15,
+      "unknown": 0
+    },
+    "n09-signage": {
+      "failed": 7,
+      "passed": 8,
+      "planned": 15,
+      "unknown": 0
+    },
+    "n10-guest": {
+      "failed": 2,
+      "passed": 7,
+      "planned": 16,
+      "unknown": 7
+    },
+    "n10-signage": {
+      "failed": 2,
+      "passed": 7,
+      "planned": 16,
+      "unknown": 7
+    },
+    "n11-guest": {
+      "failed": 0,
+      "passed": 11,
+      "planned": 16,
+      "unknown": 5
+    },
+    "n11-signage": {
+      "failed": 0,
+      "passed": 8,
+      "planned": 16,
+      "unknown": 8
+    },
+    "n12-guest": {
+      "failed": 7,
+      "passed": 10,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n12-signage": {
+      "failed": 7,
+      "passed": 10,
+      "planned": 17,
+      "unknown": 0
+    },
+    "n13-guest": {
+      "failed": 0,
+      "passed": 6,
+      "planned": 20,
+      "unknown": 14
+    },
+    "n13-signage": {
+      "failed": 0,
+      "passed": 6,
+      "planned": 20,
+      "unknown": 14
+    },
+    "n14-guest": {
+      "failed": 5,
+      "passed": 11,
+      "planned": 16,
+      "unknown": 0
+    },
+    "n14-signage": {
+      "failed": 5,
+      "passed": 11,
+      "planned": 16,
+      "unknown": 0
+    }
+  },
+  "checks_in_missing_predictions": {
+    "failed": 0,
+    "passed": 0,
+    "planned": 41,
+    "unknown": 41
+  },
+  "checks_in_supplied_predictions": {
+    "failed": 63,
+    "passed": 348,
+    "planned": 429,
+    "unknown": 18
+  },
+  "context_coverage": {
+    "failed": 0,
+    "pass_rate_decided": 1.0,
+    "pass_rate_planned": 0.9166666666666666,
+    "passed": 77,
+    "planned": 84,
+    "status": "incomplete",
+    "unknown": 7
+  },
+  "database_calls": 0,
+  "external_adapter_executed": false,
+  "failure_checks": [
+    {
+      "expected": "유자차",
+      "family": "correction_history",
+      "gate": false,
+      "id": "n02-guest-q2-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "correction_history",
+      "gate": false,
+      "id": "n02-guest-q2-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "correction_history",
+      "gate": false,
+      "id": "n02-guest-q2-c04",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/current_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": "보리차",
+      "family": "correction_history",
+      "gate": true,
+      "id": "n02-guest-q2-c05",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": "보리차",
+      "family": "correction_history",
+      "gate": true,
+      "id": "n02-guest-q2-c06",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": true,
+      "family": "correction_history",
+      "gate": true,
+      "id": "n02-guest-q2-c07",
+      "interpretation": "contract",
+      "metric": "replacement_policy",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/context/replacement_header",
+      "reason": "observed_comparison",
+      "scenario_id": "n02-guest",
+      "status": "fail",
+      "target_id": "n02-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-guest-q2-c03",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "유자차"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-guest",
+      "status": "fail",
+      "target_id": "n03-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-guest-q2-c05",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "유자차"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-guest",
+      "status": "fail",
+      "target_id": "n03-guest-q2"
+    },
+    {
+      "expected": "guest.default_tea",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-guest-q2-c06",
+      "interpretation": "contract",
+      "metric": "withdrawal",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/context/withdrawn_slots",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-guest",
+      "status": "fail",
+      "target_id": "n03-guest-q2"
+    },
+    {
+      "expected": "연두색",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-signage-q2-c03",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "연두색"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-signage",
+      "status": "fail",
+      "target_id": "n03-signage-q2"
+    },
+    {
+      "expected": "연두색",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-signage-q2-c05",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "연두색"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-signage",
+      "status": "fail",
+      "target_id": "n03-signage-q2"
+    },
+    {
+      "expected": "signage.default_color",
+      "family": "withdraw_history",
+      "gate": true,
+      "id": "n03-signage-q2-c06",
+      "interpretation": "contract",
+      "metric": "withdrawal",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/context/withdrawn_slots",
+      "reason": "observed_comparison",
+      "scenario_id": "n03-signage",
+      "status": "fail",
+      "target_id": "n03-signage-q2"
+    },
+    {
+      "expected": "주황색",
+      "family": "c_forget_race",
+      "gate": false,
+      "id": "n05-signage-q3-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n05-signage",
+      "status": "fail",
+      "target_id": "n05-signage-q3"
+    },
+    {
+      "expected": "주황색",
+      "family": "c_forget_race",
+      "gate": false,
+      "id": "n05-signage-q3-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n05-signage",
+      "status": "fail",
+      "target_id": "n05-signage-q3"
+    },
+    {
+      "expected": "주황색",
+      "family": "c_forget_race",
+      "gate": false,
+      "id": "n05-signage-q3-c04",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/current_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n05-signage",
+      "status": "fail",
+      "target_id": "n05-signage-q3"
+    },
+    {
+      "expected": true,
+      "family": "promise_source_binding",
+      "gate": true,
+      "id": "n08-guest-q2-c03",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-guest",
+      "status": "fail",
+      "target_id": "n08-guest-q2"
+    },
+    {
+      "expected": "다음 방문에 독서 소감 재확인",
+      "family": "promise_source_binding",
+      "gate": false,
+      "id": "n08-guest-q3-c03",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "독서 소감 재확인",
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-guest",
+      "status": "fail",
+      "target_id": "n08-guest-q3"
+    },
+    {
+      "expected": "다음 방문에 독서 소감 재확인",
+      "family": "promise_source_binding",
+      "gate": false,
+      "id": "n08-guest-q3-c05",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "독서 소감 재확인"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/must_repeat_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-guest",
+      "status": "fail",
+      "target_id": "n08-guest-q3"
+    },
+    {
+      "expected": true,
+      "family": "promise_source_binding",
+      "gate": true,
+      "id": "n08-signage-q2-c03",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-signage",
+      "status": "fail",
+      "target_id": "n08-signage-q2"
+    },
+    {
+      "expected": "다음 방문에 창문 치수 재확인",
+      "family": "promise_source_binding",
+      "gate": false,
+      "id": "n08-signage-q3-c03",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "남색",
+        "창문 치수 재확인"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-signage",
+      "status": "fail",
+      "target_id": "n08-signage-q3"
+    },
+    {
+      "expected": "다음 방문에 창문 치수 재확인",
+      "family": "promise_source_binding",
+      "gate": false,
+      "id": "n08-signage-q3-c05",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "창문 치수 재확인"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/must_repeat_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n08-signage",
+      "status": "fail",
+      "target_id": "n08-signage-q3"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-guest-q1-c02",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 배 접기"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q1"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-guest-q1-c04",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q1"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-guest-q2-c02",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 배 접기"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q2"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-guest-q2-c05",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q2"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-guest-q3-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q3"
+    },
+    {
+      "expected": "책갈피 접기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-guest-q3-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 배 접기",
+        "책갈피 접기"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q3"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-guest-q3-c06",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-guest",
+      "status": "fail",
+      "target_id": "n09-guest-q3"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-signage-q1-c02",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 모형 맞추기"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q1"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-signage-q1-c04",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q1"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-signage-q2-c02",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 모형 맞추기"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q2"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-signage-q2-c05",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q2"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-signage-q3-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q3"
+    },
+    {
+      "expected": "종이 목록 정리 완료",
+      "family": "episode_s6",
+      "gate": false,
+      "id": "n09-signage-q3-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "종이 모형 맞추기",
+        "종이 목록 정리"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q3"
+    },
+    {
+      "expected": true,
+      "family": "episode_s6",
+      "gate": true,
+      "id": "n09-signage-q3-c06",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n09-signage",
+      "status": "fail",
+      "target_id": "n09-signage-q3"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "returning_episode",
+      "gate": false,
+      "id": "n10-guest-q1-c05",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n10-guest",
+      "status": "fail",
+      "target_id": "n10-guest-q1"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "returning_episode",
+      "gate": false,
+      "id": "n10-guest-q2-c03",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n10-guest",
+      "status": "fail",
+      "target_id": "n10-guest-q2"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "returning_episode",
+      "gate": false,
+      "id": "n10-signage-q1-c05",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n10-signage",
+      "status": "fail",
+      "target_id": "n10-signage-q1"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "returning_episode",
+      "gate": false,
+      "id": "n10-signage-q2-c03",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n10-signage",
+      "status": "fail",
+      "target_id": "n10-signage-q2"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-guest-q2-c03",
+      "interpretation": "challenge",
+      "metric": "recall",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q2"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-guest-q2-c05",
+      "interpretation": "challenge",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q2"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-guest-q2-c06",
+      "interpretation": "challenge",
+      "metric": "restart_recovery",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/c_completed",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q2"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-guest-q3-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q3"
+    },
+    {
+      "expected": "종이 배 접기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-guest-q3-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q3"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-guest-q3-c04",
+      "interpretation": "contract",
+      "metric": "phase_boundary",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/c_completed",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q3"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-guest-q3-c05",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-guest",
+      "status": "fail",
+      "target_id": "n12-guest-q3"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-signage-q2-c03",
+      "interpretation": "challenge",
+      "metric": "recall",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q2"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-signage-q2-c05",
+      "interpretation": "challenge",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q2"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-signage-q2-c06",
+      "interpretation": "challenge",
+      "metric": "restart_recovery",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/c_completed",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q2"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-signage-q3-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q3"
+    },
+    {
+      "expected": "종이 모형 맞추기 완료",
+      "family": "restart_c_missing",
+      "gate": false,
+      "id": "n12-signage-q3-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [],
+      "operator": "contains",
+      "path": "/artifacts/episode_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q3"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-signage-q3-c04",
+      "interpretation": "contract",
+      "metric": "phase_boundary",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/c_completed",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q3"
+    },
+    {
+      "expected": true,
+      "family": "restart_c_missing",
+      "gate": true,
+      "id": "n12-signage-q3-c05",
+      "interpretation": "contract",
+      "metric": "source_binding",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/source_bound",
+      "reason": "observed_comparison",
+      "scenario_id": "n12-signage",
+      "status": "fail",
+      "target_id": "n12-signage-q3"
+    },
+    {
+      "expected": "유자차",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-guest-q2-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-guest",
+      "status": "fail",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-guest-q2-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-guest",
+      "status": "fail",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "expected": "유자차",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-guest-q2-c04",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/current_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-guest",
+      "status": "fail",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "expected": true,
+      "family": "contest_confirm",
+      "gate": true,
+      "id": "n14-guest-q2-c05",
+      "interpretation": "contract",
+      "metric": "contest",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/needs_confirm",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-guest",
+      "status": "fail",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "expected": "보리차",
+      "family": "contest_confirm",
+      "gate": true,
+      "id": "n14-guest-q2-c06",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "보리차"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-guest",
+      "status": "fail",
+      "target_id": "n14-guest-q2"
+    },
+    {
+      "expected": "연두색",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-signage-q2-c02",
+      "interpretation": "contract",
+      "metric": "recall",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-signage",
+      "status": "fail",
+      "target_id": "n14-signage-q2"
+    },
+    {
+      "expected": "연두색",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-signage-q2-c03",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/principal_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-signage",
+      "status": "fail",
+      "target_id": "n14-signage-q2"
+    },
+    {
+      "expected": "연두색",
+      "family": "contest_confirm",
+      "gate": false,
+      "id": "n14-signage-q2-c04",
+      "interpretation": "contract",
+      "metric": "state_accuracy",
+      "observed": [
+        "남색"
+      ],
+      "operator": "contains",
+      "path": "/artifacts/current_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-signage",
+      "status": "fail",
+      "target_id": "n14-signage-q2"
+    },
+    {
+      "expected": true,
+      "family": "contest_confirm",
+      "gate": true,
+      "id": "n14-signage-q2-c05",
+      "interpretation": "contract",
+      "metric": "contest",
+      "observed": false,
+      "operator": "eq",
+      "path": "/artifacts/needs_confirm",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-signage",
+      "status": "fail",
+      "target_id": "n14-signage-q2"
+    },
+    {
+      "expected": "남색",
+      "family": "contest_confirm",
+      "gate": true,
+      "id": "n14-signage-q2-c06",
+      "interpretation": "contract",
+      "metric": "forbidden_value",
+      "observed": [
+        "남색"
+      ],
+      "operator": "excludes",
+      "path": "/artifacts/context/effective_active_values",
+      "reason": "observed_comparison",
+      "scenario_id": "n14-signage",
+      "status": "fail",
+      "target_id": "n14-signage-q2"
+    }
+  ],
+  "gate_checks": {
+    "failed": 27,
+    "passed": 204,
+    "planned": 280,
+    "unknown": 49
+  },
+  "gate_unknown_reasons": {
+    "actual_tokenizer_count_required": 7,
+    "missing_path": 8,
+    "missing_prediction": 31,
+    "missing_projection_item_ids": 3
+  },
+  "history_exposure": {
+    "by_interpretation": {
+      "challenge": {
+        "failed": 0,
+        "measured_exposed_values": 0,
+        "measured_watch_values": 0,
+        "not_applicable": 2,
+        "pass_rate_decided": null,
+        "pass_rate_planned": 0.0,
+        "pass_rate_relevant": null,
+        "passed": 0,
+        "planned": 2,
+        "policy_gate": false,
+        "relevant_planned": 0,
+        "status": "incomplete",
+        "strict_zero_status": "incomplete",
+        "unit": "target/value pairs; repeated checkpoints are not independent",
+        "unknown": 0
+      },
+      "contract": {
+        "failed": 7,
+        "measured_exposed_values": 7,
+        "measured_watch_values": 13,
+        "not_applicable": 60,
+        "pass_rate_decided": 0.36363636363636365,
+        "pass_rate_planned": 0.04878048780487805,
+        "pass_rate_relevant": 0.18181818181818182,
+        "passed": 4,
+        "planned": 82,
+        "policy_gate": false,
+        "relevant_planned": 22,
+        "status": "fail",
+        "strict_zero_status": "fail",
+        "unit": "target/value pairs; repeated checkpoints are not independent",
+        "unknown": 11
+      }
+    },
+    "failed": 7,
+    "measured_exposed_values": 7,
+    "measured_watch_values": 13,
+    "not_applicable": 62,
+    "pass_rate_decided": 0.36363636363636365,
+    "pass_rate_planned": 0.047619047619047616,
+    "pass_rate_relevant": 0.18181818181818182,
+    "passed": 4,
+    "planned": 84,
+    "policy_gate": false,
+    "relevant_planned": 22,
+    "status": "fail",
+    "strict_zero_status": "fail",
+    "unit": "target/value pairs; repeated checkpoints are not independent",
+    "unknown": 11
+  },
+  "history_reasons": {
+    "captured_exact_value_intersection": 11,
+    "no_expected_history_watch_values": 62,
+    "watch_projection_incomplete": 11
+  },
+  "limits": [
+    "Exact agreement with the scorer does not authenticate supplied evidence or capture completeness.",
+    "Failure metric categories do not establish runtime-versus-adapter causes.",
+    "No semantic judgments are inferred from structural results.",
+    "Raw model requests, actual customer logs, keys, and live services were not read."
+  ],
+  "missing_prediction_ids": [
+    "n10-guest-q3",
+    "n10-signage-q3",
+    "n11-signage-q2",
+    "n13-guest-q2",
+    "n13-guest-q3",
+    "n13-signage-q2",
+    "n13-signage-q3"
+  ],
+  "model_calls": 0,
+  "network_calls": 0,
+  "nongate_structural_checks": {
+    "failed": 36,
+    "passed": 144,
+    "planned": 190,
+    "unknown": 10
+  },
+  "nongate_unknown_reasons": {
+    "missing_prediction": 10
+  },
+  "overall_status": "fail",
+  "prediction_rows": 77,
+  "report_differences": [],
+  "report_exact_json_equality": true,
+  "run_id": "m3v02-orch-20261117-e7a5cd9c",
+  "sealed_manifest_sha256": "9e7d15f75ae5e0504c5f0a9c38349c68c58fa1c311b00127f0e85e519e67026b",
+  "semantic": {
+    "failed": 0,
+    "pass_rate_decided": null,
+    "pass_rate_planned": 0.0,
+    "passed": 0,
+    "planned": 84,
+    "status": "incomplete",
+    "unknown": 84
+  },
+  "semantic_reasons": {
+    "missing_judgment_provenance": 77,
+    "missing_prediction": 7
+  },
+  "source_commit": "9ad23dde4a4164f6da0a83f4854d58b42036905b",
+  "source_hashes": {
+    "predictions.jsonl": "dcddfd86ab753a5a0cbd308582adf2af68d0739a46d989dfaf1f3bf4c2862eaf",
+    "report.json": "fea71698624ebea393a488fa74f90b3c2a0ec97ff044de32be08e7d8aaa35c49"
+  },
+  "source_prefix": "elda-orchestrator/measurements/eldacore/m3v02_20261117/",
+  "structural_unknown_reasons": {
+    "actual_tokenizer_count_required": 7,
+    "missing_path": 8,
+    "missing_prediction": 41,
+    "missing_projection_item_ids": 3
+  },
+  "target_statuses": {
+    "fail": 24,
+    "incomplete": 60
+  },
+  "token_measurements": {
+    "actual_tokenizer": 0,
+    "estimate": 77,
+    "exact_budget_uses": "actual_tokenizer_only",
+    "planned": 84,
+    "unknown": 7
+  },
+  "unique_prediction_ids": 77,
+  "units": {
+    "families": 14,
+    "independent_targets_assumed": false,
+    "positive_targets": 68,
+    "scenarios": 28,
+    "targets": 84
+  },
+  "verified_sealed_files": {
+    "CONTRACT.md": "9948f6a0225aad00b075d47896d26e073bbdca46637442805f408c3de9536112",
+    "_base_scorer.py": "e3f38706897b2a3b56234aadae3109f497367ffd419b0013807fd596c61786ad",
+    "gold.jsonl": "4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717",
+    "plan.json": "a5ac584f14e401301ac6642f53dd3e6c3dd79b64d8e0d478b911b23e607de0a0",
+    "scorer.py": "a221c9fbe726a329ea033ff01f615ab70d11ccfbfd5c072eabbc0d03e46439e5"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "source_commit": "9ad23dde4a4164f6da0a83f4854d58b42036905b",
+  "source_directory": "elda-orchestrator/measurements/eldacore/m3v02_20261117/",
+  "run_id": "m3v02-orch-20261117-e7a5cd9c",
+  "predictions": 77,
+  "unblind_exact_json_equality": true,
+  "checks": {
+    "evidence_files": 77,
+    "evidence_hash_matches": 77,
+    "capture_files": 77,
+    "capture_hash_matches": 77,
+    "capture_embedded_in_raw": 77,
+    "answer_matches_raw": 77,
+    "run_matches_meta": 77,
+    "capture_marked_complete": 77,
+    "raw_probe_matches_blind_id": 77
+  },
+  "failures": [],
+  "unreferenced_raw_files": [],
+  "adapter": {
+    "runtime": {
+      "sha256": "938d1c824e577225006709f51e797a4f7198cfd671f5f3d7c8d1fa6baf2b4291",
+      "matches_run_meta": true
+    },
+    "report_commit": {
+      "sha256": "938d1c824e577225006709f51e797a4f7198cfd671f5f3d7c8d1fa6baf2b4291",
+      "matches_run_meta": true
+    }
+  },
+  "prompts": {
+    "eldacore/s6_memory_turn": {
+      "sha256": "0bffc80ccc63e6abe5ca3f0f84c11d4689f4b18fd0002ee6e966d8b934a627a2",
+      "prefix_matches_run_meta": true
+    },
+    "eldacore/s6_memory_chat_end": {
+      "sha256": "d9e02d9c8e8246a1eeb50c7199e8e4db49658711e2325f4a54f9d33b29019a6d",
+      "prefix_matches_run_meta": true
+    },
+    "harness/no_self_intro": {
+      "sha256": "b5d0cb47703f491bf1ecc6fdf668908f43cf25e9b297a21aee520b0cfcd7848f",
+      "prefix_matches_run_meta": true
+    },
+    "harness/serve_consult": {
+      "sha256": "59178de712226024fedc2ea781f00025a5db5717703c79c31c487b7fe4ee7504",
+      "prefix_matches_run_meta": true
+    }
+  },
+  "bundle_head_string_sha_matches": true,
+  "mapping": {
+    "synthetic_scopes": 34,
+    "distinct_real_scopes": 30,
+    "collision_group_sizes": [
+      3,
+      3
+    ]
+  },
+  "run_event_counts": {
+    "dev_up": 5,
+    "turn": 81,
+    "settle": 71,
+    "probe": 77,
+    "retry_turn": 4,
+    "forget": 4,
+    "attempt_resume": 2,
+    "fixture_s6": 18,
+    "queue_c": 6,
+    "release_c": 10,
+    "dev_down": 5,
+    "restart_worker": 4,
+    "pause": 2,
+    "resume": 2,
+    "finish_c": 14,
+    "attach_s6": 2,
+    "turn_notification_fixture": 10,
+    "advance_time": 4,
+    "checkpoint_failed": 3,
+    "trim_context": 1,
+    "job_lost": 3,
+    "scope_collision": 6,
+    "probe_skipped": 4,
+    "done": 1
+  },
+  "limits": [
+    "File integrity and projection consistency do not authenticate runtime execution.",
+    "Capture files contain adapter model messages, not an Elda CLI process capture.",
+    "dist_sha256 is reported, not independently rebuilt or matched to deployed binaries.",
+    "bundle_head_sha hashes the commit string, not the sealed bundle file manifest.",
+    "No model API, database, gateway, production log, or runtime adapter was executed/read."
+  ]
+}
