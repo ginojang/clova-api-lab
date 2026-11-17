@@ -17,8 +17,8 @@ COMMIT = "9ad23dde4a4164f6da0a83f4854d58b42036905b"
 PREFIX = "elda-orchestrator/measurements/eldacore/m3v02_20261117/"
 
 
-def blob(name):
-    return subprocess.check_output(["git", "show", f"{COMMIT}:{PREFIX}{name}"], cwd=ROOT)
+def blob(name, source_commit=COMMIT, source_prefix=PREFIX):
+    return subprocess.check_output(["git", "show", f"{source_commit}:{source_prefix}{name}"], cwd=ROOT)
 
 
 def digest(raw):
@@ -56,11 +56,18 @@ def differences(left, right, path=""):
     return [] if left == right else [{"path": path, "kind": "value"}]
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-commit", default=COMMIT,
+                        help="Git commit containing synthetic predictions and report; default: r1")
+    parser.add_argument("--source-prefix", default=PREFIX,
+                        help="directory inside that Git tree; default: r1 measurement directory")
     parser.add_argument("--output-dir", type=Path, default=HERE,
                         help="existing directory for new audit files; never overwrites")
-    output = parser.parse_args().output_dir.resolve()
+    args = parser.parse_args(argv)
+    source_commit = args.source_commit
+    source_prefix = args.source_prefix.rstrip("/") + "/"
+    output = args.output_dir.resolve()
     if not output.is_dir():
         raise ValueError("output directory must already exist")
     if any((output / name).exists() for name in ("score_audit.report.json", "score_audit.json")):
@@ -77,7 +84,7 @@ def main():
     scorer = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(scorer)
     gold, gold_hash = scorer.read_jsonl(EVAL / "gold.jsonl")
-    raw = blob("predictions.jsonl")
+    raw = blob("predictions.jsonl", source_commit, source_prefix)
     predictions = []
     for line in raw.decode("utf-8").split("\n"):
         if line.strip():
@@ -85,7 +92,7 @@ def main():
                              parse_constant=scorer.base.reject_constant)
             scorer.base.validate_json(row)
             predictions.append(row)
-    original_report_raw = blob("report.json")
+    original_report_raw = blob("report.json", source_commit, source_prefix)
     original_report = json.loads(original_report_raw, object_pairs_hook=scorer.base.unique_object,
                                  parse_constant=scorer.base.reject_constant)
     report = scorer.score(gold, predictions, {"gold_sha256": gold_hash,
@@ -131,7 +138,7 @@ def main():
             checks_by_metric[check["metric"]].append(check["status"])
     audit = {
         "audit_kind": "offline re-score of committed synthetic supplied observations",
-        "source_commit": COMMIT, "source_prefix": PREFIX, "run_id": report["run_id"],
+        "source_commit": source_commit, "source_prefix": source_prefix, "run_id": report["run_id"],
         "network_calls": 0, "database_calls": 0, "model_calls": 0,
         "external_adapter_executed": False,
         "source_hashes": {"predictions.jsonl": digest(raw), "report.json": digest(original_report_raw)},

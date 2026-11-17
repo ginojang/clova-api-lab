@@ -1,0 +1,4968 @@
+{
+  "chat_scorer_old_new_bytes_equal": true,
+  "database_calls": 0,
+  "execution": "AST-selected reviewed pure score_rows/_match/_vmatch definitions only",
+  "gold": {
+    "chat": {
+      "md5": "737ab9f633fac5f9734136e791a55d00",
+      "meta": {
+        "authored_by": "claude",
+        "builder": "scripts/s6_memory_chat_eval.py",
+        "by_subset": {
+          "cooldown": 1,
+          "episode": 1,
+          "episode_other": 1,
+          "joke": 1,
+          "none": 1,
+          "not_promise": 1,
+          "order": 1,
+          "promise": 2,
+          "promise_fix": 2,
+          "promise_unknown": 1,
+          "self": 1
+        },
+        "eval_md5": "737ab9f633fac5f9734136e791a55d00",
+        "expected_promises": 3,
+        "langs": {
+          "en": 1,
+          "ja": 1,
+          "ko": 11
+        },
+        "made": "2026-11-17",
+        "name": "s6_memory_chat",
+        "prompt_pair": "memory/prompts/s6_memory_chat_end_v0.md v0.002 (예시와 안 겹침)",
+        "rows": 13,
+        "use": "eval",
+        "version": "0.4"
+      },
+      "old_new_bytes_equal": true,
+      "path": "memory/data/s6_memory_chat_eval_v0_4/eval.jsonl",
+      "rows": 13,
+      "sha256": "f7a14914109dfa7ed8db9fdf604c1323f216e74444434fdb347ddadf01588aff"
+    },
+    "turn": {
+      "md5": "3372c065ac4008ea281e9bd603d94969",
+      "meta": {
+        "authored_by": "claude",
+        "builder": "scripts/s6_memory_turn_eval.py",
+        "by_subset": {
+          "add": 8,
+          "command": 3,
+          "confirm": 1,
+          "contam": 7,
+          "contest": 1,
+          "none": 3,
+          "recall": 2,
+          "role": 3,
+          "sensitive": 1,
+          "session": 1,
+          "supersede": 5,
+          "withdraw": 4
+        },
+        "eval_md5": "3372c065ac4008ea281e9bd603d94969",
+        "expected_ops": 30,
+        "langs": {
+          "en": 5,
+          "ja": 3,
+          "ko": 31
+        },
+        "made": "2026-11-17",
+        "name": "s6_memory_turn",
+        "optional_ops": 4,
+        "prompt_pair": "memory/prompts/s6_memory_turn_v0.md (예시와 안 겹침)",
+        "rows": 39,
+        "use": "eval",
+        "version": "0.5"
+      },
+      "old_new_bytes_equal": true,
+      "path": "memory/data/s6_memory_turn_eval_v0_5/eval.jsonl",
+      "rows": 39,
+      "sha256": "b842e99d32d1ac119e37ea3e42f18f6d59b917298ee0f4e35caee5d9cb8a646a"
+    }
+  },
+  "limits": [
+    "A case repeated three times is one evaluation case, not three independent cases.",
+    "Turn ops and chat promises are submitted/scored projections; dropped/raw fields are separate.",
+    "Zero named gate hits does not imply zero value errors, missing operations, or semantic errors.",
+    "Source correction-evidence checks are lexical; no semantic judgment is supplied here.",
+    "This small synthetic T/C pretest is separate from the 84-checkpoint M3 execution and cannot certify it."
+  ],
+  "model_calls": 0,
+  "network_calls": 0,
+  "new_scorer_ref": "54e8c18f7600e2d0c94f76b5140ceb3aa499afe1",
+  "old_scorer_ref": "fa6d99df6ddaf500aaeabd8fdb3ef1b83a6ed0d8",
+  "result_source_ref": "4449c90077221844cc833b2d2a2a0970fcd94ba7",
+  "upstream_main_or_build_executed": false,
+  "variants": {
+    "C_v0004": {
+      "failure_rows": [
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "consult"
+            ],
+            "must_not_repeat": [],
+            "promises": []
+          },
+          "id": "p04",
+          "rep": 0,
+          "score": {
+            "_per": [
+              [
+                "p04",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 0
+            },
+            "episode_acc": 0.0,
+            "gates": {},
+            "gates_n": {},
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": {
+              "did": [
+                {
+                  "date": "2026-11-16",
+                  "kind": "design",
+                  "outcome": null,
+                  "what": "간판 디자인 상담"
+                }
+              ],
+              "reuse": {
+                "cooldown": [],
+                "must_not_repeat": [],
+                "must_repeat": []
+              }
+            },
+            "id": "p04",
+            "measured": true,
+            "promises": [],
+            "raw_promises": [],
+            "rep": 0
+          }
+        },
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "quote"
+            ],
+            "must_not_repeat": [],
+            "promises": []
+          },
+          "id": "p02",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "p02",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 0
+            },
+            "episode_acc": 0.0,
+            "gates": {},
+            "gates_n": {},
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": null,
+            "id": "p02",
+            "measured": true,
+            "promises": [],
+            "raw_promises": [],
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "consult"
+            ],
+            "must_not_repeat": [],
+            "promises": []
+          },
+          "id": "p04",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "p04",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 0
+            },
+            "episode_acc": 0.0,
+            "gates": {},
+            "gates_n": {},
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": {
+              "did": [
+                {
+                  "date": "2026-11-16",
+                  "kind": "design",
+                  "outcome": null,
+                  "what": "간판 디자인 상담"
+                }
+              ],
+              "reuse": {
+                "cooldown": [],
+                "must_not_repeat": [],
+                "must_repeat": []
+              }
+            },
+            "id": "p04",
+            "measured": true,
+            "promises": [],
+            "raw_promises": [],
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "consult"
+            ],
+            "must_not_repeat": [
+              "숙제"
+            ],
+            "promises": []
+          },
+          "id": "e04",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "e04",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 1,
+              "must_not_repeat_hit": 1,
+              "must_not_repeat_n": 1
+            },
+            "episode_acc": 1.0,
+            "gates": {
+              "promise_false": [
+                "e04"
+              ]
+            },
+            "gates_n": {
+              "promise_false": 1
+            },
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": {
+              "did": [
+                {
+                  "date": "2026-11-16",
+                  "kind": "consult",
+                  "outcome": "손님 좋다고 응답",
+                  "what": "간판 이름 짓기 고민에 공감하고 후보 뽑기 제안"
+                }
+              ],
+              "reuse": {
+                "cooldown": [],
+                "must_not_repeat": [
+                  "이름 짓기는 간판보다 무거운 숙제죠 농담"
+                ],
+                "must_repeat": []
+              }
+            },
+            "id": "e04",
+            "measured": true,
+            "promises": [
+              {
+                "evidence": {
+                  "n": 0,
+                  "t": "같이 후보를 뽑아 봐요",
+                  "turn_index": 1
+                },
+                "expires_hint": "2026-12-16",
+                "p_yes": 0.7,
+                "t": "간판 이름 후보 같이 뽑아 보기",
+                "why": "손님과 함께 하자는 제안이지만 이 대화 안에서 이어지는 행동이라 약속으로 보기엔 애매함 · S6 pass"
+              }
+            ],
+            "raw_promises": [
+              {
+                "evidence": {
+                  "n": 0,
+                  "t": "같이 후보를 뽑아 봐요",
+                  "turn_index": 1
+                },
+                "expires_hint": "2026-12-16",
+                "p_yes": 0.7,
+                "t": "간판 이름 후보 같이 뽑아 보기",
+                "why": "손님과 함께 하자는 제안이지만 이 대화 안에서 이어지는 행동이라 약속으로 보기엔 애매함 · S6 pass"
+              }
+            ],
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "quote"
+            ],
+            "must_not_repeat": [],
+            "promises": []
+          },
+          "id": "p02",
+          "rep": 2,
+          "score": {
+            "_per": [
+              [
+                "p02",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 0
+            },
+            "episode_acc": 0.0,
+            "gates": {},
+            "gates_n": {},
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": null,
+            "id": "p02",
+            "measured": true,
+            "promises": [],
+            "raw_promises": [],
+            "rep": 2
+          }
+        },
+        {
+          "gold_expect": {
+            "cooldown": [],
+            "episode_kinds": [
+              "consult"
+            ],
+            "must_not_repeat": [
+              "숙제"
+            ],
+            "promises": []
+          },
+          "id": "e04",
+          "rep": 2,
+          "score": {
+            "_per": [
+              [
+                "e04",
+                false
+              ]
+            ],
+            "counts": {
+              "episode_n": 1,
+              "episode_ok": 1,
+              "must_not_repeat_hit": 1,
+              "must_not_repeat_n": 1
+            },
+            "episode_acc": 1.0,
+            "gates": {
+              "promise_false": [
+                "e04"
+              ]
+            },
+            "gates_n": {
+              "promise_false": 1
+            },
+            "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+            "promise_recall": null,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "episode": {
+              "did": [
+                {
+                  "date": "2026-11-16",
+                  "kind": "consult",
+                  "outcome": "손님이 좋다고 답함",
+                  "what": "간판 이름 짓기 고민에 공감하고 후보 뽑기 제안"
+                }
+              ],
+              "reuse": {
+                "cooldown": [],
+                "must_not_repeat": [
+                  "간판보다 무거운 숙제라는 농담"
+                ],
+                "must_repeat": []
+              }
+            },
+            "id": "e04",
+            "measured": true,
+            "promises": [
+              {
+                "evidence": {
+                  "n": 0,
+                  "t": "같이 후보를 뽑아 봐요",
+                  "turn_index": 1
+                },
+                "expires_hint": "2026-12-16",
+                "p_yes": 0.7,
+                "t": "같이 간판 이름 후보 뽑아 보기",
+                "why": "엘다가 이번 대화에서 같이 하자고 한 제안이므로, 약속으로 볼지 판단이 애매함 · S6 pass"
+              }
+            ],
+            "raw_promises": [
+              {
+                "evidence": {
+                  "n": 0,
+                  "t": "같이 후보를 뽑아 봐요",
+                  "turn_index": 1
+                },
+                "expires_hint": "2026-12-16",
+                "p_yes": 0.7,
+                "t": "같이 간판 이름 후보 뽑아 보기",
+                "why": "엘다가 이번 대화에서 같이 하자고 한 제안이므로, 약속으로 볼지 판단이 애매함 · S6 pass"
+              }
+            ],
+            "rep": 2
+          }
+        }
+      ],
+      "focus_predictions": [],
+      "majority_definition": "majority of per-case boolean rows_ok; not a voted model output",
+      "per_rep_notes": [
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 3,
+          "raw_scored_promise_different_ids": [],
+          "rep": 0,
+          "scored_promises": 3
+        },
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 4,
+          "raw_scored_promise_different_ids": [],
+          "rep": 1,
+          "scored_promises": 4
+        },
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 4,
+          "raw_scored_promise_different_ids": [],
+          "rep": 2,
+          "scored_promises": 4
+        }
+      ],
+      "per_run": [
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              true
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              false
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 12,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 0.9231,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 12
+        },
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              false
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              false
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              false
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 11,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 0.8462,
+          "gates": {
+            "promise_false": [
+              "e04"
+            ]
+          },
+          "gates_n": {
+            "promise_false": 1
+          },
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 10
+        },
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              false
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              true
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              false
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 12,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 0.9231,
+          "gates": {
+            "promise_false": [
+              "e04"
+            ]
+          },
+          "gates_n": {
+            "promise_false": 1
+          },
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 11
+        }
+      ],
+      "prediction_hashes": {
+        "md5": "04bef776222d269e63a6d4883f534a96",
+        "sha256": "086bf4a0a8f6a9e57f0e0802a3a4a7a6af9cdea0a2c85d164c8728fd4989520e"
+      },
+      "prediction_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_chat_v04_pred_k3_c02947e1_prompt-v0004.jsonl",
+      "prediction_rows": 39,
+      "recomputed_summary": {
+        "K": 3,
+        "eval_md5": "737ab9f633fac5f9734136e791a55d00",
+        "gates_n_per_run": [
+          {},
+          {
+            "promise_false": 1
+          },
+          {
+            "promise_false": 1
+          }
+        ],
+        "majority_ok": 10,
+        "per_run_rows_ok": [
+          12,
+          10,
+          11
+        ],
+        "rows": 13,
+        "run0": {
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 12,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 0.9231,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 12
+        }
+      },
+      "rep_labels": [
+        0,
+        1,
+        2
+      ],
+      "saved_report_exact_json_equality": true,
+      "saved_report_hashes": {
+        "md5": "5bd56ace72fc4ef829ba7d721db64265",
+        "sha256": "e237d2fc233e7ba87352fb15613ab183558f6aa35ddc2b55eb33e705429a8eca"
+      },
+      "saved_report_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_chat_v04_score_k3_c02947e1.json",
+      "scorer_hashes": {
+        "md5": "a953cc24a547bed6c4152e4af9c02c2f",
+        "sha256": "63416c6f8beb1738b81868bb4b67be5a7e9625071c2f6ae6b3e0e7d837d8283e"
+      },
+      "scorer_path": "memory/scripts/s6_memory_chat_eval.py",
+      "scorer_ref": "fa6d99df6ddaf500aaeabd8fdb3ef1b83a6ed0d8",
+      "unique_ids": 13
+    },
+    "C_v0005": {
+      "failure_rows": [],
+      "focus_predictions": [],
+      "majority_definition": "majority of per-case boolean rows_ok; not a voted model output",
+      "per_rep_notes": [
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 3,
+          "raw_scored_promise_different_ids": [],
+          "rep": 0,
+          "scored_promises": 3
+        },
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 3,
+          "raw_scored_promise_different_ids": [],
+          "rep": 1,
+          "scored_promises": 3
+        },
+        {
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 13,
+          "raw_promises": 3,
+          "raw_scored_promise_different_ids": [],
+          "rep": 2,
+          "scored_promises": 3
+        }
+      ],
+      "per_run": [
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              true
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              true
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 13,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 1.0,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 13
+        },
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              true
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              true
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 13,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 1.0,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 13
+        },
+        {
+          "_per": [
+            [
+              "p01",
+              true
+            ],
+            [
+              "p02",
+              true
+            ],
+            [
+              "p03",
+              true
+            ],
+            [
+              "p04",
+              true
+            ],
+            [
+              "p05",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "e05",
+              true
+            ],
+            [
+              "x01",
+              true
+            ],
+            [
+              "x02",
+              true
+            ],
+            [
+              "e06",
+              true
+            ]
+          ],
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 13,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 1.0,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 13
+        }
+      ],
+      "prediction_hashes": {
+        "md5": "2013825cc98443c124fa040a36e646dd",
+        "sha256": "336f14b57d5329f9da5520b03ec916cd748082f240da010b4e59ded1c57b9807"
+      },
+      "prediction_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_chat_v04_pred_k3_8064fd2b_prompt-v0005.jsonl",
+      "prediction_rows": 39,
+      "recomputed_summary": {
+        "K": 3,
+        "eval_md5": "737ab9f633fac5f9734136e791a55d00",
+        "gates_n_per_run": [
+          {},
+          {},
+          {}
+        ],
+        "majority_ok": 13,
+        "per_run_rows_ok": [
+          13,
+          13,
+          13
+        ],
+        "rows": 13,
+        "run0": {
+          "counts": {
+            "cooldown_hit": 1,
+            "cooldown_n": 1,
+            "episode_n": 13,
+            "episode_ok": 13,
+            "exp_promises": 3,
+            "must_not_repeat_hit": 1,
+            "must_not_repeat_n": 1,
+            "promise_hit": 3
+          },
+          "episode_acc": 1.0,
+          "gates": {},
+          "gates_n": {},
+          "note": "rows_ok 는 요약 — 관문은 gates_n · 못 잰 줄은 분모에 남는다 · 다세션은 클로버 M3",
+          "promise_recall": 1.0,
+          "rows": 13,
+          "rows_ok": 13
+        }
+      },
+      "rep_labels": [
+        0,
+        1,
+        2
+      ],
+      "saved_report_exact_json_equality": true,
+      "saved_report_hashes": {
+        "md5": "133e238c2758ab98432d8e51807b9a6f",
+        "sha256": "3c87041acdd4616761e469bea9fb6f635ffa8b76b2c364f3876ffaafb935a5f0"
+      },
+      "saved_report_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_chat_v04_score_k3_8064fd2b.json",
+      "scorer_hashes": {
+        "md5": "a953cc24a547bed6c4152e4af9c02c2f",
+        "sha256": "63416c6f8beb1738b81868bb4b67be5a7e9625071c2f6ae6b3e0e7d837d8283e"
+      },
+      "scorer_path": "memory/scripts/s6_memory_chat_eval.py",
+      "scorer_ref": "54e8c18f7600e2d0c94f76b5140ceb3aa499afe1",
+      "unique_ids": 13
+    },
+    "T_v0009": {
+      "failure_rows": [
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "op": "CONTEST",
+                "slot": "business",
+                "target_id": "m3",
+                "value": "카페"
+              }
+            ]
+          },
+          "id": "k09",
+          "rep": 0,
+          "score": {
+            "_per": [
+              [
+                "k09",
+                false
+              ]
+            ],
+            "by": {
+              "op:CONTEST": {
+                "n": 1,
+                "ok": 0
+              },
+              "subset:contest": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 0,
+              "exp_ops": 1,
+              "pred_hit": 0,
+              "pred_ops": 1
+            },
+            "gates": {
+              "false_memory": [
+                "k09:SUPERSEDE:business"
+              ]
+            },
+            "gates_n": {
+              "false_memory": 1
+            },
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 0.0,
+            "op_recall": 0.0,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "23b15df416dbc4c045121288152d91d7",
+            "dropped": [],
+            "id": "k09",
+            "latency_ms": 1207,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "evidence": {
+                  "end": 14,
+                  "n": 0,
+                  "start": 0,
+                  "t": "저희 카페 간판 문의드려요",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "카페"
+                },
+                "op": "SUPERSEDE",
+                "p_yes": 0.6,
+                "scope": "chat",
+                "slot": "business",
+                "target_id": "m3",
+                "why": "카페라고 말했으나 고친다는 말 없이 기존 업종(공방)과 다름 — 덮지 않고 CONTEST가 맞음"
+              }
+            ],
+            "reason": null,
+            "rep": 0
+          }
+        },
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "op": "CONTEST",
+                "slot": "business",
+                "target_id": "m3",
+                "value": "카페"
+              }
+            ]
+          },
+          "id": "k09",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "k09",
+                false
+              ]
+            ],
+            "by": {
+              "op:CONTEST": {
+                "n": 1,
+                "ok": 0
+              },
+              "subset:contest": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 0,
+              "exp_ops": 1,
+              "pred_hit": 0,
+              "pred_ops": 1
+            },
+            "gates": {
+              "false_memory": [
+                "k09:SUPERSEDE:business"
+              ]
+            },
+            "gates_n": {
+              "false_memory": 1
+            },
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 0.0,
+            "op_recall": 0.0,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "23b15df416dbc4c045121288152d91d7",
+            "dropped": [],
+            "id": "k09",
+            "latency_ms": 1139,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "evidence": {
+                  "end": 14,
+                  "n": 0,
+                  "start": 0,
+                  "t": "저희 카페 간판 문의드려요",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "카페"
+                },
+                "op": "SUPERSEDE",
+                "p_yes": 0.6,
+                "scope": "chat",
+                "slot": "business",
+                "target_id": "m3",
+                "why": "고친다는 말 없이 기존 업종(공방)과 다른 값(카페) — 덮지 않고 CONTEST 로 적어야 한다"
+              }
+            ],
+            "reason": null,
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "op": "CONTEST",
+                "slot": "business",
+                "target_id": "m3",
+                "value": "카페"
+              }
+            ]
+          },
+          "id": "k09",
+          "rep": 2,
+          "score": {
+            "_per": [
+              [
+                "k09",
+                false
+              ]
+            ],
+            "by": {
+              "op:CONTEST": {
+                "n": 1,
+                "ok": 0
+              },
+              "subset:contest": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 0,
+              "exp_ops": 1,
+              "pred_hit": 0,
+              "pred_ops": 1
+            },
+            "gates": {
+              "false_memory": [
+                "k09:SUPERSEDE:business"
+              ]
+            },
+            "gates_n": {
+              "false_memory": 1
+            },
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 0.0,
+            "op_recall": 0.0,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "23b15df416dbc4c045121288152d91d7",
+            "dropped": [],
+            "id": "k09",
+            "latency_ms": 1235,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "evidence": {
+                  "end": 14,
+                  "n": 0,
+                  "start": 0,
+                  "t": "저희 카페 간판 문의드려요",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "카페"
+                },
+                "op": "SUPERSEDE",
+                "p_yes": 0.6,
+                "scope": "chat",
+                "slot": "business",
+                "target_id": "m3",
+                "why": "고친다는 말은 없지만 기존 업종(공방)과 다른 업종을 손님이 자기 가게로 말함 — 덮지 말고 CONTEST가 맞음"
+              }
+            ],
+            "reason": null,
+            "rep": 2
+          }
+        }
+      ],
+      "focus_predictions": [
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 1207,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.6,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "카페라고 말했으나 고친다는 말 없이 기존 업종(공방)과 다름 — 덮지 않고 CONTEST가 맞음"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 1139,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.6,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "고친다는 말 없이 기존 업종(공방)과 다른 값(카페) — 덮지 않고 CONTEST 로 적어야 한다"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 1235,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.6,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "고친다는 말은 없지만 기존 업종(공방)과 다른 업종을 손님이 자기 가게로 말함 — 덮지 말고 CONTEST가 맞음"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "j01",
+          "latency_ms": 1995,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "美容室"
+              },
+              "op": "ADD",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": null,
+              "why": "손님이 자신의 업종(미용실 운영)을 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.85,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "손님의 가게가 있는 곳(시부야)을 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "owner"
+              },
+              "op": "ADD",
+              "p_yes": 0.8,
+              "scope": "chat",
+              "slot": "role",
+              "target_id": null,
+              "why": "「やっています」 = 직접 운영 중이라는 뜻 → 내 가게·사장"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "j01",
+          "latency_ms": 1902,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "美容室"
+              },
+              "op": "ADD",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": null,
+              "why": "손님이 자신의 업종(미용실 운영)을 직접 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.8,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "손님의 가게가 있는 곳(시부야)을 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "owner"
+              },
+              "op": "ADD",
+              "p_yes": 0.75,
+              "scope": "chat",
+              "slot": "role",
+              "target_id": null,
+              "why": "「やっています」— 직접 운영 중이라는 말"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "j01",
+          "latency_ms": 1927,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "美容室"
+              },
+              "op": "ADD",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": null,
+              "why": "손님이 자기 업종(미용실 운영)을 직접 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.8,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "손님이 가게가 있는 곳(시부야)을 말함"
+            },
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "owner"
+              },
+              "op": "ADD",
+              "p_yes": 0.8,
+              "scope": "chat",
+              "slot": "role",
+              "target_id": null,
+              "why": "「やっています」로 내 가게를 운영 중임"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1167,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다. 업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "정정한다고 분명히 말하고 업종을 고침"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1150,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다. 업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "정정한다고 분명히 말하고 업종을 바꿈"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1153,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다. 업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.92,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "정정한다고 분명히 말하고 새 업종을 밝힘"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1203,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "최종으로 확정한다고 분명히 정함 — 고침"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1147,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "손님이 최종 확정이라고 분명히 정함"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "23b15df416dbc4c045121288152d91d7",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1130,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "손님이 최종으로 확정하며 기존 값을 고침"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        }
+      ],
+      "majority_definition": "majority of per-case boolean rows_ok; not a voted model output",
+      "per_rep_notes": [
+        {
+          "dropped_reason_counts": {},
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 0,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 1,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 1,
+            "k08": 1,
+            "k09": 1,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 1,
+            "s02": 1,
+            "w01": 0,
+            "w02": 0
+          }
+        },
+        {
+          "dropped_reason_counts": {},
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 1,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 1,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 1,
+            "k08": 1,
+            "k09": 1,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 1,
+            "s02": 1,
+            "w01": 0,
+            "w02": 0
+          }
+        },
+        {
+          "dropped_reason_counts": {},
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 2,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 1,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 1,
+            "k08": 1,
+            "k09": 1,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 1,
+            "s02": 1,
+            "w01": 0,
+            "w02": 0
+          }
+        }
+      ],
+      "per_run": [
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              true
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              false
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              true
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 0
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 0
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 29,
+            "exp_ops": 30,
+            "pred_hit": 31,
+            "pred_ops": 32
+          },
+          "gates": {
+            "false_memory": [
+              "k09:SUPERSEDE:business"
+            ]
+          },
+          "gates_n": {
+            "false_memory": 1
+          },
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 0.9688,
+          "op_recall": 0.9667,
+          "rows": 39,
+          "rows_ok": 38
+        },
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              true
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              false
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              true
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 0
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 0
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 29,
+            "exp_ops": 30,
+            "pred_hit": 30,
+            "pred_ops": 31
+          },
+          "gates": {
+            "false_memory": [
+              "k09:SUPERSEDE:business"
+            ]
+          },
+          "gates_n": {
+            "false_memory": 1
+          },
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 0.9677,
+          "op_recall": 0.9667,
+          "rows": 39,
+          "rows_ok": 38
+        },
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              true
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              false
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              true
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 0
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 0
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 29,
+            "exp_ops": 30,
+            "pred_hit": 31,
+            "pred_ops": 32
+          },
+          "gates": {
+            "false_memory": [
+              "k09:SUPERSEDE:business"
+            ]
+          },
+          "gates_n": {
+            "false_memory": 1
+          },
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 0.9688,
+          "op_recall": 0.9667,
+          "rows": 39,
+          "rows_ok": 38
+        }
+      ],
+      "prediction_hashes": {
+        "md5": "8614338b5a2ac9b61de816a8060261c7",
+        "sha256": "666a22fb6a1900698d7f2ed1d3d46e87783389e8b89edf8e954d37807f0c1718"
+      },
+      "prediction_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_turn_v05_pred_k3_23b15df4_prompt-v0009.jsonl",
+      "prediction_rows": 117,
+      "recomputed_summary": {
+        "K": 3,
+        "eval_md5": "3372c065ac4008ea281e9bd603d94969",
+        "gates_n_per_run": [
+          {
+            "false_memory": 1
+          },
+          {
+            "false_memory": 1
+          },
+          {
+            "false_memory": 1
+          }
+        ],
+        "majority_ok": 38,
+        "per_run_rows_ok": [
+          38,
+          38,
+          38
+        ],
+        "rows": 39,
+        "run0": {
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 0
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 0
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 29,
+            "exp_ops": 30,
+            "pred_hit": 31,
+            "pred_ops": 32
+          },
+          "gates": {
+            "false_memory": [
+              "k09:SUPERSEDE:business"
+            ]
+          },
+          "gates_n": {
+            "false_memory": 1
+          },
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 0.9688,
+          "op_recall": 0.9667,
+          "rows": 39,
+          "rows_ok": 38
+        }
+      },
+      "rep_labels": [
+        0,
+        1,
+        2
+      ],
+      "saved_report_exact_json_equality": true,
+      "saved_report_hashes": {
+        "md5": "af03013a90240dfdada714bde96ccde2",
+        "sha256": "c80a99ba4c58d2ad7c3fa06a489918df3c23fb4235ce4eb7fd1aad6bbb5df75a"
+      },
+      "saved_report_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_turn_v05_score_k3_23b15df4.json",
+      "scorer_hashes": {
+        "md5": "9567d169c6592ec202fb7b6848fa369e",
+        "sha256": "cde7922f0d63a2b6fbe4c0497adfbe127aec2572924ed0a2365e7f524da961a7"
+      },
+      "scorer_path": "memory/scripts/s6_memory_turn_eval.py",
+      "scorer_ref": "fa6d99df6ddaf500aaeabd8fdb3ef1b83a6ed0d8",
+      "unique_ids": 39
+    },
+    "T_v0010": {
+      "failure_rows": [
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "lifetime": "episode",
+                "op": "ADD",
+                "slot": "plan",
+                "value": "다음 달 15일"
+              },
+              {
+                "op": "ADD",
+                "optional": true,
+                "slot": "role",
+                "value": "preparing"
+              }
+            ]
+          },
+          "id": "k05",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "k05",
+                false
+              ]
+            ],
+            "by": {
+              "op:ADD": {
+                "n": 1,
+                "ok": 0
+              },
+              "subset:add": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 0,
+              "exp_ops": 1,
+              "pred_hit": 0,
+              "pred_ops": 1
+            },
+            "gates": {
+              "value_wrong": [
+                "k05:ADD:plan"
+              ]
+            },
+            "gates_n": {
+              "value_wrong": 1
+            },
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 0.0,
+            "op_recall": 0.0,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+            "dropped": [],
+            "id": "k05",
+            "latency_ms": 1215,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "consent_evidence": null,
+                "evidence": {
+                  "end": 17,
+                  "n": 0,
+                  "start": 0,
+                  "t": "다음 달 15일에 가게 오픈해요",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": "2026-12-17",
+                  "lifetime": "episode",
+                  "sensitive": "none",
+                  "t": "12월 15일 오픈"
+                },
+                "op": "ADD",
+                "p_yes": 0.8,
+                "scope": "chat",
+                "slot": "plan",
+                "target_id": null,
+                "why": "개업 날짜라는 손님 사정 — episode, 날짜 기준 30일 후"
+              }
+            ],
+            "reason": null,
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "op": "ADD",
+                "slot": "region",
+                "value": "渋谷"
+              },
+              {
+                "op": "ADD",
+                "slot": "business",
+                "value": "美容室"
+              },
+              {
+                "op": "ADD",
+                "optional": true,
+                "slot": "role",
+                "value": "owner"
+              }
+            ]
+          },
+          "id": "j01",
+          "rep": 1,
+          "score": {
+            "_per": [
+              [
+                "j01",
+                false
+              ]
+            ],
+            "by": {
+              "op:ADD": {
+                "n": 2,
+                "ok": 1
+              },
+              "subset:add": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 1,
+              "exp_ops": 2,
+              "pred_hit": 2,
+              "pred_ops": 2
+            },
+            "gates": {},
+            "gates_n": {},
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 1.0,
+            "op_recall": 0.5,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+            "dropped": [
+              {
+                "op": {
+                  "evidence": {
+                    "end": 13,
+                    "n": 0,
+                    "start": 0,
+                    "t": "渋谷で美容室をやっています",
+                    "turn_index": 0
+                  },
+                  "kind": "fact",
+                  "new": {
+                    "expires_hint": null,
+                    "lifetime": "durable",
+                    "sensitive": "none",
+                    "t": "미용실"
+                  },
+                  "op": "ADD",
+                  "p_yes": 0.9,
+                  "scope": "chat",
+                  "slot": "business",
+                  "target_id": null,
+                  "why": "업종 자기 소개"
+                },
+                "why": "value_not_in_evidence"
+              }
+            ],
+            "id": "j01",
+            "latency_ms": 1685,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "evidence": {
+                  "end": 13,
+                  "n": 0,
+                  "start": 0,
+                  "t": "渋谷で美容室をやっています",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "渋谷"
+                },
+                "op": "ADD",
+                "p_yes": 0.85,
+                "scope": "chat",
+                "slot": "region",
+                "target_id": null,
+                "why": "가게 위치 · 손님이 있는 곳"
+              },
+              {
+                "evidence": {
+                  "end": 13,
+                  "n": 0,
+                  "start": 0,
+                  "t": "渋谷で美容室をやっています",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "owner"
+                },
+                "op": "ADD",
+                "p_yes": 0.8,
+                "scope": "chat",
+                "slot": "role",
+                "target_id": null,
+                "why": "내 가게를 운영 중"
+              }
+            ],
+            "reason": null,
+            "rep": 1
+          }
+        },
+        {
+          "gold_expect": {
+            "memory_command": null,
+            "ops": [
+              {
+                "op": "ADD",
+                "slot": "region",
+                "value": "渋谷"
+              },
+              {
+                "op": "ADD",
+                "slot": "business",
+                "value": "美容室"
+              },
+              {
+                "op": "ADD",
+                "optional": true,
+                "slot": "role",
+                "value": "owner"
+              }
+            ]
+          },
+          "id": "j01",
+          "rep": 2,
+          "score": {
+            "_per": [
+              [
+                "j01",
+                false
+              ]
+            ],
+            "by": {
+              "op:ADD": {
+                "n": 2,
+                "ok": 1
+              },
+              "subset:add": {
+                "n": 1,
+                "ok": 0
+              }
+            },
+            "counts": {
+              "cmd_n": 1,
+              "cmd_ok": 1,
+              "exp_hit": 1,
+              "exp_ops": 2,
+              "pred_hit": 1,
+              "pred_ops": 1
+            },
+            "gates": {},
+            "gates_n": {},
+            "memory_command_acc": 1.0,
+            "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+            "op_precision": 1.0,
+            "op_recall": 0.5,
+            "rows": 1,
+            "rows_ok": 0
+          },
+          "submitted_prediction": {
+            "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+            "dropped": [
+              {
+                "op": {
+                  "evidence": {
+                    "end": 13,
+                    "n": 0,
+                    "start": 0,
+                    "t": "渋谷で美容室をやっています",
+                    "turn_index": 0
+                  },
+                  "kind": "fact",
+                  "new": {
+                    "expires_hint": null,
+                    "lifetime": "durable",
+                    "sensitive": "none",
+                    "t": "미용실"
+                  },
+                  "op": "ADD",
+                  "p_yes": 0.9,
+                  "scope": "chat",
+                  "slot": "business",
+                  "target_id": null,
+                  "why": "업종 — 손님이 미용실을 하고 있다고 말함"
+                },
+                "why": "value_not_in_evidence"
+              }
+            ],
+            "id": "j01",
+            "latency_ms": 1396,
+            "measured": true,
+            "memory_command": null,
+            "ok": true,
+            "ops": [
+              {
+                "evidence": {
+                  "end": 13,
+                  "n": 0,
+                  "start": 0,
+                  "t": "渋谷で美容室をやっています",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "渋谷"
+                },
+                "op": "ADD",
+                "p_yes": 0.85,
+                "scope": "chat",
+                "slot": "region",
+                "target_id": null,
+                "why": "가게 위치 — 손님의 가게가 있는 곳"
+              }
+            ],
+            "reason": null,
+            "rep": 2
+          }
+        }
+      ],
+      "focus_predictions": [
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 947,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "CONTEST",
+              "p_yes": 0.7,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "고친다는 말 없이 다른 업종 — 덮지 않음"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 1058,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "CONTEST",
+              "p_yes": 0.7,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "업종 — 기존 「공방」과 다름, 고친다는 말 없음 → 덮지 않음"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "k09",
+          "latency_ms": 1036,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "저희 카페 간판 문의드려요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "카페"
+              },
+              "op": "CONTEST",
+              "p_yes": 0.7,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m3",
+              "why": "가게를 카페라고 말함 · 기존 업종(공방)과 달라 덮지 않고 CONTEST"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "j01",
+          "latency_ms": 1856,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "美容室"
+              },
+              "op": "ADD",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": null,
+              "why": "업종 (美容室 = 미용실) 을 손님이 직접 말함"
+            },
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "가게가 있는 곳(渋谷)을 손님이 직접 말함"
+            },
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "owner"
+              },
+              "op": "ADD",
+              "p_yes": 0.85,
+              "scope": "chat",
+              "slot": "role",
+              "target_id": null,
+              "why": "가게를 운영 중이라고 말함"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [
+            {
+              "op": {
+                "evidence": {
+                  "end": 13,
+                  "n": 0,
+                  "start": 0,
+                  "t": "渋谷で美容室をやっています",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "미용실"
+                },
+                "op": "ADD",
+                "p_yes": 0.9,
+                "scope": "chat",
+                "slot": "business",
+                "target_id": null,
+                "why": "업종 자기 소개"
+              },
+              "why": "value_not_in_evidence"
+            }
+          ],
+          "id": "j01",
+          "latency_ms": 1685,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.85,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "가게 위치 · 손님이 있는 곳"
+            },
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "owner"
+              },
+              "op": "ADD",
+              "p_yes": 0.8,
+              "scope": "chat",
+              "slot": "role",
+              "target_id": null,
+              "why": "내 가게를 운영 중"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [
+            {
+              "op": {
+                "evidence": {
+                  "end": 13,
+                  "n": 0,
+                  "start": 0,
+                  "t": "渋谷で美容室をやっています",
+                  "turn_index": 0
+                },
+                "kind": "fact",
+                "new": {
+                  "expires_hint": null,
+                  "lifetime": "durable",
+                  "sensitive": "none",
+                  "t": "미용실"
+                },
+                "op": "ADD",
+                "p_yes": 0.9,
+                "scope": "chat",
+                "slot": "business",
+                "target_id": null,
+                "why": "업종 — 손님이 미용실을 하고 있다고 말함"
+              },
+              "why": "value_not_in_evidence"
+            }
+          ],
+          "id": "j01",
+          "latency_ms": 1396,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "evidence": {
+                "end": 13,
+                "n": 0,
+                "start": 0,
+                "t": "渋谷で美容室をやっています",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "渋谷"
+              },
+              "op": "ADD",
+              "p_yes": 0.85,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": null,
+              "why": "가게 위치 — 손님의 가게가 있는 곳"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1176,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "correction_evidence": {
+                "end": 5,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 7,
+                "t": "업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "「정정합니다」로 분명히 고침 — 업종을 국숫집으로 바꿈"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1082,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "correction_evidence": {
+                "end": 5,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다. 업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "「정정합니다」로 분명히 고침"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s01",
+          "latency_ms": 1121,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "correction_evidence": {
+                "end": 5,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 25,
+                "n": 0,
+                "start": 0,
+                "t": "정정합니다. 업종은 분식이 아니라 국숫집이에요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "국숫집"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "business",
+              "target_id": "m12",
+              "why": "「정정합니다」로 분명히 고침 — 업종을 국숫집으로 바꿈"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1358,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "correction_evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "손님이 연희동으로 확정해 달라고 분명히 말함 · 기존 연남동을 고침"
+            }
+          ],
+          "reason": null,
+          "rep": 0
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1380,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "correction_evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "손님이 「최종으로 ~이 맞습니다, 확정해 주세요」라고 분명히 정함 · 기존 연남동을 덮음"
+            }
+          ],
+          "reason": null,
+          "rep": 1
+        },
+        {
+          "config_md5": "2a41e14bbe93d982f1252cf1bb078ad1",
+          "dropped": [],
+          "id": "s02",
+          "latency_ms": 1305,
+          "measured": true,
+          "memory_command": null,
+          "ok": true,
+          "ops": [
+            {
+              "consent_evidence": null,
+              "correction_evidence": {
+                "end": 14,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다",
+                "turn_index": 0
+              },
+              "evidence": {
+                "end": 30,
+                "n": 0,
+                "start": 0,
+                "t": "최종으로 연희동이 맞습니다, 그 지역으로 확정해 주세요",
+                "turn_index": 0
+              },
+              "kind": "fact",
+              "new": {
+                "expires_hint": null,
+                "lifetime": "durable",
+                "sensitive": "none",
+                "t": "연희동"
+              },
+              "op": "SUPERSEDE",
+              "p_yes": 0.9,
+              "scope": "chat",
+              "slot": "region",
+              "target_id": "m13",
+              "why": "손님이 「최종으로 연희동이 맞습니다, 확정해 주세요」라고 분명히 정함 — 고친다는 말이 있으므로 SUPERSEDE"
+            }
+          ],
+          "reason": null,
+          "rep": 2
+        }
+      ],
+      "majority_definition": "majority of per-case boolean rows_ok; not a voted model output",
+      "per_rep_notes": [
+        {
+          "dropped_reason_counts": {},
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 0,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 0,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 0,
+            "k08": 0,
+            "k09": 0,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 0,
+            "s02": 0,
+            "w01": 0,
+            "w02": 0
+          }
+        },
+        {
+          "dropped_reason_counts": {
+            "value_not_in_evidence": 1
+          },
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 1,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 0,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 0,
+            "k08": 0,
+            "k09": 0,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 0,
+            "s02": 0,
+            "w01": 0,
+            "w02": 0
+          }
+        },
+        {
+          "dropped_reason_counts": {
+            "value_not_in_evidence": 1
+          },
+          "explicit_unmeasured": 0,
+          "not_ok": 0,
+          "observed_rows": 39,
+          "rep": 2,
+          "submitted_supersede_without_matching_correction_span": {
+            "e01": 0,
+            "e02": 0,
+            "e03": 0,
+            "e04": 0,
+            "j01": 0,
+            "j02": 0,
+            "j03": 0,
+            "k01": 0,
+            "k02": 0,
+            "k03": 0,
+            "k04": 0,
+            "k05": 0,
+            "k06": 0,
+            "k07": 0,
+            "k08": 0,
+            "k09": 0,
+            "k10": 0,
+            "k11": 0,
+            "k12": 0,
+            "k13": 0,
+            "k14": 0,
+            "k15": 0,
+            "k16": 0,
+            "k17": 0,
+            "k18": 0,
+            "k19": 0,
+            "k20": 0,
+            "k21": 0,
+            "k22": 0,
+            "q01": 0,
+            "q02": 0,
+            "r01": 0,
+            "r02": 0,
+            "r03": 0,
+            "r04": 0,
+            "s01": 0,
+            "s02": 0,
+            "w01": 0,
+            "w02": 0
+          }
+        }
+      ],
+      "per_run": [
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              true
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              true
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              true
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 30,
+            "exp_ops": 30,
+            "pred_hit": 32,
+            "pred_ops": 32
+          },
+          "gates": {},
+          "gates_n": {},
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 1.0,
+          "op_recall": 1.0,
+          "rows": 39,
+          "rows_ok": 39
+        },
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              false
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              true
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              false
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 17
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 6
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 28,
+            "exp_ops": 30,
+            "pred_hit": 30,
+            "pred_ops": 31
+          },
+          "gates": {
+            "value_wrong": [
+              "k05:ADD:plan"
+            ]
+          },
+          "gates_n": {
+            "value_wrong": 1
+          },
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 0.9677,
+          "op_recall": 0.9333,
+          "rows": 39,
+          "rows_ok": 37
+        },
+        {
+          "_per": [
+            [
+              "k01",
+              true
+            ],
+            [
+              "k02",
+              true
+            ],
+            [
+              "k03",
+              true
+            ],
+            [
+              "k04",
+              true
+            ],
+            [
+              "k05",
+              true
+            ],
+            [
+              "k06",
+              true
+            ],
+            [
+              "k07",
+              true
+            ],
+            [
+              "k08",
+              true
+            ],
+            [
+              "k09",
+              true
+            ],
+            [
+              "k10",
+              true
+            ],
+            [
+              "k11",
+              true
+            ],
+            [
+              "k12",
+              true
+            ],
+            [
+              "k13",
+              true
+            ],
+            [
+              "k14",
+              true
+            ],
+            [
+              "k15",
+              true
+            ],
+            [
+              "k16",
+              true
+            ],
+            [
+              "k17",
+              true
+            ],
+            [
+              "k18",
+              true
+            ],
+            [
+              "k19",
+              true
+            ],
+            [
+              "k20",
+              true
+            ],
+            [
+              "k21",
+              true
+            ],
+            [
+              "k22",
+              true
+            ],
+            [
+              "e01",
+              true
+            ],
+            [
+              "e02",
+              true
+            ],
+            [
+              "e03",
+              true
+            ],
+            [
+              "e04",
+              true
+            ],
+            [
+              "r01",
+              true
+            ],
+            [
+              "r02",
+              true
+            ],
+            [
+              "r03",
+              true
+            ],
+            [
+              "r04",
+              true
+            ],
+            [
+              "j01",
+              false
+            ],
+            [
+              "j02",
+              true
+            ],
+            [
+              "j03",
+              true
+            ],
+            [
+              "q01",
+              true
+            ],
+            [
+              "q02",
+              true
+            ],
+            [
+              "w01",
+              true
+            ],
+            [
+              "w02",
+              true
+            ],
+            [
+              "s01",
+              true
+            ],
+            [
+              "s02",
+              true
+            ]
+          ],
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 18
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 7
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 29,
+            "exp_ops": 30,
+            "pred_hit": 29,
+            "pred_ops": 29
+          },
+          "gates": {},
+          "gates_n": {},
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 1.0,
+          "op_recall": 0.9667,
+          "rows": 39,
+          "rows_ok": 38
+        }
+      ],
+      "prediction_hashes": {
+        "md5": "8b1d579155922387bd49249a7128b337",
+        "sha256": "7e40dfef3850de246a1300cfa34193e69665735c54b01f2f58fa69d89f8cab3d"
+      },
+      "prediction_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_turn_v05_pred_k3_2a41e14b_prompt-v0010.jsonl",
+      "prediction_rows": 117,
+      "recomputed_summary": {
+        "K": 3,
+        "eval_md5": "3372c065ac4008ea281e9bd603d94969",
+        "gates_n_per_run": [
+          {},
+          {
+            "value_wrong": 1
+          },
+          {}
+        ],
+        "majority_ok": 38,
+        "per_run_rows_ok": [
+          39,
+          37,
+          38
+        ],
+        "rows": 39,
+        "run0": {
+          "by": {
+            "op:ADD": {
+              "n": 19,
+              "ok": 19
+            },
+            "op:CONFIRM": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:CONTEST": {
+              "n": 1,
+              "ok": 1
+            },
+            "op:SUPERSEDE": {
+              "n": 5,
+              "ok": 5
+            },
+            "op:WITHDRAW": {
+              "n": 4,
+              "ok": 4
+            },
+            "subset:add": {
+              "n": 8,
+              "ok": 8
+            },
+            "subset:command": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:confirm": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:contam": {
+              "n": 7,
+              "ok": 7
+            },
+            "subset:contest": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:none": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:recall": {
+              "n": 2,
+              "ok": 2
+            },
+            "subset:role": {
+              "n": 3,
+              "ok": 3
+            },
+            "subset:sensitive": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:session": {
+              "n": 1,
+              "ok": 1
+            },
+            "subset:supersede": {
+              "n": 5,
+              "ok": 5
+            },
+            "subset:withdraw": {
+              "n": 4,
+              "ok": 4
+            }
+          },
+          "counts": {
+            "cmd_n": 39,
+            "cmd_ok": 39,
+            "exp_hit": 30,
+            "exp_ops": 30,
+            "pred_hit": 32,
+            "pred_ops": 32
+          },
+          "gates": {},
+          "gates_n": {},
+          "memory_command_acc": 1.0,
+          "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+          "op_precision": 1.0,
+          "op_recall": 1.0,
+          "rows": 39,
+          "rows_ok": 39
+        }
+      },
+      "rep_labels": [
+        0,
+        1,
+        2
+      ],
+      "saved_report_exact_json_equality": true,
+      "saved_report_hashes": {
+        "md5": "919df0c91ce99c466c3aa408af5f7cbb",
+        "sha256": "74b60e945029b22205d54edf02bccdab7807bc1d46342e9db389e44006dcd965"
+      },
+      "saved_report_path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_turn_v05_score_k3_2a41e14b.json",
+      "scorer_hashes": {
+        "md5": "cbc00827d526c5cf222b894cf9747e14",
+        "sha256": "5953d4a88fc387dcd3f032a19217c6307ef234742ca450576cc4c8a423ae2dc8"
+      },
+      "scorer_path": "memory/scripts/s6_memory_turn_eval.py",
+      "scorer_ref": "54e8c18f7600e2d0c94f76b5140ceb3aa499afe1",
+      "unique_ids": 39
+    }
+  }
+}

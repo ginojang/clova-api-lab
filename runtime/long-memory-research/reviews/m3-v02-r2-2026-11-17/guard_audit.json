@@ -1,0 +1,1476 @@
+{
+  "audit": "pure-function synthetic diagnostics only; no model/API/DB/runtime execution",
+  "source_repo": "ginojang/elda-resoner",
+  "source_old_sha": "fa6d99df6ddaf500aaeabd8fdb3ef1b83a6ed0d8",
+  "source_new_sha": "54e8c18f7600e2d0c94f76b5140ceb3aa499afe1",
+  "source_path": "memory/scripts/s6_memory_turn_eval.py",
+  "source_old_sha256": "cde7922f0d63a2b6fbe4c0497adfbe127aec2572924ed0a2365e7f524da961a7",
+  "source_new_sha256": "5953d4a88fc387dcd3f032a19217c6307ef234742ca450576cc4c8a423ae2dc8",
+  "execution_scope": "AST extracted only _vmatch/_match/score_rows; no module main/build/teeth/import executed",
+  "interpretation": "Diagnostic expectations are analyst-created, not human labels or official evaluation gold. Exact old K3 prediction files were not rescored. Guard retention is not overall scorer success.",
+  "cases": [
+    {
+      "id": "non_correction_substring",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "non_correction_substring",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "저희 카페 간판 문의드려요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "CONTEST",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "non_correction_substring",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "non_correction_substring:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "non_correction_substring",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "non_correction_substring:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "non_correction_substring",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "assistant_correction_source",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "assistant_correction_source",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "assistant",
+            "origin_kind": "elda",
+            "text": "이제 정정해 보세요"
+          },
+          {
+            "turn_index": 1,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "저희 카페 간판 문의드려요"
+          }
+        ],
+        "now_index": 1,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "CONTEST",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "assistant_correction_source",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 1,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "이제",
+              "n": 0
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "assistant_correction_source:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "assistant_correction_source",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "assistant_correction_source:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "assistant_correction_source",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "quoted_correction",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "quoted_correction",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "예문은 「이제 카페예요」입니다. 제 가게를 고치는 말은 아니에요."
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "quoted_correction",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "이제",
+              "n": 0
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "quoted_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "quoted_correction",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "quoted_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "quoted_correction",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "other_person_correction",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "other_person_correction",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "친구는 이제 카페를 해요. 제 공방은 그대로예요."
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "other_person_correction",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "이제",
+              "n": 0
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "other_person_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "other_person_correction",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "other_person_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "other_person_correction",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "negated_correction",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "negated_correction",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "이제 카페로 고친다는 뜻은 아니에요. 공방 그대로예요."
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "negated_correction",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "고친다는",
+              "n": 0
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "negated_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "negated_correction",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": null,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "negated_correction:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "negated_correction",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "nonexistent_occurrence_n",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "nonexistent_occurrence_n",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "이제 카페로 바꿨어요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "SUPERSEDE",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "nonexistent_occurrence_n",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit",
+            "correction_evidence": {
+              "turn_index": 0,
+              "t": "이제",
+              "n": 99
+            }
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 1.0,
+        "op_precision": 1.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 1,
+          "pred_ops": 1,
+          "pred_hit": 1,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:SUPERSEDE": {
+            "n": 1,
+            "ok": 1
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 1
+          }
+        },
+        "gates": {},
+        "gates_n": {},
+        "_per": [
+          [
+            "nonexistent_occurrence_n",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 1.0,
+        "op_precision": 1.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 1,
+          "pred_ops": 1,
+          "pred_hit": 1,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:SUPERSEDE": {
+            "n": 1,
+            "ok": 1
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 1
+          }
+        },
+        "gates": {},
+        "gates_n": {},
+        "_per": [
+          [
+            "nonexistent_occurrence_n",
+            true
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": false
+    },
+    {
+      "id": "same_prediction_post_guard_repair",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "same_prediction_post_guard_repair",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "저희 카페 간판 문의드려요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "CONTEST",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "same_prediction_post_guard_repair",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit"
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "same_prediction_post_guard_repair:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "same_prediction_post_guard_repair",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 1.0,
+        "op_precision": 1.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "downgraded_no_correction_evidence": 1,
+          "exp_ops": 1,
+          "exp_hit": 1,
+          "pred_ops": 1,
+          "pred_hit": 1,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 1
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 1
+          }
+        },
+        "gates": {},
+        "gates_n": {},
+        "_per": [
+          [
+            "same_prediction_post_guard_repair",
+            true
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": true
+    },
+    {
+      "id": "legitimate_old_prediction_without_new_field",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "legitimate_old_prediction_without_new_field",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "이제 카페로 바꿨어요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "SUPERSEDE",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "legitimate_old_prediction_without_new_field",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit"
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 1,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 1.0,
+        "op_precision": 1.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 1,
+          "pred_ops": 1,
+          "pred_hit": 1,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:SUPERSEDE": {
+            "n": 1,
+            "ok": 1
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 1
+          }
+        },
+        "gates": {},
+        "gates_n": {},
+        "_per": [
+          [
+            "legitimate_old_prediction_without_new_field",
+            true
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "downgraded_no_correction_evidence": 1,
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:SUPERSEDE": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "legitimate_old_prediction_without_new_field:CONTEST:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "legitimate_old_prediction_without_new_field",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": true
+    },
+    {
+      "id": "invalid_primary_evidence_not_rescued",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "invalid_primary_evidence_not_rescued",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "저희 카페 간판 문의드려요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "CONTEST",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "invalid_primary_evidence_not_rescued",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "m3",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "존재하지 않는 근거",
+              "n": 0
+            },
+            "why": "synthetic guard audit"
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "invalid_primary_evidence_not_rescued:SUPERSEDE:business"
+          ],
+          "not_verbatim": [
+            "invalid_primary_evidence_not_rescued"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1,
+          "not_verbatim": 1
+        },
+        "_per": [
+          [
+            "invalid_primary_evidence_not_rescued",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 1.0,
+        "op_precision": 1.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "downgraded_no_correction_evidence": 1,
+          "exp_ops": 1,
+          "exp_hit": 1,
+          "pred_ops": 1,
+          "pred_hit": 1,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 1
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "not_verbatim": [
+            "invalid_primary_evidence_not_rescued"
+          ]
+        },
+        "gates_n": {
+          "not_verbatim": 1
+        },
+        "_per": [
+          [
+            "invalid_primary_evidence_not_rescued",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": true
+    },
+    {
+      "id": "wrong_target_not_rescued",
+      "synthetic_fixture": true,
+      "official_gold": false,
+      "input": {
+        "id": "wrong_target_not_rescued",
+        "lang": "ko",
+        "subset": "audit",
+        "turns": [
+          {
+            "turn_index": 0,
+            "speaker": "user",
+            "origin_kind": "human",
+            "text": "저희 카페 간판 문의드려요"
+          }
+        ],
+        "now_index": 0,
+        "chat_memory": [
+          {
+            "id": "m3",
+            "slot": "business",
+            "value": "공방"
+          }
+        ],
+        "expect": {
+          "ops": [
+            {
+              "op": "CONTEST",
+              "slot": "business",
+              "target_id": "m3",
+              "value": "카페"
+            }
+          ],
+          "memory_command": null
+        }
+      },
+      "prediction": {
+        "id": "wrong_target_not_rescued",
+        "ops": [
+          {
+            "op": "SUPERSEDE",
+            "scope": "chat",
+            "kind": "fact",
+            "slot": "business",
+            "target_id": "wrong-target",
+            "new": {
+              "t": "카페",
+              "lifetime": "durable",
+              "sensitive": "none"
+            },
+            "evidence": {
+              "turn_index": 0,
+              "t": "카페",
+              "n": 0
+            },
+            "why": "synthetic guard audit"
+          }
+        ],
+        "memory_command": null,
+        "measured": true
+      },
+      "old_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "false_memory": [
+            "wrong_target_not_rescued:SUPERSEDE:business"
+          ]
+        },
+        "gates_n": {
+          "false_memory": 1
+        },
+        "_per": [
+          [
+            "wrong_target_not_rescued",
+            false
+          ]
+        ]
+      },
+      "new_score": {
+        "rows_ok": 0,
+        "rows": 1,
+        "note": "rows_ok 는 요약일 뿐 — 관문(gates_n)은 따로 읽는다 · 못 잰 줄(missing_pred·unmeasured)은 분모에 남는다",
+        "op_recall": 0.0,
+        "op_precision": 0.0,
+        "memory_command_acc": 1.0,
+        "counts": {
+          "downgraded_no_correction_evidence": 1,
+          "exp_ops": 1,
+          "exp_hit": 0,
+          "pred_ops": 1,
+          "pred_hit": 0,
+          "cmd_n": 1,
+          "cmd_ok": 1
+        },
+        "by": {
+          "op:CONTEST": {
+            "n": 1,
+            "ok": 0
+          },
+          "subset:audit": {
+            "n": 1,
+            "ok": 0
+          }
+        },
+        "gates": {
+          "value_wrong": [
+            "wrong_target_not_rescued:CONTEST:business"
+          ]
+        },
+        "gates_n": {
+          "value_wrong": 1
+        },
+        "_per": [
+          [
+            "wrong_target_not_rescued",
+            false
+          ]
+        ]
+      },
+      "prediction_unchanged": true,
+      "guard_downgraded": true
+    }
+  ],
+  "runtime_static_followup": {
+    "source_repo": "ginojang/GanpanAI",
+    "source_sha": "4449c90077221844cc833b2d2a2a0970fcd94ba7",
+    "source_path": "elda-orchestrator/src/core/eldacore/s6memory.ts",
+    "source_sha256": "b16deb1ce705f5904c76262735494e59d0a6893ae7af33c0f55bf52568db0e27",
+    "method": "read-only source review; runtime code was not executed; no API/DB/service calls",
+    "deployment_status": "owner reports dist prepared and waiting for next restart; not independently observed",
+    "differences_from_scorer": [
+      {
+        "lines": [
+          47,
+          55,
+          82,
+          92
+        ],
+        "finding": "Runtime validates primary evidence and value before downgrade; correction source must be a user turn with origin human/mixed and a literal matching span. Scorer accepts any speaker for correction source. The assistant-source synthetic counterexample is scorer-only."
+      },
+      {
+        "lines": [
+          38,
+          43
+        ],
+        "finding": "Runtime uses n but falls back to the first occurrence when a positive requested occurrence is missing; scorer ignores n entirely."
+      },
+      {
+        "lines": [
+          47,
+          55,
+          89,
+          92
+        ],
+        "finding": "Runtime still does not check whether the human span is a self-correction, rather than a quotation, another person, negation, or unrelated/older correction; no binding to primary evidence turn or target slot."
+      },
+      {
+        "lines": [
+          89,
+          94,
+          155,
+          160,
+          175
+        ],
+        "finding": "Runtime retains target/new on downgrade, returns downgraded markers in ops, but the visible SQL call forwards final op without correction span/downgrade fields; serving log records aggregate downgrade count."
+      }
+    ],
+    "batch_output_boundary": {
+      "path": "elda-orchestrator/src/tools/s6Batch.ts",
+      "lines": [
+        13,
+        15
+      ],
+      "finding": "Committed prediction ops are x.ops after harness checks; x.raw is not exported. Thus CONTEST with downgraded=0 is a post-check result, not a preserved raw model response."
+    },
+    "new_k3_scope": "Parent-reported downgrade 0 does not exercise the downgrade branch. This audit did not rescore new or old K3 files."
+  },
+  "contract_prompt_boundary": {
+    "source_sha": "54e8c18f7600e2d0c94f76b5140ceb3aa499afe1",
+    "contract": "memory/S6_MEMORY_CONTRACT_v0.md:32,78",
+    "prompt": "memory/prompts/s6_memory_chat_end_v0.md:34",
+    "finding": "Contract requires episode source S6=pass. New prompt says preserve episode work even when promises removed for fix/block/unknown, without limiting that work to a separately pass-rated source. Needs an explicit policy interpretation; no implementation was changed."
+  }
+}

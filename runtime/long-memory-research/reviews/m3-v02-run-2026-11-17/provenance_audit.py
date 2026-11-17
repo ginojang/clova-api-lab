@@ -5,6 +5,7 @@ Requires the pinned GanpanAI Git objects already fetched into this repository.
 Reads only measurement JSON/JSONL and named source files; no logs or services.
 Prints a JSON audit to stdout. Scores and sealed evaluation files are untouched.
 """
+import argparse
 import collections
 import hashlib
 import importlib.util
@@ -19,7 +20,7 @@ ADAPTER = "elda-orchestrator/src/tools/m3v02Run.ts"
 
 
 def blob(ref, path):
-    return subprocess.check_output(["git", "show", f"{ref}:{path}"], cwd=ROOT)
+    return subprocess.check_output(["git", "show", f"{ref}:{path}"], cwd=ROOT, stderr=subprocess.PIPE)
 
 
 def sha(data):
@@ -31,6 +32,12 @@ def read_json(name):
 
 
 def main():
+    global REF, BASE
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-commit", default=REF)
+    parser.add_argument("--source-prefix", default=BASE)
+    args = parser.parse_args()
+    REF, BASE = args.source_commit, args.source_prefix.rstrip("/") + "/"
     meta = read_json("run_meta.json")
     mapping = read_json("mapping.json")
     predictions = [json.loads(line) for line in blob(REF, BASE + "predictions.jsonl").splitlines() if line]
@@ -95,12 +102,22 @@ def main():
     runtime = meta["runtime_ref"].split("@", 1)[1]
     bundle = meta["bundle_ref"].split("@", 1)[1]
     adapter_checks = {}
+    runtime_available = True
     for name, ref in (("runtime", runtime), ("report_commit", REF)):
-        actual = sha(blob(ref, ADAPTER))
+        try:
+            actual = sha(blob(ref, ADAPTER))
+        except subprocess.CalledProcessError:
+            if name != "runtime":
+                raise
+            runtime_available = False
+            adapter_checks[name] = {"available": False, "matches_run_meta": None,
+                                    "reason": "runtime Git object/path unavailable locally"}
+            continue
         adapter_checks[name] = {"sha256": actual, "matches_run_meta": actual == meta["adapter_sha256"]}
     prompts = {}
+    prompt_ref = runtime if runtime_available else REF
     for prompt, expected in meta["prompts"].items():
-        actual = sha(blob(runtime, "elda-orchestrator/src/prompts/" + prompt + ".md"))
+        actual = sha(blob(prompt_ref, "elda-orchestrator/src/prompts/" + prompt + ".md"))
         prompts[prompt] = {"sha256": actual, "prefix_matches_run_meta": actual.startswith(expected)}
     scopes = collections.defaultdict(list)
     for synthetic, real in mapping["scope"].items():
@@ -131,6 +148,9 @@ def main():
             "No model API, database, gateway, production log, or runtime adapter was executed/read.",
         ],
     }
+    if not runtime_available:
+        result["prompts_source_ref"] = prompt_ref
+        result["limits"].append("Runtime commit is unavailable: prompt checks use the report tree; this is partial provenance, not runtime-ref verification.")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return int(not unblind_equal or bool(failures) or any(not x["matches_run_meta"] for x in adapter_checks.values())
                or any(not x["prefix_matches_run_meta"] for x in prompts.values()))

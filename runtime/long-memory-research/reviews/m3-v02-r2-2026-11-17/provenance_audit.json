@@ -1,0 +1,119 @@
+{
+  "source_commit": "89e0930274396589d16069a050b2a58be532f807",
+  "source_directory": "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/",
+  "run_id": "m3v02-orch-20261117-1eb72970",
+  "predictions": 68,
+  "unblind_exact_json_equality": true,
+  "checks": {
+    "evidence_files": 68,
+    "evidence_hash_matches": 68,
+    "capture_files": 68,
+    "capture_hash_matches": 68,
+    "capture_embedded_in_raw": 68,
+    "answer_matches_raw": 68,
+    "run_matches_meta": 68,
+    "capture_marked_complete": 68,
+    "raw_probe_matches_blind_id": 68
+  },
+  "failures": [],
+  "unreferenced_raw_files": [
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-03d6a957de0a64738f36.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-03d6a957de0a64738f36.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-1194d095fe58a84fb740.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-1194d095fe58a84fb740.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-2455a86e2bf70efa4827.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-2455a86e2bf70efa4827.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-3d88591c6f13c146bd0c.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-3d88591c6f13c146bd0c.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-47a8a9fe92918970d81b.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-47a8a9fe92918970d81b.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-612bbe271e74bde19db9.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-612bbe271e74bde19db9.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-64809b619e7c8b9b1246.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-64809b619e7c8b9b1246.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-6d7e7d12e37aa351ec51.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-6d7e7d12e37aa351ec51.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-bc55940dc14b5bdbd569.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-bc55940dc14b5bdbd569.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-ec338062336334072fbe.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-ec338062336334072fbe.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-ee538bbfbe0798c64dbf.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-ee538bbfbe0798c64dbf.request.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-f19c2f03fce3a1591871.json",
+    "elda-orchestrator/measurements/eldacore/m3v02_20261117_r2/raw/blind-target-f19c2f03fce3a1591871.request.json"
+  ],
+  "adapter": {
+    "runtime": {
+      "available": false,
+      "matches_run_meta": null,
+      "reason": "runtime Git object/path unavailable locally"
+    },
+    "report_commit": {
+      "sha256": "3c596cf6db7f03a352bf37188da712c517b9df6cbe89746bd7a17843d8a84ca2",
+      "matches_run_meta": true
+    }
+  },
+  "prompts": {
+    "eldacore/s6_memory_turn": {
+      "sha256": "0bffc80ccc63e6abe5ca3f0f84c11d4689f4b18fd0002ee6e966d8b934a627a2",
+      "prefix_matches_run_meta": true
+    },
+    "eldacore/s6_memory_chat_end": {
+      "sha256": "d9e02d9c8e8246a1eeb50c7199e8e4db49658711e2325f4a54f9d33b29019a6d",
+      "prefix_matches_run_meta": true
+    },
+    "harness/no_self_intro": {
+      "sha256": "b5d0cb47703f491bf1ecc6fdf668908f43cf25e9b297a21aee520b0cfcd7848f",
+      "prefix_matches_run_meta": true
+    },
+    "harness/serve_consult": {
+      "sha256": "59178de712226024fedc2ea781f00025a5db5717703c79c31c487b7fe4ee7504",
+      "prefix_matches_run_meta": true
+    }
+  },
+  "bundle_head_string_sha_matches": true,
+  "mapping": {
+    "synthetic_scopes": 34,
+    "distinct_real_scopes": 30,
+    "collision_group_sizes": [
+      3,
+      3
+    ]
+  },
+  "run_event_counts": {
+    "dev_up": 5,
+    "turn": 106,
+    "settle": 94,
+    "probe": 68,
+    "retry_turn": 4,
+    "forget": 4,
+    "attempt_resume": 2,
+    "fixture_s6": 18,
+    "queue_c": 6,
+    "release_c": 10,
+    "dev_down": 5,
+    "restart_worker": 4,
+    "probe_invalid": 12,
+    "pause": 2,
+    "resume": 2,
+    "finish_c": 14,
+    "attach_s6": 2,
+    "turn_notification_fixture": 10,
+    "advance_time": 4,
+    "trim_context": 2,
+    "job_lost": 3,
+    "scope_collision": 6,
+    "probe_skipped": 4,
+    "ltm_op_dump": 1,
+    "done": 1
+  },
+  "limits": [
+    "File integrity and projection consistency do not authenticate runtime execution.",
+    "Capture files contain adapter model messages, not an Elda CLI process capture.",
+    "dist_sha256 is reported, not independently rebuilt or matched to deployed binaries.",
+    "bundle_head_sha hashes the commit string, not the sealed bundle file manifest.",
+    "No model API, database, gateway, production log, or runtime adapter was executed/read.",
+    "Runtime commit is unavailable: prompt checks use the report tree; this is partial provenance, not runtime-ref verification."
+  ],
+  "prompts_source_ref": "89e0930274396589d16069a050b2a58be532f807"
+}
