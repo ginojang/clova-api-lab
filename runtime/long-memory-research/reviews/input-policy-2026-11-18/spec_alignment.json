@@ -1,0 +1,40 @@
+{
+  "verified_date": "2026-11-18",
+  "method": "Fixed Git document/commit diff only; no runtime, model, API, database or test execution",
+  "confirmation_comms": "ef9cf3345f",
+  "initial_interpretation_comms": "0131673236",
+  "contract_comms": "41e6abb475",
+  "spec": {
+    "repo": "ginojang/Elda-Spec",
+    "commit": "1b854263d4a14a864ad9e92074a19c9ae7fd0b6b",
+    "path": "harness/SPEC.md",
+    "sha256": "a425025cd55cd8ce3bd465735a785c882e41ccbf908327665c204492acab0ee4",
+    "version": "1.029",
+    "H70f_line": 238,
+    "H70f": "| H70f | **⛔ 손님 말을 전통 방식(낱말·형태소·글자 포함·정규식·사전 규칙·키워드 라우팅)으로 알아채거나 거르거나 갈래를 바꾸지 않는다 — 하나도 섞지 않는다**(사용자 09-16 · 11-18 「절대 전통적인 방식으로 예외처리 하나라도 하지마 · 조금이라도 섞지마」). 비상용·fallback·장애 때만·기본 off 문 뒤·「파일이 없으면 0」 꼴로도 길을 남기지 않는다. 손님 말 이해는 **모델 출력**(인코더·판정자·S1)으로만 하고, 모델이 실패하면 「모름·실패」를 값으로 다뤄 **정책**(닫기·열기·고정 대사·우리 출력에 고정 줄 붙이기)으로 처리한다. ✅ 허용 = **우리 출력**을 **우리 닫힌 목록**에 대는 것(forbid_surface · 답에 109·119 줄 확인 후 붙이기 · 도구 오류 코드). ✅ **출처 확인**(v1.029 · 클로버 6056d5b5e5) = **모델이 낸 인용**(근거 구간 · correction_evidence 등)이 원문에 **글자 그대로 있는지**만 보는 것 — 손님 말의 뜻을 읽지 않고 모델 출력의 주장을 검증하며, 어긋나면 그 모델 출력을 **버리거나 낮춘다**(not_verbatim · CONTEST 내림 — 여는 쪽으로는 쓰지 않는다). 손님 말에서 **새 신호를 만드는** 글자 대조(낱말 포함 → 판정·갈래)는 이 예외가 아니다. ✅ 사용자 확인 예외(11-18) = **저장 사본의 비밀 가림**(토큰·비밀번호 꼴 `***` — 손님 답·처리 갈래는 바꾸지 않고 남는 사본만) | 하네스 · 오케 · 각 서빙 길 주인 | 필수 | 사용자 09-16·11-18 · 울지마 ff3f328a21 |"
+  },
+  "contract": {
+    "repo": "ginojang/elda-resoner",
+    "commit": "273ce57f6f6cc1769a5fea5845e8fb1fad5f947a",
+    "parent": "95704b89e716439861d0bf87de045255af1e0146",
+    "path": "memory/S6_MEMORY_CONTRACT_v0.md",
+    "sha256": "dc9917527b224199f74424d09956cb29b197f3748901850cef61bc35fc210b41",
+    "version": "0.010",
+    "M0_line": 29,
+    "M0": "| M0 | **뜻 판정은 모델만 · 기계 글자 대조는 우리 출력의 출처 확인뿐**(v0.010) — 손님 말을 낱말·정규식·사전 규칙으로 해석하는 길(비상용·대비책 포함)을 두지 않는다 · 출처 확인 실패는 덮지 않는 쪽으로만 | 사용자 11-18 · 규칙이 모델 실패를 메우면 경계가 숨는다 |",
+    "version_note": "- v0.010 (11-18 · 사용자 「전통 방식 예외처리 하나라도 하지 마」 울지마 ff3f328a21 · 클로버 6056d5b5e5 범위 청구 · 사용자 확인) — **문구만 · 동작 불변**. 원칙 M0 을 더한다: 손님 말의 **뜻 판정은 모델만** 한다. 기계가 하는 글자 대조는 **우리 출력의 출처 확인**뿐이다 — 모델이 낸 `evidence`·`correction_evidence` 의 글이 그 턴 원문에 그대로 있는가(M2 · M5). 기계는 손님 말을 낱말 표·정규식·사전으로 읽어 연산을 만들거나 고르거나 뜻을 매기지 않는다. 출처 확인이 실패하면 **덮지 않는 쪽으로만** 움직인다(버림 · CONTEST 로 내림) — 글자로 새 판단을 메우지 않는다. 사용자 11-18 확인: 출처 확인은 허용.",
+    "changed_files_in_commit": [
+      "memory/S6_MEMORY_CONTRACT_v0.md"
+    ]
+  },
+  "aligned_boundary": {
+    "allowed": "Check only whether model-proposed evidence/correction_evidence occurs verbatim in its source; mismatch may discard/downgrade and must not create a permissive decision",
+    "forbidden": "Derive a new semantic signal/operation/route from customer words using lexical/regex/dictionary rules, including failure fallbacks",
+    "record_copy_masking": "H70f separately records user-confirmed exception for secrets in stored copies; it does not alter customer response or routing"
+  },
+  "limits": [
+    "Document alignment and confirmation receipt are verified; this is not a live compliance/deployment audit",
+    "Source-span presence does not establish correction meaning, factual truth, or did content/source entailment",
+    "Frozen M3 gold/results and old unknowns remain unchanged"
+  ]
+}
