@@ -1,0 +1,42 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "64c97fee82",
+  "repository": "ginojang/elda-resoner",
+  "commit": "7fbabd427105aee0774f4f2d4758db5ec3f04a12",
+  "parent": "273ce57f6f6cc1769a5fea5845e8fb1fad5f947a",
+  "changed_files": [
+    "memory/REFERENT_DESIGN_v0.md"
+  ],
+  "diff_numstat": "2\t0\tmemory/REFERENT_DESIGN_v0.md",
+  "withdrawal": {
+    "path": "memory/REFERENT_DESIGN_v0.md",
+    "line": 3,
+    "text": "> ⛔ **철회 (2026-11-18 · 사용자 「전통 방식 예외처리 하나라도 하지 마」 · 울지마 ff3f328a21 · 클로버 b372e989ee)** — §4.3 되짚기(손님 어절 창을 조사·값 변형 집합에 대 읽기 모델이 안 낸 항목을 채움)와 조립의 글자 규칙(조사 벗기기·크기/예산/월 값 규칙)은 손님 말에서 새 신호를 만드는 글자 대조라 **금지 범위**다. 서빙 길에서 뺀다(오케 몫). 대체는 규칙이 아니라 모델 길(S6-memory T·C · 계약 v0.010 M0)이다. 이 문서는 기록으로만 남긴다.",
+    "sha256": "335b5342c44c5433ac6155228cdca38182779e1f863435b0864980da705099c6",
+    "only_notice_and_blank_line_added": true,
+    "previous_design_body_preserved": true
+  },
+  "contract": {
+    "path": "memory/S6_MEMORY_CONTRACT_v0.md",
+    "comparison_commit": "273ce57f6f6cc1769a5fea5845e8fb1fad5f947a",
+    "identical_to_confirmed_v0010": true,
+    "sha256": "dc9917527b224199f74424d09956cb29b197f3748901850cef61bc35fc210b41"
+  },
+  "states": {
+    "design_withdrawal": "confirmed_in_committed_document",
+    "reasoner_code_changed_in_this_commit": false,
+    "prompts_or_evals_changed_in_this_commit": false,
+    "orchestrator_last_audited_commit": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+    "orchestrator_removal": "not_verified_after_7d0aa049",
+    "s6_replacement_wiring": "not_established_by_design_withdrawal",
+    "coverage_removal": "independent_open_followup",
+    "live_restart_or_quality_measurement": "not_verified"
+  },
+  "execution": {
+    "models": 0,
+    "internal_gateway": 0,
+    "db_or_live_service_access": false,
+    "target_code_executed": false,
+    "frozen_m3_modified": false
+  }
+}

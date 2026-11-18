@@ -1,0 +1,45 @@
+{
+  "review_date": "2026-11-18",
+  "repository": "ginojang/GanpanAI",
+  "baseline": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+  "target": "25b7bd5f6432e5887ca381cfbefedc6ea4e5abb4",
+  "target_parent_matches_baseline": true,
+  "overall_diff": {"files": 4, "insertions": 10, "deletions": 214},
+  "memory_review_diff": {"files": 3, "insertions": 9, "deletions": 206},
+  "method": "static_git_object_diff_and_callsite_review",
+  "model_api_gateway_db_service_log_access": 0,
+  "target_builds_tests_or_experiments_executed": 0,
+  "callback_implementation_removed": true,
+  "callback_assembly_call_removed": true,
+  "particle_and_final_consonant_rules_removed": true,
+  "size_budget_month_rules_removed": true,
+  "callback_gate_file_removed": true,
+  "legacy_assembly_itself_removed": false,
+  "memory_assembly_callback_array": "constant_empty_local_array",
+  "assembly_anchors": ["core/assemble.ts:19", "core/assemble.ts:131", "core/assemble.ts:133", "core/assemble.ts:160"],
+  "remaining_normalization": {
+    "verbatim": false,
+    "whitespace_only": false,
+    "operations": ["NFC", "trim", "strip_edge_quotes_and_punctuation", "join_whitespace_separated_parts_without_spaces"],
+    "anchors": ["core/referent.ts:27", "core/referent.ts:28", "core/referent.ts:37", "core/referent.ts:59", "core/referent.ts:84"],
+    "interpretation": "normalized_model_selected_span_reference_mapping_not_verbatim_source_presence_check",
+    "automatically_classified_as_new_prohibited_semantic_rule": false
+  },
+  "reference_rebuild": {
+    "uses_current_variants_on_stored_spans": true,
+    "mismatch_logs_then_returns_ok_true": true,
+    "anchors": ["core/memoryReplay.ts:270", "core/memoryReplay.ts:275", "core/memoryReplay.ts:300", "core/memoryReplay.ts:313", "core/memoryReplay.ts:314", "core/k0.ts:237"],
+    "production_mismatch_or_damage_observed": false
+  },
+  "static_test_contract_conflicts": [
+    {"path": "tools/assembleGate.ts", "lines": [117, 144, 149, 151], "conflict": "requires_recovered_callback_rows_greater_than_zero_but_assembly_callbacks_are_empty"},
+    {"path": "tools/refGate.ts", "lines": [122, 128, 134, 136], "conflict": "expects_removed_particle_budget_month_equivalences"}
+  ],
+  "dangling_deleted_symbol_import_found_in_searched_src": false,
+  "build_success_verified": false,
+  "s6_replacement_wiring_added_in_this_diff": false,
+  "s6_replacement_verified": false,
+  "runtime_restart_or_execution_verified": false,
+  "coverage_scope": "reviewed_separately_by_parent",
+  "limitations": ["fixed_source_only", "not_an_all_repository_zero_rules_proof", "old_test_expectation_conflicts_are_static_findings_not_executed_failures", "normalization_and_reference_compatibility_need_owner_followup"]
+}

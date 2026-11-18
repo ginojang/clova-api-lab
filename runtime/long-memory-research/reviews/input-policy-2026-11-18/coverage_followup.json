@@ -1,0 +1,99 @@
+{
+  "review_date": "2026-11-18",
+  "comms": "92184c0966",
+  "repository": "ginojang/GanpanAI",
+  "base": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+  "target": "25b7bd5f6432e5887ca381cfbefedc6ea4e5abb4",
+  "changes": [
+    {
+      "path": "elda-orchestrator/src/core/assemble.ts",
+      "added": 4,
+      "deleted": 2
+    },
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "added": 1,
+      "deleted": 8
+    },
+    {
+      "path": "elda-orchestrator/src/core/referent.ts",
+      "added": 5,
+      "deleted": 96
+    },
+    {
+      "path": "elda-orchestrator/src/tools/callbackGate.ts",
+      "added": 0,
+      "deleted": 108
+    }
+  ],
+  "files": [
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "sha256": "f38ffa515885961dbbcd2c3e20d4f438e30eb714057727fc328ce40f5e379d76",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/referent.ts",
+      "sha256": "bb58a5324c50413d7a8ec54e1d92f40304c80f758ae1172413656fbb3737c6e2",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/assemble.ts",
+      "sha256": "7b58b92c94ca4942d45b1d2e71a4629b6f8ef52765d338b16254f517863e88a3",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "sha256": "e8b6c19571d5eb3ceec6d580115eef2440183e183f5fde4bd98d3fe61b42cf4d",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/judge.ts",
+      "sha256": "8c08ed8f89fc5a96857cce41dd8f3db036c91d3d37e43881769d5eee83a55e63",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/promptAsset.ts",
+      "sha256": "54b4cb83179ce19940fd8428caf85c97e8c8dc9e20196bbbd794e824c865d168",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryTurn.ts",
+      "sha256": "50b8ef6b57156913c5c3334c24a4d76a1b7882c100c1ab87678a1c6d63fd21a8",
+      "unchanged_from_previous_review": true
+    }
+  ],
+  "static_observation": {
+    "looseHit_deleted": true,
+    "loose_array_never_populated": true,
+    "looseN_remains_zero_not_null": true,
+    "chat_passes_looseN_when_answer_present": true,
+    "retrievalCase_with_positive_entity_count_and_known_rag_and_answer": "labeled_if_ragHits_positive_else_labeled_no_asset",
+    "partial_no_net_unreachable_via_this_caller_after_removal": true,
+    "retained_strict_match": "customer_unlabeled_word_len_at_least_3_in_generated_answer_no_suffix_cut",
+    "strict_match_consumers_reviewed": "post_answer_measurement_and_serving_log_not_answer_control",
+    "strict_match_equivalent_to_verbatim_model_citation_validation": false
+  },
+  "judge_assets": {
+    "owner_report": "local prompt assets deployed; remote registration unnecessary",
+    "local_direct_path": "local prompt body is sent to model; separate door registration not required",
+    "door_path": "only ask/text/cid sent; local body not sent",
+    "active_path_observed": false,
+    "prompt_loader_location_observed": false,
+    "restart_verified": false,
+    "prior_source_analysis_applies": "judge/router/promptAsset unchanged"
+  },
+  "followups": [
+    "represent_retired_loose_measurement_as_null_or_explicit_unmeasured_and_update_retrievalCase_consumers",
+    "keep_strict_literal_overlap_distinct_from_semantic_recall_or_citation_truth",
+    "needs_map_unknown_no_off_observation",
+    "wants_image_call_scope_documentation"
+  ],
+  "execution": {
+    "target_code_executed": false,
+    "model_calls": 0,
+    "gateway_calls": 0,
+    "db_or_live_service_access": false,
+    "source_only": true
+  }
+}
