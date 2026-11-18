@@ -1,0 +1,162 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "53fe0fa7e4",
+  "repository": "ginojang/GanpanAI",
+  "base": "25b7bd5f6432e5887ca381cfbefedc6ea4e5abb4",
+  "target": "ed1fdd618ac20c4106e812f7c32214d46533bc81",
+  "parent_equals_base": true,
+  "changes": [
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "added": 5,
+      "deleted": 4,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryTurn.ts",
+      "added": 2,
+      "deleted": 2,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/servingLog.ts",
+      "added": 2,
+      "deleted": 2,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "added": 3,
+      "deleted": 3,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/tools/assembleGate.ts",
+      "added": 7,
+      "deleted": 5,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/tools/k0ServingGate.ts",
+      "added": 2,
+      "deleted": 3,
+      "git_treats_as_binary": false
+    },
+    {
+      "path": "elda-orchestrator/src/tools/refGate.ts",
+      "added": null,
+      "deleted": null,
+      "git_treats_as_binary": true
+    }
+  ],
+  "binary_diff_note": "refGate.ts source read via git show and git diff --text; numstat excludes its line counts",
+  "file_fingerprints": [
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "sha256": "8ab50b57ff737c762e57f94d3778ff4d4fd1d845d9b2fcc14f510b2cf33853a9",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "sha256": "0d0bf5a5208d6cc7c0656e5fed1f32c23dedc4a3aff3cb2a11f6d27632dcb1cc",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryTurn.ts",
+      "sha256": "cd28c43ffd793eb1800866a8ee8d58070539ca3f62063218f16d9aad75d24bc1",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/servingLog.ts",
+      "sha256": "ab192b38d3c91bb2239b4d26abb0dd8ca253419236f2492feaa59479bfdd777d",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/tools/k0ServingGate.ts",
+      "sha256": "445a034c38d91fb5535a6582bb3b3bcb1ff8767f740188b00abebfea401cfe68",
+      "unchanged_from_previous_review": false
+    },
+    {
+      "path": "elda-orchestrator/src/tools/refcaseDiff.ts",
+      "sha256": "f8ecf92b66932604527fc04198c98e5bd29e12bcff2c4a0058fa8c64c5f32284",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryReplay.ts",
+      "sha256": "d33361efea41f3f4d4dca92672d16fdb9917713f4c7f94793146ed24369a6cd8",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/k0.ts",
+      "sha256": "5e1c4e0a1ef62cecafc8832acb58a3c3b603d1d51815fc36c639627a35dd64ff",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/dialectRender.ts",
+      "sha256": "3ef73dbd83c839a0843193cdc2c1a41c060e2a9017ddd3acc6ec28fb84dcde60",
+      "unchanged_from_previous_review": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/referent.ts",
+      "sha256": "bb58a5324c50413d7a8ec54e1d92f40304c80f758ae1172413656fbb3737c6e2",
+      "unchanged_from_previous_review": true
+    }
+  ],
+  "closure": {
+    "serving_loose_fields_null": "confirmed in both return branches, chat payload, FinishArgs and ServingLogArgs",
+    "retrievalCase_for_nonzero_entities": "null selects unmeasured; no false labeled claim from retired metric",
+    "retrievalCase_for_zero_entities": "saved_by_embed/none_found remain independent of retired metric",
+    "strict_literal_overlap_logic": "unchanged",
+    "variants_description": "corrected in Comms; referent.ts itself unchanged"
+  },
+  "remaining_consumption_issue": {
+    "path": "elda-orchestrator/src/tools/refcaseDiff.ts",
+    "lines": [
+      40,
+      69,
+      70,
+      79,
+      80,
+      81,
+      89,
+      93
+    ],
+    "null_conversion": "Number(c.unlabeled_loose ?? 0)",
+    "aggregate_condition": "only strict count n nonnull required; loose sums use non-null assertion",
+    "meaning": "retired loose observation can be included as measured zero and described as improvement",
+    "runtime_or_report_generation_observed": false,
+    "requested_fix": "preserve each field null, separate strict/loose measured-pair denominators and retired metric status"
+  },
+  "reference_compatibility": {
+    "policy_change_explanation": "valid possible cause of numbering differences",
+    "stored_numbers_consumed_by": [
+      "memoryReplay.ts:167 renderAll",
+      "dialectRender.ts:173-189 stored thing_ref/value_ref"
+    ],
+    "new_numbers_consumed_by": [
+      "k0.ts:235-238 rebuild/assign",
+      "k0.ts:162 regionRef query",
+      "memoryTurn.ts:196-198 assembly"
+    ],
+    "mismatch_handling": "memoryReplay.ts:269-275 warning then ok:true",
+    "compatibility_established": false,
+    "actual_corruption_observed": false,
+    "vm_item_receipt_number_distinct_from_referent_number": true
+  },
+  "other_open_followups": [
+    "gate sensitivity: per-event identity, all callback absence, current-policy ref invariants",
+    "needs_map unknown/no/off observation",
+    "wants_image call scope description",
+    "live restart and actual chosen asset path"
+  ],
+  "execution": {
+    "source_audit_only": true,
+    "models": 0,
+    "gateway": 0,
+    "db_or_live_service_access": false,
+    "actual_customer_logs_read": false,
+    "target_builds_or_tests_executed": false,
+    "owner_two_GREEN_runs_independently_reexecuted": false,
+    "frozen_m3_modified": false
+  }
+}

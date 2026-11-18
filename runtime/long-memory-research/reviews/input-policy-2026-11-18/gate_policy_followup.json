@@ -1,0 +1,49 @@
+{
+  "review_date": "2026-11-18",
+  "repository": "ginojang/GanpanAI",
+  "baseline": "25b7bd5f6432e5887ca381cfbefedc6ea4e5abb4",
+  "target": "ed1fdd618ac20c4106e812f7c32214d46533bc81",
+  "target_parent_matches_baseline": true,
+  "scope": ["elda-orchestrator/src/tools/refGate.ts", "elda-orchestrator/src/tools/assembleGate.ts", "elda-orchestrator/src/core/referent.ts"],
+  "method": "static_git_object_diff_text_and_source_review",
+  "target_tests_builds_or_experiments_executed": 0,
+  "model_api_gateway_db_service_or_customer_log_access": 0,
+  "green_claim": {"source": "owner_comms_53fe0fa7e4", "status": "reported_not_independently_executed"},
+  "frozen_data_changed_in_diff": false,
+  "prior_results_modified_by_this_review": false,
+  "policy_pairs": {"total": 18, "same_to_split_changes": 9, "target_same": 1, "target_split": 17},
+  "old_gold_reference_differences": "still_computed_logged_but_not_a_direct_green_requirement",
+  "retained_constraints": ["frozen_data_hash_checks", "ref_fixture_item_count", "ref_gold_same_diff_denominators", "exact_and_merge_all_control_mismatch_counts", "18_policy_pairs", "assembly_row_count", "assembly_value_spans", "assembly_state_and_vm_field_limits", "tool_attachment_and_absence"],
+  "findings": [
+    {
+      "id": "G1",
+      "kind": "aggregate_count_comparison_is_not_event_partition_equivalence",
+      "anchors": ["tools/refGate.ts:78", "tools/refGate.ts:106", "tools/refGate.ts:117", "tools/refGate.ts:163"],
+      "observed_condition": "r1.mismatch === r2.mismatch",
+      "missing_check": "event_level_output_or_partition_equivalence",
+      "current_reference_implementation_failure_observed": false
+    },
+    {
+      "id": "G2",
+      "kind": "exact_recovery_zero_does_not_require_all_callback_rows_zero",
+      "anchors": ["tools/assembleGate.ts:76", "tools/assembleGate.ts:117", "tools/assembleGate.ts:120", "tools/assembleGate.ts:151"],
+      "not_required_by_green": ["oldSurface === 0", "cbRows === 0", "all_drop_case_callbacks_empty"],
+      "callback_reintroduced_in_current_assembly": false
+    },
+    {
+      "id": "G3",
+      "kind": "reference_check_removed_without_new_assembly_reference_contract_check",
+      "anchors": ["tools/assembleGate.ts:62", "tools/assembleGate.ts:140", "tools/assembleGate.ts:151"],
+      "missing_check": "new_policy_reference_presence_and_correct_assembly_mapping",
+      "production_reference_damage_observed": false
+    }
+  ],
+  "referent_blob_baseline_and_target": "0acd5c796c85c04352b975461d0cf54c7192b0e9",
+  "assemble_blob_baseline_and_target": "7affcb6ef6d0e89cebcb8f5002f8b8881895de1b",
+  "variants_source_comment_corrected": false,
+  "variants_operations": ["NFC", "trim", "strip_edge_quotes_and_punctuation", "remove_whitespace"],
+  "exact_control_operations": ["remove_whitespace"],
+  "gate_purpose_direction": "consistent_with_withdrawn_lexical_policy",
+  "gate_coverage_sufficient_for_full_claim": false,
+  "limitations": ["static_review_only", "not_an_independent_green_or_red_test_result", "coverage_changes_reviewed_separately", "no_operational_state_or_memory_damage_inference"]
+}
