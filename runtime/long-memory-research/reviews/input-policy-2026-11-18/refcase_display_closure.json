@@ -1,0 +1,46 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "8bd7989199",
+  "repository": "ginojang/GanpanAI",
+  "base": "27f42ec569378c35e42dbed74028f5630e14c853",
+  "target": "d499f05111d944431c499e9f763a593b7ea1707e",
+  "changed_files": [
+    "elda-orchestrator/src/tools/refcaseDiff.ts"
+  ],
+  "numstat": "3\t2\telda-orchestrator/src/tools/refcaseDiff.ts",
+  "source_sha256": "4328e266750d4aec762d1515353f7b09658562270a3391b6d2f375dd84795fa1",
+  "closed_findings": {
+    "measured_to_unmeasured_row_display": {
+      "line": 83,
+      "condition": "cg.loose !== null && cn.loose === null",
+      "result": "adds a measurement-to-unmeasured marker before identical fallback",
+      "status": "closed_in_source"
+    },
+    "loose_denominator_scope": {
+      "lines": [
+        94,
+        95
+      ],
+      "actual_scope": "loosePairs + looseUnmeasured = covPairs",
+      "printed_scope": "strict-valid pair subset / among strict-valid pairs",
+      "resolution": "explicitly label existing subset; no new independent aggregation claimed",
+      "status": "closed_in_source"
+    }
+  },
+  "prior_null_preservation_and_sums": "unchanged from 27f42ec5",
+  "scope": "two requested refcase display fixes only; no new general schema or other-axis review",
+  "still_open": [
+    "new policy gate strengthening",
+    "stored reference to new query/write reference compatibility",
+    "needs_map unknown/no/off observation",
+    "wants_image call scope description",
+    "live restart and chosen asset path verification"
+  ],
+  "execution": {
+    "target_tool_or_service_executed": false,
+    "models_or_gateway_calls": 0,
+    "db_or_customer_logs_accessed": false,
+    "independent_static_review": true,
+    "frozen_m3_changed": false
+  }
+}
