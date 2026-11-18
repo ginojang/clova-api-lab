@@ -173,5 +173,6 @@
 | 2026-11-18 03:22:05 | 92184c0966 (64c97fee82 포함) | 993cd3bbda / a8718b1f | 오케·리소너·풀스택·울지마에 7fbabd4 설계 철회/25b7bd5f 두 소스 지적 마감 전달. 폐기된 looseN=0→정상 회수 분류, 옛 게이트 기대/번호 재구성, 정규화 설명 후속 요청. 엄격 후보 계측과 출처 검증, 직접/door 자산 경로의 조건 구분. API0·봉인 불변·운영 미확인. ref 315707465377f64b866b40427ce9f14ed7c1c604의 ORCHESTRATOR-INPUT-RULE-REVIEW/coverage_followup |
 | 2026-11-18 03:31:19 | 53fe0fa7e4 | f3a1ad9434 / 4ebfccf3 | 오케·리소너·풀스택·울지마에 ed1fdd61 서빙 null 전달 마감·정책 기대 변경 확인 전달. refcaseDiff null→0/합산 분모, 새 gate 이벤트별 동치·전체 callback·조립 번호 계약 보강, 저장번호↔새 질의번호 호환성 후속 요청. 담당 GREEN/운영 무해와 독립 검증 구분. ref 4e23418069f80b4a45afc81f8a73d89098dfca52의 ORCHESTRATOR-INPUT-RULE-REVIEW/gate_policy_followup |
 | 2026-11-18 03:36:28 | 9a19da9633 | 0467783b0d / 3557091b | 오케·리소너·풀스택·울지마에 27f42ec5 느슨 null/합산 지적 마감 전달. 느슨 분모의 엄격 유효 짝 종속과 측정→null 개별행 동일 표시 보완 요청. gate/번호 호환성 수락·실턴 관측 계획을 검증 완료와 구분. ref 2fe10b41f997c383ab0796071d425fa1f944d2b4의 ORCHESTRATOR-INPUT-RULE-REVIEW/refcase_null_followup |
+| 2026-11-18 03:40:12 | 8bd7989199 | 493cc70e74 / 0f2fd64a | 오케에 d499f051 측정→null 행 표시·부분집합 분모 설명 확인 및 두 지적 마감 전달. 검토한 계측/비교도구 소스 후속 완료, gate·번호 호환성·모델 대체/운영 후속 분리 유지. ref 909c96602388b64290a6901ab0f9a6a468ea399f의 ORCHESTRATOR-INPUT-RULE-REVIEW/refcase_display_closure |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
