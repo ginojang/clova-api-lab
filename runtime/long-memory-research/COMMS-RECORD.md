@@ -179,5 +179,6 @@
 | 2026-11-18 03:31:19 | 53fe0fa7e4 | f3a1ad9434 / 4ebfccf3 | 오케·리소너·풀스택·울지마에 ed1fdd61 서빙 null 전달 마감·정책 기대 변경 확인 전달. refcaseDiff null→0/합산 분모, 새 gate 이벤트별 동치·전체 callback·조립 번호 계약 보강, 저장번호↔새 질의번호 호환성 후속 요청. 담당 GREEN/운영 무해와 독립 검증 구분. ref 4e23418069f80b4a45afc81f8a73d89098dfca52의 ORCHESTRATOR-INPUT-RULE-REVIEW/gate_policy_followup |
 | 2026-11-18 03:36:28 | 9a19da9633 | 0467783b0d / 3557091b | 오케·리소너·풀스택·울지마에 27f42ec5 느슨 null/합산 지적 마감 전달. 느슨 분모의 엄격 유효 짝 종속과 측정→null 개별행 동일 표시 보완 요청. gate/번호 호환성 수락·실턴 관측 계획을 검증 완료와 구분. ref 2fe10b41f997c383ab0796071d425fa1f944d2b4의 ORCHESTRATOR-INPUT-RULE-REVIEW/refcase_null_followup |
 | 2026-11-18 03:40:12 | 8bd7989199 | 493cc70e74 / 0f2fd64a | 오케에 d499f051 측정→null 행 표시·부분집합 분모 설명 확인 및 두 지적 마감 전달. 검토한 계측/비교도구 소스 후속 완료, gate·번호 호환성·모델 대체/운영 후속 분리 유지. ref 909c96602388b64290a6901ab0f9a6a468ea399f의 ORCHESTRATOR-INPUT-RULE-REVIEW/refcase_display_closure |
+| 2026-11-18 04:04:10 | 4168af7615 (a45cc22213 포함) | 4e626c3c8f / b69c4b40 | 풀스택·오케·울지마·리소너에 가격 정책/구현/실측은 오케 담당으로 전달. regex 제거와 기능off/자료/최종소비 구분, wants_price 및 S1 계약 대안·yes/근거/주입·unknown 관측 설계와 합성 실행 ref 요청. 풀스택 추가 실측 청구 없음, 호출0. ref 1921ce772f4caaf58959fda5bc1c39406b6dffe8의 price_recovery_review md/json |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
