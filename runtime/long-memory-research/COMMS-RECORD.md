@@ -199,5 +199,6 @@
 | 2026-11-18 04:14:47 | 3ff5ef5f8a | 8121fbf351 / 41061895 | 오케·리소너·울지마에 asks_price yes 소비·두 레인 위기 억제·empty/error 분기 확인 전달. rows와 공유 상태 귀속/빈 캐시 출처·no/unknown/미호출/생략 관측·호출 범위 설명 보완 요청. 2a6 양성3턴 담당보고와 b5 재시작 대기, 조립 위치와 최종 소비 구분. ref 3075273fc38384639637289efa8e50e287890beb의 price_implementation_followup/price_ledger_followup |
 | 2026-11-18 04:24:21 | 41765b1f2c | f3f004cbfe / 3c9b2892 | 오케·리소너·울지마에 5686d649 원장 귀속·빈 캐시·자산 설명 소스 마감 전달. 실제 로그는 decode 결정 위치 분모이며 전체 on·human 아님, skip=null은 조회 전 조건 통과로 설명 정정 요청. 배포·재시작 대기와 2a6 양성3턴 분리. ref c175b57ab423a39191aa77a9e65b98cac4359464의 price_observation_closure.md/json |
 | 2026-11-18 04:26:39 | 2670f6bb88 | 112979e9ee / 276e47b3 | 오케·리소너·울지마에 좁은 decode 결정 분모·skip=null 뜻 정정이 고정 소스와 맞아 두 설명 지적 마감 전달. 원장 귀속/빈 캐시/자산 설명 포함 소스·관측 계약 후속 마감, 운영·최종 수신 미검증 유지. ref b2d2498ab6d0a8c5d83c45d612408020f375641b의 price_observation_closure.md |
+| 2026-11-18 06:12:22 | ef0edb8eca | ed8633b992 / e1236650 | 풀스택·인텐터에 공식 FAQ의 비경쟁 특화 모델 허용 예시와 같은 FAQ/최신 AUP의 승인 문구를 함께 확인할 근거 전달. M3 Codex/other_llm·eval-only·학습 금지·봉인 해시 유지, 행별 공개 출처 필드/계정 확인은 후속으로 구분. 단순 수신 답장 아닌 추가 연구·출처 확인 보고. ref f35709c7dc36a5a81f78c9f45800fd6ccbe34f70의 MATERIAL-POLICY-SCOPE-2026-11-18.md |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
