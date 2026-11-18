@@ -53,33 +53,6 @@
     "PJ01_asset_launch_scope_explanation"
   ],
   "partial_closure": "PJ02_no_unknown_skip_observed_in_decode_decision_logger_scope_only",
-  "remaining": [
-    {
-      "id": "PD01",
-      "finding": "whole_enabled_human_denominator_not_covered",
-      "anchors": [
-        "router/v1_0/chat.ts:400-411",
-        "router/v1_0/chat.ts:1249-1296",
-        "router/v1_0/chat.ts:1319-1329"
-      ],
-      "actual_scope": "enabled human turns reaching decode price-decision logger",
-      "options": [
-        "document_actual_denominator",
-        "connect_all_eligible_route_ends_to_price_decision_record"
-      ]
-    },
-    {
-      "id": "PD02",
-      "finding": "null_skip_does_not_mean_injected",
-      "anchor": "router/v1_0/chat.ts:1322-1329",
-      "meaning": "pre_ledger_conditions_passed",
-      "counterexamples": [
-        "ledger_empty_or_error_then_built_false",
-        "built_true_but_care_suppressed"
-      ],
-      "assembled_into_is_final_model_receipt": false
-    }
-  ],
   "asks_price_asset": {
     "md5_8": "3463fd25",
     "instruction_lines_4_to_7_unchanged": true,
@@ -108,5 +81,46 @@
   "details": [
     "price_ledger_closure.json",
     "price_decision_followup.json"
-  ]
+  ],
+  "findings_before_owner_contract_correction": [
+    {
+      "id": "PD01",
+      "finding": "whole_enabled_human_denominator_not_covered",
+      "anchors": [
+        "router/v1_0/chat.ts:400-411",
+        "router/v1_0/chat.ts:1249-1296",
+        "router/v1_0/chat.ts:1319-1329"
+      ],
+      "actual_scope": "enabled human turns reaching decode price-decision logger",
+      "options": [
+        "document_actual_denominator",
+        "connect_all_eligible_route_ends_to_price_decision_record"
+      ]
+    },
+    {
+      "id": "PD02",
+      "finding": "null_skip_does_not_mean_injected",
+      "anchor": "router/v1_0/chat.ts:1322-1329",
+      "meaning": "pre_ledger_conditions_passed",
+      "counterexamples": [
+        "ledger_empty_or_error_then_built_false",
+        "built_true_but_care_suppressed"
+      ],
+      "assembled_into_is_final_model_receipt": false
+    }
+  ],
+  "remaining_observation_contract_findings": [],
+  "contract_closure": {
+    "comms": "2670f6bb88",
+    "reported_time_utc": "2026-11-18 04:24",
+    "code_changed": false,
+    "denominator": "enabled human turns reaching decode price decision location; aggregate successfully recorded events",
+    "whole_enabled_human_denominator_currently_required": false,
+    "skip_null": "pre_ledger_conditions_passed",
+    "owner_corrections_match_pinned_source": true,
+    "PD01": "closed_by_explicit_narrow_denominator_contract",
+    "PD02": "closed_by_corrected_null_skip_meaning",
+    "final_model_receipt_independently_verified": false,
+    "restart_or_runtime_validation_newly_verified": false
+  }
 }
