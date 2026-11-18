@@ -1,0 +1,55 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "9a19da9633",
+  "repository": "ginojang/GanpanAI",
+  "base": "ed1fdd618ac20c4106e812f7c32214d46533bc81",
+  "target": "27f42ec569378c35e42dbed74028f5630e14c853",
+  "changed_files": [
+    "elda-orchestrator/src/tools/refcaseDiff.ts"
+  ],
+  "numstat": "10\t5\telda-orchestrator/src/tools/refcaseDiff.ts",
+  "source_sha256": "3629928b44534d7bbc81571abf308758a19abc34a8557b2b527ef3c5a69c6366",
+  "confirmed": {
+    "loose_null_or_missing": "preserved as null",
+    "measured_loose_zero": "remains numeric zero",
+    "loose_sums": "only when both loose fields are nonnull",
+    "strict_and_loose_sums": "separate accumulators and printed paired counts",
+    "printed_decrease_means_improvement_claim": "removed; retired measurements excluded from improvement/worsening interpretation",
+    "scope": "offline comparison tool only; no serving source change"
+  },
+  "remaining_denominator_scope": {
+    "condition": "loosePairs and looseUnmeasured are inside strict n valid-pair branch",
+    "identity": "loosePairs + looseUnmeasured = covPairs; paired = covPairs + covUnmeasured",
+    "whole_coverage_missing_pair": "increments covUnmeasured only, not looseUnmeasured",
+    "resolution_options": [
+      "count each axis independently over paired rows",
+      "explicitly label loose counts as subset of strict-measured pairs and report missing coverage separately"
+    ]
+  },
+  "remaining_row_display_gap": {
+    "source_lines": [82, 83, 84, 85],
+    "handled_direction": "gold loose null to current measured value",
+    "unhandled_direction": "gold measured loose value to current null",
+    "static_example_not_executed": "same entities and slots, strict n=1 on both sides, loose 2 to null: row prints identical while summary counts unmeasured",
+    "requested_fix": "display current retired/unmeasured state explicitly and keep row labels consistent with aggregate status"
+  },
+  "existing_limits_not_new_regressions": {
+    "strict_field_missing_inside_coverage": "Number(c.unlabeled_in_answer ?? 0) still treats as zero",
+    "number_coercion": "not a finite-number schema validator",
+    "source_header_comment": "old decrease/improvement description still present; runtime message corrected"
+  },
+  "owner_reports_not_verified": {
+    "new_gate_strengthening": "accepted, future work",
+    "stored_ref_query_ref_compatibility": "accepted, planned after restart using real-turn samples",
+    "actual_damage": "owner reports none observed; no independent proof of compatibility or no damage",
+    "restart": "not verified"
+  },
+  "review_contract": {
+    "gate_changes_added_in_this_commit": false,
+    "reference_compatibility_changes_added_in_this_commit": false,
+    "target_code_or_tool_executed": false,
+    "api_or_gateway_calls": 0,
+    "db_live_service_or_customer_logs_accessed": false,
+    "frozen_m3_changed": false
+  }
+}
