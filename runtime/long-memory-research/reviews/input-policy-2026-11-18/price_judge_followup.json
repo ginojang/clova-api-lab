@@ -1,0 +1,95 @@
+{
+  "review_id": "input-policy-2026-11-18/price-judge-followup",
+  "review_kind": "static_source_audit",
+  "request_comms": "3ff5ef5f8a",
+  "baseline": "d499f05111d944431c499e9f763a593b7ea1707e",
+  "initial_wiring_commit": "2a6dd24545137d233bf743808ae0ef78ad7d4b9e",
+  "source_commit": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "scope": ["asks_price asset and registry", "judge caller", "no/unknown/error observation", "absence of customer lexical fallback"],
+  "separate_review_scopes": ["final messages and consult consumption", "ledger status implementation details"],
+  "executed": {
+    "model_api_calls": 0,
+    "gateway_calls": 0,
+    "database_calls": 0,
+    "service_calls": 0,
+    "operational_logs_read": false,
+    "target_code_executed": false,
+    "builds": 0,
+    "experiments": 0,
+    "source_asset_hash_calculated": true
+  },
+  "asset": {
+    "path": "elda-orchestrator/src/prompts/judge/asks_price.md",
+    "lines": 7,
+    "md5_8": "f87bd994",
+    "sha256": "baadbf1081693343f634edb69ee70178ceb59d043d30906883925c90153c7e0d",
+    "registered": true,
+    "registry_evidence": "elda-orchestrator/src/core/judge.ts:67",
+    "s1_signal": false
+  },
+  "call_path": {
+    "input": "question only; no history or S1 result",
+    "launch_condition": "priceSummaryOn() && !nonHuman",
+    "launch_evidence": "elda-orchestrator/src/router/v1_0/chat.ts:349-353",
+    "launch_does_not_check": ["persona elda", "toolMerge", "existing RAG price", "serveLane"],
+    "result_kept": "verdict only",
+    "caught_exception_value": "unknown",
+    "not_called_value": "unknown",
+    "consumer_eligibility": "priceSummaryOn() && persona.personaId === elda && toolMerge !== replace",
+    "consumer_condition": "askPrice === yes && serialized ragForPrompt does not include 평균 가격대",
+    "consumer_evidence": "elda-orchestrator/src/router/v1_0/chat.ts:1314-1319",
+    "no_or_unknown_starts_price_ledger_read": false,
+    "customer_keyword_fallback_found": false,
+    "price_numbers_generated_from_verdict": false
+  },
+  "observations": {
+    "price_summary_log_scope": "yes AND no existing RAG price only",
+    "no_logged_in_price_summary": false,
+    "unknown_logged_in_price_summary": false,
+    "not_called_distinct_at_caller": false,
+    "unknown_reason_kept_at_caller": false,
+    "judge_stamp_kept_at_caller": false,
+    "turn_id_passed_to_judge": false,
+    "common_judge_sample_is_guaranteed": false,
+    "common_judge_limit": "pool/config/DB success dependent; cache hit does not create sample; loadPrompt exception can occur before normalized result"
+  },
+  "findings": [
+    {
+      "id": "PJ-01",
+      "kind": "launch_scope_documentation_mismatch",
+      "detail": "asset says elda and RAG price absent only; caller launches earlier on all enabled nonHuman-excluded turns",
+      "evidence": ["elda-orchestrator/src/prompts/judge/asks_price.md:3", "elda-orchestrator/src/router/v1_0/chat.ts:350-353", "elda-orchestrator/src/router/v1_0/chat.ts:1316-1317"],
+      "actual_extra_calls_measured": false
+    },
+    {
+      "id": "PJ-02",
+      "kind": "decision_denominator_observation_gap",
+      "detail": "route closes for no/unknown, but local unknown combines failed/not-called/ineligible; price_summary exists only inside yes branch",
+      "evidence": ["elda-orchestrator/src/router/v1_0/chat.ts:350-353", "elda-orchestrator/src/router/v1_0/chat.ts:1316-1319"]
+    },
+    {
+      "id": "PJ-03",
+      "kind": "registration_and_live_evidence_limit",
+      "detail": "source asset and registry exist; selected operational judge route, remote asset and b5ed090c runtime state unverified",
+      "existing_shared_behavior": true,
+      "evidence": ["elda-orchestrator/src/core/judge.ts:283", "elda-orchestrator/src/core/judge.ts:309-313", "elda-orchestrator/src/core/judge.ts:346-347"]
+    }
+  ],
+  "conclusion": {
+    "static_model_wiring_confirmed": true,
+    "s1_price_contract_confirmed": false,
+    "caller_no_unknown_error_observation_complete": false,
+    "new_model_accuracy_verified": false,
+    "twelve_price_rows_independently_verified": false,
+    "owner_live_three_turn_report_independently_verified": false,
+    "owner_positive_three_turn_report_covers_no_unknown_error": false,
+    "deployment_or_restart_verified": false
+  },
+  "recommendations_not_implemented": [
+    "Preserve verdict/source/unknown_reason/model/prompt version instead of verdict alone",
+    "Represent not_called and ineligible separately from model unknown",
+    "Record all decisions with eligibility, existing evidence, lookup requested, block built and final injection reason",
+    "Align prompt comment with actual launch scope or narrow eligible launch",
+    "Keep model yes, data availability and actual injection as separate observations"
+  ]
+}

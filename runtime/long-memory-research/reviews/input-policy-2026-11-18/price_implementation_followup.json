@@ -1,0 +1,107 @@
+{
+  "review_date": "2026-11-18",
+  "comms": "3ff5ef5f8a",
+  "repository": "ginojang/GanpanAI",
+  "prior_design_source": "d499f05111d944431c499e9f763a593b7ea1707e",
+  "phases": [
+    {
+      "commit": "2a6dd24545137d233bf743808ae0ef78ad7d4b9e",
+      "parent": "d499f05111d944431c499e9f763a593b7ea1707e",
+      "changes": [
+        {
+          "path": "elda-orchestrator/src/core/judge.ts",
+          "added": 1,
+          "deleted": 1
+        },
+        {
+          "path": "elda-orchestrator/src/prompts/judge/asks_price.md",
+          "added": 7,
+          "deleted": 0
+        },
+        {
+          "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+          "added": 8,
+          "deleted": 4
+        }
+      ]
+    },
+    {
+      "commit": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+      "parent": "2a6dd24545137d233bf743808ae0ef78ad7d4b9e",
+      "changes": [
+        {
+          "path": "elda-orchestrator/src/core/priceRanges.ts",
+          "added": 5,
+          "deleted": 1
+        },
+        {
+          "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+          "added": 4,
+          "deleted": 3
+        }
+      ]
+    }
+  ],
+  "latest_source": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "file_fingerprints": [
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "sha256": "067fa31b78af7f5653e84abef992ee263013921047deed2edf83dea44d9a71cd"
+    },
+    {
+      "path": "elda-orchestrator/src/core/priceRanges.ts",
+      "sha256": "c60128a8bd99c7034f352070ee346ed9ffaa991f759d46d3662da3dcee953633"
+    },
+    {
+      "path": "elda-orchestrator/src/core/judge.ts",
+      "sha256": "96f7a4d56a6a1f756522d8b3838c49f7bdc3ae261f7fb58e7659de0a8252eb71"
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/asks_price.md",
+      "sha256": "baadbf1081693343f634edb69ee70178ceb59d043d30906883925c90153c7e0d"
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/ganpan/price_ranges.md",
+      "sha256": "1e456f3f90286e4fc5a56ecb331a5ee404a6dd73cafd0830e1a1c4a250476734"
+    }
+  ],
+  "reported_runtime_evidence": {
+    "initial_price_commit": "2a6dd24545137d233bf743808ae0ef78ad7d4b9e",
+    "initial_status": "owner reports live after restart",
+    "initial_live_trials": 3,
+    "initial_trial_type": "serve-gate synthetic test customer; asks_price yes and price citation reported",
+    "raw_committed_trial_refs_provided": false,
+    "restart_time_for_price_commit_provided": false,
+    "latest_commit_status": "owner reports deployed, awaiting restart",
+    "live_trials_verify_latest_commit": false,
+    "independently_reproduced": false
+  },
+  "confirmed_source": {
+    "model_signal": "asks_price, single question text, not S1",
+    "eligibility_for_consumption": "feature on, elda, toolMerge not replace, model yes, RAG price summary absent",
+    "unknown_no_or_caught_error": "no supplemental ledger block; no customer-text lexical fallback found",
+    "risk_care_suppression": {
+      "messages": "chat.ts:1324 omits supplemental block",
+      "serve_consult": "chat.ts:1374 omits supplemental block",
+      "scope": "additional price summary only; existing RAG/tool evidence is not proven removed"
+    },
+    "injected_event": "selected composition path is logged before buildMessages and before decoder/harness completion",
+    "injected_field_is_downstream_consumption_receipt": false,
+    "price_block_version": "price prompt md5 plus usable row count; not ledger content fingerprint"
+  },
+  "open_findings": {
+    "per_request_ledger_state": "lastLedgerStatus shared mutable value is read after awaiting separate rows result",
+    "cache_source": "cached empty and fresh empty both recorded empty",
+    "price_decision_coverage": "yes with no existing RAG price only; caller loses stamp and unknown reason; no/unknown/skipped are not separate price events",
+    "call_scope": "feature on plus human input starts judge before persona/replace/RAG filters; asset comment narrower",
+    "evidence_gaps": "positive 3 trials do not test no/unknown/error/empty/care cases or latest b5 behavior"
+  },
+  "execution": {
+    "models": 0,
+    "gateway": 0,
+    "db_live_service_or_customer_logs_access": false,
+    "target_code_or_tests_executed": false,
+    "server_code_changed": false,
+    "frozen_m3_changed": false
+  }
+}

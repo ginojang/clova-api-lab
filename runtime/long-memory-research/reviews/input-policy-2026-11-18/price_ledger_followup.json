@@ -1,0 +1,40 @@
+{
+  "review_date": "2026-11-18",
+  "repository": "ginojang/GanpanAI",
+  "baseline": "2a6dd24545137d233bf743808ae0ef78ad7d4b9e",
+  "target": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "source_path": "elda-orchestrator/src/core/priceRanges.ts",
+  "source_blob": "1cb06db27a8a78460017b7589753c8fa2dea5aed",
+  "source_diff": {"insertions": 5, "deletions": 1},
+  "method": "static_git_object_source_and_caller_review",
+  "target_code_builds_or_tests_executed": 0,
+  "model_api_gateway_db_service_or_customer_log_access": 0,
+  "reported_live_positive_turns_independently_verified": false,
+  "production_restart_verified": false,
+  "status_paths": [
+    {"path": "fresh_usable_nonempty", "status": "ok", "caches_result": true},
+    {"path": "fresh_usable_empty", "status": "empty", "caches_result": true},
+    {"path": "cache_nonempty", "status": "cached", "queries_database": false},
+    {"path": "cache_empty", "status": "empty", "queries_database": false},
+    {"path": "query_or_transform_exception", "status": "error", "returns_empty": true, "caches_failure": false, "clears_existing_cache": false}
+  ],
+  "empty_means": "zero_usable_rows_after_name_and_value_filter",
+  "raw_database_row_count_recorded": false,
+  "cached_empty_distinguished_from_fresh_empty": false,
+  "default_cache_ttl_ms": 600000,
+  "query_row_limit_twelve": false,
+  "current_database_row_count_verified": false,
+  "inflight_query_deduplication_found": false,
+  "stale_rows_returned_on_error": false,
+  "finding": {
+    "id": "PL1",
+    "kind": "rows_and_status_not_returned_as_one_per_call_result",
+    "anchors": ["core/priceRanges.ts:19", "core/priceRanges.ts:27", "core/priceRanges.ts:45", "core/priceRanges.ts:49", "router/v1_0/chat.ts:1318", "router/v1_0/chat.ts:1319"],
+    "conditional_schedule": ["two_miss_calls_await_queries", "query_continuations_QA_and_QB_are_queued_before_chatA_consumer", "QA_sets_ok_and_returns_rowsA_then_enqueues_chatA", "QB_sets_error", "chatA_builds_from_rowsA_and_reads_shared_error"],
+    "request_status_attribution_guaranteed_by_contract": false,
+    "actual_driver_schedule_observed": false,
+    "actual_status_contamination_observed": false,
+    "recommendation": "return_rows_outcome_and_cache_hit_together"
+  },
+  "limitations": ["static_source_only", "conditional_interleaving_analysis_not_executed_reproduction", "actual_model_injection_and_consumption_reviewed_separately", "no_operational_data_error_or_quality_claim"]
+}

@@ -62,6 +62,8 @@ reviews의 정규식·문자열 대조는 커밋된 합성 캡처의 표제·해
 
 03:56~03:58 UTC `4168af7615/a45cc22213`의 재시작 뒤 합성 장면 보고와 업무 분담을 반영했다. 가격 미제공은 담당 관측이며 정규식 제거·기능 off·자료 조회·최종 소비를 구분한 [가격 복구 설계](runtime/long-memory-research/reviews/input-policy-2026-11-18/price_recovery_review.md)를 작성했다. 고객 키워드 fallback 없이 모델 의도 판정과 근거 존재를 분리하는 미구현 제안이다. 실측·가격 정책·구현은 오케 담당으로 두고 풀스택에 추가 측정을 요구하지 않는다.
 
+04:05 UTC `3ff5ef5f8a`의 asks_price 구현과 후속 관측 보완을 [별도 감사](runtime/long-memory-research/reviews/input-policy-2026-11-18/price_implementation_followup.md)했다. yes 한정 추가 근거와 위기 돌봄의 messages/consult 억제를 확인했으며 고객 글자 fallback은 미발견이다. 공유 원장 상태의 요청별 귀속·no/unknown/생략 관측은 후속이다. 2a6dd245 라이브 양성 3턴은 담당 보고, b5ed090c는 재시작 대기로 구분한다. 클로버의 모델/운영 접근 권한은 바뀌지 않는다.
+
 리소너의 correction_evidence 출처 검사 유지 설명은 위 H70f/M0 및 사용자 확인 전달과 맞는다. 이 허용은 **원문에 있는가**만 확인하며, **정정의 뜻인가**까지 증명하지 않는다. n14의 정정 의미와 did 내용↔원천 의미는 계속 별도 모델·평가 과제다. 기존 not_verbatim·CONTEST 내림 guard를 유지하고, 외부 서빙 코드를 이 저장소에서 임의 변경하지 않았다.
 
 완료 범위는 로컬 소스 읽기·적용 경계 기록·담당자 회신이다. 모델 실패 시 글자 규칙으로 보완하는 구현은 추가하지 않았다.
