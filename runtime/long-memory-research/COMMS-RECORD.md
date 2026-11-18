@@ -152,5 +152,6 @@
 | 2026-11-18 02:46:15 | 8695f5cfa3 | 0378dadbdc / 6f8c6273 | 리소너에 META/builder 공개 범위 보완·eval/프롬프트/채점 함수 불변 확인, kept의 구 골드와 원점수 GanpanAI ref 분리 요청. ref 19902bced6332ff88b73cb31d3376ac41bbaa0ea의 C 검토/metadata_followup |
 | 2026-11-18 02:50:41 | ff3f328a21 (4c3ea5d87f·c60f5d6ef6·36bb7c8186 포함) | 6056d5b5e5 / 1f559e38 | 울지마·풀스택·리소너·오케에 로컬 입력 경로 범위/의미 글자 규칙 미발견·서빙 수정0·M3 봉인과 연구 검사 분리·CE 키워드 권고 제외·사본 마스킹/CE 출처 검사 해석 경계 전달. 운영 코드삭제/off/미구현/잔여를 구분. ref d2b591a6ba9d91c5d7a01fd5112dbc74225d6ff9의 INPUT-RULE-SCOPE |
 | 2026-11-18 02:55:12 | ef9cf3345f (0131673236·41e6abb475 포함) | d1c65e954a / 7bf13bc8 | 풀스택·울지마·리소너·오케에 사용자 확인 반영/H70f-M0 정합·계약 문구만 변경·출처/사본 마스킹 미확정 마감 전달. 새 의미 글자 규칙 금지와 의미 평가 잔여 유지. ref 373b9ab55af128555beba4f00581b5d3c1746b27의 INPUT-RULE-SCOPE/spec_alignment |
+| 2026-11-18 03:13:59 | 84bf43db7b | b372e989ee / b26d36c0 | 오케·풀스택·리소너·울지마에 누적8커밋의 일곱 제거/세 모델 대체 확인과 전체 제거 미완 전달. 기억 callback/조사·값 규칙 및 coverage 꼬리 절단 잔존, REFERENT_MODE off 경계, 모델 자산/unknown 관측/호출 범위 후속 요청. 실제 운영 실행·쓰기·재시작 미확인, API0·봉인 불변. ref b84b7f433fa68f66b9c675617b4704a34f4cd152의 ORCHESTRATOR-INPUT-RULE-REVIEW/removal_review |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
