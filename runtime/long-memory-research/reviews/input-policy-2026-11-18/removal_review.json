@@ -1,0 +1,51 @@
+{
+  "review_date": "2026-11-18",
+  "repository": "GanpanAI",
+  "baseline": "55f4e2534683e561561c8ae52c3ec61493a526f7",
+  "target": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+  "scope": "elda-orchestrator",
+  "commits_in_scope": 8,
+  "changed_files_in_scope": 19,
+  "method": "static_git_object_diff_and_callsite_review",
+  "executed_models": 0,
+  "api_or_gateway_access": 0,
+  "db_or_service_access": 0,
+  "builds_or_tests_executed": 0,
+  "production_restart_verified": false,
+  "all_customer_text_rules_removed": false,
+  "verified_items": [
+    {"id": "proper_literal", "status": "implementation_deleted", "anchor": "router/v1_0/chat.ts:786"},
+    {"id": "price_ask", "status": "implementation_and_caller_deleted", "anchor": "core/priceRanges.ts:22", "caller": "router/v1_0/chat.ts:1308"},
+    {"id": "shape_signal", "status": "implementation_and_caller_deleted", "anchor": "core/coverage.ts:322", "caller": "router/v1_0/chat.ts:1653"},
+    {"id": "filler_strip", "status": "serving_calls_disconnected_helper_retained", "anchors": ["core/judge.ts:290", "core/judge.ts:548", "core/fillerStrip.ts:142"]},
+    {"id": "language_detection", "status": "implementation_and_customer_input_caller_deleted", "anchors": ["router/v1_0/chat.ts:321", "router/v1_0/chat.ts:339"]},
+    {"id": "identity_shortcut", "status": "serving_calls_disconnected_helper_retained", "anchors": ["router/v1_0/chat.ts:1062", "router/v1_0/chat.ts:1268", "core/identityAsk.ts:54"]},
+    {"id": "organization_attribute_lexicon", "status": "implementation_and_asset_deleted", "anchors": ["core/placeGate.ts:701", "router/v1_0/chat.ts:935"]}
+  ],
+  "residual_findings": [
+    {
+      "id": "R1",
+      "kind": "semantic_rules_connected_to_memory_assembly",
+      "runtime_execution_verified": false,
+      "input_origin": "customer_question_and_model_selected_customer_spans",
+      "operations": ["particle_stripping", "size_budget_month_normalization", "raw_question_window_callback"],
+      "effect": "assigns_reference_identity_and_can_create_non_model_situation_rows",
+      "anchors": ["router/v1_0/chat.ts:1723", "router/v1_0/chat.ts:1776", "core/memoryTurn.ts:198", "core/assemble.ts:97", "core/assemble.ts:131", "core/referent.ts:52", "core/referent.ts:71", "core/referent.ts:101", "core/referent.ts:190", "core/assemble.ts:158", "core/memoryTurn.ts:240"],
+      "write_condition": "WRITE_ENABLED and subject/store verification and routeWrite=allow and rows present",
+      "read_disabled_bypasses_callback": false,
+      "referent_mode_off_bypasses_callback": false,
+      "referent_mode_scope_anchors": ["core/referents.ts:34", "router/v1_0/chat.ts:456", "router/v1_0/chat.ts:474"]
+    },
+    {
+      "id": "R2",
+      "kind": "raw_customer_text_tail_truncation_metric",
+      "runtime_execution_verified": false,
+      "input_origin": "unlabeled_customer_question_words_and_generated_answer",
+      "operations": ["drop_up_to_two_trailing_characters", "minimum_length_three", "substring_match"],
+      "effect": "coverage_count_and_retrieval_case_log_classification",
+      "current_answer_or_memory_semantic_row_control_found": false,
+      "anchors": ["core/coverage.ts:114", "core/coverage.ts:151", "core/coverage.ts:209", "router/v1_0/chat.ts:1641", "router/v1_0/chat.ts:1683", "router/v1_0/chat.ts:1758", "core/memoryTurn.ts:353"]
+    }
+  ],
+  "limitations": ["source_review_only", "not_an_exhaustive_all_module_proof", "no_live_environment_flags_or_restart_evidence", "parallel_audits_cover_model_span_and_new_judge_replacements"]
+}

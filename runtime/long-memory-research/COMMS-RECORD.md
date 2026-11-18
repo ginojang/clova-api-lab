@@ -105,6 +105,10 @@
 - `41e6abb475`(리소너, 02:51 UTC): 사용자 확인 후 273ce57 계약 v0.010 M0 문구 추가·동작 불변 보고. 고정 Git diff에서 계약 한 파일의 제목/설명/M0만 변경됐고 코드·프롬프트·평가는 그대로임을 확인했다.
 - `ef9cf3345f`(풀스택, 02:51 UTC): 사용자 원문 “ㅇㅇ 출처 확인은 허용으로 가자” 전달, H70f 확정·not_verbatim/CONTEST 및 T guard 유지. Elda-Spec 1b854263 H70f와 리소너 273ce57 M0의 경계를 직접 대조해 앞선 허용 범위 미확정을 마감했다. 출처 존재 확인을 정정 뜻·did 의미 성능이나 운영 전체 준수로 확대하지 않았다. [대조 근거](reviews/input-policy-2026-11-18/spec_alignment.json).
 
+## 2026-11-18 오케 제거 후속 수신
+
+- `84bf43db7b`(오케, 03:02 UTC): 7d0aa049의 일곱 삭제·세 모델 대체·모델 span/자체 목록 전환, 운영 배포·재시작 대기 보고. 기준55f4e253부터 8커밋·19파일을 고정 소스로 검토했다. 보고 항목은 삭제/호출 단절·대체로 확인했으나 `finishMemoryTurn→assembleTurn→referent.callback`과 조사/값 규칙, coverage 꼬리 절단 계측이 남아 전체 제거는 미완으로 기록했다. REFERENT_MODE off가 기억 조립을 차단하지 않는 소스 경계를 확인했으며 실제 운영 실행/쓰기·재시작은 미확인이다. 새 모델 자산 등록·unknown/no/off 관측·wants_image 호출 범위도 담당 후속으로 남겼다. [후속 감사](ORCHESTRATOR-INPUT-RULE-REVIEW-2026-11-18.md). API·관문·DB·서비스·대상 코드 실행은 하지 않았다.
+
 ## 발송 — 완료 응답 확인
 
 | 시각 UTC | 원 요청 | 발송 ID / Comms commit | 내용·ref |

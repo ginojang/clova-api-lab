@@ -1,0 +1,225 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "84bf43db7b",
+  "repository": "ginojang/GanpanAI",
+  "base": "55f4e2534683e561561c8ae52c3ec61493a526f7",
+  "target": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+  "scope": "elda-orchestrator/src",
+  "commits": [
+    "a1f0aad3ef555323780b434f754cbbd6baebc677",
+    "23f76c50d2d154ab3e4b2a4d8e99b45285f1db53",
+    "212c77b466b9eea999272920422e3a0e49b560a6",
+    "519fa55a1d029b97986350e4273cb595d7dbeec2",
+    "f979261e0d9a7589c29a21596a15d73eb158250c",
+    "20544d9e9edc2cb412db1428937fdf2cea55b529",
+    "6888d4b395e4c68983f7f52b080b8b692a8e56dc",
+    "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d"
+  ],
+  "changed_files": [
+    {
+      "path": "elda-orchestrator/src/core/categoryGate.ts",
+      "added": 13,
+      "deleted": 16
+    },
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "added": 1,
+      "deleted": 95
+    },
+    {
+      "path": "elda-orchestrator/src/core/decode.ts",
+      "added": 3,
+      "deleted": 3
+    },
+    {
+      "path": "elda-orchestrator/src/core/detect.ts",
+      "added": 0,
+      "deleted": 16
+    },
+    {
+      "path": "elda-orchestrator/src/core/focus.ts",
+      "added": 2,
+      "deleted": 2
+    },
+    {
+      "path": "elda-orchestrator/src/core/judge.ts",
+      "added": 3,
+      "deleted": 4
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryTurn.ts",
+      "added": 4,
+      "deleted": 1
+    },
+    {
+      "path": "elda-orchestrator/src/core/placeGate.ts",
+      "added": 7,
+      "deleted": 16
+    },
+    {
+      "path": "elda-orchestrator/src/core/priceRanges.ts",
+      "added": 1,
+      "deleted": 3
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/ganpan/image_request_lexicon.md",
+      "added": 0,
+      "deleted": 21
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/wants_image.md",
+      "added": 7,
+      "deleted": 0
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/wants_proposal.md",
+      "added": 7,
+      "deleted": 0
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/k2/org_attribute_lexicon.md",
+      "added": 0,
+      "deleted": 37
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "added": 39,
+      "deleted": 52
+    },
+    {
+      "path": "elda-orchestrator/src/tools/categoryProbe.ts",
+      "added": 1,
+      "deleted": 1
+    },
+    {
+      "path": "elda-orchestrator/src/tools/ganpanServeGate.ts",
+      "added": 1,
+      "deleted": 4
+    },
+    {
+      "path": "elda-orchestrator/src/tools/k0ServingGate.ts",
+      "added": 2,
+      "deleted": 38
+    },
+    {
+      "path": "elda-orchestrator/src/tools/k2PromptGate.ts",
+      "added": 9,
+      "deleted": 17
+    },
+    {
+      "path": "elda-orchestrator/src/tools/placeAbsenceGate.ts",
+      "added": 2,
+      "deleted": 5
+    }
+  ],
+  "totals": {
+    "commits": 8,
+    "files": 19,
+    "added": 102,
+    "deleted": 331
+  },
+  "inspected_file_fingerprints": [
+    {
+      "path": "elda-orchestrator/src/core/categoryGate.ts",
+      "target_git_blob": "79b975a4f37e76395c29a7ba824c3409888e548c",
+      "target_sha256": "53b247b551784e233b5eaac634f9264618c1c177a7fbea31b3e7abad819c9e23",
+      "target_lines": 164,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/focus.ts",
+      "target_git_blob": "75a55dbbabc2bb39d273cd0fca776d43f1f2d544",
+      "target_sha256": "f5be61737f416bd326c7664ad964b9dcaaf355117619193345ab85d2344b7bcb",
+      "target_lines": 135,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/placeGate.ts",
+      "target_git_blob": "f22df57786e29497ded49016e5f788ce636f8a3b",
+      "target_sha256": "969072c87cdb7f6a54cad21c3473476f47b0f1bf869e075418c7731d0f9ab40e",
+      "target_lines": 923,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/memoryTurn.ts",
+      "target_git_blob": "6ca85c0975b5e8e411522f3253b91201d0f7c5e6",
+      "target_sha256": "50b8ef6b57156913c5c3334c24a4d76a1b7882c100c1ab87678a1c6d63fd21a8",
+      "target_lines": 392,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/assemble.ts",
+      "target_git_blob": "8503cd2fbe9b32c6580d20afec822d546a012a7e",
+      "target_sha256": "441c2005988164817a9bb7c5539f135644aafb70b45bbdd2ff11b4e5de90ad74",
+      "target_lines": 165,
+      "unchanged_from_base": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/referent.ts",
+      "target_git_blob": "6bfc463a67940b3186710de30639dad9dc73c668",
+      "target_sha256": "0321f71cbcf31b56aa6726f5ecd7c46baab8612db3875d761eef82f9c0c1ef67",
+      "target_lines": 214,
+      "unchanged_from_base": true
+    },
+    {
+      "path": "elda-orchestrator/src/core/coverage.ts",
+      "target_git_blob": "c5c69ae7c16ad93037b2ca4dafea4b69ec2b143a",
+      "target_sha256": "1228417b254780bec26dbbc0eceeea761a08b2f7384f3e865b8d5f9a90bbe081",
+      "target_lines": 416,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/judge.ts",
+      "target_git_blob": "ecbbfc9104fc8699bf0b92970586f7f71569dc95",
+      "target_sha256": "8c08ed8f89fc5a96857cce41dd8f3db036c91d3d37e43881769d5eee83a55e63",
+      "target_lines": 620,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/core/referents.ts",
+      "target_git_blob": "2cdea21eb7858f328f904fce1caf1b2029e2bb56",
+      "target_sha256": "ae0cf079932fda303b81a50976c55e0021d3fbd5494c9b7341c73784c2665b36",
+      "target_lines": 580,
+      "unchanged_from_base": true
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "target_git_blob": "0a550e63a337205ab221ddab5eced8774f35dfae",
+      "target_sha256": "e8b6c19571d5eb3ceec6d580115eef2440183e183f5fde4bd98d3fe61b42cf4d",
+      "target_lines": 2076,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/wants_image.md",
+      "target_git_blob": "fe4feedd421558df4ee73145d9207ae1f265f04c",
+      "target_sha256": "5110cb0bc0f579fb6ac69f34e60be5153c58de812e9cff78801fff56290391f7",
+      "target_lines": 7,
+      "unchanged_from_base": false
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/wants_proposal.md",
+      "target_git_blob": "dd63a9ea9ef048afb43bc2f0d91511580e921064",
+      "target_sha256": "80447fd4557d103c5ed8ddece68e2f28c112c76010274d81303b3391cda805c3",
+      "target_lines": 7,
+      "unchanged_from_base": false
+    }
+  ],
+  "source_findings": {
+    "reported_seven_removals": "confirmed_as_deletion_or_serving_call_disconnection",
+    "three_model_replacements": "connected_in_source_no_customer_lexical_fallback_found_in_reviewed_paths",
+    "own_list_mapping": "intenter_spans_or_reasoner_selected_range_compared_to_own_names_not_verbatim_evidence_validation",
+    "memory_rule_path": "connected_existing_source_callback_can_add_rows_not_emitted_by_reader",
+    "referent_mode_off_disables_assembly": false,
+    "coverage_loose_match": "still_connected_to_post_answer_measurement",
+    "all_customer_text_rules_removed": false
+  },
+  "execution_boundary": {
+    "read_only_git_source_audit": true,
+    "model_calls": 0,
+    "internal_gateway_calls": 0,
+    "db_or_live_service_access": false,
+    "target_code_executed": false,
+    "production_restart_verified": false,
+    "frozen_m3_modified": false
+  }
+}

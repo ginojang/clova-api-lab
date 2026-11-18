@@ -1,0 +1,111 @@
+{
+  "review_id": "input-policy-2026-11-18/judge-replacement",
+  "review_kind": "static_source_audit",
+  "reviewer": "giant-clova / judge_replacement_review",
+  "request_comms": "84bf43db7b",
+  "source_commit": "7d0aa049f4c9e40de3cbdae8d75787c26dbcce8d",
+  "range_base_exclusive": "55f4e2534683e561561c8ae52c3ec61493a526f7",
+  "needs_map_replacement_commit": "20544d9e9edc2cb412db1428937fdf2cea55b529",
+  "scope": ["needs_map no-map guard", "wants_image", "wants_proposal", "shared judge and prompt loading"],
+  "executed": {
+    "model_api_calls": 0,
+    "gateway_calls": 0,
+    "database_calls": 0,
+    "service_calls": 0,
+    "logs_read": false,
+    "builds": 0,
+    "experiments": 0,
+    "frozen_evaluation_changed": false
+  },
+  "conclusion": {
+    "customer_lexical_fallback_found_in_reviewed_paths": false,
+    "replacement_wiring_found": true,
+    "model_quality_verified": false,
+    "remote_judge_asset_registration_verified": false,
+    "deployment_or_restart_verified": false,
+    "unknown_is_model_no": false
+  },
+  "paths": [
+    {
+      "id": "needs_map_no_map_guard",
+      "input": "current question; intenter signals.needs_map first",
+      "precedence": ["head yes/no", "judge needs_map for absent/unsure/unknown/invalid head"],
+      "activation": "toolMerge ignore AND no refCarry AND K2_NO_MAP_GUARD not off",
+      "consumer": "only yes sets noMapGuard; decoder assembly additionally requires k2Unlocalized not live",
+      "unknown_policy": "unsure; noMapGuard false; no customer text fallback",
+      "observation_limit": "bool omits nmGuard verdict/source; false combines no/unknown/off/inapplicable; true is not proof of insertion on every route",
+      "evidence": ["elda-orchestrator/src/core/placeGate.ts:594-605", "elda-orchestrator/src/router/v1_0/chat.ts:947-954", "elda-orchestrator/src/router/v1_0/chat.ts:1316-1319", "elda-orchestrator/src/router/v1_0/chat.ts:1907", "elda-orchestrator/src/router/v1_0/chat.ts:1958"]
+    },
+    {
+      "id": "wants_image",
+      "input": "current question",
+      "activation": "human AND non-serve; launched before category",
+      "consumer": "yes -> image; result consumed in CATEGORY_SHADOW branch; additional service/image conditions apply",
+      "unknown_policy": "text with why judge:unknown; prompt version sentinel '-' on caught exception",
+      "observation_limit": "no dedicated kind unknown; inspect why; caller omits detailed unknown_why",
+      "evidence": ["elda-orchestrator/src/core/categoryGate.ts:156-163", "elda-orchestrator/src/router/v1_0/chat.ts:347-349", "elda-orchestrator/src/router/v1_0/chat.ts:665-676", "elda-orchestrator/src/router/v1_0/chat.ts:1207-1214"]
+    },
+    {
+      "id": "wants_proposal",
+      "input": "current question; focus and prior draft are caller gates",
+      "activation": "IMAGE_GEN enabled AND focusPre.on AND hasDraft",
+      "consumer": "yes only -> generateSignProposal; valid draft id and brand required",
+      "unknown_policy": "no proposal; possible later image route requires independent wants_image yes",
+      "observation_limit": "no explicit serve/nonHuman exclusion at this call; actual reachability unverified",
+      "evidence": ["elda-orchestrator/src/router/v1_0/chat.ts:1190-1214"]
+    }
+  ],
+  "asset_chain": {
+    "source_files": ["elda-orchestrator/src/prompts/judge/wants_image.md", "elda-orchestrator/src/prompts/judge/wants_proposal.md"],
+    "registry": "elda-orchestrator/src/core/judge.ts:67-68",
+    "loader": "elda-orchestrator/src/core/promptAsset.ts:14-26",
+    "version_algorithm": "md5(file bytes) first 8 hex characters; process lifetime cache",
+    "copy_code": "elda-orchestrator/scripts/stamp.js:116-141",
+    "remote_route": "JUDGE_DOOR_URL sends ask/text/cid only, not local prompt",
+    "remote_route_evidence": "elda-orchestrator/src/core/judge.ts:309-343",
+    "registration_limit": "source registration and copy mechanism exist; actual build output, remote prompt and process state not examined"
+  },
+  "findings": [
+    {
+      "id": "JR-01",
+      "kind": "documentation_dispatch_mismatch",
+      "new_in_reviewed_change": true,
+      "detail": "wants_image prompt says category strong only, but caller launches on all human non-serve turns before category and without IMAGE_GEN/CATEGORY_SHADOW launch gates",
+      "evidence": ["elda-orchestrator/src/prompts/judge/wants_image.md:3", "elda-orchestrator/src/router/v1_0/chat.ts:347-349", "elda-orchestrator/src/router/v1_0/chat.ts:665-677"]
+    },
+    {
+      "id": "JR-02",
+      "kind": "unknown_observation_gap",
+      "new_in_reviewed_change": "new model guard uses existing bool field",
+      "detail": "no_map_guard false is a route policy result, not a measured negative verdict; nmGuard/source absent from that field",
+      "evidence": ["elda-orchestrator/src/router/v1_0/chat.ts:951-954", "elda-orchestrator/src/router/v1_0/chat.ts:1907", "elda-orchestrator/src/router/v1_0/chat.ts:1958"]
+    },
+    {
+      "id": "JR-03",
+      "kind": "shared_existing_parser_contract_limit",
+      "new_in_reviewed_change": false,
+      "detail": "direct parser accepts YES/NO prefixes or last-line tokens; door checks verdict but not complete stamp; these are model-response handling, not customer lexical fallback",
+      "evidence": ["elda-orchestrator/src/core/judge.ts:322-337", "elda-orchestrator/src/core/judge.ts:371-381", "elda-orchestrator/src/core/judge.ts:408-411"]
+    },
+    {
+      "id": "JR-04",
+      "kind": "asset_failure_observation_limit",
+      "new_in_reviewed_change": false,
+      "detail": "loadPrompt throws before unknown normalization; reviewed callers close routes but no common judge sample is guaranteed for missing local asset",
+      "evidence": ["elda-orchestrator/src/core/judge.ts:283", "elda-orchestrator/src/core/promptAsset.ts:23"]
+    },
+    {
+      "id": "JR-05",
+      "kind": "validation_scope_limit",
+      "new_in_reviewed_change": true,
+      "detail": "commit's 8/8 is owner report; ganpanServeGate removes four outputKindOf assertions and excludes new model judgment from offline check",
+      "evidence": ["7d0aa049 commit message", "7d0aa049 diff elda-orchestrator/src/tools/ganpanServeGate.ts"]
+    }
+  ],
+  "proposed_owner_followups_not_executed": [
+    "Confirm selected judge route and new assets at that route with prompt/model/code provenance",
+    "Preserve raw verdict, failure reason and source separately from route policy booleans",
+    "Align wants_image prompt comment with intended launch scope",
+    "Independently evaluate new image/proposal semantic questions; do not reuse structural 8/8 as model quality proof"
+  ]
+}
