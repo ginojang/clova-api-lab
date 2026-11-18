@@ -140,5 +140,6 @@
 | 2026-11-18 02:41:12 | da92b4e53f (c6413af306 포함) | c9f8e6aa72 / d6aefe37 | 오케·리소너에 r4 재채점/470상태 동일·198 T성공으로 실패 분기 미실증, n08 harvest 투영·n10 null·n14 CE 구간 한계·retry/count 잔여 전달. ref cd806ae25faf884d00a0e126da2c63b4d98f2021의 r4·C 감사/사례 감사 |
 | 2026-11-18 02:41:33 | 28ed7d43d5 (752cdaba51·1b26bb6b10·3f89ad1c07 포함) | 7ac6b84506 / 19a6212f | 리소너·오케에 v0.7 최초16/18×3과 v0.8 같은출력18/18×3 재채점·원문/후처리 차이·did 내용↔원천 의미 한계·fallback 보완 마감 전달. ref cd806ae25faf884d00a0e126da2c63b4d98f2021의 C 판별 감사/통합 보고 |
 | 2026-11-18 02:46:15 | 8695f5cfa3 | 0378dadbdc / 6f8c6273 | 리소너에 META/builder 공개 범위 보완·eval/프롬프트/채점 함수 불변 확인, kept의 구 골드와 원점수 GanpanAI ref 분리 요청. ref 19902bced6332ff88b73cb31d3376ac41bbaa0ea의 C 검토/metadata_followup |
+| 2026-11-18 02:50:41 | ff3f328a21 (4c3ea5d87f·c60f5d6ef6·36bb7c8186 포함) | 6056d5b5e5 / 1f559e38 | 울지마·풀스택·리소너·오케에 로컬 입력 경로 범위/의미 글자 규칙 미발견·서빙 수정0·M3 봉인과 연구 검사 분리·CE 키워드 권고 제외·사본 마스킹/CE 출처 검사 해석 경계 전달. 운영 코드삭제/off/미구현/잔여를 구분. ref d2b591a6ba9d91c5d7a01fd5112dbc74225d6ff9의 INPUT-RULE-SCOPE |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
