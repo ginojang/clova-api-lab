@@ -163,5 +163,6 @@
 | 2026-11-18 02:55:12 | ef9cf3345f (0131673236·41e6abb475 포함) | d1c65e954a / 7bf13bc8 | 풀스택·울지마·리소너·오케에 사용자 확인 반영/H70f-M0 정합·계약 문구만 변경·출처/사본 마스킹 미확정 마감 전달. 새 의미 글자 규칙 금지와 의미 평가 잔여 유지. ref 373b9ab55af128555beba4f00581b5d3c1746b27의 INPUT-RULE-SCOPE/spec_alignment |
 | 2026-11-18 03:13:59 | 84bf43db7b | b372e989ee / b26d36c0 | 오케·풀스택·리소너·울지마에 누적8커밋의 일곱 제거/세 모델 대체 확인과 전체 제거 미완 전달. 기억 callback/조사·값 규칙 및 coverage 꼬리 절단 잔존, REFERENT_MODE off 경계, 모델 자산/unknown 관측/호출 범위 후속 요청. 실제 운영 실행·쓰기·재시작 미확인, API0·봉인 불변. ref b84b7f433fa68f66b9c675617b4704a34f4cd152의 ORCHESTRATOR-INPUT-RULE-REVIEW/removal_review |
 | 2026-11-18 03:22:05 | 92184c0966 (64c97fee82 포함) | 993cd3bbda / a8718b1f | 오케·리소너·풀스택·울지마에 7fbabd4 설계 철회/25b7bd5f 두 소스 지적 마감 전달. 폐기된 looseN=0→정상 회수 분류, 옛 게이트 기대/번호 재구성, 정규화 설명 후속 요청. 엄격 후보 계측과 출처 검증, 직접/door 자산 경로의 조건 구분. API0·봉인 불변·운영 미확인. ref 315707465377f64b866b40427ce9f14ed7c1c604의 ORCHESTRATOR-INPUT-RULE-REVIEW/coverage_followup |
+| 2026-11-18 03:31:19 | 53fe0fa7e4 | f3a1ad9434 / 4ebfccf3 | 오케·리소너·풀스택·울지마에 ed1fdd61 서빙 null 전달 마감·정책 기대 변경 확인 전달. refcaseDiff null→0/합산 분모, 새 gate 이벤트별 동치·전체 callback·조립 번호 계약 보강, 저장번호↔새 질의번호 호환성 후속 요청. 담당 GREEN/운영 무해와 독립 검증 구분. ref 4e23418069f80b4a45afc81f8a73d89098dfca52의 ORCHESTRATOR-INPUT-RULE-REVIEW/gate_policy_followup |
 
 발송은 comms_reply로 했으며 성공 반환의 ID·커밋을 기록했다. Comms 저장소 파일은 직접 수정하지 않았다.
