@@ -40,7 +40,8 @@
 | MEM-05 | P1 · 명시 settle 실패 전파 소스 확인·실측 잔여 | r4 T198건 모두 성공·t_failed0이라 실패 분기 미실증. reason/ops_detail/C raw 추가 확인 | 오케: retry/count 실패 전파·합성 요청/근거 구간/저장 영수증 | [후속 소스 감사](runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/execution_followup.md) retry4곳 결과 무시·count 대기 잔여. ce_turn만으로 정확 CE 구간 복원 불가. n10 r4 첫 C는 episode:null로 미출력 확인, 후속 C/시계는 미측정 |
 | MEM-06 | P1 · C v0.6~v0.8 재채점·사후 라벨/META 감사 완료 | 최초16/18×3, 같은 출력의 사후 재채점18/18×3. 95704b8 META 공개 범위 보완·eval 불변 확인 | 리소너: did 의미/원점수 ref, 오케: 새 C의 M3 측정, 클로버: 감사 | [C 후속 감사](runtime/long-memory-research/M3-R4-C-REVIEW-2026-11-18.md) 사후 재라벨은 독립 성능 향상 아님. META의 구 골드 폴더와 GanpanAI 원점수 ref는 분리 필요. did 내용↔원천 의미는 별도 검증 |
 | MEM-07 | P1 · 허용목록·보류 설명·사유 분류 감사 완료 | a315c32c 운영의 목록 밖 사유도 did_s6_lookup_error로 일치. b913 C정규화9조건·고정K3 불변 확인 | 오케·리소너: 운영 후속, 클로버: 정합 감사 완료, 평가 소유자: 새 기준 고정 | [v0.009 정합 마감](runtime/long-memory-research/M4-CORRECTION-GUARD-2026-11-17.md) 조회실패·허용목록·사유명·unknown 허용/비영속 보류 설명 마감. 소스/순수검증 범위이며 실제재시작/장애복구·unknown_why 관측 전달은 별도. 봉인 M3pass-only 보존 |
-| POL-01 | P0 · d499f051 계측/비교도구 소스 지적 마감·검증 후속 | null/합산·부분집합 분모 설명·측정→null 행 표시 확인. gate·번호 호환성은 담당 계획 | 오케: 새 검증 조건·번호 호환성·모델 대체 후속, 클로버: 고정 ref 재감사 | [제거 후속 감사](runtime/long-memory-research/ORCHESTRATOR-INPUT-RULE-REVIEW-2026-11-18.md) 사건별 동치·전체 callback 부재·조립 번호·저장번호 대응 검증. needs_map/wants_image·선택된 자산 경로·재시작 계획과 완료 분리 |
+| POL-01 | P0 · d499f051 계측/비교도구 소스 지적 마감·검증 후속 | null/합산·부분집합 분모 설명·측정→null 행 표시 확인. gate·번호 호환성은 담당 계획 | 오케: 새 검증 조건·번호 호환성·모델 대체 후속, 클로버: 고정 ref 재감사 | [제거 후속 감사](runtime/long-memory-research/ORCHESTRATOR-INPUT-RULE-REVIEW-2026-11-18.md) 사건별 동치·전체 callback 부재·조립 번호·저장번호 대응 검증. needs_map/wants_image·선택된 자산 경로 후속. 12:55 재시작은 담당 보고이며 기동 ref/후속 검증 미확인 |
+| POL-02 | P1 · 가격 근거 미제공 담당 보고·복구 설계 제안 | 모델 가격 의도 yes와 원장 근거/실제 주입 분리. 정규식 삭제가 요약 off 원인이라는 인과는 미확인 | 오케: 정책 선택·구현·라이브/합성 실측, 클로버: 소스·설계 감사. 풀스택은 추가 실측 담당 아님 | [가격 복구 설계](runtime/long-memory-research/reviews/input-policy-2026-11-18/price_recovery_review.md) runtime ref·모델 판정·자료 상태/실제 건수·최종 소비 근거, unknown/자료 오류/중복/소비 레인 검사. 신규 가격 판정은 미구현 제안 |
 | LAB-01 | P2 · 선택 대기 | Groq/OpenRouter/Z.ai의 실제 키·모델 비교 필요성 결정 | 사용자 선택, 클로버 검증 | 선택 공급자만 실제 호출·도구 결과·사용량 확인. 기존 모의 성공과 분리 |
 | FORENSIC-01 | P2 · 미착수 | 계보 보고서의 단정과 증거 범위를 정정 | 클로버 | 코사인과 값 동일성, 블랙박스 차이와 증류 여부, Omni와 별도 모델을 구분. 기존 수치 재측정 여부 명시 |
 | FORENSIC-02 | P2 · FORENSIC-01 이후 | 분석 재현 경로·의존성·모델 revision·원시 결과 고정 | 클로버 | 폐기 URL·임시 경로 의존 제거, 작은 재현 절차와 텐서 비교 범위/누락 기록 |
@@ -71,6 +72,8 @@ Realizer의 보류는 [인계 회신](runtime/realizer/HANDOFF-2026-11-11.md)에
 - [x] Core v1.000 규격·소스·팀 결정 확인, 공식 키트·계약 회귀·24회 실제 persona 파일럿 구현/실행. 정상 호출과 의미 품질 실패를 분리하여 보존.
 
 ## 작업 진행 규칙
+
+11-18 `a45cc22213`의 업무 분담: 라이브 장면·판정/근거 주입 정책·오케 코드 감사 대응은 오케스트레이터가 맡는다. 풀스택은 요청 시 mini-api·serve-gate/Elda CLI 배포·하네스 규격/키트·에이전트 인프라를 맡고 관련 스레드는 참고로 받는다. 클로버의 기존 소스 감사/연구 설계 범위는 유지하며 풀스택에 추가 라이브 측정을 청구하지 않는다.
 
 11-18 전달된 손님 입력 글자 규칙 금지는 [저장소 범위 확인](INPUT-RULE-SCOPE-2026-11-18.md)에 반영했다. 검토한 모델 연결 경로에서 의미 키워드 라우팅은 미발견이며 서빙 코드 변경은 0건이다. 후속 사용자 확인과 H70f v1.029/M0 v0.010에 따라 모델 인용의 원문 존재 검사·실패 시 버림/CONTEST 내림과 사본 비밀 가림은 유지한다. 출처 검사를 의미 판정이나 허용을 늘리는 판단으로 사용하지 않으며, 과거 키워드 정정 판정 제안도 이어가지 않는다. 외부 hook·다른 팀 운영 제거·실제 의미 성능은 별도 범위다.
 

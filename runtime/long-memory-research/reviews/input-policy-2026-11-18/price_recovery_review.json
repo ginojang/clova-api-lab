@@ -1,0 +1,104 @@
+{
+  "review_date": "2026-11-18",
+  "requests": [
+    "4168af7615",
+    "a45cc22213"
+  ],
+  "review_kind": "source audit and research design; no implementation or model run",
+  "source_repository": "ginojang/GanpanAI",
+  "source_commit": "d499f05111d944431c499e9f763a593b7ea1707e",
+  "source_commit_is_live_runtime_commit": null,
+  "source_commit_note": "last audited source; live runtime ref was not provided",
+  "price_regex_removal_commit": "a1f0aad3ef555323780b434f754cbbd6baebc677",
+  "source_files": [
+    {
+      "path": "elda-orchestrator/src/core/priceRanges.ts",
+      "sha256": "a2bf7fb19c36ef4943a1c846d17ceaa0120a5c23a5e37837157bc64c160db846"
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "sha256": "0d0bf5a5208d6cc7c0656e5fed1f32c23dedc4a3aff3cb2a11f6d27632dcb1cc"
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/ganpan/price_ranges.md",
+      "sha256": "1e456f3f90286e4fc5a56ecb331a5ee404a6dd73cafd0830e1a1c4a250476734"
+    },
+    {
+      "path": "elda-orchestrator/src/core/judge.ts",
+      "sha256": "8c08ed8f89fc5a96857cce41dd8f3db036c91d3d37e43881769d5eee83a55e63"
+    },
+    {
+      "path": "elda-orchestrator/src/core/eldacore/s1s2.ts",
+      "sha256": "21c77f6a3b7acd53f0205efa3b98ab5b4a184e5e18ec67d2b58c3f04a8403394"
+    }
+  ],
+  "reported_live_smoke": {
+    "source": "4168af7615",
+    "restart_kst": "2026-11-18 12:55:02 +09:00",
+    "restart_utc": "2026-11-18 03:55:02Z",
+    "reported_scenes": 4,
+    "outcomes": {
+      "image": "owner reports generated draft",
+      "identity": "owner reports persona answer",
+      "risk": "owner reports fixed block response",
+      "price": "owner reports no-price-evidence answer"
+    },
+    "raw_location_reported": "pluto scratch live_after_rules_1118.json",
+    "raw_fetched_or_read": false,
+    "independently_reproduced": false,
+    "test_account_deletion": "owner report only",
+    "causal_attribution_verified": false
+  },
+  "source_conclusions": {
+    "regex_removal": "removed customer-text price filter; did not delete ledger loader or summary renderer",
+    "flag_default": "RAG_PRICE_SUMMARY=off existed before removal",
+    "summary_conditions": [
+      "decode branch",
+      "feature on",
+      "persona elda",
+      "toolMerge not replace",
+      "RAG does not already contain price-summary marker",
+      "ledger rows available"
+    ],
+    "ledger_12": "historical comment/report, not fixed query cardinality or verified current count",
+    "empty_and_error": "both currently return []",
+    "injection_lanes": "messages and serve consult are separate; priceBlk creation is not final model-consumption proof",
+    "price_signal_defined_in_pinned_sources": false,
+    "s1_every_turn_claim": "conditional on non-legacy and human input in pinned source; not universally established"
+  },
+  "proposal_not_implemented": {
+    "preferred_first_path": "explicit wants_price judge on eligible turns",
+    "s1_alternative": "requires output contract, prompt/schema and awaited price consumer; not only adding a field",
+    "verdicts": [
+      "yes",
+      "no",
+      "unknown"
+    ],
+    "unknown_policy": "skip supplementary summary, preserve unknown reason, no lexical fallback",
+    "evidence_policy": "model yes is intent only; require valid ledger evidence and eligible insertion path",
+    "do_not_erase_existing_rag_evidence_on_new_judge_unknown": true,
+    "avoid_fixed_12_count": "record actual row count and evidence hash/version",
+    "minimum_observation": [
+      "runtime ref/lane",
+      "eligibility and skip reason",
+      "judge verdict/source/version/unknown reason",
+      "ledger status/count/content hash",
+      "block generated",
+      "final injection/consumer receipt"
+    ]
+  },
+  "owner_assignment_reported": {
+    "orchestrator": "live scenes, judgment/injection policy and orchestrator audit response",
+    "fullstack": "agent infrastructure, mini-api, serve-gate/CLI deployment, harness spec/kit when requested",
+    "clova": "source audit and design within existing role; no model/service execution"
+  },
+  "execution": {
+    "models": 0,
+    "internal_gateway": 0,
+    "db_or_live_service_access": false,
+    "customer_logs_read": false,
+    "scratch_file_access": false,
+    "server_code_modified": false,
+    "frozen_m3_modified": false
+  }
+}
