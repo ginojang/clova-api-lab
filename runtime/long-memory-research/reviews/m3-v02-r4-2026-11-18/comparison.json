@@ -1,0 +1,874 @@
+{
+  "changed_checks": [],
+  "common_observed_counts": {
+    "all": {
+      "r3": {
+        "failed": 18,
+        "passed": 322,
+        "planned": 366,
+        "unknown": 26
+      },
+      "r4": {
+        "failed": 18,
+        "passed": 322,
+        "planned": 366,
+        "unknown": 26
+      }
+    },
+    "gate": {
+      "r3": {
+        "failed": 3,
+        "passed": 183,
+        "planned": 212,
+        "unknown": 26
+      },
+      "r4": {
+        "failed": 3,
+        "passed": 183,
+        "planned": 212,
+        "unknown": 26
+      }
+    },
+    "nongate": {
+      "r3": {
+        "failed": 15,
+        "passed": 139,
+        "planned": 154,
+        "unknown": 0
+      },
+      "r4": {
+        "failed": 15,
+        "passed": 139,
+        "planned": 154,
+        "unknown": 0
+      }
+    }
+  },
+  "common_prediction_ids": [
+    "n01-guest-q1",
+    "n01-guest-q2",
+    "n01-guest-q3",
+    "n01-signage-q1",
+    "n01-signage-q2",
+    "n01-signage-q3",
+    "n02-guest-q1",
+    "n02-guest-q2",
+    "n02-guest-q3",
+    "n02-signage-q1",
+    "n02-signage-q2",
+    "n02-signage-q3",
+    "n03-guest-q1",
+    "n03-guest-q2",
+    "n03-guest-q3",
+    "n03-signage-q1",
+    "n03-signage-q2",
+    "n03-signage-q3",
+    "n04-guest-q1",
+    "n04-guest-q2",
+    "n04-guest-q3",
+    "n04-signage-q1",
+    "n04-signage-q2",
+    "n04-signage-q3",
+    "n05-guest-q1",
+    "n05-guest-q2",
+    "n05-signage-q1",
+    "n05-signage-q2",
+    "n06-guest-q1",
+    "n06-guest-q2",
+    "n06-signage-q1",
+    "n06-signage-q2",
+    "n07-guest-q1",
+    "n07-guest-q2",
+    "n07-guest-q3",
+    "n07-signage-q1",
+    "n07-signage-q2",
+    "n07-signage-q3",
+    "n08-guest-q1",
+    "n08-guest-q2",
+    "n08-guest-q3",
+    "n08-signage-q1",
+    "n08-signage-q2",
+    "n08-signage-q3",
+    "n09-guest-q1",
+    "n09-guest-q2",
+    "n09-guest-q3",
+    "n09-signage-q1",
+    "n09-signage-q2",
+    "n09-signage-q3",
+    "n10-guest-q1",
+    "n10-signage-q1",
+    "n11-guest-q1",
+    "n11-guest-q2",
+    "n11-guest-q3",
+    "n11-signage-q1",
+    "n11-signage-q2",
+    "n11-signage-q3",
+    "n12-guest-q1",
+    "n12-signage-q1",
+    "n13-guest-q1",
+    "n13-signage-q1",
+    "n14-guest-q1",
+    "n14-guest-q2",
+    "n14-guest-q3",
+    "n14-signage-q1",
+    "n14-signage-q2",
+    "n14-signage-q3"
+  ],
+  "events": {
+    "r3": {
+      "checkpoint_failed": [],
+      "counts": {
+        "advance_time": 4,
+        "attach_s6": 2,
+        "attempt_resume": 2,
+        "dev_down": 5,
+        "dev_up": 5,
+        "done": 1,
+        "finish_c": 14,
+        "fixture_s6": 18,
+        "forget": 4,
+        "job_lost": 3,
+        "ltm_op_dump": 1,
+        "pause": 2,
+        "probe": 68,
+        "probe_invalid": 12,
+        "probe_skipped": 4,
+        "queue_c": 6,
+        "release_c": 10,
+        "restart_worker": 4,
+        "resume": 2,
+        "retry_turn": 4,
+        "scope_collision": 6,
+        "settle": 94,
+        "trim_context": 2,
+        "turn": 106,
+        "turn_notification_fixture": 10
+      },
+      "done": [
+        {
+          "ev": "done",
+          "preds": 68,
+          "t": "2026-11-17T04:57:07.851Z"
+        }
+      ],
+      "invalid": [
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-bc55940dc14b5bdbd569",
+          "story": "n05-signage",
+          "t": "2026-11-17T04:43:41.599Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-53a3c6f39a3d2c4b1fcb"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-ee538bbfbe0798c64dbf",
+          "story": "n05-guest",
+          "t": "2026-11-17T04:44:47.329Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-915fda4c3131d798f501"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-03d6a957de0a64738f36",
+          "story": "n06-signage",
+          "t": "2026-11-17T04:45:20.390Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-6d3dccec02316d25bab9"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-1194d095fe58a84fb740",
+          "story": "n06-guest",
+          "t": "2026-11-17T04:45:47.889Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-4d875812f5e9bbf9c0c1"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-47a8a9fe92918970d81b",
+          "story": "n10-signage",
+          "t": "2026-11-17T04:48:11.205Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-f19c2f03fce3a1591871",
+          "story": "n10-signage",
+          "t": "2026-11-17T04:48:20.310Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-612bbe271e74bde19db9",
+          "story": "n10-guest",
+          "t": "2026-11-17T04:48:30.709Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-ec338062336334072fbe",
+          "story": "n10-guest",
+          "t": "2026-11-17T04:48:35.968Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-6d7e7d12e37aa351ec51",
+          "story": "n12-signage",
+          "t": "2026-11-17T04:54:38.122Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-3d88591c6f13c146bd0c",
+          "story": "n12-signage",
+          "t": "2026-11-17T04:54:42.438Z",
+          "taint": [
+            "k2:advance_time_unsupported",
+            "k3:release_lost:blind-event-618b71c31bb2dd380eb0"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-2455a86e2bf70efa4827",
+          "story": "n12-guest",
+          "t": "2026-11-17T04:55:36.413Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-64809b619e7c8b9b1246",
+          "story": "n12-guest",
+          "t": "2026-11-17T04:55:40.940Z",
+          "taint": [
+            "k2:advance_time_unsupported",
+            "k3:release_lost:blind-event-56b846523604c5d03607"
+          ]
+        }
+      ],
+      "settle_not_ok": 0,
+      "settle_ok": 94,
+      "settle_t_failed_absent": 94,
+      "settle_t_failed_false": 0,
+      "settle_t_failed_true": 0,
+      "skipped": [
+        {
+          "ev": "probe_skipped",
+          "k": 2,
+          "story": "n13-signage",
+          "t": "2026-11-17T04:56:00.638Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 3,
+          "story": "n13-signage",
+          "t": "2026-11-17T04:56:00.762Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 2,
+          "story": "n13-guest",
+          "t": "2026-11-17T04:56:17.876Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 3,
+          "story": "n13-guest",
+          "t": "2026-11-17T04:56:18.003Z",
+          "why": "scope_collision"
+        }
+      ]
+    },
+    "r4": {
+      "checkpoint_failed": [
+        {
+          "err": "before_504:{\"error\":\"turn_before_timeout\"}",
+          "ev": "checkpoint_failed",
+          "k": 3,
+          "story": "n05-signage",
+          "t": "2026-11-17T08:49:13.176Z"
+        }
+      ],
+      "counts": {
+        "advance_time": 4,
+        "attach_s6": 2,
+        "attempt_resume": 2,
+        "checkpoint_failed": 1,
+        "dev_down": 5,
+        "dev_up": 5,
+        "done": 1,
+        "finish_c": 14,
+        "fixture_s6": 18,
+        "forget": 4,
+        "job_lost": 3,
+        "ltm_op_dump": 1,
+        "pause": 2,
+        "probe": 68,
+        "probe_invalid": 11,
+        "probe_skipped": 4,
+        "queue_c": 6,
+        "release_c": 10,
+        "restart_worker": 4,
+        "resume": 2,
+        "retry_turn": 4,
+        "scope_collision": 6,
+        "settle": 93,
+        "trim_context": 2,
+        "turn": 105,
+        "turn_notification_fixture": 10
+      },
+      "done": [
+        {
+          "ev": "done",
+          "preds": 68,
+          "t": "2026-11-17T09:02:32.592Z"
+        }
+      ],
+      "invalid": [
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-ee538bbfbe0798c64dbf",
+          "story": "n05-guest",
+          "t": "2026-11-17T08:50:14.949Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-915fda4c3131d798f501"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-03d6a957de0a64738f36",
+          "story": "n06-signage",
+          "t": "2026-11-17T08:50:48.360Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-6d3dccec02316d25bab9"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-1194d095fe58a84fb740",
+          "story": "n06-guest",
+          "t": "2026-11-17T08:51:11.434Z",
+          "taint": [
+            "k3:release_already_finished:blind-event-4d875812f5e9bbf9c0c1"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-47a8a9fe92918970d81b",
+          "story": "n10-signage",
+          "t": "2026-11-17T08:53:42.159Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-f19c2f03fce3a1591871",
+          "story": "n10-signage",
+          "t": "2026-11-17T08:53:51.684Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-612bbe271e74bde19db9",
+          "story": "n10-guest",
+          "t": "2026-11-17T08:54:01.615Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-ec338062336334072fbe",
+          "story": "n10-guest",
+          "t": "2026-11-17T08:54:07.435Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-6d7e7d12e37aa351ec51",
+          "story": "n12-signage",
+          "t": "2026-11-17T08:59:56.841Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-3d88591c6f13c146bd0c",
+          "story": "n12-signage",
+          "t": "2026-11-17T09:00:00.941Z",
+          "taint": [
+            "k2:advance_time_unsupported",
+            "k3:release_lost:blind-event-618b71c31bb2dd380eb0"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 2,
+          "probe": "blind-target-2455a86e2bf70efa4827",
+          "story": "n12-guest",
+          "t": "2026-11-17T09:00:54.478Z",
+          "taint": [
+            "k2:advance_time_unsupported"
+          ]
+        },
+        {
+          "ev": "probe_invalid",
+          "k": 3,
+          "probe": "blind-target-64809b619e7c8b9b1246",
+          "story": "n12-guest",
+          "t": "2026-11-17T09:01:01.425Z",
+          "taint": [
+            "k2:advance_time_unsupported",
+            "k3:release_lost:blind-event-56b846523604c5d03607"
+          ]
+        }
+      ],
+      "settle_not_ok": 0,
+      "settle_ok": 93,
+      "settle_t_failed_absent": 0,
+      "settle_t_failed_false": 93,
+      "settle_t_failed_true": 0,
+      "skipped": [
+        {
+          "ev": "probe_skipped",
+          "k": 2,
+          "story": "n13-signage",
+          "t": "2026-11-17T09:01:21.132Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 3,
+          "story": "n13-signage",
+          "t": "2026-11-17T09:01:21.255Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 2,
+          "story": "n13-guest",
+          "t": "2026-11-17T09:01:40.334Z",
+          "why": "scope_collision"
+        },
+        {
+          "ev": "probe_skipped",
+          "k": 3,
+          "story": "n13-guest",
+          "t": "2026-11-17T09:01:40.462Z",
+          "why": "scope_collision"
+        }
+      ]
+    }
+  },
+  "history": {
+    "changed_targets": [
+      {
+        "id": "n14-guest-q3",
+        "r3": {
+          "expected_watch_count": 1,
+          "exposed_count": 1,
+          "exposed_values": [
+            "보리차"
+          ],
+          "reason": "captured_exact_value_intersection",
+          "status": "fail",
+          "watched_count": 1
+        },
+        "r4": {
+          "expected_watch_count": 1,
+          "exposed_count": 2,
+          "exposed_values": [
+            "보리차",
+            "유자차"
+          ],
+          "reason": "captured_exact_value_intersection",
+          "status": "fail",
+          "watched_count": 2
+        }
+      }
+    ],
+    "r3": {
+      "by_interpretation": {
+        "challenge": {
+          "failed": 0,
+          "measured_exposed_values": 0,
+          "measured_watch_values": 0,
+          "not_applicable": 2,
+          "pass_rate_decided": null,
+          "pass_rate_planned": 0.0,
+          "pass_rate_relevant": null,
+          "passed": 0,
+          "planned": 2,
+          "policy_gate": false,
+          "relevant_planned": 0,
+          "status": "incomplete",
+          "strict_zero_status": "incomplete",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 0
+        },
+        "contract": {
+          "failed": 12,
+          "measured_exposed_values": 14,
+          "measured_watch_values": 20,
+          "not_applicable": 60,
+          "pass_rate_decided": 0.25,
+          "pass_rate_planned": 0.04878048780487805,
+          "pass_rate_relevant": 0.18181818181818182,
+          "passed": 4,
+          "planned": 82,
+          "policy_gate": false,
+          "relevant_planned": 22,
+          "status": "fail",
+          "strict_zero_status": "fail",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 6
+        }
+      },
+      "failed": 12,
+      "measured_exposed_values": 14,
+      "measured_watch_values": 20,
+      "not_applicable": 62,
+      "pass_rate_decided": 0.25,
+      "pass_rate_planned": 0.047619047619047616,
+      "pass_rate_relevant": 0.18181818181818182,
+      "passed": 4,
+      "planned": 84,
+      "policy_gate": false,
+      "relevant_planned": 22,
+      "status": "fail",
+      "strict_zero_status": "fail",
+      "unit": "target/value pairs; repeated checkpoints are not independent",
+      "unknown": 6
+    },
+    "r4": {
+      "by_interpretation": {
+        "challenge": {
+          "failed": 0,
+          "measured_exposed_values": 0,
+          "measured_watch_values": 0,
+          "not_applicable": 2,
+          "pass_rate_decided": null,
+          "pass_rate_planned": 0.0,
+          "pass_rate_relevant": null,
+          "passed": 0,
+          "planned": 2,
+          "policy_gate": false,
+          "relevant_planned": 0,
+          "status": "incomplete",
+          "strict_zero_status": "incomplete",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 0
+        },
+        "contract": {
+          "failed": 12,
+          "measured_exposed_values": 15,
+          "measured_watch_values": 21,
+          "not_applicable": 60,
+          "pass_rate_decided": 0.25,
+          "pass_rate_planned": 0.04878048780487805,
+          "pass_rate_relevant": 0.18181818181818182,
+          "passed": 4,
+          "planned": 82,
+          "policy_gate": false,
+          "relevant_planned": 22,
+          "status": "fail",
+          "strict_zero_status": "fail",
+          "unit": "target/value pairs; repeated checkpoints are not independent",
+          "unknown": 6
+        }
+      },
+      "failed": 12,
+      "measured_exposed_values": 15,
+      "measured_watch_values": 21,
+      "not_applicable": 62,
+      "pass_rate_decided": 0.25,
+      "pass_rate_planned": 0.047619047619047616,
+      "pass_rate_relevant": 0.18181818181818182,
+      "passed": 4,
+      "planned": 84,
+      "policy_gate": false,
+      "relevant_planned": 22,
+      "status": "fail",
+      "strict_zero_status": "fail",
+      "unit": "target/value pairs; repeated checkpoints are not independent",
+      "unknown": 6
+    }
+  },
+  "limits": [
+    "All 470 check status/reason values are equal; this does not imply equal outputs or internal operations.",
+    "r4 selected T receipts contain no ok=false and settle t_failed is always false, so the new failure-taint branch was not exercised by this run.",
+    "Selected receipts are not a complete attempt ledger; ok=true does not mean each DB operation applied.",
+    "n11 distractor delivery and no T failure do not prove 24 facts were stored or the token budget was stressed.",
+    "A change in history watched/exposed values changes a target-value-pair denominator, not the target's failure state.",
+    "Report/capture/source integrity does not authenticate a live binary or clean working tree.",
+    "Sealed M3 pass-only C policy remains unchanged; semantic judgment/source binding/exact tokenizer evidence remain missing."
+  ],
+  "local_report_bytes_equal_to_submitted": true,
+  "missing_prediction_ids": [
+    "n05-guest-q3",
+    "n05-signage-q3",
+    "n06-guest-q3",
+    "n06-signage-q3",
+    "n10-guest-q2",
+    "n10-guest-q3",
+    "n10-signage-q2",
+    "n10-signage-q3",
+    "n12-guest-q2",
+    "n12-guest-q3",
+    "n12-signage-q2",
+    "n12-signage-q3",
+    "n13-guest-q2",
+    "n13-guest-q3",
+    "n13-signage-q2",
+    "n13-signage-q3"
+  ],
+  "n08_signage_projection_boundary": {
+    "gold_checks": [
+      {
+        "gate": false,
+        "id": "n08-signage-q3-c03",
+        "metric": "recall",
+        "operator": "contains",
+        "path": "/artifacts/context/effective_active_values",
+        "value": "다음 방문에 창문 치수 재확인"
+      },
+      {
+        "gate": false,
+        "id": "n08-signage-q3-c05",
+        "metric": "state_accuracy",
+        "operator": "contains",
+        "path": "/artifacts/must_repeat_values",
+        "value": "다음 방문에 창문 치수 재확인"
+      }
+    ],
+    "gold_sha256": "4e3ce36771df80cefc338e0df751b5ab080df74971609c08e5f748807274e717",
+    "interpretation": "r4 stores/projects '창문 치수 재확인' while the sealed exact expected value is '다음 방문에 창문 치수 재확인'. Both structural checks remain fail; this is not evidence that no promise was stored or that the natural-language answer failed to recall the visit timing.",
+    "observations": {
+      "r3": {
+        "answer": "기본 설정은 **간판 기본색 남색**입니다.\n\n다음에 확인하기로 한 약속은 **창문 치수 재확인**입니다. 다만 이것은 제가 제안드린 것이고, 날짜나 시간이 정해진 확정 약속은 아닙니다. 방문 날짜를 정해 주시면 그때 확인할 항목으로 기록해 두겠습니다.",
+        "effective_active_values": [
+          "남색"
+        ],
+        "must_repeat_values": [],
+        "ops": [
+          "ADD:fact:preference"
+        ]
+      },
+      "r4": {
+        "answer": "기본 설정은 간판 기본색이 남색이에요. 다음에 확인하기로 한 약속은 다음 방문 때 창문 치수를 재서 확인하는 것입니다.",
+        "effective_active_values": [
+          "남색",
+          "창문 치수 재확인"
+        ],
+        "must_repeat_values": [
+          "창문 치수 재확인"
+        ],
+        "ops": [
+          "ADD:fact:preference",
+          "ADD:promise:-"
+        ]
+      }
+    }
+  },
+  "predictions": {
+    "r3": 68,
+    "r4": 68
+  },
+  "protected_files_sha256": {
+    "runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/provenance_audit.json": "18fe719c65217fcaad72054a147da1ce9a7bb11ae3b1f72745e81353f7da6b2c",
+    "runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/score_audit.json": "9fdd03c7b2b4a2019a4705d377fc3d816847c53810743b10c61aa58cde265a49",
+    "runtime/long-memory-research/reviews/m3-v02-r3-2026-11-17/score_audit.report.json": "c9cb6d16c466ff9c13576eb614b8912301cf7b3a1cf1063a61136869de9f80b4",
+    "runtime/long-memory-research/reviews/m3-v02-r4-2026-11-18/provenance_audit.json": "440ece4002570dd794b895516b3a9dd6848664a720522bba5a22ac4afe121958",
+    "runtime/long-memory-research/reviews/m3-v02-r4-2026-11-18/score_audit.json": "4a06f60e095a9815492914991d5f7b39b97df8a4503824034cbb7aba1c7d8bfe",
+    "runtime/long-memory-research/reviews/m3-v02-r4-2026-11-18/score_audit.report.json": "6a5fdea9ba61c947c517d040c3460f60bd0be813706acaf4874e7378a5f2a662"
+  },
+  "protected_files_unchanged": true,
+  "r3_only_prediction_ids": [],
+  "r4_n11_snapshots": [
+    {
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 1,
+      "target": "n11-signage-q2"
+    },
+    {
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 1,
+      "target": "n11-signage-q3"
+    },
+    {
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 2,
+      "target": "n11-guest-q2"
+    },
+    {
+      "invalid_observation": null,
+      "notes": [],
+      "snapshot_fact_rows": 2,
+      "target": "n11-guest-q3"
+    }
+  ],
+  "r4_only_prediction_ids": [],
+  "raw_inventory": {
+    "r3": {
+      "nonemitted_raw_targets": [
+        "n05-guest-q3",
+        "n05-signage-q3",
+        "n06-guest-q3",
+        "n06-signage-q3",
+        "n10-guest-q2",
+        "n10-guest-q3",
+        "n10-signage-q2",
+        "n10-signage-q3",
+        "n12-guest-q2",
+        "n12-guest-q3",
+        "n12-signage-q2",
+        "n12-signage-q3"
+      ],
+      "request_response_ids_equal": true,
+      "requests": 80,
+      "responses": 80
+    },
+    "r4": {
+      "nonemitted_raw_targets": [
+        "n05-guest-q3",
+        "n06-guest-q3",
+        "n06-signage-q3",
+        "n10-guest-q2",
+        "n10-guest-q3",
+        "n10-signage-q2",
+        "n10-signage-q3",
+        "n12-guest-q2",
+        "n12-guest-q3",
+        "n12-signage-q2",
+        "n12-signage-q3"
+      ],
+      "request_response_ids_equal": true,
+      "requests": 79,
+      "responses": 79
+    }
+  },
+  "refs": {
+    "r3": [
+      "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+      "elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/"
+    ],
+    "r4": [
+      "adf49beb0fb094074a36030db09451d70875a796",
+      "elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/"
+    ]
+  },
+  "scope": "offline arithmetic/comparison of pinned synthetic JSON/JSONL; no API/DB/adapter execution or server logs",
+  "selected_t_receipts": {
+    "r3": {
+      "distinct_cids": 48,
+      "key_matches": 200,
+      "missing": 0,
+      "new_fields_present": {
+        "downgraded": 0,
+        "ops_detail": 0,
+        "reason": 0
+      },
+      "nth_agrees": 200,
+      "ok_false": 4,
+      "ok_true": 196,
+      "rows": 200,
+      "selected_key_duplicates": 0
+    },
+    "r4": {
+      "distinct_cids": 48,
+      "key_matches": 198,
+      "missing": 0,
+      "new_fields_present": {
+        "downgraded": 198,
+        "ops_detail": 198,
+        "reason": 198
+      },
+      "nth_agrees": 198,
+      "ok_false": 0,
+      "ok_true": 198,
+      "rows": 198,
+      "selected_key_duplicates": 0
+    }
+  },
+  "source_sha256": {
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/predictions.jsonl": "43184a271e359264e219d3a2fa78f9b62247a3667f75fc2786cedc9d11c28aa2",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/raw/blind-target-068f702b0e13f5080f50.json": "bbbbe54f9287bb5bc2d562bc2cac935ed45ba061b410cb86bca63d74c45431a4",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/raw/blind-target-630a3d2715ce64b39ec9.json": "84fd89dc94efd4fdee0884cb26c6eee6a5e7a38b8e66884b014a113a38cfdd82",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/raw/blind-target-6d71da0a206249d3e35e.json": "4cdbeb7dc3e438b32f8e19645a6a5652873e1596c1339e3abea838c07ffd456b",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/raw/blind-target-94292564a4a0c2813913.json": "637446abe0b097c997c6197fc29b977bf561e3335bdfef0c17789cf34cc4e2ad",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/report.json": "6a5fdea9ba61c947c517d040c3460f60bd0be813706acaf4874e7378a5f2a662",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/run_events.jsonl": "5595bc21beeb66fca5fa24b05bb77278bf7fb564cdc696228cebb5edc6edf22a",
+    "adf49beb0fb094074a36030db09451d70875a796:elda-orchestrator/measurements/eldacore/m3v02_20261117_r4/t_receipts.jsonl": "a80a8089662ab2408487ff2bba4ab0bff0bf75cb8607d0cb4a375070dca027bb",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/predictions.jsonl": "3f7129174ff7a5b00d19ad1a2d748a1f719e6179d1131b640c03d10a5d94425b",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/report.json": "c9cb6d16c466ff9c13576eb614b8912301cf7b3a1cf1063a61136869de9f80b4",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/run_events.jsonl": "1bbd22036e1daf1c48f28d715a8bc2d2cfefc4075ace82dc5899ff23a01f4e6f",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/t_receipts.jsonl": "0aa796e7b0bc38b59bb6712ddf4591bdae6c6fa2e1ad9ca4d40445a1411a4ff3"
+  },
+  "state_transitions": {
+    "all": {
+      "fail->fail": 18,
+      "pass->pass": 322,
+      "unknown->unknown": 130
+    },
+    "gate": {
+      "fail->fail": 3,
+      "pass->pass": 183,
+      "unknown->unknown": 94
+    },
+    "nongate": {
+      "fail->fail": 15,
+      "pass->pass": 139,
+      "unknown->unknown": 36
+    }
+  }
+}

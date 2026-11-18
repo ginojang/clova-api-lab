@@ -1,0 +1,172 @@
+{
+  "audit_kind": "source-only; static extraction and artifact arithmetic, no TypeScript execution or new measurement",
+  "source_ref": "847c482038c80fef77b44c20d897de9adf42e711",
+  "c_raw_ref": "dfd7c92fdfe4cba28c6c4a95353ffd642f7db2c5",
+  "prior_runtime_ref": "a315c32c008694e52b0fcfc11651ae986340a7ad",
+  "prior_adapter_ref": "41df84e975c390b6255f7100479164f55bc0f1d8",
+  "prior_result_ref": "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481",
+  "bundle_ref": "7b9b9443d8b885742f66aa40d4308018ec46303a",
+  "checks": {
+    "baseline_adapter_same_at_runtime_and_change_commit": true,
+    "new_wait_checks_false_only_when_key_present": true,
+    "new_wait_returns_true_after_marking_false": true,
+    "settle_records_both_timeout_and_failed_taint": true,
+    "story_taint_regex_accepts_t_failed": true,
+    "retry_wait_result_still_ignored": true,
+    "final_wait_still_count_only": true,
+    "raw_assignment_precedes_call_failure_return": true,
+    "chat_source_unchanged_since_c_raw_commit": true,
+    "prior_runtime_did_not_put_raw_in_summary": true,
+    "m3_r3_artifact_tree_unchanged": true,
+    "four_sealed_retries_lack_following_settle": true
+  },
+  "ops_detail_fields": [
+    "op",
+    "slot",
+    "downgraded",
+    "downgraded_why",
+    "ce_turn",
+    "ev_turn"
+  ],
+  "sealed_retry_paths": [
+    {
+      "story": "n01-signage",
+      "checkpoint": 3,
+      "id": "n01-signage-e004",
+      "explicit_settle_after_retry": false,
+      "probe": "n01-signage-q3"
+    },
+    {
+      "story": "n01-guest",
+      "checkpoint": 3,
+      "id": "n01-guest-e004",
+      "explicit_settle_after_retry": false,
+      "probe": "n01-guest-q3"
+    },
+    {
+      "story": "n06-signage",
+      "checkpoint": 3,
+      "id": "n06-signage-e011",
+      "explicit_settle_after_retry": false,
+      "probe": "n06-signage-q3"
+    },
+    {
+      "story": "n06-guest",
+      "checkpoint": 3,
+      "id": "n06-guest-e011",
+      "explicit_settle_after_retry": false,
+      "probe": "n06-guest-q3"
+    }
+  ],
+  "preserved_r3": {
+    "selected_receipts": 200,
+    "receipts_with_reason": 0,
+    "receipts_with_ops_detail": 0,
+    "c_summary_events": 18,
+    "c_summary_events_with_raw": 0,
+    "meaning": "The old r3 artifacts were not backfilled; new source support is not evidence of a new M3 run."
+  },
+  "line_refs": {
+    "adapter": {
+      "wait_function": [
+        196
+      ],
+      "wait_false": [
+        204
+      ],
+      "settle_branch": [
+        346
+      ],
+      "retry_branch": [
+        388
+      ],
+      "retry_ignored_wait": [
+        393
+      ],
+      "taint_accumulation": [
+        411
+      ],
+      "probe_raw": [
+        416
+      ],
+      "probe_skip": [
+        443
+      ],
+      "final_count_wait": [
+        453
+      ],
+      "export_first_key": [
+        460
+      ],
+      "export_extra_fields": [
+        462
+      ]
+    },
+    "turn": {
+      "ops_detail": [
+        182
+      ],
+      "logger": [
+        180
+      ],
+      "outer_exception": [
+        184
+      ],
+      "db_apply_exception": [
+        168
+      ]
+    },
+    "chat": {
+      "request": [
+        117
+      ],
+      "response_raw": [
+        122
+      ],
+      "summary_raw": [
+        152
+      ],
+      "source_for_model": [
+        150
+      ],
+      "promise_db_exception": [
+        195
+      ],
+      "episode_db_exception": [
+        223
+      ],
+      "episode_any_resolved_query_true": [
+        222
+      ],
+      "summary_final": [
+        229
+      ],
+      "background_timer": [
+        240
+      ]
+    }
+  },
+  "static_conclusions": [
+    "Explicit settle_turn with a valid matching key now propagates ok=false to persistent story taint and suppresses subsequent predictions, while raw probes may still be executed/exported.",
+    "Missing-key count fallback never inspects ok=false; retry ignores wait return/tFailed; finalization only waits by count. This is not comprehensive failure propagation.",
+    "A missing/wrong key normally times out in explicit settle, but inferred wrong existing keys and first duplicate keys remain unverified; outer serve_failed is not a keyed normal receipt.",
+    "ok is runMemoryTurn result, not each DB apply result; caught DB failures can coexist with ok=true and held counts.",
+    "ops_detail is post-guard retained ops only and lacks exact evidence/CE text, offsets/n, target linkage and per-operation DB outcome; turn numbers identify candidate source turns, not exact model-quoted spans.",
+    "C raw is model content text copied before the failure return; parse failures preserve it, transport failures/no-call paths may keep null. It is not the C request or full provider response.",
+    "Explicit finish/release summaries flow to c_runs/events; unreleased/lost jobs and background C calls are not automatically covered by those exports.",
+    "C raw permits inspection of model candidates but lacks exact gathered turns/model-visible s6/today/system request and item-level persistence receipts; episode=true can also mean ON CONFLICT DO NOTHING resolved.",
+    "No production deployment/restart or new M3 execution has been independently verified. Existing r3 conclusions and scores remain unchanged."
+  ],
+  "input_sha256": {
+    "847c482038c80fef77b44c20d897de9adf42e711:elda-orchestrator/src/tools/m3v02Run.ts": "38e2b61db0a95f21a249b6fe743a117efd52797f492022f62a05eca07e02eba3",
+    "847c482038c80fef77b44c20d897de9adf42e711:elda-orchestrator/src/core/eldacore/s6memory.ts": "1a99e53e0f10c554c1f794c9b05a6d43c665caaf7b64a987dcff1de10b4dc9f7",
+    "847c482038c80fef77b44c20d897de9adf42e711:elda-orchestrator/src/core/eldacore/s6chatEnd.ts": "41faaa653b17c720631239bec94f03bf9d65c9515cc25db2823f19946969d00c",
+    "a315c32c008694e52b0fcfc11651ae986340a7ad:elda-orchestrator/src/tools/m3v02Run.ts": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "41df84e975c390b6255f7100479164f55bc0f1d8:elda-orchestrator/src/tools/m3v02Run.ts": "bad63dde37cec957dbf11566f71e2f5d73273c92ee5448a37695cd6e3982287f",
+    "a315c32c008694e52b0fcfc11651ae986340a7ad:elda-orchestrator/src/core/eldacore/s6chatEnd.ts": "0fdbbcbe01d0910b4687fe3276daf8a7398e3b661117f054972b91e848c7afbd",
+    "dfd7c92fdfe4cba28c6c4a95353ffd642f7db2c5:elda-orchestrator/src/core/eldacore/s6chatEnd.ts": "41faaa653b17c720631239bec94f03bf9d65c9515cc25db2823f19946969d00c",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/run_events.jsonl": "1bbd22036e1daf1c48f28d715a8bc2d2cfefc4075ace82dc5899ff23a01f4e6f",
+    "ec3c9b262a14ffe07958b09f77d8b6e2b3de2481:elda-orchestrator/measurements/eldacore/m3v02_20261117_r3/t_receipts.jsonl": "0aa796e7b0bc38b59bb6712ddf4591bdae6c6fa2e1ad9ca4d40445a1411a4ff3",
+    "7b9b9443d8b885742f66aa40d4308018ec46303a:runtime/long-memory-research/eval-v1/scenarios.jsonl": "0c465321689f12ea590a1b2c8205a7a5e6ac3f35241abbd9e46a1a97f57303da"
+  }
+}
