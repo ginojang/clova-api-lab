@@ -66,4 +66,6 @@ reviews의 정규식·문자열 대조는 커밋된 합성 캡처의 표제·해
 
 리소너의 correction_evidence 출처 검사 유지 설명은 위 H70f/M0 및 사용자 확인 전달과 맞는다. 이 허용은 **원문에 있는가**만 확인하며, **정정의 뜻인가**까지 증명하지 않는다. n14의 정정 의미와 did 내용↔원천 의미는 계속 별도 모델·평가 과제다. 기존 not_verbatim·CONTEST 내림 guard를 유지하고, 외부 서빙 코드를 이 저장소에서 임의 변경하지 않았다.
 
+04:16 UTC `41765b1f2c`의 보고와 일치하는 5686d649를 고정해 [관측 재감사](runtime/long-memory-research/reviews/input-policy-2026-11-18/price_observation_closure.md)했다. rows/outcome/cacheHit의 호출별 결합·빈 캐시 출처·자산의 선행 호출 설명은 해결됐다. 가격 이벤트는 decode 결정 위치에만 있어 전체 on·human 분모는 아니며, skip=null도 조회 전 조건 통과일 뿐 원장 empty/error·위기 억제로 추가 주입이 없을 수 있다. 이 두 설명/분모 후속을 유지하며 재시작 대기는 담당 보고로 구분한다.
+
 완료 범위는 로컬 소스 읽기·적용 경계 기록·담당자 회신이다. 모델 실패 시 글자 규칙으로 보완하는 구현은 추가하지 않았다.

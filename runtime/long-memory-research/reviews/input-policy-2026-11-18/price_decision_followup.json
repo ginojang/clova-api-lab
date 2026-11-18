@@ -1,0 +1,81 @@
+{
+  "review_id": "input-policy-2026-11-18/price-decision-followup",
+  "review_kind": "static_source_audit",
+  "request_comms": "41765b1f2c",
+  "source_ref": "refs/audit/ganpanai/41765b1f2c",
+  "source_commit": "5686d64983e9778b0de1a79ab9350c41c87b73b9",
+  "baseline": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "scope": ["PJ-01 prompt launch documentation", "PJ-02 no/unknown/not-called observation", "actual observation denominator"],
+  "executed": {
+    "model_api_calls": 0,
+    "gateway_calls": 0,
+    "database_calls": 0,
+    "service_calls": 0,
+    "customer_logs_read": false,
+    "target_code_executed": false,
+    "builds": 0,
+    "experiments": 0,
+    "source_asset_hash_and_body_compared": true
+  },
+  "previous_finding_disposition": {
+    "PJ-01": "asset documentation corrected; stale adjacent inline comment remains",
+    "PJ-02": "improved for turns reaching decision logger; whole enabled-human denominator remains unsupported"
+  },
+  "asset": {
+    "path": "elda-orchestrator/src/prompts/judge/asks_price.md",
+    "previous_md5_8": "f87bd994",
+    "current_md5_8": "3463fd25",
+    "current_sha256": "8aef3e7a1a1e019b0428a749d747708cea0f065a2947b48d41bd3d0d97cbb5ba",
+    "instruction_body_lines_4_to_7_unchanged": true,
+    "launch_comment_matches_early_launch": true
+  },
+  "observed_source_changes": {
+    "caller_keeps": ["verdict", "unknown reason", "prompt version"],
+    "caught_exception": "unknown with truncated threw: reason and null prompt version",
+    "not_called": null,
+    "decision_skip_priority": ["not_elda", "tool_replace", "not_asked", "verdict_no or verdict_unknown", "rag_has_price", null],
+    "verdict_retained_separately_from_skip": true,
+    "no_or_unknown_opens_ledger_read": false,
+    "null_skip_means_successful_injection": false,
+    "source_evidence": ["elda-orchestrator/src/router/v1_0/chat.ts:350-354", "elda-orchestrator/src/router/v1_0/chat.ts:1319-1329"]
+  },
+  "denominator": {
+    "claimed": "all RAG_PRICE_SUMMARY on and human turns",
+    "actual_source_scope": "enabled human turns reaching decode branch decision logger without preceding exception",
+    "one_log_for_all_claimed_turns_proven": false,
+    "logger_position": "inside else if decodeEnabled()",
+    "excluded_control_paths": ["risk floor deterministic refusal", "sign image/proposal response", "nearest-place response", "deterministic persona", "decode disabled", "input_too_long early return", "unexpected failure before decision log"],
+    "dormant_branch_not_counted": "identity canned response; idAsk is fixed null at chat.ts:1069",
+    "not_called_note": "launch and logging share on-and-human guard, so stable-configuration not-called turns are outside this logger",
+    "evidence": ["elda-orchestrator/src/router/v1_0/chat.ts:400-411", "elda-orchestrator/src/router/v1_0/chat.ts:1249-1296", "elda-orchestrator/src/router/v1_0/chat.ts:1319-1329"]
+  },
+  "findings": [
+    {
+      "id": "PD-01",
+      "kind": "claimed_denominator_exceeds_logger_coverage",
+      "severity": "observation_contract_incomplete",
+      "detail": "all enabled-human turns cannot be counted from price_summary because logger is only in decode path"
+    },
+    {
+      "id": "PD-02",
+      "kind": "null_skip_semantics",
+      "detail": "null skip means preconditions passed; empty/error ledger or care suppression can still prevent injection"
+    },
+    {
+      "id": "PD-03",
+      "kind": "minor_stale_comment",
+      "detail": "chat line 348 still says elda only; line 349 and prompt comment correctly describe wider early launch"
+    }
+  ],
+  "runtime_evidence": {
+    "deployment_verified": false,
+    "restart_verified": false,
+    "model_behavior_verified": false,
+    "logging_success_verified": false
+  },
+  "recommendations_not_implemented": [
+    "Either document actual decode-decision denominator or record final price decision for every enabled-human route including early exit and non-consumption",
+    "Do not interpret skip null as successful injection",
+    "Remove stale elda-only launch comment"
+  ]
+}

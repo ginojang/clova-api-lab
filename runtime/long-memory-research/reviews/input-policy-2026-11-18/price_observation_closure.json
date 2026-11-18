@@ -1,0 +1,112 @@
+{
+  "review_date": "2026-11-18",
+  "request_comms": "41765b1f2c",
+  "repository": "ginojang/GanpanAI",
+  "message_has_explicit_commit_ref": false,
+  "target_identification": "pinned_remote_main_followup_matching_prior_comms_8121fbf351_and_reported_changes",
+  "target": "5686d64983e9778b0de1a79ab9350c41c87b73b9",
+  "baseline": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "pinned_ref": "refs/audit/ganpanai/41765b1f2c",
+  "parent": "b5ed090c612d037b63cc2b1e4724fa5305848f57",
+  "changes": [
+    {
+      "added": "7",
+      "deleted": "8",
+      "path": "elda-orchestrator/src/core/priceRanges.ts"
+    },
+    {
+      "added": "1",
+      "deleted": "1",
+      "path": "elda-orchestrator/src/prompts/judge/asks_price.md"
+    },
+    {
+      "added": "19",
+      "deleted": "9",
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts"
+    }
+  ],
+  "file_fingerprints": [
+    {
+      "path": "elda-orchestrator/src/core/priceRanges.ts",
+      "sha256": "f77110dfa6a503294697e9fde9e656ae8ef474c1cba4800fcf2e0f668fff722c",
+      "blob": "2db4c0bde049ab6e44931a434772651aa2111e35"
+    },
+    {
+      "path": "elda-orchestrator/src/router/v1_0/chat.ts",
+      "sha256": "9ec4343eaa341f6cadb28e9a5d05508853d0283033f0a4698b5c33f009c2996b",
+      "blob": "12d1b6567d81c46c7141f59105295fa2e316d090"
+    },
+    {
+      "path": "elda-orchestrator/src/prompts/judge/asks_price.md",
+      "sha256": "8aef3e7a1a1e019b0428a749d747708cea0f065a2947b48d41bd3d0d97cbb5ba",
+      "blob": "26bd6540b59d5216684b79c302d24a25f9b40f95"
+    },
+    {
+      "path": "elda-orchestrator/src/core/promptAsset.ts",
+      "sha256": "54b4cb83179ce19940fd8428caf85c97e8c8dc9e20196bbbd794e824c865d168",
+      "blob": "d3831767a5699c0d1a643fb089f1a2a6d9310e62"
+    }
+  ],
+  "source_closures": [
+    "PL1_request_bound_rows_outcome_cacheHit",
+    "cached_empty_vs_fresh_empty",
+    "PJ01_asset_launch_scope_explanation"
+  ],
+  "partial_closure": "PJ02_no_unknown_skip_observed_in_decode_decision_logger_scope_only",
+  "remaining": [
+    {
+      "id": "PD01",
+      "finding": "whole_enabled_human_denominator_not_covered",
+      "anchors": [
+        "router/v1_0/chat.ts:400-411",
+        "router/v1_0/chat.ts:1249-1296",
+        "router/v1_0/chat.ts:1319-1329"
+      ],
+      "actual_scope": "enabled human turns reaching decode price-decision logger",
+      "options": [
+        "document_actual_denominator",
+        "connect_all_eligible_route_ends_to_price_decision_record"
+      ]
+    },
+    {
+      "id": "PD02",
+      "finding": "null_skip_does_not_mean_injected",
+      "anchor": "router/v1_0/chat.ts:1322-1329",
+      "meaning": "pre_ledger_conditions_passed",
+      "counterexamples": [
+        "ledger_empty_or_error_then_built_false",
+        "built_true_but_care_suppressed"
+      ],
+      "assembled_into_is_final_model_receipt": false
+    }
+  ],
+  "asks_price_asset": {
+    "md5_8": "3463fd25",
+    "instruction_lines_4_to_7_unchanged": true,
+    "quality_remeasurement_claimed": false
+  },
+  "unchanged_safety_paths": {
+    "no_unknown_extra_summary": false,
+    "messages_care_exclusion_line": 1334,
+    "consult_care_exclusion_line": 1384,
+    "customer_lexical_fallback_added_in_changed_path": false
+  },
+  "owner_report": {
+    "deployment": "reported",
+    "restart": "pending",
+    "deployed_hash_independently_verified": false
+  },
+  "not_merged_with_current_validation": "2a6dd245_three_positive_synthetic_turns_owner_report",
+  "method": "static_source_diff_and_caller_control_flow_review; local_document_integrity_checks_only",
+  "model_api_calls": 0,
+  "internal_gateway_calls": 0,
+  "db_or_live_service_access": 0,
+  "customer_logs_read": 0,
+  "target_tests_or_builds": 0,
+  "source_only_not_runtime_closure": true,
+  "frozen_m3_or_local_serving_changes": false,
+  "details": [
+    "price_ledger_closure.json",
+    "price_decision_followup.json"
+  ]
+}

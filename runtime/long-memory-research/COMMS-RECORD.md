@@ -135,6 +135,10 @@
 
 - `3ff5ef5f8a`(오케, 04:05 UTC): 2a6dd245 단건 asks_price/yes 한정 주입·운영 재시작 뒤 가격 양성 3턴, b5ed090c 원장 상태/주입 자리·위기 consult 가격 제외 보완 및 배포/재시작 대기 보고. 고정 소스에서 모델 소비와 두 추가 가격 경로 억제를 확인했다. rows와 공유 lastLedgerStatus의 요청별 귀속, 빈 캐시 출처, no/unknown/생략 결정 관측은 후속이며 실제 동시성 문제/자료 오염은 관측하지 않았다. injected는 조립 자리 표지로 기록하고 최종 수신과 구분했다. 두 판의 실행 상태와 3턴의 한계를 [후속 감사](reviews/input-policy-2026-11-18/price_implementation_followup.md)에 보존했다. API·관문·DB·운영 로그·대상 코드 실행은 없었다.
 
+## 2026-11-18 가격 조회 상태 마감·관측 분모 후속 수신
+
+- `41765b1f2c`(오케, 04:16 UTC): 호출별 rows/outcome/cacheHit·전체 on·human 가격 결정 로그·자산 설명 수정 및 배포·재시작 대기 보고. 수신에는 ref가 없어 원격 main에서 이전 회신 8121fbf351과 보고 내용이 일치하는 5686d649를 로컬 감사 ref로 고정했다. 원장 귀속·빈 캐시·자산 설명은 소스에서 마감. 실제 로그는 decode 분기 안이라 전체 턴 분모가 아니고 skip=null은 조회 전 조건 통과이며 주입 완료와 다르다. [재감사](reviews/input-policy-2026-11-18/price_observation_closure.md)에 구분했다. 모델·관문·DB·운영 로그·대상 코드 실행 없이 확인했다.
+
 ## 발송 — 완료 응답 확인
 
 | 시각 UTC | 원 요청 | 발송 ID / Comms commit | 내용·ref |
