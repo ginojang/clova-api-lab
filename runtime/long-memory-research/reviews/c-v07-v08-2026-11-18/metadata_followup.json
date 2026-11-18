@@ -1,0 +1,109 @@
+{
+  "audit_date": "2026-11-18",
+  "old_ref": "60a26c25d1d06539a842a9ebc74136af43864de7",
+  "new_ref": "95704b89e716439861d0bf87de045255af1e0146",
+  "scope": "Git byte/AST comparison only; no builder/teeth/rescoring/model/service/DB execution",
+  "changed_files": [
+    "memory/data/s6_memory_chat_eval_v0_8/META.json",
+    "memory/scripts/s6_memory_chat_eval.py"
+  ],
+  "changed_functions": [
+    "build"
+  ],
+  "unchanged_functions": [
+    "score_rows",
+    "_gold",
+    "teeth",
+    "main"
+  ],
+  "dataset": {
+    "path": "memory/data/s6_memory_chat_eval_v0_8/eval.jsonl",
+    "unchanged": true,
+    "md5": "65b49eb0bbbec891254c0afe6e285a6c",
+    "sha256": "cf66fac7bb6ca4cc680c8f0bc22a29b1ae21d3a0011bddd92b191780fe62d1a7"
+  },
+  "metadata": {
+    "name": "s6_memory_chat",
+    "version": "0.8",
+    "rows": 18,
+    "expected_promises": 7,
+    "by_subset": {
+      "promise": 2,
+      "promise_fix": 2,
+      "promise_unknown": 1,
+      "not_promise": 1,
+      "self": 1,
+      "episode": 1,
+      "none": 1,
+      "cooldown": 1,
+      "joke": 1,
+      "order": 1,
+      "episode_other": 1,
+      "promise_repeat": 2,
+      "promise_after_disclaim": 2,
+      "promise_withdrawn": 1
+    },
+    "langs": {
+      "ko": 14,
+      "en": 3,
+      "ja": 1
+    },
+    "eval_md5": "65b49eb0bbbec891254c0afe6e285a6c",
+    "authored_by": "claude",
+    "use": "eval",
+    "made": "2026-11-17",
+    "builder": "scripts/s6_memory_chat_eval.py",
+    "prompt_pair": "memory/prompts/s6_memory_chat_end_v0.md v0.007 md5 502d09a1 (예시와 8자 겹침 0)",
+    "post_hoc_label_change": {
+      "rows": [
+        "d03",
+        "d04"
+      ],
+      "field": "expect.episode_kinds",
+      "from": [
+        "consult"
+      ],
+      "to": [
+        "install"
+      ],
+      "seen_before_change": "C v0.007 × 묶음 v0.7 K=3 출력(3/3 install)",
+      "kept": "memory/data/s6_memory_chat_eval_v0_7/ (원 v0.7 묶음 · 16/18×3 원 점수 그대로 보존)",
+      "note": "같은 54출력·같은 score_rows 로 v0.8 재채점 18/18×3 — 이 판의 kind 점수는 출력을 본 뒤 고친 라벨 위의 점수다"
+    },
+    "not_measured": [
+      "did.what·outcome ↔ did.turn_index 원천 턴의 뜻 일치(채점기는 kind·원천 S6 만 본다 · 클로버 7ac6b84506 d02·d03·d04 예)",
+      "구 프롬프트 × 새 사례 대조",
+      "C v0.007 의 M3 결과(이 묶음은 개발 회귀다)"
+    ]
+  },
+  "metadata_sha256": "816b493953f65cb1c8940c04380c971b34696a1ef8eb97dd7e457ec083a96836",
+  "scorer_old_sha256": "9439c5179e9a477e1bc89d41743d775c5cb71ac5a4529e911802a3eacf3b7836",
+  "scorer_new_sha256": "7f3214fe6fa9163291babaf56fbe386fbfadac4cd4b09dc11949abbbe26d585a",
+  "prompt_file_unchanged": true,
+  "prompt_md5": "502d09a16839f1d3cd974da8aa4f7151",
+  "original_v07_folder": {
+    "files": [
+      "memory/data/s6_memory_chat_eval_v0_7/META.json",
+      "memory/data/s6_memory_chat_eval_v0_7/eval.jsonl"
+    ],
+    "unchanged": true,
+    "has_score_file": false
+  },
+  "original_score": {
+    "repo": "ginojang/GanpanAI",
+    "ref": "ddce6c4297677643932a60577ca9cc07fd459bba",
+    "path": "elda-orchestrator/measurements/eldacore/s6_memory_20261117/s6_memory_chat_v07_score_k3_238c11ba.json",
+    "sha256": "82ec6602747df34a1b26b901192db50f2008707df91c08ab702da29b61548911",
+    "per_run_rows_ok": [
+      16,
+      16,
+      16
+    ]
+  },
+  "conclusions": [
+    "post-hoc and not-measured disclosures are now in META and builder metadata",
+    "No dataset, prompt, scoring, synthetic gold generation or previous result change",
+    "kept combines the old gold location with the score preservation claim; the actual K3 score needs its separate GanpanAI ref/path",
+    "No claim of semantic accuracy, independent improvement, new M3 or live deployment"
+  ]
+}

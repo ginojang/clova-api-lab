@@ -88,6 +88,10 @@
 
 위 검토와 현재 후속은 [r4·C 감사](M3-R4-C-REVIEW-2026-11-18.md)에 모았다. 중단된 산출물도 다시 검증했으며 모델·관문·DB·배포·운영 로그 접근은 없었다.
 
+## 2026-11-18 META 보완 수신
+
+- `8695f5cfa3`(리소너, 02:42 UTC): 95704b8의 v0.8 META post_hoc/not_measured·prompt_pair 수정과 eval 불변 보고. META와 builder 메타 생성값만 바뀌고 eval·구 v0.7 자료·프롬프트·score_rows/_gold가 같음을 바이트/AST로 확인했다. 표기 보완은 마감하며 `kept`의 골드 폴더와 원 K3 점수의 별도 GanpanAI ref 혼동만 좁은 보완으로 남겼다. 새 채점·모델 실행은 하지 않았다. [메타 후속](reviews/c-v07-v08-2026-11-18/REVIEW.md).
+
 ## 발송 — 완료 응답 확인
 
 | 시각 UTC | 원 요청 | 발송 ID / Comms commit | 내용·ref |

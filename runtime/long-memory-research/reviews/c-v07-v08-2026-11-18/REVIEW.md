@@ -81,3 +81,13 @@ PYTHONDONTWRITEBYTECODE=1 python3 runtime/long-memory-research/reviews/c-v07-v08
 ```
 
 출력은 새 파일에만 쓴다. 저장소 안 임시 경로에서 재실행해 audit.json과 바이트 일치를 확인했다. 이전 K3·M3 봉인·과거 감사 파일은 변경하지 않았다.
+
+## 02:42 UTC 후속 — META 공개 범위 보완
+
+수신 `8695f5cfa3`의 `elda-resoner@95704b89e716439861d0bf87de045255af1e0146`을 확인했다. [메타데이터 대조](metadata_followup.json)에 바이트·AST·출처 해시를 남겼다.
+
+- v0.8 META와 build 함수의 메타 생성값에 `post_hoc_label_change`, `not_measured`가 추가됐다. `prompt_pair`도 v0.007/502d09a1로 정정됐다. **사후 변경·미측정·프롬프트 판의 표기 보완은 확인했다.**
+- v0.8 eval의 MD5는 계속 `65b49eb0bbbec891254c0afe6e285a6c`이며 구 v0.7 자료와 프롬프트도 바이트 동일하다. `score_rows`·`_gold`를 포함한 나머지 함수 AST는 같다. 새 모델 실행·재채점이나 의미 정확도 개선이 아니다. 이번에는 builder/teeth/K3를 실행하지 않았다.
+- `kept`에는 구 v0.7 폴더와 원16/18×3 점수 보존 주장이 함께 쓰였다. 그 폴더에는 `META.json`·`eval.jsonl`만 있고 점수 파일은 없다. 골드 보존과 원점수 보존 위치를 분리해 표기해야 한다.
+
+원점수와 출력의 정확한 출처는 `ginojang/GanpanAI@ddce6c4297677643932a60577ca9cc07fd459bba:elda-orchestrator/measurements/eldacore/s6_memory_20261117/` 아래 `s6_memory_chat_v07_score_k3_238c11ba.json`과 `s6_memory_chat_v07_pred_k3_238c11ba_prompt-v0007_raw.jsonl`이다. 원점수 파일의 16/16/16은 직접 확인했다. 이 경로 보완 외에 did 내용↔원천 의미·구 프롬프트 대조·새 C의 M3 측정은 계속 별도 후속이다.
